@@ -10,19 +10,6 @@ Feel free to discuss with us on our [Official Discord](https://discord.gg/hCCbVh
 
 ---
 
-|   Language   |   Version ready   |    Last translation   |  Maintained by |  Status  |
-|:------------------ |:------------------:| ------------------:| ------------------:| ------------------:|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/us.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)||Core Devs|![Active-Maintenance](https://img.shields.io/badge/actively%20maintained-brightgreen.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/cn.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)||Amefs|![Active-Maintenance](https://img.shields.io/badge/actively%20maintained-brightgreen.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/de.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)||Globber|![Active-Maintenance](https://img.shields.io/badge/actively%20maintained-brightgreen.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/dk.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)||Globber|![Active-Maintenance](https://img.shields.io/badge/actively%20maintained-brightgreen.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/fr.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)||tomcdj71|![Active-Maintenance](https://img.shields.io/badge/actively%20maintained-brightgreen.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/pt.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)||trolhamonas™|![Active-Maintenance](https://img.shields.io/badge/actively%20maintained-brightgreen.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/es.png?raw=true)| ![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-brightgreen.svg)|![Version 3.0.0](https://img.shields.io/badge/version-3.0.0-red.svg) ||![Passive-Maintenance](https://img.shields.io/badge/looking%20for%20translator-red.svg)|
-|![](https://github.com/hjnilsson/country-flags/blob/master/png100px/hu.png?raw=true)| ![In Progress](https://img.shields.io/badge/version-v2.1.8-purple.svg)||Tex|![In-Progress](https://img.shields.io/badge/in%20progress-purple.svg)|
-
----
-
 ## How to contribute a language ? :
 #### 1. Grab the repo
 Clone the Translation Repo to your local computer...
