@@ -50,22 +50,22 @@ quickbox::dashboard::log() {
 # Clean
 ################################################################################
 quickbox::lang::clean::memory() {
-	declare text="nettoyage du cache de la mémoire..."
+	declare text="Nettoyage du cache de la mémoire..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::clean::rclone() {
-	declare text="nettoyage du journal de téléchargement rclone..."
+	declare text="Nettoyage du journal de transferts rclone..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::clean::rclone::error() {
-	declare text="erreur: fichier journal non présent."
+	declare text="ERREUR:: fichier journal non présent."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::clean::dashboard() {
-	declare text="en attente d'une réponse du système..."
+	declare text="Attente d'une réponse du système..."
 	quickbox::dashboard::log "${text}"
 }
 ################################################################################
@@ -73,12 +73,12 @@ quickbox::lang::clean::dashboard() {
 ################################################################################
 quickbox::lang::lock::handle() {
 	declare text="${quickbox_lock} est actuellement en cours d'exécution
-le processus reprendra une fois que ${quickbox_lock} sera terminé."
+Le processus reprendra une fois que ${quickbox_lock} sera terminé."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::lock::remove() {
-	declare text="suppression des verrous logiciels..."
+	declare text="Suppression des verrous logiciels..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -86,22 +86,22 @@ quickbox::lang::lock::remove() {
 # Apt
 ################################################################################
 quickbox::lang::apt::update::header() {
-	declare text="vérification et exécution des mises à jour d'apt..."
+	declare text="Vérification et exécution des mises à jour apt..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::db::locked() {
-	declare text="essaie de résoudre le verrou dpkg..."
+	declare text="Tentative de résolution des verrous dpkg..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::update::completed() {
-	declare text="apt-get upgrade s'est déroulé avec succès"
+	declare text="apt-get upgrade s'est terminé avec succès."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::check::failed() {
-	declare text="la vérification d'apt-get a échoué, il se peut que des paquets soient endommagés."
+	declare text="La vérification apt-get a échoué, il se peut que des paquets soient endommagés."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -109,77 +109,77 @@ quickbox::lang::apt::check::failed() {
 # Installer
 ################################################################################
 quickbox::lang::install::header() {
-	declare text="${software_title} va maintenant être installé
-ce processus peut prendre quelques minutes..."
+	declare text="${software_title} va maintenant être installé.
+Ce processus peut prendre quelques minutes..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::rutorrent::header() {
 	rtorrent_count=$(quickbox::software::count rtorrent)
 	if [[ ${rtorrent_count} -eq 0 ]]; then
-		declare text="il semble que rTorrent ne soit pas installé
+		declare text="Il semble que rTorrent ne soit pas installé
 
 rTorrent 0.9.8 va maintenant être installé, veuillez patienter 
 car cela peut prendre quelques minutes (selon le système)."
 	else
 		declare text="${software_title} va maintenant être installé
-ce processus peut prendre quelques minutes..."
+Ce processus peut prendre quelques minutes..."
 	fi
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::sources::header() {
-	declare text="ajout de clés et de sources supplémentaires pour ${software_title}..."
+	declare text="Ajout de clés et de sources supplémentaires pour ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::dependencies::header() {
-	declare text="installation de ${software_title} dépendances..."
+	declare text="Installation des dépendances de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::build::header() {
-	declare text="${software_title} de construction..."
+	declare text="Construction de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::mktorrent::header() {
-	declare text="mktorrent de construction..."
+	declare text="Construction de mktorrent..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::xmlrpc::header() {
-	declare text="xmlrpc-c de construction..."
+	declare text="Construction de xmlrpc-c..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::libtorrent::header() {
-	declare text="libtorrent de construction..."
+	declare text="Construction de libtorrent..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::rtorrent::header() {
-	declare text="rtorrent de construction..."
+	declare text="Construction de rTorrent..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::configure::header() {
-	declare text="configurer ${software_title}..."
+	declare text="Configuration de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::backup::header() {
-	declare text="sauvegarde de ${software_title} configuration..."
+	declare text="Sauvegarde de la configuration de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::start::header() {
-	declare text="démarrage de ${software_title}..."
+	declare text="Démarrage de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::complete::header() {
-	declare text="${software_title} installation terminée"
+	declare text="Installation de ${software_title} terminée."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -187,13 +187,13 @@ quickbox::lang::install::complete::header() {
 # Reinstall
 ################################################################################
 quickbox::lang::reinstall::header() {
-	declare text="${software_title} va maintenant être réinstallé
-ce processus peut prendre quelques minutes..."
+	declare text="${software_title} va maintenant être réinstallé.
+Ce processus peut prendre quelques minutes..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::reinstall::complete::header() {
-	declare text="${software_title} réinstallation terminée"
+	declare text="${software_title} a été réinstallé avec succès."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -202,27 +202,27 @@ quickbox::lang::reinstall::complete::header() {
 ################################################################################
 quickbox::lang::remove::header() {
 	declare text="${software_title} va maintenant être supprimé
-ce processus peut prendre quelques minutes..."
+Ce processus peut prendre quelques minutes..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::stop::header() {
-	declare text="arrêt de ${software_title}..."
+	declare text="Arrêt de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::dependencies::header() {
-	declare text="suppression de ${software_title} dépendances..."
+	declare text="Suppression des dépendances pour ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::files::header() {
-	declare text="suppression de ${software_title} fichiers..."
+	declare text="Suppression des fichiers de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::complete::header() {
-	declare text="${software_title} élimination terminé"
+	declare text="Désinstallation de ${software_title} terminée."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -231,17 +231,17 @@ quickbox::lang::remove::complete::header() {
 ################################################################################
 quickbox::lang::update::header() {
 	declare text="${software_title} va maintenant être mis à jour
-ce processus peut prendre quelques minutes..."
+Ce processus peut prendre quelques minutes..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::files::header() {
-	declare text="mise à jour de ${software_title}..."
+	declare text="Mise à jour de ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::complete::header() {
-	declare text="${software_title} mise à jour terminé"
+	declare text="Mise à jour de ${software_title} terminée."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -249,47 +249,47 @@ quickbox::lang::update::complete::header() {
 # User
 ################################################################################
 quickbox::lang::user::create() {
-	declare text="utilisateur quickbox créé:"
+	declare text="Utilisateur QuickBox créé:"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::delete() {
-	declare text="${username:-"quickbox utilisateur"} supprimé"
+	declare text="${"L'utilisateur QuickBox" :-username} a été supprimé."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::username() {
-	declare text="utilisateur: ${username}"
+	declare text="Utilisateur: ${username}."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::password() {
-	declare text="mot de passe: ${password}"
+	declare text="Mot de passe: ${password}."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::password::updated() {
-	declare text="Le mot de passe de ${username:-"quickbox utilisateur"} a été mis à jour"
+	declare text="Le mot de passe de ${"l'utilisateur QuickBox ":-username} a été mis à jour."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::ban() {
-	declare text="${username:-"quickbox utilisateur"} banni"
+	declare text="${"L'utilisateur QuickBox":-username} est desormais banni."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::unban() {
-	declare text="${username:-"quickbox utilisateur"} unbanned"
+	declare text="${"L'utilisateur QuickBox":-username} n'est plus banni."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::demote() {
-	declare text="${username:-"quickbox utilisateur"} rétrogradé de admin"
+	declare text="${"L'utilisateur QuickBox":-username} a été rétrogradé du rang d'admin."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::promote() {
-	declare text="${username:-"quickbox utilisateur"} promu au rang d'admin"
+	declare text="${"L'utilisateur QuickBox":-username} a été promu au rang d'admin."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -297,27 +297,27 @@ quickbox::lang::user::promote() {
 # Misc
 ################################################################################
 quickbox::lang::username::specified() {
-	declare text="erreur: le nom d'utilisateur n'est pas spécifié."
+	declare text="ERREUR:: Le nom d'utilisateur n'est pas spécifié."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::info::example() {
 	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
 	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
 	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
 	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
 	fi
 	quickbox::dashboard::log "${text}"
 }
@@ -326,74 +326,74 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name} pour l'utilisateur"
-		[[ -n ${dmn} ]] && declare text="installe un certificat ssl à utiliser pour le tableau de bord sur le domaine spécifié"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installe un certificat ssl pour le domaine spécifié"
-		[[ -n ${version} ]] && declare text="installe la dernière version ${version[*]} de ${software_name}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name}"
+		[[ -n ${usr} ]] && declare text="Installe la dernière version ${branch} de ${software_name} pour l'utilisateur."
+		[[ -n ${dmn} ]] && declare text="Installe un certificat ssl à utiliser pour le tableau de bord sur le domaine spécifié."
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="Installe un certificat ssl pour le domaine spécifié."
+		[[ -n ${version} ]] && declare text="Installe la dernière version ${version[*]} de ${software_name}."
+		[[ -n ${branch} && -z ${usr} ]] && declare text="Installe la dernière version ${branch} de ${software_name}."
 	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="réinstalle la dernière version ${branch} de ${software_name} pour l'utilisateur"
-		[[ -n ${dmn} ]] && declare text="réinstalle le certificat ssl utilisé pour le tableau de bord sur le domaine spécifié"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="réinstalle un certificat ssl pour le domaine spécifié"
-		[[ -n ${version} ]] && declare text="réinstalle la dernière version ${version[*]} de ${software_name}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name}"
+		[[ -n ${usr} ]] && declare text="Réinstalle la dernière version ${branch} de ${software_name} pour l'utilisateur."
+		[[ -n ${dmn} ]] && declare text="Réinstalle le certificat ssl utilisé pour le tableau de bord sur le domaine spécifié."
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="Réinstalle un certificat ssl pour le domaine spécifié."
+		[[ -n ${version} ]] && declare text="Réinstalle la dernière version ${version[*]} de ${software_name}."
+		[[ -n ${branch} && -z ${usr} ]] && declare text="Réinstalle la dernière version ${branch} de ${software_name}."
 	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="supprime ${software_name} pour l'utilisateur"
-		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="supprime le certificat ssl du domaine spécifié"
-		[[ -n ${version} && -z ${dmn} ]] && declare text="supprime ${software_name}"
-		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="supprime ${software_name}"
+		[[ -n ${usr} ]] && declare text="Supprime ${software_name} pour l'utilisateur."
+		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="Supprime le certificat ssl du domaine spécifié."
+		[[ -n ${version} && -z ${dmn} ]] && declare text="Supprime ${software_name}."
+		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="Supprime ${software_name}."
 	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="met à jour ${software_name} vers la dernière version de ${branch} pour l'utilisateur"
-		[[ -n ${dmn} ]] && declare text="met à jour le certificat ssl pour le domaine spécifié, à utiliser avec le tableau de bord"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="met à jour le certificat ssl pour le domaine spécifié"
-		[[ -n ${version} ]] && declare text="met à jour ${software_name} vers la dernière version de ${version}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name}"
+		[[ -n ${usr} ]] && declare text="Met à jour ${software_name} vers la dernière version de ${branch} pour l'utilisateur."
+		[[ -n ${dmn} ]] && declare text="Met à jour le certificat ssl pour le domaine spécifié, à utiliser avec le tableau de bord."
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="Met à jour le certificat ssl pour le domaine spécifié."
+		[[ -n ${version} ]] && declare text="Met à jour ${software_name} vers la dernière version de ${version}."
+		[[ -n ${branch} && -z ${usr} ]] && declare text="Met à jour vers la dernière version ${branch} de ${software_name}."
 	fi
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::access() {
-	declare text="accès à ${software_title} à:
+	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${software_name}
-${software_title} installé sur le port: ${software_web_port}"
+${software_title} installé sur le port: ${software_web_port} ."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::mu::access() {
-	declare text="accéder à ${software_title} à:
+	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${username}/${software_name}
-${software_title} installé sur le port: ${software_web_port}"
+${software_title} installé sur le port: ${software_web_port} ."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::calibre::access() {
-	declare text="accéder à ${software_title} à:
+	declare text="Accéder à ${software_title} à l'adresse:
 ${quickbox_web_root}${username}/${software_name}
-nom d'utilisateur: ${username}
-mot de passe: admin123
-emplacement de la base de données: /home/${username}/.config/calibre/library
-${software_title} installé sur le port: ${software_web_port}"
+Nom d'utilisateur: ${username}
+Mot de passe: admin123
+Emplacement de la base de données: /home/${username}/.config/calibre/library
+${software_title} installé sur le port: ${software_web_port} ."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::rtorrent::access() {
-	declare text="> version de rTorrent: ${rtorrent_version}
-> version de libtorrent: ${libtorrent_version}
-> socket path: /var/run/${admin_name}/.rtorrent.sock"
+	declare text="> Version de rTorrent: ${rtorrent_version} .
+> Version de libtorrent: ${libtorrent_version} .
+> Chemin du socket: /var/run/${admin_name}/.rtorrent.sock"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::rutorrent::access() {
-	declare text="accéder à ${software_title} à:
+	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${software_name}
-> socket path: /var/run/${admin_name}/.rtorrent.sock"
+> Chemin du socket: /var/run/${admin_name}/.rtorrent.sock"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::admin::access() {
-	declare text="accéder à ${software_title} à:
+	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${admin_name}/${software_name}
-${software_title} installé sur le port: ${software_web_port}"
+${software_title} installé sur le port: ${software_web_port} ."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -403,63 +403,63 @@ quickbox::lang::software::dashboard() {
 }
 
 quickbox::lang::software::dashboard::custom() {
-	declare text="certificat ssl pour ${domain} installé dans:
+	declare text="Certificat ssl pour ${domain} installé dans:
 /etc/nginx/ssl/${domain}/"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::database() {
-	declare text="mise à jour de la base de données..."
+	declare text="Mise à jour de la base de données..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::trackers::disable() {
-	declare text="désactivation des trackers publics..."
+	declare text="Désactivation des trackers publics..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::trackers::enable() {
-	declare text="activer les trackers publics..."
+	declare text="Activation des trackers publics..."
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::directory::noexist() {
-	declare text="le répertoire requis n'existe pas..."
+	declare text="Le répertoire requis n'existe pas..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::directory::nomove() {
-	declare text="impossible de se déplacer vers $1..."
+	declare text="Impossible de se déplacer vers $1..."
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::package::fail() {
-	declare text="impossible d'installer un paquet nécessaire $1..."
+	declare text="Impossible d'installer un paquet nécessaire $1..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::flaresolverr::access() {
 	curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
 	if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
-		declare text="status: ok. FlareSolverr est prêt!
-${software_title} installé sur le port: ${software_web_port}"
-		quickbox::dashboard::log "${text}"
+		declare text="Status: OK. FlareSolverr est prêt!
+${software_title} installé sur le port: ${software_web_port} ."
+		quickbox::dashboard::log "${text}."
 	else
-		declare text="On dirait que quelque chose a mal tourné"
-		quickbox::dashboard::log "${text}"
+		declare text="On dirait que quelque chose a mal tourné."
+		quickbox::dashboard::log "${text}."
 	fi
 }
 
 quickbox::lang::software::plexclaim() {
-	declare text="réclamer un serveur plex pour ${username}..."
+	declare text="Réclamer un serveur Plex pour ${username}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plex::access() {
-	declare text="accédez à ${software_title} sur:
+	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}web/
-${software_title} installé sur le port: ${software_web_port}
+${software_title} installé sur le port: ${software_web_port} .
 
 > Si vous ne l'avez pas fait et/ou si vous ne savez
-réclamer votre serveur plex veuillez suivre ce guide:
+réclamer votre serveur Plex veuillez suivre ce guide:
 https://quickbox.io/kb-categories/plex/"
 	quickbox::dashboard::log "${text}"
 }
@@ -490,12 +490,12 @@ quickbox::lang::software::plexupdate_credentials_otp() {
 }
 
 quickbox::lang::software::plexupdate_credentials_fail() {
-	declare text="Un nom d'utilisateur et un mot de passe sont nécessaires pour télécharger la mise à jour de PlexPass."
+	declare text="Un nom d'utilisateur et un mot de passe sont nécessaires pour télécharger la mise à jour de Plex Pass.."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_incorrect() {
-	declare text="Nom d'utilisateur et/ou mot de passe incorrects"
+	declare text="Nom d'utilisateur et/ou mot de passe incorrects."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -520,7 +520,7 @@ quickbox::lang::software::plexupdate_downloading() {
 }
 
 quickbox::lang::software::plexupdate_downloading_fail() {
-	declare text="Le téléchargement a échoué avec le code d'erreur ${code}, ${error}"
+	declare text="Le téléchargement a échoué avec le code d'erreur ${code}, ${error}."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -542,27 +542,27 @@ quickbox::lang::software::plexupdate_current() {
 quickbox::lang::software::pyload::access() {
 	declare text="accéder à ${software_title} à :
 ${quickbox_web_root}${username}/${software_name}/
-${titre_logiciel} installé sur le port : ${software_web_port}
+${titre_logiciel} installé sur le port : ${software_web_port} .
 
-> nom d'utilisateur = ${username}
-> mot de passe = pyload
+> Nom d'utilisateur = ${username}
+> Mot de passe = pyload
 
-> Connectez-vous à pyload et changez le mot de passe par défaut pour plus de sécurité.
-Votre mot de passe peut être modifié dans l'onglet [utilisateurs] de pyload."
+> Connectez-vous à pyLoad et changez le mot de passe par défaut pour plus de sécurité.
+Votre mot de passe peut être modifié dans l'onglet [Utilisateurs] de pyLoad."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::quassel::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-	declare text="${software_title} installé sur le port : ${software_daemon_port}
-  
-> Veuillez installer quassel-client sur votre ordinateur personnel et 
-ordinateur personnel et connectez-vous au nouveau ${software_title}. Core 
-pour configurer votre compte à :
+	declare text="${software_title} installé sur le port : ${software_daemon_port} .
+
+> Veuillez installer Quassel-Client sur votre ordinateur personnel et 
+connectez-vous au nouveau ${software_title}. Core 
+pour configurer votre compte sur :
 ${server_ip}:${software_daemon_port}
 
-> Téléchargez quassel-client à partir de l'adresse suivante :
-https://quassel-irc.org/downloads"
+> Téléchargez Quassel-Client à partir de l'adresse suivante :
+https://quassel-irc.org/downloads."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -570,7 +570,7 @@ quickbox::lang::software::rclone_configure() {
 	declare text="
 Veuillez visiter https://console.developers.google.com et créer un projet.
 Vous devrez noter votre client_id et votre client_secret.
-Vous pouvez également consulter l'article de la base de connaissances ci-dessous pour une présentation détaillée :
+Vous pouvez également consulter l'article de notre Knowledge Base ci-dessous pour une présentation détaillée :
 https://quickbox.io/knowledge-base/creating-a-google-api-client-id-client-secret-code/
 
 Une fois que vous avez votre numéro de client et votre secret de client, appuyez sur n'importe quelle touche pour continuer.
@@ -595,11 +595,11 @@ quickbox::lang::software::rclone_encryptpass() {
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_saltpass() {
-	declare text="Mot de passe de sel: "
+	declare text="Sel cryptographique du mot de passe: "
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_salterror() {
-	declare text="Le mot de passe du sel ne peut pas être le même que celui du cryptage."
+	declare text="Le mot de passe du sel cryptograpique ne peut pas être le même que celui du cryptage.."
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_confirm() {
@@ -619,16 +619,17 @@ quickbox::lang::software::rclone_encryptpass_confirm() {
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_saltpass_confirm() {
-	declare text="Mot de passe du sel: ${saltvar}"
+	declare text="Sel cryptographique: ${saltvar}"
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_continue() {
 	declare text="Si vous êtes satisfait des paramètres ci-dessus, appuyez sur Y pour continuer..."
 	quickbox::dashboard::log "${text}"
 }
+
 quickbox::lang::software::rclone::access() {
-	declare text="${software_title} installé
-  
+	declare text="${software_title} installé.
+	
 > Veuillez exécuter la commande suivante pour finaliser l'installation:
 runuser -l ${username} -c \"rclone config reconnect gdrive:\"
 
@@ -640,23 +641,23 @@ https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 
 quickbox::lang::software::x2go::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-	declare text="${software_title} Serveur installé
-  
+	declare text="${software_title} Serveur installé.
+
 > Veuillez installer x2go-client sur votre ordinateur personnel
 et connectez-vous au serveur ${software_title} nouvellement créé
-en utilisant ce qui suit :
+en utilisant les détails suivants :
 Hôte:				${server_ip}
 Connexion:			${username}
 Port SSH:			4747
 Type de session:	XFCE ou MATE
 
-> Téléchargez x2go-client depuis :
-https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
+> Téléchargez x2go-client à l'adresse :
+https://wiki.x2go.org/doku.php/doc:installation:x2goclient."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::znc_configure() {
-	declare text="La configuration ZNC va maintenant s'exécuter. Veuillez répondre aux questions suivantes:"
+	declare text="La configuration de ZNC va maintenant s'exécuter. Veuillez répondre aux questions suivantes:"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -664,121 +665,121 @@ quickbox::lang::software::znc_configure() {
 # QB Updater
 ################################################################################
 quickbox::lang::update::ntp() {
-	declare text="vérification avec le serveur ntp..."
+	declare text="Vérification avec le serveur ntp..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::apt() {
-	declare text="exécution des mises à jour apt..."
+	declare text="Exécution des mises à jour apt..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::initial::dependencies() {
-	declare text="vérification des dépendances initiales..."
+	declare text="Vérification des dépendances initiales..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::download::v3() {
-	declare text="téléchargement de la mise à jour v3..."
+	declare text="Téléchargement de la mise à jour v3..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::quickbox::dependencies() {
-	declare text="vérification des dépendances de quickbox..."
+	declare text="Vérification des dépendances de QuickBox..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::base::dependencies() {
-	declare text="installation des dépendances de base: "
+	declare text="Installation des dépendances de base: "
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::web::dependencies() {
-	declare text="installation des dépendances Web: "
+	declare text="Installation des dépendances Web: "
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::python::dependencies() {
-	declare text="installation des dépendances python: "
+	declare text="Installation des dépendances python: "
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::dependencies::log() {
-	declare text="enregistrement des dépendances installées..."
+	declare text="Enregistrement des dépendances installées..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::pip() {
-	declare text="mise à jour du pip..."
+	declare text="Mise à jour des modules pip..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::lshell() {
-	declare text="mise à jour de lshell..."
+	declare text="Mise à jour de lshell..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::iris() {
-	declare text="mise à jour de l'iris..."
+	declare text="Mise à jour du module Iris..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::libraries() {
-	declare text="mise à jour des bibliothèques quickbox..."
+	declare text="Mise à jour des bibliothèques QuickBox..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::cron() {
-	declare text="mise à jour des tâches cron..."
+	declare text="Mise à jour des tâches cron..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::sudo() {
-	declare text="mise à jour des configurations sudo..."
+	declare text="Mise à jour des configurations sudo..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::curl() {
-	declare text="mise à jour de curl..."
+	declare text="Mise à jour de curl..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::php::check() {
-	declare text="vérification de php..."
+	declare text="Vérification de php..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::qbcommands() {
-	declare text="configuration des commandes quickbox pro..."
+	declare text="Configuration des commandes QuickBox Pro..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::dashboard() {
-	declare text="mise à jour du tableau de bord quickbox..."
+	declare text="Mise à jour du tableau de bord QuickBox..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::database() {
-	declare text="mise à jour de la base de données quickbox..."
+	declare text="Mise à jour de la base de données QuickBox..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::autocomplete() {
-	declare text="mise à jour de la saisie semi-automatique de la boîte rapide..."
+	declare text="Mise à jour de la saisie semi-automatique..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::permissions() {
-	declare text="configuration des autorisations..."
+	declare text="Configuration des autorisations..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::clean() {
-	declare text="nettoyage des fichiers de mise à jour..."
+	declare text="Nettoyage des fichiers de mise à jour..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::complete() {
-	declare text="mise à jour terminée!"
+	declare text="Mise à jour terminée!"
 	quickbox::dashboard::log "${text}"
 }
