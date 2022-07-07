@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.40
+# File Version: 1.0.42
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -254,7 +254,7 @@ quickbox::lang::user::create() {
 }
 
 quickbox::lang::user::delete() {
-	declare text="${"L'utilisateur QuickBox" :-username} a été supprimé."
+	declare text="${username:-"l'utilisateur quickbox"} a été supprimé."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -269,27 +269,27 @@ quickbox::lang::user::password() {
 }
 
 quickbox::lang::user::password::updated() {
-	declare text="Le mot de passe de ${"l'utilisateur QuickBox ":-username} a été mis à jour."
+	declare text="Le mot de passe de ${username:-"l'utilisateur quickbox"} a été mis à jour."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::ban() {
-	declare text="${"L'utilisateur QuickBox":-username} est desormais banni."
+	declare text="${username:-"l'utilisateur quickbox"} est desormais banni."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::unban() {
-	declare text="${"L'utilisateur QuickBox":-username} n'est plus banni."
+	declare text="${username:-"l'utilisateur quickbox"} n'est plus banni."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::demote() {
-	declare text="${"L'utilisateur QuickBox":-username} a été rétrogradé du rang d'admin."
+	declare text="${username:-"l'utilisateur quickbox"} a été rétrogradé du rang d'admin."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::promote() {
-	declare text="${"L'utilisateur QuickBox":-username} a été promu au rang d'admin."
+	declare text="${username:-"l'utilisateur quickbox"} a été promu au rang d'admin."
 	quickbox::dashboard::log "${text}"
 }
 
