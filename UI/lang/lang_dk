@@ -100,7 +100,7 @@ $L['SECURITY_SETTINGS'] = 'Sikkerhedsindstillinger';
 $L['SESSION_SETTINGS'] = 'Sessionindstillinger';
 $L['SETTINGS'] = 'Indstillinger';
 $L['SYS_DASHBOARD'] = 'System Dashboard';
-$L['SYSTEM_LOGS'] = 'Systemlogs';
+$L['SYSTEM_LOGS'] = 'Systemlogfiler';
 $L['SYSTEM'] = 'System';
 $L['USER_ADMIN'] = 'Brugeradministrator';
 $L['USER_GROUPS'] = 'Brugergrupper';
@@ -280,12 +280,12 @@ $L['YES'] = 'Ja';
 $L['AVAILABILITY'] = 'Tilgængelighed';
 $L['DETAILS'] = 'Detaljer';
 $L['NAME'] = 'Navn';
-$L['CONFIGS'] = 'Configs';
+$L['CONFIGS'] = 'Muligheder';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
 //#3.2.1 - App info & uninstall
-$L['AIRSONIC_UNINSTALL'] = 'u er ved at afinstallere <span style="color:#01cea2">Airsonic</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Airsonic</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['AIRSONIC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Airsonic</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Airsonic</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
 $L['AIRSONIC'] = 'Airsonic-Advanced er en mere moderne implementering af Airsonic-gaflen med flere vigtige ydelses- og funktionsforbedringer. Den tilføjer og erstatter flere funktioner i Airsonic. Airsonic er en gratis, webbaseret mediestreamer, der giver universel adgang til din musik.';
 $L['AUTOBRR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Autobrr</span> fra dit system.<br/><br/>Dette vil helt fjerne alle dine konfigurationer og indstillinger... denne handling er irreversibel. <br/><br/>Du kan til enhver tid geninstallere <span style="color:#01cea2">Autobrr</span>, dog vil dine indstillinger blive nulstillet til standard.';
 $L['AUTOBRR'] = 'Autobrr er en moderne enkelt binær erstatning for autodl-irssi+rutorrent plugin. Autobrr-monitorer IRC annoncerer kanaler og torznab RSS-feeds for at få udgivelser, så snart de er tilgængelige, med god filtrering og regex-understøttelse.';
@@ -418,7 +418,7 @@ $L['ZNC'] = 'ZNC er en IRC bouncer eller BNC. Den kan frigøre ircklienten fra s
 
 //#3.2.2 - toggles & tooltips
 $L['CARD VIEW'] = 'Kortvisning';
-$A['LIST VIEW'] = 'Listevisning';
+$L['LIST VIEW'] = 'Listevisning';
 $L['CLI'] = 'Kun via Webkonsol';
 $L['COMPAT_E'] = 'Kompatibilitetsfejl';
 $L['CURRENTLY_INSTALLED_NOTICE'] = 'Det ser ud til, at du har adgang til et program, som kun kan installeres af én bruger ad gangen. Tal med din systemadministrator for at få yderligere status om tilgængeligheden.';
@@ -932,7 +932,7 @@ $L['AVAILABLE_TXT'] = 'Tilgængelig!';
 $L['UPDATE_VERSION'] = 'Opdater version';
 $L['UPDATE_ACTIVATE'] = 'Aktiver venligst dit Pro-abonnement for at modtage opdateringer';
 $L['UPDATE_CURRENT'] = 'Du er opdateret!';
-$L['CHANGELOGS'] = 'Ændringslogs';
+$L['CHANGELOGS'] = 'Ændringslog';
 
 //#4.4.6 - SYSTEM DASHBOARD
 $L['DISK_UTIL_TIME'] = 'Diskudnyttelsestid';
