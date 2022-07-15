@@ -91,7 +91,7 @@ quickbox::lang::apt::update::header() {
 }
 
 quickbox::lang::apt::db::locked() {
-	declare text="forsøger at opløse dpkg lock..."
+	declare text="forsøger at opløse dpkg lås..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -139,37 +139,37 @@ quickbox::lang::install::dependencies::header() {
 }
 
 quickbox::lang::install::build::header() {
-	declare text="opbygning af ${software_title}..."
+	declare text="opbygger ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::mktorrent::header() {
-	declare text="opbygning af mktorrent..."
+	declare text="opbygger mktorrent..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::xmlrpc::header() {
-	declare text="opbygning af xmlrpc-c..."
+	declare text="opbygger xmlrpc-c..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::libtorrent::header() {
-	declare text="opbygning af libtorrent..."
+	declare text="opbygger libtorrent..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::rtorrent::header() {
-	declare text="opbygning af rtorrent..."
+	declare text="opbygger rtorrent..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::configure::header() {
-	declare text="konfigurering af ${software_title}..."
+	declare text="konfigurerer ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::backup::header() {
-	declare text="sikkerhedskopiering af ${software_title} konfiguration..."
+	declare text="sikkerhedskopierer ${software_title} konfiguration..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -212,12 +212,12 @@ quickbox::lang::remove::stop::header() {
 }
 
 quickbox::lang::remove::dependencies::header() {
-	declare text="fjernelse af ${software_title} afhængigheder..."
+	declare text="fjerner ${software_title} afhængigheder..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::files::header() {
-	declare text="fjernelse af ${software_title} filer..."
+	declare text="fjerner ${software_title} filer..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -236,7 +236,7 @@ denne proces kan tage et par minutter..."
 }
 
 quickbox::lang::update::files::header() {
-	declare text="opdatering af ${software_title}..."
+	declare text="opdaterer ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -409,17 +409,17 @@ quickbox::lang::software::dashboard::custom() {
 }
 
 quickbox::lang::database() {
-	declare text="opdatering af database..."
+	declare text="opdaterer database..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::trackers::disable() {
-	declare text="deaktivere offentlige trackere..."
+	declare text="deaktiverer offentlige trackere..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::trackers::enable() {
-	declare text="aktivering af offentlige trackere..."
+	declare text="aktiverer offentlige trackere..."
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::directory::noexist() {
@@ -449,7 +449,7 @@ ${software_title} installeret på port: ${software_web_port}"
 }
 
 quickbox::lang::software::plexclaim() {
-	declare text="gør krav på plex-server for ${username}..."
+	declare text="kræver plex-server for ${username}..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -466,7 +466,7 @@ https://quickbox.io/kb-categories/plex/"
 }
 
 quickbox::lang::software::plexupdate_credentials_header() {
-	declare text="Indtast venligst dine Plex legitimationsoplysninger (brugernavn/adgangskode/2FA):"
+	declare text="Indtast venligst dine Plex legitimationsoplysninger (email/adgangskode/2FA):"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -491,12 +491,12 @@ quickbox::lang::software::plexupdate_credentials_otp() {
 }
 
 quickbox::lang::software::plexupdate_credentials_fail() {
-	declare text="Brugernavn og adgangskode er nødvendig for at downloade PlexPass-opdatering."
+	declare text="Email og adgangskode er nødvendig for at downloade PlexPass-opdatering."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_incorrect() {
-	declare text="Brugernavn og/eller adgangskode forkert"
+	declare text="Email og/eller adgangskode forkert"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -516,7 +516,7 @@ quickbox::lang::software::plexupdate_credentials_parsefail() {
 }
 
 quickbox::lang::software::plexupdate_downloading() {
-	declare text="Download af Plex-opdatering..."
+	declare text="Downloader Plex-opdatering..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -657,7 +657,7 @@ https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
 }
 
 quickbox::lang::software::znc_configure() {
-	declare text="ZNC-konfigurationen vil nu blive kørt. Besvar venligst følgende spørgsmål:"
+	declare text="ZNC-konfigurationen vil nu starte. Besvar venligst følgende spørgsmål:"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -665,17 +665,17 @@ quickbox::lang::software::znc_configure() {
 # QB Updater
 ################################################################################
 quickbox::lang::update::ntp() {
-	declare text="tjekker med ntp-server..."
+	declare text="tjekker ntp-server..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::apt() {
-	declare text="kører passende opdateringer..."
+	declare text="kontrollerer basisopdateringer..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::initial::dependencies() {
-	declare text="søger efter indledende afhængigheder..."
+	declare text="kontrollerer basisafhængigheder..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -685,7 +685,7 @@ quickbox::lang::update::download::v3() {
 }
 
 quickbox::lang::update::quickbox::dependencies() {
-	declare text="checker for quickbox-afhængigheder..."
+	declare text="kontrollerer quickbox-afhængigheder..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -740,7 +740,7 @@ quickbox::lang::update::sudo() {
 }
 
 quickbox::lang::update::curl() {
-	declare text="opdaterer krølle..."
+	declare text="opdaterer curl..."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -775,7 +775,7 @@ quickbox::lang::update::permissions() {
 }
 
 quickbox::lang::update::clean() {
-	declare text="renser opdateringsfiler..."
+	declare text="rydder op i opdateringsfiler..."
 	quickbox::dashboard::log "${text}"
 }
 
