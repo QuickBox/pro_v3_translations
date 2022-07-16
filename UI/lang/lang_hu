@@ -323,7 +323,7 @@ $L['FLARESOLVERR'] = 'FlareSolverr is a proxy server to bypass Cloudflare protec
 $L['FLEXGET_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Flexget</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Flexget</span> at any time, however, your settings will be reset to default.';
 $L['FLEXGET'] = 'FlexGet is a multipurpose automation tool for all of your media. Support for torrents, nzbs, podcasts, comics, TV, movies, RSS, HTML, CSV, and more.';
 $L['FLOOD_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Flood</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Flood</span> at any time, however, your storage path and linked folder settings will be reset to default.';
-$L['FLOOD'] = 'Flood is another web interface for rtorrent. It implements a Node.js server for communicating with the rTorrent API, storing historical data, and serving the web UI.';
+$L['FLOOD'] = 'Az Flood egy megfigyelő szolgáltatás különböző torrent kliensek számára. Ez egy Node.js szolgáltatás, amely kommunikál kedvenc torrent kliensével, és megfelelő webes felhasználói felületet biztosít az adminisztrációhoz. A <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> szervezet ad otthont kapcsolódó projekteknek. ';
 $L['HEADPHONES_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Headphones</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Headphones</span> at any time, however, your storage path and linked folder settings will be reset to default.';
 $L['HEADPHONES'] = 'Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent, Deluge and Blackhole.';
 $L['JACKETT_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Jackett</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Jackett</span> at any time, however, your settings will be reset to default.';
@@ -374,6 +374,8 @@ $L['QUOTA_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">
 $L['QUOTAS'] = 'This feature of Linux allows the system administrator to allocate a maximum amount of disk space a user or group may use.';
 $L['RADARR_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Radarr</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Radarr</span> at any time, however, your configuration settings will be reset to default.';
 $L['RADARR'] = 'Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.<br>The project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato.';
+$L['RADARR4K_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Radarr4K</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Radarr4K</span> at any time, however, your configuration settings will be reset to default.';
+$L['RADARR4K'] = 'Radarr4K is a standalone Radarr clone for the 4K UHD profiles. It is a means to handle multiple Radarr instances, while keeping UHD content separate from general content.';
 $L['RAPIDLEECH_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Rapidleech</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Rapidleech</span> at any time, however, your configuration settings will be reset to default.';
 $L['RAPIDLEECH'] = 'Rapid Leech is a free server transfer script for use on various popular upload/download sites such as uploaded.net, Rapidshare.com and more than 120 others.';
 $L['RCLONE_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Rclone</span> from your system.<br/><br/>This will completely remove all of your data and configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Rclone</span> at any time, however, your configuration settings will be reset to default.';
@@ -394,6 +396,8 @@ $L['SICKGEAR_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85
 $L['SICKGEAR'] = 'SickGear is Sick-Beard evolved. Automate your TV enjoyment with innovation, proven stability and reliability.';
 $L['SONARR_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Sonarr</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Sonarr-NzbDrone</span> at any time, however, your configuration settings will be reset to default.';
 $L['SONARR'] = 'Sonarr is a tv series management tool which will work with both torrents and usenet.';
+$L['SONARR4K_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Sonarr4K</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Sonarr4K</span> at any time, however, your configuration settings will be reset to default.';
+$L['SONARR4K'] = 'Sonarr4K is a standalone Sonarr clone for the 4K UHD profiles. It is a means to handle multiple Sonarr instances, while keeping UHD content separate from general content.';
 $L['SUBSONIC_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Subsonic</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Subsonic</span> at any time, however, your configuration settings will be reset to default.';
 $L['SUBSONIC'] = 'Subsonic is a web-based media server. It is written in Java, so it can run on any operating system with Java support. Subsonic supports streaming to multiple clients simultaneously, and supports any streamable media (including MP3, AAC, and Ogg).';
 $L['SYNCTHING_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Syncthing</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Syncthing</span> at any time, however, your configuration settings will be reset to default.';
@@ -418,6 +422,8 @@ $L['ZNC_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">ZN
 $L['ZNC'] = 'ZNC is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels.';
 
 //#3.2.2 - toggles & tooltips
+$L['APP_OPTIONS'] = 'Alkalmazásbeállítások';
+$L['NGINX_OPTIONS'] = 'NGinx beállítások';
 $L['CARD_VIEW'] = 'Kártya nézet';
 $L['LIST_VIEW'] = 'Lista nézet';
 $L['CLI'] = 'Web Console Only';
@@ -553,6 +559,7 @@ $L['THERE_ARE_AW'] = 'Vannak ilyenek';
 $L['THERE_ARE_CURRENTLY'] = 'Jelenleg vannak';
 $L['USERS_AND'] = 'felhasználók és';
 $L['USERS_LAST_VISIT'] = 'új felhasználók regisztráltak az utolsó látogatása óta';
+$L['CLEAR'] = 'egyértelmű';
 
 
 ////////////////////////////////////////
@@ -882,6 +889,7 @@ $L['USER_LOGS'] = 'Felhasználói naplók';
 $L['DATE_TIME'] = 'Dátum/Idő';
 $L['EVENT'] = 'Esemény';
 $L['LOGS_SUMMARY'] = 'A naplók összegzése';
+$L['COMMAND'] = 'Parancs';
 
 //#4.4.4 - ABOUT / QUICKTIPS
 $L['ABOUT'] = 'About';
@@ -953,6 +961,7 @@ $L['SYS_MEM_USAGE'] = 'System Memory Usage';
 $L['CPU_FREQ'] = 'Current CPU Frequency';
 $L['CPU_LOAD'] = 'CPU Load';
 $L['CPU_USAGE'] = 'CPU Usage';
+$L['RAM_USAGE'] = 'RAM használat';
 $L['BW_UPLOAD'] = 'Bandwidth Upload';
 $L['BW_DOWNLOAD'] = 'Bandwidth Download';
 $L['SYS_UPLOAD'] = 'Upload';

@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /********************************************************
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : June 29, 2022        *
+ * Ready for QuickBox Pro v3.0.0 : July 15, 2022        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -141,7 +141,7 @@ $L['AUTO_DISABLE'] = 'Desactivar las actualizaciones automáticas';
 $L['AUTO_ENABLE'] = 'Habilitar actualizaciones automáticas';
 $L['BACK'] = 'Atrás';
 $L['BAN_USER'] = 'Prohibir usuario';
-$L['CANCEL'] = 'Cancelar';
+$L['CANCEL'] = 'CanCLEAR';
 $L['CLEAN_LOG'] = 'Limpiar registro de actualización';
 $L['CLEAN_RCLOG'] = 'Limpie el registro de carga de Rclone';
 $L['CLICK_ME'] = 'Haz click aquí';
@@ -322,7 +322,7 @@ $L['FLARESOLVERR'] = 'FlareSolverr es un servidor proxy para evitar la protecci�
 $L['FLEXGET_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">FlexGet</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">FlexGet</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['FLEXGET'] = 'FlexGet es una herramienta de automatización multipropósito para todos sus medios. Soporte para torrents, nzbs, podcasts, comics, TV, películas, RSS, HTML, CSV, y más.';
 $L['FLOOD_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Flood</span> de tu sistema.<br/><br/>Esto eliminará por completo todas las configuraciones y carpetas compartidas ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Flood</span> en cualquier momento, sin embargo, la ruta de almacenamiento y la configuración de las carpetas vinculadas se restablecerán a los valores predeterminados.';
-$L['FLOOD'] = 'Flood es una interfaz web para rtorrent. Implementa un servidor Node.js para comunicarse con la API de  rTorrent, almacenar datos históricos y servir a la interfaz web.';
+$L['FLOOD'] = 'Flood es un servicio de monitoreo para varios clientes de torrent. Es un servicio de Node.js que se comunica con su cliente de torrent favorito y ofrece una interfaz de usuario web decente para la administración. La organización <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> alberga proyectos relacionados.';
 $L['HEADPHONES_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Headphones</span> de tu sistema.<br/><br/>Esto eliminará por completo todas las configuraciones y carpetas compartidas ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Headphones</span> en cualquier momento, sin embargo, la ruta de almacenamiento y la configuración de las carpetas vinculadas se restablecerán a los valores predeterminados.';
 $L['HEADPHONES'] = 'Headphones es un gestor de descargas automáticas de música para NZB y Torrent, escrito en Python. Es compatible con SABnzbd, NZBget, Transmission, µTorrent, Deluge y Blackhole.';
 $L['JACKETT_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Jackett</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Jackett</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
@@ -373,6 +373,8 @@ $L['QUOTA_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea
 $L['QUOTAS'] = 'Esta característica de Linux le permite al administrador del sistema asignar una cantidad máxima de espacio en disco que un usuario o grupo puede usar.';
 $L['RADARR_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Radarr</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Radarr</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['RADARR'] = 'Radarr es una aplicación basada en Sonarr, modificada para descargar automáticamente películas a través de Usenet y BitTorrent.<br>El proyecto se inspiró en otros gestores de descargas de películas de Usenet / BitTorrent como CouchPotato.';
+$L['RADARR4K_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Radarr4K</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Radarr4K</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
+$L['RADARR4K'] = 'Radarr4K es un clon independiente de Radarr para los perfiles 4K UHD. Es un medio para manejar múltiples instancias de Radarr, manteniendo el contenido UHD separado del contenido general.';
 $L['RAPIDLEECH_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Rapidleech</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Rapidleech</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['RAPIDLEECH'] = 'Rapid Leech es un script gratuito de descargas que puede ser utilizado en varios sitios populares como uploaded.net, Rapidshare.com y más de otros 120.';
 $L['RCLONE_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Rclone</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Rclone</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
@@ -391,8 +393,10 @@ $L['SICKCHILL_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#0
 $L['SICKCHILL'] = 'Video File Manager para programas de televisión, revisa los nuevos episodios de tus programas favoritos y, cuando se publican, hace su magia.';
 $L['SICKGEAR_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">SickGear</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">SickGear</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['SICKGEAR'] = 'SickGear es la evolución de Sick-Beard. Automatiza el disfrute de tu TV con innovación, estabilidad y confiabilidad.';
-$L['SONARR_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Sonarr</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Sonarr-NzbDrone</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
+$L['SONARR_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Sonarr</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Sonarr</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['SONARR'] = 'Sonarr es una herramienta de gestión de series de televisión que funcionará tanto con torrents como con usenet.';
+$L['SONARR4K_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Sonarr4K</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Sonarr4K</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
+$L['SONARR4K'] = 'Sonarr4K es un clon independiente de Sonarr para los perfiles 4K UHD. Es un medio para manejar múltiples instancias de Sonarr, manteniendo el contenido UHD separado del contenido general.';
 $L['SUBSONIC_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Subsonic</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Subsonic</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['SUBSONIC'] = 'Subsonic es un servidor de medios de comunicación libre, de código abierto, basado en web. Está escrito en Java, se puede ejecutar en cualquier sistema operativo que tenga soporte de máquina virtual Java, admite simultáneamente múltiples clientes streaming y es compatible con cualquier medio streamable, es decir, que pueda transmitir (incluyendo MP3, AAC y Ogg).';
 $L['SYNCTHING_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Syncthing</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Syncthing</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
@@ -417,6 +421,8 @@ $L['ZNC_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2"
 $L['ZNC'] = 'ZNC es un "IRC bouncer" o BNC. Puede separar al cliente del servidor IRC real, y también de los canales seleccionados.';
 
 //#3.2.2 - toggles & tooltips
+$L['APP_OPTIONS'] = 'Opciones de la aplicación';
+$L['NGINX_OPTIONS'] = 'Opciones de NGinx';
 $L['CARD_VIEW'] = 'Vista de la tarjeta';
 $L['LIST_VIEW'] = 'Vista de la lista';
 $L['CLI'] = 'Solo Consola Web';
@@ -553,6 +559,7 @@ $L['THERE_ARE_AW'] = 'Hay';
 $L['THERE_ARE_CURRENTLY'] = 'Hay actualmente';
 $L['USERS_AND'] = 'usuarios y';
 $L['USERS_LAST_VISIT'] = 'nuevos usuarios se han registrado desde su última visita';
+$L['CLEAR'] = 'clara';
 
 
 ////////////////////////////////////////
@@ -882,6 +889,7 @@ $L['USER_LOGS'] = 'Registros de usuario';
 $L['DATE_TIME'] = 'Fecha/Hora';
 $L['EVENT'] = 'Evento';
 $L['LOGS_SUMMARY'] = 'Resumen de registros';
+$L['COMMAND'] = 'Comando';
 
 //#4.4.4 - ABOUT / QUICKTIPS
 $L['ABOUT'] = 'Acerca de';
@@ -953,6 +961,7 @@ $L['SYS_MEM_USAGE'] = 'Uso de la memoria del sistema';
 $L['CPU_FREQ'] = 'Frecuencia de CPU actual';
 $L['CPU_LOAD'] = 'Carga de CPU';
 $L['CPU_USAGE'] = 'Uso de CPU';
+$L['RAM_USAGE'] = 'Uso de RAM';
 $L['BW_UPLOAD'] = 'Carga de ancho de banda';
 $L['BW_DOWNLOAD'] = 'Descarga de ancho de banda';
 $L['SYS_UPLOAD'] = 'Subir';

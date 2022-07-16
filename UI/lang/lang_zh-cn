@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /********************************************************
  *                  Simplified chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : June 29, 2022        *
+ * Ready for QuickBox Pro v3.0.0 : July 15, 2022        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -321,7 +321,7 @@ $L['FLARESOLVERR'] = 'FlareSolverr 是绕过 Cloudflare 保护的代理服务器
 $L['FLEXGET_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flexget</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flexget</span>, 但是, 您的设置将被重置为默认值.';
 $L['FLEXGET'] = 'FlexGet 是一款适用于所有媒体的多功能自动化工具. 它支持 torrents, nzbs, podcasts, comics, TV, movies, RSS, HTML, CSV, 等形式.';
 $L['FLOOD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flood</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flood</span>, 但是, 您的设置将被重置为默认值.';
-$L['FLOOD'] = 'Flood 是 rtorrent 的另一个 Web 界面. 它使用 Node.js 服务与 rTorrent API 交互, 存储数据, 并且提供 Web UI.';
+$L['FLOOD'] = 'Flood 是针对各种洪流客户端的监控服务. 它是一个 Node.js 服务, 可以与您最喜欢的 torrent 客户端进行通信, 并为管理提供一个不错的 Web UI. <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> 组织托管相关项目.';
 $L['HEADPHONES_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Headphones</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['HEADPHONES'] = 'Headphones 是用 Python 编写的 NZB 和 Torrent 的自动音乐下载器. 它支持 SABnzbd, NZBget, Transmission, μTorrent, Deluge 和 Blackhole.';
 $L['JACKETT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jackett</span>, 但是, 您的设置将被重置为默认值.';
@@ -372,6 +372,8 @@ $L['QUOTA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Qu
 $L['QUOTAS'] = 'Linux 的这一特性允许系统管理员分配用户或用户组组可以使用的最大磁盘空间.';
 $L['RADARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['RADARR'] = 'Radarr 是 Sonarr 的一个独立分支, 通过 Usenet 和 BitTorrent 自动下载电影.<br>该项目的灵感来自其他的 Usenet/BitTorrent 电影下载器, 例如 CouchPotato.';
+$L['RADARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr4K</span>, 但是, 您的设置将被重置为默认值.';
+$L['RADARR4K'] = 'Radarr4K 是 4K UHD 配置文件的独立 Radarr 克隆. 这是一种处理多个 Radarr 实例的方法, 同时将 UHD 内容与一般内容分开.';
 $L['RAPIDLEECH_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rapidleech</span>, 但是, 您的设置将被重置为默认值.';
 $L['RAPIDLEECH'] = 'Rapid Leech 是一个免费的服务器转移脚本, 可用于各种流行的上传/下载站点, 例如 uploaded.net, Rapidshare.com 和 120 多个其他站点.';
 $L['RCLONE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rclone</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
@@ -390,8 +392,10 @@ $L['SICKCHILL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2
 $L['SICKCHILL'] = '电视节目的视频文件管理器, 它可以帮助你及时追剧.';
 $L['SICKGEAR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickGear</span>, 但是, 您的设置将被重置为默认值.';
 $L['SICKGEAR'] = 'SickGear 是 Sick-Beard 的进化版. 凭借创新, 久经考验的稳定性和可靠性实现享受电视的自动化.';
-$L['SONARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr-NzbDrone</span>, 但是, 您的设置将被重置为默认值.';
+$L['SONARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['SONARR'] = 'Sonarr 是一个电视连续剧管理工具, 可以同时使用 Torrents 和 Usenet .';
+$L['SONARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr4K</span>, 但是, 您的设置将被重置为默认值.';
+$L['SONARR4K'] = 'Sonarr4K 是 4K UHD 配置文件的独立 Sonarr 克隆. 这是一种处理多个 Sonarr 实例的方法, 同时将 UHD 内容与一般内容分开.';
 $L['SUBSONIC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Subsonic</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Subsonic</span>, 但是, 您的设置将被重置为默认值.';
 $L['SUBSONIC'] = 'Subsonic 是一个基于网络的媒体服务器. 它是用 Java 编写的, 所以它可以在任何支持 Java 的操作系统上运行. Subsonic 支持同时向多个客户端传输流媒体, 并支持任何流媒体 (包括 MP3, AAC 和 Ogg).';
 $L['SYNCTHING_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Syncthing</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Syncthing</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
@@ -416,6 +420,8 @@ $L['ZNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ZNC<
 $L['ZNC'] = 'ZNC 是一个 IRC 网络辅助软件. 它可以将客户端从实际的 IRC 服务器以及选定的频道中分离出来.';
 
 //#3.2.2 - toggles & tooltips
+$L['APP_OPTIONS'] = '应用选项';
+$L['NGINX_OPTIONS'] = 'NGINX 选项';
 $L['CARD_VIEW'] = '卡片视图';
 $L['LIST_VIEW'] = '列表查看';
 $L['CLI'] = '仅限 Web 控制台';
@@ -552,6 +558,7 @@ $L['THERE_ARE_AW'] = '有';
 $L['THERE_ARE_CURRENTLY'] = '目前有';
 $L['USERS_AND'] = '用户和';
 $L['USERS_LAST_VISIT'] = '自你上次访问以来, 已有新用户注册';
+$L['CLEAR'] = '清除';
 
 
 ////////////////////////////////////////
@@ -881,6 +888,7 @@ $L['USER_LOGS'] = '用户日志';
 $L['DATE_TIME'] = '日期/时间';
 $L['EVENT'] = '事件';
 $L['LOGS_SUMMARY'] = '日志摘要';
+$L['COMMAND'] = '命令';
 
 //#4.4.4 - ABOUT / QUICKTIPS
 $L['ABOUT'] = '关于';
@@ -951,6 +959,7 @@ $L['SYS_MEM_USAGE'] = '系统内存使用率';
 $L['CPU_FREQ'] = '当前 CPU 频率';
 $L['CPU_LOAD'] = 'CPU 负载';
 $L['CPU_USAGE'] = 'CPU 使用率';
+$L['RAM_USAGE'] = 'RAM 使用率';
 $L['BW_UPLOAD'] = '带宽上传';
 $L['BW_DOWNLOAD'] = '带宽下载';
 $L['SYS_UPLOAD'] = '上载';
