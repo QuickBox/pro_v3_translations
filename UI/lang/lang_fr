@@ -1,6 +1,7 @@
 <?php
+
 $version = $configs->getConfig('Version');
-/********************************************************
+/*
  *                   Français	  	                    *
  *                                                      *
  * Ready for QuickBox Pro v3.0.0 : July 15, 2022        *
@@ -554,7 +555,7 @@ $L['THERE_ARE_AW'] = 'Il y a';
 $L['THERE_ARE_CURRENTLY'] = 'Il y a actuellement';
 $L['USERS_AND'] = 'utilisateurs et';
 $L['USERS_LAST_VISIT'] = 'nouveaux utilisateurs inscrits depuis votre dernière visite';
-$L['CLEAR'] = 'nette';
+$L['CLEAR'] = 'nettoyer';
 
 // //////////////////////////////////////
 //          #4 PAGES
@@ -954,7 +955,7 @@ $L['SYS_MEM_USAGE'] = 'Utilisation de la mémoire système';
 $L['CPU_FREQ'] = 'Fréquence actuelle du processeur';
 $L['CPU_LOAD'] = 'Charge CPU';
 $L['CPU_USAGE'] = 'Utilisation du processeur';
-$L['RAM_USAGE'] = 'Utilisation du RAM';
+$L['RAM_USAGE'] = 'Utilisation de la RAM';
 $L['BW_UPLOAD'] = 'Téléversement';
 $L['BW_DOWNLOAD'] = 'Téléchargement';
 $L['SYS_UPLOAD'] = 'Téléverser';
