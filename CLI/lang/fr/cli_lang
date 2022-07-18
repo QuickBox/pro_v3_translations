@@ -355,14 +355,14 @@ quickbox::lang::software::info::note() {
 quickbox::lang::software::access() {
 	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${software_name}
-${software_title} installé sur le port: ${software_web_port} ."
+${software_title} installé sur le port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::mu::access() {
 	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${username}/${software_name}
-${software_title} installé sur le port: ${software_web_port} ."
+${software_title} installé sur le port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -372,13 +372,13 @@ ${quickbox_web_root}${username}/${software_name}
 Nom d'utilisateur: ${username}
 Mot de passe: admin123
 Emplacement de la base de données: /home/${username}/.config/calibre/library
-${software_title} installé sur le port: ${software_web_port} ."
+${software_title} installé sur le port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::rtorrent::access() {
-	declare text="> Version de rTorrent: ${rtorrent_version} .
-> Version de libtorrent: ${libtorrent_version} .
+	declare text="> Version de rTorrent: ${rtorrent_version}
+> Version de libtorrent: ${libtorrent_version}
 > Chemin du socket: /var/run/${admin_name}/.rtorrent.sock"
 	quickbox::dashboard::log "${text}"
 }
@@ -393,7 +393,7 @@ ${quickbox_web_root}${software_name}
 quickbox::lang::software::admin::access() {
 	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${admin_name}/${software_name}
-${software_title} installé sur le port: ${software_web_port} ."
+${software_title} installé sur le port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -440,7 +440,7 @@ quickbox::lang::software::flaresolverr::access() {
 	curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
 	if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
 		declare text="Status: OK. FlareSolverr est prêt!
-${software_title} installé sur le port: ${software_web_port} ."
+${software_title} installé sur le port: ${software_web_port}"
 		quickbox::dashboard::log "${text}."
 	else
 		declare text="On dirait que quelque chose a mal tourné."
@@ -456,7 +456,7 @@ quickbox::lang::software::plexclaim() {
 quickbox::lang::software::plex::access() {
 	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}web/
-${software_title} installé sur le port: ${software_web_port} .
+${software_title} installé sur le port: ${software_web_port}
 
 > Si vous ne l'avez pas fait et/ou si vous ne savez
 réclamer votre serveur Plex veuillez suivre ce guide:
@@ -542,7 +542,7 @@ quickbox::lang::software::plexupdate_current() {
 quickbox::lang::software::pyload::access() {
 	declare text="accéder à ${software_title} à :
 ${quickbox_web_root}${username}/${software_name}/
-${titre_logiciel} installé sur le port : ${software_web_port} .
+${titre_logiciel} installé sur le port : ${software_web_port}
 
 > Nom d'utilisateur = ${username}
 > Mot de passe = pyload
@@ -554,7 +554,7 @@ Votre mot de passe peut être modifié dans l'onglet [Utilisateurs] de pyLoad."
 
 quickbox::lang::software::quassel::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-	declare text="${software_title} installé sur le port : ${software_daemon_port} .
+	declare text="${software_title} installé sur le port : ${software_daemon_port}
 
 > Veuillez installer Quassel-Client sur votre ordinateur personnel et 
 connectez-vous au nouveau ${software_title}. Core 
