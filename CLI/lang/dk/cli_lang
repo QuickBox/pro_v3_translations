@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.43
+# File Version: 1.0.44
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -305,10 +305,12 @@ quickbox::lang::software::info::example() {
 	if [[ ${proces} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u bruger -d somedomain.com ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u bruger -d somedomain.com ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
@@ -328,12 +330,14 @@ quickbox::lang::software::info::note() {
 	if [[ ${proces} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name} til bruger"
 		[[ -n ${dmn} ]] && declare text="installerer et ssl-certifikat, der skal bruges til dashboardet på det angivne domæne"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="installer den seneste ${branch} version af ${software_name} for bruger og SSL-certifikat for et domæne"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installerer et ssl-certifikat for det angivne domæne"
 		[[ -n ${version} ]] && declare text="installerer seneste ${version[*]} version af ${software_name}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} for bruger"
 		[[ -n ${dmn} ]] && declare text="geninstallerer ssl-certifikat brugt til dashboardet på det angivne domæne"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="geninstallerer den seneste ${branch} version af ${software_name} for bruger og stadier SSL-certifikat for domæne"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="geninstallerer et ssl-certifikat for det angivne domæne"
 		[[ -n ${version} ]] && declare text="geninstallerer seneste ${version[*]} version af ${software_name}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
