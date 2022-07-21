@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.44
+# File Version: 1.0.45
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -303,23 +303,29 @@ quickbox::lang::username::specified() {
 
 quickbox::lang::software::info::example() {
 	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u utilisateur -d somedomain.com ${option[*]}"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d quelquesdomaine.com ${option[*]}"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u utilisateur -d quelquesdomaine.com ${option[*]}"
+		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d quelques.emby.domaine ${option[*]}"
+		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d quelques.overseerr.domaine ${option[*]}"
+		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d quelques.plex.domaine ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u utilisateur -d somedomain.com ${option[*]}"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d quelquesdomaine.com ${option[*]}"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u utilisateur -d quelquesdomaine.com ${option[*]}"
+		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d quelques.emby.domaine ${option[*]}"
+		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d quelques.overseerr.domaine ${option[*]}"
+		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d quelques.plex.domaine ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d quelquesdomaine.com ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}."
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}."
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}."
+		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u utilisateur ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d quelquesdomaine.com ${option[*]}"
+		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
@@ -328,30 +334,36 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="Installe la dernière version ${branch} de ${software_name} pour l'utilisateur."
-		[[ -n ${dmn} ]] && declare text="Installe un certificat ssl à utiliser pour le tableau de bord sur le domaine spécifié."
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="installe la dernière version ${branch} de ${software_name} pour l'utilisateur et met en place le certificat SSL pour le domaine"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="Installe un certificat ssl pour le domaine spécifié."
-		[[ -n ${version} ]] && declare text="Installe la dernière version ${version[*]} de ${software_name}."
-		[[ -n ${branch} && -z ${usr} ]] && declare text="Installe la dernière version ${branch} de ${software_name}."
+		[[ -n ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name} pour l'utilisateur"
+		[[ -n ${dmn} ]] && declare text="installe un certificat ssl à utiliser pour le tableau de bord sur le domaine spécifié"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="installe la dernière version ${branch} de ${software_name} pour l'utilisateur et met en place le certificat ssl pour le domaine"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installe un certificat ssl pour le domaine spécifié"
+		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="installe un certificat ssl pour le domaine emby spécifié"
+		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="installe un certificat ssl pour le domaine overseerr spécifié"
+		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="installe un certificat ssl pour le domaine plex spécifié"
+		[[ -n ${version} ]] && declare text="installe la dernière version ${version[*]} de ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name}"
 	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="Réinstalle la dernière version ${branch} de ${software_name} pour l'utilisateur."
-		[[ -n ${dmn} ]] && declare text="Réinstalle le certificat ssl utilisé pour le tableau de bord sur le domaine spécifié."
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="réinstalle la dernière version ${branch} de ${software_name} pour l'utilisateur et met en place le certificat SSL pour le domaine"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="Réinstalle un certificat ssl pour le domaine spécifié."
-		[[ -n ${version} ]] && declare text="Réinstalle la dernière version ${version[*]} de ${software_name}."
-		[[ -n ${branch} && -z ${usr} ]] && declare text="Réinstalle la dernière version ${branch} de ${software_name}."
+		[[ -n ${usr} ]] && declare text="réinstalle la dernière version ${branch} de ${software_name} pour l'utilisateur"
+		[[ -n ${dmn} ]] && declare text="réinstalle le certificat ssl utilisé pour le tableau de bord sur le domaine spécifié"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="réinstalle la dernière version ${branch} de ${software_name} pour l'utilisateur et met en place le certificat ssl pour le domaine"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="réinstalle un certificat ssl pour le domaine spécifié"
+		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="réinstalle un certificat ssl pour le domaine emby spécifié"
+		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="réinstalle un certificat ssl pour le domaine overseerr spécifié"
+		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="réinstalle un certificat ssl pour le domaine plex spécifié"
+		[[ -n ${version} ]] && declare text="réinstalle la dernière version ${version[*]} de ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name}"
 	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="Supprime ${software_name} pour l'utilisateur."
-		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="Supprime le certificat ssl du domaine spécifié."
-		[[ -n ${version} && -z ${dmn} ]] && declare text="Supprime ${software_name}."
-		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="Supprime ${software_name}."
+		[[ -n ${usr} ]] && declare text="supprime ${software_name} pour l'utilisateur"
+		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="supprime le certificat ssl du domaine spécifié"
+		[[ -n ${version} && -z ${dmn} ]] && declare text="supprime ${software_name}"
+		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="supprime ${software_name}"
 	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="Met à jour ${software_name} vers la dernière version de ${branch} pour l'utilisateur."
-		[[ -n ${dmn} ]] && declare text="Met à jour le certificat ssl pour le domaine spécifié, à utiliser avec le tableau de bord."
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="Met à jour le certificat ssl pour le domaine spécifié."
-		[[ -n ${version} ]] && declare text="Met à jour ${software_name} vers la dernière version de ${version}."
-		[[ -n ${branch} && -z ${usr} ]] && declare text="Met à jour vers la dernière version ${branch} de ${software_name}."
+		[[ -n ${usr} ]] && declare text="met à jour ${software_name} vers la dernière version de ${branch} pour l'utilisateur"
+		[[ -n ${dmn} ]] && declare text="met à jour le certificat ssl pour le domaine spécifié, à utiliser avec le tableau de bord"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="met à jour le certificat ssl pour le domaine spécifié"
+		[[ -n ${version} ]] && declare text="met à jour ${software_name} vers la dernière version de ${version}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="installe la dernière version ${branch} de ${software_name}"
 	fi
 	quickbox::dashboard::log "${text}"
 }

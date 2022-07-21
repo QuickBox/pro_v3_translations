@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.48
+# File Version: 1.0.50
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -304,21 +304,27 @@ quickbox::lang::username::specified() {
 quickbox::lang::software::info::example() {
 	if [[ ${process} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuario -d somedomain.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algunodominio.com ${option[*]}"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u user -d algunodominio.com ${option[*]}"
+		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d alguno.emby.dominio ${option[*]}"
+		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d alguno.overseerr.dominio ${option[*]}"
+		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d alguno.plex.dominio ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuario -d somedomain.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algunodominio.com ${option[*]}"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u user -d algunodominio.com ${option[*]}"
+		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d alguno.emby.dominio ${option[*]}"
+		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d alguno.overseerr.dominio ${option[*]}"
+		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d alguno.plex.dominio ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algunodominio.com ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "update" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d somedomain.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algunodominio.com ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	fi
 	quickbox::dashboard::log "${text}"
@@ -330,26 +336,32 @@ quickbox::lang::software::info::note() {
 	if [[ ${process} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario"
 		[[ -n ${dmn} ]] && declare text="instala un certificado ssl que se usará para el tablero en el dominio especificado"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado SSL para el dominio"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala un certificado SSL para el dominio especificado"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado ssl para el dominio"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala un certificado ssl para el dominio especificado"
+		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio emby especificado"
+		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio de supervisor especificado"
+		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio plex especificado"
 		[[ -n ${version} ]] && declare text="instala la última versión de ${version[*]} de ${software_name}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="instala la última ${branch} versión de ${software_name}"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario"
-		[[ -n ${dmn} ]] && declare text="reinstala el certificado SSL utilizado para el tablero en el dominio especificado"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado SSL para el dominio"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala un certificado SSL para el dominio especificado"
+		[[ -n ${dmn} ]] && declare text="reinstala el certificado ssl utilizado para el tablero en el dominio especificado"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado ssl para el dominio"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala un certificado ssl para el dominio especificado"
+		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio emby especificado"
+		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio de supervisor especificado"
+		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio plex especificado"
 		[[ -n ${version} ]] && declare text="reinstala la última versión de ${version[*]} de ${software_name}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="instala la última ${branch} versión de ${software_name}"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="elimina ${software_name} para el usuario"
-		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="elimina el certificado SSL del dominio especificado"
+		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="elimina el certificado ssl del dominio especificado"
 		[[ -n ${version} && -z ${dmn} ]] && declare text="elimina ${software_name}"
 		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="elimina ${software_name}"
 	elif [[ ${process} == "update" ]]; then
 		[[ -n ${usr} ]] && declare text="actualiza ${software_name} a la última versión de ${branch} para el usuario"
-		[[ -n ${dmn} ]] && declare text="actualiza el certificado SSL para el dominio especificado, para usar con el tablero"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="actualiza el certificado SSL para el dominio especificado"
+		[[ -n ${dmn} ]] && declare text="actualiza el certificado ssl para el dominio especificado, para usar con el tablero"
+		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="actualiza el certificado ssl para el dominio especificado"
 		[[ -n ${version} ]] && declare text="actualiza ${software_name} a la última versión de ${version}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="instala la última ${branch} versión de ${software_name}"
 	fi
