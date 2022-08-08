@@ -194,6 +194,7 @@ $L['RCLONE_LOGS'] = 'view logs';
 $L['RCLONE_UPLOAD'] = 'upload';
 $L['REFRESH'] = 'Refresh';
 $L['REGISTER'] = 'Register';
+$L['REINSTALL'] = 'Újratelepítés';
 $L['RELOAD_CONF'] = 'Reload Configurations';
 $L['RELOAD'] = 'Reload';
 $L['REMOVE_BANNED_IP'] = 'Remove Banned IP Addresses';
@@ -216,6 +217,7 @@ $L['UNBAN_USER'] = 'Unban User';
 $L['UNINSTALLED'] = 'Uninstalled';
 $L['UNINSTALLING'] = 'Uninstalling';
 $L['UP'] = 'Up';
+$L['UPDATE'] = 'Frissítés';
 $L['UPDATE_TOOLTIP'] = 'Click to view more information';
 $L['UPDATE_VERSION'] = 'Update Version';
 $L['USER_ACTIONS'] = 'User Actions';
@@ -249,6 +251,7 @@ $L['HERE'] = 'here';
 $L['HOME'] = 'Home';
 $L['IDLE_L'] = 'idle';
 $L['IDLE'] = 'Idle';
+$L['IS_AVAILABLE'] = 'elérhető.';
 $L['NANGINX'] = 'Running on Nginx';
 $L['NEED_HELP'] = 'Need Help ?';
 $L['NGINX_CONF_OPTIONS'] = 'Nginx Conf Options';
@@ -449,7 +452,7 @@ $L['QBIT_TOOLTIP'] = 'It looks like Deluge 2 is currently installed. qBittorrent
 $L['QUOTAS_FSTAB'] = 'Edit your fstab';
 $L['QUOTAS_HELP'] = 'For more about how to install quotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>please read this F.A.Q first</strong></a>.';
 $L['QUOTAS_TOOLTIP'] = 'Add the following instead of <code class="language-bash">defaults</code> on your main mount point to continue';
-$L['RCLONE_ADMIN_TOOLTIP'] = 'Access this feature from ssh by typing: \'qb install rclone USER [encrypted]\'';
+$L['RCLONE_ADMIN_TOOLTIP'] = 'Access this feature from ssh by typing: \'qb install rclone -u USER [-o encrypted]\'';
 $L['RCLONE_USER_TOOLTIP'] = 'Please contact an System Administrator to have this installed.';
 $L['REMOVE_MEDUSA_FIRST'] = 'Remove Medusa first to install this software.';
 $L['REMOVE_SICKCHILL_FIRST'] = 'Remove SickChill first to install this software.';
@@ -462,8 +465,8 @@ $L['ZNC_TOOLTIP'] = 'Access this feature from ssh by typing: \'qb install znc -u
 //#3.2.3 - service control
 $L['ACTIVE_STATUS'] = 'active (running)';
 $L['APP_KEY'] = 'API Key';
-$L['APP_PORT'] = 'App Port';
-$L['APP_STATUS'] = 'App Status';
+$L['APP_PORT'] = 'Port';
+$L['APP_STATUS'] = 'Állapot';
 $L['INACTIVE_STATUS'] = 'inactive (dead)';
 
 //#3.2.4 - rclone specific toggles
@@ -849,6 +852,11 @@ $L['ADMINISTRATORS'] = 'Administrators';
 $L['ASSIGN_LEVEL'] = 'Assign Group Level :';
 $L['CLICK_HERE'] = 'Click Here...';
 $L['DELETE_GROUP'] = 'Delete Group';
+$L['DELETED'] = 'Törölve';
+$L['GROUP_DELETED'] = 'Ez a csoport eltávolítva, a felhasználói csoportok visszaállítva.';
+$L['GROUP_STAY'] = 'A csoport megmarad :)';
+$L['GROUP_YES'] = 'Igen, biztos vagyok benne!';
+$L['GROUP_NO'] = 'Nem, mégsem!';
 $L['EDIT_ADD_USER'] = 'Add User :';
 $L['EDIT_GROUP_LEVEL'] = 'Group Level :';
 $L['EDIT_GROUP_NAME'] = 'Group Name :';
@@ -858,6 +866,7 @@ $L['LEVEL_INFO'] = 'Enter a number between 2 - 256';
 $L['NEW_GROUP_NAME'] = 'New Group Name :';
 $L['NUMBER_MEMBERS'] = '# of Members';
 $L['USER_GROUPS_INFO'] = 'Create, view and edit user groups. Assign users to user groups.';
+$L['SOFT_GROUP_ASGMNT'] = 'Szoftvercsoport hozzárendelése';
 
 
 //#4.4 - SYSTEM 

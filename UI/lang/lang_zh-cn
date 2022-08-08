@@ -1,9 +1,9 @@
 <?php
 $version = $configs->getConfig('Version');
-/********************************************************
- *                  Simplified chinese                  *
+/*
+ *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : July 15, 2022        *
+ * Ready for QuickBox Pro v3.0.0 : August 4, 2022       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -22,10 +22,12 @@ $version = $configs->getConfig('Version');
  *    Tables Headers : #3.1                             *
  *       app management center : #3.1.1                 *
  *    Package Management Center : #3.2                  *
- *       app info & uninstall : #3.2.1                  *
- *       toggles & tooltips : #3.2.2                    *
- *       service control : #3.2.3                       *
- *       rclone specific toggles : #3.2.4               *
+ *       app info : #3.2.1                              *
+ *       app uninstall : #3.2.2                         *
+ *       app reinstall : #3.2.3                         *
+ *       toggles & tooltips : #3.2.4                    *
+ *       service control : #3.2.5                       *
+ *       rclone specific toggles : #3.2.6               *
  *    Dashboard Widgets : #3.3                          *
  *       disk status widget : #3.3.1                    *
  *       system index v1 - bandwidth data : #3.3.2      *
@@ -61,7 +63,7 @@ $version = $configs->getConfig('Version');
  *       changelogs / update : #4.4.5                   *
  *       system dashboard : #4.4.6                      *
  *    Error Pages : #4.5                                *
- *******************************************************/
+ */
 
 ///////////////////////////////////////
 //          #1 NAVIGATION
@@ -193,6 +195,7 @@ $L['RCLONE_LOGS'] = '查看日志';
 $L['RCLONE_UPLOAD'] = '上载';
 $L['REFRESH'] = '刷新';
 $L['REGISTER'] = '注册';
+$L['REINSTALL'] = '重新安装';
 $L['RELOAD_CONF'] = '重载配置';
 $L['RELOAD'] = '重载';
 $L['REMOVE_BANNED_IP'] = '移除已阻止的 IP 地址';
@@ -214,6 +217,7 @@ $L['UNBAN_USER'] = '解除禁令的用户';
 $L['UNINSTALLED'] = '已卸载';
 $L['UNINSTALLING'] = '卸载中';
 $L['UP'] = '上';
+$L['UPDATE'] = '更新';
 $L['UPDATE_TOOLTIP'] = '点击查看更多信息';
 $L['UPDATE_VERSION'] = '更新版本';
 $L['USER_ACTIONS'] = '用户行动';
@@ -247,6 +251,7 @@ $L['HERE'] = '此处';
 $L['HOME'] = '主页';
 $L['IDLE_L'] = '空闲';
 $L['IDLE'] = '空闲';
+$L['IS_AVAILABLE'] = '可用.';
 $L['NANGINX'] = '在Nginx上运行';
 $L['NEED_HELP'] = '需要帮助 ?';
 $L['NGINX_CONF_OPTIONS'] = 'Nginx Conf选项';
@@ -283,143 +288,217 @@ $L['CONFIGS'] = '配置';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
-//#3.2.1 - App info & uninstall
-$L['AIRSONIC_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Airsonic</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Airsonic</span>, 然而, 你的设置将被重置为默认.';
+//#3.2.1 - App info
 $L['AIRSONIC'] = 'Airsonic-Advanced是Airsonic分叉的一个更现代的实现, 有几个关键的性能和功能增强. 它增加并取代了Airsonic的一些功能. Airsonic是一个免费的、基于网络的媒体流媒体, 提供无处不在的音乐访问.';
-$L['AUTOBRR_UNINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea2">Autobrr</span>. <br/><br/>这将完全删除您的所有配置 和设置……这个动作是不可逆转的. <br/><br/>您可以随时重新安装<span style="color:#01cea2">Autobrr</span>, 但是您的设置将被重置为默认值. ';
 $L['AUTOBRR'] = 'Autobrr 是 autodl-irssi+rutorrent 插件的现代单一二进制替代品. Autobrr 监控 IRC 公告频道和 torznab RSS 提要, 以便在它们可用时立即获得发布, 具有良好的过滤和正则表达式支持.';
-$L['AUTODL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">AutoDL-iRSSi</span>, 但是, 您的设置将被重置为默认值.';
 $L['AUTODL'] = 'AutoDL-iRSSi 是一个 irssi 插件, 用于监视 IRC 发布频道并且可以根据用户定义的过滤器下载.';
-$L['AUTOSCAN_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Autoscan</span>, 然而, 你的设置将被重置为默认.';
 $L['AUTOSCAN'] = 'Autoscan取代了默认的Plex和Emby的行为, 用于在文件系统上采集文件变化. Autoscan与Sonarr, Radarr, Lidarr和Google Drive集成, 以接近实时的方式获取变化, 而不依赖文件系统.';
-$L['BAZARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Bazarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['BAZARR'] = 'Bazarr是Sonarr和Radarr的配套应用程序. 它根据您的要求管理和下载字幕. 您可以通过电视节目或电影定义喜好, Bazarr会为您做好一切.';
-$L['BBR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BBR</span>. <br/><br/>这将完全删除您的所有对内核的修改设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BBR</span>.';
 $L['BBR'] = 'BBR 是一个由 Google 提供的 Linux 内核的新型TCP拥塞控制算法, 它可以增加网络吞吐量并且降低连接';
-$L['BTSYNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BitTorrent Sync</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BitTorrent Sync</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['BTSYNC'] = 'BitTorrent 公司的 BitTorrent Sync 是一个专有的对等文件同步工具.';
-$L['CALIBRE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Calibre</span>. <br/><br/>这将完全删除您的所有配置文件...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Calibre</span> 但是, 您的设置将被重置为默认值.';
 $L['CALIBRE'] = 'Calibre 是一个跨平台的开源电子书套件. Calibre 可以将电子书整理进一个虚拟的库, 并且可以显示, 编辑, 转换这些电子书. 同时它也可以将这些电子书同步到电子阅读器中. 书籍编辑支持 EPUB 和 AZW3格式.';
-$L['COUCHPOTATO_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">CouchPotato</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">CouchPotato</span>, 但是, 您的设置将被重置为默认值.';
 $L['COUCHPOTATO'] = '通过 Usenet 或 Torrents 自动下载电影, 轻松和最好的质量.';
-$L['CSF_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Config Server Firewall (CSF)</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Config Server Firewall (CSF)</span>, 但是, 您的设置 (任何修改) 将被重置为默认值.';
 $L['CSF'] = 'ConfigServer 防火墙 (也称为 CSF) 是一种防火墙配置脚本, 为你的服务器提供更好的安全性, 同时为你提供易于使用的高级界面来管理防火墙设置.';
-$L['DELUGE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Deluge</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Deluge</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['DELUGE'] = 'Deluge 是一款轻量级的免费软件, 跨平台的BitTorrent客户端.';
-$L['DUPLICATI_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Duplicati</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Duplicati</span>, 但是, 你的存储路径和链接文件夹设置将被重置为默认值.';
 $L['DUPLICATI'] = 'Duplicati是一个免费, 开源的备份客户端, 可以安全地在云存储服务和远程文件服务器上存储加密, 增量, 压缩的备份. 它可以与Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV和<a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">更多</a>一起工作.';
-$L['EMBY_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Emby</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Emby</span>, 但是, 您的库设置将被重置为默认值.';
 $L['EMBY'] = 'Emby Server 是一个服务器软件包, 可以让消费者托管他们合法的多媒体 - 音乐, 视频和图片文件. Emby 客户端软件是一个应用程序, 你需要安装在移动设备和某些电视的机顶盒, 如Android电视.';
-$L['FAIL2BAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fail2Ban</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Fail2Ban</span>, 但是, 您的设置将被重置为默认值.';
 $L['FAIL2BAN'] = 'Fail2Ban 是一种入侵防御软件框架, 可以保护计算机和服务器免受暴力攻击的威胁.';
-$L['FILEBOT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FileBot</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">FileBot</span>, 但是, 您的设置将被重置为默认值.';
 $L['FILEBOT'] = 'FileBot 是一个组织重命名电影, 电视节目, 动漫文件并且可以抓取字幕和信息的终极工具, 它会智能地搞定一切';
-$L['FILEBROWSER_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">File Browser</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">File Browser</span>, 但是, 您的设置将被重置为默认值.';
 $L['FILEBROWSER'] = 'filebrowser 提供了一个指定目录中的文件管理界面, 可以用于上传, 删除, 预览, 重命名以及编辑. 它允许你创建多个用户, 每个用户可以拥有自己的目录.';
-$L['FLARESOLVERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FlareSolverr</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">FlareSolverr</span>, 但是, 您的设置将被重置为默认值.';
 $L['FLARESOLVERR'] = 'FlareSolverr 是绕过 Cloudflare 保护的代理服务器.';
-$L['FLEXGET_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flexget</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flexget</span>, 但是, 您的设置将被重置为默认值.';
 $L['FLEXGET'] = 'FlexGet 是一款适用于所有媒体的多功能自动化工具. 它支持 torrents, nzbs, podcasts, comics, TV, movies, RSS, HTML, CSV, 等形式.';
-$L['FLOOD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flood</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flood</span>, 但是, 您的设置将被重置为默认值.';
 $L['FLOOD'] = 'Flood 是针对各种洪流客户端的监控服务. 它是一个 Node.js 服务, 可以与您最喜欢的 torrent 客户端进行通信, 并为管理提供一个不错的 Web UI. <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> 组织托管相关项目.';
-$L['HEADPHONES_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Headphones</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['HEADPHONES'] = 'Headphones 是用 Python 编写的 NZB 和 Torrent 的自动音乐下载器. 它支持 SABnzbd, NZBget, Transmission, μTorrent, Deluge 和 Blackhole.';
-$L['JACKETT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jackett</span>, 但是, 您的设置将被重置为默认值.';
 $L['JACKETT'] = '对您最喜爱的 private trackers 的 API 支持.';
-$L['JELLYFIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jellyfin</span>, 但是, 您的设置将被重置为默认值.';
 $L['JELLYFIN'] = 'Jellyfin 是一个多媒体系统的自由软件, 它可以让您控制媒体的管理和流式传输.';
-$L['LAZYLIBRARIAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">LazyLibrarian</span>, 但是, 您的设置将被重置为默认值.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian是SickBeard, CouchPotato, 类似于耳机的应用程序, 用于电子书, 有声读物和杂志. 它结合使用<a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a>和（可选）<a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a>作为作者信息和书籍信息的来源.';
-$L['LETSENCRYPT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Let\'s Encrypt</span>, 但是, 您的设置将被重置为默认值.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt 是一个免费, 自动化的和开放的证书颁发机构 (CA), 由 ISRG (<a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group</a>) 运营.';
-$L['LIDARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Lidarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Lidarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['LIDARR'] = 'Lidarr 是 Sonarr的一个独立分支, 它通过 Usenet 和 BitTorrent 自动下载音乐. 该项目的灵感来自其他的 Usenet/BitTorrent 音乐下载器, 例如 Headphones.';
-$L['MEDUSA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Medusa</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Medusa</span>, 但是, 您的设置将被重置为默认值.';
 $L['MEDUSA'] = '电视节目的视频文件管理器, 用来观看你最喜爱的节目的新剧集. 允许手动搜索和其他专有功能, 请检查<a href="https://nullrefer.ir/?https://github.com/pymedusa/Medusa" rel="noopener nofollow" target="_blank"> Github </a>上的 Medusa.';
-$L['MYLAR3_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Mylar3</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Mylar3</span>, 但是, 您的设置将被重置为默认值.';
 $L['MYLAR3'] = 'Mylar是一个自动漫画 (cbr / cbz) 下载程序, 可与NZB和用python编写的torrent一起使用. 除了DDL外, 它还支持SABnzbd, NZBGET和许多torrent客户端.';
-$L['NETDATA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Netdata</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Netdata</span>, 但是, 您的设置将被重置为默认值.';
 $L['NETDATA'] = 'Netdata 分布式的, 实时的适用于应用与系统的性能与健康情况的监视器.';
-$L['NEXTCLOUD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NextCloud</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NextCloud</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['NEXTCLOUD'] = 'Nextcloud是一个开源, 自主托管的文件同步和共享通信应用平台. 访问和同步你的文件, 联系人, 日历和沟通和协作你的设备. 你可以完全掌控你的数据, 存放在哪里以及谁可以访问它!';
-$L['NOVNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">noVNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">noVNC</span>, 但是, 您的设置将被重置为默认值.';
 $L['NOVNC'] = 'noVNC不仅是一个 VNC 客户端 JavaScript 库, 也是一个利用该库构建的应用程序. noVNC 可以在任何的现代浏览器包括移动浏览器 (iOS and Android) 中运行.';
-$L['NZBGET_UNINSTALL'] = 'Y即将从系统中卸载 <span style="color:#01cea2">NZBGet</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBGet</span>, 但是, 您的设置将被重置为默认值.';
 $L['NZBGET'] = 'NZBGet 是一个二进制下载器, 它根据 nzb-files 中给出的信息从 Usenet 下载文件. NZBGet 是用 C ++ 编写的, 以其非凡的性能和效率而闻名.';
-$L['NZBHYDRA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra</span>, 但是, 您的设置将被重置为默认值.';
 $L['NZBHYDRA'] = 'NZBHydra 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
-$L['NZBHYDRA2_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra2</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra2</span>, 但是, 您的设置将被重置为默认值.';
 $L['NZBHYDRA2'] = 'NZBHydra2 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
-$L['OMBI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Ombi</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Ombi</span>, 但是, 您的库设置将被重置为默认值.';
 $L['OMBI'] = 'Ombi 为希望将内容添加到库的用户提供了一个美观且易于使用的界面, 它集成于 CouchPotato, SickChill 和 Sonarr.';
-$L['OVERSEERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Overseerr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Overseerr</span>, 但是, 您的设置将被重置为默认值.';
 $L['OVERSEERR'] = 'Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Plex!';
-$L['OVPN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">OpenVPN</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">OpenVPN</span>, 但是, 您的设置将被重置为默认值.';
 $L['OVPN'] = '基于 SSL/TLS 的 VPN.  支持 Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X和Windows 2000 / XP +.';
-$L['PHPMYADMIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">phpMyAdmin</span>. <br/><br/>这将完全删除您的所有配置文件和 phpMyAdmin 数据库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">phpMyAdmin</span>.';
 $L['PHPMYADMIN'] = 'phpMyAdmin 是一个使用 <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a> 编写的免费软件, 旨在通过网页处理 <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> 数据库的管理. phpMyAdmin 支持 MySQL 和 MariaDB 上的各种操作. 可以在用户界面执行常用操作 (管理数据库, 表, 列, 关系, 索引, 用户, 权限等), 同时你也可以直接执行各种 SQL 语句.';
-$L['PLEX_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Plex Media Server</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Plex Media Server</span>, 但是, 您的库设置将被重置为默认值.';
 $L['PLEX'] = 'Plex 可让你将内容传输到任何支持 Plex 的设备.';
-$L['PROWLARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Prowlarr</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Prowlarr</span>, 但是, 您的库设置将被重置为默认值.';
 $L['PROWLARR'] = 'Prowlarr 是建立在流行的 arr .net/reactjs 基础堆栈上的索引器管理器/代理, 可与您的各种 PVR 应用程序集成. Prowlarr 支持 Torrent Trackers 和 Usenet Indexers. 它与 Sonarr, Radarr, Lidarr 和 Readarr 无缝集成, 提供对索引器的完整管理, 无需每个应用程序的索引器设置.';
-$L['PYLOAD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">PyLoad</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">PyLoad</span>, 但是, 您的设置将被重置为默认值.';
 $L['PYLOAD'] = 'pyLoad 是用于 `Hoster` 网站, 视频网站和HTTP/FTP链接的下载管理器.  你可以在 <a href="https://nullrefer.ir/?https://github.com/pyload/pyload/wiki/Supported-Hoster" rel="noopener nofollow" target="_blank">此处</a> 找到支持的网站列表.';
-$L['QBITTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">qBittorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">qBittorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['QBITTORRENT'] = 'qBittorrent 是一款免费可靠的 P2P BitTorrent 客户端, 先进的多平台 BitTorrent 客户端, 具有良好的 Qt 用户界面以及用于远程控制并且集成搜索引擎的 Web 用户界面.';
-$L['QUASSEL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quassel</span>. <br/><br/>这将从您的系统中彻底移除 <span style="color:#01cea2">Quassel</span> 和所有设置/存储的日志.';
 $L['QUASSEL'] = 'Quassel IRC 是一个基于Qt4框架的现代化, 跨平台, 分布式的IRC客户端.';
-$L['QUOTA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quotas</span>. <br/><br/>这将完全删除用户的配额和与之相关的任何设置.';
 $L['QUOTAS'] = 'Linux 的这一特性允许系统管理员分配用户或用户组组可以使用的最大磁盘空间.';
-$L['RADARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['RADARR'] = 'Radarr 是 Sonarr 的一个独立分支, 通过 Usenet 和 BitTorrent 自动下载电影.<br>该项目的灵感来自其他的 Usenet/BitTorrent 电影下载器, 例如 CouchPotato.';
-$L['RADARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr4K</span>, 但是, 您的设置将被重置为默认值.';
 $L['RADARR4K'] = 'Radarr4K 是 4K UHD 配置文件的独立 Radarr 克隆. 这是一种处理多个 Radarr 实例的方法, 同时将 UHD 内容与一般内容分开.';
-$L['RAPIDLEECH_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rapidleech</span>, 但是, 您的设置将被重置为默认值.';
 $L['RAPIDLEECH'] = 'Rapid Leech 是一个免费的服务器转移脚本, 可用于各种流行的上传/下载站点, 例如 uploaded.net, Rapidshare.com 和 120 多个其他站点.';
-$L['RCLONE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rclone</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['RCLONE'] = 'Rclone 是一个命令行程序, 它可以将文件或者文件夹同步到多个主机';
-$L['READARR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Readarr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Readarr</span>, 然而, 你的配置设置将被重置为默认.';
 $L['READARR'] = 'Readarr是一个针对Usenet和BitTorrent用户的电子书收集管理器. 它可以监控多个RSS提要, 以获取你喜欢的作者的新书, 并将与客户端和索引器接口, 以抓取、分类和重命名它们.';
-$L['REQUESTRR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Requestrr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Requestrr</span>, 然而, 你的配置设置将被重置为默认.';
 $L['REQUESTRR'] = 'Requestrr是一个Discord聊天机器人, 用于通过使用聊天来简化使用Sonarr/Radarr/Ombi等服务! 你的Discord服务器的所有用户都可以请求添加新的内容, 并在可用时得到通知';
-$L['RTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">rTorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['RTORRENT'] = 'rTorrent 是一个快速高效的 BitTorrent 客户端, 同时使用正在开发的 libtorrent 库 (并非 libtorrent-rasterbar). 它是利用 C ++ 和 ncurses 库编写的软件, 因此它使用一个字符用户界面.';
-$L['RUTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ruTorrent</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ruTorrent</span>, 但是, 您的设置将被重置为默认值.';
 $L['RUTORRENT'] = 'ruTorrent 是一个受欢迎的 BitTorrent 客户端 rTorrent 的前端. 主要特性: 轻量级的服务端, 因此可以被安装在一些较老以及较地段的服务器上, 甚至可以安装在一些 SOHO 路由器上; 可扩展, 它拥有很多插件, 每个人都可以创建自己的插件; 带有 <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox 皮肤</a>.';
-$L['SABNZBD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SABnzbd</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SABnzbd</span>, 但是, 您的设置将被重置为默认值.';
 $L['SABNZBD'] = 'SABnzbd 是一个多平台的二进制新闻组下载器. 该程序在后台工作, 并简化了从 Usenet 下载, 验证和提取文件的操作. SABnzbd 使用 NZB 文件 (类似于 .torrent文件, 但用于 Usenet), 而不是直接浏览 Usenet.';
-$L['SICKCHILL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickChill</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickChill</span>, 但是, 您的设置将被重置为默认值.';
 $L['SICKCHILL'] = '电视节目的视频文件管理器, 它可以帮助你及时追剧.';
-$L['SICKGEAR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickGear</span>, 但是, 您的设置将被重置为默认值.';
 $L['SICKGEAR'] = 'SickGear 是 Sick-Beard 的进化版. 凭借创新, 久经考验的稳定性和可靠性实现享受电视的自动化.';
-$L['SONARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['SONARR'] = 'Sonarr 是一个电视连续剧管理工具, 可以同时使用 Torrents 和 Usenet .';
-$L['SONARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr4K</span>, 但是, 您的设置将被重置为默认值.';
 $L['SONARR4K'] = 'Sonarr4K 是 4K UHD 配置文件的独立 Sonarr 克隆. 这是一种处理多个 Sonarr 实例的方法, 同时将 UHD 内容与一般内容分开.';
-$L['SUBSONIC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Subsonic</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Subsonic</span>, 但是, 您的设置将被重置为默认值.';
 $L['SUBSONIC'] = 'Subsonic 是一个基于网络的媒体服务器. 它是用 Java 编写的, 所以它可以在任何支持 Java 的操作系统上运行. Subsonic 支持同时向多个客户端传输流媒体, 并支持任何流媒体 (包括 MP3, AAC 和 Ogg).';
-$L['SYNCTHING_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Syncthing</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Syncthing</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['SYNCTHING'] = '开源的 BitTorrent 文件同步软件.';
-$L['TAUTULLI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Tautulli</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Tautulli</span>, 但是, 您的库设置将被重置为默认值.';
 $L['TAUTULLI'] = '基于 python 的 Web 应用程序, 用于 Plex Media Server 的监视, 分析和通知.';
-$L['THELOUNGE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">TheLounge</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">TheLounge</span>, 但是, 您的库设置将被重置为默认值.';
 $L['THELOUNGE'] = '一个现代化的 IRC web 客户端';
-$L['TRANSMISSION_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Transmission</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Transmission</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['TRANSMISSION'] = 'Transmission 被设计为功能强大而易于使用的客户端. 它的默认设置即可直接运行, 只需要简单的点击就可以配置例如如监视目录, 不良 peers 拦截列表和 Web 界面等高级功能. Ubuntu 以它作为默认的 BitTorrent 客户端, 其中最重要的理由就是它简单易学.';
-$L['UNIFI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">UniFi</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">UniFi</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['UNIFI'] = 'The UniFi® 是 Ubiquiti Networks™ 的无线网络管理软件. 它允许你在浏览器种管理多个无线网络.';
-$L['UNPACKERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Unpackerr</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Unpackerr</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['UNPACKERR'] = '提取 Radarr, Sonarr, Lidarr, Readarr 的下载 - 导入后删除提取的文件.';
-$L['WEBCONSOLE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Web Console (shellinabox)</span>. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Web Console (shellinabox)</span>.';
 $L['WEBCONSOLE'] = 'Shell In A Box (也被称为 The QuickBox Web Console) 实现了一个 Web 服务, 它可以将任意的命令行工具导出到基于 Web 的终端模拟器. 该模拟器可以运行在任何启用 JavaScript 和 CSS 支持的浏览器中, 并且不需要任何额外的的浏览器插件.';
-$L['X2GO_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">x2go</span>. <br/><br/>这将完全删除您系统中的 <span style="color:#01cea2">x2goserver</span> 和 <span style="color:#01cea2">xfce4</span> 桌面环境.';
 $L['X2GO'] = 'X2Go 是一款使用 NX 技术协议的 Linux 开源远程桌面软件.';
-$L['XTEVE_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">xTeVe</span>.<br/><br/>这将完全删除你所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">xTeVe</span>, 但是, 你的设置将被重置为默认值.';
 $L['XTEVE'] = 'XTeVe是一个模拟电视调谐器的应用程序, 它允许你通过Plex或Emby拥有IPTV频道. xTeVe可以合并多个M3U和XMLTV文件, 并将其发送到你喜欢的媒体中心';
-$L['ZNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ZNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ZNC</span>, 但是, 您的设置将被重置为默认值.';
 $L['ZNC'] = 'ZNC 是一个 IRC 网络辅助软件. 它可以将客户端从实际的 IRC 服务器以及选定的频道中分离出来.';
 
-//#3.2.2 - toggles & tooltips
+
+//#3.2.2 - App uninstall
+$L['AIRSONIC_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Airsonic</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Airsonic</span>, 然而, 你的设置将被重置为默认.';
+$L['AUTOBRR_UNINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea2">Autobrr</span>. <br/><br/>这将完全删除您的所有配置 和设置...这个动作是不可逆转的. <br/><br/>您可以随时重新安装<span style="color:#01cea2">Autobrr</span>, 但是您的设置将被重置为默认值. ';
+$L['AUTODL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">AutoDL-iRSSi</span>, 但是, 您的设置将被重置为默认值.';
+$L['AUTOSCAN_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Autoscan</span>, 然而, 你的设置将被重置为默认.';
+$L['BAZARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Bazarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['BBR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BBR</span>. <br/><br/>这将完全删除您的所有对内核的修改设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BBR</span>.';
+$L['BTSYNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BitTorrent Sync</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BitTorrent Sync</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['CALIBRE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Calibre</span>. <br/><br/>这将完全删除您的所有配置文件...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Calibre</span> 但是, 您的设置将被重置为默认值.';
+$L['COUCHPOTATO_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">CouchPotato</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">CouchPotato</span>, 但是, 您的设置将被重置为默认值.';
+$L['CSF_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Config Server Firewall (CSF)</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Config Server Firewall (CSF)</span>, 但是, 您的设置 (任何修改) 将被重置为默认值.';
+$L['DELUGE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Deluge</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Deluge</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['DUPLICATI_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Duplicati</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Duplicati</span>, 但是, 你的存储路径和链接文件夹设置将被重置为默认值.';
+$L['EMBY_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Emby</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Emby</span>, 但是, 您的库设置将被重置为默认值.';
+$L['FAIL2BAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fail2Ban</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Fail2Ban</span>, 但是, 您的设置将被重置为默认值.';
+$L['FILEBOT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FileBot</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">FileBot</span>, 但是, 您的设置将被重置为默认值.';
+$L['FILEBROWSER_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">File Browser</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">File Browser</span>, 但是, 您的设置将被重置为默认值.';
+$L['FLARESOLVERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FlareSolverr</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">FlareSolverr</span>, 但是, 您的设置将被重置为默认值.';
+$L['FLEXGET_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flexget</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flexget</span>, 但是, 您的设置将被重置为默认值.';
+$L['FLOOD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flood</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Flood</span>, 但是, 您的设置将被重置为默认值.';
+$L['HEADPHONES_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Headphones</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['JACKETT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jackett</span>, 但是, 您的设置将被重置为默认值.';
+$L['JELLYFIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jellyfin</span>, 但是, 您的设置将被重置为默认值.';
+$L['LAZYLIBRARIAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">LazyLibrarian</span>, 但是, 您的设置将被重置为默认值.';
+$L['LETSENCRYPT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Let\'s Encrypt</span>, 但是, 您的设置将被重置为默认值.';
+$L['LIDARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Lidarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Lidarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['MEDUSA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Medusa</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Medusa</span>, 但是, 您的设置将被重置为默认值.';
+$L['MYLAR3_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Mylar3</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Mylar3</span>, 但是, 您的设置将被重置为默认值.';
+$L['NETDATA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Netdata</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Netdata</span>, 但是, 您的设置将被重置为默认值.';
+$L['NEXTCLOUD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NextCloud</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NextCloud</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['NOVNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">noVNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">noVNC</span>, 但是, 您的设置将被重置为默认值.';
+$L['NZBGET_UNINSTALL'] = 'Y即将从系统中卸载 <span style="color:#01cea2">NZBGet</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBGet</span>, 但是, 您的设置将被重置为默认值.';
+$L['NZBHYDRA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra</span>, 但是, 您的设置将被重置为默认值.';
+$L['NZBHYDRA2_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra2</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra2</span>, 但是, 您的设置将被重置为默认值.';
+$L['OMBI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Ombi</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Ombi</span>, 但是, 您的库设置将被重置为默认值.';
+$L['OVERSEERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Overseerr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Overseerr</span>, 但是, 您的设置将被重置为默认值.';
+$L['OVPN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">OpenVPN</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">OpenVPN</span>, 但是, 您的设置将被重置为默认值.';
+$L['PHPMYADMIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">phpMyAdmin</span>. <br/><br/>这将完全删除您的所有配置文件和 phpMyAdmin 数据库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">phpMyAdmin</span>.';
+$L['PLEX_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Plex Media Server</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Plex Media Server</span>, 但是, 您的库设置将被重置为默认值.';
+$L['PROWLARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Prowlarr</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Prowlarr</span>, 但是, 您的库设置将被重置为默认值.';
+$L['PYLOAD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">PyLoad</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">PyLoad</span>, 但是, 您的设置将被重置为默认值.';
+$L['QBITTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">qBittorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">qBittorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['QUASSEL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quassel</span>. <br/><br/>这将从您的系统中彻底移除 <span style="color:#01cea2">Quassel</span> 和所有设置/存储的日志.';
+$L['QUOTA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quotas</span>. <br/><br/>这将完全删除用户的配额和与之相关的任何设置.';
+$L['RADARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['RADARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr4K</span>, 但是, 您的设置将被重置为默认值.';
+$L['RAPIDLEECH_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rapidleech</span>, 但是, 您的设置将被重置为默认值.';
+$L['RCLONE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rclone</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['READARR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Readarr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Readarr</span>, 然而, 你的配置设置将被重置为默认.';
+$L['REQUESTRR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Requestrr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Requestrr</span>, 然而, 你的配置设置将被重置为默认.';
+$L['RTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">rTorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['RUTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ruTorrent</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ruTorrent</span>, 但是, 您的设置将被重置为默认值.';
+$L['SABNZBD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SABnzbd</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SABnzbd</span>, 但是, 您的设置将被重置为默认值.';
+$L['SICKCHILL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickChill</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickChill</span>, 但是, 您的设置将被重置为默认值.';
+$L['SICKGEAR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickGear</span>, 但是, 您的设置将被重置为默认值.';
+$L['SONARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['SONARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr4K</span>, 但是, 您的设置将被重置为默认值.';
+$L['SUBSONIC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Subsonic</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Subsonic</span>, 但是, 您的设置将被重置为默认值.';
+$L['SYNCTHING_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Syncthing</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Syncthing</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['TAUTULLI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Tautulli</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Tautulli</span>, 但是, 您的库设置将被重置为默认值.';
+$L['THELOUNGE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">TheLounge</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">TheLounge</span>, 但是, 您的库设置将被重置为默认值.';
+$L['TRANSMISSION_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Transmission</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Transmission</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['UNIFI_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">UniFi</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">UniFi</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['UNPACKERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Unpackerr</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Unpackerr</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['WEBCONSOLE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Web Console (shellinabox)</span>. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Web Console (shellinabox)</span>.';
+$L['X2GO_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">x2go</span>. <br/><br/>这将完全删除您系统中的 <span style="color:#01cea2">x2goserver</span> 和 <span style="color:#01cea2">xfce4</span> 桌面环境.';
+$L['XTEVE_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">xTeVe</span>.<br/><br/>这将完全删除你所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">xTeVe</span>, 但是, 你的设置将被重置为默认值.';
+$L['ZNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ZNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ZNC</span>, 但是, 您的设置将被重置为默认值.';
+
+
+//#3.2.3 - App reinstall
+$L['AIRSONIC_REINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Airsonic</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.';
+$L['AUTOBRR_REINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea2">Autobrr</span>. <br/><br/>这将完全删除您的所有配置 和设置...这个动作是不可逆转的.';
+$L['AUTODL_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['AUTOSCAN_REINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.';
+$L['BAZARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['BBR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BBR</span>. <br/><br/>这将完全删除您的所有对内核的修改设置...这个动作是不可逆的.';
+$L['BTSYNC_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BitTorrent Sync</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
+$L['CALIBRE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Calibre</span>. <br/><br/>这将完全删除您的所有配置文件...这个动作是不可逆的.';
+$L['COUCHPOTATO_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">CouchPotato</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['CSF_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Config Server Firewall (CSF)</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['DELUGE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Deluge</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
+$L['DUPLICATI_REINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Duplicati</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.';
+$L['EMBY_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Emby</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的.';
+$L['FAIL2BAN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fail2Ban</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['FILEBOT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FileBot</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['FILEBROWSER_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">File Browser</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['FLARESOLVERR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">FlareSolverr</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['FLEXGET_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flexget</span> 即将从系统中卸载. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['FLOOD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Flood</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['HEADPHONES_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
+$L['JACKETT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['JELLYFIN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['LAZYLIBRARIAN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['LETSENCRYPT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['LIDARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Lidarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['MEDUSA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Medusa</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['MYLAR3_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Mylar3</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['NETDATA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Netdata</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['NEXTCLOUD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NextCloud</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
+$L['NOVNC_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">noVNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['NZBGET_REINSTALL'] = 'Y即将从系统中卸载 <span style="color:#01cea2">NZBGet</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['NZBHYDRA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['NZBHYDRA2_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra2</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['OMBI_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Ombi</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的.';
+$L['OVERSEERR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Overseerr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['OVPN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">OpenVPN</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['PHPMYADMIN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">phpMyAdmin</span>. <br/><br/>这将完全删除您的所有配置文件和 phpMyAdmin 数据库设置...这个动作是不可逆的.';
+$L['PLEX_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Plex Media Server</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的.';
+$L['PROWLARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Prowlarr</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的.';
+$L['PYLOAD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">PyLoad</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['QBITTORRENT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">qBittorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
+$L['QUASSEL_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quassel</span>. <br/><br/>这将从您的系统中彻底移除 <span style="color:#01cea2">Quassel</span> 和所有设置/存储的日志.';
+$L['QUOTA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Quotas</span>. <br/><br/>这将完全删除用户的配额和与之相关的任何设置.';
+$L['RADARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['RADARR4K_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['RAPIDLEECH_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['RCLONE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
+$L['READARR_REINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Readarr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.';
+$L['REQUESTRR_REINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Requestrr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.';
+$L['RTORRENT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
+$L['RUTORRENT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ruTorrent</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SABNZBD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SABnzbd</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SICKCHILL_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickChill</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SICKGEAR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SONARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SONARR4K_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SUBSONIC_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Subsonic</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SYNCTHING_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Syncthing</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
+$L['TAUTULLI_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Tautulli</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的.';
+$L['THELOUNGE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">TheLounge</span>. <br/><br/>这将完全删除您的所有配置文件和库设置...这个动作是不可逆的.';
+$L['TRANSMISSION_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Transmission</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的.';
+$L['UNIFI_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">UniFi</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的.';
+$L['UNPACKERR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Unpackerr</span>. <br/><br/>这将完全删除您的所有配置...这个动作是不可逆的.';
+$L['WEBCONSOLE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Web Console (shellinabox)</span>.';
+$L['X2GO_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">x2go</span>. <br/><br/>这将完全删除您系统中的 <span style="color:#01cea2">x2goserver</span> 和 <span style="color:#01cea2">xfce4</span> 桌面环境.';
+$L['XTEVE_REINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">xTeVe</span>.<br/><br/>这将完全删除你所有的配置和设置...这个动作是不可逆转的.';
+$L['ZNC_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ZNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+
+
+//#3.2.4 - toggles & tooltips
 $L['APP_OPTIONS'] = '应用选项';
 $L['NGINX_OPTIONS'] = 'NGINX 选项';
 $L['CARD_VIEW'] = '卡片视图';
@@ -447,7 +526,7 @@ $L['QBIT_TOOLTIP'] = 'Deluge 2 已安装. qBittorrent 不能兼容已安装的 D
 $L['QUOTAS_FSTAB'] = '编辑您的 fstab';
 $L['QUOTAS_HELP'] = '更多有关安装 quotas 的信息, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>请阅读此 F.A.Q first</strong></a>.';
 $L['QUOTAS_TOOLTIP'] = '在您的主挂载点添加以下内容以替代 <code class="language-bash">defaults</code> 并继续';
-$L['RCLONE_ADMIN_TOOLTIP'] = '从 SSH: \`qb install rclone -u USER [ -o encrypted ]\` 以访问此功能';
+$L['RCLONE_ADMIN_TOOLTIP'] = '从 SSH: \`qb install rclone -u USER [-o encrypted]\` 以访问此功能';
 $L['RCLONE_USER_TOOLTIP'] = '请与系统管理员联系以安装此程序.';
 $L['REMOVE_MEDUSA_FIRST'] = '安装此应用需要首先移除 Medusa.';
 $L['REMOVE_SICKCHILL_FIRST'] = '安装此应用需要首先移除 SickChill.';
@@ -457,14 +536,14 @@ $L['SICKGEAR_INSTALLED'] = 'SickGear 已安装';
 $L['UNIFI_SSL_TOOLTIP'] = '如果您已在站点根目录中设置了域, 并且已为域生成了let的加密证书, 请选择此选项';
 $L['ZNC_TOOLTIP'] = '从 SSH: \`qb install znc -u USER\` 以访问此功能';
 
-//#3.2.3 - service control
+//#3.2.5 - service control
 $L['ACTIVE_STATUS'] = '正在运行';
 $L['APP_KEY'] = 'API 密钥';
-$L['APP_PORT'] = '应用端口';
-$L['APP_STATUS'] = '应用状态';
+$L['APP_PORT'] = '端口';
+$L['APP_STATUS'] = '状态';
 $L['INACTIVE_STATUS'] = '未运行';
 
-//#3.2.4 - rclone specific toggles
+//#3.2.6 - rclone specific toggles
 $L['ACTIVE_MOUNTED'] = '活动（已安装）';
 $L['INACTIVE_NOTMOUNTED'] = '已死（未安装）';
 $L['RCLONE_OPTIONS'] = 'Rclone选项';
@@ -743,7 +822,7 @@ $L['PREVENT_USERNAMES'] = '防止用户名被注册';
 //#4.3.1 - REGISTRATION SETTINGS
 $L['ACCOUNT_ACTIVATION'] = '账户激活设定';
 $L['ADMIN_ACT'] = '管理员手动激活';
-$ l ['admin_act_info'] ='选择此选项时, 注册后将告知用户必须等待管理员激活帐户. 用户也将收到一封这样的电子邮件, 管理员也将可以选择使用电子邮件中提供的链接激活用户或访问管理面板并在那里激活用户';
+$L['ADMIN_ACT_INFO'] = '选择此选项时, 注册后将告知用户必须等待管理员激活帐户. 用户也将收到一封这样的电子邮件, 管理员也将可以选择使用电子邮件中提供的链接激活用户或访问管理面板并在那里激活用户';
 $L['ALPHANUMERIC_ONLY'] = '仅限字母数字';
 $L['ALPHANUMERIC_SPACERS'] = '字母数字及空格';
 $L['ANY_CHARS'] = '任何字符';
@@ -848,6 +927,11 @@ $L['ADMINISTRATORS'] = '管理员';
 $L['ASSIGN_LEVEL'] = '分配用户组级别 :';
 $L['CLICK_HERE'] = '点击此处...';
 $L['DELETE_GROUP'] = '删除群组';
+$L['DELETED'] = '已删除';
+$L['GROUP_DELETED'] = '该组已被删除，用户组已重置。';
+$L['GROUP_STAY'] = '组会留下:)';
+$L['GROUP_YES'] = '是的，我确定！';
+$L['GROUP_NO'] = '不，取消！';
 $L['EDIT_ADD_USER'] = '添加用户 :';
 $L['EDIT_GROUP_LEVEL'] = '用户组级别 :';
 $L['EDIT_GROUP_NAME'] = '用户组名称 :';
@@ -857,6 +941,7 @@ $L['LEVEL_INFO'] = '输入 2 - 256 之间的数字';
 $L['NEW_GROUP_NAME'] = '新的用户组名称 :';
 $L['NUMBER_MEMBERS'] = '# 个成员';
 $L['USER_GROUPS_INFO'] = '创建, 查看和编辑用户组. 将用户分配给用户组.';
+$L['SOFT_GROUP_ASGMNT'] = '软件组分配';
 
 
 //#4.4 - SYSTEM
