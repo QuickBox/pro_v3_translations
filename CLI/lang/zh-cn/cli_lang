@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.42
+# File Version: 1.0.43
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -462,6 +462,15 @@ ${software_title} 安装在端口: ${software_web_port}"
 		declare text="看起来好像出了点问题"
 		quickbox::dashboard::log "${text}"
 	fi
+}
+
+quickbox::lang::software::overseerr::access() {
+	# trunk-ignore(shellcheck/SC2001)
+	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+	declare text="access ${software_title} 在：
+${quickbox_web_root}:${software_web_port}/
+${software_title} 安装在端口：${software_web_port}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexclaim() {

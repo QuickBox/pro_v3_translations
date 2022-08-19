@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.50
+# File Version: 1.0.51
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -462,6 +462,15 @@ ${software_title} instalado en el puerto: ${software_web_port}"
 		declare text="Parece que algo salió mal"
 		quickbox::dashboard::log "${text}"
 	fi
+}
+
+quickbox::lang::software::overseerr::access() {
+	# trunk-ignore(shellcheck/SC2001)
+	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+	declare text="acceder a ${software_title} en:
+${quickbox_web_root}:${software_web_port}/
+${software_title} instalado en el puerto: ${software_web_port}"
+	quickbox::dashboard::log "${texto}"
 }
 
 quickbox::lang::software::plexclaim() {

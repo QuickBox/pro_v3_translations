@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                     English	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2022       *
+ * Ready for QuickBox Pro v3.0.0 : August 19, 2022      *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -352,7 +352,7 @@ $L['THELOUNGE'] = 'A modern self-hosted web IRC client';
 $L['TRANSMISSION'] = 'Transmission is designed for easy, powerful use. The defaults are set to Just Work and it only takes a few clicks to configure advanced features like watch directories, bad peer blocklists, and the web interface. When Ubuntu chose Transmission as its default BitTorrent client, one of the most-cited reasons was its easy learning curve.';
 $L['UNIFI'] = 'The UniFi® Controller is a wireless network management software solution from Ubiquiti Networks™. It allows you to manage multiple wireless networks using a web browser.';
 $L['UNPACKERR'] = 'Extracts downloads for Radarr, Sonarr, Lidarr, Readarr - Deletes extracted files after import.';
-$L['WEBCONSOLE'] = 'Shell In A Box (aka The QuickBox Web Console) implements a web server that can export arbitrary command line tools to a web based terminal emulator. This emulator is accessible to any JavaScript and CSS enabled web browser and does not require any additional browser plugins.';
+$L['WEBCONSOLE'] = 'TTYD (aka The QuickBox Web Console) is a fully-featured terminal based on Xterm.js with CJK and IME support.';
 $L['X2GO'] = 'X2Go is an open source remote desktop software for Linux that uses the NX technology protocol.';
 $L['XTEVE'] = 'XTeVe is an application that simulates a TV tuner, it allows you to have IPTV channels via Plex or Emby. xTeVe can merge multiple M3U and XMLTV files, and send it to your preferred Media Center.';
 $L['ZNC'] = 'ZNC is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels.';
@@ -422,7 +422,7 @@ $L['THELOUNGE_UNINSTALL'] = 'You are about to uninstall <span style="color:#01ce
 $L['TRANSMISSION_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Transmission</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Transmission</span> at any time, however, your configuration settings will be reset to default.';
 $L['UNIFI_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">UniFi</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Unifi</span> at any time, however, your configuration settings will be reset to default.';
 $L['UNPACKERR_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Unpackerr</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Unpackerr</span> at any time, however, your configuration settings will be reset to default.';
-$L['WEBCONSOLE_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Web Console (shellinabox)</span> from your system.<br/><br/> You may reinstall <span style="color:#01cea2">Web Console (shellinabox)</span> at any time.';
+$L['WEBCONSOLE_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Web Console (ttyd)</span> from your system.<br/><br/> You may reinstall <span style="color:#01cea2">Web Console (ttyd)</span> at any time.';
 $L['X2GO_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">x2go</span> from your system.<br/><br/> This will completely remove <span style="color:#01cea2">x2goserver</span> and <span style="color:#01cea2">xfce4</span> desktop environment from your system.';
 $L['XTEVE_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">xTeVe</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">xTeVe</span> at any time, however, your settings will be reset to default.';
 $L['ZNC_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">ZNC</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">ZNC</span> at any time, however, your settings will be reset to default.';
@@ -492,7 +492,7 @@ $L['THELOUNGE_REINSTALL'] = 'You are about to reinstall <span style="color:#01ce
 $L['TRANSMISSION_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Transmission</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. ';
 $L['UNIFI_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">UniFi</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. ';
 $L['UNPACKERR_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Unpackerr</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. ';
-$L['WEBCONSOLE_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Web Console (shellinabox)</span> from your system.<br/><br/> You may reinstall <span style="color:#01cea2">Web Console (shellinabox)</span> at any time.';
+$L['WEBCONSOLE_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Web Console (ttyd)</span> from your system.<br/><br/> You may reinstall <span style="color:#01cea2">Web Console (ttyd)</span> at any time.';
 $L['X2GO_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">x2go</span> from your system.<br/><br/> This will completely remove <span style="color:#01cea2">x2goserver</span> and <span style="color:#01cea2">xfce4</span> desktop environment from your system.';
 $L['XTEVE_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">xTeVe</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.';
 $L['ZNC_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">ZNC</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.';
@@ -997,7 +997,7 @@ If you need to contact the QuickBox staff about an issue with the script, you ca
 $L['HELP_TITLE'] = 'QuickBox Admin Panel, Dashboard Portal & User Management';
 $L['HELP'] = 'Help';
 $L['LICENSE_SET'] = '<h3><strong>Licensed under BSD 3-Clause</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2020, QuickBox. All rights reserved.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. All rights reserved.</p>
 <p class="fs14">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 <ul><li class="fs14">Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
 <li class="fs14">Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>

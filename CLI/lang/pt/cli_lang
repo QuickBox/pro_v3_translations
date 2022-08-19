@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.50
+# File Version: 1.0.52
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -369,21 +369,21 @@ quickbox::lang::software::info::note() {
 }
 
 quickbox::lang::software::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${software_name}
 ${software_title} instalado na porta: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::mu::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} instalado na porta: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::calibre::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${username}/${software_name}
 nome de usuário: ${username}
 senha: admin123
@@ -400,14 +400,14 @@ quickbox::lang::software::rtorrent::access() {
 }
 
 quickbox::lang::software::rutorrent::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${software_name}
 > caminho do soquete: /var/run/${admin_name}/.rtorrent.sock"
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::admin::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${admin_name}/${software_name}
 ${software_title} instalado na porta: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
@@ -464,13 +464,22 @@ ${software_title} instalado na porta: ${software_web_port}"
 	fi
 }
 
+quickbox::lang::software::overseerr::access() {
+	# trunk-ignore(shellcheck/SC2001)
+	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+	declare text="acesso ${software_title} em:
+${quickbox_web_root}:${software_web_port}/
+${software_title} instalado na porta: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::plexclaim() {
 	declare text="reivindicando servidor plex para ${username}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plex::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}web/
 ${software_title} instalado na porta: ${software_web_port}
 
@@ -556,7 +565,7 @@ quickbox::lang::software::plexupdate_current() {
 }
 
 quickbox::lang::software::pyload::access() {
-	declare text="acesse ${software_title} em:
+	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${username}/${software_name}/
 ${software_title} instalado na porta: ${software_web_port}
 

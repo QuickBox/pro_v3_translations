@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.45
+# File Version: 1.0.48
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -462,6 +462,15 @@ ${software_title} installé sur le port: ${software_web_port}"
 		declare text="On dirait que quelque chose a mal tourné."
 		quickbox::dashboard::log "${text}."
 	fi
+}
+
+quickbox::lang::software::overserr::access() {
+	# trunk-ignore(shellcheck/SC2001)
+	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+	declare text="access ${software_title} à :
+${quickbox_web_root}:${software_web_port}/
+${software_title} installé sur le port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexclaim() {

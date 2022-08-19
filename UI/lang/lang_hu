@@ -912,7 +912,7 @@ If you need to contact the QuickBox staff about an issue with the script, you ca
 $L['HELP_TITLE'] = 'QuickBox Admin Panel, Dashboard Portal & User Management';
 $L['HELP'] = 'Help';
 $L['LICENSE_SET'] = '<h3><strong>Licensed under BSD 3-Clause</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2020, QuickBox. All rights reserved.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. All rights reserved.</p>
 <p class="fs14">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 <ul><li class="fs14">Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
 <li class="fs14">Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>

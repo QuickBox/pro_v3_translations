@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2022       *
+ * Ready for QuickBox Pro v3.0.0 : August 19, 2022      *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -353,7 +353,7 @@ $L['THELOUNGE'] = 'Ein moderner selbst-gehosteter Web-IRC-Client';
 $L['TRANSMISSION'] = 'Transmission ist für eine einfache, leistungsstarke verwendung ausgelegt. Die Standardeinstellungen sind auf „Just Work“ (Just Work) eingestellt. Die Konfiguration erweiterter Funktionen wie Watch-Verzeichnisse, fehlerhafte Peer-Blocklisten und die Webschnittstelle erfordert nur wenige Klicks. Als Ubuntu Transmission als Standard-BitTorrent-Client auswählte, war einer der am häufigsten genannten Gründe die einfache Lernkurve.';
 $L['UNIFI'] = 'Der UniFi® Controller ist eine drahtlose Netzwerkverwaltungssoftware von Ubiquiti Networks ™. Sie können damit mehrere drahtlose Netzwerke mit einem Webbrowser verwalten.';
 $L['UNPACKERR'] = 'Extrahiert Downloads für Radarr, Sonarr, Lidarr, Readarr - Löscht extrahierte Dateien nach dem Import.';
-$L['WEBCONSOLE'] = 'Shell in a Box (auch bekannt als The QuickBox Web Console) implementiert einen Webserver, der beliebige Befehlszeilentools in einen webbasierten Terminalemulator exportieren kann. Auf diesen Emulator kann von jedem JavaScript- und CSS-fähigen Webbrowser aus zugegriffen werden, und es sind keine zusätzlichen Browser-Plugins erforderlich.';
+$L['WEBCONSOLE'] = 'TTYD (alias The QuickBox Web Console) ist ein voll ausgestattetes Terminal basierend auf Xterm.js mit CJK-und IME-Unterstützung.';
 $L['X2GO'] = 'X2Go ist eine Open-Source Remote-Desktop-Software für Linux, die das NX-Technologie-Protokoll verwendet.';
 $L['XTEVE'] = 'xTeVe ist eine Anwendung, die einen TV-Tuner simuliert, mit der Sie IPTV-Kanäle über Plex oder Emby empfangen können. xTeVe kann mehrere M3U und XMLTV-Dateien zusammenführen und an Ihr bevorzugtes Media Center senden.';
 $L['ZNC'] = 'ZNC ist ein IRC-Netzwerk Bouncer oder BNC. Er kann den Clienten vom eigentlichen IRC-Server sowie ausgewählten Chaträumen trennen.';
@@ -423,7 +423,7 @@ $L['THELOUNGE_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">T
 $L['TRANSMISSION_UNINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">Transmission</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Transmission</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['UNIFI_UNINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">UniFi</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">UniFi</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['UNPACKERR_UNINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">Unpackerr</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Unpackerr</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
-$L['WEBCONSOLE_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Web Console (shellinabox)</span> auf deinem System zu deinstallieren.<br/><br/>Sie können neu installieren <span style="color:#01cea2">Web Console (shellinabox)</span> neu installieren.';
+$L['WEBCONSOLE_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Web Console (ttyd)</span> auf deinem System zu deinstallieren.<br/><br/>Sie können neu installieren <span style="color:#01cea2">Web Console (ttyd)</span> neu installieren.';
 $L['X2GO_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">x2go</span> auf deinem System zu deinstallieren.<br/><br/> Diese Aktion wird <span style="color:#01cea2">x2goserver</span> und die <span style="color:#01cea2">xfce4-Desktopumgebung</span> komplett von deinem System entfernen.<br/><br/>Sie können jederzeit <span style="color:#01cea2">x2go</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['XTEVE_UNINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">xTeVe</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">xTeVe</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['ZNC_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">ZNC</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">ZNC</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
@@ -493,7 +493,7 @@ $L['THELOUNGE_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">T
 $L['TRANSMISSION_REINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">Transmission</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen.';
 $L['UNIFI_REINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">UniFi</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen.';
 $L['UNPACKERR_REINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">Unpackerr</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen.';
-$L['WEBCONSOLE_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Web Console (shellinabox)</span> auf deinem System zu neu installieren.<br/><br/>Sie können neu installieren <span style="color:#01cea2">Web Console (shellinabox)</span> neu installieren.';
+$L['WEBCONSOLE_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Web Console (ttyd)</span> auf deinem System zu neu installieren.<br/><br/>Sie können neu installieren <span style="color:#01cea2">Web Console (ttyd)</span> neu installieren.';
 $L['X2GO_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">x2go</span> auf deinem System zu neu installieren.<br/><br/> Diese Aktion wird <span style="color:#01cea2">x2goserver</span> und die <span style="color:#01cea2">xfce4-Desktopumgebung</span> komplett von deinem System entfernen.';
 $L['XTEVE_REINSTALL'] = 'Du bist gerade dabei <span style="color:#01cea2">xTeVe</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen.';
 $L['ZNC_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">ZNC</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen.';
@@ -988,7 +988,7 @@ Wenn Sie die Mitarbeiter der QuickBox wegen eines Problems mit dem Skript kontak
 $L['HELP_TITLE'] = 'QuickBox Admin Panel, Dashboard Portal & Benutzerverwaltung';
 $L['HELP'] = 'Hilfe';
 $L['LICENSE_SET'] = '<h3><strong>Lizenziert unter BSD 3-Klausel</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2020, QuickBox. Alle Rechte vorbehalten. </p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. Alle Rechte vorbehalten. </p>
 <p class="fs14">Die Weiterverteilung und Verwendung in Quell- und Binärformularen mit oder ohne Änderung ist zulässig, sofern die folgenden Bedingungen erfüllt sind:
 <ul><li class="fs14">Bei der Weitergabe von Quellcode müssen der oben genannte Copyright-Hinweis, diese Liste der Bedingungen und der folgende Haftungsausschluss beibehalten werden.</li>
 <li style = "font-size: 14px">Bei Weiterverteilungen in binärer Form müssen der obige Copyright-Hinweis, diese Liste der Bedingungen und der folgende Haftungsausschluss in der Dokumentation und / oder anderen mit der Verteilung bereitgestellten Materialien wiedergegeben werden.</li>

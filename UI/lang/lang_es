@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2022       *
+ * Ready for QuickBox Pro v3.0.0 : August 19, 2022      *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -353,7 +353,7 @@ $L['THELOUNGE'] = 'A modern self-hosted web IRC client';
 $L['TRANSMISSION'] = 'Transmission está diseñado para un uso fácil y poderoso. Los valores predeterminados ya están configurados y solo se necesitan unos pocos clics para configurar funciones avanzadas como directorios, listas de bloqueo de peer incorrectos y la interfaz web. Cuando Ubuntu eligió Transmission como su cliente BitTorrent predeterminado, una de las razones fue por su fácil curva de aprendizaje.';
 $L['UNIFI'] = 'El controlador UniFi® es una solución de software de administración de redes inalámbricas de Ubiquiti Networks ™. Le permite administrar múltiples redes inalámbricas usando un navegador web. ';
 $L['UNPACKERR'] = 'Extrae descargas para Radarr, Sonarr, Lidarr, Readarr: elimina los archivos extraídos después de la importación.';
-$L['WEBCONSOLE'] = 'Shell In A Box (QuickBox Consola Web) implementa un servidor web que puede exportar herramientas de línea de comandos arbitrarias a un emulador de terminal basado en web. Este emulador es accesible desde cualquier navegador web habilitado para JavaScript y CSS y no requiere ningún complemento adicional del navegador.';
+$L['WEBCONSOLE'] = 'TTYD (también conocido como QuickBox Web Console) es un terminal con todas las funciones basado en Xterm.js con compatibilidad con CJK e IME.';
 $L['X2GO'] = 'X2Go es un software de escritorio remoto para Linux que utiliza el protocolo de tecnología NX.';
 $L['XTEVE'] = 'xTeVe es una aplicación que simula un sintonizador de TV, te permite tener canales de IPTV vía Plex o Emby. xTeVe puede combinar varios archivos M3U y XMLTV y enviarlos a su Media Center preferido.';
 $L['ZNC'] = 'ZNC es un "IRC bouncer" o BNC. Puede separar al cliente del servidor IRC real, y también de los canales seleccionados.';
@@ -423,7 +423,7 @@ $L['THELOUNGE_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#0
 $L['TRANSMISSION_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Transmission</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Transmission</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['UNIFI_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">UniFi</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">UniFi</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['UNPACKERR_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Unpackerr</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Unpackerr</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
-$L['WEBCONSOLE_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Web Console (shellinabox)</span> de tu sistema.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">Web Console (shellinabox)</span> en cualquier momento.';
+$L['WEBCONSOLE_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Web Console (ttyd)</span> de tu sistema.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">Web Console (ttyd)</span> en cualquier momento.';
 $L['X2GO_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">x2go</span> de tu sistema.<br/><br/> Esto eliminará por completo <span style="color:#01cea2">x2goserver</span> y el entorno de escritorio <span style="color:#01cea2">xfce4</span> desde tu sistema.';
 $L['XTEVE_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">xTeVe</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">xTeVe</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['ZNC_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">ZNC</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">ZNC</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
@@ -493,7 +493,7 @@ $L['THELOUNGE_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01c
 $L['TRANSMISSION_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Transmission</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 $L['UNIFI_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">UniFi</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 $L['UNPACKERR_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Unpackerr</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
-$L['WEBCONSOLE_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Web Console (shellinabox)</span> de tu sistema.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">Web Console (shellinabox)</span> en cualquier momento.';
+$L['WEBCONSOLE_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Web Console (ttyd)</span> de tu sistema.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">Web Console (ttyd)</span> en cualquier momento.';
 $L['X2GO_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">x2go</span> de tu sistema.<br/><br/> Esto eliminará por completo <span style="color:#01cea2">x2goserver</span> y el entorno de escritorio <span style="color:#01cea2">xfce4</span> desde tu sistema.';
 $L['XTEVE_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">xTeVe</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 $L['ZNC_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">ZNC</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
@@ -988,7 +988,7 @@ $L['HELP_TEXT'] = '<p class="fs14">Hecho con amor por <a href="https://nullrefer
 $L['HELP_TITLE'] = 'Panel de Control QuickBox, Página Principal & Gestión de Usuarios';
 $L['HELP'] = 'Ayuda';
 $L['LICENSE_SET'] = '<h3><strong>Licencia BSD 3-Clause</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2020, QuickBox. Todos los derechos reservados.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. Todos los derechos reservados.</p>
     <p class="fs14">La redistribución y el uso en las formas de código fuente y binario, con o sin modificaciones, están permitidos siempre que se cumplan las siguientes condiciones:
     <ul><li class="fs14">Las redistribuciones del código fuente deben conservar el aviso de copyright anterior, esta lista de condiciones y el siguiente descargo de responsabilidad.</li>
     <li class="fs14">Las redistribuciones en formato binario deben reproducir el aviso de copyright anterior, esta lista de condiciones y el siguiente descargo de responsabilidad en la documentación y/u otros materiales suministrados con la distribución.</li>

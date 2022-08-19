@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.49
+# File Version: 1.0.51
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -464,13 +464,22 @@ ${software_title} installiert auf Port: ${software_web_port}"
 	fi
 }
 
+quickbox::lang::software::overseerr::access() {
+	# trunk-ignore(shellcheck/SC2001)
+	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+	declare text="zugriff auf ${software_title} unter:
+${quickbox_web_root}:${software_web_port}/
+${software_title} installiert auf Port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::plexclaim() {
 	declare text="beanspruchung des plex server für ${username}..."
 	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plex::access() {
-	declare text="greifen Sie auf ${software_title} unter zu:
+	declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}web/
 ${software_title} auf port installiert: ${software_web_port}
 

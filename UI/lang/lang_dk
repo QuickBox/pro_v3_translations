@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2022       *
+ * Ready for QuickBox Pro v3.0.0 : August 19, 2022      *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -353,7 +353,7 @@ $L['THELOUNGE'] = 'En moderne selvhostet web IRC klient';
 $L['TRANSMISSION'] = 'Transmission er designet til nem og kraftig brug. Standardindstillingerne er indstillet til standard brug, og det tager kun et par klik at konfigurere avancerede funktioner som se mapper, peer blocklists og webgrænsefladen. Når Ubuntu valgte Transmission som standard BitTorrent-klient, var en af de mest anførte grunde den nemme indlæringskurve.';
 $L['UNIFI'] = 'UniFi® Controller er en trådløs netværksadministration fra Ubiquiti Networks™. Det giver dig mulighed for at styre flere trådløse netværk ved hjælp af en webbrowser.';
 $L['UNPACKERR'] = 'Uddrag downloads til Radarr, Sonarr, Lidarr, Readarr - Sletter udpakkede filer efter import.';
-$L['WEBCONSOLE'] = 'Shell In A Box (aka Web Konsol) implementerer en webserver, der kan eksportere vilkårlig kommandolinjeværktøjer til en web-baseret terminal emulator. Denne emulator er tilgængelig for enhver JavaScript og CSS-aktiveret webbrowser og kræver ikke yderligere browser plugins.';
+$L['WEBCONSOLE'] = 'TTYD (alias QuickBox Web Console) er en fuldt udstyret terminal baseret på Xterm.js med CJK og IME support.';
 $L['X2GO'] = 'X2Go er et open source fjernskrivebords-software til Linux som benytter sig af NX tech-protokollen.';
 $L['XTEVE'] = 'xTeVe er et program, der simulerer en tv-tuner, det giver dig mulighed for at have IPTV-kanaler via Plex eller Emby. xTeVe kan flette flere M3U-og XMLTV-filer og sende det til dit foretrukne Media Center.';
 $L['ZNC'] = 'ZNC er en IRC bouncer eller BNC. Den kan frigøre ircklienten fra serveren eller kanalen og holde din klient ajour når der igen sker en tilkobling.';
@@ -423,7 +423,7 @@ $L['THELOUNGE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea
 $L['TRANSMISSION_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Transmission</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Transmission</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
 $L['UNIFI_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">UniFi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">UniFi</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
 $L['UNPACKERR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Unpackerr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Unpackerr</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
-$L['WEBCONSOLE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Web Console (shellinabox)</span> fra dit system.<br/><br/> >Du har mulighed for at geninstallere <span style="color:#01cea2">Web Console (shellinabox)</span> til hver en tid.';
+$L['WEBCONSOLE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Web Console (ttyd)</span> fra dit system.<br/><br/> >Du har mulighed for at geninstallere <span style="color:#01cea2">Web Console (ttyd)</span> til hver en tid.';
 $L['X2GO_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">x2go</span> fra dit system.<br/><br/> Dette vil fuldstændig fjerne <span style="color:#01cea2">x2goserver</span> og <span style="color:#01cea2">xfce4 desktopmiljøet</span> fra dit system.';
 $L['XTEVE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">xTeVe</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">xTeVe</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
 $L['ZNC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">ZNC</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">ZNC</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
@@ -493,7 +493,7 @@ $L['THELOUNGE_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea
 $L['TRANSMISSION_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Transmission</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['UNIFI_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">UniFi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['UNPACKERR_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Unpackerr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
-$L['WEBCONSOLE_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Web Console (shellinabox)</span> fra dit system.';
+$L['WEBCONSOLE_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Web Console (ttyd)</span> fra dit system.';
 $L['X2GO_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">x2go</span> fra dit system.<br/><br/> Dette vil fuldstændig fjerne <span style="color:#01cea2">x2goserver</span> og <span style="color:#01cea2">xfce4 desktopmiljøet</span> fra dit system.';
 $L['XTEVE_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">xTeVe</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['ZNC_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">ZNC</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
@@ -987,7 +987,7 @@ Hvis du har brug for at kontakte QuickBox-teamet om et problem med scriptet, kan
 $L['HELP_TITLE'] = 'QuickBox Administration, Dashboard Portal & Brugeradministration';
 $L['HELP'] = 'Hjælp';
 $L['LICENSE_SET'] = '<h3><strong>Licenseret under BSD 3-klausul</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Ophavsret (c) 2018-2020, QuickBox. Alle rettigheder forbeholdes.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Ophavsret (c) 2018-2022, QuickBox.IO. Alle rettigheder forbeholdes.</p>
 <p class="fs14">Omfordeling og brug i kilde- og binære formularer, med eller uden ændring, er tilladt, forudsat at følgende betingelser er opfyldt:
 <ul><li class="fs14">Omfordeling af kildekoden skal beholde ovenstående copyrightophavsret, denne liste over betingelser og følgende ansvarsfraskrivelse. </ li>
 <li class="fs14">Omfordeling i binær form skal gengive ovenstående copyrightophavsret, denne liste over betingelser og følgende ansvarsfraskrivelse i dokumentationen og / eller andre materialer, der leveres med distributionen.</li>
