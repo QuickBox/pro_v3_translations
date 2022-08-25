@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 19, 2022      *
+ * Ready for QuickBox Pro v3.0.0 : August 20, 2022      *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -311,6 +311,7 @@ $L['FLOOD'] = 'Flood 是针对各种洪流客户端的监控服务. 它是一个
 $L['HEADPHONES'] = 'Headphones 是用 Python 编写的 NZB 和 Torrent 的自动音乐下载器. 它支持 SABnzbd, NZBget, Transmission, μTorrent, Deluge 和 Blackhole.';
 $L['JACKETT'] = '对您最喜爱的 private trackers 的 API 支持.';
 $L['JELLYFIN'] = 'Jellyfin 是一个多媒体系统的自由软件, 它可以让您控制媒体的管理和流式传输.';
+$L['KOMGA'] = 'Komga 是您的数字漫画/漫画的媒体服务器, 专注于提供简单而现代的界面.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian是SickBeard, CouchPotato, 类似于耳机的应用程序, 用于电子书, 有声读物和杂志. 它结合使用<a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a>和 ( 可选 ) <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a>作为作者信息和书籍信息的来源.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt 是一个免费, 自动化的和开放的证书颁发机构 (CA), 由 ISRG (<a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group</a>) 运营.';
 $L['LIDARR'] = 'Lidarr 是 Sonarr的一个独立分支, 它通过 Usenet 和 BitTorrent 自动下载音乐. 该项目的灵感来自其他的 Usenet/BitTorrent 音乐下载器, 例如 Headphones.';
@@ -352,7 +353,7 @@ $L['THELOUNGE'] = '一个现代化的 IRC web 客户端';
 $L['TRANSMISSION'] = 'Transmission 被设计为功能强大而易于使用的客户端. 它的默认设置即可直接运行, 只需要简单的点击就可以配置例如如监视目录, 不良 peers 拦截列表和 Web 界面等高级功能. Ubuntu 以它作为默认的 BitTorrent 客户端, 其中最重要的理由就是它简单易学.';
 $L['UNIFI'] = 'The UniFi® 是 Ubiquiti Networks™ 的无线网络管理软件. 它允许你在浏览器种管理多个无线网络.';
 $L['UNPACKERR'] = '提取 Radarr, Sonarr, Lidarr, Readarr 的下载 - 导入后删除提取的文件.';
-$L['WEBCONSOLE'] = 'TTYD ( 又名 QuickBox Web 控制台 ) 是一个基于 Xterm.js 的全功能终端，支持 CJK 和 IME.';
+$L['WEBCONSOLE'] = 'TTYD ( 又名 QuickBox Web 控制台 ) 是一个基于 Xterm.js 的全功能终端, 支持 CJK 和 IME.';
 $L['X2GO'] = 'X2Go 是一款使用 NX 技术协议的 Linux 开源远程桌面软件.';
 $L['XTEVE'] = 'XTeVe是一个模拟电视调谐器的应用程序, 它允许你通过Plex或Emby拥有IPTV频道. xTeVe可以合并多个M3U和XMLTV文件, 并将其发送到你喜欢的媒体中心';
 $L['ZNC'] = 'ZNC 是一个 IRC 网络辅助软件. 它可以将客户端从实际的 IRC 服务器以及选定的频道中分离出来.';
@@ -381,6 +382,7 @@ $L['FLOOD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fl
 $L['HEADPHONES_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Headphones</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['JACKETT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jackett</span>, 但是, 您的设置将被重置为默认值.';
 $L['JELLYFIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jellyfin</span>, 但是, 您的设置将被重置为默认值.';
+$L['KOMGA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Komga</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Komga</span>, 但是, 您的设置将被重置为默认值.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">LazyLibrarian</span>, 但是, 您的设置将被重置为默认值.';
 $L['LETSENCRYPT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Let\'s Encrypt</span>, 但是, 您的设置将被重置为默认值.';
 $L['LIDARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Lidarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Lidarr</span>, 但是, 您的设置将被重置为默认值.';
@@ -451,6 +453,7 @@ $L['FLOOD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fl
 $L['HEADPHONES_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
 $L['JACKETT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['JELLYFIN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['KOMGA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Komga</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['LAZYLIBRARIAN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['LETSENCRYPT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['LIDARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Lidarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
@@ -928,10 +931,10 @@ $L['ASSIGN_LEVEL'] = '分配用户组级别 :';
 $L['CLICK_HERE'] = '点击此处...';
 $L['DELETE_GROUP'] = '删除群组';
 $L['DELETED'] = '已删除';
-$L['GROUP_DELETED'] = '该组已被删除，用户组已重置.';
+$L['GROUP_DELETED'] = '该组已被删除, 用户组已重置.';
 $L['GROUP_STAY'] = '组会留下:)';
-$L['GROUP_YES'] = '是的，我确定！';
-$L['GROUP_NO'] = '不，取消！';
+$L['GROUP_YES'] = '是的, 我确定！';
+$L['GROUP_NO'] = '不, 取消！';
 $L['EDIT_ADD_USER'] = '添加用户 :';
 $L['EDIT_GROUP_LEVEL'] = '用户组级别 :';
 $L['EDIT_GROUP_NAME'] = '用户组名称 :';

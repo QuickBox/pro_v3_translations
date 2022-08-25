@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.52
+# File Version: 1.0.53
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -307,6 +307,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.emby.domínio ${option[*]}"
+		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.komga.domínio ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.overseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.plex.domínio ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
@@ -315,6 +316,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.emby.domínio ${option[*]}"
+		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.komga.domínio ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.overseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.plex.domínio ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
@@ -339,6 +341,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="instala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala um certificado ssl para o domínio especificado"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio emby especificado"
+		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio komga especificado"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio overseerr especificado"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio plex especificado"
 		[[ -n ${version} ]] && declare text="instala a versão ${version[*]} mais recente de ${software_name}"
@@ -349,6 +352,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala um certificado ssl para o domínio especificado"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio emby especificado"
+		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio komga especificado"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio overseerr especificado"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio plex especificado"
 		[[ -n ${version} ]] && declare text="reinstala a versão ${version[*]} mais recente de ${software_name}"

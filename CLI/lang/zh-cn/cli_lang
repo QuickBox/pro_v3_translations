@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.43
+# File Version: 1.0.44
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -307,6 +307,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d 一些领域.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u 用户 -d 一些领域.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.emby.领域 ${option[*]}"
+		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.komga.领域 ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.overseerr.领域 ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.plex.领域 ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
@@ -315,6 +316,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d 一些领域.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u 用户 -d 一些领域.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.emby.领域 ${option[*]}"
+		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.komga.领域 ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.overseerr.领域 ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.plex.领域 ${option[*]}"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
@@ -339,6 +341,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="为指定域安装 ssl 证书"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="为指定的 emby 域安装 ssl 证书"
+		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="为指定的 komga 域安装 ssl 证书"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="为指定的监督域安装 ssl 证书"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="为指定的 plex 域安装 ssl 证书"
 		[[ -n ${version} ]] && declare text="安装 ${software_name} 的最新 ${version[*]} 版本"
@@ -349,6 +352,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="重新安装指定域的 ssl 证书"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="为指定的 emby 域重新安装 ssl 证书"
+		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="为指定的 komga 域重新安装 ssl 证书"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="为指定的监督域重新安装 ssl 证书"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="为指定的 plex 域重新安装 ssl 证书"
 		[[ -n ${version} ]] && declare text="重新安装 ${software_name} 的最新 ${version[*]} 版本"
