@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.249
+# File Version: 1.0.252
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -469,11 +469,18 @@ ${software_title} installed on port: ${software_web_port}"
 }
 
 quickbox::lang::software::overseerr::access() {
-	# trunk-ignore(shellcheck/SC2001)
-	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
-	declare text="access ${software_title} at:
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		overseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="access ${software_title} at:
+https://${overseerr_web_root}/"
+	else
+		# trunk-ignore(shellcheck/SC2001)
+		quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+		declare text="access ${software_title} at:
 ${quickbox_web_root}:${software_web_port}/
 ${software_title} installed on port: ${software_web_port}"
+	fi
 	quickbox::dashboard::log "${text}"
 }
 

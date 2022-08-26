@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.49
+# File Version: 1.0.50
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -468,12 +468,19 @@ ${software_title} installé sur le port: ${software_web_port}"
 	fi
 }
 
-quickbox::lang::software::overserr::access() {
-	# trunk-ignore(shellcheck/SC2001)
-	quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
-	declare text="access ${software_title} à :
+quickbox::lang::software::overseerr::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		overseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="accédez à ${software_title} à l'adresse:
+https://${overseerr_web_root}/"
+	else
+		# trunk-ignore(shellcheck/SC2001)
+		quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+		declare text="accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}:${software_web_port}/
 ${software_title} installé sur le port: ${software_web_port}"
+	fi
 	quickbox::dashboard::log "${text}"
 }
 
@@ -483,7 +490,7 @@ quickbox::lang::software::plexclaim() {
 }
 
 quickbox::lang::software::plex::access() {
-	declare text="Accédez à ${software_title} à l'adresse:
+	declare text="accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}web/
 ${software_title} installé sur le port: ${software_web_port}
 
