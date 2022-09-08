@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Português	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 20, 2022      *
+ * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -774,6 +774,11 @@ $L['SITE_NAME_TOOLTIP'] = 'O nome do site deve ter menos de 40 caracteres alfanu
 $L['SITE_DESC_TOOLTIP'] = 'A descrição do site deve ter menos de 120 caracteres alfanuméricos, sem caracteres especiais (são permitidos espaços)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'O nome de origem deve ter menos de 60 caracteres e ser alfanuméricos, sem caracteres especiais (são permitidos espaços)';
 $L['SITE_ROOT_TOOLTIP'] = 'Digite o IP do seu servidor ou domínio válido. exemplo: https://192.168.0.1/ (ou) https://myawesomedomain.com/';
+$L['SITE_LOGO_COLLAPSED'] = 'Logotipo recolhido';
+$L['SITE_LOGO_FULL'] = 'Logotipo Completo';
+$L['SITE_LOGO_SETTINGS'] = 'Configurações do logotipo do site';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'Este é o logotipo que será exibido quando a barra lateral for recolhida e será usado como o ícone da aba do navegador.';
+$L['SITE_LOGO_FULL_TOOLTIP'] = 'Este é o logotipo que será exibido quando a barra lateral for expandida.';
 
 //#4.2.2 - EMAIL SETTINGS
 $L['SMTP_AUTH'] = 'Habilitar autenticação SMTP';
@@ -925,6 +930,7 @@ $L['STATUS'] = 'Status';
 $L['UNIQUE_USER_HP_SETTINGS'] = 'Página inicial exclusiva do usuário - Configurações';
 $L['USER_EDIT1'] = 'Editar Usuário :';
 $L['USER_EDIT2'] = 'Editar Usuário';
+$L['SELECT_GROUP'] = 'Selecionar Grupo';
 
 //#4.3.3 - USERS GROUPS
 $L['ADMINISTRATORS'] = 'Administradores';

@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                     English	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 20, 2022      *
+ * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -776,9 +776,14 @@ $L['PHP_DATE_FORMAT'] = 'PHP Date Format';
 $L['PHP_FORMAT_SETTINGS'] = 'PHP Format Settings';
 $L['PHP_TIME_ZONE'] = 'PHP Time Zone';
 $L['SITE_DESC'] = 'Site Description';
+$L['SITE_LOGO_COLLAPSED'] = 'Collapsed Logo';
+$L['SITE_LOGO_FULL'] = 'Full Logo';
+$L['SITE_LOGO_SETTINGS'] = 'Site Logo Settings';
 $L['SITE_META_SETTINGS'] = 'Site Meta Settings';
 $L['SITE_NAME'] = 'Site Name';
 $L['SITE_ROOT'] = 'Site Root';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'This is the logo that will be displayed when the sidebar is collapsed and will be used as the browser tab icon.';
+$L['SITE_LOGO_FULL_TOOLTIP'] = 'This is the logo that will be displayed when the sidebar is expanded.';
 $L['SITE_NAME_TOOLTIP'] = 'Site name should be under 40 characters and alphanumeric only with no special characters (spaces are acceptable)';
 $L['SITE_DESC_TOOLTIP'] = 'Site description should be under 120 characters and alphanumeric only with no special characters (spaces are acceptable)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'From Name should be under 60 characters and alphanumeric only with no special characters (spaces are acceptable)';
@@ -934,6 +939,7 @@ $L['STATUS'] = 'Status';
 $L['UNIQUE_USER_HP_SETTINGS'] = 'Unique User Home Page - Settings';
 $L['USER_EDIT1'] = 'User Edit :';
 $L['USER_EDIT2'] = 'User Edit';
+$L['SELECT_GROUP'] = 'Select Group';
 
 //#4.3.3 - USERS GROUPS
 $L['ADMINISTRATORS'] = 'Administrators';

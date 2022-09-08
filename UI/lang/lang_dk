@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 20, 2022      *
+ * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -773,6 +773,11 @@ $L['SITE_NAME_TOOLTIP'] = 'Webstedsnavnet skal være under 40 tegn og kun alfanu
 $L['SITE_DESC_TOOLTIP'] = 'Webstedsbeskrivelse skal være under 120 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'Fra navn skal være under 60 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
 $L['SITE_ROOT_TOOLTIP'] = 'Indtast din server-IP eller et gyldigt domæne. eksempel: https://192.168.0.1/ (or) https://myawesomedomain.com/';
+$L['SITE_LOGO_COLLAPSED'] = 'Skjulet logo';
+$L['SITE_LOGO_FULL'] = 'Fuldt logo';
+$L['SITE_LOGO_SETTINGS'] = 'Indstillinger for webstedslogo';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'Dette er logoet, der vil blive vist, når sidebjælken er foldet sammen og vil blive brugt som browserfaneikonet.';
+$L['SITE_LOGO_FULL_TOOLTIP'] = 'Dette er logoet, der vil blive vist, når sidebjælken udvides.';
 
 //#4.2.2 - EMAIL SETTINGS
 $L['SMTP_AUTH'] = 'Aktivér SMTP-godkendelse';
@@ -924,6 +929,7 @@ $L['STATUS'] = 'Status';
 $L['UNIQUE_USER_HP_SETTINGS'] = 'Unik Bruger Side - Indstillinger';
 $L['USER_EDIT1'] = 'Brugerredigering :';
 $L['USER_EDIT2'] = 'Brugerredigering';
+$L['SELECT_GROUP'] = 'Vælg gruppe';
 
 //#4.3.3 - USERS GROUPS
 $L['ADMINISTRATORS'] = 'Administratorer';

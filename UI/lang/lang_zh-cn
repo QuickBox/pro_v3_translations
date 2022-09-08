@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 20, 2022      *
+ * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -773,6 +773,11 @@ $L['SITE_NAME_TOOLTIP'] = '网站名称应少于 40 个字符, 只能是字母�
 $L['SITE_DESC_TOOLTIP'] = '网站描述应少于 120 个字符和字母数字, 没有特殊字符 (空格是可以接受的)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'From Name 应该少于 60 个字符, 只有字母数字, 没有特殊字符 (空格是可以接受的)';
 $L['SITE_ROOT_TOOLTIP'] = '输入您的服务器 IP 或有效域.  例如: https://192.168.0.1/ (或) https://myawesomedomain.com/';
+$L['SITE_LOGO_COLLAPSED'] = '折叠徽标';
+$L['SITE_LOGO_FULL'] = '完整标志';
+$L['SITE_LOGO_SETTINGS'] = '站点徽标设置';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = '这是侧边栏折叠时将显示的徽标, 将用作浏览器标签图标.';
+$L['SITE_LOGO_FULL_TOOLTIP'] = '这是侧边栏展开时将显示的徽标.';
 
 //#4.2.2 - EMAIL SETTINGS
 $L['SMTP_AUTH'] = '启用 SMTP 身份验证';
@@ -924,6 +929,7 @@ $L['STATUS'] = '状态';
 $L['UNIQUE_USER_HP_SETTINGS'] = '唯一用户主页 - 设置';
 $L['USER_EDIT1'] = '编辑用户 :';
 $L['USER_EDIT2'] = '编辑用户';
+$L['SELECT_GROUP'] = '选择组';
 
 //#4.3.3 - USERS GROUPS
 $L['ADMINISTRATORS'] = '管理员';
