@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Français	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -650,6 +650,10 @@ $L['REMEMBER_ME'] = 'Souviens-toi de Moi';
 $L['FORGOT_PASS'] = 'Mot de passe oublié?';
 $L['LOG_IN'] = 'S\'identifier';
 $L['LOGIN_ACCOUNT'] = 'Connectez-vous à votre compte pour continuer.';
+$L['LOGIN_USERNAME_INVALID'] = 'La connexion est invalide. Veuillez vérifier votre nom d\'utilisateur et réessayer';
+$L['LOGIN_PASSWORD_INVALID'] = 'La connexion est invalide. Veuillez vérifier votre mot de passe et réessayer';
+$L['LOGIN_MISSING_USERNAME'] = 'Nom d\'utilisateur non saisi';
+$L['LOGIN_MISSING_PASSWORD'] = 'Mot de passe non saisi';
 $L['PASS_FIELD_INVALID'] = 'Veuillez fournir votre mot de passe.';
 $L['PASS_FIELD_PLACE'] = 'Veuillez saisir votre mot de passe.';
 $L['PASS_FIELD_VALID'] = 'Mot de passe fourni, validation prête.';
@@ -659,6 +663,11 @@ $L['UNREGISTERED'] = 'Pas de compte?';
 $L['USER_FIELD_INVALID'] = 'Veuillez fournir votre nom d\'utilisateur.';
 $L['USER_FIELD_PLACE'] = 'Veuillez saisir votre nom d\'utilisateur.';
 $L['USER_FIELD_VALID'] = 'Nom d\'utilisateur fourni, validation prête.';
+$L['ACCOUNT_BANNED'] = 'Votre compte a été banni.<br/>Veuillez contacter un administrateur système.';
+$L['ACCOUNT_DISABLED'] = 'Votre compte n\'est pas activé ou est désactivé.<br/>Si vous pensez qu\'il s\'agit d\'un problème, veuillez contacter un administrateur système.';
+$L['ACCOUNT_INACTIVE_ADMIN'] = 'Votre compte n\'a pas été activé par un administrateur.';
+$L['ACCOUNT_INACTIVE_EMAIL'] = 'Votre compte n\'a pas été activé.<br/>Veuillez vérifier votre e-mail pour le lien d\'activation.';
+$L['IP_BANNED'] = 'Votre adresse IP a été bannie.<br/>Veuillez contacter un administrateur système.';
 
 // #4.1.2 - FORGOT PASSWORD
 $L['EMAIL_FIELD_INVALID'] = 'Veuillez fournir votre email.';
@@ -679,6 +688,10 @@ $L['CAN_LOGIN'] = 'pour votre inscription. Vous pouvez maintenant vous connecter
 $L['CREATED_ADM_ACT'] = 'Cependant, cette carte nécessite l\'activation du compte par un administrateur. Vous serez informé par e-mail de l\'activation de votre compte';
 $L['CREATED_CHECK_EMAIL'] = 'Veuillez vérifier votre e-mail pour plus d\'informations';
 $L['CREATED_EMAIL_ACT'] = 'Cependant, cette carte nécessite l\'activation du compte. Une clé d\'activation a été envoyée à l\'adresse e-mail que vous avez fournie';
+$L['EMAIL_EMPTY'] = 'Email non renseigné';
+$L['EMAIL_INVALID'] = 'L\'email est invalide';
+$L['EMAIL_MATCH'] = 'Les adresses e-mail ne correspondent pas';
+$L['EMAIL_TAKEN'] = 'Adresse e-mail déjà enregistrée';
 $L['RCONF_EMAIL_FIELD_INVALID'] = 'Cet e-mail ne correspond pas à celui entré précédemment. Veuillez réessayer.';
 $L['RCONF_EMAIL_FIELD_VALID'] = 'Correspondance des e-mails, validation prête.';
 $L['RCONF_PASS_FIELD_INVALID'] = 'Ce mot de passe ne correspond pas à celui entré précédemment. Veuillez réessayer.';
@@ -689,8 +702,26 @@ $L['REG_C_DISABLED'] = 'L\'inscription est actuellement désactivée';
 $L['REG_DISABLED_INFO'] = 'Nous sommes désolés mais l\'inscription est actuellement désactivée. Veuillez réessayer ultérieurement.';
 $L['REG_DISABLED'] = 'Inscription désactivée';
 $L['REG_FORM_INFO'] = 'Veuillez remplir le formulaire ci-dessous pour créer un compte';
+$L['REGISTERED_TXT'] = 'Inscrit !';
+$L['REG_FAILED'] = 'L\'enregistrement a échoué';
+$L['REG_ERROR_INFO_1'] = 'Nous sommes désolés, mais une erreur s\'est produite et votre enregistrement pour le nom d\'utilisateur ';
+$L['REG_ERROR_INFO_2'] = ' n\'a pas pu être terminé. Veuillez réessayer ultérieurement.';
 $L['SORRY'] = 'Nous sommes désolés';
 $L['THANKS'] = 'Je vous remercie';
+$L['USERNAME_EMPTY'] = 'Nom d\'utilisateur non saisi';
+$L['USERNAME_BELOW'] = 'Nom d\'utilisateur ci-dessous';
+$L['USERNAME_ABOVE'] = 'Nom d\'utilisateur ci-dessus';
+$L['CARACTÈRES'] = 'caractères';
+$L['USERNAME_REQUIREMENTS'] = 'Le nom d\'utilisateur ne correspond pas aux exigences';
+$L['USERNAME_WORD_RESERVED'] = 'Mot réservé du nom d\'utilisateur';
+$L['USERNAME_TAKEN'] = 'Nom d\'utilisateur déjà utilisé';
+$L['USERNAME_DISALLOWED'] = 'Nom d\'utilisateur non autorisé';
+$L['REG_IP_BANNED'] = 'Adresse IP interdite';
+$L['PASSWORD_EMPTY'] = 'Mot de passe non saisi';
+$L['PASSWORD_SHORT'] = 'Mot de passe trop court';
+$L['PASSWORD_LONG'] = 'Mot de passe trop long';
+$L['PASSWORD_MATCH'] = 'Les mots de passe ne correspondent pas';
+$L['QUOTA_EMPTY'] = 'Quota de disque non saisi';
 
 // #4.1.4 - ACCOUNT
 $L['ADMIN_EDIT_ACC'] = 'Editer le compte Admin';

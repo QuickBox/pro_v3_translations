@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                     English	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -655,6 +655,10 @@ $L['REMEMBER_ME'] = 'Remember Me';
 $L['FORGOT_PASS'] = 'Forgot password?';
 $L['LOG_IN'] = 'Log In';
 $L['LOGIN_ACCOUNT'] = 'Log in to your account to continue.';
+$L['LOGIN_USERNAME_INVALID'] = 'Login is invalid. Please check your username and try again';
+$L['LOGIN_PASSWORD_INVALID'] = 'Login is invalid. Please check your password and try again';
+$L['LOGIN_MISSING_USERNAME'] = 'Username not entered';
+$L['LOGIN_MISSING_PASSWORD'] = 'Password not entered';
 $L['PASS_FIELD_INVALID'] = 'Please provide your password.';
 $L['PASS_FIELD_PLACE'] = 'Please type your password.';
 $L['PASS_FIELD_VALID'] = 'Password provided, validation ready.';
@@ -664,6 +668,11 @@ $L['UNREGISTERED'] = 'Not registered?';
 $L['USER_FIELD_INVALID'] = 'Please provide your username.';
 $L['USER_FIELD_PLACE'] = 'Please type your username.';
 $L['USER_FIELD_VALID'] = 'Username provided, validation ready.';
+$L['ACCOUNT_BANNED'] = 'Your account has been banned.<br/>Please contact a System Administrator.';
+$L['ACCOUNT_DISABLED'] = 'Your account is not activated or is disabled.<br/>If you think this is a problem please contact a System Administrator.';
+$L['ACCOUNT_INACTIVE_ADMIN'] = 'Your account has not been activated by an Administrator.';
+$L['ACCOUNT_INACTIVE_EMAIL'] = 'Your account has not been activated.<br/>Please check your email for the activation link.';
+$L['IP_BANNED'] = 'Your IP address has been banned.<br/>Please contact a System Administrator.';
 
 //#4.1.2 - FORGOT PASSWORD
 $L['FORGOT_PASSWORD'] = 'Forgot Password';
@@ -689,6 +698,10 @@ $L['CAN_LOGIN'] = 'for your registration. You may now log in';
 $L['CREATED_ADM_ACT'] = 'However, this board requires account activation by an Admin. You will be informed by e-mail when your account has been activated.';
 $L['CREATED_CHECK_EMAIL'] = 'Please check your e-mail for further information';
 $L['CREATED_EMAIL_ACT'] = 'However, this board requires account activation. An activation key has been sent to the e-mail address you provided.';
+$L['EMAIL_EMPTY'] = 'Email not entered';
+$L['EMAIL_INVALID'] = 'Email is invalid';
+$L['EMAIL_MATCH'] = 'Email addresses do not match';
+$L['EMAIL_TAKEN'] = 'Email address already registered';
 $L['RCONF_EMAIL_FIELD_INVALID'] = 'This email does not match the one previously entered. Please try again.';
 $L['RCONF_EMAIL_FIELD_VALID'] = 'Emails match, validation ready.';
 $L['RCONF_PASS_FIELD_INVALID'] = 'This password does not match the one previously entered. Please try again.';
@@ -702,10 +715,24 @@ $L['REG_DISABLED_ALT'] = 'Registration is currently disabled.';
 $L['REG_FORM_INFO'] = 'Please fill out the form below to create an account';
 $L['REGISTERED_TXT'] = 'Registered!';
 $L['REG_FAILED'] = 'Registration Failed';
-$L['REG_ERROR_INFO_1'] = 'We\'re sorry, but an error has occurred and your registration for the username';
-$L['REG_ERROR_INFO_2'] = 'could not be completed.<br>Please try again at a later time.';
+$L['REG_ERROR_INFO_1'] = 'We\'re sorry, but an error has occurred and your registration for the username ';
+$L['REG_ERROR_INFO_2'] = ' could not be completed. Please try again at a later time.';
 $L['SORRY'] = 'We\'re sorry';
 $L['THANKS'] = 'Thank you';
+$L['USERNAME_EMPTY'] = 'Username not entered';
+$L['USERNAME_BELOW'] = 'Username below ';
+$L['USERNAME_ABOVE'] = 'Username above ';
+$L['CHARACTERS'] = ' characters';
+$L['USERNAME_REQUIREMENTS'] = 'Username does not match requirements';
+$L['USERNAME_WORD_RESERVED'] = 'Username reserved word';
+$L['USERNAME_TAKEN'] = 'Username already in use';
+$L['USERNAME_DISALLOWED'] = 'Username not allowed';
+$L['REG_IP_BANNED'] = 'IP Address banned';
+$L['PASSWORD_EMPTY'] = 'Password not entered';
+$L['PASSWORD_SHORT'] = 'Password too short';
+$L['PASSWORD_LONG'] = 'Password too long';
+$L['PASSWORD_MATCH'] = 'Passwords do not match';
+$L['QUOTA_EMPTY'] = 'Disk Quota not entered';
 
 //#4.1.4 - ACCOUNT
 $L['ADMIN_EDIT_ACC'] = 'Admin Edit Account';

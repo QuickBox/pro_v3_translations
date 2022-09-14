@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -655,6 +655,10 @@ $L['REMEMBER_ME'] = 'Husk Mig';
 $L['FORGOT_PASS'] = 'Glemt din adgangskode?';
 $L['LOG_IN'] = 'Log Ind';
 $L['LOGIN_ACCOUNT'] = 'Log ind på din konto for at fortsætte.';
+$L['LOGIN_USERNAME_INVALID'] = 'Login er ugyldigt. Tjek venligst dit brugernavn og prøv igen';
+$L['LOGIN_PASSWORD_INVALID'] = 'Login er ugyldigt. Tjek venligst din adgangskode og prøv igen';
+$L['LOGIN_MISSING_USERNAME'] = 'Brugernavn ikke indtastet';
+$L['LOGIN_MISSING_PASSWORD'] = 'Adgangskode ikke indtastet';
 $L['PASS_FIELD_INVALID'] = 'Angiv venligst din adgangskode.';
 $L['PASS_FIELD_PLACE'] = 'Indtast venligst din adgangskode.';
 $L['PASS_FIELD_VALID'] = 'Adgangskode leveret, validering afsluttet.';
@@ -664,6 +668,11 @@ $L['UNREGISTERED'] = 'Ikke registreret?';
 $L['USER_FIELD_INVALID'] = 'Angiv venligst dit brugernavn.';
 $L['USER_FIELD_PLACE'] = 'Indtast venligst dit brugernavn.';
 $L['USER_FIELD_VALID'] = 'Brugernavn leveret, validering afsluttet.';
+$L['ACCOUNT_BANNED'] = 'Din konto er blevet forbudt.<br/>Kontakt venligst en systemadministrator.';
+$L['ACCOUNT_DISABLED'] = 'Din konto er ikke aktiveret eller er deaktiveret.<br/>Hvis du mener, at dette er et problem, kontakt da venligst en systemadministrator.';
+$L['ACCOUNT_INACTIVE_ADMIN'] = 'Din konto er ikke blevet aktiveret af en administrator.';
+$L['ACCOUNT_INACTIVE_EMAIL'] = 'Din konto er ikke blevet aktiveret.<br/>Tjek venligst din e-mail for aktiveringslinket.';
+$L['IP_BANNED'] = 'Din IP-adresse er blevet forbudt.<br/>Kontakt venligst en systemadministrator.';
 
 //#4.1.2 - FORGOT PASSWORD
 $L['EMAIL_FIELD_INVALID'] = 'Angiv venligst din email.';
@@ -684,6 +693,10 @@ $L['CAN_LOGIN'] = 'til din registrering. Du kan nu logge ind.';
 $L['CREATED_ADM_ACT'] = 'Dette bord kræver imidlertid kontoaktivering af en administrator. Du får besked via e-mail, når din konto er blevet aktiveret.';
 $L['CREATED_CHECK_EMAIL'] = 'din konto er blevet oprettet.';
 $L['CREATED_EMAIL_ACT'] = 'Dette websted kræver imidlertid kontoaktivering. En aktiveringsnøgle er sendt til den e-mail-adresse, du har angivet.';
+$L['EMAIL_EMPTY'] = 'E-mail ikke indtastet';
+$L['EMAIL_INVALID'] = 'E-mail er ugyldig';
+$L['EMAIL_MATCH'] = 'E-mail-adresser stemmer ikke overens';
+$L['EMAIL_TAKEN'] = 'E-mail-adresse er allerede registreret';
 $L['RCONF_EMAIL_FIELD_INVALID'] = 'Denne e-mail svarer ikke til den tidligere indtastede. Prøv igen.';
 $L['RCONF_EMAIL_FIELD_VALID'] = 'E-mails matcher, validering klar.';
 $L['RCONF_PASS_FIELD_INVALID'] = 'Denne adgangskode stemmer ikke overens med den tidligere indtastede. Prøv igen.';
@@ -694,8 +707,26 @@ $L['REG_C_DISABLED'] = 'Registrering er i øjeblikket deaktiveret';
 $L['REG_DISABLED_INFO'] = 'Vi beklager, men registreringen er i øjeblikket deaktiveret. Prøv igen på et senere tidspunkt.';
 $L['REG_DISABLED'] = 'Registrering Deaktiveret';
 $L['REG_FORM_INFO'] = 'Udfyld venligst nedenstående formular for at oprette en konto';
+$L['REGISTERED_TXT'] = 'Registreret!';
+$L['REG_FAILED'] = 'Registrering mislykkedes';
+$L['REG_ERROR_INFO_1'] = 'Vi beklager, men der er opstået en fejl og din registrering af brugernavnet';
+$L['REG_ERROR_INFO_2'] = 'kunne ikke fuldføres. Prøv venligst igen på et senere tidspunkt.';
 $L['SORRY'] = 'Vi er kede af det';
 $L['THANKS'] = 'Tak skal du have';
+$L['USERNAME_EMPTY'] = 'Brugernavn ikke indtastet';
+$L['USERNAME_BELOW'] = 'Brugernavn nedenfor ';
+$L['USERNAME_ABOVE'] = 'Brugernavn ovenfor ';
+$L['CHARACTERS'] = ' tegn';
+$L['USERNAME_REQUIREMENTS'] = 'Brugernavn matcher ikke kravene';
+$L['USERNAME_WORD_RESERVED'] = 'Brugernavn reserveret ord';
+$L['USERNAME_TAKEN'] = 'Brugernavn er allerede i brug';
+$L['USERNAME_DISALLOWED'] = 'Brugernavn ikke tilladt';
+$L['REG_IP_BANNED'] = 'IP-adresse forbudt';
+$L['PASSWORD_EMPTY'] = 'Adgangskode ikke indtastet';
+$L['PASSWORD_SHORT'] = 'Adgangskoden er for kort';
+$L['PASSWORD_LONG'] = 'Adgangskoden for lang';
+$L['PASSWORD_MATCH'] = 'Adgangskoder stemmer ikke overens';
+$L['QUOTA_EMPTY'] = 'Diskkvote ikke indtastet';
 
 //#4.1.4 - ACCOUNT
 $L['ADMIN_EDIT_ACC'] = 'Rediger Admin konto';

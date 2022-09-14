@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Português	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -650,21 +650,30 @@ $L['CLEAR'] = 'clara';
 
 //#4.1 - START SCREEN FORMS (login/forgot pass/register/account)
 //#4.1.1 - LOG IN
-$L['CONFIRM_PASS_FIELD_PLACE'] = 'Por favor, confirme seu endereço de email.';
-$L['CREATE_ACCOUNT'] = 'Crie a sua conta aqui';
-$L['REMEMBER_ME'] = 'Recordar-Me';
-$L['FORGOT_PASS'] = 'Esqueceu sua senha?';
-$L['LOG_IN'] = 'Conecte-se';
-$L['LOGIN_ACCOUNT'] = 'Faça login na sua conta para continuar.';
-$L['PASS_FIELD_INVALID'] = 'Por favor, forneça a sua palavra-passe.';
-$L['PASS_FIELD_PLACE'] = 'Por favor, introduza a sua palavra-passe.';
+$L['CONFIRM_PASS_FIELD_PLACE'] = 'Por favor, confirme seu endereço de e-mail.';
+$L['CREATE_ACCOUNT'] = 'Criar uma conta';
+$L['REMEMBER_ME'] = 'Lembrar de mim';
+$L['FORGOT_PASS'] = 'Esqueceu a senha?';
+$L['LOG_IN'] = 'Login';
+$L['LOGIN_ACCOUNT'] = 'Faça login em sua conta para continuar.';
+$L['LOGIN_USERNAME_INVALID'] = 'Login inválido. Verifique seu nome de usuário e tente novamente';
+$L['LOGIN_PASSWORD_INVALID'] = 'Login inválido. Verifique sua senha e tente novamente';
+$L['LOGIN_MISSING_USERNAME'] = 'Nome de usuário não informado';
+$L['LOGIN_MISSING_PASSWORD'] = 'Senha não digitada';
+$L['PASS_FIELD_INVALID'] = 'Por favor, forneça sua senha.';
+$L['PASS_FIELD_PLACE'] = 'Por favor, digite sua senha.';
 $L['PASS_FIELD_VALID'] = 'Senha fornecida, validação pronta.';
-$L['REGISTRATION_DISABLED'] = 'O registo está actualmente desactivado.';
-$L['SIGN_IN'] = 'Assinar em';
-$L['UNREGISTERED'] = 'Não está registado?';
-$L['USER_FIELD_INVALID'] = 'Por favor, forneça o seu nome de utilizador.';
-$L['USER_FIELD_PLACE'] = 'Por favor, escreva o seu nome de utilizador.';
-$L['USER_FIELD_VALID'] = 'Nome de utilizador fornecido, validação pronta.';
+$L['REGISTRATION_DISABLED'] = 'O registro está desabilitado no momento.';
+$L['SIGN_IN'] = 'Entrar';
+$L['UNREGISTERED'] = 'Não registrado?';
+$L['USER_FIELD_INVALID'] = 'Por favor, forneça seu nome de usuário.';
+$L['USER_FIELD_PLACE'] = 'Por favor, digite seu nome de usuário.';
+$L['USER_FIELD_VALID'] = 'Nome de usuário fornecido, validação pronta.';
+$L['ACCOUNT_BANNED'] = 'Sua conta foi banida.<br/>Por favor, contate um Administrador do Sistema.';
+$L['ACCOUNT_DISABLED'] = 'Sua conta não está ativada ou está desativada.<br/>Se você acha que isso é um problema, entre em contato com um Administrador do Sistema.';
+$L['ACCOUNT_INACTIVE_ADMIN'] = 'Sua conta não foi ativada por um Administrador.';
+$L['ACCOUNT_INACTIVE_EMAIL'] = 'Sua conta não foi ativada.<br/>Por favor, verifique seu e-mail para obter o link de ativação.';
+$L['IP_BANNED'] = 'Seu endereço IP foi banido.<br/>Por favor, contate um Administrador do Sistema.';
 
 //#4.1.2 - FORGOT PASSWORD
 $L['EMAIL_FIELD_INVALID'] = 'Por favor, forneça o seu e-mail.';
@@ -685,6 +694,10 @@ $L['CAN_LOGIN'] = 'para o seu registo. Pode agora iniciar sessão';
 $L['CREATED_ADM_ACT'] = 'However, this board requires account activation by an Admin. Será informado por e-mail quando a sua conta tiver sido activada';
 $L['CREATED_CHECK_EMAIL'] = 'Por favor, verifique o seu e-mail para mais informações';
 $L['CREATED_EMAIL_ACT'] = 'No entanto, este quadro requer a activação da conta. Foi enviada uma chave de activação para o endereço de correio electrónico que forneceu';
+$L['EMAIL_EMPTY'] = 'E-mail não informado';
+$L['EMAIL_INVALID'] = 'E-mail inválido';
+$L['EMAIL_MATCH'] = 'Os endereços de e-mail não correspondem';
+$L['EMAIL_TAKEN'] = 'Endereço de e-mail já cadastrado';
 $L['RCONF_EMAIL_FIELD_INVALID'] = 'Este e-mail não corresponde ao anteriormente introduzido. Por favor, tente novamente';
 $L['RCONF_EMAIL_FIELD_VALID'] = 'Este email corresponde, validação pronta';
 $L['RCONF_PASS_FIELD_INVALID'] = 'Esta palavra-passe não corresponde à que foi introduzida anteriormente. Por favor, tente novamente';
@@ -695,8 +708,26 @@ $L['REG_C_DISABLED'] = 'o registo está actualmente desactivado';
 $L['REG_DISABLED_INFO'] = 'Lamentamos mas o registo está actualmente desactivado\'. Por favor, tente novamente mais tarde';
 $L['REG_DISABLED'] = 'Registo Deficiente';
 $L['REG_FORM_INFO'] = 'Por favor, preencha o formulário abaixo para criar uma conta';
+$L['REGISTERED_TXT'] = 'Registrado!';
+$L['REG_FAILED'] = 'Falha no registro';
+$L['REG_ERROR_INFO_1'] = 'Lamentamos, mas ocorreu um erro e seu registro para o nome de usuário ';
+$L['REG_ERROR_INFO_2'] = ' não pôde ser completado. Por favor tente novamente mais tarde.';
 $L['SORRY'] = 'Pedimos desculpa';
 $L['THANKS'] = 'Obrigado';
+$L['USERNAME_EMPTY'] = 'Nome de usuário não informado';
+$L['USERNAME_BELOW'] = 'Nome de usuário abaixo ';
+$L['USERNAME_ABOVE'] = 'Nome de usuário acima ';
+$L['CHARACTERS'] = 'caracteres';
+$L['USERNAME_REQUIREMENTS'] = 'O nome de usuário não atende aos requisitos';
+$L['USERNAME_WORD_RESERVED'] = 'Palavra reservada do nome de usuário';
+$L['USERNAME_TAKEN'] = 'Nome de usuário já em uso';
+$L['USERNAME_DISALLOWED'] = 'Nome de usuário não permitido';
+$L['REG_IP_BANNED'] = 'Endereço IP banido';
+$L['PASSWORD_EMPTY'] = 'Senha não digitada';
+$L['PASSWORD_SHORT'] = 'Senha muito curta';
+$L['PASSWORD_LONG'] = 'Senha muito longa';
+$L['PASSWORD_MATCH'] = 'As senhas não coincidem';
+$L['QUOTA_EMPTY'] = 'Cota de disco não inserida';
 
 //#4.1.4 - ACCOUNT
 $L['ADMIN_EDIT_ACC'] = 'Editar conta Admin';

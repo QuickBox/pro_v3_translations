@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -656,6 +656,10 @@ $L['REMEMBER_ME'] = 'Erinnere Mich';
 $L['FORGOT_PASS'] = 'Passwort vergessen?';
 $L['LOG_IN'] = 'Einloggen';
 $L['LOGIN_ACCOUNT'] = 'Logge dich in dein Konto ein, um fortzufahren.';
+$L['LOGIN_USERNAME_INVALID'] = 'Anmeldung ist ungültig. Bitte überprüfen Sie Ihren Benutzernamen und versuchen Sie es erneut';
+$L['LOGIN_PASSWORD_INVALID'] = 'Anmeldung ist ungültig. Bitte überprüfen Sie Ihr Passwort und versuchen Sie es erneut';
+$L['LOGIN_MISSING_USERNAME'] = 'Benutzername nicht eingegeben';
+$L['LOGIN_MISSING_PASSWORD'] = 'Passwort nicht eingegeben';
 $L['PASS_FIELD_INVALID'] = 'Falsches Passwort!';
 $L['PASS_FIELD_PLACE'] = 'Bitte gib dein Passwort ein.';
 $L['PASS_FIELD_VALID'] = 'Password provided, validation ready.';
@@ -665,6 +669,11 @@ $L['UNREGISTERED'] = 'Noch nicht registriert?';
 $L['USER_FIELD_INVALID'] = 'Falscher Benutzername!';
 $L['USER_FIELD_PLACE'] = 'Bitte gib deinen Benutzernamen ein.';
 $L['USER_FIELD_VALID'] = 'Benutzername angegeben, Validierung bereit.';
+$L['ACCOUNT_BANNED'] = 'Ihr Konto wurde gesperrt.<br/>Bitte wenden Sie sich an einen Systemadministrator.';
+$L['ACCOUNT_DISABLED'] = 'Ihr Konto ist nicht aktiviert oder deaktiviert.<br/>Wenn Sie glauben, dass dies ein Problem ist, wenden Sie sich bitte an einen Systemadministrator.';
+$L['ACCOUNT_INACTIVE_ADMIN'] = 'Ihr Konto wurde nicht von einem Administrator aktiviert.';
+$L['ACCOUNT_INACTIVE_EMAIL'] = 'Ihr Konto wurde nicht aktiviert.<br/>Bitte überprüfen Sie Ihre E-Mail auf den Aktivierungslink.';
+$L['IP_BANNED'] = 'Ihre IP-Adresse wurde gesperrt.<br/>Bitte wenden Sie sich an einen Systemadministrator.';
 
 //#4.1.2 - FORGOT PASSWORD
 $L['EMAIL_FIELD_INVALID'] = 'Falsche E-Mail-Adresse!';
@@ -685,6 +694,10 @@ $L['CAN_LOGIN'] = 'für Ihre Registrierung. Sie dürfen sich jetzt anmelden';
 $L['CREATED_ADM_ACT'] = 'Dieses Board erfordert jedoch eine Kontoaktivierung durch einen Administrator. Sie werden per E-Mail benachrichtigt, wenn Ihr Konto aktiviert wurde';
 $L['CREATED_CHECK_EMAIL'] = 'Bitte überprüfen Sie Ihre E-Mail für weitere Informationen';
 $L['CREATED_EMAIL_ACT'] = 'Dieses Board erfordert jedoch eine Kontoaktivierung. Ein Aktivierungsschlüssel wurde an die von Ihnen angegebene E-Mail-Adresse gesendet.';
+$L['EMAIL_EMPTY'] = 'E-Mail nicht eingetragen';
+$L['EMAIL_INVALID'] = 'E-Mail ist ungültig';
+$L['EMAIL_MATCH'] = 'E-Mail-Adressen stimmen nicht überein';
+$L['EMAIL_TAKEN'] = 'E-Mail-Adresse bereits registriert';
 $L['RCONF_EMAIL_FIELD_INVALID'] = 'Diese E-Mail stimmt nicht mit der zuvor eingegebenen überein. Bitte versuche es erneut.';
 $L['RCONF_EMAIL_FIELD_VALID'] = 'E-Mails stimmen überein, Validierung bereit.';
 $L['RCONF_PASS_FIELD_INVALID'] = 'Dieses Passwort stimmt nicht mit dem zuvor eingegebenen überein. Bitte versuche es erneut.';
@@ -692,11 +705,30 @@ $L['RCONF_PASS_FIELD_VALID'] = 'Passwörter übereinstimmen, Validierung bereit.
 $L['REG_C_DISABLED_INFO1'] = 'aber die Registrierung auf dieser Seite ist derzeit deaktiviert';
 $L['REG_C_DISABLED_INFO2'] = 'Bitte versuchen Sie es später noch einmal oder kontaktieren Sie den Serverbesitzer';
 $L['REG_C_DISABLED'] = 'Registrierung ist derzeit deaktiviert';
+$L['REG_DISABLED_ALT'] = 'Registrierung ist derzeit deaktiviert.';
 $L['REG_DISABLED_INFO'] = 'Es tut uns leid, aber die Registrierung ist derzeit deaktiviert. Bitte versuchen Sie es später noch einmal.';
 $L['REG_DISABLED'] = 'Registrierung deaktiviert';
 $L['REG_FORM_INFO'] = 'Bitte füllen Sie das folgende Formular aus, um ein Konto zu erstellen';
+$L['REGISTERED_TXT'] = 'Registriert!';
+$L['REG_FAILED'] = 'Registrierung fehlgeschlagen';
+$L['REG_ERROR_INFO_1'] = 'Es tut uns leid, aber es ist ein Fehler aufgetreten und Ihre Registrierung für den Benutzernamen ';
+$L['REG_ERROR_INFO_2'] = ' konnte nicht abgeschlossen werden. Bitte versuchen Sie es später noch einmal.';
 $L['SORRY'] = 'Es tut uns leid';
 $L['THANKS'] = 'Danke';
+$L['USERNAME_EMPTY'] = 'Benutzername nicht eingegeben';
+$L['USERNAME_BELOW'] = 'Benutzername unten ';
+$L['USERNAME_ABOVE'] = 'Benutzername oben';
+$L['CHARACTERS'] = 'Zeichen';
+$L['USERNAME_REQUIREMENTS'] = 'Benutzername entspricht nicht den Anforderungen';
+$L['USERNAME_WORD_RESERVED'] = 'Benutzername reserviertes Wort';
+$L['USERNAME_TAKEN'] = 'Benutzername wird bereits verwendet';
+$L['USERNAME_DISALLOWED'] = 'Benutzername nicht erlaubt';
+$L['REG_IP_BANNED'] = 'IP-Adresse gesperrt';
+$L['PASSWORD_EMPTY'] = 'Passwort nicht eingegeben';
+$L['PASSWORD_SHORT'] = 'Passwort zu kurz';
+$L['PASSWORD_LONG'] = 'Passwort zu lang';
+$L['PASSWORD_MATCH'] = 'Passwörter stimmen nicht überein';
+$L['QUOTA_EMPTY'] = 'Festplattenquote nicht eingegeben';
 
 //#4.1.4 - ACCOUNT
 $L['ADMIN_EDIT_ACC'] = 'Admin-Konto bearbeiten';

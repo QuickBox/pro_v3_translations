@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 8, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -361,7 +361,7 @@ $L['ZNC'] = 'ZNC 是一个 IRC 网络辅助软件. 它可以将客户端从实�
 
 //#3.2.2 - App uninstall
 $L['AIRSONIC_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Airsonic</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Airsonic</span>, 然而, 你的设置将被重置为默认.';
-$L['AUTOBRR_UNINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea2">Autobrr</span>. <br/><br/>这将完全删除您的所有配置 和设置...这个动作是不可逆转的. <br/><br/>您可以随时重新安装<span style="color:#01cea2">Autobrr</span>, 但是您的设置将被重置为默认值. ';
+$L['AUTOBRR_UNINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea2">Autobrr</span>. <br/><br/>这将完全删除您的所有配置 和设置...这个动作是不可逆转的. <br/><br/>您可以随时重新安装<span style="color:#01cea2">Autobrr</span>, 但是您的设置将被重置为默认值.';
 $L['AUTODL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">AutoDL-iRSSi</span>, 但是, 您的设置将被重置为默认值.';
 $L['AUTOSCAN_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Autoscan</span>, 然而, 你的设置将被重置为默认.';
 $L['BAZARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Bazarr</span>, 但是, 您的设置将被重置为默认值.';
@@ -655,6 +655,10 @@ $L['FORGOT_PASS'] = '忘记密码?';
 $L['LOG_IN'] = '登录';
 $L['CONFIRM_PASS_FIELD_PLACE'] = '请确认您的电子邮件地址.';
 $L['LOGIN_ACCOUNT'] = '登录您的账户, 继续.';
+$L['LOGIN_USERNAME_INVALID'] = '登录无效. 请检查您的用户名，然后重试';
+$L['LOGIN_PASSWORD_INVALID'] = '登录无效. 请检查您的密码，然后再试一次';
+$L['LOGIN_MISSING_USERNAME'] = '未输入用户名';
+$L['LOGIN_MISSING_PASSWORD'] = '未输入密码';
 $L['PASS_FIELD_INVALID'] = '请提供您的密码.';
 $L['PASS_FIELD_PLACE'] = '请输入你的密码.';
 $L['PASS_FIELD_VALID'] = '提供密码, 验证准备就绪.';
@@ -664,6 +668,11 @@ $L['UNREGISTERED'] = '没有注册?';
 $L['USER_FIELD_INVALID'] = '请提供您的用户名.';
 $L['USER_FIELD_PLACE'] = '请输入你的用户名.';
 $L['USER_FIELD_VALID'] = '用户名已提供, 验证准备就绪.';
+$L['ACCOUNT_BANNED'] = '您的帐户已被禁止. <br/>请联系系统管理员.';
+$L['ACCOUNT_DISABLED'] = '您的帐户未激活或被禁用. <br/>如果您认为这是一个问题，请联系系统管理员.';
+$L['ACCOUNT_INACTIVE_ADMIN'] = '您的帐户尚未被管理员激活.';
+$L['ACCOUNT_INACTIVE_EMAIL'] = '您的帐户尚未激活. <br/>请查看您的电子邮件以获取激活链接.';
+$L['IP_BANNED'] = '您的 IP 地址已被禁止. <br/>请联系系统管理员.';
 
 //#4.1.2 - FORGOT PASSWORD
 $L['EMAIL_FIELD_INVALID'] = '请提供您的电子邮件.';
@@ -684,6 +693,10 @@ $L['CAN_LOGIN'] = '为您注册. 您现在可以登录了';
 $L['CREATED_ADM_ACT'] = '但是, 这个论坛需要管理员激活账户. 当您的账户被激活后, 我们会通过电子邮件通知您.';
 $L['CREATED_CHECK_EMAIL'] = '请查看您的电子邮件以了解更多信息';
 $L['CREATED_EMAIL_ACT'] = '然而, 这个论坛需要账户激活. 激活密钥已被发送到您提供的电子邮件地址.';
+$L['EMAIL_EMPTY'] = '未输入电子邮件';
+$L['EMAIL_INVALID'] = '电子邮件无效';
+$L['EMAIL_MATCH'] = '电子邮件地址不匹配';
+$L['EMAIL_TAKEN'] = '邮箱地址已经注册';
 $L['RCONF_EMAIL_FIELD_INVALID'] = '这个电子邮件与之前输入的电子邮件不一致. 请再试一次.';
 $L['RCONF_EMAIL_FIELD_VALID'] = '电子邮件匹配, 验证准备就绪.';
 $L['RCONF_PASS_FIELD_INVALID'] = '这个密码与之前输入的密码不一致. 请再试一次.';
@@ -694,8 +707,26 @@ $L['REG_C_DISABLED'] = '注册目前已被禁用';
 $L['REG_DISABLED_INFO'] = '我们很抱歉, 但目前注册是无效的. 请在以后的时间再试.';
 $L['REG_DISABLED'] = '注册已被禁用';
 $L['REG_FORM_INFO'] = '请填写下面的表格来创建一个账户';
+$L['REGISTERED_TXT'] = '已注册！';
+$L['REG_FAILED'] = '注册失败';
+$L['REG_ERROR_INFO_1'] = '很抱歉，出现错误，您注册的用户名';
+$L['REG_ERROR_INFO_2'] = ' 无法完成.  请稍后再试.';
 $L['SORRY'] = '我们很抱歉';
 $L['THANKS'] = '谢谢你';
+$L['USERNAME_EMPTY'] = '未输入用户名';
+$L['USERNAME_BELOW'] = '下面的用户名';
+$L['USERNAME_ABOVE'] = '上面的用户名';
+$L['CHARACTERS'] = '字符';
+$L['USERNAME_REQUIREMENTS'] = '用户名不符合要求';
+$L['USERNAME_WORD_RESERVED'] = '用户名保留字';
+$L['USERNAME_TAKEN'] = '用户名已被使用';
+$L['USERNAME_DISALLOWED'] = '用户名不允许';
+$L['REG_IP_BANNED'] = 'IP地址被禁止';
+$L['PASSWORD_EMPTY'] = '未输入密码';
+$L['PASSWORD_SHORT'] = '密码太短';
+$L['PASSWORD_LONG'] = '密码太长';
+$L['PASSWORD_MATCH'] = '密码不匹配';
+$L['QUOTA_EMPTY'] = '未输入磁盘配额';
 
 //#4.1.4 - ACCOUNT
 $L['ADMIN_EDIT_ACC'] = '管理员编辑账户';
