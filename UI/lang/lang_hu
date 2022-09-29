@@ -500,6 +500,7 @@ $L['FREE'] = 'Free';
 $L['NZBGET_NZB'] = 'nzb betöltve az NZBGet-be';
 $L['QBITTORRENT_TORRENTS'] = 'torrents loaded in qBittorrent';
 $L['RT_TORRENTS'] = 'torrents loaded in rTorrent';
+$L['NO_CLIENTS'] = 'Jelenleg nincs torrent vagy nzb kliens telepítve';
 $L['SIZE'] = 'Size';
 $L['CURRENT_USERS_ONLINE'] = 'Users Currently Online';
 $L['THERE_ARE'] = 'There are';

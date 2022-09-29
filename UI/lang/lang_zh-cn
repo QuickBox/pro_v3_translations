@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -553,7 +553,7 @@ $L['RCLONE_OPTIONS'] = 'Rclone选项';
 $L['RCLONE_LOG_VIEWER'] = 'Rclone move.log';
 $L['RCLONE_COMMAND_CENTER'] = 'Rclone 指挥中心';
 $L['RCLONE_STATUS'] = 'Rclone状态';
-$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone当前正在后台运行, 以将数据上传到gdrive. 在这段时间内, 您会看到一个锁定位置, 以确认您的过程已开始. 该过程完成后, 此锁将自行删除. 随时关闭此弹出窗口. <br/><br/><div class="alert alert-notice" style="color:#fff"><strong>注意: </strong> 服务器每天晚上03:12 AM通过cronjob自动运行上传. </div>';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone当前正在后台运行, 以将数据上传到 gdrive. 在这段时间内, 您会看到一个锁定位置, 以确认您的过程已开始. 该过程完成后, 此锁将自行删除. 随时关闭此弹出窗口. <br/><br/><div class="alert alert-notice" style="color:#fff"><strong>注意: </strong> 服务器每天晚上 03:12 AM 通过 cronjob 自动运行上传. </div>';
 $L['RCLONE_UPLOAD_VIEWER'] = 'Rclone上传';
 $L['RCMOUNT_STATUS'] = 'MergerFS状态';
 $L['RCMOUNT_WHERE'] = '安装位置';
@@ -574,6 +574,7 @@ $L['DISK_SPACE'] = '磁盘空间';
 $L['FREE'] = '空闲';
 $L['QBITTORRENT_TORRENTS'] = '个种子被 qBittorrent 加载';
 $L['RT_TORRENTS'] = '个种子被 rTorrent 加载';
+$L['NO_CLIENTS'] = '目前没有安装 torrent 或 nzb 客户端';
 $L['SIZE'] = '总大小';
 $L['THERE_ARE'] = '总计有';
 $L['TRANSMISSION_TORRENTS'] = '个种子被 Transmission 加载';

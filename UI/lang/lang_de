@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -568,13 +568,14 @@ $L['DD_QBITTORRENT'] = 'qBittorrent';
 $L['DD_RTORRENT'] = 'rTorrent';
 $L['DD_SABNZBD'] = 'SABnzbd';
 $L['DD_TRANSMISSION'] = 'Transmission';
-$L['DELUGE_TORRENTS'] = 'Torrents in Deluge geladen';
+$L['DELUGE_TORRENTS'] = 'torrents in Deluge geladen';
 $L['DISK_%_1'] = 'Du verwendest';
-$L['DISK_%_2'] = 'deines gesamten Festplattenspeichers';
+$L['DISK_%_2'] = 'deines gesamten festplattenspeichers';
 $L['DISK_SPACE'] = 'Speicherplatz';
 $L['FREE'] = 'Frei';
 $L['QBITTORRENT_TORRENTS'] = 'Torrents in qBittorrent geladen';
 $L['RT_TORRENTS'] = 'Torrents in rTorrent geladen';
+$L['NO_CLIENTS'] = 'Derzeit sind keine torrent- oder nzb-clients installiert';
 $L['SIZE'] = 'Größe';
 $L['CURRENT_USERS_ONLINE'] = 'Benutzer Derzeit Online';
 $L['THERE_ARE'] = 'Es sind';

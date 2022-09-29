@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 14, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -575,6 +575,7 @@ $L['DISK_SPACE'] = 'Diskplads';
 $L['FREE'] = 'Ledig';
 $L['QBITTORRENT_TORRENTS'] = 'torrents i qBittorrent';
 $L['RT_TORRENTS'] = 'torrents i rTorrent';
+$L['NO_CLIENTS'] = 'Der er i øjeblikket ingen torrent- eller nzb-klienter installeret';
 $L['SIZE'] = 'Størrelse';
 $L['CURRENT_USERS_ONLINE'] = 'Brugere, der i Øjeblikket er Online';
 $L['THERE_ARE'] = 'Der er indlæst';
