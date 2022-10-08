@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Português	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -899,16 +899,18 @@ $L['AWAITING_ADMIN'] = 'Awaiting Admin Activation';
 $L['AWAITING_EMAIL'] = 'Awaiting E-mail Activation';
 $L['BANNED'] = 'Banned';
 $L['CU_CONFIRM_EMAIL_INFO'] = 'Please confirm E-mail';
-$L['CU_CONFIRM_EMAIL'] = 'Confirmar e-mail:';
+$L['CU_CONFIRM_EMAIL'] = 'Confirmar e-mail';
 $L['CU_CONFIRM_PASS_INFO'] = 'Por favor, confirme sua senha';
-$L['CU_CONFIRM_PASSWORD'] = 'Confirme a Senha:';
+$L['CU_CONFIRM_PASSWORD'] = 'Confirme a Senha';
 $L['CU_DISK_QUOTA'] = 'Quota de disco:';
-$L['CU_EMAIL'] = 'E-mail:';
+$L['CU_GROUP'] = 'Grupo';
+$L['CU_EMAIL'] = 'E-mail';
 $L['CU_NEW_PASS_INFO'] = 'Por favor, insira sua nova senha';
-$L['CU_NEW_PASSWORD'] = 'Nova senha:';
-$L['CU_SHELL_ENV'] = 'Ambiente de shell preferido:';
+$L['CU_NEW_PASSWORD'] = 'Nova senha';
+$L['CU_SHELL_ENV'] = 'Ambiente de shell preferido';
 $L['CURRENT_SHELLS'] = 'Shell atual';
 $L['CURRENT_USERS'] = 'Usuários atuais';
+$L['DEFAULT_GROUP_TAG'] = 'padrão';
 $L['DISK_STATUS'] = 'Status do Disco';
 $L['EDIT_USER_SHELL'] = 'Edite o ambiente de shell do usuário';
 $L['ENABLE_USER_ANNOUNCE'] = 'Ativar anúncio do painel';
@@ -942,6 +944,8 @@ $L['APPLICATION'] = 'Software';
 $L['CURRENT_FULL_PATH'] = 'Caminho completo atual';
 $L['CURRENT_GROUPS'] = 'Grupos atuais';
 $L['CURRENT_STATUS'] = 'Status atual';
+$L['EDIT_DEFAULT_GROUP'] = 'Grupo padrão';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'Esta opção, quando selecionada, definirá este como o grupo padrão. Isso é útil ao criar usuários por meio de CLI e deseja ter um grupo personalizado como o padrão atribuído.';
 $L['EDIT_GROUP_MEMBERSHIP'] = 'Editar a associação do grupo do usuário';
 $L['EU_PATH'] = 'Caminho';
 $L['GENERAL_INFO'] = 'Informações gerais';

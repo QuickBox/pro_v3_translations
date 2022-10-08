@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Français	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -895,12 +895,14 @@ $L['CU_CONFIRM_EMAIL'] = 'Confirmation email';
 $L['CU_CONFIRM_PASS_INFO'] = 'Confirmez votre mot de passe';
 $L['CU_CONFIRM_PASSWORD'] = 'Confirmation Mot de Passe';
 $L['CU_DISK_QUOTA'] = 'Espace Disque:';
-$L['CU_EMAIL'] = 'email:';
+$L['CU_GROUP'] = 'Groupe';
+$L['CU_EMAIL'] = 'email';
 $L['CU_NEW_PASS_INFO'] = 'Tapez votre nouveau mot de passe';
 $L['CU_NEW_PASSWORD'] = 'Nouveau Mot de Passe';
-$L['CU_SHELL_ENV'] = 'Environnement shell préféré:';
+$L['CU_SHELL_ENV'] = 'Environnement shell préféré';
 $L['CURRENT_SHELLS'] = 'Shell actuel';
 $L['CURRENT_USERS'] = 'Utilisateurs Actuels';
+$L['DEFAULT_GROUP_TAG'] = 'par défaut';
 $L['DISK_STATUS'] = 'Statut du disque';
 $L['EDIT_USER_SHELL'] = 'Modifier l\'environnement du shell des utilisateurs';
 $L['ENABLE_USER_ANNOUNCE'] = 'Activer l\'annonce de l\'utilisateur';
@@ -934,6 +936,8 @@ $L['APPLICATION'] = 'Applications';
 $L['CURRENT_FULL_PATH'] = 'Chemin Complet Actuel';
 $L['CURRENT_GROUPS'] = 'Groupes Actuels';
 $L['CURRENT_STATUS'] = 'Statuts Actuels';
+$L['EDIT_DEFAULT_GROUP'] = 'Groupe par défaut';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'Cette option, lorsqu\'elle est sélectionnée, le définira comme groupe par défaut. Ceci est utile lors de la création d\'utilisateurs via CLI et que vous souhaitez qu\'un groupe personnalisé soit affecté par défaut.';
 $L['EDIT_GROUP_MEMBERSHIP'] = 'Modifier l\'appartenance de l\'Utilisateur au Groupe';
 $L['EU_PATH'] = 'Chemin';
 $L['GENERAL_INFO'] = 'Informations Générales';

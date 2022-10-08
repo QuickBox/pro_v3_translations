@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -899,16 +899,18 @@ $L['AWAITING_ADMIN'] = 'Awaiting Admin Activation';
 $L['AWAITING_EMAIL'] = 'Awaiting E-mail Activation';
 $L['BANNED'] = 'Prohibido';
 $L['CU_CONFIRM_EMAIL_INFO'] = 'Por favor confirme el correo electrónico';
-$L['CU_CONFIRM_EMAIL'] = 'Confirmar E-mail:';
+$L['CU_CONFIRM_EMAIL'] = 'Confirmar E-mail';
 $L['CU_CONFIRM_PASS_INFO'] = 'Por favor, confirme tu contraseña';
-$L['CU_CONFIRM_PASSWORD'] = 'Confirmar Contraseña:';
+$L['CU_CONFIRM_PASSWORD'] = 'Confirmar Contraseña';
 $L['CU_DISK_QUOTA'] = 'Cuota de Disco:';
-$L['CU_EMAIL'] = 'E-mail:';
+$L['CU_GROUP'] = 'Grupo';
+$L['CU_EMAIL'] = 'E-mail';
 $L['CU_NEW_PASS_INFO'] = 'Por favor ingresa tu nueva contraseña';
-$L['CU_NEW_PASSWORD'] = 'Nueva Contraseña:';
-$L['CU_SHELL_ENV'] = 'Entorno de shell preferido:';
+$L['CU_NEW_PASSWORD'] = 'Nueva Contraseña';
+$L['CU_SHELL_ENV'] = 'Entorno de shell preferido';
 $L['CURRENT_SHELLS'] = 'Shell actual';
 $L['CURRENT_USERS'] = 'Usuarios Actuales';
+$L['DEFAULT_GROUP_TAG'] = 'predeterminado';
 $L['DISK_STATUS'] = 'Estado de Disco';
 $L['EDIT_USER_SHELL'] = 'Editar el entorno del shell de usuarios';
 $L['ENABLE_USER_ANNOUNCE'] = 'Habilitar anuncio de usuario';
@@ -942,6 +944,8 @@ $L['APPLICATION'] = 'aplicaciones';
 $L['CURRENT_FULL_PATH'] = 'Ruta Completa Actual';
 $L['CURRENT_GROUPS'] = 'Grupos Actuales';
 $L['CURRENT_STATUS'] = 'Estado Actual';
+$L['EDIT_DEFAULT_GROUP'] = 'Grupo predeterminado';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'Esta opción, cuando se selecciona, lo establecerá como el grupo predeterminado. Esto es útil cuando se crean usuarios a través de CLI y se desea tener un grupo personalizado como predeterminado asignado.';
 $L['EDIT_GROUP_MEMBERSHIP'] = 'Editar la Membresía de Grupo del Usuario';
 $L['EU_PATH'] = 'Ruta';
 $L['GENERAL_INFO'] = 'Información General';

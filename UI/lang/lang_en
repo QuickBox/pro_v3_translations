@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                     English	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -908,12 +908,14 @@ $L['CU_CONFIRM_EMAIL'] = 'Confirm E-mail';
 $L['CU_CONFIRM_PASS_INFO'] = 'Confirm your password.';
 $L['CU_CONFIRM_PASSWORD'] = 'Confirm Password';
 $L['CU_DISK_QUOTA'] = 'Disk Quota:';
+$L['CU_GROUP'] = 'Group';
 $L['CU_EMAIL'] = 'E-mail';
 $L['CU_NEW_PASS_INFO'] = 'Enter your new password';
 $L['CU_NEW_PASSWORD'] = 'New Password';
 $L['CU_SHELL_ENV'] = 'Preferred shell environment:';
 $L['CURRENT_SHELLS'] = 'Current Shell';
 $L['CURRENT_USERS'] = 'Current Users';
+$L['DEFAULT_GROUP_TAG'] = 'default';
 $L['DISK_STATUS'] = 'Disk Status';
 $L['EDIT_USER_SHELL'] = 'Edit the User\'s Shell Environment';
 $L['ENABLE_USER_ANNOUNCE'] = 'Enable Dashboard Announcement';
@@ -947,6 +949,8 @@ $L['APPLICATION'] = 'Software';
 $L['CURRENT_FULL_PATH'] = 'Current Full Path';
 $L['CURRENT_GROUPS'] = 'Current Groups';
 $L['CURRENT_STATUS'] = 'Current Status';
+$L['EDIT_DEFAULT_GROUP'] = 'Default Group';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'This option, when selected, will set this as the default group. This is useful when creating users by way of CLI and are wanting to have a custom made group as the default assigned.';
 $L['EDIT_GROUP_MEMBERSHIP'] = 'Edit the User\'s Group Membership';
 $L['EU_PATH'] = 'Path';
 $L['GENERAL_INFO'] = 'General Info';

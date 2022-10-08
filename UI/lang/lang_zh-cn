@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -897,16 +897,18 @@ $L['ANNOUNCEMENT_LIST'] = '公告内容';
 $L['AWAITING_ADMIN'] = '等待管理员激活';
 $L['AWAITING_EMAIL'] = '等待电子邮件激活';
 $L['BANNED'] = '被禁止';
-$L['CU_CONFIRM_EMAIL'] = '确认电子邮件:';
+$L['CU_CONFIRM_EMAIL'] = '确认电子邮件';
 $L['CU_CONFIRM_PASS_INFO'] = '请确认您的密码';
-$L['CU_CONFIRM_PASSWORD'] = '确认密码:';
+$L['CU_CONFIRM_PASSWORD'] = '确认密码';
 $L['CU_DISK_QUOTA'] = '磁盘配额:';
-$L['CU_EMAIL'] = '电子邮件:';
+$L['CU_GROUP'] = '组';
+$L['CU_EMAIL'] = '电子邮件';
 $L['CU_NEW_PASS_INFO'] = '请输入您的新密码';
-$L['CU_NEW_PASSWORD'] = '新密码:';
-$L['CU_SHELL_ENV'] = '首选的外壳环境：';
+$L['CU_NEW_PASSWORD'] = '新密码';
+$L['CU_SHELL_ENV'] = '首选的外壳环境';
 $L['CURRENT_SHELLS'] = '目前的壳牌';
 $L['CURRENT_USERS'] = '当前用户';
+$L['DEFAULT_GROUP_TAG'] = '默认';
 $L['DISK_STATUS'] = '磁盘状态';
 $L['EDIT_USER_SHELL'] = '编辑用户的外壳环境';
 $L['ENABLE_USER_ANNOUNCE'] = '启用用户仪表板公告';
@@ -941,6 +943,8 @@ $L['APPLICATION'] = '应用领域';
 $L['CURRENT_FULL_PATH'] = '当前的完整路径';
 $L['CURRENT_GROUPS'] = '当前用户组';
 $L['CURRENT_STATUS'] = '当前状态';
+$L['EDIT_DEFAULT_GROUP'] = '默认组';
+$L['EDIT_DEFAULT_GROUP_INFO'] = '选择此选项后, 会将其设置为默认组. 这在通过 CLI 创建用户并希望将自定义组作为默认分配时很有用.';
 $L['EDIT_GROUP_MEMBERSHIP'] = '编辑用户的用户组成员';
 $L['EU_PATH'] = '路径';
 $L['GENERAL_INFO'] = '常规信息';

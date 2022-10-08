@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -900,16 +900,18 @@ $L['AWAITING_ADMIN'] = 'Warten auf Admin-Aktivierung';
 $L['AWAITING_EMAIL'] = 'Warten auf E-Mail-Aktivierung';
 $L['BANNED'] = 'Verboten';
 $L['CU_CONFIRM_EMAIL_INFO'] = 'Bitte bestätigen Sie die E-Mail';
-$L['CU_CONFIRM_EMAIL'] = 'Bestätigungs-Email:';
+$L['CU_CONFIRM_EMAIL'] = 'Bestätigungs-Email';
 $L['CU_CONFIRM_PASS_INFO'] = 'Bitte bestätige dein Passwort';
-$L['CU_CONFIRM_PASSWORD'] = 'Bestätige das Passwort:';
+$L['CU_CONFIRM_PASSWORD'] = 'Bestätige das Passwort';
 $L['CU_DISK_QUOTA'] = 'Datenträgerkontingent:';
-$L['CU_EMAIL'] = 'Email:';
+$L['CU_GROUP'] = 'Gruppe';
+$L['CU_EMAIL'] = 'Email';
 $L['CU_NEW_PASS_INFO'] = 'Bitte gebe dein neues Passwort ein';
-$L['CU_NEW_PASSWORD'] = 'Neues Passwort:';
-$L['CU_SHELL_ENV'] = 'Bevorzugte Shell-Umgebung:';
+$L['CU_NEW_PASSWORD'] = 'Neues Passwort';
+$L['CU_SHELL_ENV'] = 'Bevorzugte Shell-Umgebung';
 $L['CURRENT_SHELLS'] = 'Aktuelle Shell';
 $L['CURRENT_USERS'] = 'Derzeitige Nutzer';
+$L['DEFAULT_GROUP_TAG'] = 'standard';
 $L['DISK_STATUS'] = 'Festplattenstatus';
 $L['EDIT_USER_SHELL'] = 'Bearbeiten Sie die Benutzer-Shell-Umgebung';
 $L['ENABLE_USER_ANNOUNCE'] = 'Aktivieren Sie die Dashboard-Ankündigung';
@@ -943,6 +945,8 @@ $L['APPLICATION'] = 'Software';
 $L['CURRENT_FULL_PATH'] = 'Aktueller vollständiger Pfad';
 $L['CURRENT_GROUPS'] = 'Aktuelle Gruppen';
 $L['CURRENT_STATUS'] = 'Aktuelle Status';
+$L['EDIT_DEFAULT_GROUP'] = 'Standardgruppe';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'Wenn diese Option ausgewählt ist, wird sie als Standardgruppe festgelegt. Dies ist nützlich, wenn Sie Benutzer über die CLI erstellen und eine benutzerdefinierte Gruppe als Standard zugewiesen haben möchten.';
 $L['EDIT_GROUP_MEMBERSHIP'] = 'Bearbeite die Gruppenmitgliedschaft des Benutzers';
 $L['EU_PATH'] = 'Pfad';
 $L['GENERAL_INFO'] = 'Allgemeine Information';

@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 28, 2022   *
+ * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -898,16 +898,18 @@ $L['AWAITING_ADMIN'] = 'Venter på Admin aktivering ';
 $L['AWAITING_EMAIL'] = 'Venter på Email aktivering';
 $L['BANNED'] = 'Bandlyst';
 $L['CU_CONFIRM_EMAIL_INFO'] = 'Bekræft venligst Email';
-$L['CU_CONFIRM_EMAIL'] = 'Bekræft Email:';
+$L['CU_CONFIRM_EMAIL'] = 'Bekræft Email';
 $L['CU_CONFIRM_PASS_INFO'] = 'Bekræft venligst dit kodeord';
-$L['CU_CONFIRM_PASSWORD'] = 'Bekræft Kodeord:';
+$L['CU_CONFIRM_PASSWORD'] = 'Bekræft Kodeord';
 $L['CU_DISK_QUOTA'] = 'Diskkvota:';
-$L['CU_EMAIL'] = 'Email:';
+$L['CU_GROUP'] = 'Gruppe';
+$L['CU_EMAIL'] = 'Email';
 $L['CU_NEW_PASS_INFO'] = 'Indtast venligst din nye adgangskode';
-$L['CU_NEW_PASSWORD'] = 'Nyt Kodeord:';
-$L['CU_SHELL_ENV'] = 'Foretrukket shell-miljø:';
+$L['CU_NEW_PASSWORD'] = 'Nyt Kodeord';
+$L['CU_SHELL_ENV'] = 'Foretrukket shell-miljø';
 $L['CURRENT_SHELLS'] = 'Nuværende Shell';
 $L['CURRENT_USERS'] = 'Nuværende Brugere';
+$L['DEFAULT_GROUP_TAG'] = 'standard';
 $L['DISK_STATUS'] = 'Diskstatus';
 $L['EDIT_USER_SHELL'] = 'Rediger brugernes skalmiljø';
 $L['ENABLE_USER_ANNOUNCE'] = 'Aktivér Bekendtgørelser';
@@ -941,6 +943,8 @@ $L['APPLICATION'] = 'Software';
 $L['CURRENT_FULL_PATH'] = 'Nuværende Fulde Sti';
 $L['CURRENT_GROUPS'] = 'Nuværende Grupper';
 $L['CURRENT_STATUS'] = 'Nuværende Status';
+$L['EDIT_DEFAULT_GROUP'] = 'Standardgruppe';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'Denne mulighed, når den er valgt, vil sætte denne som standardgruppe. Dette er nyttigt, når du opretter brugere ved hjælp af CLI og ønsker at have en specialfremstillet gruppe som standard tildelt.';
 $L['EDIT_GROUP_MEMBERSHIP'] = 'Rediger brugerens gruppemedlemskab';
 $L['EU_PATH'] = 'Sti';
 $L['GENERAL_INFO'] = 'Generelle oplysninger';
