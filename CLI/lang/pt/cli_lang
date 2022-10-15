@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.54
+# File Version: 1.0.58
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -333,6 +333,7 @@ quickbox::lang::software::info::example() {
 }
 
 quickbox::lang::software::info::note() {
+	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
@@ -466,6 +467,34 @@ ${software_title} instalado na porta: ${software_web_port}"
 		declare text="Parece que algo deu errado"
 		quickbox::dashboard::log "${text}"
 	fi
+}
+
+quickbox::lang::software::notifiarr::access() {
+	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+		declare text="acesse ${software_title} em:
+${quickbox_web_root}${username}/${software_name}
+${software_title} instalado na porta: ${software_web_port}
+nome de usuário: ${username}
+senha: ${notifiarr_user_password}
+
+Nota: A senha tem menos de 9 caracteres, eu modifiquei isso para adicionar caracteres adicionais.
+      Você pode fazer login usando a senha fornecida e alterá-la nas configurações."
+		quickbox::dashboard::log "${text}"
+	else
+		declare text="acesse ${software_title} em:
+${quickbox_web_root}${username}/${software_name}
+${software_title} instalado na porta: ${software_web_port}
+nome de usuário: ${username}
+senha: ${notifiarr_user_password}"
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::software::novnc::access() {
+	declare text="acesso ${software_title} em:
+${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${software_title} instalado na porta: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::overseerr::access() {

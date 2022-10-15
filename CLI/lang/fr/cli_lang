@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.50
+# File Version: 1.0.54
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -333,6 +333,7 @@ quickbox::lang::software::info::example() {
 }
 
 quickbox::lang::software::info::note() {
+	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
@@ -466,6 +467,34 @@ ${software_title} installé sur le port: ${software_web_port}"
 		declare text="On dirait que quelque chose a mal tourné."
 		quickbox::dashboard::log "${text}."
 	fi
+}
+
+quickbox::lang::software::notifiarr::access() {
+	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+		declare text="accédez à ${software_title} à l'adresse:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installé sur le port: ${software_web_port}
+nom d'utilisateur: ${username}
+mot de passe: ${notifiarr_user_password}
+
+Remarque: Le mot de passe est inférieur à 9 caractères, j'ai modifié ceci pour ajouter des caractères supplémentaires.
+          Vous pouvez vous connecter en utilisant le mot de passe donné et le modifier dans les paramètres."
+		quickbox::dashboard::log "${text}"
+	else
+		declare text="accédez à ${software_title} à l'adresse:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installé sur le port: ${software_web_port}
+nom d'utilisateur: ${username}
+mot de passe: ${notifiarr_user_password}"
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::software::novnc::access() {
+	declare text="accédez à ${software_title} à l'adresse:
+${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${software_title} installé sur le port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::overseerr::access() {

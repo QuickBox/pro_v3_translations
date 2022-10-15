@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.252
+# File Version: 1.0.256
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -333,6 +333,7 @@ quickbox::lang::software::info::example() {
 }
 
 quickbox::lang::software::info::note() {
+	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
@@ -466,6 +467,34 @@ ${software_title} installed on port: ${software_web_port}"
 		declare text="Looks like something went wrong"
 		quickbox::dashboard::log "${text}"
 	fi
+}
+
+quickbox::lang::software::notifiarr::access() {
+	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+		declare text="access ${software_title} at:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installed on port: ${software_web_port}
+username: ${username}
+password: ${notifiarr_user_password}
+
+Note: The password is less than 9 characters, I have modified this to add additional characters.
+      You can login using the given password and change it in the settings."
+		quickbox::dashboard::log "${text}"
+	else
+		declare text="access ${software_title} at:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installed on port: ${software_web_port}
+username: ${username}
+password: ${notifiarr_user_password}"
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::software::novnc::access() {
+	declare text="access ${software_title} at:
+${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${software_title} installed on port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::overseerr::access() {

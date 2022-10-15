@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : October 08, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : October 14, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -294,6 +294,7 @@ $L['AUTOBRR'] = 'Autobrr 是 autodl-irssi+rutorrent 插件的现代单一二进�
 $L['AUTODL'] = 'AutoDL-iRSSi 是一个 irssi 插件, 用于监视 IRC 发布频道并且可以根据用户定义的过滤器下载.';
 $L['AUTOSCAN'] = 'Autoscan取代了默认的Plex和Emby的行为, 用于在文件系统上采集文件变化. Autoscan与Sonarr, Radarr, Lidarr和Google Drive集成, 以接近实时的方式获取变化, 而不依赖文件系统.';
 $L['BAZARR'] = 'Bazarr是Sonarr和Radarr的配套应用程序. 它根据您的要求管理和下载字幕. 您可以通过电视节目或电影定义喜好, Bazarr会为您做好一切.';
+$L['BAZARR4K'] = 'Bazarr4K 是 4K UHD 配置文件的独立 Bazarr 克隆. 这是一种处理多个 Bazarr 实例的方法, 同时将 UHD 内容与一般内容分开.';
 $L['BBR'] = 'BBR 是一个由 Google 提供的 Linux 内核的新型TCP拥塞控制算法, 它可以增加网络吞吐量并且降低连接';
 $L['BTSYNC'] = 'BitTorrent 公司的 BitTorrent Sync 是一个专有的对等文件同步工具.';
 $L['CALIBRE'] = 'Calibre 是一个跨平台的开源电子书套件. Calibre 可以将电子书整理进一个虚拟的库, 并且可以显示, 编辑, 转换这些电子书. 同时它也可以将这些电子书同步到电子阅读器中. 书籍编辑支持 EPUB 和 AZW3格式.';
@@ -319,6 +320,7 @@ $L['MEDUSA'] = '电视节目的视频文件管理器, 用来观看你最喜爱�
 $L['MYLAR3'] = 'Mylar是一个自动漫画 (cbr / cbz) 下载程序, 可与NZB和用python编写的torrent一起使用. 除了DDL外, 它还支持SABnzbd, NZBGET和许多torrent客户端.';
 $L['NETDATA'] = 'Netdata 分布式的, 实时的适用于应用与系统的性能与健康情况的监视器.';
 $L['NEXTCLOUD'] = 'Nextcloud是一个开源, 自主托管的文件同步和共享通信应用平台. 访问和同步你的文件, 联系人, 日历和沟通和协作你的设备. 你可以完全掌控你的数据, 存放在哪里以及谁可以访问它!';
+$L['NOTIFIARR'] = '这是 <a href="https://nullrefer.ir/?https://notifiarr.com/" rel="noopener nofollow" target="_blank">Notifiarr.com</a>. 客户端在您的 Discord 服务器中启用来自 Media Bot 的内容请求，并提供有关 Plex 使用情况和系统健康状况以及许多其他功能的报告..';
 $L['NOVNC'] = 'noVNC不仅是一个 VNC 客户端 JavaScript 库, 也是一个利用该库构建的应用程序. noVNC 可以在任何的现代浏览器包括移动浏览器 (iOS and Android) 中运行.';
 $L['NZBGET'] = 'NZBGet 是一个二进制下载器, 它根据 nzb-files 中给出的信息从 Usenet 下载文件. NZBGet 是用 C ++ 编写的, 以其非凡的性能和效率而闻名.';
 $L['NZBHYDRA'] = 'NZBHydra 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
@@ -365,6 +367,7 @@ $L['AUTOBRR_UNINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea
 $L['AUTODL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">AutoDL-iRSSi</span>, 但是, 您的设置将被重置为默认值.';
 $L['AUTOSCAN_UNINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Autoscan</span>, 然而, 你的设置将被重置为默认.';
 $L['BAZARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Bazarr</span>, 但是, 您的设置将被重置为默认值.';
+$L['BAZARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Bazarr4K</span>, 但是, 您的设置将被重置为默认值.';
 $L['BBR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BBR</span>. <br/><br/>这将完全删除您的所有对内核的修改设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BBR</span>.';
 $L['BTSYNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BitTorrent Sync</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">BitTorrent Sync</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['CALIBRE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Calibre</span>. <br/><br/>这将完全删除您的所有配置文件...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Calibre</span> 但是, 您的设置将被重置为默认值.';
@@ -390,6 +393,7 @@ $L['MEDUSA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">M
 $L['MYLAR3_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Mylar3</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Mylar3</span>, 但是, 您的设置将被重置为默认值.';
 $L['NETDATA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Netdata</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Netdata</span>, 但是, 您的设置将被重置为默认值.';
 $L['NEXTCLOUD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NextCloud</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NextCloud</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['NOTIFIARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Notifiarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Notifiarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['NOVNC_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">noVNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">noVNC</span>, 但是, 您的设置将被重置为默认值.';
 $L['NZBGET_UNINSTALL'] = 'Y即将从系统中卸载 <span style="color:#01cea2">NZBGet</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBGet</span>, 但是, 您的设置将被重置为默认值.';
 $L['NZBHYDRA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">NZBHydra</span>, 但是, 您的设置将被重置为默认值.';
@@ -436,6 +440,7 @@ $L['AUTOBRR_REINSTALL'] = '您即将从系统中卸载 <span style="color:#01cea
 $L['AUTODL_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">AutoDL-iRSSi</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['AUTOSCAN_REINSTALL'] = '您即将从您的系统中卸载<span style="color:#01cea2">Autoscan</span>.<br/><br/>这将完全删除您所有的配置和设置...这个动作是不可逆转的.';
 $L['BAZARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['BAZARR4K_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Bazarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['BBR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BBR</span>. <br/><br/>这将完全删除您的所有对内核的修改设置...这个动作是不可逆的.';
 $L['BTSYNC_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">BitTorrent Sync</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
 $L['CALIBRE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Calibre</span>. <br/><br/>这将完全删除您的所有配置文件...这个动作是不可逆的.';
@@ -461,6 +466,7 @@ $L['MEDUSA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">M
 $L['MYLAR3_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Mylar3</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['NETDATA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Netdata</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['NEXTCLOUD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NextCloud</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
+$L['NOTIFIARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Notifiarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['NOVNC_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">noVNC</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['NZBGET_REINSTALL'] = 'Y即将从系统中卸载 <span style="color:#01cea2">NZBGet</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['NZBHYDRA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">NZBHydra</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';

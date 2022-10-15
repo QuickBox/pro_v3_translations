@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.45
+# File Version: 1.0.50
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -333,6 +333,7 @@ quickbox::lang::software::info::example() {
 }
 
 quickbox::lang::software::info::note() {
+	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
@@ -468,6 +469,34 @@ ${software_title} 安装在端口: ${software_web_port}"
 	fi
 }
 
+quickbox::lang::software::notifiarr::access() {
+	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+		declare text="访问 ${software_title} 在:
+${quickbox_web_root}${username}/${software_name}
+${software_title} 安装在端口：${software_web_port}
+用户名: ${username}
+密码: ${notifiarr_user_password}
+
+注意: 密码少于 9 个字符, 我已对此进行了修改以添加更多字符.
+     您可以使用给定的密码登录并在设置中更改它."
+		quickbox::dashboard::log "${text}"
+	else
+		declare text="访问 ${software_title} 在:
+${quickbox_web_root}${username}/${software_name}
+${software_title} 安装在端口：${software_web_port}
+用户名: ${username}
+密码: ${notifiarr_user_password}"
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::software::novnc::access() {
+	declare text="访问 ${software_title} 在:
+${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${software_title} 安装在端口: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::overseerr::access() {
 	if [[ -n ${domain:-} ]]; then
 		# trunk-ignore(shellcheck/SC2001)
@@ -492,7 +521,7 @@ quickbox::lang::software::plexclaim() {
 quickbox::lang::software::plex::access() {
 	declare text="访问 ${software_title} 在:
 ${quickbox_web_root}web/
-${software_title} 安装在端口上: ${software_web_port}
+${software_title} 安装在端口: ${software_web_port}
 
 > 如果你还没有, 或者不确定如何 
 声称你的plex服务器, 请遵循以下指南:
@@ -578,7 +607,7 @@ quickbox::lang::software::plexupdate_current() {
 quickbox::lang::software::pyload::access() {
 	declare text="访问 ${software_title} 在:
 ${quickbox_web_root}${username}/${software_name}/
-${software_title} 安装在端口上: ${software_web_port} 
+${software_title} 安装在端口: ${software_web_port} 
 
 > 帐号 = ${username}
 > 密码 = pyload
@@ -590,7 +619,7 @@ ${software_title} 安装在端口上: ${software_web_port}
 
 quickbox::lang::software::quassel::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-	declare text="${software_title} 安装在端口上: ${software_daemon_port}
+	declare text="${software_title} 安装在端口: ${software_daemon_port}
   
 > 请在您的个人电脑上安装 quassel-client 
 并连接到新创建的 ${software_title} 核心服务器 核心 

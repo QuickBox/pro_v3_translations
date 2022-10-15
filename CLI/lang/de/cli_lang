@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.57
+# File Version: 1.0.64
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -333,6 +333,7 @@ quickbox::lang::software::info::example() {
 }
 
 quickbox::lang::software::info::note() {
+	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
@@ -460,12 +461,40 @@ quickbox::lang::software::flaresolverr::access() {
 	curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
 	if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
 		declare text="status: ok. FlareSolverr ist bereit!
-${software_title} installiert auf Port: ${software_web_port}"
+${software_title} installiert auf port: ${software_web_port}"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="Sieht aus, als wäre etwas schief gelaufen"
 		quickbox::dashboard::log "${text}"
 	fi
+}
+
+quickbox::lang::software::notifiarr::access() {
+	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+		declare text="access ${software_title} unter:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installiert auf Port: ${software_web_port}
+benutzername: ${username}
+passwort: ${notifiarr_user_password}
+
+Hinweis: Das Passwort hat weniger als 9 Zeichen, ich habe es geändert, um zusätzliche Zeichen hinzuzufügen.
+         Sie können sich mit dem angegebenen Passwort anmelden und es in den Einstellungen ändern."
+		quickbox::dashboard::log "${text}"
+	else
+		declare text="access ${software_title} unter:
+${quickbox_web_root}${username}/${software_name}
+${software_title} installiert auf Port: ${software_web_port}
+benutzername: ${username}
+passwort: ${notifiarr_user_password}"
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::software::novnc::access() {
+	declare text="zugriff auf ${software_title} unter:
+${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${software_title} installiert auf port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::overseerr::access() {
@@ -479,7 +508,7 @@ https://${overseerr_web_root}/"
 		quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
 		declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}:${software_web_port}/
-${software_title} installiert auf Port: ${software_web_port}"
+${software_title} installiert auf port: ${software_web_port}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
