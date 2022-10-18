@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.57
+# File Version: 1.0.58
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -477,8 +477,13 @@ ${software_title} instalado en el puerto: ${software_web_port}
 nombre de usuario: ${username}
 contraseña: ${notifiarr_user_password}
 
-Nota: La contraseña tiene menos de 9 caracteres, la he modificado para agregar caracteres adicionales.
-      Puede iniciar sesión con la contraseña dada y cambiarla en la configuración".
+Nota: Su contraseña tiene menos de 9 caracteres.
+      Notifiarr requiere que las contraseñas tengan al menos 9 caracteres.
+      He modificado esto para agregar caracteres aleatorios adicionales.
+      Puede iniciar sesión con la contraseña dada y cambiarla en la configuración.
+      -------------------------------------------------------
+      Para su comodidad, la nueva contraseña se encuentra en:
+      /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="acceder a ${software_title} en:

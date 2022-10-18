@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.50
+# File Version: 1.0.51
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -477,8 +477,13 @@ ${software_title} 安装在端口：${software_web_port}
 用户名: ${username}
 密码: ${notifiarr_user_password}
 
-注意: 密码少于 9 个字符, 我已对此进行了修改以添加更多字符.
-     您可以使用给定的密码登录并在设置中更改它."
+注意: 您的密码少于 9 个字符.
+     Notifiarr 要求密码至少包含 9 个字符.
+     我已对此进行了修改以添加其他随机字符.
+     您可以使用给定的密码登录并在设置中更改它.
+     --------------------
+     为方便起见, 新密码位于:
+     /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="访问 ${software_title} 在:

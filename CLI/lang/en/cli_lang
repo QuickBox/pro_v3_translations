@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.256
+# File Version: 1.0.263
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -470,15 +470,20 @@ ${software_title} installed on port: ${software_web_port}"
 }
 
 quickbox::lang::software::notifiarr::access() {
-	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+	if [[ ${#user_password} -lt 9 ]]; then
 		declare text="access ${software_title} at:
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} installed on port: ${software_web_port}
 username: ${username}
 password: ${notifiarr_user_password}
 
-Note: The password is less than 9 characters, I have modified this to add additional characters.
-      You can login using the given password and change it in the settings."
+Note: Your password is less than 9 characters.
+      Notifiarr requires passwords to be at least 9 characters.
+      I have modified this to add additional random characters.
+      You can login using the given password and change it in the settings.
+      -----------------------------------------------------
+      For your convenience, the new password is located in:
+      /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="access ${software_title} at:

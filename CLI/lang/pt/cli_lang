@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.58
+# File Version: 1.0.59
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -477,8 +477,13 @@ ${software_title} instalado na porta: ${software_web_port}
 nome de usuário: ${username}
 senha: ${notifiarr_user_password}
 
-Nota: A senha tem menos de 9 caracteres, eu modifiquei isso para adicionar caracteres adicionais.
-      Você pode fazer login usando a senha fornecida e alterá-la nas configurações."
+Nota: Sua senha tem menos de 9 caracteres.
+      O Notifiarr exige que as senhas tenham pelo menos 9 caracteres.
+      Eu modifiquei isso para adicionar caracteres aleatórios adicionais.
+      Você pode fazer login usando a senha fornecida e alterá-la nas configurações.
+      -------------------------------------------------------
+      Para sua conveniência, a nova senha está localizada em:
+      /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="acesse ${software_title} em:

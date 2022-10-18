@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.64
+# File Version: 1.0.65
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -477,8 +477,13 @@ ${software_title} installiert auf Port: ${software_web_port}
 benutzername: ${username}
 passwort: ${notifiarr_user_password}
 
-Hinweis: Das Passwort hat weniger als 9 Zeichen, ich habe es geändert, um zusätzliche Zeichen hinzuzufügen.
-         Sie können sich mit dem angegebenen Passwort anmelden und es in den Einstellungen ändern."
+Hinweis: Ihr passwort hat weniger als 9 zeichen.
+         Notifiarr erfordert passwörter mit mindestens 9 zeichen.
+         Ich habe dies geändert, um zusätzliche zufällige zeichen hinzuzufügen.
+         Sie können sich mit dem angegebenen passwort anmelden und es in den einstellungen ändern.
+         ----------------------------------------------------------
+         Der einfachheit halber befindet sich das neue passwort in:
+         /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="access ${software_title} unter:

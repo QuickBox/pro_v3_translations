@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.54
+# File Version: 1.0.55
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -477,8 +477,13 @@ ${software_title} installé sur le port: ${software_web_port}
 nom d'utilisateur: ${username}
 mot de passe: ${notifiarr_user_password}
 
-Remarque: Le mot de passe est inférieur à 9 caractères, j'ai modifié ceci pour ajouter des caractères supplémentaires.
-          Vous pouvez vous connecter en utilisant le mot de passe donné et le modifier dans les paramètres."
+Remarque: Votre mot de passe comporte moins de 9 caractères.
+       Notifiarr exige que les mots de passe comportent au moins 9 caractères.
+       J'ai modifié ceci pour ajouter des caractères aléatoires supplémentaires.
+       Vous pouvez vous connecter en utilisant le mot de passe donné et le modifier dans les paramètres.
+       -------------------------------------------------------------
+       Pour votre commodité, le nouveau mot de passe se trouve dans:
+       /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
 		quickbox::dashboard::log "${text}"
 	else
 		declare text="accédez à ${software_title} à l'adresse:
