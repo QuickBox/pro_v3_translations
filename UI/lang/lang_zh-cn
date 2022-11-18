@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : October 14, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : November 18, 2022    *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -344,6 +344,7 @@ $L['REQUESTRR'] = 'Requestrr是一个Discord聊天机器人, 用于通过使用�
 $L['RTORRENT'] = 'rTorrent 是一个快速高效的 BitTorrent 客户端, 同时使用正在开发的 libtorrent 库 (并非 libtorrent-rasterbar). 它是利用 C ++ 和 ncurses 库编写的软件, 因此它使用一个字符用户界面.';
 $L['RUTORRENT'] = 'ruTorrent 是一个受欢迎的 BitTorrent 客户端 rTorrent 的前端. 主要特性: 轻量级的服务端, 因此可以被安装在一些较老以及较地段的服务器上, 甚至可以安装在一些 SOHO 路由器上; 可扩展, 它拥有很多插件, 每个人都可以创建自己的插件; 带有 <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox 皮肤</a>.';
 $L['SABNZBD'] = 'SABnzbd 是一个多平台的二进制新闻组下载器. 该程序在后台工作, 并简化了从 Usenet 下载, 验证和提取文件的操作. SABnzbd 使用 NZB 文件 (类似于 .torrent文件, 但用于 Usenet), 而不是直接浏览 Usenet.';
+$L['SEEDCROSS'] = 'SeedCross 是一个用于在 Deluge/qBittorrent/Transmission 中交叉种子种子的网络应用程序. 它是 <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>.';
 $L['SICKCHILL'] = '电视节目的视频文件管理器, 它可以帮助你及时追剧.';
 $L['SICKGEAR'] = 'SickGear 是 Sick-Beard 的进化版. 凭借创新, 久经考验的稳定性和可靠性实现享受电视的自动化.';
 $L['SONARR'] = 'Sonarr 是一个电视连续剧管理工具, 可以同时使用 Torrents 和 Usenet .';
@@ -417,6 +418,7 @@ $L['REQUESTRR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color
 $L['RTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">rTorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['RUTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ruTorrent</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">ruTorrent</span>, 但是, 您的设置将被重置为默认值.';
 $L['SABNZBD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SABnzbd</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SABnzbd</span>, 但是, 您的设置将被重置为默认值.';
+$L['SEEDCROSS_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SeedCross</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SeedCross</span>, 但是, 您的设置将被重置为默认值.';
 $L['SICKCHILL_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickChill</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickChill</span>, 但是, 您的设置将被重置为默认值.';
 $L['SICKGEAR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">SickGear</span>, 但是, 您的设置将被重置为默认值.';
 $L['SONARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Sonarr</span>, 但是, 您的设置将被重置为默认值.';
@@ -490,6 +492,7 @@ $L['REQUESTRR_REINSTALL'] = '你即将从你的系统中卸载<span style="color
 $L['RTORRENT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
 $L['RUTORRENT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">ruTorrent</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['SABNZBD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SABnzbd</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['SEEDCROSS_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SeedCross</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['SICKCHILL_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickChill</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['SICKGEAR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">SickGear</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['SONARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Sonarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
