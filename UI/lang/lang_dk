@@ -290,11 +290,11 @@ $L['CONFIGS'] = 'Muligheder';
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
 //#3.2.1 - App info
-$L['AIRSONIC'] = 'Airsonic-Advanced er en mere moderne implementering af Airsonic-gaflen med flere vigtige ydelses- og funktionsforbedringer. Den tilføjer og erstatter flere funktioner i Airsonic. Airsonic er en gratis, webbaseret mediestreamer, der giver universel adgang til din musik.';
+$L['AIRSONIC'] = 'Airsonic-Advanced er en mere moderne implementering af Airsonic-grenen med flere vigtige ydelses- og funktionsforbedringer. Den tilføjer og erstatter flere funktioner i Airsonic. Airsonic er en gratis, webbaseret mediestreamer, der giver universel adgang til din musik.';
 $L['AUTOBRR'] = 'Autobrr er en moderne enkelt binær erstatning for autodl-irssi+rutorrent plugin. Autobrr-monitorer IRC annoncerer kanaler og torznab RSS-feeds for at få udgivelser, så snart de er tilgængelige, med god filtrering og regex-understøttelse.';
 $L['AUTODL'] = 'AutoDL-iRSSi er et plugin til irssi, der overvåger IRC annoncerer kanaler og downloader torrent-filer baseret på brugerdefinerede filtre.';
 $L['AUTOSCAN'] = 'Autoscan erstatter standardadfærden i Plex og Emby til at opsamle filændringer i filsystemet. Autoscan integrerer med Sonarr, Radarr, Lidarr og Google Drive for at hente ændringer i næsten realtid uden at være afhængig af filsystemet.';
-$L['BAZARR'] = 'Bazarr er en ledsageransøgning til Sonarr og Radarr. Det administrerer og downloader undertekster baseret på dine krav. Du definerer dine præferencer efter tv-show eller film, og Bazarr tager sig af alt for dig.';
+$L['BAZARR'] = 'Bazarr er en sameksistrenede applikation til Sonarr og Radarr. Det administrerer og downloader undertekster baseret på dine krav. Du definerer dine præferencer efter tv-show eller film, og Bazarr tager sig af alt for dig.';
 $L['BAZARR4K'] = 'Bazarr4K er en selvstændig Bazarr-klon til 4K UHD-profilerne. Det er et middel til at håndtere flere Bazarr-forekomster, samtidig med at UHD-indhold holdes adskilt fra generelt indhold.';
 $L['BBR'] = 'BBR er en ny overbelastningsstyringsalgoritme, som er bidraget til Linux-kernen TCP-stakken af Google. Med BBR på plads kan en Linux-server få signifikant øget gennemgang og reduceret forsinkelse for forbindelsessvartider.';
 $L['BTSYNC'] = 'BitTorrent Sync fra BitTorrent Inc. er et proprietært peer-to-peer-fil synkroniseringsværktøj.';
@@ -302,7 +302,7 @@ $L['CALIBRE'] = 'Calibre er en cross-platform open-source suite af e-bogs softwa
 $L['COUCHPOTATO'] = 'Hent film automatisk, nemt og i den bedste kvalitet, så snart de er frigivet via usenet eller torrent.';
 $L['CSF'] = 'ConfigServer Firewall, også kendt som CSF, er et firewall-konfigurationsscript således du kan få en bedre sikkerhed til din server og samtidig giver dig et nemt plus avanceret interface til styring af dine firewall-indstillinger.';
 $L['DELUGE'] = 'Deluge en gratis letvægts cross-platform BitTorrent klient.';
-$L['DUPLICATI'] = 'Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It can works with Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV, and <a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">many more</a>.';
+$L['DUPLICATI'] = 'Duplicati er en gratis, open source backup-klient, der sikkert gemmer krypterede, trinvise, komprimerede sikkerhedskopier på cloud storage-tjenester og eksterne filservere. Det kan fungere med Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV og <a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">mange flere</a>.';
 $L['EMBY'] = 'Emby er en klient-server softwarepakke, der lader brugerne være vært og streame personlige kopier af multimedie - musik-, video- og billedfiler. ... Emby-klientsoftwaren er en app, du skal installere på mobile enheder og visse set-top bokse til fjernsyn, som f.eks. Android TV. og har samme træk som Plex/SPMC etc';
 $L['FAIL2BAN'] = 'Fail2Ban er et framework til indtrængningsforebyggelse af software som beskytter servere imod brute force angreb.';
 $L['FILEBOT'] = 'FileBot er det ultimative værktøj til at organisere og omdøbe dine film, tv-programmer og anime samt hente undertekster og artwork. Det er smart og det virker bare.';
@@ -316,7 +316,7 @@ $L['JELLYFIN'] = 'Jellyfin er et gratis software medie system, der giver dig kon
 $L['KOMGA'] = 'Komga er en medieserver til dine digitale tegneserier/manga, med fokus på at levere en enkel og moderne grænseflade.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian er en SickBeard, CouchPotato, Headphone-lignende applikation til ebøger, lydbøger og magasiner. Den bruger en kombination af <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> og eventuelt <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> som kilder til forfatterinfo og boginformation.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt er en gratis, automatiseret og åben certifikatmyndighed (CA). Det er en tjeneste fra <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
-$L['LIDARR'] = 'Lidarr er en uafhængig fork af Sonarr ombygget til automatisk musikdownload via Usenet og BitTorrent. Projektet er inspireret af andre Usenet/BitTorrent musik downloadere som fx. Headphones.';
+$L['LIDARR'] = 'Lidarr er en uafhængig gren af Sonarr ombygget til automatisk musikdownload via Usenet og BitTorrent. Projektet er inspireret af andre Usenet/BitTorrent musik downloadere som fx. Headphones.';
 $L['MEDUSA'] = 'Medusa håndterer nemt dine tv-serier, den holder automatisk øje med nye afsnit af din favorit serie. Tillader manuel søgning og andre eksklusive funktioner, skal du kontrollere Medusa on <a href="https://nullrefer.ir/?https://github.com/pymedusa/Medusa" rel="noopener nofollow" target="_blank">Github</a>.';
 $L['MYLAR3'] = 'Mylar er et automatiseret Comic Book-downloadprogram (cbr/cbz) til brug med NZB og torrenter skrevet i python. Det understøtter SABnzbd, NZBGET og mange torrent-klienter ud over DDL.';
 $L['NETDATA'] = 'Netdata er et distribueret, realtids - ydeevne og sundheds overvågning for systemer og applikationer.';
@@ -336,16 +336,16 @@ $L['PYLOAD'] = 'pyLoad er en download manager for `Hoster` hjemmesider, videosid
 $L['QBITTORRENT'] = 'qBittorrent er en gratis og pålidelig P2P BitTorrent klient. En avanceret multiplatform BitTorrent-klient med en flot Qt-brugergrænseflade samt et web-interface til remote betjening og en integreret søgemaskine.';
 $L['QUASSEL'] = 'Quassel IRC er en moderne, cross-platform, distribueret IRC klient baseret på Qt4 framework.';
 $L['QUOTAS'] = 'Denne feature fra Linux tillader administratore at tildele den mængde disk plads en bruger eller gruppe kan tilgå.';
-$L['RADARR'] = 'Radarr er en uafhængig fork af Sonarr omarbejdet til automatisk at downloade film via Usenet og BitTorrent.<br>Projektet blev inspireret af andre Usenet/BitTorrent film downloadere som CouchPotato.';
+$L['RADARR'] = 'Radarr er en uafhængig gren af Sonarr omarbejdet til automatisk at downloade film via Usenet og BitTorrent.<br>Projektet blev inspireret af andre Usenet/BitTorrent film downloadere som CouchPotato.';
 $L['RADARR4K'] = 'Radarr4K er en selvstændig Radarr-klon til 4K UHD-profilerne. Giver mulighed for at håndtere flere Radarr-instanser, mens UHD-indhold holdes adskilt fra generelt indhold.';
 $L['RAPIDLEECH'] = 'RapidLeech er et gratis serveroverførsels script op mod forskellige populære upload-/downloadsider som fx. uploaded.net, Rapidshare.com og mere end 120 andre.';
-$L['RCLONE'] = 'Rclone er et kommandolinjeprogram til synkronisering af filer og mapper til og fra et væld af værter';
+$L['RCLONE'] = 'Rclone er et kommandolinjeprogram til synkronisering af filer og mapper til og fra et væld af værter.';
 $L['READARR'] = 'Readarr er en e-bogsamlingsmanager for Usenet- og BitTorrent-brugere. Den kan overvåge flere RSS-feeds for nye bøger fra dine yndlingsforfattere og vil fungere sammen med klienter og indeksere for at hente, sortere og omdøbe dem.';
 $L['REQUESTRR'] = 'Requestrr er en Discord chatbot, der bruges til at forenkle brugen af tjenester som Sonarr/Radarr/Ombi via brugen af chat! Alle brugere af din Discord Server kan anmode om at tilføje nyt indhold og få besked, når det er tilgængeligt.';
 $L['RTORRENT'] = 'rTorrent er en hurtig og effektiv BitTorrent-klient, der bruger og er ved at blive udviklet sammen med libTorrent-biblioteket (ikke forveksles med libtorrent-rasterbar). Det er skrevet i C ++ og bruger ncurses programmeringsbiblioteket, hvilket betyder at det bruger en tekstbrugergrænseflade.';
 $L['RUTORRENT'] = 'ruTorrent er en front-end til den populære Bittorrent klient rtorrent. Hovedfunktioner: Letvægts serverside, så den kan installeres på gamle og low-end servere og selv på nogle SOHO routere, Udvidelser - der er flere plugins, og alle kan lave deres eget, kommer med <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox tema</a>.';
 $L['SABNZBD'] = 'SABnzbd er en multi-platform binær nyhedsgruppe-downloader. Programmet virker i baggrunden og forenkler downloading, verificering og udpakning af filer fra Usenet. SABnzbd bruger NZB-filer (ligner .torrent-filer, men til Usenet), i stedet for at browse Usenet direkte.';
-$L['SEEDCROSS'] = 'SeedCross er en webapp til Cross-Seed torrents i Deluge/qBittorrent/Transmission. Det er en gaffel af <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>.';
+$L['SEEDCROSS'] = 'SeedCross er en webapp til Cross-Seed af torrents i Deluge/qBittorrent/Transmission. Det er en gren af <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>.';
 $L['SICKCHILL'] = 'SickChill håndterer nemt dine tv-serier, den holder automatisk øje med nye afsnit af din favorit serie.';
 $L['SICKGEAR'] = 'SickGear er udviklet af SickBear. Automatiser din tv nydelse med innovation, dokumenteret stabilitet og pålidelighed.';
 $L['SONARR'] = 'Sonarr håndterer dine tv-serier og virker med både torrents og usenet.';
@@ -356,7 +356,7 @@ $L['TAUTULLI'] = 'Tautulli (tidligere PlexPy) En webapplikation til at monitorer
 $L['THELOUNGE'] = 'En moderne selvhostet web IRC klient';
 $L['TRANSMISSION'] = 'Transmission er designet til nem og kraftig brug. Standardindstillingerne er indstillet til standard brug, og det tager kun et par klik at konfigurere avancerede funktioner som se mapper, peer blocklists og webgrænsefladen. Når Ubuntu valgte Transmission som standard BitTorrent-klient, var en af de mest anførte grunde den nemme indlæringskurve.';
 $L['UNIFI'] = 'UniFi® Controller er en trådløs netværksadministration fra Ubiquiti Networks™. Det giver dig mulighed for at styre flere trådløse netværk ved hjælp af en webbrowser.';
-$L['UNPACKERR'] = 'Uddrag downloads til Radarr, Sonarr, Lidarr, Readarr - Sletter udpakkede filer efter import.';
+$L['UNPACKERR'] = 'Udpak downloads til Radarr, Sonarr, Lidarr, Readarr - Sletter udpakkede filer efter import.';
 $L['WEBCONSOLE'] = 'TTYD (alias QuickBox Web Console) er en fuldt udstyret terminal baseret på Xterm.js med CJK og IME support.';
 $L['X2GO'] = 'X2Go er et open source fjernskrivebords-software til Linux som benytter sig af NX tech-protokollen.';
 $L['XTEVE'] = 'xTeVe er et program, der simulerer en tv-tuner, det giver dig mulighed for at have IPTV-kanaler via Plex eller Emby. xTeVe kan flette flere M3U-og XMLTV-filer og sende det til dit foretrukne Media Center.';
