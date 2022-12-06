@@ -144,7 +144,7 @@ $L['BACK'] = 'Back';
 $L['BAN_USER'] = 'Ban User';
 $L['CANCEL'] = 'Cancel';
 $L['CLEAN_LOG'] = 'Clean Update Log';
-$L['CLEAN_RCLOG'] = 'Clean Rclone Upload Log';
+$L['CLEAN_RCLOG'] = 'Clean RClone Upload Log';
 $L['CLICK_ME'] = 'Click me';
 $L['CLOSE_REFRESH'] = 'Close & Refresh';
 $L['CLOSE'] = 'Close';
@@ -258,6 +258,7 @@ $L['NGINX_CONF_OPTIONS'] = 'Nginx Conf Options';
 $L['NGINX_CONFIG'] = 'Nginx Configuration';
 $L['NGINX_SETTINGS'] = 'Nginx Settings';
 $L['NO'] = 'No';
+$L['OPEN'] = 'nyitva';
 $L['OR'] = 'or';
 $L['PASSWORD'] = 'Password';
 $L['PLEASE_HOLD'] = '- Please hold';
@@ -385,8 +386,8 @@ $L['RADARR4K_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea
 $L['RADARR4K'] = 'Radarr4K is a standalone Radarr clone for the 4K UHD profiles. It is a means to handle multiple Radarr instances, while keeping UHD content separate from general content.';
 $L['RAPIDLEECH_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Rapidleech</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Rapidleech</span> at any time, however, your configuration settings will be reset to default.';
 $L['RAPIDLEECH'] = 'Rapid Leech is a free server transfer script for use on various popular upload/download sites such as uploaded.net, Rapidshare.com and more than 120 others.';
-$L['RCLONE_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">Rclone</span> from your system.<br/><br/>This will completely remove all of your data and configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">Rclone</span> at any time, however, your configuration settings will be reset to default.';
-$L['RCLONE'] = 'Rclone is a command line program to sync files and directories to and from a multitude of hosts';
+$L['RCLONE_UNINSTALL'] = 'You are about to uninstall <span style="color:#5cb85c">RClone</span> from your system.<br/><br/>This will completely remove all of your data and configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#5cb85c">RClone</span> at any time, however, your configuration settings will be reset to default.';
+$L['RCLONE'] = 'RClone is a command line program to sync files and directories to and from a multitude of hosts';
 $L['READARR_UNINSTALL'] = 'Ön most fogja eltávolítani a <span style="color:#01cea2">Readarr</span> programot a rendszeréből.<br/><br/>Ez teljesen eltávolítja az összes konfigurációt és beállítást... ez a művelet visszafordíthatatlan. <br/><br/>Az <span style="color:#01cea2">Readarr</span>-t bármikor újratelepítheti, azonban a beállításai visszaállnak az alapértelmezettre.';
 $L['READARR'] = 'A Readarr egy e-könyvgyűjtemény-kezelő Usenet és BitTorrent felhasználók számára. Több RSS feedet is képes figyelni a kedvenc szerzők új könyveiért, és a kliensekkel és indexelőkkel együttműködve megragadja, rendezi és átnevezi őket.';
 $L['REQUESTRR_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Requestrr</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible. <br/><br/>You may reinstall <span style="color:#01cea2">Requestrr</span> at any time, however, your configuration settings will be reset to default.';
@@ -476,14 +477,17 @@ $L['INACTIVE_STATUS'] = 'inactive (dead)';
 //#3.2.4 - rclone specific toggles
 $L['ACTIVE_MOUNTED'] = 'active (mounted)';
 $L['INACTIVE_NOTMOUNTED'] = 'dead (not mounted)';
-$L['RCLONE_LOG_VIEWER'] = 'Rclone move.log';
-$L['RCLONE_OPTIONS'] = 'Rclone Options';
-$L['RCLONE_COMMAND_CENTER'] = 'Rclone Command Center';
-$L['RCLONE_STATUS'] = 'Rclone Status';
-$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone is currently working in the background to upload your data to gdrive. During this time you will see a lock set in place to verify your process has commenced. This lock will remove itself once the process has completed. Feel free to close this popup at any time.<br/><br/><div class="alert alert-notice" style="color:#fff"><strong>NOTE: </strong> The upload automatically runs via a cronjob every night at 03:12 AM server time.</div>';
-$L['RCLONE_UPLOAD_VIEWER'] = 'Rclone Upload';
+$L['RCLONE_LOG_VIEWER'] = 'RClone move.log';
+$L['RCLONE_OPTIONS'] = 'RClone Options';
+$L['RCLONE_COMMAND_CENTER'] = 'RClone Command Center';
+$L['RCLONE_STATUS'] = 'RClone Status';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'RClone is currently working in the background to upload your data to gdrive. During this time you will see a lock set in place to verify your process has commenced. This lock will remove itself once the process has completed. Feel free to close this popup at any time.<br/><br/><div class="alert alert-notice" style="color:#fff"><strong>NOTE: </strong> The upload automatically runs via a cronjob every night at 03:12 AM server time.</div>';
+$L['RCLONE_UPLOAD_VIEWER'] = 'RClone Upload';
 $L['RCMOUNT_STATUS'] = 'MergerFS Status';
 $L['RCMOUNT_WHERE'] = 'Mount Location';
+$L['CLOUD_MANAGEMENT'] = 'Felhő szoftver';
+$L['RCLONE_MOUNT_INFO'] = 'RClone Mount Info';
+$L['RCLONE MOUNT CHECK_PROCESS'] = 'A tér százalékos értékeit jelenleg a háttérben számítják ki. Kérjük, nézzen vissza később a frissített eredményekért.';
 
 
 //#3.3 - DASHBOARD WIDGETS

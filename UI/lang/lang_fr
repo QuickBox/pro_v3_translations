@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Français	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : November 18, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -144,7 +144,7 @@ $L['BACK'] = 'Retour';
 $L['BAN_USER'] = 'Bloquer Utilisateur';
 $L['CANCEL'] = 'Annuler';
 $L['CLEAN_LOG'] = 'Nettoyer Logs de MàJ';
-$L['CLEAN_RCLOG'] = 'Nettoyer Logs de Rclone';
+$L['CLEAN_RCLOG'] = 'Nettoyer Logs de RClone';
 $L['CLICK_ME'] = 'Cliquez-moi';
 $L['CLOSE_REFRESH'] = 'Fermer & Rafraîchir';
 $L['CLOSE'] = 'Fermer';
@@ -257,6 +257,7 @@ $L['NGINX_CONF_OPTIONS'] = 'Options Config Nginx';
 $L['NGINX_CONFIG'] = 'Configuration Nginx';
 $L['NGINX_SETTINGS'] = 'Paramètres Nginx';
 $L['NO'] = 'Non';
+$L['OPEN'] = 'ouvrir';
 $L['OR'] = 'ou';
 $L['PASSWORD'] = 'Mot de passe';
 $L['PLEASE_HOLD'] = 'En cours - Veuillez Patienter';
@@ -335,7 +336,7 @@ $L['QUOTAS'] = 'Cette fonctionnalité de Linux permet à l\'administrateur du sy
 $L['RADARR'] = 'Radarr est un fork indépendant de Sonarr retravaillé pour le téléchargement automatique de films via Usenet et BitTorrent. Il est inspiré d\'outils tels que CouchPotato.';
 $L['RADARR4K'] = 'Radarr4K est un clone Radarr autonome pour les profils 4K UHD. C\'est un moyen de gérer plusieurs instances de Radarr, tout en séparant le contenu UHD du contenu général.';
 $L['RAPIDLEECH'] = 'RapidLeech est un script de transfert de serveur gratuit pour une utilisation sur différents sites de Direct Download populaires tels que uploaded.net, rapidshare.com et plus de 120 autres.';
-$L['RCLONE'] = 'Rclone est un programme en ligne de commande permettant de synchroniser des fichiers et des répertoires depuis et vers une multitude d\'hôtes.';
+$L['RCLONE'] = 'RClone est un programme en ligne de commande permettant de synchroniser des fichiers et des répertoires depuis et vers une multitude d\'hôtes.';
 $L['READARR'] = 'Readarr est un gestionnaire de collection d\'ebooks pour les utilisateurs de Usenet et BitTorrent. Il peut surveiller plusieurs flux RSS pour les nouveaux livres de vos auteurs préférés et s\'interfacer avec des clients et des indexeurs pour les saisir, les trier et les renommer.';
 $L['REQUESTRR'] = 'Requestrr est un chatbot Discord utilisé pour simplifier l\'utilisation de services comme Sonarr/Radarr/Ombi via l\'utilisation du chat! Tous les utilisateurs de votre serveur Discord peuvent demander l\'ajout d\'un nouveau contenu et être informés de sa disponibilité.';
 $L['RTORRENT'] = 'rTorrent est un client BitTorrent rapide et efficace qui utilise, la bibliothèque libTorrent (à ne pas confondre avec libtorrent-rasterbar). Il est écrit en C ++ et utilise la bibliothèque de programmation ncurses, ce qui signifie qu\'il utilise une interface utilisateur texte. L\'interface de ruTorrent sera installée en plus.';
@@ -409,7 +410,7 @@ $L['QUOTA_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="c
 $L['RADARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Radarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Radarr</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
 $L['RADARR4K_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Radarr4K</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Radarr4K</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
 $L['RAPIDLEECH_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Rapidleech</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Rapidleech</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
-$L['RCLONE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Rclone</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Rclone</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['RCLONE_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">RClone</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">RClone</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
 $L['READARR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Readarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Readarr</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
 $L['REQUESTRR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Requestrr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Requestrr</span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés.';
 $L['RTORRENT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">rTorrent</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">rTorrent</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
@@ -483,7 +484,7 @@ $L['QUOTA_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="co
 $L['RADARR_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Radarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
 $L['RADARR4K_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Radarr4K</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
 $L['RAPIDLEECH_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Rapidleech</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
-$L['RCLONE_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Rclone</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible.';
+$L['RCLONE_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">RClone</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible.';
 $L['READARR_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Readarr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
 $L['REQUESTRR_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Requestrr</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
 $L['RTORRENT_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">rTorrent</span> de votre système.<br/><br/>Cela va complètement supprimer tous ses paramètres... cette action est irréversible.';
@@ -535,7 +536,7 @@ $L['QBIT_TOOLTIP'] = 'Il semblerait que Deluge 2 est actuellement installé. qBi
 $L['QUOTAS_FSTAB'] = 'Editez votre fstab';
 $L['QUOTAS_HELP'] = 'Pour en savoir plus sur l\'installation de Quotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>Lisez cette F.A.Q en premier</strong></a>.';
 $L['QUOTAS_TOOLTIP'] = 'Ajoutez ce qui suit au lieu de <code class="language-bash">defaults</code> sur votre point de montage principal pour continuer';
-$L['RCLONE_ADMIN_TOOLTIP'] = 'Installez Rclone en tapant \'qb install rclone -u USER [-o encrypted]\' dans votre terminal SSH.';
+$L['RCLONE_ADMIN_TOOLTIP'] = 'Installez RClone en tapant \'qb install rclone -u USER [-o encrypted]\' dans votre terminal SSH.';
 $L['RCLONE_USER_TOOLTIP'] = 'Veuillez contacter un administrateur système pour l\'installer.';
 $L['REMOVE_MEDUSA_FIRST'] = 'Désinstallez Medusa pour pouvoir installer cette app.';
 $L['REMOVE_SICKCHILL_FIRST'] = 'Désinstallez SickChill pour pouvoir cette app.';
@@ -555,14 +556,18 @@ $L['INACTIVE_STATUS'] = 'inactif (mort)';
 // #3.2.6 - rclone specific toggles
 $L['ACTIVE_MOUNTED'] = 'actif (monté)';
 $L['INACTIVE_NOTMOUNTED'] = 'innactif (non monté)';
-$L['RCLONE_OPTIONS'] = 'Options Rclone';
-$L['RCLONE_LOG_VIEWER'] = 'Rclone move.log';
-$L['RCLONE_COMMAND_CENTER'] = 'Centre de commande Rclone';
-$L['RCLONE_STATUS'] = 'Statut Rclone';
-$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone travaille actuellement en arrière-plan pour télécharger vos données sur gdrive. Pendant ce temps, vous verrez un verrou mis en place pour vérifier que votre processus a commencé. Ce verrou se supprimera une fois le processus terminé. N\'hésitez pas à fermer cette fenêtre contextuelle à tout moment.<br/><br/><div class="alert alert-notice" style="color:#fff"><strong>REMARQUE: </strong> Le téléchargement s\'exécute automatiquement via un cronjob tous les soirs à 03h12 heure du serveur.</div>';
-$L['RCLONE_UPLOAD_VIEWER'] = 'Téléchargement de Rclone';
+$L['RCLONE_OPTIONS'] = 'Options RClone';
+$L['RCLONE_LOG_VIEWER'] = 'RClone move.log';
+$L['RCLONE_COMMAND_CENTER'] = 'Centre de commande RClone';
+$L['RCLONE_STATUS'] = 'Statut RClone';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'RClone travaille actuellement en arrière-plan pour télécharger vos données sur gdrive. Pendant ce temps, vous verrez un verrou mis en place pour vérifier que votre processus a commencé. Ce verrou se supprimera une fois le processus terminé. N\'hésitez pas à fermer cette fenêtre contextuelle à tout moment.<br/><br/><div class="alert alert-notice" style="color:#fff"><strong>REMARQUE: </strong> Le téléchargement s\'exécute automatiquement via un cronjob tous les soirs à 03h12 heure du serveur.</div>';
+$L['RCLONE_UPLOAD_VIEWER'] = 'Téléchargement de RClone';
 $L['RCMOUNT_STATUS'] = 'Statut MergerFS';
 $L['RCMOUNT_WHERE'] = 'Point de montage';
+$L['CLOUD_MANAGEMENT'] = 'Logiciel Cloud';
+$L['RCLONE_MOUNT_INFO'] = 'Informations sur le montage de RClone';
+$L['RCLONE MOUNT CHECK_PROCESS'] = 'Les valeurs de pourcentage d\'espace sont actuellement calculées en arrière-plan. Veuillez revenir plus tard pour des résultats mis à jour.';
+
 
 // #3.3 - DASHBOARD WIDGETS
 // #3.3.1 - disk status widget

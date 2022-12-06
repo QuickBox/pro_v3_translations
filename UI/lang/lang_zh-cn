@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : November 18, 2022    *
+ * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -145,7 +145,7 @@ $L['BACK'] = '返回';
 $L['BAN_USER'] = '禁令用户';
 $L['CANCEL'] = '取消';
 $L['CLEAN_LOG'] = '清理更新日志';
-$L['CLEAN_RCLOG'] = '清理Rclone上传日志';
+$L['CLEAN_RCLOG'] = '清理RClone上传日志';
 $L['CLICK_ME'] = '点我';
 $L['CLOSE_REFRESH'] = '关闭并刷新';
 $L['CLOSE'] = '关闭';
@@ -258,6 +258,7 @@ $L['NGINX_CONF_OPTIONS'] = 'Nginx Conf选项';
 $L['NGINX_CONFIG'] = 'Nginx 配置';
 $L['NGINX_SETTINGS'] = 'Nginx 设置';
 $L['NO'] = '否';
+$L['OPEN'] = '打开';
 $L['OR'] = '或';
 $L['PLEASE_HOLD'] = '- 请等候';
 $L['PASSWORD'] = '密码';
@@ -338,7 +339,7 @@ $L['QUOTAS'] = 'Linux 的这一特性允许系统管理员分配用户或用户�
 $L['RADARR'] = 'Radarr 是 Sonarr 的一个独立分支, 通过 Usenet 和 BitTorrent 自动下载电影.<br>该项目的灵感来自其他的 Usenet/BitTorrent 电影下载器, 例如 CouchPotato.';
 $L['RADARR4K'] = 'Radarr4K 是 4K UHD 配置文件的独立 Radarr 克隆. 这是一种处理多个 Radarr 实例的方法, 同时将 UHD 内容与一般内容分开.';
 $L['RAPIDLEECH'] = 'Rapid Leech 是一个免费的服务器转移脚本, 可用于各种流行的上传/下载站点, 例如 uploaded.net, Rapidshare.com 和 120 多个其他站点.';
-$L['RCLONE'] = 'Rclone 是一个命令行程序, 它可以将文件或者文件夹同步到多个主机';
+$L['RCLONE'] = 'RClone 是一个命令行程序, 它可以将文件或者文件夹同步到多个主机';
 $L['READARR'] = 'Readarr是一个针对Usenet和BitTorrent用户的电子书收集管理器. 它可以监控多个RSS提要, 以获取你喜欢的作者的新书, 并将与客户端和索引器接口, 以抓取、分类和重命名它们.';
 $L['REQUESTRR'] = 'Requestrr是一个Discord聊天机器人, 用于通过使用聊天来简化使用Sonarr/Radarr/Ombi等服务! 你的Discord服务器的所有用户都可以请求添加新的内容, 并在可用时得到通知';
 $L['RTORRENT'] = 'rTorrent 是一个快速高效的 BitTorrent 客户端, 同时使用正在开发的 libtorrent 库 (并非 libtorrent-rasterbar). 它是利用 C ++ 和 ncurses 库编写的软件, 因此它使用一个字符用户界面.';
@@ -412,7 +413,7 @@ $L['QUOTA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Qu
 $L['RADARR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr</span>, 但是, 您的设置将被重置为默认值.';
 $L['RADARR4K_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Radarr4K</span>, 但是, 您的设置将被重置为默认值.';
 $L['RAPIDLEECH_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rapidleech</span>, 但是, 您的设置将被重置为默认值.';
-$L['RCLONE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Rclone</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
+$L['RCLONE_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">RClone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">RClone</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['READARR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Readarr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Readarr</span>, 然而, 你的配置设置将被重置为默认.';
 $L['REQUESTRR_UNINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Requestrr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.<br/><br/>你可以在任何时候重新安装<span style="color:#01cea2">Requestrr</span>, 然而, 你的配置设置将被重置为默认.';
 $L['RTORRENT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">rTorrent</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
@@ -486,7 +487,7 @@ $L['QUOTA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Qu
 $L['RADARR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['RADARR4K_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Radarr4K</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['RAPIDLEECH_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rapidleech</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
-$L['RCLONE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Rclone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
+$L['RCLONE_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">RClone</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
 $L['READARR_REINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Readarr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.';
 $L['REQUESTRR_REINSTALL'] = '你即将从你的系统中卸载<span style="color:#01cea2">Requestrr</span>.<br/><br/>这将完全删除你所有的配置设置...这个动作是不可逆转的.';
 $L['RTORRENT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">rTorrent</span>. <br/><br/>这将完全删除<strong>所有账户</strong>的所有配置...这个动作是不可逆的.';
@@ -558,14 +559,17 @@ $L['INACTIVE_STATUS'] = '未运行';
 //#3.2.6 - rclone specific toggles
 $L['ACTIVE_MOUNTED'] = '活动 ( 已安装 ) ';
 $L['INACTIVE_NOTMOUNTED'] = '已死 ( 未安装 ) ';
-$L['RCLONE_OPTIONS'] = 'Rclone选项';
-$L['RCLONE_LOG_VIEWER'] = 'Rclone move.log';
-$L['RCLONE_COMMAND_CENTER'] = 'Rclone 指挥中心';
-$L['RCLONE_STATUS'] = 'Rclone状态';
-$L['RCLONE_UPLOAD_MESSAGE'] = 'Rclone当前正在后台运行, 以将数据上传到 gdrive. 在这段时间内, 您会看到一个锁定位置, 以确认您的过程已开始. 该过程完成后, 此锁将自行删除. 随时关闭此弹出窗口. <br/><br/><div class="alert alert-notice" style="color:#fff"><strong>注意: </strong> 服务器每天晚上 03:12 AM 通过 cronjob 自动运行上传. </div>';
-$L['RCLONE_UPLOAD_VIEWER'] = 'Rclone上传';
+$L['RCLONE_OPTIONS'] = 'RClone选项';
+$L['RCLONE_LOG_VIEWER'] = 'RClone move.log';
+$L['RCLONE_COMMAND_CENTER'] = 'RClone 指挥中心';
+$L['RCLONE_STATUS'] = 'RClone状态';
+$L['RCLONE_UPLOAD_MESSAGE'] = 'RClone当前正在后台运行, 以将数据上传到 gdrive. 在这段时间内, 您会看到一个锁定位置, 以确认您的过程已开始. 该过程完成后, 此锁将自行删除. 随时关闭此弹出窗口. <br/><br/><div class="alert alert-notice" style="color:#fff"><strong>注意: </strong> 服务器每天晚上 03:12 AM 通过 cronjob 自动运行上传. </div>';
+$L['RCLONE_UPLOAD_VIEWER'] = 'RClone上传';
 $L['RCMOUNT_STATUS'] = 'MergerFS状态';
 $L['RCMOUNT_WHERE'] = '安装位置';
+$L['CLOUD_MANAGEMENT'] = '云软件';
+$L['RCLONE_MOUNT_INFO'] = 'RClone 安装信息';
+$L['RCLONE MOUNT CHECK_PROCESS'] = '当前正在后台计算空间百分比值. 请稍后再回来查看更新的结果.';
 
 
 //#3.3 - DASHBOARD WIDGETS
