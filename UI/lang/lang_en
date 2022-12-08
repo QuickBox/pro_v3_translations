@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                     English	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -246,12 +246,20 @@ $L['APP_CONFIG_EDIT'] = 'Edit Software Config';
 
 //#2.4 - other
 $L['ABOUT_RELEASE'] = 'About Release';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Select if this is an rclone mount. This option, when selected, will recognize the path as an rclone mount. This option should be checked if you are attempting to monitor an rclone mount. This ensures that the space calculations are accurate.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Add an existing mount or directory to monitor';
 $L['EMAIL'] = 'E-mail';
 $L['HERE'] = 'here';
 $L['HOME'] = 'Home';
 $L['IDLE_L'] = 'idle';
 $L['IDLE'] = 'Idle';
 $L['IS_AVAILABLE'] = 'is available.';
+$L['MOUNTS'] = 'Mounts:';
+$L['MOUNT_ADD_PATH'] = 'Add Path';
+$L['MOUNT_CHECK_ABOUT'] = 'These values are calculated and updated periodically. The values are not real-time. You can force an update on these stats by clicking the \'Start Scan\' button below.';
+$L['MOUNT_CHECK_PROCESS'] = 'Space percentage values are currently being calculated in the background. Please check back later for updated results. Requires page refresh.';
+$L['MOUNT_MONITOR_INFO'] = 'Additional Mount Info';
+$L['MOUNT_START_SCAN'] = 'Start Scan';
 $L['NANGINX'] = 'Running on Nginx';
 $L['NEED_HELP'] = 'Need Help ?';
 $L['NGINX_CONF_OPTIONS'] = 'Nginx Conf Options';
@@ -262,6 +270,7 @@ $L['OPEN'] = 'open';
 $L['OR'] = 'or';
 $L['PASSWORD'] = 'Password';
 $L['PLEASE_HOLD'] = '- Please hold';
+$L['REMOVE_MOUNT_PATH'] = 'Remove monitored path. This will not remove the actual directory or mount point.';
 $L['REQUIRED_FIELD'] = 'Required Field...';
 $L['REQUIRED_FIELDS'] = 'Fields marked with <span style="color:#d9534f">*</span> are required';
 $L['SET_HERE'] = 'Set here';
@@ -568,8 +577,6 @@ $L['RCLONE_UPLOAD_VIEWER'] = 'RClone Upload';
 $L['RCMOUNT_STATUS'] = 'MergerFS Status';
 $L['RCMOUNT_WHERE'] = 'Mount Location';
 $L['CLOUD_MANAGEMENT'] = 'Cloud Software';
-$L['RCLONE_MOUNT_INFO'] = 'RClone Mount Info';
-$L['RCLONE_MOUNT_CHECK_PROCESS'] = 'Space percentage values are currently being calculated in the background. Please check back later for updated results.';
 
 
 //#3.3 - DASHBOARD WIDGETS
@@ -849,8 +856,10 @@ $L['RESET_EXPIRY'] = 'Reset Expiry at Logon';
 $L['USER_TIMEOUT'] = 'User Inactivity Timeout';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Allow Multiple Logins';
-$L['ALLOW_CONFIG_EDITING'] = 'Allow Config Editors on Dashboard';
+$L['ALLOW_MULTI_LOGINS'] = 'Multiple Logins';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'This option allows for simaltenous logins from multiple devices. If disabled, the user will be logged out of all other devices when they login from a new device.';
+$L['ALLOW_CONFIG_EDITING'] = 'Config Editors on Dashboard';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'This option allows for the editing of the config files from the dashboard. If disabled, the option to view/edit configs will be hidden.';
 $L['BY_ADMIN'] = 'By Admin (Set below..)';
 $L['BY_USER'] = 'By User (See User Admin pages)';
 $L['CHANGE_USER_SETTINGS'] = 'Change global settings for user accounts.';
@@ -865,6 +874,11 @@ $L['PATH_INFOS'] = '<p class="help-block">The path you choose should be set rela
 Therefore you\'ll most likely want to go back a folder before choosing any subfolder you create for the unique user pages. Use <i>../</i> to go back a folder. So for example, if you site\'s admin control panel is here - <i>http://www.website.com/admin/</i> and your user folders are here - <i>http://www.website.com/users/</i> you\'ll want to set the path setting to <i>../users/</i> along with your unique page - so <i>../users/admin.php</i>.</p>
 <p class="help-block">Wildcard available : <strong>%username% </strong>(ie, logged in user\'s username) </p>';
 $L['SITE_ROOT_RELATIVE'] = 'Relative to Site Root';
+$L['ALLOW_MOUNT_INFO'] = 'Mount Info Viewing and Adding Panel';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'This option allows for the viewing and adding of mount info from the dashboard. If disabled, the option to view/add mount info will be hidden.';
+$L['SETTING'] = 'Setting';
+$L['DESCRIPTION'] = 'Description';
+$L['VALUE'] = 'Value';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'Block / Ban IP Address';

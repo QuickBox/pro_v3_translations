@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Français	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -273,6 +273,15 @@ $L['USED_L'] = 'utilisé';
 $L['USERNAME'] = 'Nom d\'utilisateur';
 $L['USERS'] = 'Utilisateurs';
 $L['YES'] = 'Oui';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Sélectionnez s\'il s\'agit d\'un montage rclone. Cette option, lorsqu\'elle est sélectionnée, reconnaîtra le chemin comme un montage rclone. Cette option doit être cochée si vous essayez de surveiller un montage rclone. Cela garantit que les calculs d\'espace sont exacts.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Ajouter un montage ou un répertoire existant à surveiller';
+$L['MONTAGES'] = 'Montages :';
+$L['MOUNT_ADD_PATH'] = 'Ajouter un chemin';
+$L['MOUNT_CHECK_ABOUT'] = 'Ces valeurs sont calculées et mises à jour périodiquement. Les valeurs ne sont pas en temps réel. Vous pouvez forcer une mise à jour de ces statistiques en cliquant sur le bouton \'Lancer l\'analyse\' ci-dessous.';
+$L['MOUNT_CHECK_PROCESS'] = 'Les valeurs de pourcentage d\'espace sont actuellement calculées en arrière-plan. Veuillez revenir plus tard pour les résultats mis à jour. Nécessite un rafraichissement de la page.';
+$L['MOUNT_MONITOR_INFO'] = 'Informations de montage supplémentaires';
+$L['MOUNT_START_SCAN'] = 'Démarrer l\'analyse';
+$L['REMOVE_MOUNT_PATH'] = 'Supprimer le chemin surveillé. Cela ne supprimera pas le répertoire ou le point de montage actuel.';
 
 // //////////////////////////////////////
 //          #3 WIDGETS
@@ -838,8 +847,12 @@ $L['RESET_EXPIRY'] = 'Réinitialiser l\'expiration à l\'ouverture de session';
 $L['USER_TIMEOUT'] = 'Délai d\'inactivité de l\'utilisateur';
 
 // #4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Autoriser Plusieurs Connexions';
-$L['ALLOW_CONFIG_EDITING'] = 'Autoriser les éditeurs de configuration sur le tableau de bord';
+$L['ALLOW_MULTI_LOGINS'] = 'Connexions multiples';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'Cette option permet des connexions simultanées à partir de plusieurs appareils. Si désactivé, l\'utilisateur sera déconnecté de tous les autres appareils lorsqu\'il se connectera à partir d\'un nouvel appareil.';
+$L['ALLOW_CONFIG_EDITING'] = 'Éditeurs de configuration sur le tableau de bord';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'Cette option permet de modifier les fichiers de configuration depuis le tableau de bord. Si elle est désactivée, l\'option permettant d\'afficher/modifier les configurations sera masquée.';
+$L['ALLOW_MOUNT_INFO'] = 'Panneau d\'affichage et d\'ajout d\'informations de montage';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'Cette option permet de visualiser et d\'ajouter des informations de montage à partir du tableau de bord. Si elle est désactivée, l\'option permettant d\'afficher/d\'ajouter des informations sur le montage sera masquée.';
 $L['BY_ADMIN'] = 'Par l\'administrateur (réglages en dessous..)';
 $L['BY_USER'] = 'Par l\'utilisateur (voir la page d\'administration utilisateur)';
 $L['CHANGE_USER_SETTINGS'] = 'Modifier les paramètres globaux pour les utilisateurs';
@@ -851,9 +864,12 @@ $L['INDIV_USER_HOME'] = 'Pages d\'accueil Utilisateur Individuelles';
 $L['INDIVIDUAL_USER_FOLDERS'] = 'Dossiers Utilisateur Individuels';
 $L['PATH_ADMIN'] = 'Chemin (défini par Admin)';
 $L['PATH_INFOS'] = '<p class="help-block">Le chemin que vous choisissez doit être défini par rapport au dossier admin (qui sera votre racine de site, défini dans la page Paramètres Généraux).
-    Par conséquent, vous souhaiterez probablement retourner dans un dossier avant de choisir un sous-dossier que vous créez pour les pages utilisateur uniques. Utilisez <i>..</i> pour revenir à un dossier. Ainsi, par exemple, si le panneau de contrôle de l\'administrateur de votre site est ici - <i>http://www.website.com/admin/</i> et que vos dossiers d\'utilisateurs sont ici - <i>http://www.website.com/users/</i>, vous devez définir le chemin d\'accès à <i>../users/</i> avec votre page unique - donc <i>../users/admin.php</i>.
-    <p class="help-block">Caractère Générique Disponible: : <strong>%username%</strong> (c\'est à dire, connecté dans le nom d\'utilisateur de l\'utilisateur).</p>';
+Par conséquent, vous souhaiterez probablement retourner dans un dossier avant de choisir un sous-dossier que vous créez pour les pages utilisateur uniques. Utilisez <i>..</i> pour revenir à un dossier. Ainsi, par exemple, si le panneau de contrôle de l\'administrateur de votre site est ici - <i>http://www.website.com/admin/</i> et que vos dossiers d\'utilisateurs sont ici - <i>http://www.website.com/users/</i>, vous devez définir le chemin d\'accès à <i>../users/</i> avec votre page unique - donc <i>../users/admin.php</i>.
+<p class="help-block">Caractère Générique Disponible: : <strong>%username%</strong> (c\'est à dire, connecté dans le nom d\'utilisateur de l\'utilisateur).</p>';
 $L['SITE_ROOT_RELATIVE'] = 'Relatif à la racine du site';
+$L['SETTING'] = 'Paramètre';
+$L['DESCRIPTION'] = 'La Description';
+$L['VALUE'] = 'Valeur';
 
 // #4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'Bannir l\'adresse IP';

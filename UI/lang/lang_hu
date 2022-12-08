@@ -274,6 +274,15 @@ $L['USED_L'] = 'used';
 $L['USERNAME'] = 'Username';
 $L['USERS'] = 'Users';
 $L['YES'] = 'Yes';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Válassza ki, ha ez egy rclone-csatolás. Ha ez az opció be van választva, az elérési utat rclone mountként ismeri fel. Ezt az opciót be kell jelölni, ha egy rclone mountot próbálunk figyelni. Ez biztosítja a helyszámítások pontosságát.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Meglévő csatolás vagy könyvtár hozzáadása a figyeléshez';
+$L['MOUNTS'] = 'Rögzítések:';
+$L['MOUNT_ADD_PATH'] = 'Elérési út hozzáadása';
+$L['MOUNT_CHECK_ABOUT'] = 'Ezeket az értékeket a rendszer kiszámítja és rendszeresen frissíti. Az értékek nem valós idejűek. Az alábbi \'Vizsgálat indítása\' gombra kattintva frissítheti ezeket a statisztikákat.';
+$L['MOUNT_CHECK_PROCESS'] = 'A tér százalékos értékeit jelenleg a háttérben számítják ki. Kérjük, nézzen vissza később a frissített eredményekért. Oldalfrissítést igényel.';
+$L['MOUNT_MONITOR_INFO'] = 'További rögzítési információ';
+$L['MOUNT_START_SCAN'] = 'Vizsgálat indítása';
+$L['REMOVE_MOUNT_PATH'] = 'Felügyelt útvonal eltávolítása. Ez nem távolítja el a tényleges könyvtárat vagy beillesztési pontot.';
 
 
 ////////////////////////////////////////
@@ -729,8 +738,12 @@ $L['RESET_EXPIRY'] = 'Reset Expiry at Logon';
 $L['USER_TIMEOUT'] = 'User Inactivity Timeout';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Allow Multiple Logins';
-$L['ALLOW_CONFIG_EDITING'] = 'Konfigurációs szerkesztők engedélyezése a műszerfalon';
+$L['ALLOW_MULTI_LOGINS'] = 'Többszörös bejelentkezés';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'Ez a lehetőség több eszközről is lehetővé teszi a szimaltenous bejelentkezést. Ha le van tiltva, a felhasználó kijelentkezett az összes többi eszközről, amikor új eszközről jelentkezik be.';
+$L['ALLOW_CONFIG_EDITING'] = 'Konfigurációs szerkesztők az irányítópulton';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'Ez az opció lehetővé teszi a konfigurációs fájlok szerkesztését az irányítópulton. Ha le van tiltva, a konfigurációk megtekintése/szerkesztése rejtve lesz.';
+$L['ALLOW_MOUNT_INFO'] = 'Információk megtekintése és hozzáadása Panel felszerelése';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'Ez az opció lehetővé teszi a rögzítési adatok megtekintését és hozzáadását az irányítópultról. Ha le van tiltva, a csatlakoztatási információk megtekintésének/adásának lehetősége rejtve lesz.';
 $L['BY_ADMIN'] = 'By Admin (Set below..)';
 $L['BY_USER'] = 'By User (See User Admin pages)';
 $L['CHANGE_USER_SETTINGS'] = 'Change global settings for user accounts.';
@@ -745,6 +758,9 @@ $L['PATH_INFOS'] = '<p class="help-block">The path you choose should be set rela
 Therefore you\'ll most likely want to go back a folder before choosing any subfolder you create for the unique user pages. Use <i>../</i> to go back a folder. So for example, if you site\'s admin control panel is here - <i>http://www.website.com/admin/</i> and your user folders are here - <i>http://www.website.com/users/</i> you\'ll want to set the path setting to <i>../users/</i> along with your unique page - so <i>../users/admin.php</i>.</p>
 <p class="help-block">Wildcard available : <strong>%username% </strong>(ie, logged in user\'s username) </p>';
 $L['SITE_ROOT_RELATIVE'] = 'Relative to Site Root';
+$L['SETTING'] = 'Beállítás';
+$L['DESCRIPTION'] = 'Leírás';
+$L['VALUE'] = 'Érték';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'Block / Ban IP Address';

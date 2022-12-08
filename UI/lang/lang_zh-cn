@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -274,6 +274,15 @@ $L['USED_L'] = '已使用';
 $L['USERNAME'] = '用户名';
 $L['USERS'] = '账户';
 $L['YES'] = '是';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = '如果这是一个 rclone 安装, 请选择. 选择此选项后, 会将路径识别为 rclone 安装. 如果您正在尝试监视 rclone 安装, 则应选中此选项. 这确保了空间计算的准确性.';
+$L['ADD_NEW_MOUNT_CHECK'] = '添加一个现有的挂载或目录来监控';
+$L['MOUNTS'] = '坐骑：';
+$L['MOUNT_ADD_PATH'] = '添加路径';
+$L['MOUNT_CHECK_ABOUT'] = '这些值会定期计算和更新. 这些值不是实时的. 您可以通过单击下面的“开始扫描”按钮强制更新这些统计信息.';
+$L['MOUNT_CHECK_PROCESS'] = '当前正在后台计算空间百分比值. 请稍后再回来查看更新的结果. 需要刷新页面.';
+$L['MOUNT_MONITOR_INFO'] = '附加挂载信息';
+$L['MOUNT_START_SCAN'] = '开始扫描';
+$L['REMOVE_MOUNT_PATH'] = '移除监控路径. 这不会删除实际目录或挂载点.';
 
 
 ////////////////////////////////////////
@@ -321,7 +330,7 @@ $L['MEDUSA'] = '电视节目的视频文件管理器, 用来观看你最喜爱�
 $L['MYLAR3'] = 'Mylar是一个自动漫画 (cbr / cbz) 下载程序, 可与NZB和用python编写的torrent一起使用. 除了DDL外, 它还支持SABnzbd, NZBGET和许多torrent客户端.';
 $L['NETDATA'] = 'Netdata 分布式的, 实时的适用于应用与系统的性能与健康情况的监视器.';
 $L['NEXTCLOUD'] = 'Nextcloud是一个开源, 自主托管的文件同步和共享通信应用平台. 访问和同步你的文件, 联系人, 日历和沟通和协作你的设备. 你可以完全掌控你的数据, 存放在哪里以及谁可以访问它!';
-$L['NOTIFIARR'] = '这是 <a href="https://nullrefer.ir/?https://notifiarr.com/" rel="noopener nofollow" target="_blank">Notifiarr.com</a>. 客户端在您的 Discord 服务器中启用来自 Media Bot 的内容请求，并提供有关 Plex 使用情况和系统健康状况以及许多其他功能的报告..';
+$L['NOTIFIARR'] = '这是 <a href="https://nullrefer.ir/?https://notifiarr.com/" rel="noopener nofollow" target="_blank">Notifiarr.com</a>. 客户端在您的 Discord 服务器中启用来自 Media Bot 的内容请求, 并提供有关 Plex 使用情况和系统健康状况以及许多其他功能的报告..';
 $L['NOVNC'] = 'noVNC不仅是一个 VNC 客户端 JavaScript 库, 也是一个利用该库构建的应用程序. noVNC 可以在任何的现代浏览器包括移动浏览器 (iOS and Android) 中运行.';
 $L['NZBGET'] = 'NZBGet 是一个二进制下载器, 它根据 nzb-files 中给出的信息从 Usenet 下载文件. NZBGet 是用 C ++ 编写的, 以其非凡的性能和效率而闻名.';
 $L['NZBHYDRA'] = 'NZBHydra 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
@@ -669,8 +678,8 @@ $L['FORGOT_PASS'] = '忘记密码?';
 $L['LOG_IN'] = '登录';
 $L['CONFIRM_PASS_FIELD_PLACE'] = '请确认您的电子邮件地址.';
 $L['LOGIN_ACCOUNT'] = '登录您的账户, 继续.';
-$L['LOGIN_USERNAME_INVALID'] = '登录无效. 请检查您的用户名，然后重试';
-$L['LOGIN_PASSWORD_INVALID'] = '登录无效. 请检查您的密码，然后再试一次';
+$L['LOGIN_USERNAME_INVALID'] = '登录无效. 请检查您的用户名, 然后重试';
+$L['LOGIN_PASSWORD_INVALID'] = '登录无效. 请检查您的密码, 然后再试一次';
 $L['LOGIN_MISSING_USERNAME'] = '未输入用户名';
 $L['LOGIN_MISSING_PASSWORD'] = '未输入密码';
 $L['PASS_FIELD_INVALID'] = '请提供您的密码.';
@@ -683,7 +692,7 @@ $L['USER_FIELD_INVALID'] = '请提供您的用户名.';
 $L['USER_FIELD_PLACE'] = '请输入你的用户名.';
 $L['USER_FIELD_VALID'] = '用户名已提供, 验证准备就绪.';
 $L['ACCOUNT_BANNED'] = '您的帐户已被禁止. <br/>请联系系统管理员.';
-$L['ACCOUNT_DISABLED'] = '您的帐户未激活或被禁用. <br/>如果您认为这是一个问题，请联系系统管理员.';
+$L['ACCOUNT_DISABLED'] = '您的帐户未激活或被禁用. <br/>如果您认为这是一个问题, 请联系系统管理员.';
 $L['ACCOUNT_INACTIVE_ADMIN'] = '您的帐户尚未被管理员激活.';
 $L['ACCOUNT_INACTIVE_EMAIL'] = '您的帐户尚未激活. <br/>请查看您的电子邮件以获取激活链接.';
 $L['IP_BANNED'] = '您的 IP 地址已被禁止. <br/>请联系系统管理员.';
@@ -723,7 +732,7 @@ $L['REG_DISABLED'] = '注册已被禁用';
 $L['REG_FORM_INFO'] = '请填写下面的表格来创建一个账户';
 $L['REGISTERED_TXT'] = '已注册！';
 $L['REG_FAILED'] = '注册失败';
-$L['REG_ERROR_INFO_1'] = '很抱歉，出现错误，您注册的用户名';
+$L['REG_ERROR_INFO_1'] = '很抱歉, 出现错误, 您注册的用户名';
 $L['REG_ERROR_INFO_2'] = ' 无法完成.  请稍后再试.';
 $L['SORRY'] = '我们很抱歉';
 $L['THANKS'] = '谢谢你';
@@ -843,8 +852,12 @@ $L['RESET_EXPIRY'] = '登陆时重置有效期';
 $L['USER_TIMEOUT'] = '用户会话超时';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = '允许多处登陆';
-$L['ALLOW_CONFIG_EDITING'] = '允许仪表板上的配置编辑器';
+$L['ALLOW_MULTI_LOGINS'] = '多次登录';
+$L['ALLOW_MULTI_LOGINS_DESC'] = '此选项允许从多个设备同时登录. 如果禁用, 用户从新设备登录时将从所有其他设备注销.';
+$L['ALLOW_CONFIG_EDITING'] = '在仪表板上配置编辑器';
+$L['ALLOW_CONFIG_EDITING_DESC'] = '此选项允许从仪表板编辑配置文件. 如果禁用, 查看/编辑配置的选项将被隐藏.';
+$L['ALLOW_MOUNT_INFO'] = '安装信息查看和添加面板';
+$L['ALLOW_MOUNT_INFO_DESC'] = '此选项允许从仪表板查看和添加挂载信息. 如果禁用, 查看/添加安装信息的选项将被隐藏.';
 $L['BY_ADMIN'] = '管理员设定 (见下方..)';
 $L['BY_USER'] = '用户设定 (查看用户管理页面)';
 $L['CHANGE_USER_SETTINGS'] = '更改用户帐户的全局设置.';
@@ -856,9 +869,12 @@ $L['INDIV_USER_HOME'] = '个人用户主页';
 $L['INDIVIDUAL_USER_FOLDERS'] = '个人用户文件夹';
 $L['PATH_ADMIN'] = '路径 (由管理员设置)';
 $L['PATH_INFOS'] = '<p class="help-block">您选择的路径应当相对于 admin 文件夹设置 (该文件夹是您的站点根目录, 在控制面板的常规设置中设定).
-    因此在选择为特定用户页面创建的任何子文件夹之前, 您很可能希望返回某个文件夹. 使用 <i>../</i> 返回上一级文件夹. 例如, 您站点的管理员面板在这里 - <i>http://www.website.com/admin/</i> 您的用户文件夹在这里 - <i>http://www.website.com/users/</i> 您要将根据路径 <i>../users/</i> 设置根特定的页面 - <i>../users/admin.php</i>.</p>
-    <p class="help-block">可使用的通配符 : <strong>%username% </strong>(即登录用户的用户名) </p>';
+因此在选择为特定用户页面创建的任何子文件夹之前, 您很可能希望返回某个文件夹. 使用 <i>../</i> 返回上一级文件夹. 例如, 您站点的管理员面板在这里 - <i>http://www.website.com/admin/</i> 您的用户文件夹在这里 - <i>http://www.website.com/users/</i> 您要将根据路径 <i>../users/</i> 设置根特定的页面 - <i>../users/admin.php</i>.</p>
+<p class="help-block">可使用的通配符 : <strong>%username% </strong>(即登录用户的用户名) </p>';
 $L['SITE_ROOT_RELATIVE'] = '相对于站点根目录';
+$L['SETTING'] = '设置';
+$L['DESCRIPTION'] = '描述';
+$L['VALUE'] = '价值';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = '阻止 IP 地址';

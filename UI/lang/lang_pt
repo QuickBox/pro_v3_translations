@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Português	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -568,9 +568,15 @@ $L['RCLONE_UPLOAD_MESSAGE'] = 'Atualmente, o RClone está trabalhando em segundo
 $L['RCLONE_UPLOAD_VIEWER'] = 'Upload de RClone';
 $L['RCMOUNT_STATUS'] = 'Status do MergerFS';
 $L['RCMOUNT_WHERE'] = 'Localização da montagem';
-$L['CLOUD_MANAGEMENT'] = 'Software em Nuvem';
-$L['RCLONE_MOUNT_INFO'] = 'Informações de montagem RClone';
-$L['RCLONE MOUNT CHECK_PROCESS'] = 'Os valores de porcentagem de espaço estão sendo calculados em segundo plano. Volte mais tarde para ver os resultados atualizados.';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Selecione se esta é uma montagem rclone. Esta opção, quando selecionada, reconhecerá o caminho como uma montagem rclone. Esta opção deve ser marcada se você estiver tentando monitorar uma montagem rclone. Isso garante que os cálculos de espaço sejam precisos.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Adicionar uma montagem ou diretório existente para monitorar';
+$L['MOUNTS'] = 'Montagens:';
+$L['MOUNT_ADD_PATH'] = 'Adicionar caminho';
+$L['MOUNT_CHECK_ABOUT'] = 'Estes valores são calculados e atualizados periodicamente. Os valores não são em tempo real. Você pode forçar uma atualização dessas estatísticas clicando no botão \'Iniciar verificação\' abaixo.';
+$L['MOUNT_CHECK_PROCESS'] = 'Os valores de porcentagem de espaço estão sendo calculados em segundo plano. Volte mais tarde para ver os resultados atualizados. Requer atualização de página.';
+$L['MOUNT_MONITOR_INFO'] = 'Informações adicionais de montagem';
+$L['MOUNT_START_SCAN'] = 'Iniciar verificação';
+$L['REMOVE_MOUNT_PATH'] = 'Remover caminho monitorado. Isso não removerá o diretório atual ou o ponto de montagem.';
 
 
 //#3.3 - DASHBOARD WIDGETS
@@ -844,8 +850,12 @@ $L['RESET_EXPIRY'] = 'Redefinir Expiração no Logon';
 $L['USER_TIMEOUT'] = 'Tempo limite de inatividade do usuário';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Permitir vários logins';
-$L['ALLOW_CONFIG_EDITING'] = 'Permitir Editores de Configuração no Painel de Controlo';
+$L['ALLOW_MULTI_LOGINS'] = 'Vários acessos';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'Esta opção permite logins simultâneos de vários dispositivos. Se desativado, o usuário será desconectado de todos os outros dispositivos quando fizer login em um novo dispositivo.';
+$L['ALLOW_CONFIG_EDITING'] = 'Configurar editores no painel';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'Esta opção permite a edição dos arquivos de configuração do painel. Se desativado, a opção de visualizar/editar configurações ficará oculta.';
+$L['ALLOW_MOUNT_INFO'] = 'Painel de visualização e adição de informações de montagem';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'Esta opção permite visualizar e adicionar informações de montagem no painel. Se desativado, a opção de visualizar/adicionar informações de montagem ficará oculta.';
 $L['BY_ADMIN'] = 'Por Admin (Definir abaixo ..)';
 $L['BY_USER'] = 'Por usuário (consulte as páginas de administração do usuário)';
 $L['CHANGE_USER_SETTINGS'] = 'Alterar configurações globais para contas de usuários.';
@@ -860,6 +870,9 @@ $L['SITE_ROOT_RELATIVE'] = 'Relativo à Raiz do Site';
 $L['PATH_INFOS'] = '<p class="help-block">O caminho escolhido deve ser definido em relação à pasta administrativa (que será sua raiz do site, definida na página Configurações gerais no painel de controle).
 Portanto, você provavelmente desejará voltar a uma pasta antes de escolher qualquer subpasta criada para as páginas exclusivas do usuário. Use <i>../</i> para voltar uma pasta. Por exemplo, se o painel de controle do seu site estiver aqui - <i>http://www.website.com/admin/</i> e suas pastas de usuário estão aqui - <i>http://www.website.com/users/</i> você desejará definir a configuração do caminho para <i>../users/</i> junto com sua página única - assim <i>../users/admin.php</i>.</p>
 <p class="help-block">Wildcard disponível : <strong>%username% </strong>(ou seja, nome de usuário do usuário logado) </p>';
+$L['SETTING'] = 'Configuração';
+$L['DESCRIPTION'] = 'Descrição';
+$L['VALUE'] = 'Valor';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'Bloquear / Banir Endereço IP';

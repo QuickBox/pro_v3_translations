@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -275,6 +275,15 @@ $L['USED_L'] = 'verwendet';
 $L['USERNAME'] = 'Benutzername';
 $L['USERS'] = 'Benutzer';
 $L['YES'] = 'Ja';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Wählen Sie aus, ob dies ein rclone-Mount ist. Wenn diese Option ausgewählt ist, erkennt sie den Pfad als rclone-Mount. Diese Option sollte aktiviert werden, wenn Sie versuchen, einen rclone-Mount zu überwachen. Dadurch wird sichergestellt, dass die Raumberechnungen genau sind.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Vorhandenes Mount oder Verzeichnis zur Überwachung hinzufügen';
+$L['MOUNTS'] = 'Reittiere:';
+$L['MOUNT_ADD_PATH'] = 'Pfad hinzufügen';
+$L['MOUNT_CHECK_ABOUT'] = 'Diese Werte werden regelmäßig berechnet und aktualisiert. Die Werte sind nicht in Echtzeit. Sie können eine Aktualisierung dieser Statistiken erzwingen, indem Sie unten auf die Schaltfläche \'Scan starten\' klicken.';
+$L['MOUNT_CHECK_PROCESS'] = 'Speicherplatzprozentwerte werden derzeit im Hintergrund berechnet. Bitte schauen Sie später noch einmal vorbei, um aktualisierte Ergebnisse zu erhalten. Seitenaktualisierung erforderlich.';
+$L['MOUNT_MONITOR_INFO'] = 'Zusätzliche Mount-Info';
+$L['MOUNT_START_SCAN'] = 'Scan starten';
+$L['REMOVE_MOUNT_PATH'] = 'Überwachten Pfad entfernen. Dadurch wird das eigentliche Verzeichnis oder der Einhängepunkt nicht entfernt.';
 
 
 ////////////////////////////////////////
@@ -845,8 +854,12 @@ $L['RESET_EXPIRY'] = 'Ablaufdatum bei der Anmeldung zurücksetzen';
 $L['USER_TIMEOUT'] = 'Timeout bei Inaktivität des Benutzers';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Erlaube mehrere Logins';
-$L['ALLOW_CONFIG_EDITING'] = 'Config-Editoren auf dem Dashboard zulassen';
+$L['ALLOW_MULTI_LOGINS'] = 'Mehrere Anmeldungen';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'Diese Option ermöglicht gleichzeitige Anmeldungen von mehreren Geräten. Wenn deaktiviert, wird der Benutzer von allen anderen Geräten abgemeldet, wenn er sich von einem neuen Gerät aus anmeldet.';
+$L['ALLOW_CONFIG_EDITING'] = 'Editoren im Dashboard konfigurieren';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'Diese Option ermöglicht die Bearbeitung der Konfigurationsdateien vom Dashboard aus. Wenn deaktiviert, wird die Option zum Anzeigen/Bearbeiten von Konfigurationen ausgeblendet.';
+$L['ALLOW_MOUNT_INFO'] = 'Mount-Info anzeigen und Panel hinzufügen';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'Diese Option ermöglicht das Anzeigen und Hinzufügen von Reittierinformationen vom Dashboard aus. Wenn deaktiviert, wird die Option zum Anzeigen/Hinzufügen von Reittierinformationen ausgeblendet.';
 $L['BY_ADMIN'] = 'Von Admin (siehe unten...)';
 $L['BY_USER'] = 'Nach Benutzer (Siehe Benutzer-Admin-Seiten)';
 $L['CHANGE_USER_SETTINGS'] = 'Ändere die globalen Einstellungen für Benutzerkonten.';
@@ -861,6 +874,9 @@ $L['SITE_ROOT_RELATIVE'] = 'Root-Verzeichnis Relativ';
 $L['PATH_INFOS'] = '<p class="help-block">Der von dir gewählte Pfad sollte in Bezug auf den Admin-Ordner festgelegt werden (das ist dein Website-Root, festgelegt auf der Seite Allgemeine Einstellungen in der Systemsteuerung).
 Verwenden von <i>../</i>, um einen Ordner zurückzukehren. Wenn zum Beispiel das Admin-Control Panel deiner Seite hier ist - <i>http://www.website.com/admin/</i> und deine Benutzerordner hier sind - <i>http://www.website.com/users/</i> du möchtest die Pfad-Einstellung auf <i>../users/</i> zusammen mit deiner einzigartigen Seite setzen - also <i>.../users/admin.php</i>.</p>
 <p class="help-block">Wildcard verfügbar : <strong>%username% </strong>(ie, benutzername des angemeldeten benutzers) </p>';
+$L['SETTING'] = 'Einstellung';
+$L['DESCRIPTION'] = 'Beschreibung';
+$L['VALUE'] = 'Wert';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'IP-Adresse blockieren / sperren';

@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -275,6 +275,15 @@ $L['USED_L'] = 'usado';
 $L['USERNAME'] = 'Nombre de Usuario';
 $L['USERS'] = 'Usuarios';
 $L['YES'] = 'Si';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Seleccione si se trata de un montaje rclone. Esta opción, cuando se selecciona, reconocerá la ruta como un montaje rclone. Esta opción debe estar marcada si está intentando monitorear un montaje rclone. Esto asegura que los cálculos de espacio sean exactos.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Agregar un montaje o directorio existente para monitorear';
+$L['MONTAJES'] = 'Monturas:';
+$L['MOUNT_ADD_PATH'] = 'Agregar ruta';
+$L['MOUNT_CHECK_ABOUT'] = 'Estos valores se calculan y actualizan periódicamente. Los valores no son en tiempo real. Puede forzar una actualización de estas estadísticas haciendo clic en el botón \'Iniciar escaneo\' a continuación.';
+$L['MOUNT_CHECK_PROCESS'] = 'Los valores de porcentaje de espacio se están calculando actualmente en segundo plano. Vuelva a consultar más tarde para ver los resultados actualizados. Requiere actualización de página.';
+$L['MOUNT_MONITOR_INFO'] = 'Información de montaje adicional';
+$L['MOUNT_START_SCAN'] = 'Iniciar escaneo';
+$L['REMOVE_MOUNT_PATH'] = 'Eliminar ruta monitoreada. Esto no eliminará el directorio real o el punto de montaje.';
 
 
 ////////////////////////////////////////
@@ -844,8 +853,12 @@ $L['RESET_EXPIRY'] = 'Restablecer Caducidad al Iniciar Sesión';
 $L['USER_TIMEOUT'] = 'Tiempo de inactividad del usuario';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Permitir Múltiples Sesiones';
-$L['ALLOW_CONFIG_EDITING'] = 'Permitir a los editores de configuración en el panel de control';
+$L['ALLOW_MULTI_LOGINS'] = 'Inicios de sesión múltiples';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'Esta opción permite inicios de sesión simultáneos desde varios dispositivos. Si está deshabilitado, se cerrará la sesión del usuario en todos los demás dispositivos cuando inicie sesión desde un nuevo dispositivo.';
+$L['ALLOW_CONFIG_EDITING'] = 'Editores de configuración en el panel';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'Esta opción permite editar los archivos de configuración desde el tablero. Si está desactivada, la opción para ver/editar configuraciones estará oculta.';
+$L['ALLOW_MOUNT_INFO'] = 'Panel de visualización y adición de información de montaje';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'Esta opción permite ver y agregar información de la montura desde el tablero. Si está desactivada, la opción para ver/añadir información de montaje estará oculta.';
 $L['BY_ADMIN'] = 'Por Admin (Configurar a continuación)';
 $L['BY_USER'] = 'Por Usuario (Ver página de admin de usuarios)';
 $L['CHANGE_USER_SETTINGS'] = 'Cambiar la configuración global de cuentas de usuario.';
@@ -858,8 +871,11 @@ $L['INDIVIDUAL_USER_FOLDERS'] = 'Carpetas de Usuario Individuales';
 $L['PATH_ADMIN'] = 'Ruta (Configurada por el Admin)';
 $L['SITE_ROOT_RELATIVE'] = 'Relativo a la Raíz del Sitio';
 $L['PATH_INFOS'] = '<p class="help-block">La ruta que elijas debería configurarse en relación con la carpeta de administración (que será tu sitio principal, establecida en la página de Configuración General, en el Panel de Control).
-    Por lo tanto, es muy probable que quieras volver una carpeta atrás, antes de elegir cualquier subcarpeta que crees para las páginas de usuario únicas. Usa <i>../</i> para retroceder una carpeta. Así, por ejemplo, si el panel de control de administración de tu sitio está aquí: <i>http://www.website.com/admin/</i> y las carpetas de usuarios están aquí - <i>http://www.website.com/users/</i> deberías establecer la configuración de la ruta a <i>../users/</i> junto con tu página única - entonces <i>../users/admin.php</i>.</p>
-    <p class="help-block">Wildcard disponible : <strong>%username% </strong>(por ejemplo, el usuario ha iniciado sesión) </p>';
+Por lo tanto, es muy probable que quieras volver una carpeta atrás, antes de elegir cualquier subcarpeta que crees para las páginas de usuario únicas. Usa <i>../</i> para retroceder una carpeta. Así, por ejemplo, si el panel de control de administración de tu sitio está aquí: <i>http://www.website.com/admin/</i> y las carpetas de usuarios están aquí - <i>http://www.website.com/users/</i> deberías establecer la configuración de la ruta a <i>../users/</i> junto con tu página única - entonces <i>../users/admin.php</i>.</p>
+<p class="help-block">Wildcard disponible : <strong>%username% </strong>(por ejemplo, el usuario ha iniciado sesión) </p>';
+$L['SETTING'] = 'Configuración';
+$L['DESCRIPTION'] = 'Descripción';
+$L['VALUE'] = 'Valor';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'Bloquear / Prohibir Direcciones IP';

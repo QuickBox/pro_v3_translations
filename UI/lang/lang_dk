@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 6, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -275,6 +275,15 @@ $L['USED_L'] = 'brugt';
 $L['USERNAME'] = 'Brugernavn';
 $L['USERS'] = 'Brugere';
 $L['YES'] = 'Ja';
+$L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Vælg om dette er et rclone-mount. Denne mulighed, når den er valgt, genkender stien som et rclone-mount. Denne indstilling skal afkrydses, hvis du forsøger at overvåge et rclone-mount. Dette sikrer, at pladsberegningerne er nøjagtige.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Tilføj en eksisterende montering eller mappe til at overvåge';
+$L['MOUNTS'] = 'Monter:';
+$L['MOUNT_ADD_PATH'] = 'Tilføj sti';
+$L['MOUNT_CHECK_ABOUT'] = 'Disse værdier beregnes og opdateres med jævne mellemrum. Værdierne er ikke i realtid. Du kan gennemtvinge en opdatering af disse statistikker ved at klikke på knappen \'Start scanning\' nedenfor.';
+$L['MOUNT_CHECK_PROCESS'] = 'Værder for mellemrumsprocenter bliver i øjeblikket beregnet i baggrunden. Kom venligst tilbage senere for opdaterede resultater. Kræver sideopdatering.';
+$L['MOUNT_MONITOR_INFO'] = 'Yderligere monteringsoplysninger';
+$L['MOUNT_START_SCAN'] = 'Start scanning';
+$L['REMOVE_MOUNT_PATH'] = 'Fjern overvåget sti. Dette vil ikke fjerne den faktiske mappe eller monteringspunktet.';
 
 
 ////////////////////////////////////////
@@ -843,8 +852,12 @@ $L['RESET_EXPIRY'] = 'Nulstil udløb ved log på';
 $L['USER_TIMEOUT'] = 'Brugerinaktivitet';
 
 //#4.2.4 - USER SETTINGS
-$L['ALLOW_MULTI_LOGINS'] = 'Tillad flere samtidige logins';
-$L['ALLOW_CONFIG_EDITING'] = 'Tillad konfigurationsredaktører på kontrolpanelet';
+$L['ALLOW_MULTI_LOGINS'] = 'Flere logins';
+$L['ALLOW_MULTI_LOGINS_DESC'] = 'Denne mulighed giver mulighed for samtidige login fra flere enheder. Hvis deaktiveret, vil brugeren blive logget ud af alle andre enheder, når de logger på fra en ny enhed.';
+$L['ALLOW_CONFIG_EDITING'] = 'Konfigurer editorer på Dashboard';
+$L['ALLOW_CONFIG_EDITING_DESC'] = 'Denne mulighed giver mulighed for at redigere konfigurationsfilerne fra dashboardet. Hvis deaktiveret, vil muligheden for at se/redigere konfigurationer blive skjult.';
+$L['ALLOW_MOUNT_INFO'] = 'Monter info visning og tilføjelse af panel';
+$L['ALLOW_MOUNT_INFO_DESC'] = 'Denne mulighed giver mulighed for at se og tilføje monteringsoplysninger fra dashboardet. Hvis deaktiveret, vil muligheden for at se/tilføje monteringsoplysninger være skjult.';
 $L['BY_ADMIN'] = 'Af Admin (Indstil herunder..)';
 $L['BY_USER'] = 'Af Bruger (Se brugeradministrator sider)';
 $L['CHANGE_USER_SETTINGS'] = 'Skift globale indstillinger for brugerkonti.';
@@ -859,6 +872,9 @@ $L['SITE_ROOT_RELATIVE'] = 'I forhold til Sidens Rod';
 $L['PATH_INFOS'] = '<p class="help-block">Stien, du vælger, skal indstilles i forhold til administrationsmappen (som vil være sidens rod, angivet på under Indstillinger -> Generelle indstillinger i Kontrolpanel).
 Derfor vil du sandsynligvis gerne gå tilbage til en mappe, inden du vælger en undermappe, du opretter for de unikke brugersider. Brug <i>../</i> for at gå tilbage til en mappe. Så hvis du f.eks. Sitet\'s admin kontrolpanel er her <i> http://www.website.com/admin/ </i>, og dine brugermapper er her - <i> http://www.website.com/users/</i> skal du bruge stiindstillingen <i>../users/</i> sammen med din unikke side - således <i>../users/admin.php</i>.</p>
 <p class="help-block"> Wildcard til rådighed: <strong>%brugernavn%</strong> (dvs. brugernavn indlogget bruger).</p> ';
+$L['SETTING'] = 'Indstilling';
+$L['DESCRIPTION'] = 'Beskrivelse';
+$L['VALUE'] = 'Værdi';
 
 //#4.2.5 - SECURITY SETTINGS
 $L['BAN_IP_ADDRESS'] = 'Blokér / Bandlys IP-adresse';
