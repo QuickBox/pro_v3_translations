@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.58
+# File Version: 1.0.67
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -307,6 +307,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d nogledomæne.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u bruger -d nogledomæne.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.emby.domæne ${option[*]}"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.jellyfin.domæne ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.komga.domæne ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.overseerr.domæne ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.plex.domæne ${option[*]}"
@@ -316,6 +317,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d nogledomæne.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u bruger -d nogledomæne.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.emby.domæne ${option[*]}"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.jellyfin.domæne ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.komga.domæne ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.overseerr.domæne ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d nogle.plex.domæne ${option[*]}"
@@ -342,22 +344,26 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="installerer den seneste ${branch}-version af ${software_name} for bruger og stadier ssl-certifikat for domæne"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installerer et ssl-certifikat for det angivne domæne"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne emby-domæne"
+		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne jellyfin-domæne"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne komga-domæne"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne overseerr-domæne"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne plex-domæne"
 		[[ -n ${version} ]] && declare text="installerer seneste ${version[*]} version af ${software_name}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer den seneste ${branch}-version af ${software_name}"
+		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="installerer seneste ${branch} version af ${software_name} med tildelt datakatalog"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} for bruger"
 		[[ -n ${dmn} ]] && declare text="geninstallerer ssl-certifikat brugt til dashboardet på det angivne domæne"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="geninstallerer den seneste ${branch}-version af ${software_name} for bruger og stadier ssl-certifikat for domæne"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="geninstallerer et ssl-certifikat for det angivne domæne"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne emby-domæne"
+		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne jellyfin-domæne"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne komga-domæne"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne tilsynsmandsdomæne"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne plex-domæne"
 		[[ -n ${version} ]] && declare text="geninstallerer seneste ${version[*]} version af ${software_name}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name}"
+		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} med tildelt datakatalog"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="fjerner ${software_name} for brugeren"
 		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="fjerner ssl-certifikat fra det angivne domæne"
@@ -383,6 +389,15 @@ ${software_title} installeret på port: ${software_web_port}"
 quickbox::lang::software::mu::access() {
 	declare text="få adgang til ${software_title} på:
 ${quickbox_web_root}${username}/${software_name}
+${software_title} installeret på port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::airsonic::access() {
+	declare text="adgang til ${software_title} på:
+${quickbox_web_root}${username}/${software_name}
+brugernavn: admin
+adgangskode: admin
 ${software_title} installeret på port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -509,12 +524,17 @@ quickbox::lang::software::overseerr::access() {
 		declare text="adgang til ${software_title} på:
 https://${overseerr_web_root}/"
 	else
-		# trunk-ignore(shellcheck/SC2001)
-		quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 		declare text="adgang til ${software_title} på:
-${quickbox_web_root}:${software_web_port}/
+http://${server_ip}:${software_web_port}/
 ${software_title} installeret på port: ${software_web_port}"
 	fi
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plex_directory_warning() {
+	declare text="den tilpassede datamappe: '${software_install_directory}' eksisterer allerede.
+bruger '${software_install_directory}/plex' i stedet."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -706,6 +726,13 @@ runuser -l ${username} -c \"rclone config reconnect gdrive:\"
 > For mere information om, hvordan du installerer rclone, besøg:
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::sonarrv4::update::error() {
+	declare text
+	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)kan ikke$(tput setaf 7) opdateres fra v3.
+Afinstaller venligst v3 og installer v4.$(tput sgr0)"
 	quickbox::dashboard::log "${text}"
 }
 

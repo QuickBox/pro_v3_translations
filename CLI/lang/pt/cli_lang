@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.59
+# File Version: 1.0.68
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -307,6 +307,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.emby.domínio ${option[*]}"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.jellyfin.domínio ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.komga.domínio ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.overseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.plex.domínio ${option[*]}"
@@ -316,6 +317,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.emby.domínio ${option[*]}"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.jellyfin.domínio ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.komga.domínio ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.overseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.plex.domínio ${option[*]}"
@@ -342,22 +344,26 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="instala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala um certificado ssl para o domínio especificado"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio emby especificado"
+		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyfin especificado"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio komga especificado"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio overseerr especificado"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio plex especificado"
 		[[ -n ${version} ]] && declare text="instala a versão ${version[*]} mais recente de ${software_name}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="instala a versão mais recente de ${branch} de ${software_name}"
+		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="instala a versão ${branch} mais recente de ${software_name} com diretório de dados atribuído"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="reinstala a versão mais recente do ${branch} de ${software_name} para o usuário"
 		[[ -n ${dmn} ]] && declare text="reinstala o certificado ssl usado para o painel no domínio especificado"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala um certificado ssl para o domínio especificado"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio emby especificado"
+		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyfin especificado"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio komga especificado"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio overseerr especificado"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio plex especificado"
 		[[ -n ${version} ]] && declare text="reinstala a versão ${version[*]} mais recente de ${software_name}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="instala a versão mais recente de ${branch} de ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="reinstala a versão mais recente de ${branch} de ${software_name}"
+		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="reinstala a versão ${branch} mais recente de ${software_name} com diretório de dados atribuído"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="remove ${software_name} para usuário"
 		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="remove o certificado ssl do domínio especificado"
@@ -383,6 +389,15 @@ ${software_title} instalado na porta: ${software_web_port}"
 quickbox::lang::software::mu::access() {
 	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${username}/${software_name}
+${software_title} instalado na porta: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::airsonic::access() {
+	declare text="acesso ${software_title} em:
+${quickbox_web_root}${username}/${software_name}
+nome de usuário: admin
+senha: admin
 ${software_title} instalado na porta: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -509,12 +524,17 @@ quickbox::lang::software::overseerr::access() {
 		declare text="acesso ${software_title} em:
 https://${overseerr_web_root}/"
 	else
-		# trunk-ignore(shellcheck/SC2001)
-		quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 		declare text="acesso ${software_title} em:
-${quickbox_web_root}:${software_web_port}/
+http://${server_ip}:${software_web_port}/
 ${software_title} instalado na porta: ${software_web_port}"
 	fi
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plex_directory_warning() {
+	declare text="o diretório de dados customizado: '${software_install_directory}' já existe.
+usando '${software_install_directory}/plex' em vez disso."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -705,6 +725,13 @@ runuser -l ${username} -c \"rclone config reconnect gdrive:\"
 > Para obter mais informações sobre como instalar o rclone, visite:
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::sonarrv4::update::error() {
+	declare text
+	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)não pode$(tput setaf 7) ser atualizado de v3.
+Desinstale a v3 e instale a v4.$(tput sgr0)"
 	quickbox::dashboard::log "${text}"
 }
 

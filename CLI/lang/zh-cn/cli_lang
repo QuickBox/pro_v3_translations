@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.51
+# File Version: 1.0.61
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -307,6 +307,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d 一些领域.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u 用户 -d 一些领域.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.emby.领域 ${option[*]}"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.jellyfin.领域 ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.komga.领域 ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.overseerr.领域 ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.plex.领域 ${option[*]}"
@@ -316,6 +317,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d 一些领域.com ${option[*]}"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u 用户 -d 一些领域.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.emby.领域 ${option[*]}"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.jellyfin.领域 ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.komga.领域 ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.overseerr.领域 ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d 一些.plex.领域 ${option[*]}"
@@ -342,22 +344,26 @@ quickbox::lang::software::info::note() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="为指定域安装 ssl 证书"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="为指定的 emby 域安装 ssl 证书"
+		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="为指定的 jellyfin 域安装 ssl 证书"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="为指定的 komga 域安装 ssl 证书"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="为指定的监督域安装 ssl 证书"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="为指定的 plex 域安装 ssl 证书"
 		[[ -n ${version} ]] && declare text="安装 ${software_name} 的最新 ${version[*]} 版本"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="安装 ${software_name} 的最新 ${branch} 版本"
+		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="安装最新的 ${branch} 版本的 ${software_name} 指定数据目录"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="为用户重新安装 ${software_name} 的最新 ${branch} 版本"
 		[[ -n ${dmn} ]] && declare text="重新安装指定域上用于仪表板的 ssl 证书"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="重新安装指定域的 ssl 证书"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="为指定的 emby 域重新安装 ssl 证书"
+		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="为指定的 jellyfin 域重新安装 ssl 证书"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="为指定的 komga 域重新安装 ssl 证书"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="为指定的监督域重新安装 ssl 证书"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="为指定的 plex 域重新安装 ssl 证书"
 		[[ -n ${version} ]] && declare text="重新安装 ${software_name} 的最新 ${version[*]} 版本"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="安装 ${software_name} 的最新 ${branch} 版本"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="重新安装 ${software_name} 的最新 ${branch} 版本"
+		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="重新安装 ${software_name} 的最新 ${branch} 版本 指定数据目录"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="为用户删除 ${software_name}"
 		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="从指定域中删除 ssl 证书"
@@ -384,6 +390,15 @@ quickbox::lang::software::mu::access() {
 	declare text="访问 ${software_title}: 
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} 安装在端口: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::airsonic::access() {
+	declare text="访问 ${software_title}:
+${quickbox_web_root}${username}/${software_name}
+用户名: admin
+密码: admin
+${software_title} 安装在端口：${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -509,12 +524,18 @@ quickbox::lang::software::overseerr::access() {
 		declare text="访问 ${software_title} 在:
 https://${overseerr_web_root}/"
 	else
-		# trunk-ignore(shellcheck/SC2001)
-		quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's:/*$::')
+		#quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's|/*$||' | sed 's|https|http|g')
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 		declare text="访问 ${software_title} 在:
-${quickbox_web_root}:${software_web_port}/
+http://${server_ip}:${software_web_port}/
 ${software_title} 安装在端口：${software_web_port}"
 	fi
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::plex_directory_warning() {
+	declare text="自定义数据目录：'${software_install_directory}' 已经存在.
+使用 '${software_install_directory}/plex' 代替."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -705,6 +726,13 @@ runuser -l ${username} -c \"rclone config reconnect gdrive:\"
 > 有关如何安装 rclone 的更多信息，请访问：
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::sonarrv4::update::error() {
+	declare text
+	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)不能$(tput setaf 7) 从 v3 更新.
+请卸载 v3 并安装 v4.$(tput sgr0)"
 	quickbox::dashboard::log "${text}"
 }
 
