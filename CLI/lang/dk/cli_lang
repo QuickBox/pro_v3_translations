@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.67
+# File Version: 1.0.69
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -484,6 +484,20 @@ ${software_title} installeret på port: ${software_web_port}"
 	fi
 }
 
+quickbox::lang::software::jellyfin::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyfin_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="adgang til ${software_title} på:
+https://${jellyfin_web_root}/"
+	else
+		declare text="adgang til ${software_title} på:
+${quickbox_web_root}${username}/${software_name}/
+${software_title} installeret på port: ${software_web_port}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::notifiarr::access() {
 	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
 		declare text="adgang til ${software_title} på:
@@ -733,6 +747,13 @@ quickbox::lang::sonarrv4::update::error() {
 	declare text
 	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)kan ikke$(tput setaf 7) opdateres fra v3.
 Afinstaller venligst v3 og installer v4.$(tput sgr0)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::vpnzip::access() {
+	declare text="download ${software_title} profil på:
+${quickbox_web_root}${username}/ovpn.zip
+> at bruge i enhver OpenVPN-klient"
 	quickbox::dashboard::log "${text}"
 }
 

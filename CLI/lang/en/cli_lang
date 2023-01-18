@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.277
+# File Version: 1.0.280
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -484,6 +484,20 @@ ${software_title} installed on port: ${software_web_port}"
 	fi
 }
 
+quickbox::lang::software::jellyfin::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyfin_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="access ${software_title} at:
+https://${jellyfin_web_root}/"
+	else
+		declare text="access ${software_title} at:
+${quickbox_web_root}${username}/${software_name}/
+${software_title} installed on port: ${software_web_port}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::notifiarr::access() {
 	if [[ ${#user_password} -lt 9 ]]; then
 		declare text="access ${software_title} at:
@@ -733,6 +747,13 @@ quickbox::lang::sonarrv4::update::error() {
 	declare text
 	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)can not$(tput setaf 7) be updated from v3.
 Please uninstall v3 and install v4.$(tput sgr0)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::vpnzip::access() {
+	declare text="download ${software_title} profile at:
+${quickbox_web_root}${username}/ovpn.zip
+> to use in any OpenVPN client"
 	quickbox::dashboard::log "${text}"
 }
 

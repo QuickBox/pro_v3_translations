@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.61
+# File Version: 1.0.63
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -484,6 +484,20 @@ ${software_title} 安装在端口: ${software_web_port}"
 	fi
 }
 
+quickbox::lang::software::jellyfin::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyfin_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="访问 ${software_title} 在：
+https://${jellyfin_web_root}/"
+	else
+		declare text="访问 ${software_title} 在：
+${quickbox_web_root}${username}/${software_name}/
+${software_title} 安装在端口：${software_web_port}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::notifiarr::access() {
 	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
 		declare text="访问 ${software_title} 在:
@@ -733,6 +747,13 @@ quickbox::lang::sonarrv4::update::error() {
 	declare text
 	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)不能$(tput setaf 7) 从 v3 更新.
 请卸载 v3 并安装 v4.$(tput sgr0)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::vpnzip::access() {
+	declare text="下载 ${software_title} 配置文件：
+${quickbox_web_root}${username}/ovpn.zip
+> 在任何 OpenVPN 客户端中使用"
 	quickbox::dashboard::log "${text}"
 }
 
