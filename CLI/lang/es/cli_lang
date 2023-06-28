@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.71
+# File Version: 1.0.78
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2022, QuickBox.IO
+# Copyright (C) 2019-2023, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -340,6 +340,8 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario"
+		[[ -n ${rclone_remote} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario que usa ${rclone_remote}"
+		[[ -n ${encrypted} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario con cifrado"
 		[[ -n ${dmn} ]] && declare text="instala un certificado ssl que se usará para el tablero en el dominio especificado"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado ssl para el dominio"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala un certificado ssl para el dominio especificado"
@@ -353,6 +355,8 @@ quickbox::lang::software::info::note() {
 		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="instala la última versión de ${branch} de ${software_name} con directorio de datos asignado"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario"
+		[[ -n ${rclone_remote} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario que usa ${rclone_remote}"
+		[[ -n ${encrypted} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario con cifrado"
 		[[ -n ${dmn} ]] && declare text="reinstala el certificado ssl utilizado para el tablero en el dominio especificado"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado ssl para el dominio"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala un certificado ssl para el dominio especificado"
@@ -374,7 +378,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${dmn} ]] && declare text="actualiza el certificado ssl para el dominio especificado, para usar con el tablero"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="actualiza el certificado ssl para el dominio especificado"
 		[[ -n ${version} ]] && declare text="actualiza ${software_name} a la última versión de ${version}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="instala la última ${branch} versión de ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="actualiza la última versión de ${branch} de ${software_name}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
@@ -531,6 +535,21 @@ ${software_title} instalado en el puerto: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::jellyseerr::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="acceder a ${software_title} en:
+https://${jellyseerr_web_root}/"
+	else
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+		declare text="acceder a ${software_title} en:
+http://${server_ip}:${software_web_port}/
+${software_title} instalado en el puerto: ${software_web_port}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::overseerr::access() {
 	if [[ -n ${domain:-} ]]; then
 		# trunk-ignore(shellcheck/SC2001)
@@ -548,7 +567,7 @@ ${software_title} instalado en el puerto: ${software_web_port}"
 
 quickbox::lang::software::plex_directory_warning() {
 	declare text="el directorio de datos personalizados: '${software_install_directory}' ya existe.
-usando '${software_install_directory}/plex' en su lugar".
+usando '${software_install_directory}/plex' en su lugar."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -683,7 +702,7 @@ Una vez que tengas tu client_id y client_secret pulsa cualquier tecla para conti
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_entries() {
-	declare text="Introduzca sus datos de conexión a continuación".
+	declare text="Introduzca sus datos de conexión a continuación."
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_clientid() {
@@ -703,7 +722,7 @@ quickbox::lang::software::rclone_saltpass() {
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_salterror() {
-	declare text="La contraseña de sal no puede ser la misma que la contraseña de cifrado".
+	declare text="La contraseña de sal no puede ser la misma que la contraseña de cifrado."
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_confirm() {
@@ -733,9 +752,6 @@ quickbox::lang::software::rclone_continue() {
 quickbox::lang::software::rclone::access() {
 	declare text="${software_title} instalado
   
-> Ejecute el siguiente comando para finalizar la configuración:
-runuser -l ${username} -c \"rclone config reconnect gdrive:\"
-
 > Para obtener más información sobre cómo instalar rclone, visite:
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 "
@@ -899,4 +915,205 @@ quickbox::lang::update::clean() {
 quickbox::lang::update::complete() {
 	declare text="actualización completa!"
 	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB Manager - /opt/quickbox/system/manage :: `-s` | case: software)
+################################################################################
+
+### `-o backup` | case: backup)
+
+quickbox::lang::backup::configf() {
+	declare text="se está realizando una copia de seguridad del archivo de configuración para ${software_name}."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::error() {
+	declare text="el archivo de configuración ${softwareConf} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::success() {
+	declare text="el archivo de configuración ha sido respaldado."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::error() {
+	declare text="el directorio de instalación de ${software_title} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir() {
+	declare text="se está realizando una copia de seguridad del directorio de instalación de ${software_title} (${backup_version})."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configdir() {
+	declare text="se está realizando una copia de seguridad del directorio de configuración para ${software_title}."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::success() {
+	backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
+	declare text="${software_title} (${backup_version}) se ha realizado una copia de seguridad."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o restore` | case: restore)
+
+quickbox::lang::restore::configf::error() {
+	declare text="el archivo de copia de seguridad ${backupConf} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::restore::configf::success() {
+	declare text="el archivo de copia de seguridad ha sido restaurado."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o default` | case: default)
+
+quickbox::lang::default::configf::error() {
+	declare text="el archivo de configuración predeterminada ${defaultConf} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::default::configf::success() {
+	declare text="el archivo de configuración predeterminado ha sido restaurado."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o rollback` | case: rollback)
+
+quickbox::lang::rollback::installdir::error() {
+	declare text="el directorio de instalación de ${software_title} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::version() {
+	declare text="versión:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::date() {
+	declare text="fecha:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection() {
+	declare text="seleccione un número de la lista a continuación para revertir
+a una versión anterior de ${software_title}:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::invalid() {
+	declare text="selección no válida. Vuelva a intentarlo."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::software::error() {
+	declare text="la copia de seguridad de la aplicación ${software_title} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::config::error() {
+	declare text="la copia de seguridad de configuración de ${software_title} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="ha seleccionado la versión ${version} para ${software_title}.
+paquete de aplicación: ${app_package}
+paquete de configuración: ${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::selection::confirm() {
+	declare text="¿está seguro de que desea continuar con la reversión? (sí/no)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::cancelled() {
+	declare text="retroceso cancelado."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::continuar() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} ahora se está revirtiendo a la versión ${version}."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::completa() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} (${version}) se ha revertido."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o delete` | case: delete)
+
+quickbox::lang::delete::selection::version() {
+	declare text="versión:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::date() {
+	declare text="fecha:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection() {
+	declare text="seleccione un número de la lista a continuación para eliminar
+una copia de seguridad anterior de ${software_title}:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::invalid() {
+	declare text="selección no válida. vuelva a intentarlo."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::software::error() {
+	declare text="la copia de seguridad de la aplicación ${software_title} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::config::error() {
+	declare text="la copia de seguridad de configuración de ${software_title} no existe."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="ha seleccionado la versión ${version} para ${software_title}.
+paquete de aplicación: ${app_package}
+paquete de configuración: ${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::selection::confirm() {
+	declare text="¿está seguro de que desea continuar con la eliminación? (s/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::cancelled() {
+	declare text="eliminación de copia de seguridad cancelada."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="la copia de seguridad de ${software_title} (${version}) ahora se está eliminando."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="se ha eliminado la copia de seguridad de ${software_title} (${version})."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
 }

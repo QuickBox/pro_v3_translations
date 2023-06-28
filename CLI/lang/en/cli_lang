@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.280
+# File Version: 1.0.304
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2022, QuickBox.IO
+# Copyright (C) 2019-2023, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -308,6 +308,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u user -d somedomain.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.emby.domain ${option[*]}"
 		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.jellyfin.domain ${option[*]}"
+		[[ -n ${dmn} && ${jelyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.jellyseerr.domain ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.komga.domain ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.overseerr.domain ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.plex.domain ${option[*]}"
@@ -318,6 +319,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u user -d somedomain.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.emby.domain ${option[*]}"
 		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.jellyfin.domain ${option[*]}"
+		[[ -n ${dmn} && ${jelyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.jellyseerr.domain ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.komga.domain ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.overseerr.domain ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d some.plex.domain ${option[*]}"
@@ -340,11 +342,14 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="installs latest ${branch} version of ${software_name} for user"
+		[[ -n ${rclone_remote} ]] && declare text="installs latest ${branch} version of ${software_name} for user using ${rclone_remote}"
+		[[ -n ${encrypted} ]] && declare text="installs latest ${branch} version of ${software_name} for user with encryption"
 		[[ -n ${dmn} ]] && declare text="installs an ssl certificate to be used for the dashboard on the specified domain"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="installs latest ${branch} version of ${software_name} for user and stages SSL certificate for domain"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installs an ssl certificate for the specified domain"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="installs an ssl certificate for the specified emby domain"
 		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="installs an ssl certificate for the specified jellyfin domain"
+		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="installs an ssl certificate for the specified jellyseerr domain"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="installs an ssl certificate for the specified komga domain"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="installs an ssl certificate for the specified overseerr domain"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="installs an ssl certificate for the specified plex domain"
@@ -353,11 +358,14 @@ quickbox::lang::software::info::note() {
 		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="installs latest ${branch} version of ${software_name} with assigned data directory"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="reinstalls latest ${branch} version of ${software_name} for user"
+		[[ -n ${rclone_remote} ]] && declare text="reinstalls latest ${branch} version of ${software_name} for user using ${rclone_remote}"
+		[[ -n ${encrypted} ]] && declare text="reinstalls latest ${branch} version of ${software_name} for user with encryption"
 		[[ -n ${dmn} ]] && declare text="reinstalls ssl certificate used for the dashboard on the specified domain"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstalls latest ${branch} version of ${software_name} for user and stages SSL certificate for domain"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstalls an ssl certificate for the specified domain"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstalls an ssl certificate for the specified emby domain"
 		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="reinstalls an ssl certificate for the specified jellyfin domain"
+		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="reinstalls an ssl certificate for the specified jellyseerr domain"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstalls an ssl certificate for the specified komga domain"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstalls an ssl certificate for the specified overseerr domain"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstalls an ssl certificate for the specified plex domain"
@@ -374,7 +382,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${dmn} ]] && declare text="updates ssl certificate for the specified domain, to be used with the dashboard"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="updates ssl certificate for the specified domain"
 		[[ -n ${version} ]] && declare text="updates ${software_name} to latest ${version} version"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="installs latest ${branch} version of ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="updates latest ${branch} version of ${software_name}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
@@ -531,6 +539,22 @@ ${software_title} installed on port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::jellyseerr::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="access ${software_title} at:
+https://${jellyseerr_web_root}/"
+	else
+		#quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's|/*$||' | sed 's|https|http|g')
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+		declare text="access ${software_title} at:
+http://${server_ip}:${software_web_port}/
+${software_title} installed on port: ${software_web_port}"
+	fi
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::overseerr::access() {
 	if [[ -n ${domain:-} ]]; then
 		# trunk-ignore(shellcheck/SC2001)
@@ -660,7 +684,7 @@ Your password can be changed under the [users] tab in pyload."
 quickbox::lang::software::quassel::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 	declare text="${software_title} installed on port: ${software_daemon_port}
-  
+
 > Please install quassel-client on your personal 
 computer and connect to the newly created ${software_title} Core 
 to setup your account at:
@@ -732,10 +756,7 @@ quickbox::lang::software::rclone_continue() {
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone::access() {
-	declare text="${software_title} installed
-  
-> Please run the following command to finalize setup:
-runuser -l ${username} -c \"rclone config reconnect gdrive:\"
+	declare text="${software_title} installed.
 
 > For more information on how to install rclone, visit:
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
@@ -760,7 +781,7 @@ ${quickbox_web_root}${username}/ovpn.zip
 quickbox::lang::software::x2go::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 	declare text="${software_title} Server installed
-  
+
 > Please install x2go-client on your personal computer 
 and connect to the newly created ${software_title} Server 
 using the following:
@@ -900,4 +921,205 @@ quickbox::lang::update::clean() {
 quickbox::lang::update::complete() {
 	declare text="update complete!"
 	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB Manager - /opt/quickbox/system/manage :: `-s` | case: software)
+################################################################################
+
+### `-o backup` | case: backup)
+
+quickbox::lang::backup::configf() {
+	declare text="configuration file for ${software_name} is now being backed up."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::error() {
+	declare text="configuration file ${softwareConf} does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::success() {
+	declare text="configuration file has been backed up."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::error() {
+	declare text="${software_title} installation directory does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir() {
+	declare text="installation directory for ${software_title} (${backup_version}) is now being backed up."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configdir() {
+	declare text="configuration directory for ${software_title} is now being backed up."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::success() {
+	backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
+	declare text="${software_title} (${backup_version}) has been backed up."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o restore` | case: restore)
+
+quickbox::lang::restore::configf::error() {
+	declare text="backup file ${backupConf} does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::restore::configf::success() {
+	declare text="backup file has been restored."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o default` | case: default)
+
+quickbox::lang::default::configf::error() {
+	declare text="default configuration ${defaultConf} file does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::default::configf::success() {
+	declare text="default configuration file has been restored."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o rollback` | case: rollback)
+
+quickbox::lang::rollback::installdir::error() {
+	declare text="${software_title} installation directory does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::version() {
+	declare text="version:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::date() {
+	declare text="date:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection() {
+	declare text="select a number from the list below to rollback
+to a previous version of ${software_title}:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::invalid() {
+	declare text="invalid selection. please try again."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::software::error() {
+	declare text="${software_title} application backup does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::config::error() {
+	declare text="${software_title} configuration backup does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="you have selected version ${version} for ${software_title}.
+app package: ${app_package}
+config package: ${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::selection::confirm() {
+	declare text="are you sure you want to proceed with the rollback? (y/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::cancelled() {
+	declare text="rollback cancelled."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} is now being rolled back to version ${version}."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} (${version}) has been rolled back."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o delete` | case: delete)
+
+quickbox::lang::delete::selection::version() {
+	declare text="version:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::date() {
+	declare text="date:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection() {
+	declare text="select a number from the list below to delete
+a previous backup of ${software_title}:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::invalid() {
+	declare text="invalid selection. please try again."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::software::error() {
+	declare text="${software_title} application backup does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::config::error() {
+	declare text="${software_title} configuration backup does not exist."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="you have selected version ${version} for ${software_title}.
+app package: ${app_package}
+config package: ${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::selection::confirm() {
+	declare text="are you sure you want to proceed with the deletion? (y/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::cancelled() {
+	declare text="backup deletion cancelled."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} backup (${version}) is now being deleted."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} backup (${version}) has been deleted."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
 }

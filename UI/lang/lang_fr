@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Français	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : June 27, 2023        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -185,9 +185,18 @@ $L['NGINX_DEFAULT'] = 'Restaurer la configuration par défaut';
 $L['NGINX_DISABLE'] = 'Désactiver le popup d\'authentification';
 $L['NGINX_ENABLE'] = 'Activer le popup d\'authentification';
 $L['NGINX_RESTORE'] = 'Restaurer la configuration Nginx';
-$L['APP_BACKUP'] = 'Sauvegarde de la configuration de l\'application';
-$L['APP_DEFAULT'] = 'Restaurer la configuration par défaut';
-$L['APP_RESTORE'] = 'Restaurer la sauvegarde de l\'application';
+$L['APP_BACKUP_FULL'] = 'Sauvegarde complète';
+$L['APP_BACKUP_PARTIAL'] = 'Sauvegarde partielle';
+$L['APP_DEFAULT_PARTIAL_RESTORE'] = 'Restaurer par défaut';
+$L['APP_BACKUP_PARTIAL_RESTORE'] = 'Restaurer la sauvegarde';
+$L['ED_MENU_CONFIG_APP'] = 'config & app';
+$L['ED_MENU_CONFIG'] = 'config uniquement';
+$L['VERSION_ROLLBACK_OPTIONS'] = 'Options de restauration';
+$L['VERSION_ROLLBACK_V'] = 'Version : ';
+$L['VERSION'] = 'Version';
+$L['DATE'] = 'Date';
+$L['VERSION_ROLLBACK_CONFIRM'] = 'Revenir à cette version?';
+$L['VERSION_ROLLBACK_DELETE'] = 'Supprimer cette sauvegarde ?';
 $L['PROMOTE'] = 'Promouvoir Admin';
 $L['RCLONE_LOCK_REMOVE'] = 'Retirer le verrou';
 $L['RCLONE_LOGS'] = 'Examiner les journaux';
@@ -275,7 +284,7 @@ $L['USERS'] = 'Utilisateurs';
 $L['YES'] = 'Oui';
 $L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Sélectionnez s\'il s\'agit d\'un montage rclone. Cette option, lorsqu\'elle est sélectionnée, reconnaîtra le chemin comme un montage rclone. Cette option doit être cochée si vous essayez de surveiller un montage rclone. Cela garantit que les calculs d\'espace sont exacts.';
 $L['ADD_NEW_MOUNT_CHECK'] = 'Ajouter un montage ou un répertoire existant à surveiller';
-$L['MONTAGES'] = 'Montages :';
+$L['MOUNTS'] = 'Montages:';
 $L['MOUNT_ADD_PATH'] = 'Ajouter un chemin';
 $L['MOUNT_CHECK_ABOUT'] = 'Ces valeurs sont calculées et mises à jour périodiquement. Les valeurs ne sont pas en temps réel. Vous pouvez forcer une mise à jour de ces statistiques en cliquant sur le bouton \'Lancer l\'analyse\' ci-dessous.';
 $L['MOUNT_CHECK_PROCESS'] = 'Les valeurs de pourcentage d\'espace sont actuellement calculées en arrière-plan. Veuillez revenir plus tard pour les résultats mis à jour. Nécessite un rafraichissement de la page.';
@@ -293,6 +302,8 @@ $L['AVAILABILITY'] = 'Disponibilité';
 $L['DETAILS'] = 'Détails';
 $L['NAME'] = 'Nom';
 $L['CONFIGS'] = 'Configs';
+$L['EXTRAS'] = 'Extras';
+
 
 // #3.2 - PACKAGE MANAGEMENT CENTER
 // #3.2.1 - App info
@@ -319,6 +330,7 @@ $L['FLOOD'] = 'Flood est un service de surveillance pour divers clients torrent.
 $L['HEADPHONES'] = 'Headphones est un logiciel de téléchargement automatique de musique pour NZB et Torrent, écrit en Python. Il supporte SABnzbd, NZBget, Transmission, μTorrent, Deluge et Blackhole.';
 $L['JACKETT'] = 'Support API pour vos trackers privés préférés.';
 $L['JELLYFIN'] = 'Jellyfin est un système multimédia logiciel libre, basé sur Emby qui vous permet de contrôler la gestion et la diffusion de vos médias.';
+$L['JELLYSEERR'] = 'Jellyseerr est un logiciel libre et open source permettant de gérer les requêtes pour votre médiathèque. Il s\'agit d\'un fork d\'Overseerr conçu pour prendre en charge les serveurs multimédias Jellyfin et Emby!';
 $L['KOMGA'] = 'Komga est un serveur multimédia pour vos bandes dessinées/mangas numériques, avec pour objectif de fournir une interface simple et moderne.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian est une application SickBeard, CouchPotato, semblable à un casque pour les livres électroniques, les livres audio et les magazines. Il utilise une combinaison de <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> et éventuellement <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> comme sources d\'informations sur l\'auteur et les informations sur le livre.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt est une autorité de certification (CA) gratuite, automatisée et ouverte, exploitée pour le bénéfice du public. Il s\'agit d\'un service fourni par l\' <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
@@ -393,6 +405,7 @@ $L['FLOOD_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="c
 $L['HEADPHONES_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Headphones</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Headphones</span> à tout moment, cependant, vos chemins de stockage et les paramètres des dossiers liés seront réinitialisés.';
 $L['JACKETT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Jackett</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Jackett</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
 $L['JELLYFIN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Jellyfin</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Jellyfin</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
+$L['JELLYSEERR_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Jellyseerr</span> de votre système.<br/><br/>Cela supprimera complètement toute votre configuration et les paramètres de la bibliothèque... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Jellyseerr</span> à tout moment, cependant, vos paramètres de bibliothèque et vos requêtes seront réinitialisés.';
 $L['KOMGA_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Komga</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Komga</span> à tout moment, cependant, vos paramètres seront réinitialisés.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color: #01cea2"> LazyLibrarian </span> de votre système. <br/><br/>Cela supprimera complètement tous vos paramètres de configuration ... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color: #01cea2"> LazyLibrarian </span> à tout moment, cependant, vos paramètres de configuration seront réinitialisés par défaut.';
 $L['LETSENCRYPT_UNINSTALL'] = 'Vous êtes sur le point de désinstaller <span style="color:#01cea2">Let\'s Encrypt</span> de votre système.<br/><br/>Cela va complètement désinstaller vos domaines et certificats. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Let\'s Encrypt</span> à tout moment.';
@@ -467,6 +480,7 @@ $L['FLOOD_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="co
 $L['HEADPHONES_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Headphones</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres de dossiers partagés... cette action est irréversible.';
 $L['JACKETT_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Jackett</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
 $L['JELLYFIN_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Jellyfin</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
+$L['JELLYSEERR_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Jellyseerr</span> de votre système.<br/><br/>Cela supprimera complètement toute votre configuration et les paramètres de la bibliothèque... cette action est irréversible. <br/><br/>Vous pouvez réinstaller <span style="color:#01cea2">Jellyseerr</span> à tout moment, cependant, vos paramètres de bibliothèque et vos requêtes seront réinitialisés.';
 $L['KOMGA_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Komga</span> de votre système.<br/><br/>Cela va complètement supprimer toutes ses configurations et paramètres... cette action est irréversible.';
 $L['LAZYLIBRARIAN_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color: #01cea2"> LazyLibrarian </span> de votre système. <br/><br/>Cela supprimera complètement tous vos paramètres de configuration ... cette action est irréversible.';
 $L['LETSENCRYPT_REINSTALL'] = 'Vous êtes sur le point de réinstaller <span style="color:#01cea2">Let\'s Encrypt</span> de votre système.<br/><br/>Cela va complètement désinstaller vos domaines et certificats.';
@@ -821,7 +835,7 @@ $L['SITE_ROOT'] = 'Chemin du site';
 $L['SITE_NAME_TOOLTIP'] = 'Le nom du site doit comporter moins de 40 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
 $L['SITE_DESC_TOOLTIP'] = 'La description du site doit comporter moins de 120 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'De Le nom doit comporter moins de 60 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
-$L['SITE_ROOT_TOOLTIP'] = 'Saisissez l\'IP de votre serveur ou un domaine valide. exemple: https://192.168.0.1/ (ou) https://myawesomedomain.com/';
+$L['SITE_ROOT_TOOLTIP'] = 'Entrez l\'IP de votre serveur ou un domaine valide sans barre oblique à la fin. exemple: https://192.168.0.1 (ou) https://somedomain.com';
 $L['SITE_LOGO_COLLAPSED'] = 'Logo réduit';
 $L['SITE_LOGO_FULL'] = 'Logo complet';
 $L['SITE_LOGO_SETTINGS'] = 'Paramètres du logo du site';
@@ -1057,12 +1071,12 @@ $L['HELP_TEXT'] = '<p class="fs14">Présenté avec amour par <a href="https://nu
 $L['HELP_TITLE'] = 'Panneau d\'Administration QuickBox, Cockpit et Gestion des Utilisateurs';
 $L['HELP'] = 'Aide';
 $L['LICENSE_SET'] = '<h3><strong>Licencié sous la clause BSD 3</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. Tous droits réservés.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. Tous droits réservés.</p>
     <li class="fs14"Les redistributions sous formes binaires doivent reproduire ce Copyright, cette liste de conditions ainsi que cet avertissement dans leur documentation et/ou autre matériaux fournis avec la distribution.</li>
     <ul><li class="fs14">Les redistributions des codes sources doivent comporter cette licence Copyright, cette liste de conditions ainsi que cet avertissement.</li>
     <p class="fs14">La redistribution et l\'utilisation des fichiers sources et binaires, avec ou sans modification, sont permises si les conditions suivantes sont réunies:
     <li class="fs14">Ni le nom du detenteur légal du copyright ou du nom des contributeurs doivent être utilisés pour promouvoir des produits dérivés de ce logiciel sans accord préalablement écrit.</li></ul>
-    <p class="fs14">CE LOGICIEL EST FOURNI "EN L\'ÉTAT" PAR LES TITULAIRES DE COPYRIGHT ET LES CONTRIBUTEURS. TOUTE GARANTIE EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S\'Y LIMITER, LES GARANTIES IMPLICITES DE QUALITÉ MARCHANDE ET D\'ADÉQUATION À UN USAGE PARTICULIER SONT EXCLUES. EN AUCUN CAS, LE TITULAIRE DU DROIT D’AUTEUR OU LES CONTRIBUTEURS NE PEUVENT ÊTRE TENUS RESPONSABLES DES DOMMAGES DIRECTS, INDIRECTS, ACCESSOIRES, SPÉCIAUX, EXEMPLAIRES OU ACCESSOIRES (Y COMPRIS, MAIS SANS S\'Y LIMITER, LES MARCHANDISES OU SERVICES SUBSTITUÉS; PERTE D\'UTILISATION, DE DONNÉES OU DE PROFITS; TOUJOURS CAUSÉS ET SUR TOUTE THÉORIE DE LA RESPONSABILITÉ, QUE CELA SOIT UN CONTRAT, UNE RESPONSABILITÉ STRICTE OU UN ACTE TORT (Y COMPRIS DE LA NÉGLIGENCE OU AUTREMENT) DÉCOULANT DE TOUTE MANIÈRE DE L\'UTILISATION DE CE LOGICIEL, MÊME SI AVISÉ DE LA POSSIBILITÉ D\'UN DOMMAGE APPARENT.</p>';
+    <p class="fs14">CE LOGICIEL EST FOURNI "EN L\'ÉTAT" PAR LES TITULAIRES DE COPYRIGHT ET LES CONTRIBUTEURS. TOUTE GARANTIE EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S\'Y LIMITER, LES GARANTIES IMPLICITES DE QUALITÉ MARCHANDE ET D\'ADÉQUATION À UN USAGE PARTICULIER SONT EXCLUES. EN AUCUN CAS, LE TITULAIRE DU DROIT D\'AUTEUR OU LES CONTRIBUTEURS NE PEUVENT ÊTRE TENUS RESPONSABLES DES DOMMAGES DIRECTS, INDIRECTS, ACCESSOIRES, SPÉCIAUX, EXEMPLAIRES OU ACCESSOIRES (Y COMPRIS, MAIS SANS S\'Y LIMITER, LES MARCHANDISES OU SERVICES SUBSTITUÉS; PERTE D\'UTILISATION, DE DONNÉES OU DE PROFITS; TOUJOURS CAUSÉS ET SUR TOUTE THÉORIE DE LA RESPONSABILITÉ, QUE CELA SOIT UN CONTRAT, UNE RESPONSABILITÉ STRICTE OU UN ACTE TORT (Y COMPRIS DE LA NÉGLIGENCE OU AUTREMENT) DÉCOULANT DE TOUTE MANIÈRE DE L\'UTILISATION DE CE LOGICIEL, MÊME SI AVISÉ DE LA POSSIBILITÉ D\'UN DOMMAGE APPARENT.</p>';
 
 // commands
 $L['ADDITIONAL_ADMIN_COMMANDS'] = 'Commandes de Configuration';

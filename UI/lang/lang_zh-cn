@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : June 27, 2023        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -186,9 +186,18 @@ $L['NGINX_DEFAULT'] = '恢复默认配置';
 $L['NGINX_DISABLE'] = '禁用弹出式授权检测';
 $L['NGINX_ENABLE'] = '启用弹出式授权检测';
 $L['NGINX_RESTORE'] = '恢复 Nginx 备份';
-$L['APP_BACKUP'] = '备份应用程序配置';
-$L['APP_DEFAULT'] = '恢复默认配置';
-$L['APP_RESTORE'] = '恢复应用程序备份';
+$L['APP_BACKUP_FULL'] = '完全备份';
+$L['APP_BACKUP_PARTIAL'] = '部分备份';
+$L['APP_DEFAULT_PARTIAL_RESTORE'] = '恢复默认';
+$L['APP_BACKUP_PARTIAL_RESTORE'] = '恢复备份';
+$L['ED_MENU_CONFIG_APP'] = '配置和应用程序';
+$L['ED_MENU_CONFIG'] = '仅配置';
+$L['VERSION_ROLLBACK_OPTIONS'] = '回滚选项';
+$L['VERSION_ROLLBACK_V'] = '版本：';
+$L['版本'] = '版本';
+$L['日期'] = '日期';
+$L['VERSION_ROLLBACK_CONFIRM'] = '回滚到这个版本？';
+$L['VERSION_ROLLBACK_DELETE'] = '删除这个备份？';
 $L['PROMOTE'] = '晋升为管理员';
 $L['RCLONE_LOCK_REMOVE'] = '解除锁定';
 $L['RCLONE_LOGS'] = '查看日志';
@@ -295,6 +304,7 @@ $L['AVAILABILITY'] = '状态';
 $L['DETAILS'] = '详情';
 $L['NAME'] = '名称';
 $L['CONFIGS'] = '配置';
+$L['EXTRAS'] = '额外';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
@@ -322,6 +332,7 @@ $L['FLOOD'] = 'Flood 是针对各种洪流客户端的监控服务. 它是一个
 $L['HEADPHONES'] = 'Headphones 是用 Python 编写的 NZB 和 Torrent 的自动音乐下载器. 它支持 SABnzbd, NZBget, Transmission, μTorrent, Deluge 和 Blackhole.';
 $L['JACKETT'] = '对您最喜爱的 private trackers 的 API 支持.';
 $L['JELLYFIN'] = 'Jellyfin 是一个多媒体系统的自由软件, 它可以让您控制媒体的管理和流式传输.';
+$L['JELLYSEERR'] = 'Jellyseerr 是一个免费的开源软件应用程序, 用于管理媒体库的请求. 它是 Overseerr 的一个分支, 旨在支持 Jellyfin 和 Emby 媒体服务器!';
 $L['KOMGA'] = 'Komga 是您的数字漫画/漫画的媒体服务器, 专注于提供简单而现代的界面.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian是SickBeard, CouchPotato, 类似于耳机的应用程序, 用于电子书, 有声读物和杂志. 它结合使用<a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a>和 ( 可选 ) <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a>作为作者信息和书籍信息的来源.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt 是一个免费, 自动化的和开放的证书颁发机构 (CA), 由 ISRG (<a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group</a>) 运营.';
@@ -396,6 +407,7 @@ $L['FLOOD_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fl
 $L['HEADPHONES_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Headphones</span>, 但是, 您的存储路径和链接的文件夹设置将被重置为默认值.';
 $L['JACKETT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jackett</span>, 但是, 您的设置将被重置为默认值.';
 $L['JELLYFIN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jellyfin</span>, 但是, 您的设置将被重置为默认值.';
+$L['JELLYSEERR_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyseerr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Jellyseerr</span>, 但是, 您的设置将被重置为默认值.';
 $L['KOMGA_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Komga</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Komga</span>, 但是, 您的设置将被重置为默认值.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">LazyLibrarian</span>, 但是, 您的设置将被重置为默认值.';
 $L['LETSENCRYPT_UNINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的. <br/><br/>您可以随时重新安装 <span style="color:#01cea2">Let\'s Encrypt</span>, 但是, 您的设置将被重置为默认值.';
@@ -470,6 +482,7 @@ $L['FLOOD_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Fl
 $L['HEADPHONES_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Headphones</span>. <br/><br/>这将完全删除您的所有配置和共享文件夹设置...这个动作是不可逆的.';
 $L['JACKETT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jackett</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['JELLYFIN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyfin</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
+$L['JELLYSEERR_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Jellyseerr</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['KOMGA_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Komga</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['LAZYLIBRARIAN_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">LazyLibrarian</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
 $L['LETSENCRYPT_REINSTALL'] = '即将从系统中卸载 <span style="color:#01cea2">Let\'s Encrypt</span>. <br/><br/>这将完全删除您的所有配置文件和设置...这个动作是不可逆的.';
@@ -826,7 +839,7 @@ $L['SITE_ROOT'] = '站点根目录';
 $L['SITE_NAME_TOOLTIP'] = '网站名称应少于 40 个字符, 只能是字母数字, 不能有特殊字符 ( 可以有空格 ) ';
 $L['SITE_DESC_TOOLTIP'] = '网站描述应少于 120 个字符和字母数字, 没有特殊字符 (空格是可以接受的)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'From Name 应该少于 60 个字符, 只有字母数字, 没有特殊字符 (空格是可以接受的)';
-$L['SITE_ROOT_TOOLTIP'] = '输入您的服务器 IP 或有效域.  例如: https://192.168.0.1/ (或) https://myawesomedomain.com/';
+$L['SITE_ROOT_TOOLTIP'] = '输入您的服务器 IP 或有效域, 不带尾部正斜杠. 示例: https://192.168.0.1 (或) https://somedomain.com';
 $L['SITE_LOGO_COLLAPSED'] = '折叠徽标';
 $L['SITE_LOGO_FULL'] = '完整标志';
 $L['SITE_LOGO_SETTINGS'] = '站点徽标设置';
@@ -1061,7 +1074,7 @@ $L['HELP_TEXT'] = '<p style="font-size: 14px"><a href="https://nullrefer.ir/?htt
 $L['HELP_TITLE'] = 'QuickBox 管理面板, 仪表盘门户 & 用户管理';
 $L['HELP'] = '帮助';
 $L['LICENSE_SET'] = '<h3><strong>依据 BSD 3-Clause 许可</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. 版权所有.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. 版权所有.</p>
     <p class="fs14">这份授权条款, 在使用者符合以下条件的情形下, 授予使用者使用及再散播本软件包装原始码及二进位可执行形式的权利, 无论此包装是否经改作皆然:
     <ul><li class="fs14">对于本软件源代码的再散播, 必须保留上述的版权宣告, 此条件表列, 以及下述的免责声明.</li>
     <li class="fs14">对于本套件二进位可执行形式的再散播, 必须连带以文件以及 / 或者其他附于散播包装中的媒介方式, 重制上述之版权宣告, 此条件表列, 以及下述的免责声明.</li>

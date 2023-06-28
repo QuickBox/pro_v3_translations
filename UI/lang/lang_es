@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : June 27, 2023        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -143,7 +143,7 @@ $L['AUTO_DISABLE'] = 'Desactivar las actualizaciones automáticas';
 $L['AUTO_ENABLE'] = 'Habilitar actualizaciones automáticas';
 $L['BACK'] = 'Atrás';
 $L['BAN_USER'] = 'Prohibir usuario';
-$L['CANCEL'] = 'CanCLEAR';
+$L['CANCEL'] = 'Cancelar';
 $L['CLEAN_LOG'] = 'Limpiar registro de actualización';
 $L['CLEAN_RCLOG'] = 'Limpie el registro de carga de RClone';
 $L['CLICK_ME'] = 'Haz click aquí';
@@ -186,9 +186,18 @@ $L['NGINX_DEFAULT'] = 'Restaurar configuración predeterminada';
 $L['NGINX_DISABLE'] = 'Desactivar la ventana emergente de Autenticación';
 $L['NGINX_ENABLE'] = 'Habilitar popup de autenticación';
 $L['NGINX_RESTORE'] = 'Restaurar la copia de seguridad de Nginx';
-$L['APP_BACKUP'] = 'Copia de seguridad de la configuración de la aplicación';
-$L['APP_DEFAULT'] = 'Restaurar configuración por defecto';
-$L['APP_RESTORE'] = 'Restaurar copia de seguridad de la aplicación';
+$L['APP_BACKUP_FULL'] = 'Copia de seguridad completa';
+$L['APP_BACKUP_PARTIAL'] = 'Copia de seguridad parcial';
+$L['APP_DEFAULT_PARTIAL_RESTORE'] = 'Restaurar predeterminado';
+$L['APP_BACKUP_PARTIAL_RESTORE'] = 'Restaurar copia de seguridad';
+$L['ED_MENU_CONFIG_APP'] = 'config y app';
+$L['ED_MENU_CONFIG'] = 'solo config';
+$L['VERSION_ROLLBACK_OPTIONS'] = 'Opciones de reversión';
+$L['VERSION_ROLLBACK_V'] = 'Versión: ';
+$L['VERSION'] = 'Versión';
+$L['FECHA'] = 'Fecha';
+$L['VERSION_ROLLBACK_CONFIRM'] = '¿Volver a esta versión?';
+$L['VERSION_ROLLBACK_DELETE'] = '¿Eliminar esta copia de seguridad?';
 $L['PROMOTE'] = 'Promocionar a administrador';
 $L['RCLONE_LOCK_REMOVE'] = 'quitar bloqueo';
 $L['RCLONE_LOGS'] = 'ver los registros';
@@ -277,7 +286,7 @@ $L['USERS'] = 'Usuarios';
 $L['YES'] = 'Si';
 $L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Seleccione si se trata de un montaje rclone. Esta opción, cuando se selecciona, reconocerá la ruta como un montaje rclone. Esta opción debe estar marcada si está intentando monitorear un montaje rclone. Esto asegura que los cálculos de espacio sean exactos.';
 $L['ADD_NEW_MOUNT_CHECK'] = 'Agregar un montaje o directorio existente para monitorear';
-$L['MONTAJES'] = 'Monturas:';
+$L['MOUNTS'] = 'Monturas:';
 $L['MOUNT_ADD_PATH'] = 'Agregar ruta';
 $L['MOUNT_CHECK_ABOUT'] = 'Estos valores se calculan y actualizan periódicamente. Los valores no son en tiempo real. Puede forzar una actualización de estas estadísticas haciendo clic en el botón \'Iniciar escaneo\' a continuación.';
 $L['MOUNT_CHECK_PROCESS'] = 'Los valores de porcentaje de espacio se están calculando actualmente en segundo plano. Vuelva a consultar más tarde para ver los resultados actualizados. Requiere actualización de página.';
@@ -296,6 +305,7 @@ $L['AVAILABILITY'] = 'Disponibilidad';
 $L['DETAILS'] = 'Detalles';
 $L['NAME'] = 'Nombre';
 $L['CONFIGS'] = 'Configuraciones';
+$L['EXTRAS'] = 'Extras';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
@@ -323,6 +333,7 @@ $L['FLOOD'] = 'Flood es un servicio de monitoreo para varios clientes de torrent
 $L['HEADPHONES'] = 'Headphones es un gestor de descargas automáticas de música para NZB y Torrent, escrito en Python. Es compatible con SABnzbd, NZBget, Transmission, µTorrent, Deluge y Blackhole.';
 $L['JACKETT'] = 'Soporte API para tus trackers privados favoritos.';
 $L['JELLYFIN'] = 'Jellyfin es un sistema de medios de software libre que le permite controlar la administración y transmisión de sus medios.';
+$L['JELLYSEERR'] = 'Jellyseerr es una aplicación de software gratuita y de código abierto para gestionar las solicitudes de su biblioteca multimedia. ¡Es una bifurcación de Overseerr creada para brindar soporte a los servidores de medios Jellyfin y Emby!';
 $L['KOMGA'] = 'Komga es un servidor de medios para sus cómics/manga digitales, con un enfoque en proporcionar una interfaz simple y moderna.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian es una aplicación similar a los auriculares SickBeard, CouchPotato, para libros electrónicos, audiolibros y revistas. Utiliza una combinación de <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> y opcionalmente <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> como fuentes de información del autor e información del libro.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt es una autoridad de certificación (CA) gratuita, automatizada y abierta, que se ejecuta en beneficio del público por el <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Grupo de Investigación de Seguridad de Internet (ISRG)</a>.';
@@ -397,6 +408,7 @@ $L['FLOOD_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea
 $L['HEADPHONES_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Headphones</span> de tu sistema.<br/><br/>Esto eliminará por completo todas las configuraciones y carpetas compartidas ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Headphones</span> en cualquier momento, sin embargo, la ruta de almacenamiento y la configuración de las carpetas vinculadas se restablecerán a los valores predeterminados.';
 $L['JACKETT_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Jackett</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Jackett</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['JELLYFIN_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Jellyfin</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Jellyfin</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
+$L['JELLYSEERR_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Jellyseerr</span> de tu sistema.<br/><br/>Esto eliminará por completo todas las configuraciones de tu biblioteca ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Jellyseerr</span> en cualquier momento, sin embargo, la configuración de la biblioteca y los pedidos serán eliminados.';
 $L['KOMGA_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Komga</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Komga</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = 'Está a punto de desinstalar <span style="color:#01cea2"> LazyLibrarian </span> de su sistema. <br/><br/>Esto eliminará por completo todas las configuraciones ... esta acción es irreversible. <br/><br/>Puede reinstalar <span style="color:#01cea2"> LazyLibrarian </span> en cualquier momento, sin embargo, la configuración se restablecerá a los valores predeterminados.';
 $L['LETSENCRYPT_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">Let\'s Encrypt</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible. <br/><br/>Puedes volver a instalar <span style="color:#01cea2">Let\'s Encrypt</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
@@ -471,6 +483,7 @@ $L['FLOOD_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2"
 $L['HEADPHONES_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Headphones</span> de tu sistema.<br/><br/>Esto eliminará por completo todas las configuraciones y carpetas compartidas ... esta acción es irreversible.';
 $L['JACKETT_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Jackett</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 $L['JELLYFIN_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Jellyfin</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
+$L['JELLYSEERR_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Jellyseerr</span> de tu sistema.<br/><br/>Esto eliminará por completo todas las configuraciones de tu biblioteca ... esta acción es irreversible.';
 $L['KOMGA_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Komga</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 $L['LAZYLIBRARIAN_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2"> LazyLibrarian </span> de su sistema. <br/><br/>Esto eliminará por completo todas las configuraciones ... esta acción es irreversible.';
 $L['LETSENCRYPT_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Let\'s Encrypt</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
@@ -827,7 +840,7 @@ $L['SITE_ROOT'] = 'Raíz del Sitio';
 $L['SITE_NAME_TOOLTIP'] = 'El nombre del sitio debe tener menos de 40 caracteres y solo debe ser alfanumérico sin caracteres especiales (se aceptan espacios)';
 $L['SITE_DESC_TOOLTIP'] = 'La descripción del sitio debe tener menos de 120 caracteres y ser alfanumérica sin caracteres especiales (se aceptan espacios)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'De El nombre debe tener menos de 60 caracteres y solo debe ser alfanumérico sin caracteres especiales (se aceptan espacios)';
-$L['SITE_ROOT_TOOLTIP'] = 'Ingrese la IP de su servidor o dominio válido. ejemplo: https://192.168.0.1/ (o) https://myawesomedomain.com/';
+$L['SITE_ROOT_TOOLTIP'] = 'Ingrese la IP de su servidor o un dominio válido sin barra diagonal final. ejemplo: https://192.168.0.1 (o) https://somedomain.com';
 $L['SITE_LOGO_COLLAPSED'] = 'Logotipo contraído';
 $L['SITE_LOGO_FULL'] = 'Logotipo completo';
 $L['SITE_LOGO_SETTINGS'] = 'Configuración del logotipo del sitio';
@@ -1062,7 +1075,7 @@ $L['HELP_TEXT'] = '<p class="fs14">Hecho con amor por <a href="https://nullrefer
 $L['HELP_TITLE'] = 'Panel de Control QuickBox, Página Principal & Gestión de Usuarios';
 $L['HELP'] = 'Ayuda';
 $L['LICENSE_SET'] = '<h3><strong>Licencia BSD 3-Clause</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. Todos los derechos reservados.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. Todos los derechos reservados.</p>
     <p class="fs14">La redistribución y el uso en las formas de código fuente y binario, con o sin modificaciones, están permitidos siempre que se cumplan las siguientes condiciones:
     <ul><li class="fs14">Las redistribuciones del código fuente deben conservar el aviso de copyright anterior, esta lista de condiciones y el siguiente descargo de responsabilidad.</li>
     <li class="fs14">Las redistribuciones en formato binario deben reproducir el aviso de copyright anterior, esta lista de condiciones y el siguiente descargo de responsabilidad en la documentación y/u otros materiales suministrados con la distribución.</li>

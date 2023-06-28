@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.63
+# File Version: 1.0.72
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2022, QuickBox.IO
+# Copyright (C) 2019-2023, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -340,6 +340,8 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="为用户安装 ${software_name} 的最新 ${branch} 版本"
+		[[ -n ${rclone_remote} ]] && declare text="为使用 ${rclone_remote} 的用户安装最新的 ${branch} 版本的 ${software_name}"
+		[[ -n ${encrypted} ]] && declare text="为用户安装最新的 ${branch} 版本的 ${software_name} 并进行加密"
 		[[ -n ${dmn} ]] && declare text="在指定域上安装用于仪表板的 ssl 证书"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="为指定域安装 ssl 证书"
@@ -353,6 +355,8 @@ quickbox::lang::software::info::note() {
 		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="安装最新的 ${branch} 版本的 ${software_name} 指定数据目录"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="为用户重新安装 ${software_name} 的最新 ${branch} 版本"
+		[[ -n ${rclone_remote} ]] && declare text="为使用 ${rclone_remote} 的用户重新安装最新的 ${branch} 版本的 ${software_name}"
+		[[ -n ${encrypted} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name} 并进行加密"
 		[[ -n ${dmn} ]] && declare text="重新安装指定域上用于仪表板的 ssl 证书"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="重新安装指定域的 ssl 证书"
@@ -374,7 +378,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${dmn} ]] && declare text="更新指定域的 ssl 证书，与仪表板一起使用"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="更新指定域的 ssl 证书"
 		[[ -n ${version} ]] && declare text="更新 ${software_name} 到最新 ${version} 版本"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="安装 ${software_name} 的最新 ${branch} 版本"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="更新 ${software_name} 的最新 ${branch} 版本"
 	fi
 	quickbox::dashboard::log "${text}"
 }
@@ -528,6 +532,22 @@ quickbox::lang::software::novnc::access() {
 	declare text="访问 ${software_title} 在:
 ${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
 ${software_title} 安装在端口: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::jellyseerr::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="访问 ${software_title} 在:
+https://${jellyseerr_web_root}/"
+	else
+		#quickbox_web_root=$(echo "${quickbox_web_root}" | sed 's|/*$||' | sed 's|https|http|g')
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+		declare text="访问 ${software_title} 在:
+http://${server_ip}:${software_web_port}/
+${software_title} 安装在端口：${software_web_port}"
+	fi
 	quickbox::dashboard::log "${text}"
 }
 
@@ -733,9 +753,6 @@ quickbox::lang::software::rclone_continue() {
 }
 quickbox::lang::software::rclone::access() {
 	declare text="${software_title} 已安装
-  
-> 请运行以下命令以完成设置：
-runuser -l ${username} -c \"rclone config reconnect gdrive:\"
 
 > 有关如何安装 rclone 的更多信息，请访问：
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
@@ -760,7 +777,7 @@ ${quickbox_web_root}${username}/ovpn.zip
 quickbox::lang::software::x2go::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 	declare text="${software_title} 服务器已安装
-  
+
 > 请在您的个人电脑上安装 x2go-client
 并连接到新创建的 ${software_title} 服务器
 使用以下内容:
@@ -900,4 +917,205 @@ quickbox::lang::update::clean() {
 quickbox::lang::update::complete() {
 	declare text="更新完成！"
 	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB Manager - /opt/quickbox/system/manage :: `-s` | case: software)
+################################################################################
+
+### `-o backup` | case: backup)
+
+quickbox::lang::backup::configf() {
+	declare text="${software_name} 的配置文件正在备份."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::error() {
+	declare text="配置文件 ${softwareConf} 不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::success() {
+	declare text="配置文件已备份."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::error() {
+	declare text="${software_title} 安装目录不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir() {
+	declare text="现在正在备份 ${software_title} (${backup_version}) 的安装目录."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configdir() {
+	declare text="现在正在备份 ${software_title} 的配置目录."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::success() {
+	backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
+	declare text="${software_title} (${backup_version}) 已备份."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o restore` | case: restore)
+
+quickbox::lang::restore::configf::error() {
+	declare text="备份文件 ${backupConf} 不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::restore::configf::success() {
+	declare text="备份文件已恢复."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o default` | case: default)
+
+quickbox::lang::default::configf::error() {
+	declare text="默认配置 ${defaultConf} 文件不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::default::configf::success() {
+	declare text="默认配置文件已恢复."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o rollback` | case: rollback)
+
+quickbox::lang::rollback::installdir::error() {
+	declare text="${software_title} 安装目录不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::version() {
+	declare text="版本："
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::date() {
+	declare text="日期："
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection() {
+	declare text="从下面的列表中选择一个数字进行回滚
+到 ${software_title} 的先前版本："
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::invalid() {
+	declare text="无效选择. 请重试."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::software::error() {
+	declare text="${software_title} 应用程序备份不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::config::error() {
+	declare text="${software_title} 配置备份不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="您已为 ${software_title} 选择了版本 ${version}.
+应用程序包：${app_package}
+配置包：${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::selection::confirm() {
+	declare text="您确定要继续回滚吗? (y/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::cancelled() {
+	declare text="回滚已取消."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::Continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} 现在正在回滚到版本 ${version}."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} (${version}) 已回滚."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o delete` | case: delete)
+
+quickbox::lang::delete::selection::version() {
+	declare text="版本："
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::date() {
+	declare text="日期："
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection() {
+	declare text="从下面的列表中选择一个数字来删除
+${software_title} 的先前备份："
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::invalid() {
+	declare text="无效选择. 请重试."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::software::error() {
+	declare text="${software_title} 应用程序备份不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::config::error() {
+	declare text="${software_title} 配置备份不存在."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="您已为 ${software_title} 选择了版本 ${version}.
+应用程序包：${app_package}
+配置包：${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::selection::confirm() {
+	declare text="您确定要继续删除吗? (y/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::cancelled() {
+	declare text="备份删除已取消."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::Continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} 备份 (${version}) 现已删除."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} 备份 (${version}) 已被删除."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
 }

@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : June 27, 2023        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -186,9 +186,18 @@ $L['NGINX_DEFAULT'] = 'Standardkonfiguration wiederherstellen';
 $L['NGINX_DISABLE'] = 'Auth-Popup deaktivieren';
 $L['NGINX_ENABLE'] = 'Auth-Popup einschalten';
 $L['NGINX_RESTORE'] = 'Nginx-Backup wiederherstellen';
-$L['APP_BACKUP'] = 'Software-Konfiguration sichern';
-$L['APP_DEFAULT'] = 'Standardkonfiguration wiederherstellen';
-$L['APP_RESTORE'] = 'Software-Backup wiederherstellen';
+$L['APP_BACKUP_FULL'] = 'Vollständige Sicherung';
+$L['APP_BACKUP_PARTIAL'] = 'Teilsicherung';
+$L['APP_DEFAULT_PARTIAL_RESTORE'] = 'Standard wiederherstellen';
+$L['APP_BACKUP_PARTIAL_RESTORE'] = 'Backup wiederherstellen';
+$L['ED_MENU_CONFIG_APP'] = 'config & app';
+$L['ED_MENU_CONFIG'] = 'nur konfig';
+$L['VERSION_ROLLBACK_OPTIONS'] = 'Rollback-Optionen';
+$L['VERSION_ROLLBACK_V'] = 'Version: ';
+$L['VERSION'] = 'Version';
+$L['DATE'] = 'Datum';
+$L['VERSION_ROLLBACK_CONFIRM'] = 'Rollback auf diese Version?';
+$L['VERSION_ROLLBACK_DELETE'] = 'Dieses Backup löschen?';
 $L['PROMOTE'] = 'Zum Administrator befördern';
 $L['RCLONE_LOCK_REMOVE'] = 'Sperre entfernen';
 $L['RCLONE_LOGS'] = 'Protokolle anzeigen';
@@ -296,6 +305,7 @@ $L['AVAILABILITY'] = 'Verfügbarkeit';
 $L['DETAILS'] = 'Einzelheiten';
 $L['NAME'] = 'Name';
 $L['CONFIGS'] = 'Konfigurationen';
+$L['EXTRAS'] = 'Extras';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
@@ -323,6 +333,7 @@ $L['FLOOD'] = 'Flood ist ein Überwachungsdienst für verschiedene Torrent-Clien
 $L['HEADPHONES'] = 'Headphones ist ein automatisierter Musik-Downloader für NZB und Torrent, geschrieben in Python. Es unterstützt SABnzbd, NZBget, Transmission, μTorrent, Deluge und Blackhole.';
 $L['JACKETT'] = 'API-Unterstützung für deine favorisierten privaten Tracker.';
 $L['JELLYFIN'] = 'Jellyfin ist ein Free Software Media System, mit dem Sie die Verwaltung und das Streaming Ihrer Medien steuern können.';
+$L['JELLYSEERR'] = 'Jellyseerr ist eine kostenlose Open-Source-Softwareanwendung zum Verwalten von Anfragen für Ihre Medienbibliothek. Es handelt sich um einen Fork von Overseerr, der zur Unterstützung der Jellyfin- und Emby-Medienserver entwickelt wurde!';
 $L['KOMGA'] = 'Komga ist ein Medienserver für Ihre digitalen Comics/Manga, mit Schwerpunkt auf der Bereitstellung einer einfachen und modernen Benutzeroberfläche.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian ist eine SickBeard, CouchPotato, Kopfhörer-ähnliche Anwendung für E-Books, Hörbücher und Magazine. Es wird eine Kombination aus <a href="https://nullrefer.ir/?https://www.goodreads.com/" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> und optional <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> als Quellen für Autoren- und Buchinformationen.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt ist eine kostenlose, automatisierte und offene Certificate Authority (CA), die zum Nutzen der Öffentlichkeit betrieben wird. Es ist ein Service der <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
@@ -397,6 +408,7 @@ $L['FLOOD_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Flood
 $L['HEADPHONES_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Headphones</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen gemeinsamer Ordner löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Headphones</span> neu installieren, dabei werden jedoch dein Speicherpfad sowie die verknüpften Ordnereinstellungen kompett zurückgesetzt.';
 $L['JACKETT_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Jackett</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Jackett</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['JELLYFIN_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Jellyfin</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Jellyfin</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
+$L['JELLYSEERR_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Jellyseerr</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen.. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Jellyseerr</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['KOMGA_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Komga</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Komga</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = 'Sie werden <span style="color:#01cea2"> LazyLibrarian </span> von Ihrem System deinstallieren. <br/><br/>Dadurch werden alle Konfigurationseinstellungen vollständig entfernt. Diese Aktion ist irreversibel. <br/><br/>Sie können <span style="color:#01cea2"> LazyLibrarian </span> jederzeit neu installieren. Ihre Konfigurationseinstellungen werden jedoch auf die Standardeinstellungen zurückgesetzt.';
 $L['LETSENCRYPT_UNINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Let\'s Encrypt</span> auf deinem System zu deinstallieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen. <br/><br/>Sie können jederzeit <span style="color:#01cea2">Let\'s Encrypt</span> neu installieren, dabei werden jedoch deine Einstellungen komplett zurückgesetzt.';
@@ -471,6 +483,7 @@ $L['FLOOD_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Flood
 $L['HEADPHONES_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Headphones</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen gemeinsamer Ordner löschen und ist nicht rückgängig zu machen.';
 $L['JACKETT_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Jackett</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen.';
 $L['JELLYFIN_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Jellyfin</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen.';
+$L['JELLYSEERR_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Jellyseerr</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen..';
 $L['KOMGA_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Komga</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamte Konfiguration sowie alle Einstellungen löschen und ist nicht rückgängig zu machen.';
 $L['LAZYLIBRARIAN_REINSTALL'] = 'Sie werden <span style="color:#01cea2"> LazyLibrarian </span> von Ihrem System neu installieren. <br/><br/>Dadurch werden alle Konfigurationseinstellungen vollständig entfernt. Diese Aktion ist irreversibel.';
 $L['LETSENCRYPT_REINSTALL'] = 'Du bist gerade dabei, <span style="color:#01cea2">Let\'s Encrypt</span> auf deinem System zu neu installieren.<br/><br/>Diese Aktion wird deine gesamten Konfigurationseinstellungen löschen und ist nicht rückgängig zu machen.';
@@ -828,7 +841,7 @@ $L['SITE_ROOT'] = 'Webadresse';
 $L['SITE_NAME_TOOLTIP'] = 'Der Site-Name sollte weniger als 40 Zeichen umfassen und nur alphanumerisch ohne Sonderzeichen sein (Leerzeichen sind zulässig).';
 $L['SITE_DESC_TOOLTIP'] = 'Die Site-Beschreibung sollte weniger als 120 Zeichen umfassen und nur alphanumerisch ohne Sonderzeichen sein (Leerzeichen sind zulässig)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'Von Name sollte weniger als 60 Zeichen lang sein und nur alphanumerisch ohne Sonderzeichen sein (Leerzeichen sind zulässig)';
-$L['SITE_ROOT_TOOLTIP'] = 'Geben Sie Ihre Server-IP oder gültige Domäne ein. Beispiel: https://192.168.0.1/ (or) https://myawesomedomain.com/';
+$L['SITE_ROOT_TOOLTIP'] = 'Geben Sie Ihre Server-IP oder gültige Domain ohne abschließenden Schrägstrich ein. Beispiel: https://192.168.0.1 (oder) https://somedomain.com';
 $L['SITE_LOGO_COLLAPSED'] = 'Reduziertes Logo';
 $L['SITE_LOGO_FULL'] = 'Vollständiges Logo';
 $L['SITE_LOGO_SETTINGS'] = 'Site-Logo-Einstellungen';
@@ -1063,7 +1076,7 @@ Wenn Sie die Mitarbeiter der QuickBox wegen eines Problems mit dem Skript kontak
 $L['HELP_TITLE'] = 'QuickBox Admin Panel, Dashboard Portal & Benutzerverwaltung';
 $L['HELP'] = 'Hilfe';
 $L['LICENSE_SET'] = '<h3><strong>Lizenziert unter BSD 3-Klausel</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. Alle Rechte vorbehalten. </p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. Alle Rechte vorbehalten. </p>
 <p class="fs14">Die Weiterverteilung und Verwendung in Quell- und Binärformularen mit oder ohne Änderung ist zulässig, sofern die folgenden Bedingungen erfüllt sind:
 <ul><li class="fs14">Bei der Weitergabe von Quellcode müssen der oben genannte Copyright-Hinweis, diese Liste der Bedingungen und der folgende Haftungsausschluss beibehalten werden.</li>
 <li style = "font-size: 14px">Bei Weiterverteilungen in binärer Form müssen der obige Copyright-Hinweis, diese Liste der Bedingungen und der folgende Haftungsausschluss in der Dokumentation und / oder anderen mit der Verteilung bereitgestellten Materialien wiedergegeben werden.</li>

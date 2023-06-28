@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : December 8, 2022     *
+ * Ready for QuickBox Pro v3.0.0 : June 27, 2023        *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -186,9 +186,18 @@ $L['NGINX_DEFAULT'] = 'Gendan Standard Konfiguration';
 $L['NGINX_DISABLE'] = 'Deaktiver Auth Popup';
 $L['NGINX_ENABLE'] = 'Aktiver Auth Popup';
 $L['NGINX_RESTORE'] = 'Gendan Nginx Konfiguration';
-$L['APP_BACKUP'] = 'Backup af programkonfiguration';
-$L['APP_DEFAULT'] = 'Gendan standardkonfiguration';
-$L['APP_RESTORE'] = 'Gendan sikkerhedskopiering af software';
+$L['APP_BACKUP_FULL'] = 'Fuld sikkerhedskopiering';
+$L['APP_BACKUP_PARTIAL'] = 'Delvis sikkerhedskopiering';
+$L['APP_DEFAULT_PARTIAL_RESTORE'] = 'Gendan standard';
+$L['APP_BACKUP_PARTIAL_RESTORE'] = 'Gendan sikkerhedskopi';
+$L['ED_MENU_CONFIG_APP'] = 'konfig & app';
+$L['ED_MENU_CONFIG'] = 'kun konfig';
+$L['VERSION_ROLLBACK_OPTIONS'] = 'Tilbagestillingsmuligheder';
+$L['VERSION_ROLLBACK_V'] = 'Version: ';
+$L['VERSION'] = 'Version';
+$L['DATE'] = 'Dato';
+$L['VERSION_ROLLBACK_CONFIRM'] = 'Tilbage til denne version?';
+$L['VERSION_ROLLBACK_DELETE'] = 'Slet denne sikkerhedskopi?';
 $L['PROMOTE'] = 'Opgrader til Admin';
 $L['RCLONE_LOCK_REMOVE'] = 'fjern låsen';
 $L['RCLONE_LOGS'] = 'se logfiler';
@@ -296,6 +305,7 @@ $L['AVAILABILITY'] = 'Tilgængelighed';
 $L['DETAILS'] = 'Detaljer';
 $L['NAME'] = 'Navn';
 $L['CONFIGS'] = 'Muligheder';
+$L['EXTRAS'] = 'Ekstra';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
@@ -323,6 +333,7 @@ $L['FLOOD'] = 'Flood er en anden webgrænseflade til rtorrent. Det implementerer
 $L['HEADPHONES'] = 'Headphones er en automatiseret musik downloader til NZB og Torrent, skrevet i Python. Den understøtter SABnzbd, NZBget, Transmission, μTorrent, Deluge og Blackhole.';
 $L['JACKETT'] = 'Jackett åbner op for API support til dine favorit private trackere.';
 $L['JELLYFIN'] = 'Jellyfin er et gratis software medie system, der giver dig kontrol over styring, administration og streaming af dine medier.';
+$L['JELLYSEERR'] = 'Jellyseerr er en gratis og open source softwareapplikation til håndtering af anmodninger om dit mediebibliotek. Det er en forgrening af Overseerr bygget til at give support til Jellyfin & Emby medieservere!';
 $L['KOMGA'] = 'Komga er en medieserver til dine digitale tegneserier/manga, med fokus på at levere en enkel og moderne grænseflade.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian er en SickBeard, CouchPotato, Headphone-lignende applikation til ebøger, lydbøger og magasiner. Den bruger en kombination af <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank"> Goodreads </a> <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank"> Librarything </a> og eventuelt <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank"> GoogleBooks </a> som kilder til forfatterinfo og boginformation.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt er en gratis, automatiseret og åben certifikatmyndighed (CA). Det er en tjeneste fra <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
@@ -397,6 +408,7 @@ $L['FLOOD_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">F
 $L['HEADPHONES_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Headphones</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Headphones</span> til hver en tid, men din sti til lagering og linkede mappeindstillinger vil blive nulstillet til standard.';
 $L['JACKETT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Jackett</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Jackett</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
 $L['JELLYFIN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Jellyfin</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Jellyfin</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
+$L['JELLYSEERR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Jellyseerr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Jellyseerr</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
 $L['KOMGA_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Komga</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Komga</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2"> LazyLibrarian </span> fra dit system. <br/><br/>Dette vil fjerne alle dine konfigurationsindstillinger fuldstændigt ... denne handling er irreversibel. <br/><br/>Du kan geninstallere <span style="color:#01cea2"> LazyLibrarian </span> når som helst, men dine konfigurationsindstillinger nulstilles til standard.';
 $L['LETSENCRYPT_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Let\'s Encrypt</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes. <br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Let\'s Encrypt</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
@@ -471,6 +483,7 @@ $L['FLOOD_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">F
 $L['HEADPHONES_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Headphones</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurations og delte indstillinger... denne handling kan ikke fortrydes.';
 $L['JACKETT_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Jackett</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['JELLYFIN_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Jellyfin</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
+$L['JELLYSEERR_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Jellyseerr</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['KOMGA_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Komga</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['LAZYLIBRARIAN_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2"> LazyLibrarian </span> fra dit system. <br/><br/>Dette vil fjerne alle dine konfigurationsindstillinger fuldstændigt ... denne handling er irreversibel.';
 $L['LETSENCRYPT_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Let\'s Encrypt</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
@@ -826,7 +839,7 @@ $L['SITE_ROOT'] = 'Webstedets Rod';
 $L['SITE_NAME_TOOLTIP'] = 'Webstedsnavnet skal være under 40 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
 $L['SITE_DESC_TOOLTIP'] = 'Webstedsbeskrivelse skal være under 120 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'Fra navn skal være under 60 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
-$L['SITE_ROOT_TOOLTIP'] = 'Indtast din server-IP eller et gyldigt domæne. eksempel: https://192.168.0.1/ (or) https://myawesomedomain.com/';
+$L['SITE_ROOT_TOOLTIP'] = 'Indtast din server IP eller gyldigt domæne uden efterfølgende skråstreg. eksempel: https://192.168.0.1 (eller) https://somedomain.com';
 $L['SITE_LOGO_COLLAPSED'] = 'Skjulet logo';
 $L['SITE_LOGO_FULL'] = 'Fuldt logo';
 $L['SITE_LOGO_SETTINGS'] = 'Indstillinger for webstedslogo';
@@ -1061,7 +1074,7 @@ Hvis du har brug for at kontakte QuickBox-teamet om et problem med scriptet, kan
 $L['HELP_TITLE'] = 'QuickBox Administration, Dashboard Portal & Brugeradministration';
 $L['HELP'] = 'Hjælp';
 $L['LICENSE_SET'] = '<h3><strong>Licenseret under BSD 3-klausul</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Ophavsret (c) 2018-2022, QuickBox.IO. Alle rettigheder forbeholdes.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Ophavsret (c) 2018-2023, QuickBox.IO. Alle rettigheder forbeholdes.</p>
 <p class="fs14">Omfordeling og brug i kilde- og binære formularer, med eller uden ændring, er tilladt, forudsat at følgende betingelser er opfyldt:
 <ul><li class="fs14">Omfordeling af kildekoden skal beholde ovenstående copyrightophavsret, denne liste over betingelser og følgende ansvarsfraskrivelse. </ li>
 <li class="fs14">Omfordeling i binær form skal gengive ovenstående copyrightophavsret, denne liste over betingelser og følgende ansvarsfraskrivelse i dokumentationen og / eller andre materialer, der leveres med distributionen.</li>

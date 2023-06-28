@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.69
+# File Version: 1.0.76
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2022, QuickBox.IO
+# Copyright (C) 2019-2023, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -340,6 +340,8 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${proces} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name} for bruger"
+		[[ -n ${rclone_remote} ]] && declare text="installerer seneste ${branch}-version af ${software_name} for brugere, der bruger ${rclone_remote}"
+		[[ -n ${encrypted} ]] && declare text="installerer seneste ${branch}-version af ${software_name} til bruger med kryptering"
 		[[ -n ${dmn} ]] && declare text="installerer et ssl-certifikat, der skal bruges til dashboardet på det angivne domæne"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="installerer den seneste ${branch}-version af ${software_name} for bruger og stadier ssl-certifikat for domæne"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installerer et ssl-certifikat for det angivne domæne"
@@ -353,6 +355,8 @@ quickbox::lang::software::info::note() {
 		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="installerer seneste ${branch} version af ${software_name} med tildelt datakatalog"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} for bruger"
+		[[ -n ${rclone_remote} ]] && declare text="geninstaller seneste ${branch}-version af ${software_name} for bruger, der bruger ${rclone_remote}"
+		[[ -n ${encrypted} ]] && declare text="geninstaller seneste ${branch}-version af ${software_name} for bruger med kryptering"
 		[[ -n ${dmn} ]] && declare text="geninstallerer ssl-certifikat brugt til dashboardet på det angivne domæne"
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="geninstallerer den seneste ${branch}-version af ${software_name} for bruger og stadier ssl-certifikat for domæne"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="geninstallerer et ssl-certifikat for det angivne domæne"
@@ -374,7 +378,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${dmn} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne, der skal bruges med dashboardet"
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne"
 		[[ -n ${version} ]] && declare text="opdaterer ${software_name} til den seneste ${version} version"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name}"
+		[[ -n ${branch} && -z ${usr} ]] && declare text="opdaterer den seneste ${branch}-version af ${software_name}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
@@ -528,6 +532,21 @@ quickbox::lang::software::novnc::access() {
 	declare text="adgang til ${software_title} på:
 ${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
 ${software_title} installeret på port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::jellyseerr::access() {
+	if [[ -n ${domain:-} ]]; then
+		# trunk-ignore(shellcheck/SC2001)
+		jellyseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+		declare text="adgang til ${software_title} på:
+https://${jellyseerr_web_root}/"
+	else
+		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+		declare text="adgang til ${software_title} på:
+http://${server_ip}:${software_web_port}/
+${software_title} installeret på port: ${software_web_port}"
+	fi
 	quickbox::dashboard::log "${text}"
 }
 
@@ -734,9 +753,6 @@ quickbox::lang::software::rclone_continue() {
 quickbox::lang::software::rclone::access() {
 	declare text="${software_title} installeret
   
-> Kør venligst følgende kommando for at afslutte opsætningen:
-runuser -l ${username} -c \"rclone config reconnect gdrive:\"
-
 > For mere information om, hvordan du installerer rclone, besøg:
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 "
@@ -900,4 +916,205 @@ quickbox::lang::update::clean() {
 quickbox::lang::update::complete() {
 	declare text="opdateringen er fuldført!"
 	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB Manager - /opt/quickbox/system/manage :: `-s` | case: software)
+################################################################################
+
+### `-o backup` | case: backup)
+
+quickbox::lang::backup::configf() {
+	declare text="konfigurationsfil for ${software_name} bliver nu sikkerhedskopieret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::error() {
+	declare text="konfigurationsfil ${softwareConf} eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configf::success() {
+	declare text="konfigurationsfilen er blevet sikkerhedskopieret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::error() {
+	declare text="${software_title} installationsmappe eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir() {
+	declare text="installationsmappe for ${software_title} (${backup_version}) bliver nu sikkerhedskopieret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::configdir() {
+	declare text="konfigurationsmappe for ${software_title} bliver nu sikkerhedskopieret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::backup::installdir::success() {
+	backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
+	declare text="${software_title} (${backup_version}) er blevet sikkerhedskopieret."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o restore` | case: restore)
+
+quickbox::lang::restore::configf::error() {
+	declare text="backup-fil ${backupConf} eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::restore::configf::success() {
+	declare text="sikkerhedskopifil er blevet gendannet."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o default` | case: default)
+
+quickbox::lang::default::configf::error() {
+	declare text="default configuration ${defaultConf} fil eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::default::configf::success() {
+	declare text="standard konfigurationsfil er blevet gendannet."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o rollback` | case: rollback)
+
+quickbox::lang::rollback::installdir::error() {
+	declare text="${software_title} installationsmappe eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::version() {
+	declare text="version:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::date() {
+	declare text="dato:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection() {
+	declare text="vælg et tal fra listen nedenfor for at rulle tilbage
+til en tidligere version af ${software_title}:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::invalid() {
+	declare text="ugyldigt valg. prøv venligst igen."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::software::error() {
+	declare text="${software_title} programsikkerhedskopi eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::config::error() {
+	declare text="${software_title}-konfigurationssikkerhedskopi eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="du har valgt version ${version} til ${software_title}.
+app-pakke: ${app_package}
+config-pakke: ${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::selection::confirm() {
+	declare text="er du sikker på, at du vil fortsætte med tilbagerulningen? (y/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::cancelled() {
+	declare text="rollback annulleret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::rollback::continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} bliver nu rullet tilbage til version ${version}."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::rollback::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} (${version}) er blevet rullet tilbage."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o delete` | case: delete)
+
+quickbox::lang::delete::selection::version() {
+	declare text="version:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::date() {
+	declare text="dato:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection() {
+	declare text="vælg et tal fra listen nedenfor for at slette
+en tidligere sikkerhedskopi af ${software_title}:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::invalid() {
+	declare text="ugyldigt valg. prøv venligst igen."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::software::fejl() {
+	declare text="${software_title} programsikkerhedskopi eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::config::error() {
+	declare text="${software_title}-konfigurationssikkerhedskopi eksisterer ikke."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::selection::display() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+	declare text="du har valgt version ${version} til ${software_title}.
+app-pakke: ${app_package}
+config-pakke: ${config_package}"
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::selection::confirm() {
+	declare text="er du sikker på, at du vil fortsætte med sletningen? (y/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::cancelled() {
+	declare text="backup sletning annulleret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::delete::continue() {
+	version="$(tput setaf 5)${version}$(tput setaf 7)"
+	declare text="${software_title} backup (${version}) bliver nu slettet."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+quickbox::lang::delete::complete() {
+	version="$(tput setaf 5)${version}$(tput setaf 2)"
+	declare text="${software_title} backup (${version}) er blevet slettet."
+	quickbox::dashboard::log "${text}$(tput sgr0)"
 }

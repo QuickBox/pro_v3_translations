@@ -185,9 +185,18 @@ $L['NGINX_DEFAULT'] = 'Restore Default Config';
 $L['NGINX_DISABLE'] = 'Disable Auth Popup';
 $L['NGINX_ENABLE'] = 'Enable Auth Popup';
 $L['NGINX_RESTORE'] = 'Restore Nginx Backup';
-$L['APP_BACKUP'] = 'Backup Software Config';
-$L['APP_DEFAULT'] = 'Restore Default Config';
-$L['APP_RESTORE'] = 'Restore Software Backup';
+$L['APP_BACKUP_FULL'] = 'Teljes biztonsági mentés';
+$L['APP_BACKUP_PARTIAL'] = 'Részleges biztonsági mentés';
+$L['APP_DEFAULT_PARTIAL_RESTORE'] = 'Alapértelmezés visszaállítása';
+$L['APP_BACKUP_PARTIAL_RESTORE'] = 'Biztonsági másolat visszaállítása';
+$L['ED_MENU_CONFIG_APP'] = 'konfig és app';
+$L['ED_MENU_CONFIG'] = 'csak konfig';
+$L['VERSION_ROLLBACK_OPTIONS'] = 'Visszaállítási lehetőségek';
+$L['VERSION_ROLLBACK_V'] = 'Verzió: ';
+$L['VERSION'] = 'Verzió';
+$L['DATE'] = 'Dátum';
+$L['VERSION_ROLLBACK_CONFIRM'] = 'Visszaállítás erre a verzióra?';
+$L['VERSION_ROLLBACK_DELETE'] = 'Törli ezt a biztonsági másolatot?';
 $L['PROMOTE'] = 'Promote to Admin';
 $L['RCLONE_LOCK_REMOVE'] = 'remove lock';
 $L['RCLONE_LOGS'] = 'view logs';
@@ -295,6 +304,7 @@ $L['AVAILABILITY'] = 'Elérhetőség';
 $L['DETAILS'] = 'Részletek';
 $L['NAME'] = 'Név';
 $L['CONFIGS'] = 'Configs';
+$L['EXTRAS'] = 'Extrák';
 
 
 //#3.2 - PACKAGE MANAGEMENT CENTER
@@ -712,7 +722,7 @@ $L['SITE_ROOT'] = 'Site Root';
 $L['SITE_NAME_TOOLTIP'] = 'A webhely neve legfeljebb 40 karakterből állhat, és csak alfanumerikus lehet, külön karakterek nélkül (szóközök elfogadhatók)';
 $L['SITE_DESC_TOOLTIP'] = 'A webhelyleírásnak legfeljebb 120 karakterből kell állnia, és csak alfanumerikusnak kell lennie, külön karakterek nélkül (szóközök elfogadhatók)';
 $L['EMAIL_FROM_NAME_TOOLTIP'] = 'A From Name-nek 60 karakter alatt kell lennie, és csak alfanumerikusnak kell lennie, külön karakterek nélkül (szóközök elfogadhatók)';
-$L['SITE_ROOT_TOOLTIP'] = 'Írja be a szerver IP-címét vagy érvényes tartományát. példa: https://192.168.0.1/ (vagy) https://myawesomedomain.com/';
+$L['SITE_ROOT_TOOLTIP'] = 'Adja meg a szerver IP-címét vagy érvényes tartományát perjel nélkül. példa: https://192.168.0.1 (vagy) https://somedomain.com';
 $L['SITE_LOGO_COLLAPSED'] = 'Összecsukott logó';
 $L['SITE_LOGO_FULL'] = 'Teljes logó';
 $L['SITE_LOGO_SETTINGS'] = 'Webhely logó beállításai';
@@ -947,7 +957,7 @@ If you need to contact the QuickBox staff about an issue with the script, you ca
 $L['HELP_TITLE'] = 'QuickBox Admin Panel, Dashboard Portal & User Management';
 $L['HELP'] = 'Help';
 $L['LICENSE_SET'] = '<h3><strong>Licensed under BSD 3-Clause</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2022, QuickBox.IO. All rights reserved.</p>
+$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. All rights reserved.</p>
 <p class="fs14">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 <ul><li class="fs14">Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
 <li class="fs14">Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
