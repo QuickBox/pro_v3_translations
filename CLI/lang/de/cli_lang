@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.87
+# File Version: 1.0.88
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -308,6 +308,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u benutzer -d etwasdomäne.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.emby.domäne ${option[*]}"
 		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.jellyfin.domäne ${option[*]}"
+		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.jellyseerr.domäne ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.komga.domäne ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.overseerr.domäne ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.plex.domäne ${option[*]}"
@@ -318,6 +319,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u benutzer -d etwasdomäne.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.emby.domäne ${option[*]}"
 		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.jellyfin.domäne ${option[*]}"
+		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.jellyseerr.domäne ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.komga.domäne ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.overseerr.domäne ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d etwas.plex.domäne ${option[*]}"
@@ -347,6 +349,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installiert ein ssl-zertifikat für die angegebene domäne"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="installiert ein ssl-zertifikat für die angegebene emby-domäne"
 		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="installiert ein ssl-zertifikat für die angegebene jellyfin-domäne"
+		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="installiert ein ssl-zertifikat für die angegebene jellyseerr-domäne"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="installiert ein ssl-zertifikat für die angegebene komga-domäne"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="installiert ein ssl-zertifikat für die angegebene overseerr-domäne"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="installiert ein ssl-zertifikat für die angegebene plex-domäne"
@@ -362,6 +365,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene domäne neu"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene emby-domäne neu"
 		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene jellyfin-domäne neu"
+		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene jellyseerr-domäne neu"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene komga-domäne neu"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene overseerr-domäne neu"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="neu installieren ein ssl-zertifikat für die angegebene plex-domäne neu"

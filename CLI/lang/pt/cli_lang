@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.81
+# File Version: 1.0.82
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -308,6 +308,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.emby.domínio ${option[*]}"
 		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.jellyfin.domínio ${option[*]}"
+		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.jellyseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.komga.domínio ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.overseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.plex.domínio ${option[*]}"
@@ -318,6 +319,7 @@ quickbox::lang::software::info::example() {
 		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
 		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.emby.domínio ${option[*]}"
 		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.jellyfin.domínio ${option[*]}"
+		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.jellyseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.komga.domínio ${option[*]}"
 		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.overseerr.domínio ${option[*]}"
 		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algum.plex.domínio ${option[*]}"
@@ -347,6 +349,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala um certificado ssl para o domínio especificado"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio emby especificado"
 		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyfin especificado"
+		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyseerr especificado"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio komga especificado"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio overseerr especificado"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio plex especificado"
@@ -362,6 +365,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala um certificado ssl para o domínio especificado"
 		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio emby especificado"
 		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyfin especificado"
+		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyseerr especificado"
 		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio komga especificado"
 		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio overseerr especificado"
 		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio plex especificado"
