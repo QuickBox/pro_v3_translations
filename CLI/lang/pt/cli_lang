@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.82
+# File Version: 1.0.85
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -245,6 +245,11 @@ quickbox::lang::update::complete::header() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::files::admin() {
+	declare text="deve estar logado como administrador para atualizar ${software_title}"
+	quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # User
 ################################################################################
@@ -383,6 +388,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="atualiza o certificado ssl para o domínio especificado"
 		[[ -n ${version} ]] && declare text="atualiza ${software_name} para a versão mais recente de ${version}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="atualiza a versão mais recente de ${branch} de ${software_name}"
+		[[ ${software_name} == "deluge" ]] && declare text="atualiza ${software_name} para a versão mais recente de ${branch} para todos os usuários"
 	fi
 	quickbox::dashboard::log "${text}"
 }

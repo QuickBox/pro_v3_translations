@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.78
+# File Version: 1.0.81
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -245,6 +245,11 @@ quickbox::lang::update::complete::header() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::files::admin() {
+	declare text="skal være logget ind som admin for at opdatere ${software_title}"
+	quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # User
 ################################################################################
@@ -383,6 +388,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne"
 		[[ -n ${version} ]] && declare text="opdaterer ${software_name} til den seneste ${version} version"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="opdaterer den seneste ${branch}-version af ${software_name}"
+		[[ ${software_name} == "deluge" ]] && declare text="opdaterer ${software_name} til den seneste ${branch}-version for alle brugere"
 	fi
 	quickbox::dashboard::log "${text}"
 }

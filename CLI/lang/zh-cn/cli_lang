@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.73
+# File Version: 1.0.76
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -245,6 +245,11 @@ quickbox::lang::update::complete::header() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::files::admin() {
+	declare text="必须以管理员身份登录才能更新 ${software_title}"
+	quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # User
 ################################################################################
@@ -383,6 +388,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="更新指定域的 ssl 证书"
 		[[ -n ${version} ]] && declare text="更新 ${software_name} 到最新 ${version} 版本"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="更新 ${software_name} 的最新 ${branch} 版本"
+		[[ ${software_name} == "deluge" ]] && declare text="为所有用户将 ${software_name} 更新到最新的 ${branch} 版本"
 	fi
 	quickbox::dashboard::log "${text}"
 }

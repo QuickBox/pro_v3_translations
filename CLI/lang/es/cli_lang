@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.79
+# File Version: 1.0.82
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -245,6 +245,11 @@ quickbox::lang::update::complete::header() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::files::admin() {
+	declare text="debe iniciar sesión como administrador para actualizar ${software_title}"
+	quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # User
 ################################################################################
@@ -383,6 +388,7 @@ quickbox::lang::software::info::note() {
 		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="actualiza el certificado ssl para el dominio especificado"
 		[[ -n ${version} ]] && declare text="actualiza ${software_name} a la última versión de ${version}"
 		[[ -n ${branch} && -z ${usr} ]] && declare text="actualiza la última versión de ${branch} de ${software_name}"
+		[[ ${software_name} == "deluge" ]] && declare text="actualiza ${software_name} a la última versión de ${branch} para todos los usuarios"
 	fi
 	quickbox::dashboard::log "${text}"
 }
