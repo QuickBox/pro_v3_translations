@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : June 29, 2023        *
+ * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -348,7 +348,7 @@ $L['NZBGET'] = 'NZBGet 是一个二进制下载器, 它根据 nzb-files 中给�
 $L['NZBHYDRA'] = 'NZBHydra 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
 $L['NZBHYDRA2'] = 'NZBHydra2 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
 $L['OMBI'] = 'Ombi 为希望将内容添加到库的用户提供了一个美观且易于使用的界面, 它集成于 CouchPotato, SickChill 和 Sonarr.';
-$L['OVERSEERR'] = 'Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Plex!';
+$L['OVERSEERR'] = 'Overseerr 是一款免费的开源软件应用程序，用于管理媒体库的请求。 它与您现有的服务集成，例如 Sonarr、Radarr 和 Plex!';
 $L['OVPN'] = '基于 SSL/TLS 的 VPN. 支持 Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X和Windows 2000 / XP +.';
 $L['PHPMYADMIN'] = 'phpMyAdmin 是一个使用 <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a> 编写的免费软件, 旨在通过网页处理 <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> 数据库的管理. phpMyAdmin 支持 MySQL 和 MariaDB 上的各种操作. 可以在用户界面执行常用操作 (管理数据库, 表, 列, 关系, 索引, 用户, 权限等), 同时你也可以直接执行各种 SQL 语句.';
 $L['PLEX'] = 'Plex 可让你将内容传输到任何支持 Plex 的设备.';
@@ -1104,26 +1104,178 @@ $L['EVENT'] = '事件';
 $L['LOGS_SUMMARY'] = '日志摘要';
 $L['COMMAND'] = '命令';
 
-//#4.4.5 - ABOUT / QUICKTIPS
-$L['ABOUT'] = '关于';
-$L['DISCLAIMER_TEXT'] = '<p class="fs14">该脚本供一般使用, 并不暗示对任何给定任务的适用性作任何保证. 在使用/安装/修改此脚本或其任何插件时, QuickBox.IO对您的设置或任何损坏不承担任何责任. 请记住QuickBox.IO或其工作人员负责使您的软件和/或服务器保持最新状态; 这是QuickBox Pro软件用户的全部责任. </p>';
-$L['DISCLAIMER'] = '<h3><strong>免责声明</strong></h3>';
-$L['GETTING_SUPPORT'] = '获得支持';
-$L['HELP_TEXT'] = '<p style="font-size: 14px"><a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank"> QuickBox.IO </a>精心为您带来. <br><br><br>
-    可以在包括论坛在内的许多地方找到对脚本的支持. 如果您需要对与QuickBox Pro相关的问题提供任何支持, 并且它包含应用程序, 您可以在<a href="https://nullrefer.ir/?https://plaza.quickbox.io" rel="noopener nofollow" target="_blank">此处</a>找到它.<br>
-    或者访问QuickBox.IO网站, 其中包含一些信息, 包括<a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">此处</a>的实时聊天. <br>
-    如果您需要联系QuickBox工作人员以解决脚本问题, 您可以向我们发送有关我们的<a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">Discord</a>或 您可以提交<a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/bugs" rel="noopener nofollow" target="_blank">帖子. </p><br><br>';
-$L['HELP_TITLE'] = 'QuickBox 管理面板, 仪表盘门户 & 用户管理';
-$L['HELP'] = '帮助';
-$L['LICENSE_SET'] = '<h3><strong>依据 BSD 3-Clause 许可</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. 版权所有.</p>
-    <p class="fs14">这份授权条款, 在使用者符合以下条件的情形下, 授予使用者使用及再散播本软件包装原始码及二进位可执行形式的权利, 无论此包装是否经改作皆然:
-    <ul><li class="fs14">对于本软件源代码的再散播, 必须保留上述的版权宣告, 此条件表列, 以及下述的免责声明.</li>
-    <li class="fs14">对于本套件二进位可执行形式的再散播, 必须连带以文件以及 / 或者其他附于散播包装中的媒介方式, 重制上述之版权宣告, 此条件表列, 以及下述的免责声明.</li>
-    <li class="fs14">未获事前取得书面许可, 不得使用版权所有者的名称或其贡献者的名称来为本软件之衍生物做任何表示支持, 认可或推广, 促销之行为.</li></ul>
-    <p class="fs14">本软件是由版权所有者和贡献者按以现状 ("as is") 提供, 本软件包装不负任何明示或默示之担保责任, 包括但不限于就适售性以及特定目的的适用性为默示性担保. 版权所有者或贡献者, 无论任何条件, 无论成因或任何责任主义, 无论此责任为因合约关系, 无过失责任主义或因非违约之侵权 ( 包括过失或其他原因等 ) 而起, 对于任何因使用本软件包装所产生的任何直接性, 间接性, 偶发性, 特殊性, 惩罚性或任何结果的损害 (包括但不限于替代商品或劳务之购用, 使用损失, 资料损失, 利益损失, 业务中断等等), 不负任何责任, 即在该种使用已获事前告知可能会造成此类损害的情形下亦然.</p>';
+//#4.4.5 - HELP MANUAL
+$L['QB_HELP'] = '帮助手册';
 
-//commands   
+//description
+$L['DESCRIPTION_CONTENT'] = '<p>欢迎使用 <code>qb</code> 联机帮助页的全面图形显示, 该联机帮助页旨在为您提供一种经过翻译、简化且高效的方法来访问有关 QuickBox 的各种信息. 这个用户友好的界面旨在提供对 QuickBox 工作原理的深入了解, QuickBox 是一个强大且多功能的工具, 可轻松管理您的服务器.</p>
+<p>在此图形显示中, 您将找到可供无缝安装的可用应用程序的详细列表, 使您能够根据您的特定需求自定义服务器设置. 此外, 该资源还提供了大量其他基本命令, 可在 <code>qb</code> CLI 环境中实现最佳利用, 使您能够高效、轻松地浏览服务器任务.</p>
+<p>无论您是 QuickBox 的新手还是经验丰富的用户, <code>qb</code> 联机帮助页的图形显示都可以作为您充分利用 QuickBox 潜力并释放服务器管理真正威力的最终参考. 借助这份直观且信息丰富的指南, 探索各种功能、简化服务器操作并最大限度地提高您的工作效率. 让我们深入研究, 让您的 QuickBox 体验更加有意义！</p>';
+$L['API_INFO_DIRECT'] = '<p style="font-weight:600;">有关嵌入式 QuickBox API 的更多信息和参考, <a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--infoColor);">查看此页面</a>.</p>';
+
+//options
+$L['OPTIONS_HEADER'] = '选项';
+$L['OPTIONS_CONTENT_HELP'] = '以 CLI 联机帮助页格式显示此帮助手册';
+$L['OPTIONS_CONTENT_VERBOSE'] = '启用详细模式进行调试';
+
+//software
+$L['SOFTWARE_HEADER'] = '软件';
+$L['SOFTWARE_INFO_CONTENT'] = '<p>以下是通过 QuickBox 构建提供的所有可用安装应用程序的列表.<br/>软件名称显示为 <code>qb [install|reinstall|update|remove|help] [软件名称]</code></p>';
+$L['ADMIN_INSTALLED_SOFTWARE_HEADER'] = '管理员安装的软件';
+$L['ADMIN_INSTALLED_SOFTWARE_INFO_CONTENT'] = '<p>系统管理员需要安装以下应用程序.<br/>有关其他详细信息, 请参阅下面的可用性列.</p>';
+$L['MULTI_USER_SOFTWARE_HEADER'] = '多用户软件';
+$L['MULTI_USER_SOFTWARE_INFO_CONTENT'] = '<p>以下应用程序可由多个用户安装, 无需管理员协助.<br/>所有应用程序的可用性均由系统管理员确定, 并授予 <a href="/usergroups.php" rel="noopener nofollow" class="link">已创建群组</a>.</p>';
+$L['SINGLE_USER_SOFTWARE_HEADER'] = '单用户软件';
+$L['SINGLE_USER_SOFTWARE_INFO_CONTENT'] = '<p>以下应用程序一次只能由一名指定用户安装, 无需管理员协助.<br/>所有应用程序的可用性均由系统管理员确定并授予其他用户 在<a href="/usergroups.php" rel="noopener nofollow" class="link">创建的群组</a>内.</p>';
+$L['SOFTWARE_MANAGEMENT'] = '软件管理';
+$L['SOFTWARE_MANAGEMENT_CONTENT'] = '用于为指定用户安装、重新安装、更新或删除指定软件以及附加选项(如果存在/需要)的参数';
+$L['SOFTWARE_MANAGEMENT_WARNING_CONTENT'] = '<p>请记住, 不同的应用程序有不同的选项/要求. 大多数需要使用用户名标志 (<code>-u</code>), 而 rtorrent 等应用程序则不需要. 要检查特定软件的所有可用选项, 请使用 <code class="language-bash">qb help [software_name]</code>. QuickBox 中软件命名方案的应用程序命名可以在上面的<a href="#software" class="link">软件列表图表</a>中查看.</p>';
+$L['SEE_ALSO_HEADER'] = '另请参阅';
+$L['SEE_ALSO_CONTENT'] = '显示指定软件的有用命令用法';
+//tables
+$L['SOFTWARE_NAME'] = '软件名称';
+
+//examples
+$L['EXAMPLES_HEADER'] = '示例';
+
+//user management
+$L['USER_MANAGEMENT_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb manage</code> 管理功能提供了一套多功能且强大的工具来有效管理服务器上的用户. 这些功能注重易用性和强大的功能, 使您能够简化用户管理、增强安全性并确保服务器平稳运行.</p>';
+$L['CREATE_USER_CONTENT'] = '创建一个新的 QuickBox 用户帐户';
+$L['DELETE_USER_CONTENT'] = '删除 QuickBox 用户帐户';
+$L['CHANGE_USER_PASSWORD'] = '更改用户密码';
+$L['CHANGE_USER_PASSWORD_CONTENT'] = '更改指定用户帐户的密码';
+$L['BAN_USER_CONTENT'] = '禁止分配的用户帐户, 阻止登录并停止已安装的服务及其功能.';
+$L['BAN_USER_PRIMARY_CONTENT'] = '<p><em>这不会<strong>删除</strong>用户数据</em>, 只会禁用正在运行的服务并阻止访问.</p>';
+$L['UNBAN_USER_CONTENT'] = '取消禁止指定的用户帐户, 允许登录并启动已安装的服务及其功能';
+$L['PROMOTE_USER_TO_ADMIN'] = '将用户升级为管理员';
+$L['PROMOTE_USER_TO_ADMIN_CONTENT'] = '将分配的用户提升至管理员级别';
+$L['DEMOTE_USER_FROM_ADMIN'] = '将用户从管理员降级';
+$L['DEMOTE_USER_FROM_ADMIN_CONTENT'] = '将分配的用户降级到标准用户级别';
+$L['SET_USER_QUOTA'] = '设置用户配额';
+$L['SHOW_USER_QUOTA'] = '显示用户配额';
+$L['SET_USER_SHELL'] = '设置用户外壳';
+$L['SET_USER_SHELL_CONTENT'] = '为指定用户设置 shell 环境';
+$L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>服务器环境的完整管理员权限（强大的权限...等）<br><strong><code>full</code></strong><br>对服务器环境的完全访问权限, 但较高特权区域除外; 即: 没有 sudo, 无法访问根目录.<br><strong><code>limited</code></strong><br>有限的 shell 环境. 对命令的访问权限很少, 并且被限制在自己的用户主目录中.</p><hr/><p>Shell 环境由系统管理员设置, 可以在位于 的用户编辑页面上查看 <a href="/useradmin.php" rel="noopener nofollow" class="link">用户管理页面</a>.<br/>如果您想添加新的 shell 环境, 可以通过编辑 来实现 <code>/etc/shells</code> 文件并添加您要添加的 shell 环境的路径.</p>';
+$L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone 配套命令';
+
+//clean functions
+$L['CLEAN_FUNCTIONS'] = '清理函数';
+$L['CLEAN_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb clean</code> 功能提供了一种方便有效的方法来维护服务器的清洁度并优化其性能. 这些功能在设计时考虑到了简单性和有效性, 使您能够释放宝贵的内存, 消除不必要的混乱, 并确保平稳和简化的服务器操作.</p>';
+$L['CLEAN_MEMORY'] = '清理内存';
+$L['CLEAN_MEMORY_CONTENT'] = '清理 QuickBox 内存缓存';
+$L['CLEAN_DASHBOARD_LOGS'] = '清理仪表板日志';
+$L['CLEAN_DASHBOARD_LOGS_CONTENT'] = '清理指定用户的 QuickBox 仪表板日志';
+$L['CLEAN_RCLONE_UPLOAD_LOGS'] = '清理 Rclone 上传日志';
+$L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = '清除指定用户的 QuickBox rclone 上传日志';
+$L['CLEAN_LOCKS'] = '清洁锁';
+$L['CLEAN_LOCKS_CONTENT'] = '清除可能阻止 QuickBox 安装新软件的 QuickBox 软件和 apt-dpkg 锁';
+
+//fix functions
+$L['FIX_FUNCTIONS'] = '修复函数';
+$L['FIX_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb fix</code> 功能提供了一个强大且用户友好的工具包, 可以解决常见问题并轻松执行系统修复. 这些功能注重简单性和有效性, 使您能够排查并解决服务器上可能出现的各种问题, 确保运行顺利、不间断.</p>';
+$L['FIX_HOME'] = '修复主页';
+$L['FIX_HOME_CONTENT'] = '修复指定用户主目录权限';
+$L['FIX_PHP'] = '修复 PHP';
+$L['FIX_PHP_CONTENT'] = '修复 PHP 配置并安装缺少的扩展. 这还将 PHP 包更新到最新版本';
+$L['FIX_PYTHON'] = '修复 Python';
+$L['FIX_PYTHON_CONTENT'] = '修复 Python 配置并安装缺少的扩展. 如果当前系统上不支持 python3.9, 则还可以在需要 python 的应用程序构建中默认使用该版本';
+$L['FIX_VERSION'] = '修复版本';
+$L['FIX_VERSION_CONTENT'] = '通过重新安装可用的最新版本来修复 QuickBox 安装';
+
+//generate functions
+$L['GENERATE_FUNCTIONS'] = '生成函数';
+$L['GENERATE_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb generate</code> 函数提供了一种方便高效的方法来创建增强服务器管理和监控的基本元素. 目前, qb generate 命令支持 qb generate log 功能, 允许用户轻松生成服务器统计信息、API激活和挂载信息的预览.<br/>随着 qb generate 函数的发展, 它们可能会提供扩展的数组 进一步增强服务器管理的功能.</p>';
+$L['GENERATE_SYSTEM_LOGS'] = '生成系统日志';
+$L['GENERATE_SYSTEM_LOGS_CONTENT'] = '为当前 QuickBox 安装生成系统日志';
+$L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>此命令目前正在进行中, 将在不久的将来进行重组和扩展.</p>';
+$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>您还可以在 <a href="/troubleshooting.php" rel="noopener nofollow" class="link">上生成并下载上述命令生成的系统日志 故障排除页面</a>.<br/>生成的日志存储在服务器上的<code>/srv/quickbox/logs/system_log</code>.</p>';
+
+//manage functions
+$L['MANAGE_FUNCTIONS'] = '管理功能';
+$L['MANAGE_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的<code>qb manage</code> 功能提供了一套强大而全面的工具来有效管理服务器的各个方面. 这些功能在设计时充分考虑了用户的便利性, 使您能够轻松控制 QuickBox 支持的环境的关键元素.<br/>无论是交换语言设置、检查主要 API 激活的状态、管理数据分发, 还是 qb 管理功能通过备份和回滚确保数据完整性, 为服务器管理员和爱好者提供了全面的解决方案.</p>';
+$L['MANAGE_API_KEY'] = '管理 API 密钥';
+$L['MANAGE_API_KEY_CONTENT'] = '管理 QuickBox API 密钥并列出其他信息和选项';
+$L['ADD_API_KEY'] = '添加 API 密钥';
+$L['ADD_API_KEY_CONTENT'] = '添加/激活 API 密钥';
+$L['REMOVE_API_KEY'] = '删除 API 密钥';
+$L['REMOVE_API_KEY_CONTENT'] = '删除/停用 API 密钥';
+$L['MANAGE_DASHBOARD_ACCESS_URL'] = '管理仪表板访问 URL';
+$L['MANAGE_DASHBOARD_ACCESS_URL_CONTENT'] = '此命令设置服务器 Web 根目录, 以便仪表板访问所表达的域或 IP 地址';
+$L['SET_SERVER_LANG'] = '设置服务器语言';
+$L['SET_SERVER_LANG_CONTENT'] = '该命令将把请求的语言设置为服务器的默认语言';
+$L['MANAGE_PUBLIC_TRACKERS'] = '管理公共跟踪器';
+$L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = '此命令将为所有用户启用或禁用公共跟踪器';
+$L['EX_PUB_TRACKERS_ALLOW'] = '允许公共跟踪器的示例：';
+$L['EX_PUB_TRACKERS_DISALLOW'] = '禁止公共跟踪器的示例：';
+$L['BACKUP_APPLICATIONS'] = '备份应用程序';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = '部分备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">仅配置</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = '此命令将为指定用户备份指定的应用程序配置';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = '完整备份 <span class="badge bad-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(--mainFontColor)">配置&amp; 应用程序</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = '此命令将为指定用户备份指定应用程序. 包括应用程序和配置数据, 方便回滚到以前安装和备份的版本';
+$L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = '部分备份(仅限 rtorrent)';
+$L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>如果使用 rtorrent 作为要备份的软件配置, 则不需要用户名标志 (<code>-u</code>).</p>';
+$L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = '此命令将备份所有现有 rtorrent 用户 .rtorrent.rc 文件.<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent/backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
+$L['ROLLBACK_APPLICATIONS'] = '回滚应用程序备份';
+$L['ROLLBACK_APPLICATIONS_CONTENT'] = '此命令会将指定用户的指定应用程序回滚到备份目录中存储/选择的先前版本.<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = '恢复备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">仅配置</span>';
+$L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = '此命令将为指定用户恢复指定的先前备份的应用程序配置';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = '恢复默认 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">仅配置</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = '此命令将为指定用户恢复指定的默认(从安装)应用程序配置';
+
+//news functions
+$L['NEWS_FUNCTIONS'] = '新闻功能';
+$L['NEWS'] = '新闻';
+$L['NEWS_CONTENT'] = '查看最新的 QuickBox 新闻';
+
+//support functions
+$L['SUPPORT_FUNCTIONS'] = '支持函数';
+$L['ENABLE_SUPPORT'] = '启用支持';
+$L['ENABLE_SUPPORT_CONTENT'] = '启用支持. 通常分配给负责支持的工作人员团队成员';
+$L['DISABLE_SUPPORT'] = '禁用支持';
+$L['DISABLE_SUPPORT_CONTENT'] = '禁用支持. 否则, 支持帐户将在 36 小时后自动删除';
+
+//update functions
+$L['UPDATE_FUNCTIONS'] = '更新函数';
+$L['UPDATE_CHECK'] = '更新检查';
+$L['UPDATE_CHECK_CONTENT'] = '检查 QuickBox 的更新';
+$L['UPDATE_QUICKBOX'] = '更新 QuickBox';
+$L['UPDATE_QUICKBOX_CONTENT'] = '将 QuickBox 安装更新到最新版本(如果有)';
+
+//bugs
+$L['BUGS'] = '错误和报告';
+$L['BUGS_INFO_CONTENT'] = '<p>QuickBox 文档的图形显示将定期更新, 以确保所提供的信息易于访问且用户友好. 我们致力于增强您的 QuickBox 体验, 这促使我们不断完善和改进文档, 使其保持最新的特性和功能.<br/><br/>
+在每次更新中, 我们将努力简化复杂的概念、澄清说明并纳入用户反馈, 以使 qb 手册页更加直观和高效. 我们的目标是让您能够无缝了解 QuickBox 及其丰富的功能, 使您能够掌握 qb CLI 环境并轻松管理您的服务器任务.<br/><br/>
+我们重视您的意见, 并鼓励您分享任何建议或想法, 以进一步增强 qb 联机帮助页. 您的反馈有助于塑造此资源并确保它对所有 QuickBox 用户仍然是有价值的参考. 事实上, 该页面存在是因为有人请求！ 🤪<br/><br/>
+向 <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO 实验室问题和功能跟踪器</a></strong></p>';
+
+//disclaimer
+$L['DISCLAIMER'] = '免责声明';
+$L['DISCLAIMER_TEXT'] = '<p>此脚本仅供一般用途, 不保证其适用于任何给定任务. QuickBox.IO 对您的设置或使用/安装/修改此脚本或其任何插件时造成的任何损害不承担任何责任. 请记住, QuickBox.IO 及其员工不负责使您的软件和/或服务器保持最新状态； 这是 QuickBox Pro 软件用户的全部责任.</p>';
+
+//license
+$L['LICENSE'] = '许可证';
+$L['LICENSE_SET'] = '根据 BSD 3-Clause 获得许可';
+$L['LICENSE_TEXT'] = '<p>版权所有 (c) 2018-2023, QuickBox.IO. 保留所有权利.</p>
+<p>只要满足以下条件, 就可以以源代码和二进制形式重新分发和使用, 无论是否经过修改：</p>
+<ul style="font-size:0.75rem"><li>源代码的重新分发必须保留上述版权声明、此条件列表以及以下免责声明.</li>
+<li>以二进制形式重新分发时, 必须在随分发提供的文档和/或其他材料中复制上述版权声明、本条件列表以及以下免责声明.</li>
+<li>未经事先明确书面许可, 不得使用版权所有者的姓名及其贡献者的姓名来认可或推广从此软件衍生的产品.</li></ul>
+<p>本软件由版权所有者和贡献者“按原样”提供, 不承担任何明示或默示的保证, 包括但不限于适销性和特定用途适用性的默示保证. 在任何情况下, 版权持有者或贡献者均不对任何直接、间接、附带、特殊、惩戒性或后果性损害(包括但不限于采购替代商品或服务；使用损失、数据或利润损失；或损失)承担责任. 或业务中断), 无论是何种原因造成的, 并且基于任何责任理论, 无论是合同责任、严格责任还是侵权行为(包括疏忽或其他), 均因使用本软件而产生, 即使已被告知可能发生此类损害. </p>';
+
+//misc
+$L['EXAMPLE'] = '示例:';
+$L['EXAMPLES'] = '示例:';
+
+//deprecated
+$L['ABOUT'] = '关于';
+$L['GETTING_SUPPORT'] = '获得支持';
+$L['HELP_TEXT'] = '<p class="fs14">由 <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
+可以在包括论坛在内的许多地方找到对该脚本的支持. 如果您需要有关 QuickBox Pro 及其包含的应用程序的问题的任何支持, 您可以找到它 <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/qbpro" rel="noopener nofollow" target="_blank">此处</a>.<br><br>
+或者访问 QuickBox.IO 网站, 其中还有更多信息, 包括实时聊天 <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="nofollow"> 这里</a>.<br><br>
+如果您需要就脚本问题联系 QuickBox 工作人员, 您可以使用 Plaza 的问题跟踪器 <a href="https://nullrefer.ir/?https://plaza.quickbox.io/new-topic?title=State the issue here&body=Please describe in as much detail the nature of the issue&category=QuickBox Pro/Issue Tracker&tags=issue,tracker,' . $version . '" rel="noopener nofollow" target="_blank">这里</a>.</p><br><br>';
+$L['HELP_TITLE'] = 'QuickBox 管理面板、仪表板门户和用户管理';
+$L['帮助'] = '帮助';
+//commands
 $L['ADDITIONAL_ADMIN_COMMANDS'] = '其他管理应用程序设置命令';
 $L['ADMIN_UPGRADE_COMMANDS'] = '管理员升级命令';
 $L['CLEAN_MEM_INFO'] = '如果您决定清除系统物理内存中的高速缓存, 请以 root 身份运行上述命令.';

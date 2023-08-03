@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : June 29, 2023        *
+ * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1105,25 +1105,177 @@ $L['EVENT'] = 'Evento';
 $L['LOGS_SUMMARY'] = 'Resumen de registros';
 $L['COMMAND'] = 'Comando';
 
-//#4.4.5 - ABOUT / QUICKTIPS
+//#4.4.5 - HELP MANUAL
+$L['QB_HELP'] = 'Manual de ayuda';
+
+//description
+$L['DESCRIPTION_CONTENT'] = '<p>Bienvenido a la visualización gráfica integral de la página de manual de <code>qb</code>, diseñada para ofrecerle un enfoque traducido, simplificado y eficiente para acceder a diversa información sobre QuickBox. Esta interfaz fácil de usar tiene como objetivo proporcionar información detallada sobre el funcionamiento de QuickBox, una herramienta poderosa y versátil para administrar su servidor sin esfuerzo.</p>
+<p>Dentro de esta pantalla gráfica, encontrará una lista detallada de las aplicaciones disponibles listas para una instalación perfecta, lo que le permitirá personalizar la configuración de su servidor de acuerdo con sus necesidades específicas. Además, este recurso presenta una gran cantidad de otros comandos esenciales para una utilización óptima dentro del entorno CLI de <code>qb</code>, lo que le permite navegar a través de las tareas de su servidor de manera eficiente y sin esfuerzo.</p>
+<p>Tanto si es nuevo en QuickBox como si es un usuario experimentado, esta visualización gráfica de la página de manual de <code>qb</code> sirve como referencia definitiva para aprovechar todo el potencial de QuickBox y liberar el verdadero poder de la administración de su servidor. Explore las diversas funciones, optimice las operaciones de su servidor y maximice su productividad con la ayuda de esta guía intuitiva e informativa. ¡Sumerjámonos y hagamos que su experiencia con QuickBox sea aún más gratificante!</p>';
+$L['API_INFO_DIRECT'] = '<p style="font-weight:600;">Para obtener más información y referencias sobre la API integrada de QuickBox, <a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--infoColor);">ver esta página</a>.</p>';
+
+//options
+$L['OPTIONS_HEADER'] = 'Opciones';
+$L['OPTIONS_CONTENT_HELP'] = 'Muestra este manual de ayuda en formato de página de manual CLI';
+$L['OPTIONS_CONTENT_VERBOSE'] = 'Habilita el modo detallado para la depuración';
+
+//software
+$L['SOFTWARE_HEADER'] = 'Software';
+$L['SOFTWARE_INFO_CONTENT'] = '<p>La siguiente es una lista de todas las aplicaciones disponibles para instalar proporcionadas a través de la compilación de QuickBox.<br/>Los nombres de software se presentan como los ve <code>qb [install|reinstall|update|remove|help] [software_name]</code></p>';
+$L['ADMIN_INSTALLED_SOFTWARE_HEADER'] = 'Software instalado por el administrador';
+$L['ADMIN_INSTALLED_SOFTWARE_INFO_CONTENT'] = '<p>El administrador del sistema debe instalar las siguientes aplicaciones.<br/>Consulte la columna de disponibilidad a continuación para obtener detalles adicionales.</p>';
+$L['MULTI_USER_SOFTWARE_HEADER'] = 'Software multiusuario';
+$L['MULTI_USER_SOFTWARE_INFO_CONTENT'] = '<p>Múltiples usuarios pueden instalar las siguientes aplicaciones sin necesidad de asistencia administrativa.<br/>El administrador del sistema determina la disponibilidad de todas las aplicaciones y se otorga a usuarios adicionales dentro de <a href="/usergroups.php" rel="noopener nofollow" class="link">grupos creados</a>.</p>';
+$L['SINGLE_USER_SOFTWARE_HEADER'] = 'Software de usuario único';
+$L['SINGLE_USER_SOFTWARE_INFO_CONTENT'] = '<p>Las siguientes aplicaciones pueden ser instaladas por un solo usuario asignado a la vez, sin necesidad de asistencia administrativa.<br/>Toda la disponibilidad de la aplicación la determina el administrador del sistema y se otorga a usuarios adicionales dentro de <a href="/usergroups.php" rel="noopener nofollow" class="link">grupos creados</a>.</p>';
+$L['SOFTWARE_MANAGEMENT'] = 'Administración de software';
+$L['SOFTWARE_MANAGEMENT_CONTENT'] = 'Parámetros para instalar, reinstalar, actualizar o eliminar software designado con opciones adicionales (si están presentes/deseadas) para un usuario asignado';
+$L['SOFTWARE_MANAGEMENT_WARNING_CONTENT'] = '<p>Recuerde que varias aplicaciones tienen varias opciones/requisitos. La mayoría requiere el uso de la marca de nombre de usuario (<code>-u</code>), mientras que aplicaciones como rtorrent no lo harán. Para verificar todas las opciones disponibles para un software específico, utilice <code class="language-bash">qb help [software_name]</code>. Los nombres de aplicaciones dentro de QuickBox para el esquema de nombres de software se pueden ver en el <a href="#software" class="link">gráfico de lista de software</a> anterior.</p>';
+$L['SEE_ALSO_HEADER'] = 'Ver también';
+$L['SEE_ALSO_CONTENT'] = 'Mostrar el uso de comandos útiles para el software designado';
+//tables
+$L['SOFTWARE_NAME'] = 'Nombre del software';
+
+//examples
+$L['EXAMPLES_HEADER'] = 'Ejemplos';
+
+//user management
+$L['USER_MANAGEMENT_INFO_CONTENT'] = '<p>Las funciones de administración de <code>qb user</code> en QuickBox ofrecen un conjunto versátil y poderoso de herramientas para administrar eficientemente a los usuarios en su servidor. Con un enfoque en la facilidad de uso y la funcionalidad robusta, estas funciones le permiten optimizar la administración de usuarios, mejorar la seguridad y garantizar una operación fluida del servidor.</p>';
+$L['CREATE_USER_CONTENT'] = 'Crea una nueva cuenta de usuario de QuickBox';
+$L['DELETE_USER_CONTENT'] = 'Elimina la cuenta de usuario de QuickBox';
+$L['CHANGE_USER_PASSWORD'] = 'Cambiar contraseña de usuario';
+$L['CHANGE_USER_PASSWORD_CONTENT'] = 'Cambia la contraseña de la cuenta de usuario asignada';
+$L['BAN_USER_CONTENT'] = 'Prohíbe la cuenta de usuario asignada, impidiendo el inicio de sesión y deteniendo los servicios instalados y sus funciones.';
+$L['BAN_USER_PRIMARY_CONTENT'] = '<p><em>Esto no <strong>borra</strong> los datos del usuario</em>, solo desactiva los servicios en ejecución y bloquea el acceso.</p>';
+$L['UNBAN_USER_CONTENT'] = 'Desbanea la cuenta de usuario asignada, permitiendo iniciar sesión e iniciar los servicios instalados y sus funciones';
+$L['PROMOTE_USER_TO_ADMIN'] = 'Promocionar usuario a administrador';
+$L['PROMOTE_USER_TO_ADMIN_CONTENT'] = 'Asciende al usuario asignado al nivel de administrador';
+$L['DEMOTE_USER_FROM_ADMIN'] = 'Degradar usuario de administrador';
+$L['DEMOTE_USER_FROM_ADMIN_CONTENT'] = 'Degrada al usuario asignado al nivel de usuario estándar';
+$L['SET_USER_QUOTA'] = 'Establecer cuota de usuario';
+$L['SHOW_USER_QUOTA'] = 'Mostrar cuota de usuario';
+$L['SET_USER_SHELL'] = 'Establecer shell de usuario';
+$L['SET_USER_SHELL_CONTENT'] = 'Establece el entorno de shell para el usuario asignado';
+$L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>privilegios de administrador completos para el entorno del servidor (gran poder... etc.)<br><strong ><code>full</code></strong><br>acceso completo al entorno del servidor, con la excepción de las áreas privilegiadas más altas; es decir: no sudo y no puede acceder a los directorios raíz.<br><strong><code>limited</code></strong><br>el entorno de shell limitado. muy poco acceso a los comandos y encarcelados en su propio directorio de inicio de usuario.</p><hr/><p>Los entornos de shell los establece el administrador del sistema y se pueden ver en la página de edición de usuarios ubicada dentro de <a href="/useradmin.php" rel="noopener nofollow" class="link">Página de administración de usuarios</a>.<br/>Si desea agregar un nuevo entorno de shell, puede hacerlo editando el <code>/etc/shells</code> y agregando la ruta al entorno de shell que le gustaría agregar.</p>';
+$L['USER_RCLONE_COMPANION_COMMANDS'] = 'Comandos de Rclone';
+
+//clean functions
+$L['CLEAN_FUNCTIONS'] = 'Limpiar funciones';
+$L['CLEAN_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb clean</code> en QuickBox ofrecen una forma conveniente y eficiente de mantener la limpieza de su servidor y optimizar su rendimiento. Diseñadas teniendo en cuenta la simplicidad y la eficacia, estas funciones le permiten liberar memoria valiosa, eliminar el desorden innecesario y garantizar un funcionamiento del servidor fluido y optimizado.</p>';
+$L['CLEAN_MEMORY'] = 'Limpiar memoria';
+$L['CLEAN_MEMORY_CONTENT'] = 'Limpia cachés de memoria de QuickBox';
+$L['CLEAN_DASHBOARD_LOGS'] = 'Limpiar registros del panel';
+$L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Limpia los registros del tablero de QuickBox para el usuario designado';
+$L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Limpiar registros de carga de Rclone';
+$L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Limpia los registros de carga de QuickBox rclone para el usuario designado';
+$L['CLEAN_LOCKS'] = 'Limpiar candados';
+$L['CLEAN_LOCKS_CONTENT'] = 'Limpia el software QuickBox y los bloqueos apt-dpkg que pueden impedir que QuickBox instale software nuevo';
+
+//fix functions
+$L['FIX_FUNCTIONS'] = 'Reparar funciones';
+$L['FIX_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb fix</code> en QuickBox proporcionan un conjunto de herramientas potente y fácil de usar para abordar problemas comunes y realizar reparaciones del sistema sin esfuerzo. Con un enfoque en la simplicidad y la eficacia, estas funciones le permiten detectar y resolver varios problemas que puedan surgir en su servidor, lo que garantiza operaciones fluidas e ininterrumpidas.</p>';
+$L['FIX_HOME'] = 'Reparar Inicio';
+$L['FIX_HOME_CONTENT'] = 'Corregir los permisos del directorio principal de los usuarios designados';
+$L['FIX_PHP'] = 'Reparar PHP';
+$L['FIX_PHP_CONTENT'] = 'Arreglar la configuración de PHP e instalar las extensiones faltantes. Esto también actualizará los paquetes de PHP a la última versión';
+$L['FIX_PYTHON'] = 'Reparar Python';
+$L['FIX_PYTHON_CONTENT'] = 'Reparar la configuración de Python e instalar las extensiones faltantes. Además, las etapas de python3.9 si no están disponibles actualmente en el sistema para su uso predeterminado en compilaciones de aplicaciones que requieren python';
+$L['FIX_VERSION'] = 'Versión fija';
+$L['FIX_VERSION_CONTENT'] = 'Arreglar la instalación de QuickBox reinstalando la última versión disponible';
+
+//generate functions
+$L['GENERATE_FUNCTIONS'] = 'Generar funciones';
+$L['GENERATE_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb generate</code> en QuickBox ofrecen una forma conveniente y eficiente de crear elementos esenciales que mejoran la administración y el monitoreo del servidor. Actualmente, el comando qb generate es compatible con la función de generación de registros de qb, lo que permite a los usuarios generar sin esfuerzo una vista previa de las estadísticas de los servidores, la activación de API y la información de montaje.<br/>A medida que las funciones de generación de qb evolucionen, es probable que ofrezcan una matriz en expansión de funciones para mejorar aún más la administración del servidor.</p>';
+$L['GENERATE_SYSTEM_LOGS'] = 'Generar registros del sistema';
+$L['GENERATE_SYSTEM_LOGS_CONTENT'] = 'Genera registros del sistema para la instalación actual de QuickBox';
+$L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>Este comando es actualmente un trabajo en progreso y será actualizado y ampliado en un futuro cercano.</p>';
+$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>También puede generar y descargar el registro del sistema producido por el comando anterior en <a href="/troubleshooting.php" rel="noopener nofollow" class="link"> Página de solución de problemas</a>.<br/>El registro generado se almacena en el servidor en <code>/srv/quickbox/logs/system_log</code>.</p>';
+
+//manage functions
+$L['MANAGE_FUNCTIONS'] = 'Administrar funciones';
+$L['MANAGE_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb manage</code> en QuickBox brindan un conjunto de herramientas poderoso y completo para administrar eficientemente varios aspectos de su servidor. Diseñadas pensando en la comodidad del usuario, estas funciones le permiten controlar sin esfuerzo los elementos críticos de su entorno impulsado por QuickBox.<br/>Ya sea para cambiar la configuración de idioma, verificar el estado de la activación de su API principal, administrar la distribución de datos o garantizando la integridad de los datos a través de copias de seguridad y reversiones, las funciones de gestión de qb ofrecen una solución integral para administradores de servidores y entusiastas por igual.</p>';
+$L['MANAGE_API_KEY'] = 'Administrar clave API';
+$L['MANAGE_API_KEY_CONTENT'] = 'Administrar claves API de QuickBox y enumerar información y opciones adicionales';
+$L['ADD_API_KEY'] = 'Agregar clave API';
+$L['ADD_API_KEY_CONTENT'] = 'Agregar/Activar clave API';
+$L['REMOVE_API_KEY'] = 'Quitar clave API';
+$L['REMOVE_API_KEY_CONTENT'] = 'Quitar/Desactivar clave API';
+$L['MANAGE_DASHBOARD_ACCESS_URL'] = 'Administrar URL de acceso al panel';
+$L['MANAGE_DASHBOARD_ACCESS_URL_CONTENT'] = 'Este comando establece la raíz web del servidor para el acceso al tablero ya sea al Dominio expresado oa la Dirección IP';
+$L['SET_SERVER_LANG'] = 'Establecer idioma del servidor';
+$L['SET_SERVER_LANG_CONTENT'] = 'Este comando establecerá el idioma solicitado como idioma predeterminado para el servidor';
+$L['MANAGE_PUBLIC_TRACKERS'] = 'Administrar rastreadores públicos';
+$L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = 'Este comando activará o desactivará los rastreadores públicos para todos los usuarios';
+$L['EX_PUB_TRACKERS_ALLOW'] = 'ejemplo para permitir rastreadores públicos:';
+$L['EX_PUB_TRACKERS_DISALLOW'] = 'ejemplo para no permitir rastreadores públicos:';
+$L['BACKUP_APPLICATIONS'] = 'Aplicaciones de respaldo';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Copia de seguridad parcial <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = 'Este comando respaldará la configuración de la aplicación designada para el usuario asignado';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Copia de seguridad completa <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(-mainFontColor)">config &amp; aplicación</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = 'Este comando hará una copia de seguridad de la aplicación designada para el usuario asignado. Incluye la aplicación y los datos de configuración, útiles para revertir a versiones previamente instaladas y respaldadas';
+$L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = 'Copia de seguridad parcial (solo rtorrent)';
+$L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>En el caso de rtorrent como la configuración de software para la copia de seguridad, no se requiere el indicador de nombre de usuario (<code>-u</code>).</p>';
+$L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = 'Este comando realizará una copia de seguridad de todos los archivos .rtorrent.rc de los usuarios de rtorrent existentes.<br>Las copias de seguridad se almacenan en:<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent /backup/.rtorrent.rc_AÑO-MES-DÍA_HORA:MINUTO</código>';
+$L['ROLLBACK_APPLICATIONS'] = 'Restaurar copia de seguridad de la aplicación';
+$L['ROLLBACK_APPLICATIONS_CONTENT'] = 'Este comando revertirá la aplicación designada para el usuario asignado a una versión anterior almacenada/seleccionada en el directorio de copia de seguridad.<br>Las copias de seguridad se almacenan en:<br><code>/home/[ NOMBRE DE USUARIO]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = 'Restaurar copia de seguridad <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'Este comando restaurará la configuración de la aplicación designada previamente respaldada para el usuario asignado';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Restaurar predeterminado <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'Este comando restaurará la configuración de la aplicación predeterminada designada (desde la instalación) para el usuario asignado';
+
+//news functions
+$L['NEWS_FUNCTIONS'] = 'Funciones de Noticias';
+$L['NEWS'] = 'Noticias';
+$L['NEWS_CONTENT'] = 'Ver las últimas noticias de QuickBox';
+
+//support functions
+$L['SUPPORT_FUNCTIONS'] = 'Funciones de soporte';
+$L['ENABLE_SUPPORT'] = 'Habilitar soporte';
+$L['ENABLE_SUPPORT_CONTENT'] = 'Habilitar soporte. Por lo general, se asigna al miembro del equipo de personal que es responsable del soporte';
+$L['DISABLE_SUPPORT'] = 'Deshabilitar soporte';
+$L['DISABLE_SUPPORT_CONTENT'] = 'Deshabilitar soporte. De lo contrario, la cuenta de soporte se eliminará automáticamente después de 36 horas';
+
+//update functions
+$L['UPDATE_FUNCTIONS'] = 'Funciones de actualización';
+$L['UPDATE_CHECK'] = 'Actualizar verificación';
+$L['UPDATE_CHECK_CONTENT'] = 'Buscar actualizaciones de QuickBox';
+$L['UPDATE_QUICKBOX'] = 'Actualizar QuickBox';
+$L['UPDATE_QUICKBOX_CONTENT'] = 'Actualizar la instalación de QuickBox a la última versión, si hay alguna disponible';
+
+//bugs
+$L['BUGS'] = 'Errores e informes';
+$L['BUGS_INFO_CONTENT'] = '<p>La visualización gráfica de la documentación de QuickBox recibirá actualizaciones periódicas para garantizar que la información proporcionada siga siendo fácilmente accesible y fácil de usar. Nuestro compromiso de mejorar su experiencia con QuickBox nos impulsa a refinar y mejorar continuamente la documentación, manteniéndola actualizada con las últimas características y funcionalidades.<br/><br/>
+Con cada actualización, nos esforzaremos por simplificar conceptos complejos, aclarar instrucciones e incorporar comentarios de los usuarios para hacer que la página de manual de qb sea aún más intuitiva y eficiente. Nuestro objetivo es brindarle una comprensión perfecta de QuickBox y sus amplias capacidades, lo que le permite dominar el entorno qb CLI y administrar sin esfuerzo las tareas de su servidor.<br/><br/>
+Valoramos sus comentarios y lo alentamos a compartir cualquier sugerencia o idea que pueda tener para mejorar aún más la página de manual de qb. Sus comentarios son fundamentales para dar forma a este recurso y garantizar que siga siendo una referencia valiosa para todos los usuarios de QuickBox. ¡De hecho, esta página existe porque fue solicitada! 🤪<br/><br/>
+Informe cualquier error reproducible o sugerencia a <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">Rastreador de problemas y funciones de QuickBox.IO Labs</a></strong></p>';
+
+//disclaimer
+$L['DISLAIMER'] = 'Descargo de responsabilidad';
+$L['DISCLAIMER_TEXT'] = '<p>Este script está diseñado para uso general y no implica ninguna garantía de idoneidad para una tarea dada. QuickBox.IO no será responsable de su configuración ni de ningún daño causado durante el uso/instalación/modificación de este script o cualquiera de sus complementos. Tenga en cuenta que ni QuickBox.IO ni su personal son responsables de mantener actualizado su Software y/o Servidor; esta es una responsabilidad exclusiva del usuario del software QuickBox Pro.</p>';
+
+//license
+$L['LICENSE'] = 'Licencia';
+$L['LICENSE_SET'] = 'Con licencia bajo BSD 3-Cláusula';
+$L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. Todos los derechos reservados.</p>
+<p>Se permite la redistribución y el uso en formato fuente y binario, con o sin modificaciones, siempre que se cumplan las siguientes condiciones:</p>
+<ul style="font-size:0.75rem"><li>Las redistribuciones del código fuente deben conservar el aviso de derechos de autor anterior, esta lista de condiciones y el siguiente descargo de responsabilidad.</li>
+<li>Las redistribuciones en forma binaria deben reproducir el aviso de derechos de autor anterior, esta lista de condiciones y el siguiente descargo de responsabilidad en la documentación y/u otros materiales provistos con la distribución.</li>
+<li>Ni el nombre del titular de los derechos de autor ni los nombres de sus colaboradores pueden utilizarse para respaldar o promocionar productos derivados de este software sin el permiso previo por escrito.</li></ul>
+<p>ESTE SOFTWARE ES PROPORCIONADO POR LOS TITULARES DE LOS DERECHOS DE AUTOR Y LOS CONTRIBUYENTES "TAL CUAL" Y CUALQUIER GARANTÍA EXPLÍCITA O IMPLÍCITA, INCLUYENDO, ENTRE OTRAS, LAS GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD E IDONEIDAD PARA UN FIN DETERMINADO. EN NINGÚN CASO EL TITULAR DE LOS DERECHOS DE AUTOR O LOS CONTRIBUYENTES SERÁN RESPONSABLES POR CUALQUIER DAÑO DIRECTO, INDIRECTO, INCIDENTAL, ESPECIAL, EJEMPLAR O CONSECUENTE (INCLUYENDO, ENTRE OTROS, LA ADQUISICIÓN DE BIENES O SERVICIOS SUSTITUTOS; PÉRDIDA DE USO, DATOS O BENEFICIOS; O INTERRUPCIÓN DEL NEGOCIO) CUALQUIER CAUSA Y EN CUALQUIER TEORÍA DE RESPONSABILIDAD, YA SEA POR CONTRATO, RESPONSABILIDAD ESTRICTA O AGRAVIO (INCLUYENDO NEGLIGENCIA O DE OTRO TIPO) QUE SURJA DE CUALQUIER FORMA DEL USO DE ESTE SOFTWARE, INCLUSO SI SE ADVIERTE DE LA POSIBILIDAD DE DICHO DAÑO. </p>';
+
+//misc
+$L['EXAMPLE'] = 'ejemplo:';
+$L['EXAMPLES'] = 'ejemplos:';
+
+//deprecated
 $L['ABOUT'] = 'Acerca de';
-$L['DISCLAIMER_TEXT'] = '<p class="fs14">Este script está destinado para uso general y no se garantiza la idoneidad para ninguna tarea determinada. QuickBox.IO no se responsabilizará de su configuración o de cualquier daño causado al usar / instalar / modificar este script o cualquiera de sus complementos. Tenga en cuenta que QuickBox.IO ni su personal son responsables de mantener actualizado su Software y / o Servidor; Esta es una responsabilidad exclusiva del usuario del software QuickBox Pro.</p>';
-$L['DISCLAIMER'] = '<h3><strong>Disclaimer</strong></h3>';
 $L['GETTING_SUPPORT'] = 'Getting Support';
 $L['HELP_TEXT'] = '<p class="fs14">Hecho con amor por <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
-    Podrás encontrar ayuda en varios lugares, incluidos los foros. Si necesitas asistencia o tienes una duda relacionada con QuickBox Pro y sus aplicaciones, puedes encontrarla <a href="https://nullrefer.ir/?https://plaza.quickbox.io" rel="noopener nofollow" target="_blank">aquí</a>.<br><br>
-    O visitanos en QuickBox.IO, donde hay algunos bits más de información, incluido un chat <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank"> aquí</a>.<br><br>
-    Si necesitas ponerte en contacto con el personal de QuickBox sobre un problema o falla con el script, puedes reportarlo en nuestra <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">Discord</a> o enviar una publicación <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/bugs "rel="noopener nofollow" target="_blank"> here </a>.</p><br><br>';
+Podrás encontrar ayuda en varios lugares, incluidos los foros. Si necesitas asistencia o tienes una duda relacionada con QuickBox Pro y sus aplicaciones, puedes encontrarla <a href="https://nullrefer.ir/?https://plaza.quickbox.io" rel="noopener nofollow" target="_blank">aquí</a>.<br><br>
+O visitanos en QuickBox.IO, donde hay algunos bits más de información, incluido un chat <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank"> aquí</a>.<br><br>
+Si necesitas ponerte en contacto con el personal de QuickBox sobre un problema o falla con el script, puedes reportarlo en nuestra <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">Discord</a> o enviar una publicación <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/bugs "rel="noopener nofollow" target="_blank"> here </a>.</p><br><br>';
 $L['HELP_TITLE'] = 'Panel de Control QuickBox, Página Principal & Gestión de Usuarios';
 $L['HELP'] = 'Ayuda';
-$L['LICENSE_SET'] = '<h3><strong>Licencia BSD 3-Clause</strong></h3>';
-$L['LICENSE_TEXT'] = '<p class="fs14">Copyright (c) 2018-2023, QuickBox.IO. Todos los derechos reservados.</p>
-    <p class="fs14">La redistribución y el uso en las formas de código fuente y binario, con o sin modificaciones, están permitidos siempre que se cumplan las siguientes condiciones:
-    <ul><li class="fs14">Las redistribuciones del código fuente deben conservar el aviso de copyright anterior, esta lista de condiciones y el siguiente descargo de responsabilidad.</li>
-    <li class="fs14">Las redistribuciones en formato binario deben reproducir el aviso de copyright anterior, esta lista de condiciones y el siguiente descargo de responsabilidad en la documentación y/u otros materiales suministrados con la distribución.</li>
-    <li class="fs14">Ni el nombre de los titulares de derechos de autor ni los nombres de sus colaboradores pueden usarse para apoyar o promocionar productos derivados de este software sin permiso específico previo y por escrito.</li></ul>
-    <p class="fs14">ESTE SOFTWARE SE SUMINISTRA POR LOS PROPIETARIOS DEL COPYRIGHT Y COLABORADORES “COMO ESTÁ” Y CUALQUIER GARANTÍAS EXPRESA O IMPLÍCITA, INCLUYENDO, PERO NO LIMITADO A, LAS GARANTÍAS IMPLÍCITAS DE COMERCIALIZACIÓN Y APTITUD PARA UN PROPÓSITO PARTICULAR SON RECHAZADAS. EN NINGÚN CASO LOS PROPIETARIOS DEL COPYRIGHT Y COLABORADORES SERÁN RESPONSABLES POR NINGÚN DAÑO DIRECTO, INDIRECTO, INCIDENTAL, ESPECIAL, EJEMPLAR O COSECUENCIAL (INCLUYENDO, PERO NO LIMITADO A, LA ADQUISICIÓN O SUSTITUCIÓN DE BIENES O SERVICIOS; LA PÉRDIDA DE USO, DE DATOS O DE BENEFICIOS; O INTERRUPCIÓN DE LA ACTIVIDAD EMPRESARIAL) O POR CUALQUIER TEORÍA DE RESPONSABILIDAD, YA SEA POR CONTRATO, RESPONSABILIDAD ESTRICTA O AGRAVIO (INCLUYENDO NEGLIGENCIA O CUALQUIER OTRA CAUSA) QUE SURJA DE CUALQUIER MANERA DEL USO DE ESTE SOFTWARE, INCLUSO SI SE HA ADVERTIDO DE LA POSIBILIDAD DE TALES DAÑOS.</p>';
-
 //commands
 $L['ADDITIONAL_ADMIN_COMMANDS'] = 'Comandos adicionales de Configuración de las Aplicaciones de Administración';
 $L['ADMIN_UPGRADE_COMMANDS'] = 'Comandos de Actualización del Administrador';
