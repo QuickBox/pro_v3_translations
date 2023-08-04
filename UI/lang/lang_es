@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1135,6 +1135,13 @@ $L['SEE_ALSO_HEADER'] = 'Ver también';
 $L['SEE_ALSO_CONTENT'] = 'Mostrar el uso de comandos útiles para el software designado';
 //tables
 $L['SOFTWARE_NAME'] = 'Nombre del software';
+$L['INFO'] = 'Información';
+$L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;tamaño de fuente:0.5rem;">global</span>';
+$L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multiusuario</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">usuario único</span>';
+$L['GLOBAL_INFO'] = 'requiere instalación del administrador e instalaciones para todos los usuarios del sistema.';
+$L['MULTI_USER_INFO'] = 'requiere instalación de administrador y se puede instalar para cualquier usuario asignado. se admiten múltiples usuarios.';
+$L['SINGLE_USER_INFO'] = 'usuario único, solo administrador. requiere la instalación del administrador y es instalado y operado por el usuario administrador.';
 
 //examples
 $L['EXAMPLES_HEADER'] = 'Ejemplos';
@@ -1156,7 +1163,8 @@ $L['SET_USER_QUOTA'] = 'Establecer cuota de usuario';
 $L['SHOW_USER_QUOTA'] = 'Mostrar cuota de usuario';
 $L['SET_USER_SHELL'] = 'Establecer shell de usuario';
 $L['SET_USER_SHELL_CONTENT'] = 'Establece el entorno de shell para el usuario asignado';
-$L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>privilegios de administrador completos para el entorno del servidor (gran poder... etc.)<br><strong ><code>full</code></strong><br>acceso completo al entorno del servidor, con la excepción de las áreas privilegiadas más altas; es decir: no sudo y no puede acceder a los directorios raíz.<br><strong><code>limited</code></strong><br>el entorno de shell limitado. muy poco acceso a los comandos y encarcelados en su propio directorio de inicio de usuario.</p><hr/><p>Los entornos de shell los establece el administrador del sistema y se pueden ver en la página de edición de usuarios ubicada dentro de <a href="/useradmin.php" rel="noopener nofollow" class="link">Página de administración de usuarios</a>.<br/>Si desea agregar un nuevo entorno de shell, puede hacerlo editando el <code>/etc/shells</code> y agregando la ruta al entorno de shell que le gustaría agregar.</p>';
+$L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>privilegios de administrador completos para el entorno del servidor (gran poder... etc.)<br><strong><code>full</code></strong><br>acceso completo al entorno del servidor, con la excepción de las áreas privilegiadas más altas; es decir: no sudo y no puede acceder a los directorios raíz.<br><strong><code>limited</code></strong><br>el entorno de shell limitado. muy poco acceso a los comandos y encarcelados en su propio directorio de inicio de usuario.</p><hr/><p>Los entornos de shell los establece el administrador del sistema y se pueden ver en la página de edición de usuarios ubicada dentro de <a href="/useradmin.php" rel="noopener nofollow" class="link">Página de administración de usuarios</a>.<br/>Si desea agregar un nuevo entorno de shell, puede hacerlo editando el <code>/etc/shells</code> y agregando la ruta al entorno de shell que le gustaría agregar.</p>';
+$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Precaución:</strong> tenga en cuenta que cambiar el entorno de shell a cualquier otro que no sea <code>/bash</code> puede provocar un comportamiento no deseado al usar < code>qb</code> (QuickBox), ya que ha sido específicamente diseñado y optimizado para el entorno <code>/bash</code>. En resumen, <code>qb</code> se basa en características y funcionalidades específicas proporcionadas por el shell Bash.<br><br>Para evitar posibles problemas, se recomienda seguir con <code>/bash</code> entorno al usar <code>qb</code>. Si aún desea usar un shell diferente, consulte la documentación de ese shell para revisar cualquier cambio adicional en las rutas, configuraciones u otras configuraciones que puedan necesitar ser actualizadas para garantizar la compatibilidad con <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Comandos de Rclone';
 
 //clean functions

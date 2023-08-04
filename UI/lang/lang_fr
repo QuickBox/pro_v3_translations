@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Français	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1131,6 +1131,13 @@ $L['SEE_ALSO_HEADER'] = 'Voir aussi';
 $L['SEE_ALSO_CONTENT'] = 'Afficher l\'utilisation des commandes utiles pour le logiciel désigné';
 //tables
 $L['SOFTWARE_NAME'] = 'Nom du logiciel';
+$L['INFO'] = 'Info';
+$L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
+$L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multi utilisateur</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">utilisateur unique</span>';
+$L['GLOBAL_INFO'] = 'nécessite l\'installation de l\'administrateur et s\'installe pour tous les utilisateurs du système.';
+$L['MULTI_USER_INFO'] = 'nécessite une installation administrateur et peut être installé pour n\'importe quel utilisateur assigné. plusieurs utilisateurs sont pris en charge.';
+$L['SINGLE_USER_INFO'] = 'utilisateur unique, administrateur uniquement. nécessite une installation admin et est installé et exploité par l\'utilisateur admin.';
 
 //examples
 $L['EXAMPLES_HEADER'] = 'Exemples';
@@ -1153,6 +1160,7 @@ $L['SHOW_USER_QUOTA'] = 'Afficher le quota d\'utilisateurs';
 $L['SET_USER_SHELL'] = 'Définir le shell utilisateur';
 $L['SET_USER_SHELL_CONTENT'] = 'Définit l\'environnement shell pour l\'utilisateur assigné';
 $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>complète les privilèges d\'administrateur sur l\'environnement du serveur (grande puissance... etc)<br><strong><code>full</code></strong><br>accès complet à l\'environnement du serveur, à l\'exception des zones à privilèges plus élevés; c\'est-à-dire: pas de sudo et ne peut pas accéder aux répertoires racine.<br><strong><code>limited</code></strong><br>l\'environnement shell limité. très peu d\'accès aux commandes et emprisonnés dans leur propre répertoire d\'accueil utilisateur.</p><hr/><p>Les environnements shell sont définis par l\'administrateur système et peuvent être consultés sur la page d\'édition des utilisateurs située dans le <a href="/useradmin.php" rel="noopener nofollow" class="link">Page d\'administration des utilisateurs</a>.<br/>Si vous souhaitez ajouter un nouvel environnement shell, vous pouvez le faire en modifiant le <code>/etc/shells</code> et en ajoutant le chemin vers l\'environnement shell que vous souhaitez ajouter.</p>';
+$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Attention:</strong> Veuillez noter que la modification de l\'environnement du shell par autre chose que <code>/bash</code> peut entraîner un comportement inattendu lors de l\'utilisation de < code>qb</code> (QuickBox), car il a été spécifiquement conçu et optimisé pour l\'environnement <code>/bash</code>. En bref, <code>qb</code> s\'appuie sur des caractéristiques et fonctionnalités spécifiques fournies par le shell Bash.<br><br>Pour éviter tout problème potentiel, il est conseillé de s\'en tenir à <code>/bash</code> environnement lors de l\'utilisation de <code>qb</code>. Si vous souhaitez toujours utiliser un shell différent, consultez la documentation de ce shell pour examiner toute modification supplémentaire des chemins, des configurations ou d\'autres paramètres pouvant nécessiter une mise à jour pour garantir la compatibilité avec <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Commandes Rclone';
 
 //clean functions

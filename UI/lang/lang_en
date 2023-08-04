@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                     English	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1138,6 +1138,13 @@ $L['SEE_ALSO_HEADER'] = 'See Also';
 $L['SEE_ALSO_CONTENT'] = 'Show helpful command usage for designated software';
 //tables
 $L['SOFTWARE_NAME'] = 'Software Name';
+$L['INFO'] = 'Info';
+$L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
+$L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multi user</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">single user</span>';
+$L['GLOBAL_INFO'] = 'requires admin installation and installs for all users on the system.';
+$L['MULTI_USER_INFO'] = 'requires admin installation and can be installed for any assigned user. multiple users are supported.';
+$L['SINGLE_USER_INFO'] = 'single user, admin only. requires admin installation and is installed and operated by admin user.';
 
 //examples
 $L['EXAMPLES_HEADER'] = 'Examples';
@@ -1160,6 +1167,7 @@ $L['SHOW_USER_QUOTA'] = 'Show User Quota';
 $L['SET_USER_SHELL'] = 'Set User Shell';
 $L['SET_USER_SHELL_CONTENT'] = 'Sets the shell environment for assigned user';
 $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>complete admin privileges to the server environment (great power... etc)<br><strong><code>full</code></strong><br>full access to the server environment, with the exception of higher privileged areas; ie: no sudo and cannot access root directories.<br><strong><code>limited</code></strong><br>the limited shell environment. very little access to commands and jailed to their own user home directory.</p><hr/><p>Shell environments are set by the System Administrator and can be viewed on the users edit page located within the <a href="/useradmin.php" rel="noopener nofollow" class="link">User Admin page</a>.<br/>If you would like to add a new shell environment, you can do so by editing the <code>/etc/shells</code> file and adding the path to the shell environment you would like to add.</p>';
+$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Caution:</strong> Please be aware that changing the shell environment to anything other than <code>/bash</code> may lead to unintended behavior when using <code>qb</code> (QuickBox), as it has been specifically designed and optimized for the <code>/bash</code> environment. In short, <code>qb</code> relies on specific features and functionalities provided by the Bash shell.<br><br>To avoid any potential issues, it is advisable to stick with the <code>/bash</code> environment when using <code>qb</code>. If you still wish to use a different shell, consult the documentation for that shell to review any additional changes to paths, configurations, or other settings that may need to be updated to ensure compatibility with <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone Companion Commands';
 
 //clean functions

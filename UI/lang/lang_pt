@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                   Português	  	                    *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1132,6 +1132,13 @@ $L['SEE_ALSO_HEADER'] = 'Veja também';
 $L['SEE_ALSO_CONTENT'] = 'Mostrar o uso de comandos úteis para o software designado';
 //tables
 $L['SOFTWARE_NAME'] = 'Nome do software';
+$L['INFO'] = 'Informações';
+$L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
+$L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multiusuário</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">usuário único</span>';
+$L['GLOBAL_INFO'] = 'requer instalação de administrador e instalação para todos os usuários do sistema.';
+$L['MULTI_USER_INFO'] = 'requer instalação de administrador e pode ser instalado por qualquer usuário atribuído. vários usuários são suportados.';
+$L['SINGLE_USER_INFO'] = 'usuário único, apenas administrador. requer instalação de administrador e é instalado e operado pelo usuário administrador.';
 
 //examples
 $L['EXAMPLES_HEADER'] = 'Exemplos';
@@ -1154,6 +1161,7 @@ $L['SHOW_USER_QUOTA'] = 'Mostrar cota de usuário';
 $L['SET_USER_SHELL'] = 'Definir shell do usuário';
 $L['SET_USER_SHELL_CONTENT'] = 'Define o ambiente shell para o usuário atribuído';
 $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>privilégios de administrador completos para o ambiente do servidor (grande poder... etc)<br><strong><code>full</code></strong><br>acesso total ao ambiente do servidor, com exceção das áreas privilegiadas mais altas; ou seja: sem sudo e não pode acessar diretórios raiz.<br><strong><code>limited</code></strong><br>o ambiente de shell limitado. muito pouco acesso aos comandos e presos ao diretório inicial do usuário.</p><hr/><p>Os ambientes de shell são definidos pelo administrador do sistema e podem ser visualizados na página de edição do usuário localizada em <a href="/useradmin.php" rel="noopener nofollow" class="link">Página de administração do usuário</a>.<br/>Se você gostaria de adicionar um novo ambiente de shell, pode fazê-lo editando o <code>/etc/shells</code> e adicionando o caminho para o ambiente shell que você gostaria de adicionar.</p>';
+$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Cuidado:</strong> Esteja ciente de que alterar o ambiente shell para algo diferente de <code>/bash</code> pode levar a um comportamento não intencional ao usar <code>qb</code> (QuickBox), pois foi especificamente projetado e otimizado para o ambiente <code>/bash</code>. Resumindo, <code>qb</code> depende de recursos e funcionalidades específicos fornecidos pelo shell Bash.<br><br>Para evitar possíveis problemas, é aconselhável manter o <code>/bash</code> ambiente ao usar <code>qb</code>. Se você ainda deseja usar um shell diferente, consulte a documentação desse shell para revisar quaisquer alterações adicionais em caminhos, configurações ou outras configurações que possam precisar ser atualizadas para garantir a compatibilidade com <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Comandos do Rclone';
 
 //clean functions

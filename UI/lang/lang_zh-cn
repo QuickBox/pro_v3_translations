@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 2, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1134,6 +1134,13 @@ $L['SEE_ALSO_HEADER'] = '另请参阅';
 $L['SEE_ALSO_CONTENT'] = '显示指定软件的有用命令用法';
 //tables
 $L['SOFTWARE_NAME'] = '软件名称';
+$L['INFO'] = '信息';
+$L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">全球</span>';
+$L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">多用户</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">单用户</span>';
+$L['GLOBAL_INFO'] = '需要管理员安装并为系统上的所有用户安装.';
+$L['MULTI_USER_INFO'] = '需要管理员安装并且可以为任何分配的用户安装. 支持多个用户.';
+$L['SINGLE_USER_INFO'] = '单用户, 仅限管理员. 需要管理员安装并由管理员用户安装和操作.';
 
 //examples
 $L['EXAMPLES_HEADER'] = '示例';
@@ -1156,6 +1163,7 @@ $L['SHOW_USER_QUOTA'] = '显示用户配额';
 $L['SET_USER_SHELL'] = '设置用户外壳';
 $L['SET_USER_SHELL_CONTENT'] = '为指定用户设置 shell 环境';
 $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>服务器环境的完整管理员权限（强大的权限...等）<br><strong><code>full</code></strong><br>对服务器环境的完全访问权限, 但较高特权区域除外; 即: 没有 sudo, 无法访问根目录.<br><strong><code>limited</code></strong><br>有限的 shell 环境. 对命令的访问权限很少, 并且被限制在自己的用户主目录中.</p><hr/><p>Shell 环境由系统管理员设置, 可以在位于 的用户编辑页面上查看 <a href="/useradmin.php" rel="noopener nofollow" class="link">用户管理页面</a>.<br/>如果您想添加新的 shell 环境, 可以通过编辑 来实现 <code>/etc/shells</code> 文件并添加您要添加的 shell 环境的路径.</p>';
+$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>警告：</strong>请注意, 将 shell 环境更改为 <code>/bash</code> 以外的任何环境可能会在使用 <code>qb</code> (QuickBox), 因为它是专门为 <code>/bash</code> 环境设计和优化的. 简而言之, <code>qb</code> 依赖于 Bash shell 提供的特定特性和功能.<br><br>为避免任何潜在问题, 建议坚持使用 <code>/bash</code> 使用<code>qb</code>时的环境. 如果您仍然希望使用不同的 shell, 请查阅该 shell 的文档, 以查看对路径、配置或其他设置的任何其他更改, 这些更改可能需要更新以确保与 <code>qb</code> 的兼容性.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone 配套命令';
 
 //clean functions
@@ -1208,18 +1216,18 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = '此命令将为所有用户启用或禁�
 $L['EX_PUB_TRACKERS_ALLOW'] = '允许公共跟踪器的示例：';
 $L['EX_PUB_TRACKERS_DISALLOW'] = '禁止公共跟踪器的示例：';
 $L['BACKUP_APPLICATIONS'] = '备份应用程序';
-$L['PARTIAL_CONFIG_ONLY_BACKUP'] = '部分备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = '部分备份 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = '此命令将为指定用户备份指定的应用程序配置';
-$L['FULL_CONFIG_AND_APP_BACKUP'] = '完整备份 <span class="badge bad-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">配置&amp; 应用程序</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = '完整备份 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">配置&amp; 应用程序</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = '此命令将为指定用户备份指定应用程序. 包括应用程序和配置数据, 方便回滚到以前安装和备份的版本';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = '部分备份(仅限 rtorrent)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>如果使用 rtorrent 作为要备份的软件配置, 则不需要用户名标志 (<code>-u</code>).</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = '此命令将备份所有现有 rtorrent 用户 .rtorrent.rc 文件.<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent/backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS'] = '回滚应用程序备份';
 $L['ROLLBACK_APPLICATIONS_CONTENT'] = '此命令会将指定用户的指定应用程序回滚到备份目录中存储/选择的先前版本.<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG'] = '恢复备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = '恢复备份 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = '此命令将为指定用户恢复指定的先前备份的应用程序配置';
-$L['RESTORE_APP_DEFAULT_CONFIG'] = '恢复默认 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = '恢复默认 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = '此命令将为指定用户恢复指定的默认(从安装)应用程序配置';
 
 //news functions
