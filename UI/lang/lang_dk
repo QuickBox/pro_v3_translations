@@ -1208,27 +1208,29 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = 'Denne kommando vil aktivere eller deakti
 $L['EX_PUB_TRACKERS_ALLOW'] = 'eksempel til at tillade offentlige trackere:';
 $L['EX_PUB_TRACKERS_DISALLOW'] = 'eksempel på at forbyde offentlige trackers:';
 $L['BACKUP_APPLICATIONS'] = 'Sikkerhedskopieringsprogrammer';
-$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Delvis backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">kun config</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Delvis backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">kun config</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = 'Denne kommando vil sikkerhedskopiere den udpegede applikationskonfiguration for den tildelte bruger';
-$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Fuld sikkerhedskopi <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(--mainFontColor)">config &amp; app</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Fuld sikkerhedskopi <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">config &amp; app</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = 'Denne kommando vil sikkerhedskopiere den udpegede applikation for den tildelte bruger. Inkluderer applikations- og konfigurationsdata, praktisk til at rulle tilbage til tidligere installerede og sikkerhedskopierede versioner';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = 'Delvis backup (kun rtorrent)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>I tilfælde af rtorrent som softwarekonfigurationen til backup, er brugernavnflaget (<code>-u</code>) ikke påkrævet.</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = 'Denne kommando vil sikkerhedskopiere alle eksisterende rtorrent-brugere .rtorrent.rc-filer.<br>Sikkerhedskopier er gemt på:<br><code>/home/[BRUGERNAVN]/.QuickBox/software/rtorrent /backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS'] = 'Tilbageføring af applikationssikkerhedskopi';
 $L['ROLLBACK_APPLICATIONS_CONTENT'] = 'Denne kommando vil rulle den udpegede applikation for den tildelte bruger tilbage til en tidligere version gemt/valgt i backup-mappen.<br>Sikkerhedskopier er gemt på:<br><code>/home/[BRUGERNAVN]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG'] = 'Gendan sikkerhedskopi <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">kun config</span>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = 'Gendan sikkerhedskopi <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">kun config</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'Denne kommando vil gendanne den udpegede tidligere sikkerhedskopierede applikationskonfiguration for den tildelte bruger';
-$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Gendan standard <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">kun config</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Gendan standard <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">kun config</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'Denne kommando vil gendanne den angivne standard (fra installation) programkonfiguration for den tildelte bruger';
 
 //news functions
 $L['NEWS_FUNCTIONS'] = 'Nyhedsfunktioner';
+$L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>Funktionen <code>qb news</code> i QuickBox leverer rettidige og relevante nyhedsopdateringer direkte til din server, hvilket sikrer, at du holder dig informeret om den seneste udvikling og ændringer i QuickBox-økosystemet . Med fokus på at holde dig opdateret, giver denne funktion væsentlig information om aktuelle og kommende udgivelser, versionsændringer og andre ting af interesse.</p>';
 $L['NEWS'] = 'Nyheder';
 $L['NEWS_CONTENT'] = 'Se seneste QuickBox nyheder';
 
 //support functions
 $L['SUPPORT_FUNCTIONS'] = 'Supportfunktioner';
+$L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb support</code>-funktionen i QuickBox tilbyder en sikker og pålidelig metode til at give supportmedarbejdere adgang til din server, når der er behov for hjælp. Med stor vægt på sikkerhed og brugerbeskyttelse bruger denne funktion kontoen <code>quickSupport</code>, hvilket sikrer, at kun autoriseret supportpersonale kan få adgang til din server.</p>';
 $L['ENABLE_SUPPORT'] = 'Aktiver support';
 $L['ENABLE_SUPPORT_CONTENT'] = 'Aktiver support. Typisk tildelt den medarbejder, der er ansvarlig for supporten';
 $L['DISABLE_SUPPORT'] = 'Deaktiver support';
@@ -1236,6 +1238,7 @@ $L['DISABLE_SUPPORT_CONTENT'] = 'Deaktiver support. Ellers vil supportkontoen au
 
 //update functions
 $L['UPDATE_FUNCTIONS'] = 'Opdateringsfunktioner';
+$L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb update</code>-funktionen i QuickBox tilbyder dig en bekvem og fleksibel måde at administrere opdateringer til din QuickBox-installation på. Med denne funktion har du fuld kontrol over opdateringsprocessen, så du manuelt kan tjekke for opdateringer og vælge, hvornår du vil anvende dem.</p>';
 $L['UPDATE_CHECK'] = 'Opdateringstjek';
 $L['UPDATE_CHECK_CONTENT'] = 'Se efter opdateringer til QuickBox';
 $L['UPDATE_QUICKBOX'] = 'Opdater QuickBox';

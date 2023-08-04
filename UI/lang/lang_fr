@@ -1205,27 +1205,29 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = 'Cette commande activera ou désactivera 
 $L['EX_PUB_TRACKERS_ALLOW'] = 'exemple pour autoriser les trackers publics :';
 $L['EX_PUB_TRACKERS_DISALLOW'] = 'exemple pour interdire les trackers publics :';
 $L['BACKUP_APPLICATIONS'] = 'Applications de sauvegarde';
-$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Sauvegarde partielle <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config uniquement</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Sauvegarde partielle <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config uniquement</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = 'Cette commande sauvegardera la configuration de l\'application désignée pour l\'utilisateur assigné';
-$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Sauvegarde complète <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(--mainFontColor)">config &amp; application</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Sauvegarde complète <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">config &amp; application</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = 'Cette commande sauvegardera l\'application désignée pour l\'utilisateur assigné. Inclut les données d\'application et de configuration, pratiques pour revenir aux versions précédemment installées et sauvegardées';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = 'Sauvegarde partielle (rtorrent uniquement)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>Dans le cas de rtorrent comme configuration logicielle à sauvegarder, le drapeau de nom d\'utilisateur (<code>-u</code>) n\'est pas requis.</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = 'Cette commande sauvegardera tous les fichiers .rtorrent.rc des utilisateurs rtorrent existants.<br>Les sauvegardes sont stockées à:<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent /backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS'] = 'Annuler la sauvegarde de l\'application';
 $L['ROLLBACK_APPLICATIONS_CONTENT'] = 'Cette commande restaurera l\'application désignée pour l\'utilisateur assigné à une version précédente stockée/sélectionnée dans le répertoire de sauvegarde.<br>Les sauvegardes sont stockées à:<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG'] = 'Restaurer la sauvegarde <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config uniquement</span>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = 'Restaurer la sauvegarde <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config uniquement</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'Cette commande restaurera la configuration d\'application précédemment sauvegardée désignée pour l\'utilisateur assigné';
-$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Restaurer par défaut <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config uniquement</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Restaurer par défaut <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config uniquement</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'Cette commande restaurera la configuration d\'application par défaut désignée (depuis l\'installation) pour l\'utilisateur assigné';
 
 //news functions
 $L['NEWS_FUNCTIONS'] = 'Fonctions de nouvelles';
+$L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>La fonction <code>qb news</code> de QuickBox fournit des mises à jour opportunes et pertinentes directement sur votre serveur, vous assurant de rester informé des derniers développements et changements dans l\'écosystème QuickBox . Dans le but de vous tenir à jour, cette fonctionnalité fournit des informations essentielles sur les versions actuelles et à venir, les changements de version et d\'autres éléments d\'intérêt.</p>';
 $L['NEWS'] = 'Actualités';
 $L['NEWS_CONTENT'] = 'Voir les dernières actualités QuickBox';
 
 //support functions
 $L['SUPPORT_FUNCTIONS'] = 'Fonctions de support';
+$L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>La fonction <code>qb support</code> de QuickBox offre une méthode sécurisée et fiable pour accorder au personnel d\'assistance l\'accès à votre serveur lorsqu\'une assistance est nécessaire. En mettant l\'accent sur la sécurité et la protection des utilisateurs, cette fonctionnalité utilise le compte <code>quickSupport</code>, garantissant que seul le personnel d\'assistance autorisé peut accéder à votre serveur.</p>';
 $L['ENABLE_SUPPORT'] = 'Activer l\'assistance';
 $L['ENABLE_SUPPORT_CONTENT'] = 'Activer la prise en charge. Généralement attribué au membre de l\'équipe du personnel qui est responsable du soutien';
 $L['DISABLE_SUPPORT'] = 'Désactiver l\'assistance';
@@ -1233,6 +1235,7 @@ $L['DISABLE_SUPPORT_CONTENT'] = 'Désactiver la prise en charge. Sinon, le compt
 
 //update functions
 $L['UPDATE_FUNCTIONS'] = 'Fonctions de mise à jour';
+$L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>La fonction <code>qb update</code> de QuickBox vous offre un moyen pratique et flexible de gérer les mises à jour de votre installation QuickBox. Avec cette fonctionnalité, vous avez un contrôle total sur le processus de mise à jour, vous permettant de vérifier manuellement les mises à jour et de choisir quand les appliquer.</p>';
 $L['UPDATE_CHECK'] = 'Vérification des mises à jour';
 $L['UPDATE_CHECK_CONTENT'] = 'Vérifier les mises à jour de QuickBox';
 $L['UPDATE_QUICKBOX'] = 'Mettre à jour QuickBox';

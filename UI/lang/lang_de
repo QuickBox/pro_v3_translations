@@ -1210,27 +1210,29 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = 'Dieser Befehl aktiviert oder deaktiviert
 $L['EX_PUB_TRACKERS_ALLOW'] = 'Beispiel zum Zulassen öffentlicher Tracker:';
 $L['EX_PUB_TRACKERS_DISALLOW'] = 'Beispiel, um öffentliche Tracker zu verbieten:';
 $L['BACKUP_APPLICATIONS'] = 'Anwendungen sichern';
-$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Teilsicherung <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Teilsicherung <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = 'Dieser Befehl sichert die angegebene Anwendungskonfiguration für den zugewiesenen Benutzer.';
-$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Vollständige Sicherung <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(--mainFontColor)">config &amp; app</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Vollständige Sicherung <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">config &amp; app</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = 'Dieser Befehl sichert die angegebene Anwendung für den zugewiesenen Benutzer. Enthält die Anwendungs- und Konfigurationsdaten, praktisch zum Zurücksetzen auf zuvor installierte und gesicherte Versionen.';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = 'Teilsicherung (nur Rtorrent)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>Im Fall von rtorrent als zu sichernde Softwarekonfiguration ist das Benutzernamen-Flag (<code>-u</code>) nicht erforderlich.</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = 'Dieser Befehl sichert alle vorhandenen .rtorrent.rc-Dateien von Rtorrent-Benutzern.<br>Sicherungen werden gespeichert unter:<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent /backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS'] = 'Anwendungssicherung rückgängig machen';
 $L['ROLLBACK_APPLICATIONS_CONTENT'] = 'Dieser Befehl setzt die angegebene Anwendung für den zugewiesenen Benutzer auf eine frühere Version zurück, die im Sicherungsverzeichnis gespeichert/ausgewählt ist.<br>Sicherungen werden gespeichert unter:<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG'] = 'Backup wiederherstellen <span class="badge badge-pills badge-table-menu" Style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = 'Backup wiederherstellen <span class="badge badge-pills badge-table-menu" Style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'Dieser Befehl stellt die zuvor gesicherte Anwendungskonfiguration für den zugewiesenen Benutzer wieder her';
-$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Standard wiederherstellen <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Standard wiederherstellen <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'Dieser Befehl stellt die festgelegte Standardanwendungskonfiguration (aus der Installation) für den zugewiesenen Benutzer wieder her';
 
 //news functions
 $L['NEWS_FUNCTIONS'] = 'News-Funktionen';
+$L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>Die Funktion <code>qb news</code> in QuickBox liefert zeitnahe und relevante Nachrichtenaktualisierungen direkt an Ihren Server und stellt so sicher, dass Sie über die neuesten Entwicklungen und Änderungen im QuickBox-Ökosystem auf dem Laufenden bleiben . Mit dem Fokus darauf, Sie auf dem Laufenden zu halten, bietet diese Funktion wichtige Informationen über aktuelle und kommende Veröffentlichungen, Versionsänderungen und andere interessante Dinge.</p>';
 $L['NEWS'] = 'Neuigkeiten';
 $L['NEWS_CONTENT'] = 'Neueste QuickBox-Neuigkeiten anzeigen';
 
 //support functions
 $L['SUPPORT_FUNCTIONS'] = 'Unterstützungsfunktionen';
+$L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>Die Funktion <code>qb support</code> in QuickBox bietet eine sichere und zuverlässige Methode, um Support-Mitarbeitern Zugriff auf Ihren Server zu gewähren, wenn Hilfe benötigt wird. Mit einem starken Schwerpunkt auf Sicherheit und Benutzerschutz nutzt diese Funktion das <code>quickSupport</code>-Konto und stellt so sicher, dass nur autorisiertes Supportpersonal auf Ihren Server zugreifen kann.</p>';
 $L['ENABLE_SUPPORT'] = 'Unterstützung aktivieren';
 $L['ENABLE_SUPPORT_CONTENT'] = 'Unterstützung aktivieren. Wird normalerweise dem Mitarbeiter zugewiesen, der für den Support verantwortlich ist.';
 $L['DISABLE_SUPPORT'] = 'Unterstützung deaktivieren';
@@ -1238,6 +1240,7 @@ $L['DISABLE_SUPPORT_CONTENT'] = 'Unterstützung deaktivieren. Andernfalls lösch
 
 //update functions
 $L['UPDATE_FUNCTIONS'] = 'Funktionen aktualisieren';
+$L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>Die Funktion <code>qb update</code> in QuickBox bietet Ihnen eine bequeme und flexible Möglichkeit, Updates für Ihre QuickBox-Installation zu verwalten. Mit dieser Funktion haben Sie die volle Kontrolle über den Aktualisierungsprozess, sodass Sie manuell nach Aktualisierungen suchen und auswählen können, wann diese angewendet werden sollen.</p>';
 $L['UPDATE_CHECK'] = 'Aktualisierungsprüfung';
 $L['UPDATE_CHECK_CONTENT'] = 'Nach Updates für QuickBox suchen';
 $L['UPDATE_QUICKBOX'] = 'QuickBox aktualisieren';

@@ -1091,27 +1091,29 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = 'This command will enable or disable publ
 $L['EX_PUB_TRACKERS_ALLOW'] = 'example to allow public trackers:';
 $L['EX_PUB_TRACKERS_DISALLOW'] = 'example to disallow public trackers:';
 $L['BACKUP_APPLICATIONS'] = 'Backup Applications';
-$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Partial Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = 'Partial Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = 'This command will backup the designated application config for the assigned user';
-$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Full Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(--mainFontColor)">config &amp; app</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = 'Full Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">config &amp; app</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = 'This command will backup the designated application for the assigned user. Includes the application and config data, handy for rolling back to previously installed and backed up versions';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = 'Partial Backup (rtorrent only)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>In the case of rtorrent as the software config to backup, the username flag (<code>-u</code>) is not required.</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = 'This command will backup all existing rtorrent users .rtorrent.rc files.<br>Backups are stored at:<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent/backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS'] = 'Rollback Application Backup';
 $L['ROLLBACK_APPLICATIONS_CONTENT'] = 'This command will rollback the designated application for the assigned user to a previous version stored/selected in the backup directory.<br>Backups are stored at:<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG'] = 'Restore Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = 'Restore Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'This command will restore the designated previously backed up application config for the assigned user';
-$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Restore Default <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">config only</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = 'Restore Default <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'This command will restore the designated default (from install) application config for the assigned user';
 
 //news functions
 $L['NEWS_FUNCTIONS'] = 'News Functions';
+$L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb news</code> function in QuickBox delivers timely and relevant news updates directly to your server, ensuring you stay informed about the latest developments and changes in the QuickBox ecosystem. With a focus on keeping you up-to-date, this feature provides essential information about current and upcoming releases, version changes, and other items of interest.</p>';
 $L['NEWS'] = 'News';
 $L['NEWS_CONTENT'] = 'View latest QuickBox news';
 
 //support functions
 $L['SUPPORT_FUNCTIONS'] = 'Support Functions';
+$L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb support</code> function in QuickBox offers a secure and reliable method to grant support staff access to your server when assistance is needed. With a strong emphasis on security and user protection, this feature utilizes the <code>quickSupport</code> account, ensuring that only authorized support personnel can access your server.</p>';
 $L['ENABLE_SUPPORT'] = 'Enable Support';
 $L['ENABLE_SUPPORT_CONTENT'] = 'Enable support. Typically assigned to the staff team member who is responsible for the support';
 $L['DISABLE_SUPPORT'] = 'Disable Support';
@@ -1119,6 +1121,7 @@ $L['DISABLE_SUPPORT_CONTENT'] = 'Disable support. Otherwise, the support account
 
 //update functions
 $L['UPDATE_FUNCTIONS'] = 'Update Functions';
+$L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb update</code> function in QuickBox offers you a convenient and flexible way to manage updates for your QuickBox installation. With this feature, you have full control over the update process, allowing you to manually check for updates and choose when to apply them.</p>';
 $L['UPDATE_CHECK'] = 'Update Check';
 $L['UPDATE_CHECK_CONTENT'] = 'Check for updates to QuickBox';
 $L['UPDATE_QUICKBOX'] = 'Update QuickBox';

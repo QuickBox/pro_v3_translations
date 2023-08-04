@@ -348,7 +348,7 @@ $L['NZBGET'] = 'NZBGet 是一个二进制下载器, 它根据 nzb-files 中给�
 $L['NZBHYDRA'] = 'NZBHydra 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
 $L['NZBHYDRA2'] = 'NZBHydra2 是 NZB 索引器的元搜索程序, 它提供了对一些基于 raw 和 newznab 的索引器的简单访问. 你可以从一个地方搜索所有索引, 并将其用作 Sonarr 或 CouchPotato 等工具的索引.';
 $L['OMBI'] = 'Ombi 为希望将内容添加到库的用户提供了一个美观且易于使用的界面, 它集成于 CouchPotato, SickChill 和 Sonarr.';
-$L['OVERSEERR'] = 'Overseerr 是一款免费的开源软件应用程序，用于管理媒体库的请求。 它与您现有的服务集成，例如 Sonarr、Radarr 和 Plex!';
+$L['OVERSEERR'] = 'Overseerr 是一款免费的开源软件应用程序, 用于管理媒体库的请求. 它与您现有的服务集成, 例如 Sonarr、Radarr 和 Plex!';
 $L['OVPN'] = '基于 SSL/TLS 的 VPN. 支持 Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X和Windows 2000 / XP +.';
 $L['PHPMYADMIN'] = 'phpMyAdmin 是一个使用 <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a> 编写的免费软件, 旨在通过网页处理 <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> 数据库的管理. phpMyAdmin 支持 MySQL 和 MariaDB 上的各种操作. 可以在用户界面执行常用操作 (管理数据库, 表, 列, 关系, 索引, 用户, 权限等), 同时你也可以直接执行各种 SQL 语句.';
 $L['PLEX'] = 'Plex 可让你将内容传输到任何支持 Plex 的设备.';
@@ -1208,27 +1208,29 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT'] = '此命令将为所有用户启用或禁�
 $L['EX_PUB_TRACKERS_ALLOW'] = '允许公共跟踪器的示例：';
 $L['EX_PUB_TRACKERS_DISALLOW'] = '禁止公共跟踪器的示例：';
 $L['BACKUP_APPLICATIONS'] = '备份应用程序';
-$L['PARTIAL_CONFIG_ONLY_BACKUP'] = '部分备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">仅配置</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP'] = '部分备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT'] = '此命令将为指定用户备份指定的应用程序配置';
-$L['FULL_CONFIG_AND_APP_BACKUP'] = '完整备份 <span class="badge bad-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--primaryColor);border-color:var(--primaryColor);color:var(--mainFontColor)">配置&amp; 应用程序</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP'] = '完整备份 <span class="badge bad-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">配置&amp; 应用程序</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT'] = '此命令将为指定用户备份指定应用程序. 包括应用程序和配置数据, 方便回滚到以前安装和备份的版本';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP'] = '部分备份(仅限 rtorrent)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>如果使用 rtorrent 作为要备份的软件配置, 则不需要用户名标志 (<code>-u</code>).</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT'] = '此命令将备份所有现有 rtorrent 用户 .rtorrent.rc 文件.<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent/backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS'] = '回滚应用程序备份';
 $L['ROLLBACK_APPLICATIONS_CONTENT'] = '此命令会将指定用户的指定应用程序回滚到备份目录中存储/选择的先前版本.<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG'] = '恢复备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">仅配置</span>';
+$L['RESTORE_APP_BACKUP_CONFIG'] = '恢复备份 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = '此命令将为指定用户恢复指定的先前备份的应用程序配置';
-$L['RESTORE_APP_DEFAULT_CONFIG'] = '恢复默认 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:12px;background-color:var(--indigo);border-color:var(--indigo);color:var(--mainFontColor)">仅配置</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG'] = '恢复默认 <span class="badge badge-pills bad-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = '此命令将为指定用户恢复指定的默认(从安装)应用程序配置';
 
 //news functions
 $L['NEWS_FUNCTIONS'] = '新闻功能';
+$L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb news</code> 功能直接向您的服务器提供及时且相关的新闻更新, 确保您随时了解 QuickBox 生态系统的最新发展和变化. 此功能旨在让您了解最新情况, 提供有关当前和即将发布的版本、版本更改以及其他感兴趣的项目的基本信息.</p>';
 $L['NEWS'] = '新闻';
 $L['NEWS_CONTENT'] = '查看最新的 QuickBox 新闻';
 
 //support functions
 $L['SUPPORT_FUNCTIONS'] = '支持函数';
+$L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的<code>qb support</code> 功能提供了一种安全可靠的方法, 可在需要帮助时授予支持人员访问您的服务器的权限. 该功能非常重视安全性和用户保护, 利用 <code>quickSupport</code> 帐户, 确保只有授权的支持人员才能访问您的服务器.</p>';
 $L['ENABLE_SUPPORT'] = '启用支持';
 $L['ENABLE_SUPPORT_CONTENT'] = '启用支持. 通常分配给负责支持的工作人员团队成员';
 $L['DISABLE_SUPPORT'] = '禁用支持';
@@ -1236,6 +1238,7 @@ $L['DISABLE_SUPPORT_CONTENT'] = '禁用支持. 否则, 支持帐户将在 36 小
 
 //update functions
 $L['UPDATE_FUNCTIONS'] = '更新函数';
+$L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的<code>qb update</code> 功能为您提供了一种方便灵活的方式来管理 QuickBox 安装的更新. 通过此功能, 您可以完全控制更新过程, 允许您手动检查更新并选择何时应用它们.</p>';
 $L['UPDATE_CHECK'] = '更新检查';
 $L['UPDATE_CHECK_CONTENT'] = '检查 QuickBox 的更新';
 $L['UPDATE_QUICKBOX'] = '更新 QuickBox';
