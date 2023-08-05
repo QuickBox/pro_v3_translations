@@ -1017,7 +1017,11 @@ $L['SEE_ALSO_HEADER'] = 'See Also';
 $L['SEE_ALSO_CONTENT'] = 'Show helpful command usage for designated software';
 //tables
 $L['SOFTWARE_NAME'] = 'Software Name';
+$L['SOFTWARE_TITLE'] = 'Software Title';
+$L['USABILITY'] = 'Usability';
+$L['CAN_ROLLBACK'] = 'Rollback Option';
 $L['INFO'] = 'Info';
+$L['ADMIN_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightDangerBorder);color:#fff;font-size:0.5rem;">admin only</span>';
 $L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
 $L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multi user</span>';
 $L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">single user</span>';

@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 5, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1136,7 +1136,11 @@ $L['SEE_ALSO_HEADER'] = 'Siehe auch';
 $L['SEE_ALSO_CONTENT'] = 'Hilfreiche Befehlsverwendung für bestimmte Software anzeigen';
 //tables
 $L['SOFTWARE_NAME'] = 'Softwarename';
+$L['SOFTWARE_TITLE'] = 'Softwaretitel';
+$L['USABILITY'] = 'Benutzerfreundlichkeit';
+$L['CAN_ROLLBACK'] = 'Rollback-Option';
 $L['INFO'] = 'Info';
+$L['ADMIN_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightDangerBorder);color:#fff;font-size:0.5rem;">nur Administratoren</span>';
 $L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
 $L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multi user</span>';
 $L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">einzelner Benutzer</span>';

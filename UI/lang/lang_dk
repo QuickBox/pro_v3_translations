@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 5, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1134,7 +1134,11 @@ $L['SEE_ALSO_HEADER'] = 'Se også';
 $L['SEE_ALSO_CONTENT'] = 'Vis nyttig kommandobrug for udpeget software';
 //tables
 $L['SOFTWARE_NAME'] = 'Softwarenavn';
+$L['SOFTWARE_TITLE'] = 'Softwaretitel';
+$L['USABILITY'] = 'Anvendelighed';
+$L['CAN_ROLLBACK'] = 'Tilbagestilling';
 $L['INFO'] = 'Info';
+$L['ADMIN_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightDangerBorder);color:#fff;font-size:0.5rem;">kun admin</span>';
 $L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
 $L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">flerbruger</span>';
 $L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">enkeltbruger</span>';
@@ -1163,7 +1167,7 @@ $L['SHOW_USER_QUOTA'] = 'Vis brugerkvote';
 $L['SET_USER_SHELL'] = 'Indstil brugerskal';
 $L['SET_USER_SHELL_CONTENT'] = 'Indstiller shell-miljøet for tildelt bruger';
 $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>fuldfør administratorrettigheder til servermiljøet (stor kraft... osv.)<br><strong><code>full</code></strong><br>fuld adgang til servermiljøet, med undtagelse af højere privilegerede områder; dvs: ingen sudo og kan ikke få adgang til rodmapper.<br><strong><code>limited</code></strong><br>det begrænsede skalmiljø. meget lidt adgang til kommandoer og fængslet til deres egen brugerhjemmemappe.</p><hr/><p>Shell-miljøer er indstillet af systemadministratoren og kan ses på brugerens redigeringsside, der er placeret på <a href="/useradmin.php" rel="noopener nofollow" class="link">Brugeradminside</a>.<br/>Hvis du gerne vil tilføje et nyt shell-miljø, kan du gøre det ved at redigere <code>/etc/shells</code> fil og tilføjer stien til det shellmiljø, du gerne vil tilføje.</p>';
-$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Forsigtig:</strong> Vær opmærksom på, at ændring af shell-miljøet til noget andet end <code>/bash</code> kan føre til utilsigtet adfærd ved brug af < code>qb</code> (QuickBox), da det er blevet specifikt designet og optimeret til <code>/bash</code>-miljøet. Kort sagt er <code>qb</code> afhængig af specifikke funktioner og funktionaliteter leveret af Bash-skallen.<br><br>For at undgå potentielle problemer, er det tilrådeligt at holde sig til <code>/bash</code > miljø ved brug af <code>qb</code>. Hvis du stadig ønsker at bruge en anden shell, skal du konsultere dokumentationen til denne shell for at gennemgå eventuelle yderligere ændringer af stier, konfigurationer eller andre indstillinger, der muligvis skal opdateres for at sikre kompatibilitet med <code>qb</code>.</p>';
+$L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Forsigtig:</strong> Vær opmærksom på, at ændring af shell-miljøet til noget andet end <code>/bash</code> kan føre til utilsigtet adfærd ved brug af <code>qb</code> (QuickBox), da det er blevet specifikt designet og optimeret til <code>/bash</code>-miljøet. Kort sagt er <code>qb</code> afhængig af specifikke funktioner og funktionaliteter leveret af Bash-skallen.<br><br>For at undgå potentielle problemer, er det tilrådeligt at holde sig til <code>/bash</code > miljø ved brug af <code>qb</code>. Hvis du stadig ønsker at bruge en anden shell, skal du konsultere dokumentationen til denne shell for at gennemgå eventuelle yderligere ændringer af stier, konfigurationer eller andre indstillinger, der muligvis skal opdateres for at sikre kompatibilitet med <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone ledsagende kommandoer';
 
 //clean functions
@@ -1200,7 +1204,7 @@ $L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>Du kan desuden generere og down
 
 //manage functions
 $L['MANAGE_FUNCTIONS'] = 'Administrer funktioner';
-$L['MANAGE_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb-administration</code>-funktionerne i QuickBox giver et kraftfuldt og omfattende sæt værktøjer til effektivt at administrere forskellige aspekter af din server. Disse funktioner er designet med brugervenlighed i tankerne og giver dig mulighed for ubesværet at kontrollere kritiske elementer i dit QuickBox-drevne miljø.<br/>Uanset om det er at udskifte sprogindstillinger, kontrollere status for din primære API-aktivering, administrere datadistribution eller qb-styringsfunktionerne sikrer dataintegritet gennem sikkerhedskopier og rollbacks, og tilbyder en omfattende løsning for både serveradministratorer og entusiaster.</p>';
+$L['MANAGE_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb manage</code>-funktionerne i QuickBox giver et kraftfuldt og omfattende sæt værktøjer til effektivt at administrere forskellige aspekter af din server. Disse funktioner er designet med brugervenlighed i tankerne og giver dig mulighed for ubesværet at kontrollere kritiske elementer i dit QuickBox-drevne miljø.<br/>Uanset om det er at udskifte sprogindstillinger, kontrollere status for din primære API-aktivering, administrere datadistribution eller qb-styringsfunktionerne sikrer dataintegritet gennem sikkerhedskopier og rollbacks, og tilbyder en omfattende løsning for både serveradministratorer og entusiaster.</p>';
 $L['MANAGE_API_KEY'] = 'Administrer API-nøgle';
 $L['MANAGE_API_KEY_CONTENT'] = 'Administrer QuickBox API-nøgler og angiv yderligere information og muligheder';
 $L['ADD_API_KEY'] = 'Tilføj API-nøgle';

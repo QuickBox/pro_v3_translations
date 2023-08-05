@@ -3,7 +3,7 @@ $version = $configs->getConfig('Version');
 /*
  *                  Simplified_chinese                  *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 4, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : August 5, 2023       *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1134,7 +1134,11 @@ $L['SEE_ALSO_HEADER'] = '另请参阅';
 $L['SEE_ALSO_CONTENT'] = '显示指定软件的有用命令用法';
 //tables
 $L['SOFTWARE_NAME'] = '软件名称';
+$L['SOFTWARE_TITLE'] = '软件标题';
+$L['可用性'] = '可用性';
+$L['CAN_ROLLBACK'] = '回滚选项';
 $L['INFO'] = '信息';
+$L['ADMIN_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightDangerBorder);color:#fff;font-size:0.5rem;">仅限管理员</span>';
 $L['GLOBAL_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">全球</span>';
 $L['MULTI_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">多用户</span>';
 $L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">单用户</span>';
@@ -1146,7 +1150,7 @@ $L['SINGLE_USER_INFO'] = '单用户, 仅限管理员. 需要管理员安装并�
 $L['EXAMPLES_HEADER'] = '示例';
 
 //user management
-$L['USER_MANAGEMENT_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb manage</code> 管理功能提供了一套多功能且强大的工具来有效管理服务器上的用户. 这些功能注重易用性和强大的功能, 使您能够简化用户管理、增强安全性并确保服务器平稳运行.</p>';
+$L['USER_MANAGEMENT_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb user</code> 管理功能提供了一套多功能且强大的工具来有效管理服务器上的用户. 这些功能注重易用性和强大的功能, 使您能够简化用户管理、增强安全性并确保服务器平稳运行.</p>';
 $L['CREATE_USER_CONTENT'] = '创建一个新的 QuickBox 用户帐户';
 $L['DELETE_USER_CONTENT'] = '删除 QuickBox 用户帐户';
 $L['CHANGE_USER_PASSWORD'] = '更改用户密码';
