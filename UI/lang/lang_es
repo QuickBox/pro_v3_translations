@@ -1,14 +1,15 @@
 <?php
 $version = $configs->getConfig('Version');
+$username = $session->username;
 /*
  *                        Español                       *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 5, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : September 16, 2023   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
  * NAVIGATION : #1                                      *
- *    lang & theme : #1.1                               *
+ *    language & theme selection : #1.1                 *
  *    user menu : #1.2                                  *
  *    sidebar menu : #1.3                               *
  *    sidebar submenus : #1.4                           *
@@ -57,20 +58,37 @@ $version = $configs->getConfig('Version');
  *    System : #4.4                                     *
  *       web console : #4.4.1                           *
  *       api-control : #4.4.2                           *
- *       troubleshootings : #4.4.3                      *
- *       system logs : #4.4.4                           *
- *       about / quicktips : #4.4.5                     *
- *         commands : #4.4.5.1                          *
- *       changelogs / update : #4.4.6                   *
- *       system dashboard : #4.4.7                      *
+ *       ssl-control : #4.4.3                           *
+ *       troubleshooting : #4.4.4                       *
+ *       system logs : #4.4.5                           *
+ *       help manual : #4.4.6                           *
+ *         description : #4.4.6.1                       *
+ *         options : #4.4.6.2                           *
+ *         software : #4.4.6.3                          *
+ *         software options table : #4.4.6.4            *
+ *         examples header : #4.4.6.5                   *
+ *         user management : #4.4.6.6                   *
+ *         clean functions : #4.4.6.7                   *
+ *         fix functions : #4.4.6.8                     *
+ *         generate functions : #4.4.6.9                *
+ *         manage functions : #4.4.6.10                 *
+ *         news functions : #4.4.6.11                   *
+ *         support functions : #4.4.6.12                *
+ *         update functions : #4.4.6.13                 *
+ *         bugs & reporting : #4.4.6.14                 *
+ *         disclaimer : #4.4.6.15                       *
+ *         license : #4.4.6.16                          *
+ *         misc : #4.4.6.17                             *
+ *       changelogs / update : #4.4.7                   *
+ *       system dashboard : #4.4.8                      *
  *    Error Pages : #4.5                                *
  */
 
-///////////////////////////////////////
-//          #1 NAVIGATION
-///////////////////////////////////////
-
-//#1.1 - language & theme selection
+/* ********************************************************************************
+ * #1 NAVIGATION
+ *
+ * 1.1 - language & theme selection
+ ************************************/
 $L['CHINESE'] = 'Chino';
 $L['DANISH'] = 'Danés';
 $L['ENGLISH'] = 'Inglés';
@@ -83,12 +101,16 @@ $L['SPANISH'] = 'Español';
 $L['THEME_DARK'] = 'Tema oscuro';
 $L['THEME_LIGHT'] = 'Tema claro';
 
-//#1.2 - user menu tabs
+/* **********************************
+ * 1.2 - user menu (top right)
+ ************************************/
 $L['PROFILE'] = 'Mi perfil';
 $L['LOG_OUT'] = 'Desconexión';
 $L['REBOOT'] = 'Reiniciar';
 
-//#1.3 - sidebar menus
+/* **********************************
+ * 1.3 - sidebar menus
+ ************************************/
 $L['ABOUT_AND_TIPS'] = 'Acerca de / Consejos rápidos';
 $L['APP_DASHBOARD'] = 'Panel de control de software';
 $L['DASHBOARD'] = 'El Tablero';
@@ -111,7 +133,9 @@ $L['USER_MANAGEMENT'] = 'User Management';
 $L['USER_SETTINGS'] = 'Configuración de Usuario';
 $L['WEB_CONSOLE'] = 'Consola Web';
 
-//#1.4 - sidebar submenus
+/* **********************************
+ * 1.4 - sidebar submenus
+ ************************************/
 $L['APP_MENU'] = 'Menú de software';
 $L['APPLICATIONS'] = 'Mi Software';
 $L['DASHBOARD_INFO'] = 'Seleccione entre el panel de administración del sistema o el panel de software visto por todos los usuarios.';
@@ -124,15 +148,16 @@ $L['RPLUGINS_NOTICE'] = 'Instala y desinstala facilmente plugins de ruTorrent ha
 $L['RPLUGINS'] = 'ruTorrent Plugins';
 $L['TORRENT_CLIENTS'] = 'Clientes Torrent';
 
-//#1.5 - footer
+/* **********************************
+ * 1.5 - footer
+ ************************************/
 $L['ALL_RIGHTS'] = 'Todos los derechos reservados.';
 
-
-///////////////////////////////////////
-//         #2 MISCELLANEOUS
-///////////////////////////////////////
-
-//#2.1 - buttons
+/* ********************************************************************************
+ * #2 MISCELLANEOUS
+ *
+ * 2.1 - buttons
+ ************************************/
 $L['ACTIVATE_USERS'] = 'Activar Usuarios';
 $L['ADD_IP_ADDRESS'] = 'Agregar Dirección IP';
 $L['ADD_USERNAME'] = 'Agregar Nombre de Usuario';
@@ -180,6 +205,7 @@ $L['INSTALLING'] = 'Instalando';
 $L['KILL_USER_SESSION'] = 'Cerrar todas las sesiones de usuario';
 $L['LAUNCH'] = 'Lanzamiento';
 $L['LOGIN'] = 'Iniciar sesión';
+$L['LOGOFF'] = 'Cerrar sesión';
 $L['MEMORY_TAB'] = 'Memoria';
 $L['NETWORK_TAB'] = 'La red';
 $L['NGINX_BACKUP'] = 'Copia de seguridad de Nginx Config';
@@ -205,6 +231,7 @@ $L['RCLONE_LOGS'] = 'ver los registros';
 $L['RCLONE_UPLOAD'] = 'subir';
 $L['REFRESH'] = 'Actualizar';
 $L['REGISTER'] = 'Registrarse';
+$L['REGISTRADO'] = 'Registrada';
 $L['REINSTALL'] = 'Reinstalar';
 $L['RELOAD_CONF'] = 'Recargar Configuraciones';
 $L['RELOAD'] = 'Recarga';
@@ -237,13 +264,17 @@ $L['LATEST'] = 'último';
 $L['CURRENT'] = 'actual';
 $L['VIEW'] = 'Ver';
 
-//#2.2 - popup texture
+/* **********************************
+ * 2.2 - popup texture
+ ************************************/
 $L['SYSTEM_RESPONSE_TITLE'] = 'Respuesta del Sistema';
 $L['UNINSTALL_TITLE'] = 'Desinstalando';
 $L['UNINSTALLING_TXT_1'] = 'Lamento verte ir ... Desinstalando';
 $L['UNINSTALLING_TXT_2'] = 'en progreso. Por favor se paciente';
 
-//#2.3 - app nginx config edit modal
+/* **********************************
+ * 2.3 - app nginx config edit modal
+ ************************************/
 $L['ALERT_NGINX_EDITOR'] = 'Se recomienda hacer una copia de seguridad de su configuración actual primero y solo alterar la configuración a continuación si está bien versado en Nginx o si un miembro del personal lo instruye';
 $L['BACKUP_NGINX_LOC'] = 'Ubicación de la copia de seguridad de la configuración de Nginx';
 $L['CURRENT_NGINX_LOC'] = 'Ubicación actual de la configuración de Nginx';
@@ -255,7 +286,9 @@ $L['CURRENT_CONFIG_LOC'] = 'Config Ubicación actual';
 $L['APP_CONFIG_OPTIONS'] = 'Editor de configuración de aplicaciones';
 $L['APP_CONFIG_EDIT'] = 'Editar la configuración de la aplicación';
 
-//#2.4 - other
+/* **********************************
+ * 2.4 - other
+ ************************************/
 $L['ABOUT_RELEASE'] = 'Acerca de Versión';
 $L['EMAIL'] = 'E-mail';
 $L['HERE'] = 'aquí';
@@ -295,22 +328,24 @@ $L['MOUNT_MONITOR_INFO'] = 'Información de montaje adicional';
 $L['MOUNT_START_SCAN'] = 'Iniciar escaneo';
 $L['REMOVE_MOUNT_PATH'] = 'Eliminar ruta monitoreada. Esto no eliminará el directorio real o el punto de montaje.';
 
-
-////////////////////////////////////////
-//          #3 WIDGETS
-///////////////////////////////////////
-
-//#3.1 - TABLES HEADERS
-//#3.1.1 - App Management Center
+/* ********************************************************************************
+ * #3 WIDGETS
+ *
+ * 3.1 - Tables Headers
+ *
+ * 3.1.1 - app management center
+ ************************************/
 $L['AVAILABILITY'] = 'Disponibilidad';
 $L['DETAILS'] = 'Detalles';
 $L['NAME'] = 'Nombre';
 $L['CONFIGS'] = 'Configuraciones';
 $L['EXTRAS'] = 'Extras';
 
-
-//#3.2 - PACKAGE MANAGEMENT CENTER
-//#3.2.1 - App info
+/* **********************************
+ * 3.2 - Package Management Center
+ *
+ * 3.2.1 - app info
+ ************************************/
 $L['AIRSONIC'] = 'Airsonic-Advanced es una implementación más moderna del fork de Airsonic con varias mejoras clave de rendimiento y características. Añade y sustituye varias características de Airsonic. Airsonic es un streamer multimedia gratuito, basado en la web, que proporciona un acceso omnipresente a tu música.';
 $L['AUTOBRR'] = 'Autobrr es un reemplazo binario único moderno para el complemento autodl-irssi+rutorrent. Autobrr supervisa los canales de anuncios de IRC y los feeds RSS de torznab para obtener lanzamientos tan pronto como estén disponibles, con un buen filtrado y compatibilidad con expresiones regulares.';
 $L['AUTODL'] = 'AutoDL-iRSSi es un plugin para irssi que supervisa los anuncios en canales IRC y descarga archivos de torrent según los filtros definidos por el usuario.';
@@ -384,8 +419,9 @@ $L['X2GO'] = 'X2Go es un software de escritorio remoto para Linux que utiliza el
 $L['XTEVE'] = 'xTeVe es una aplicación que simula un sintonizador de TV, te permite tener canales de IPTV vía Plex o Emby. xTeVe puede combinar varios archivos M3U y XMLTV y enviarlos a su Media Center preferido.';
 $L['ZNC'] = 'ZNC es un "IRC bouncer" o BNC. Puede separar al cliente del servidor IRC real, y también de los canales seleccionados.';
 
-
-//#3.2.2 - App uninstall
+/* **********************************
+ * 3.2.2 - app uninstall
+ ************************************/
 $L['AIRSONIC_UNINSTALL'] = 'Está a punto de desinstalar <span style="color:#01cea2">Airsonic</span> de su sistema.<br/><br/>Esto eliminará completamente todas sus configuraciones y ajustes... esta acción es irreversible.<br/><br/>Puede volver a instalar <span style="color:#01cea2">Airsonic</span> en cualquier momento, sin embargo, sus configuraciones se restablecerán a los valores predeterminados.';
 $L['AUTOBRR_UNINSTALL'] = 'Está a punto de desinstalar <span style="color:#01cea2">Autobrr</span> de su sistema.<br/><br/>Esto eliminará por completo todas sus configuraciones y ajustes... esta acción es irreversible.<br/><br/>Puede reinstalar <span style="color:#01cea2">Autobrr</span> en cualquier momento, sin embargo, su configuración se restablecerá a los valores predeterminados.';
 $L['AUTODL_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">AutoDL-iRSSi</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">AutoDL-iRSSi</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
@@ -459,8 +495,9 @@ $L['X2GO_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2
 $L['XTEVE_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">xTeVe</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">xTeVe</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 $L['ZNC_UNINSTALL'] = 'Estás a punto de desinstalar <span style="color:#01cea2">ZNC</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.<br/><br/>Puedes volver a instalar <span style="color:#01cea2">ZNC</span> en cualquier momento, sin embargo, la configuración se restablecerá a la predeterminada.';
 
-
-//#3.2.3 - App reinstall
+/* **********************************
+ * 3.2.3 - app reinstall
+ ************************************/
 $L['AIRSONIC_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Airsonic</span> de su sistema.<br/><br/>Esto eliminará completamente todas sus configuraciones y ajustes... esta acción es irreversible.';
 $L['AUTOBRR_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">Autobrr</span> de su sistema.<br/><br/>Esto eliminará por completo todas sus configuraciones y ajustes... esta acción es irreversible.';
 $L['AUTODL_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">AutoDL-iRSSi</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
@@ -534,8 +571,9 @@ $L['X2GO_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">
 $L['XTEVE_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">xTeVe</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 $L['ZNC_REINSTALL'] = 'Está a punto de reinstalar <span style="color:#01cea2">ZNC</span> de tu sistema.<br/><br/>Esto eliminará completamente todas las configuraciones ... esta acción es irreversible.';
 
-
-//#3.2.4 - toggles & tooltips
+/* **********************************
+ * 3.2.4 - toggles & tooltips
+ ************************************/
 $L['APP_OPTIONS'] = 'Opciones de la aplicación';
 $L['NGINX_OPTIONS'] = 'Opciones de NGinx';
 $L['CARD_VIEW'] = 'Vista de la tarjeta';
@@ -547,23 +585,18 @@ $L['CURRENTLY_INSTALLED_TITLE'] = 'Alguien tiene esta aplicación instalada actu
 $L['DEL1_TOOLTIP'] = 'It looks like you are running on Ubuntu 20.04. Deluge v1 will not run on this Distro. Please consider installing Deluge v2 to continue as Deluge v2 runs on updated libtorrent1.2+ and python3+.';
 $L['DEL2_TOOLTIP'] = 'It looks like qBittorrent is currently installed. Deluge v2 will not work with qBittorrent installed. Please either remove qBittorrent or install Deluge v1 to continue.';
 $L['DEL2XENIAL_TOOLTIP'] = 'It looks like you are running on Ubuntu 16.04. Deluge v2 will not run on this Distro. Please consider installing Deluge v1 to continue.';
-$L['DOMAIN'] = 'DOMINIO';
 $L['EMBY_JELLYFIN_COMPAT_MESSAGE'] = 'Jellyfin instalado';
 $L['ENTER_MOUNT_POINT'] = 'Por favor ingrese su punto de montaje primario';
-$L['FAIL2BAN_TOOLTIP'] = 'Acceda a esta función desde ssh escribiendo: \'qb install fail2ban\'';
+$L['FAIL2BAN_TOOLTIP'] = 'Acceda a esta función desde ssh escribiendo:<br><code>qb install fail2ban</code>';
 $L['JELLYFIN_EMBY_COMPAT_MESSAGE'] = 'Emby instalado';
-$L['LETSENCRYPT_DOMAIN'] = 'Por favor, ingresa tu dominio para Let\'s Encrypt';
 $L['MEDUSA_INSTALLED'] = 'Medusa Instalada';
-$L['OVPN_TOOLTIP'] = 'Acceda a esta función desde tu consola web escribiendo: \'qb install vpn\'';
-$L['PLEX_CLAIM_MESSAGE'] = 'Para reclamar su Plex Media Server, ya debe tener una cuenta e iniciar sesión para obtener el código de reclamo de: <a href="https://nullrefer.ir/?https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank"><strong>https://www.plex.tv/claim/</strong></a><br/><br/><div class="alert alert-notice" style="color:#fff"><strong>NOTA: </strong> Se recomienda utilizar el botón "Copiar al portapapeles" desde la pantalla del código de reclamo para garantizar una inserción adecuada ya que el código de reclamo distingue entre mayúsculas y minúsculas.</div>';
-$L['PLEX_CLAIM_TITLE'] = 'Instalar Plex Media Server';
-$L['PLEX_CLAIM_TOKEN'] = 'Código de reclamo de Plex';
+$L['OVPN_TOOLTIP'] = 'Acceda a esta función desde tu consola web escribiendo:<br><code>qb install vpn -u USER</code>';
 $L['PRIMARY_MOUNTM'] = 'Montaje Primario';
 $L['QBIT_TOOLTIP'] = 'Parece que Deluge 2 está instalado actualmente. qBittorrent no funcionará con Deluge 2 instalado. Elimine Deluge 2 o instale Deluge 1 para continuar.';
 $L['QUOTAS_FSTAB'] = 'Edita tu fstab';
 $L['QUOTAS_HELP'] = 'Para más información sobre cómo instalar cuotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>por favor lea estas F.A.Q primero</strong></a>.';
 $L['QUOTAS_TOOLTIP'] = 'Agregue lo siguiente en lugar de <code class="language-bash">defaults</code> en su punto de montaje principal para continuar';
-$L['RCLONE_ADMIN_TOOLTIP'] = 'Acceda a esta función desde ssh escribiendo: \'qb install rclone -u USER [-o encrypted]\'';
+$L['RCLONE_ADMIN_TOOLTIP'] = 'Acceda a esta función desde ssh escribiendo:<br><code>qb install rclone -u USER [-o encrypted]</code><br>Consulte <code>qb help rclone</code> para obtener más opciones.';
 $L['RCLONE_USER_TOOLTIP'] = 'Póngase en contacto con un administrador del sistema para tener esto instalado.';
 $L['REMOVE_MEDUSA_FIRST'] = 'Desinstala primero Medusa para instalar esta aplicación.';
 $L['REMOVE_SICKCHILL_FIRST'] = 'Desinstala primero SickChill para instalar esta aplicación.';
@@ -571,16 +604,57 @@ $L['REMOVE_SICKGEAR_FIRST'] = 'Desinstala primero SickGear para instalar esta ap
 $L['SICKCHILL_INSTALLED'] = 'Sickchill Instalada';
 $L['SICKGEAR_INSTALLED'] = 'SickGear Instalada';
 $L['UNIFI_SSL_TOOLTIP'] = 'Si ya tiene un dominio establecido en la raíz de su sitio, así como un certificado de cifrado ya generado para el dominio, seleccione esta opción.';
-$L['ZNC_TOOLTIP'] = 'Acceda a esta función desde ssh escribiendo: \'qb install znc USER\'';
+$L['ZNC_TOOLTIP'] = 'Acceda a esta función desde ssh escribiendo:<br><code>qb install znc -u USER</code>';
 
-//#3.2.5 - service control
+/* **********************************
+ * UI - app install/reinstall modals
+ *
+ * calibre install/reinstall modal
+ ************************************/
+$L['CALIBRE_INSTALL_TITLE'] = 'Instalación de Calibre';
+$L['CALIBRE_REINSTALL_TITLE'] = 'Reinstalación de Calibre';
+$L['CALIBRE_INSTALL_MESSAGE'] = 'Tiene la opción de especificar una ruta de directorio personalizada para su biblioteca Calibre. Si la ruta elegida no existe actualmente, se generará automáticamente para usted.<br>Alternativamente, si prefiere usar la ruta predeterminada, simplemente deje el campo en blanco y la biblioteca se ubicará en:<br><code>/home/' . $username . '/.config/Calibre/library</code>';
+
+/* **********************************
+ * filebot install/reinstall modal
+ ************************************/
+$L['FILEBOT_INSTALL_TITLE'] = 'Instalar Filebot';
+$L['FILEBOT_REINSTALL_TITLE'] = 'Reinstalar Filebot';
+$L['PROCESS_DELUGE'] = '¿Procesar descargas para Deluge?';
+$L['PROCESS_DELUGE_TOOLTIP'] = 'Establezca esto en Sí para procesar descargas para Deluge.<br>Vea cómo implementarlo en las notas del script ubicadas en:<br><code>/home/' . $username . '/.config/Filebot/deluge-postprocess.sh</code>';
+$L['CUSTOM_PATH_TOOLTIP_NO_RCLONE'] = 'Establezca esto en Sí para ingresar la ruta a su biblioteca multimedia.<br>La ruta predeterminada es:<br><code>/home/' . $username . '/Media</code>';
+$L['CUSTOM_PATH_TOOLTIP_RCLONE'] = 'Establezca esto en Sí para ingresar la ruta a su biblioteca multimedia.<br>La ruta predeterminada es:<br><code>/home/' . $username . '/rclone/cache</code>';
+$L['PROCESS_NZBGET'] = '¿Procesar descargas para NZBGet?';
+$L['PROCESS_NZBGET_TOOLTIP'] = 'Establezca esto en Sí para procesar descargas para NZBGet.<br>Vea cómo implementarlo en las notas del script ubicadas en:<br><code>/home/' . $username . '/.config/NZBGet/scripts/nzbget-postprocess.sh</code>';
+$L['PROCESS_RTORRENT'] = '¿Procesar descargas para rTorrent?';
+$L['PROCESS_SABNZBD'] = '¿Procesar descargas para SABnzbd?';
+$L['CUSTOM_MEDIA_PATH'] = '¿Usar una ruta personalizada a la biblioteca multimedia?';
+$L['FILEBOT_DEFAULT_PATH'] = 'ejemplo';
+$L['FILEBOT_LICENSE'] = 'Licencia de Filebot';
+
+/* **********************************
+ * plex install/reinstall modal
+ ************************************/
+$L['PLEX_CLAIM_MESSAGE'] = '<p style="font-size:12px">Para reclamar su Plex Media Server, ya debe tener una cuenta e iniciar sesión para obtener el código de reclamo de: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--infoColor);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--mainFontColor)"><strong style="color:var(--alertLightInfoColor)">NOTA:</strong> Se recomienda utilizar el botón "Copiar al portapapeles" en la pantalla del código de reclamo para asegurarse inserción adecuada ya que el código de reclamación distingue entre mayúsculas y minúsculas.</div>';
+$L['PLEX_CLAIM_TITLE'] = 'Instalación del servidor Plex Media';
+$L['PLEX_CLAIM_TOKEN'] = 'Código de reclamación de Plex';
+$L['PLEX_DATA_PATH'] = '¿Usar una ruta personalizada para el directorio de datos?';
+$L['PLEX_DATA_PATH_TOOLTIP'] = 'Tiene la opción de especificar una ruta de datos personalizada para su instalación de Plex. Si la ruta elegida no existe actualmente, se generará automáticamente para usted.<br>Alternativamente, si prefiere usar la ruta predeterminada, simplemente mantenga la selección como \'No\', y el directorio de datos será ubicado en:<br><code>/home/' . $username . '/.config/\'Plex Media Server\'</code>';
+$L['PLEX_DOMAIN'] = '¿Establecer dominio para Plex Media Server?';
+$L['PLEX_DOMAIN_TOOLTIP'] = 'Si ya tiene un dominio y los registros DNS configurados para un subdominio de Plex, seleccione \'Sí\' para ingresar su subdominio de Plex.<br>Esta opción configurará su Plex Media Server para trabaje a la perfección con su dominio Plex personalizado. Incluye configurar el proxy inverso Nginx esencial e instalar el certificado SSL para su dominio para garantizar un acceso seguro.';
+
+/* **********************************
+ * 3.2.5 - service control
+ ************************************/
 $L['ACTIVE_STATUS'] = 'Activa (corriendo)';
 $L['APP_KEY'] = 'API Key';
 $L['APP_PORT'] = 'Puerto';
 $L['APP_STATUS'] = 'Estado';
 $L['INACTIVE_STATUS'] = 'Inactiva (muerta)';
 
-//#3.2.6 - rclone specific toggles
+/* **********************************
+ * 3.2.6 - rclone specific toggles
+ ************************************/
 $L['ACTIVE_MOUNTED'] = 'activo (montado)';
 $L['INACTIVE_NOTMOUNTED'] = 'muerto (no montado)';
 $L['RCLONE_LOG_VIEWER'] = 'RClone move.log';
@@ -595,9 +669,11 @@ $L['CLOUD_MANAGEMENT'] = 'Software en la nube';
 $L['RCLONE_MOUNT_INFO'] = 'Información de montaje RClone';
 $L['RCLONE MOUNT CHECK_PROCESS'] = 'Los valores de porcentaje de espacio se están calculando actualmente en segundo plano. Vuelva a consultar más tarde para ver los resultados actualizados.';
 
-
-//#3.3 - DASHBOARD WIDGETS
-//#3.3.1 - disk status widget
+/* **********************************
+ * 3.3 - DASHBOARD WIDGETS
+ *
+ * 3.3.1 - disk status widget
+ ************************************/
 $L['DD_DELUGE'] = 'Deluge';
 $L['DD_NZBGET'] = 'NZBGet';
 $L['DD_QBITTORRENT'] = 'qBittorrent';
@@ -621,7 +697,9 @@ $L['YOUR_DISK_STATUS'] = 'El estado de tus discos';
 $L['NZBGET_NZB'] = 'nzb cargados en NZBGet';
 $L['SABNZBD_NZB'] = 'Nzb cargados en SABnzbd';
 
-//#3.3.2 - System Index v1 : bandwidth data widget
+/* **********************************
+ * 3.3.2 - System Index v1 : bandwidth data widget
+ ************************************/
 $L['BANDWIDTH_DAILY'] = 'Diario';
 $L['BANDWIDTH_DATA'] = 'Ancho de Banda';
 $L['BANDWIDTH_HOURLY'] = 'Por hora';
@@ -638,7 +716,9 @@ $L['NETWORK'] = 'Red';
 $L['DOWNLOAD'] = 'Descargar';
 $L['UPLOAD'] = 'Subida';
 
-//#3.3.3 - System Index v1 : server load widget
+/* **********************************
+ * 3.3.3 - System Index v1 : server load widget
+ ************************************/
 $L['DAYS_L'] = 'días';
 $L['HOURS_L'] = 'horas';
 $L['MINUTES_L'] = 'min';
@@ -647,7 +727,9 @@ $L['SERVER_LOAD'] = 'Utilización del Servidor';
 $L['SL_TXT'] = 'Utilización promedio actual de tus servidores';
 $L['UPTIME'] = 'Tiempo activo';
 
-//#3.3.4 - System Index v1 : memory status widget
+/* **********************************
+ * 3.3.4 - System Index v1 : memory status widget
+ ************************************/
 $L['CACHED_MEMORY'] = 'Uso de Memoria Caché';
 $L['CLEAR_CACHE'] = 'Limpiar Memoria Caché';
 $L['CM_BUFFERS'] = 'El buffer está en';
@@ -667,7 +749,9 @@ $L['SYSTEM_RAM_STATUS'] = 'Estado de RAM del Sistema';
 $L['TOTAL_RAM'] = 'RAM del Sistema Total';
 $L['TOTAL'] = 'Total';
 
-//#3.3.5 - server activity widget
+/* **********************************
+ * 3.3.5 - server activity widget
+ ************************************/
 $L['ACC_REQ_ACT'] = 'las cuentas requieren activación';
 $L['GUESTS_ONLINE'] = 'invitados en línea';
 $L['LAST_ACTIVE_ON'] = 'fue la última activa en';
@@ -680,13 +764,13 @@ $L['USERS_AND'] = 'usuarios y';
 $L['USERS_LAST_VISIT'] = 'nuevos usuarios se han registrado desde su última visita';
 $L['CLEAR'] = 'clara';
 
-
-////////////////////////////////////////
-//          #4 PAGES
-///////////////////////////////////////
-
-//#4.1 - START SCREEN FORMS (login/forgot pass/register/account)
-//#4.1.1 - LOG IN
+/* ********************************************************************************
+ * #4 PAGES
+ *
+ * 4.1 - START SCREEN FORMS (login/forgot pass/register/account)
+ *
+ * 4.1.1 - LOGIN
+ ************************************/
 $L['CONFIRM_PASS_FIELD_PLACE'] = 'Confirme su dirección de correo electrónico';
 $L['CREATE_ACCOUNT'] = 'Crear una cuenta';
 $L['REMEMBER_ME'] = 'Recuérdame';
@@ -712,7 +796,9 @@ $L['ACCOUNT_INACTIVE_ADMIN'] = 'Su cuenta no ha sido activada por un administrad
 $L['ACCOUNT_INACTIVE_EMAIL'] = 'Su cuenta no ha sido activada.<br/>Por favor revise su correo electrónico para el enlace de activación.';
 $L['IP_BANNED'] = 'Su dirección IP ha sido prohibida.<br/>Por favor, póngase en contacto con un administrador del sistematrator.';
 
-//#4.1.2 - FORGOT PASSWORD
+/* **********************************
+ * 4.1.2 - FORGOT PASSWORD
+ ************************************/
 $L['EMAIL_FIELD_INVALID'] = 'Proporcione su correo electrónico';
 $L['EMAIL_FIELD_PLACE'] = 'Escriba su dirección de correo electrónico';
 $L['EMAIL_FIELD_VALID'] = 'Email proporcionado, validación lista.';
@@ -725,7 +811,9 @@ $L['RECOVER'] = 'Recuperación de contraseña';
 $L['PASSWORD_RESET'] = 'Restablecimiento de contraseña';
 $L['CONFIRM_PASSWORD'] = 'Confirmar contraseña';
 
-//#4.1.3 - REGISTER
+/* **********************************
+ * 4.1.3 - REGISTER
+ ************************************/
 $L['ACCOUNT_CREATED'] = 'su cuenta ha sido creada';
 $L['CAN_LOGIN'] = 'para su registro. Ahora puede iniciar sesión';
 $L['CREATED_ADM_ACT'] = 'Sin embargo, este foro requiere la activación de la cuenta por parte de un administrador. Se le informará por correo electrónico cuando su cuenta haya sido activada';
@@ -766,7 +854,9 @@ $L['PASSWORD_LONG'] = 'Contraseña demasiado larga';
 $L['PASSWORD_MATCH'] = 'Las contraseñas no coinciden';
 $L['QUOTA_EMPTY'] = 'Cuota de disco no ingresada';
 
-//#4.1.4 - ACCOUNT
+/* **********************************
+ * 4.1.4 - ACCOUNT
+ ************************************/
 $L['ADMIN_EDIT_ACC'] = 'Editar cuenta Admin';
 $L['EDIT_ACCOUNT'] = 'Editar cuenta';
 $L['USER_LINKS'] = 'User Links';
@@ -776,8 +866,12 @@ $L['Q_SYS_DASH'] = 'Panel de Sistema QuickBox';
 $L['RESET_PASS'] = 'Restablecer contraseña';
 $L['RESET_PASSWORD'] = 'Reset your password';
 $L['USER_PROFILE'] = 'Perfil de usuario';
+$L['PWD_CHANGE'] = 'Contraseña cambiada';
+$L['EMAIL_CHANGE'] = 'Correo electrónico modificado';
 
-//#4.1.4.1 - quotes
+/* **********************************
+ * 4.1.4.1 - quotes
+ ************************************/
 $L['DAYUM'] = 'Super!';
 $L['HEY'] = 'Hola';
 $L['HOW_AWESOME'] = '¿Cómo es que te has vuelto tan genial?';
@@ -786,12 +880,16 @@ $L['QUICKBOX_DEDICATION'] = 'nos encanta tu dedicación a QuickBox!';
 $L['SO_GLAD'] = 'Que bueno que estés aquí';
 $L['WITHOUT_YOU'] = '¿Qué haría sin ti?';
 
-//#4.1.4.2 - edit account modal
+/* **********************************
+ * 4.1.4.2 - edit account modal
+ ************************************/
 $L['CONFIRM_NEW_PASS_INFO'] = 'Please confirm your new password.';
 $L['CURRENT_PASS'] = 'Current Password';
 $L['NEW_EMAIL'] = 'New E-mail Address';
 
-//#4.1.5 - SUMMARY
+/* **********************************
+ * 4.1.5 - SUMMARY
+ ************************************/
 $L['AWESOME'] = 'Asombroso';
 $L['WITH_PASSWORD'] = 'con contraseña';
 $L['USER_ADDED_TO_DB'] = 'ha sido agregado a la base de datos';
@@ -802,9 +900,11 @@ $L['REGI_FAIL_ERR2'] = 'no se pudo completar';
 $L['REGI_FAIL_ERR3'] = 'Por favor inténtalo de nuevo';
 $L['REGI_FAIL_ERR_FOUND'] = 'error(es) encontrado(s)';
 
-
-//#4.2 - SETTINGS
-//#4.2.1 - GENERAL SETTINGS
+/* **********************************
+ * 4.2 - SETTINGS
+ *
+ * 4.2.1 - GENERAL SETTINGS
+ ************************************/
 $L['ACCOUNT_PAGE'] = 'Página de Cuenta';
 $L['ACTIVATION_IP'] = 'IP de activación';
 $L['ACTIVATION_NEED_D_DO'] = '¡Hazlo aquí!';
@@ -848,7 +948,9 @@ $L['SITE_LOGO_SETTINGS'] = 'Configuración del logotipo del sitio';
 $L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'Este es el logotipo que se mostrará cuando la barra lateral esté contraída y se utilizará como icono de la pestaña del navegador.';
 $L['SITE_LOGO_FULL_TOOLTIP'] = 'Este es el logotipo que se mostrará cuando se expanda la barra lateral.';
 
-//#4.2.2 - EMAIL SETTINGS
+/* **********************************
+ * 4.2.2 - EMAIL SETTINGS
+ ************************************/
 $L['SMTP_AUTH'] = 'Habilitar la autenticación SMTP';
 $L['SMTP_SECURE'] = 'Habilite el cifrado SSL, TLS también se acepta con el puerto 465';
 $L['MAIL_HOST'] = 'Configure el servidor SMTP para enviar';
@@ -856,7 +958,9 @@ $L['MAIL_PORT'] = 'Puerto TCP para conectarse';
 $L['MAIL_USERNAME'] = 'Nombre de usuario SMTP';
 $L['MAIL_PASS'] = 'Contraseña SMTP';
 
-//#4.2.3 - SESSION SETTINGS
+/* **********************************
+ * 4.2.3 - SESSION SETTINGS
+ ************************************/
 $L['CHANGE_SESSION_SETTINGS'] = 'Cambiar configuración de sesiones.';
 $L['COOKIE_EXPIRY'] = '\'Recuérdame\' Expiración de Cookies';
 $L['COOKIE_PATH'] = 'Ruta de Cookies';
@@ -866,7 +970,9 @@ $L['MINUTES'] = 'Minutos';
 $L['RESET_EXPIRY'] = 'Restablecer Caducidad al Iniciar Sesión';
 $L['USER_TIMEOUT'] = 'Tiempo de inactividad del usuario';
 
-//#4.2.4 - USER SETTINGS
+/* **********************************
+ * 4.2.4 - USER SETTINGS
+ ************************************/
 $L['ALLOW_MULTI_LOGINS'] = 'Inicios de sesión múltiples';
 $L['ALLOW_MULTI_LOGINS_DESC'] = 'Esta opción permite inicios de sesión simultáneos desde varios dispositivos. Si está deshabilitado, se cerrará la sesión del usuario en todos los demás dispositivos cuando inicie sesión desde un nuevo dispositivo.';
 $L['ALLOW_CONFIG_EDITING'] = 'Editores de configuración en el panel';
@@ -891,7 +997,9 @@ $L['SETTING'] = 'Configuración';
 $L['DESCRIPTION'] = 'Descripción';
 $L['VALUE'] = 'Valor';
 
-//#4.2.5 - SECURITY SETTINGS
+/* **********************************
+ * 4.2.5 - SECURITY SETTINGS
+ ************************************/
 $L['BAN_IP_ADDRESS'] = 'Bloquear / Prohibir Direcciones IP';
 $L['BAN_IP_INFO'] = 'ej. 192.168.0.1 sin los ceros iniciales';
 $L['BAN_IP_REGISTER'] = 'Bloquear Dirección IP para Registrarse (o iniciar sesión)';
@@ -901,9 +1009,11 @@ $L['DISALLOW_USERNAMES'] = 'Nombres de usuario no permitidos';
 $L['DISALLOWED_USERNAMES'] = 'Nombres de usuario no permitidos';
 $L['PREVENT_USERNAMES'] = 'Prevenir registro de Nombres de Usuarios';
 
-
-//#4.3 - USER MANAGEMENT 
-//#4.3.1 - REGISTRATION SETTINGS
+/* **********************************
+ * 4.3 - USER MANAGEMENT
+ *
+ * 4.3.1 - REGISTRATION SETTINGS
+ ************************************/
 $L['ACCOUNT_ACTIVATION'] = 'Activación de cuenta';
 $L['ADMIN_ACT'] = 'Activación de Administrador';
 $L['ADMIN_ACT_INFO'] = 'Al seleccionar esta opción, luego del registro se le informará al usuario que debe esperar a que el Administrador active la cuenta. El usuario también recibirá un correo electrónico a tal efecto, al igual que el Administrador, quien luego tendrá la opción de activar al usuario con el enlace proporcionado en el correo electrónico o visitar el Panel de Administración y activar al usuario allí.';
@@ -934,7 +1044,9 @@ $L['USERNAME_LOWERCASE'] = 'Nombre de Usuario en Minúscula';
 $L['USERNAME_LOWERCASE_YES_INFO'] = 'Establecer esta opción en Sí cambia todos los nuevos nombres de usuario registrados a minúsculas. Esta es la opción recomendada.';
 $L['USERNAME_LOWERCASE_NO_INFO'] = 'Establecer esta opción en No no cambiará los nuevos nombres de usuario registrados a minúsculas. Los nombres de usuario aparecerán tal como están registrados, pero se mantendrán en minúsculas en el entorno del servidor para que el software funcione correctamente.';
 
-//#4.3.2 - USER ADMIN
+/* **********************************
+ * 4.3.2 - USER ADMINISTRATION
+ ************************************/
 $L['ADMIN_ANNOUNCE'] = 'Anuncios de administrador';
 $L['ANNOUNCEMENT_HISTORY'] = 'Tus anuncios anteriores';
 $L['ANNOUNCEMENT_LIST'] = 'Contenido de anuncio';
@@ -980,7 +1092,9 @@ $L['USERNAMES'] = 'Nombre de Usuario';
 $L['USERS_AWAITING'] = 'Usuarios en Espera de Activación';
 $L['USERS_SESSIONS'] = 'Sesiones de Usuario';
 
-//#4.3.2.1 - admin user edit
+/* **********************************
+ * 4.3.2.1 - admin user edit
+ ************************************/
 $L['ACTIONS'] = 'Comportamiento';
 $L['ACTIVE_SESSION'] = 'Sesión Activa';
 $L['APPLICATION'] = 'aplicaciones';
@@ -1011,7 +1125,9 @@ $L['USER_EDIT1'] = 'Editar Usuario :';
 $L['USER_EDIT2'] = 'Editar Usuario';
 $L['SELECT_GROUP'] = 'Seleccionar Grupo';
 
-//#4.3.3 - USERS GROUPS
+/* **********************************
+ * 4.3.3 - USERS GROUPS
+ ************************************/
 $L['ADMINISTRATORS'] = 'Administradores';
 $L['ASSIGN_LEVEL'] = 'Asignar Nivel de Grupo :';
 $L['CLICK_HERE'] = 'Click Aquí...';
@@ -1032,12 +1148,16 @@ $L['NUMBER_MEMBERS'] = '# de Miembros';
 $L['USER_GROUPS_INFO'] = 'Crear, ver y editar grupos de usuarios. Asignar usuarios a grupos de usuarios.';
 $L['SOFT_GROUP_ASGMNT'] = 'Asignación de Grupo de Software';
 
-
-//#4.4 - SYSTEM 
-//#4.4.1 - WEB CONSOLE
+/* **********************************
+ * 4.4 - SYSTEM
+ *
+ * 4.4.1 - WEB CONSOLE
+ ************************************/
 $L['WEB_CONSOLE_INFO'] = 'Accede a tu entorno de comandos';
 
-//#4.4.2 - API CONTROL
+/* **********************************
+ * 4.4.2 - API CONTROL
+ ************************************/
 $L['ACTIVATION_INFO_STATS'] = 'Estadísticas de información de activación';
 $L['QB_CONTROL_API'] = 'API de Control QB';
 $L['QB_CONTROL_API_NOTICE'] = 'Las claves de control de API están compartimentadas en dos componentes, como se ve a continuación.<br/>Los ejemplos de uso se han etiquetado para ilustrar el nivel de permisos de un comando específico necesario para realizar la tarea designada. La biblioteca de uso de API continuará recibiendo actualizaciones a medida que se implementen puntos finales y funciones adicionales.<br/><br/><table><tbody><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-primary">&nbsp;</span></td><td>La <em>clave de permisos de lectura</em> solo tiene la capacidad de extraer datos. Esta clave no puede señalar tareas operativas al servidor QuickBox. A menos que esté intentando controlar su instalación de forma remota, esta tecla es todo lo que necesita.</td></tr><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-success">&nbsp;</span></td><td>La <em>clave de permisos de escritura</em> tiene la capacidad de realizar tareas adicionales, como actualizar la instalación de QuickBox, administrar la activación de la API principal, y más. Esta clave también funcionará para los permisos de lectura y debe considerarse la clave con el privilegio más alto. Útil para realizar de forma remota tareas básicas de administración de su servidor.</td></tr></tbody></table><br/>Recuerde tratar sus claves API como lo haría con las contraseñas, nunca las comparta.<br/>Puede regenerar una nueva clave de control aleatoria en cualquier momento presionando el botón <i data-feather="refresh-cw" style="width:14px;"></i> a continuación.';
@@ -1078,7 +1198,42 @@ $L['SOFT_CONTROL_ACTION_RESTART_NOTICE'] = 'Donde la action=restart...';
 $L['SOFT_CONTROL_ACTION_START_NOTICE'] = 'Dónde la action=start...';
 $L['SOFT_CONTROL_ACTION_STOP_NOTICE'] = 'Donde la action=stop...';
 
-//#4.4.3 - TROUBLESHOOTING
+/* **********************************
+ * 4.4.3 - SSL CONTROL
+ ************************************/
+$L['LETSENCRYPT_DOMAIN'] = 'Let\'s Encrypt el dominio';
+$L['SSL_CONTROL'] = 'Control SSL';
+$L['ABOUT_SSL_CONTROL'] = 'Esta función le permite generar fácilmente certificados SSL para las aplicaciones compatibles que haya instalado. Al seleccionar "Sí" e ingresar su dominio, configurará sin problemas el proxy inverso de Nginx junto con el certificado SSL.';
+$L['STAGE_DASHBOARD_SSL'] = '¿Preparar SSL para el Panel de control?';
+$L['DASHBOARD_SSL_TOOLTIP'] = 'Para proteger su Panel QuickBox con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su panel a través de su dominio.';
+$L['STAGE_OWNED_DOMAIN_SSL'] = '¿Preparar SSL para un dominio propio?';
+$L['NON_DASHBOARD_SSL_TOOLTIP'] = 'Para establecer un certificado SSL para un dominio de su preferencia, elija \'Sí\'. Esta opción está diseñada para la creación de certificados SSL adicionales. Asegúrese de que los registros DNS apropiados para el dominio estén configurados correctamente, ya que este proceso genera exclusivamente los certificados SSL solicitados.';
+$L['STAGE_EMBY_SSL'] = '¿Preparar SSL para Emby?';
+$L['EMBY_SSL_TOOLTIP'] = 'Para proteger su instalación de Emby con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su instalación de Emby a través de su dominio.';
+$L['STAGE_JELLYFIN_SSL'] = '¿Preparar SSL para Jellyfin?';
+$L['JELLYFIN_SSL_TOOLTIP'] = 'Para proteger su instalación de Jellyfin con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su instalación Jellyfin a través de su dominio.';
+$L['STAGE_JELLYSEERR_SSL'] = '¿Preparar SSL para Jellyseerr?';
+$L['JELLYSEERR_SSL_TOOLTIP'] = 'Para proteger su instalación de Jellyseerr con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su instalación de Jellyseerr a través de su dominio.';
+$L['STAGE_KOMGA_SSL'] = '¿Preparar SSL para Komga?';
+$L['KOMGA_SSL_TOOLTIP'] = 'Para proteger su instalación de Komga con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su instalación de Komga a través de su dominio.';
+$L['STAGE_OVERSEERR_SSL'] = '¿Preparar SSL para Overseerr?';
+$L['OVERSEERR_SSL_TOOLTIP'] = 'Para proteger su instalación de Overseerr con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su instalación de Overseerr a través de su dominio.';
+$L['STAGE_PLEX_SSL'] = '¿Preparar SSL para Plex?';
+$L['PLEX_SSL_TOOLTIP'] = 'Para proteger su instalación de Plex con un certificado SSL, simplemente seleccione \'Sí\'. Esta acción no solo configurará el certificado SSL sino que también establecerá las configuraciones y enlaces necesarios de NGinx, facilitando el acceso seguro a su instalación Plex a través de su dominio.';
+$L['DOMAIN'] = 'Dominio';
+$L['SSL_ALREADY_INSTALLED'] = 'Tenga en cuenta que ya existe un certificado SSL instalado para esta opción. Reinstalar el certificado ingresando un nuevo dominio a continuación restablecerá la configuración inversa actual de NGinx, eliminará el certificado anterior y restablecerá el acceso al enlace establecido actualmente.';
+$L['SSL_SUBMIT'] = 'Instalar certificado SSL';
+$L['SSL_STATUS_MONITOR_TOOLTIP'] = 'Supervise el estado de sus certificados SSL existentes con la capacidad de realizar dos acciones clave: eliminar o forzar la renovación. Para los certificados asociados con aplicaciones compatibles como Emby, Jellyfin, Jellyseerr, Komga, Overseerr y Plex, eliminar un certificado también activará la eliminación y reconfiguración del proxy inverso de Nginx para el dominio correspondiente.<br><br>Puede hacerlo sin problemas elimine un certificado usando las opciones a continuación y luego seleccione la aplicación que desee arriba para iniciar la instalación de un nuevo subdominio y certificado. Este proceso simplificado garantiza la máxima flexibilidad y control sobre la gestión de su certificado SSL.';
+$L['CERTS_STORED_AT'] = 'Los certificados monitoreados se almacenan en';
+$L['CERT_EXPIRES'] = 'Expira el:';
+$L['CERT_RENEW'] = 'Renovar certificado';
+$L['CERT_DELETE'] = 'Eliminar el certificado SSL y cualquier configuración adicional. Esta acción es irreversible.';
+$L['CERT_DELETE_CONFIRM'] = '¿Está seguro de que desea eliminar este certificado?';
+$L['NO_CERTS_INSTALLED'] = 'No hay certificados SSL instalados y/o monitoreados en este momento.';
+
+/* **********************************
+ * 4.4.4 - TROUBLESHOOTING
+ ************************************/
 $L['APP_SELECT'] = 'Seleccione la aplicación';
 $L['APPLIANCE'] = 'Software';
 $L['CLEAN_MEM'] = 'Borrar la memoria caché física';
@@ -1096,30 +1251,73 @@ $L['SYSTEM_LOG_FILES'] = 'Registro del sistema';
 $L['TROUBLESHOOTING'] = 'Solución de problemas';
 $L['WEB_SERVER'] = 'Servidor web';
 
-//#4.4.4 - SYSTEM LOGS
+/* **********************************
+ * 4.4.5 - SYSTEM LOGS
+ ************************************/
+$L['LOGS'] = 'Registros';
+$L['NO_LOGS'] = 'No se encontraron registros';
+$L['NO_LOGS_MESSAGE'] = 'En este momento, no hay registros disponibles para ver. Las entradas de registro se generan cuando las aplicaciones envían su información de registro al syslog del sistema. Si está buscando un registro en particular, le recomendamos consultar la documentación proporcionada por la aplicación respectiva para obtener más orientación. QuickBox se esfuerza diligentemente por centralizar varias aplicaciones y sus datos registrados; sin embargo, depende de las aplicaciones individuales transmitir su información de registro al syslog.';
 $L['ACCESS_LOGS'] = 'Registros de acceso';
 $L['APP_LOGS'] = 'Registros de software';
 $L['USER_LOGS'] = 'Registros de usuario';
 $L['DATE_TIME'] = 'Fecha/Hora';
 $L['EVENT'] = 'Evento';
+$L['LOG_MESSAGE'] = 'Registrar mensaje';
 $L['LOGS_SUMMARY'] = 'Resumen de registros';
 $L['COMMAND'] = 'Comando';
+$L['USER_ACTION_LOGS'] = 'Registros de acciones del usuario';
+$L['VIEW_USER_ACTION_LOGS'] = 'Ver registro de acciones del usuario';
+$L['ABOUT_USER_ACTION_LOGS'] = 'Los registros en este contexto pertenecen a tareas y eventos relacionados con el usuario iniciados a través de la interfaz QuickBox.';
+$L['SOFTWARE_ACTION_LOGS'] = 'Registros de acciones de software';
+$L['VIEW_SOFTWARE_ACTION_LOGS'] = 'Ver registro de acciones del software';
+$L['ABOUT_SOFTWARE_ACTION_LOGS'] = 'Estos registros están diseñados para proporcionar un registro de acciones relacionadas con el software, incluidas instalaciones, eliminaciones, actualizaciones y otros eventos importantes.';
+$L['SYSTEM_ACTION_LOGS'] = 'Registros de acciones del sistema';
+$L['VIEW_SYSTEM_ACTION_LOGS'] = 'Ver registro de acciones del sistema';
+$L['ABOUT_SYSTEM_ACTION_LOGS'] = 'Estos registros están diseñados para capturar actividades y acciones a nivel del sistema iniciadas a través de la herramienta de línea de comando <code>qb</code>.';
+$L['UI_ACTION_LOGS'] = 'Registros de acciones de la interfaz de usuario';
+$L['VIEW_UI_ACTION_LOGS'] = 'Ver registro de acciones de la interfaz de usuario';
+$L['ABOUT_UI_ACTION_LOGS'] = 'Estos registros se derivan del syslog del sistema y sirven como un registro consolidado de todos los comandos y acciones iniciadas a través de la interfaz de usuario del QuickBox Dashboard.';
+$L['SYSTEM_LOG_SUMMARY'] = 'Resumen del registro del sistema';
+$L['SYSTEM_LOG_SUMMARY_TOOLTIP'] = 'Este resumen y todos los registros adicionales se generan bajo tres condiciones:<br><ol><li><strong>Cron:</strong> los registros se actualizan automáticamente con la ejecución de una tarea cron cada 15 minutos. Esto inicia el binario <code>qb_log_miner</code> que agrega entradas de registro del syslog del sistema.</li><li><strong>Generar manualmente:</strong> Puede generarlo desde la sección \'Sistema > Solución de problemas > Registro del sistema\' haciendo clic en el botón \'(Generar)\'.</li><li>< strong>Línea de comando:</strong> También se puede generar ejecutando el comando <code>qb generate log</code>.</li><li><strong>Línea de comando:</strong> También se puede generar ejecutando el comando <code>qb generate log</code>.</li></ol>Puede acceder y descargar este archivo de registro resumido de dos maneras:<br><ol><li><strong>Interfaz web:</strong> Vaya a \'Sistema > Solución de problemas > Registro del sistema (descargar)\' dentro de la interfaz de usuario.</li><li><strong>Directorio del servidor:</strong> Encuéntrelo en el servidor en: \'/srv/quickbox/logs/system_log\'.</li></ol>';
+$L['CLEAR_LOG'] = 'Borrar registro';
+$L['CLEAR_LOG_CONFIRM'] = '¿Está seguro de que desea eliminar estos registros? ¿Esto no se puede deshacer?';
+$L['DELETED_ALL_APP_LOGS'] = 'Se eliminaron todos los registros de software';
+$L['DELETED_ALL_APPLICATION_LOGS'] = 'Eliminar todos los registros de la aplicación';
+$L['DELETED_ALL_SUMMARY_LOGS'] = 'Se eliminaron todos los registros de resumen';
+$L['DELETED_ALL_SYSTEM_LOGS'] = 'Se eliminaron todos los registros del sistema';
+$L['DELETED_ALL_UI_LOGS'] = 'Se eliminaron todos los registros de la interfaz de usuario';
+$L['DELETED_ALL_USER_LOGS'] = 'Se eliminaron todos los registros de usuarios';
+$L['DELETED_APPLICATION_LOGS'] = 'Registros de aplicaciones eliminados';
+$L['DELETED_SUMMARY_LOGS'] = 'Registros resumidos eliminados';
+$L['DELETED_USER'] = 'Usuario eliminado';
+$L['DELETE_USER_LOGS'] = 'Eliminar registros de usuario';
+$L['QUICKBOX_VERSION_CHECK'] = 'Buscar actualizaciones de QuickBox';
+$L['SOFTWARE_VERSION_CHECK'] = 'Buscar actualizaciones de software instaladas';
+$L['SCHEDULED_TASK'] = 'Tarea programada';
 
-//#4.4.5 - HELP MANUAL
+/* **********************************
+ * 4.4.6 - HELP MANUAL
+ ************************************/
 $L['QB_HELP'] = 'Manual de ayuda';
 
-//description
+/* **********************************
+ * description
+ ************************************/
 $L['DESCRIPTION_CONTENT'] = '<p>Bienvenido a la visualización gráfica integral de la página de manual de <code>qb</code>, diseñada para ofrecerle un enfoque traducido, simplificado y eficiente para acceder a diversa información sobre QuickBox. Esta interfaz fácil de usar tiene como objetivo proporcionar información detallada sobre el funcionamiento de QuickBox, una herramienta poderosa y versátil para administrar su servidor sin esfuerzo.</p>
 <p>Dentro de esta pantalla gráfica, encontrará una lista detallada de las aplicaciones disponibles listas para una instalación perfecta, lo que le permitirá personalizar la configuración de su servidor de acuerdo con sus necesidades específicas. Además, este recurso presenta una gran cantidad de otros comandos esenciales para una utilización óptima dentro del entorno CLI de <code>qb</code>, lo que le permite navegar a través de las tareas de su servidor de manera eficiente y sin esfuerzo.</p>
 <p>Tanto si es nuevo en QuickBox como si es un usuario experimentado, esta visualización gráfica de la página de manual de <code>qb</code> sirve como referencia definitiva para aprovechar todo el potencial de QuickBox y liberar el verdadero poder de la administración de su servidor. Explore las diversas funciones, optimice las operaciones de su servidor y maximice su productividad con la ayuda de esta guía intuitiva e informativa. ¡Sumerjámonos y hagamos que su experiencia con QuickBox sea aún más gratificante!</p>';
 $L['API_INFO_DIRECT'] = '<p style="font-weight:600;">Para obtener más información y referencias sobre la API integrada de QuickBox, <a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--infoColor);">ver esta página</a>.</p>';
 
-//options
+/* **********************************
+ * options
+ ************************************/
 $L['OPTIONS_HEADER'] = 'Opciones';
 $L['OPTIONS_CONTENT_HELP'] = 'Muestra este manual de ayuda en formato de página de manual CLI';
 $L['OPTIONS_CONTENT_VERBOSE'] = 'Habilita el modo detallado para la depuración';
 
-//software
+/* **********************************
+ * software
+ ************************************/
 $L['SOFTWARE_HEADER'] = 'Software';
 $L['SOFTWARE_INFO_CONTENT'] = '<p>La siguiente es una lista de todas las aplicaciones disponibles para instalar proporcionadas a través de la compilación de QuickBox.<br/>Los nombres de software se presentan como los ve <code>qb [install|reinstall|update|remove|help] [software_name]</code></p>';
 $L['ADMIN_INSTALLED_SOFTWARE_HEADER'] = 'Software instalado por el administrador';
@@ -1133,7 +1331,10 @@ $L['SOFTWARE_MANAGEMENT_CONTENT'] = 'Parámetros para instalar, reinstalar, actu
 $L['SOFTWARE_MANAGEMENT_WARNING_CONTENT'] = '<p>Recuerde que varias aplicaciones tienen varias opciones/requisitos. La mayoría requiere el uso de la marca de nombre de usuario (<code>-u</code>), mientras que aplicaciones como rtorrent no lo harán. Para verificar todas las opciones disponibles para un software específico, utilice <code class="language-bash">qb help [software_name]</code>. Los nombres de aplicaciones dentro de QuickBox para el esquema de nombres de software se pueden ver en el <a href="#software" class="link">gráfico de lista de software</a> anterior.</p>';
 $L['SEE_ALSO_HEADER'] = 'Ver también';
 $L['SEE_ALSO_CONTENT'] = 'Mostrar el uso de comandos útiles para el software designado';
-//tables
+
+/* **********************************
+ * software options table
+ ************************************/
 $L['SOFTWARE_NAME'] = 'Nombre del software';
 $L['SOFTWARE_TITLE'] = 'Título del software';
 $L['USABILITY'] = 'Usabilidad';
@@ -1147,10 +1348,14 @@ $L['GLOBAL_INFO'] = 'requiere instalación del administrador e instalaciones par
 $L['MULTI_USER_INFO'] = 'requiere instalación de administrador y se puede instalar para cualquier usuario asignado. se admiten múltiples usuarios.';
 $L['SINGLE_USER_INFO'] = 'usuario único, solo administrador. requiere la instalación del administrador y es instalado y operado por el usuario administrador.';
 
-//examples
+/* **********************************
+ * examples header
+ ************************************/
 $L['EXAMPLES_HEADER'] = 'Ejemplos';
 
-//user management
+/* **********************************
+ * user management
+ ************************************/
 $L['USER_MANAGEMENT_INFO_CONTENT'] = '<p>Las funciones de administración de <code>qb user</code> en QuickBox ofrecen un conjunto versátil y poderoso de herramientas para administrar eficientemente a los usuarios en su servidor. Con un enfoque en la facilidad de uso y la funcionalidad robusta, estas funciones le permiten optimizar la administración de usuarios, mejorar la seguridad y garantizar una operación fluida del servidor.</p>';
 $L['CREATE_USER_CONTENT'] = 'Crea una nueva cuenta de usuario de QuickBox';
 $L['DELETE_USER_CONTENT'] = 'Elimina la cuenta de usuario de QuickBox';
@@ -1171,7 +1376,9 @@ $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>pr
 $L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Precaución:</strong> tenga en cuenta que cambiar el entorno de shell a cualquier otro que no sea <code>/bash</code> puede provocar un comportamiento no deseado al usar <code>qb</code> (QuickBox), ya que ha sido específicamente diseñado y optimizado para el entorno <code>/bash</code>. En resumen, <code>qb</code> se basa en características y funcionalidades específicas proporcionadas por el shell Bash.<br><br>Para evitar posibles problemas, se recomienda seguir con <code>/bash</code> entorno al usar <code>qb</code>. Si aún desea usar un shell diferente, consulte la documentación de ese shell para revisar cualquier cambio adicional en las rutas, configuraciones u otras configuraciones que puedan necesitar ser actualizadas para garantizar la compatibilidad con <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Comandos de Rclone';
 
-//clean functions
+/* **********************************
+ * clean functions
+ ************************************/
 $L['CLEAN_FUNCTIONS'] = 'Limpiar funciones';
 $L['CLEAN_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb clean</code> en QuickBox ofrecen una forma conveniente y eficiente de mantener la limpieza de su servidor y optimizar su rendimiento. Diseñadas teniendo en cuenta la simplicidad y la eficacia, estas funciones le permiten liberar memoria valiosa, eliminar el desorden innecesario y garantizar un funcionamiento del servidor fluido y optimizado.</p>';
 $L['CLEAN_MEMORY'] = 'Limpiar memoria';
@@ -1183,7 +1390,9 @@ $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Limpia los registros de carga de Quick
 $L['CLEAN_LOCKS'] = 'Limpiar candados';
 $L['CLEAN_LOCKS_CONTENT'] = 'Limpia el software QuickBox y los bloqueos apt-dpkg que pueden impedir que QuickBox instale software nuevo';
 
-//fix functions
+/* **********************************
+ * fix functions
+ ************************************/
 $L['FIX_FUNCTIONS'] = 'Reparar funciones';
 $L['FIX_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb fix</code> en QuickBox proporcionan un conjunto de herramientas potente y fácil de usar para abordar problemas comunes y realizar reparaciones del sistema sin esfuerzo. Con un enfoque en la simplicidad y la eficacia, estas funciones le permiten detectar y resolver varios problemas que puedan surgir en su servidor, lo que garantiza operaciones fluidas e ininterrumpidas.</p>';
 $L['FIX_HOME'] = 'Reparar Inicio';
@@ -1195,15 +1404,19 @@ $L['FIX_PYTHON_CONTENT'] = 'Reparar la configuración de Python e instalar las e
 $L['FIX_VERSION'] = 'Versión fija';
 $L['FIX_VERSION_CONTENT'] = 'Arreglar la instalación de QuickBox reinstalando la última versión disponible';
 
-//generate functions
+/* **********************************
+ * generate functions
+ ************************************/
 $L['GENERATE_FUNCTIONS'] = 'Generar funciones';
 $L['GENERATE_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb generate</code> en QuickBox ofrecen una forma conveniente y eficiente de crear elementos esenciales que mejoran la administración y el monitoreo del servidor. Actualmente, el comando qb generate es compatible con la función de generación de registros de qb, lo que permite a los usuarios generar sin esfuerzo una vista previa de las estadísticas de los servidores, la activación de API y la información de montaje.<br/>A medida que las funciones de generación de qb evolucionen, es probable que ofrezcan una matriz en expansión de funciones para mejorar aún más la administración del servidor.</p>';
 $L['GENERATE_SYSTEM_LOGS'] = 'Generar registros del sistema';
 $L['GENERATE_SYSTEM_LOGS_CONTENT'] = 'Genera registros del sistema para la instalación actual de QuickBox';
-$L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>Este comando es actualmente un trabajo en progreso y será actualizado y ampliado en un futuro cercano.</p>';
-$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>También puede generar y descargar el registro del sistema producido por el comando anterior en <a href="/troubleshooting.php" rel="noopener nofollow" class="link"> Página de solución de problemas</a>.<br/>El registro generado se almacena en el servidor en <code>/srv/quickbox/logs/system_log</code>.</p>';
+$L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>A partir de la versión <em>3.0.0.<strong>36+</strong></em>, <code>qb generate log</code> ha evolucionado hasta convertirse en una utilidad más detallada para la agregación y organización de registros. Su objetivo es simplificar la recuperación de registros complementando los registros nativos de una aplicación al resumir y centralizar los datos de registro críticos, haciendo que la resolución de problemas sea mucho más eficiente.</p><p>Este comando y su funcionalidad son un trabajo continuo en progreso.</p>';
+$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>Puede acceder y descargar este archivo de registro resumido de tres maneras:<br><ol><li><strong>Generar/Descargar:</strong> Vaya a \'Sistema > <a href="/troubleshooting.php" class="link">Solución de problemas</a> > Registro del sistema\' dentro de la interfaz de usuario. Aquí puede generar y/o descargar el resumen del registro del sistema producido por el comando generar registro.</li><li><strong>Ver registros:</strong> Vaya a \'Sistema > <a href="/logs.php" class="link">Registros del sistema</a>\'. Aquí es donde puede encontrar registros adicionales e información recopilada por el comando generar registro.</li><li><strong>Directorio del servidor:</strong> Encuéntrelo en el servidor en: \'/srv/quickbox/logs/system_log\'.</li></ol></p>';
 
-//manage functions
+/* **********************************
+ * manage functions
+ ************************************/
 $L['MANAGE_FUNCTIONS'] = 'Administrar funciones';
 $L['MANAGE_FUNCTIONS_INFO_CONTENT'] = '<p>Las funciones <code>qb manage</code> en QuickBox brindan un conjunto de herramientas poderoso y completo para administrar eficientemente varios aspectos de su servidor. Diseñadas pensando en la comodidad del usuario, estas funciones le permiten controlar sin esfuerzo los elementos críticos de su entorno impulsado por QuickBox.<br/>Ya sea para cambiar la configuración de idioma, verificar el estado de la activación de su API principal, administrar la distribución de datos o garantizando la integridad de los datos a través de copias de seguridad y reversiones, las funciones de gestión de qb ofrecen una solución integral para administradores de servidores y entusiastas por igual.</p>';
 $L['MANAGE_API_KEY'] = 'Administrar clave API';
@@ -1235,13 +1448,17 @@ $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'Este comando restaurará la configura
 $L['RESTORE_APP_DEFAULT_CONFIG'] = 'Restaurar predeterminado <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'Este comando restaurará la configuración de la aplicación predeterminada designada (desde la instalación) para el usuario asignado';
 
-//news functions
+/* **********************************
+ * news functions
+ ************************************/
 $L['NEWS_FUNCTIONS'] = 'Funciones de Noticias';
 $L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>La función <code>qb news</code> en QuickBox ofrece actualizaciones de noticias oportunas y relevantes directamente a su servidor, lo que garantiza que se mantenga informado sobre los últimos desarrollos y cambios en el ecosistema de QuickBox. . Con el objetivo de mantenerlo actualizado, esta función brinda información esencial sobre los lanzamientos actuales y futuros, los cambios de versión y otros elementos de interés.</p>';
 $L['NEWS'] = 'Noticias';
 $L['NEWS_CONTENT'] = 'Ver las últimas noticias de QuickBox';
 
-//support functions
+/* **********************************
+ * support functions
+ ************************************/
 $L['SUPPORT_FUNCTIONS'] = 'Funciones de soporte';
 $L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>La función <code>qb support</code> en QuickBox ofrece un método seguro y confiable para otorgar acceso al personal de soporte a su servidor cuando se necesita asistencia. Con un fuerte énfasis en la seguridad y la protección del usuario, esta función utiliza la cuenta <code>quickSupport</code>, lo que garantiza que solo el personal de soporte autorizado pueda acceder a su servidor.</p>';
 $L['ENABLE_SUPPORT'] = 'Habilitar soporte';
@@ -1249,7 +1466,9 @@ $L['ENABLE_SUPPORT_CONTENT'] = 'Habilitar soporte. Por lo general, se asigna al 
 $L['DISABLE_SUPPORT'] = 'Deshabilitar soporte';
 $L['DISABLE_SUPPORT_CONTENT'] = 'Deshabilitar soporte. De lo contrario, la cuenta de soporte se eliminará automáticamente después de 36 horas';
 
-//update functions
+/* **********************************
+ * update functions
+ ************************************/
 $L['UPDATE_FUNCTIONS'] = 'Funciones de actualización';
 $L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>La función <code>qb update</code> en QuickBox le ofrece una forma conveniente y flexible de administrar las actualizaciones para su instalación de QuickBox. Con esta función, tiene control total sobre el proceso de actualización, lo que le permite buscar actualizaciones manualmente y elegir cuándo aplicarlas.</p>';
 $L['UPDATE_CHECK'] = 'Actualizar verificación';
@@ -1257,18 +1476,24 @@ $L['UPDATE_CHECK_CONTENT'] = 'Buscar actualizaciones de QuickBox';
 $L['UPDATE_QUICKBOX'] = 'Actualizar QuickBox';
 $L['UPDATE_QUICKBOX_CONTENT'] = 'Actualizar la instalación de QuickBox a la última versión, si hay alguna disponible';
 
-//bugs
+/* **********************************
+ * bugs & reporting
+ ************************************/
 $L['BUGS'] = 'Errores e informes';
 $L['BUGS_INFO_CONTENT'] = '<p>La visualización gráfica de la documentación de QuickBox recibirá actualizaciones periódicas para garantizar que la información proporcionada siga siendo fácilmente accesible y fácil de usar. Nuestro compromiso de mejorar su experiencia con QuickBox nos impulsa a refinar y mejorar continuamente la documentación, manteniéndola actualizada con las últimas características y funcionalidades.<br/><br/>
 Con cada actualización, nos esforzaremos por simplificar conceptos complejos, aclarar instrucciones e incorporar comentarios de los usuarios para hacer que la página de manual de qb sea aún más intuitiva y eficiente. Nuestro objetivo es brindarle una comprensión perfecta de QuickBox y sus amplias capacidades, lo que le permite dominar el entorno qb CLI y administrar sin esfuerzo las tareas de su servidor.<br/><br/>
 Valoramos sus comentarios y lo alentamos a compartir cualquier sugerencia o idea que pueda tener para mejorar aún más la página de manual de qb. Sus comentarios son fundamentales para dar forma a este recurso y garantizar que siga siendo una referencia valiosa para todos los usuarios de QuickBox. ¡De hecho, esta página existe porque fue solicitada! 🤪<br/><br/>
 Informe cualquier error reproducible o sugerencia a <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">Rastreador de problemas y funciones de QuickBox.IO Labs</a></strong></p>';
 
-//disclaimer
+/* **********************************
+ * disclaimer
+ ************************************/
 $L['DISLAIMER'] = 'Descargo de responsabilidad';
 $L['DISCLAIMER_TEXT'] = '<p>Este script está diseñado para uso general y no implica ninguna garantía de idoneidad para una tarea dada. QuickBox.IO no será responsable de su configuración ni de ningún daño causado durante el uso/instalación/modificación de este script o cualquiera de sus complementos. Tenga en cuenta que ni QuickBox.IO ni su personal son responsables de mantener actualizado su Software y/o Servidor; esta es una responsabilidad exclusiva del usuario del software QuickBox Pro.</p>';
 
-//license
+/* **********************************
+ * license
+ ************************************/
 $L['LICENSE'] = 'Licencia';
 $L['LICENSE_SET'] = 'Con licencia bajo BSD 3-Cláusula';
 $L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. Todos los derechos reservados.</p>
@@ -1278,37 +1503,15 @@ $L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. Todos los derecho
 <li>Ni el nombre del titular de los derechos de autor ni los nombres de sus colaboradores pueden utilizarse para respaldar o promocionar productos derivados de este software sin el permiso previo por escrito.</li></ul>
 <p>ESTE SOFTWARE ES PROPORCIONADO POR LOS TITULARES DE LOS DERECHOS DE AUTOR Y LOS CONTRIBUYENTES "TAL CUAL" Y CUALQUIER GARANTÍA EXPLÍCITA O IMPLÍCITA, INCLUYENDO, ENTRE OTRAS, LAS GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD E IDONEIDAD PARA UN FIN DETERMINADO. EN NINGÚN CASO EL TITULAR DE LOS DERECHOS DE AUTOR O LOS CONTRIBUYENTES SERÁN RESPONSABLES POR CUALQUIER DAÑO DIRECTO, INDIRECTO, INCIDENTAL, ESPECIAL, EJEMPLAR O CONSECUENTE (INCLUYENDO, ENTRE OTROS, LA ADQUISICIÓN DE BIENES O SERVICIOS SUSTITUTOS; PÉRDIDA DE USO, DATOS O BENEFICIOS; O INTERRUPCIÓN DEL NEGOCIO) CUALQUIER CAUSA Y EN CUALQUIER TEORÍA DE RESPONSABILIDAD, YA SEA POR CONTRATO, RESPONSABILIDAD ESTRICTA O AGRAVIO (INCLUYENDO NEGLIGENCIA O DE OTRO TIPO) QUE SURJA DE CUALQUIER FORMA DEL USO DE ESTE SOFTWARE, INCLUSO SI SE ADVIERTE DE LA POSIBILIDAD DE DICHO DAÑO. </p>';
 
-//misc
+/* **********************************
+ * misc
+ ************************************/
 $L['EXAMPLE'] = 'ejemplo:';
 $L['EXAMPLES'] = 'ejemplos:';
 
-//deprecated
-$L['ABOUT'] = 'Acerca de';
-$L['GETTING_SUPPORT'] = 'Getting Support';
-$L['HELP_TEXT'] = '<p class="fs14">Hecho con amor por <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
-Podrás encontrar ayuda en varios lugares, incluidos los foros. Si necesitas asistencia o tienes una duda relacionada con QuickBox Pro y sus aplicaciones, puedes encontrarla <a href="https://nullrefer.ir/?https://plaza.quickbox.io" rel="noopener nofollow" target="_blank">aquí</a>.<br><br>
-O visitanos en QuickBox.IO, donde hay algunos bits más de información, incluido un chat <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank"> aquí</a>.<br><br>
-Si necesitas ponerte en contacto con el personal de QuickBox sobre un problema o falla con el script, puedes reportarlo en nuestra <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">Discord</a> o enviar una publicación <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/bugs "rel="noopener nofollow" target="_blank"> here </a>.</p><br><br>';
-$L['HELP_TITLE'] = 'Panel de Control QuickBox, Página Principal & Gestión de Usuarios';
-$L['HELP'] = 'Ayuda';
-//commands
-$L['ADDITIONAL_ADMIN_COMMANDS'] = 'Comandos adicionales de Configuración de las Aplicaciones de Administración';
-$L['ADMIN_UPGRADE_COMMANDS'] = 'Comandos de Actualización del Administrador';
-$L['CLEAN_MEM_INFO'] = 'Usa el comando anterior como root cuando quiera borrar la memoria caché física de tu sistema.';
-$L['DISKTEST_INFO'] = 'Escribe este comando para realizar una prueba rápida de L/E de tu disco.';
-$L['ESSENTIAL_USER_COMMANDS'] = 'Comandos Esenciales del Usuario';
-$L['FIXHOME_INFO'] = 'Escribe este comando para ajustar rápidamente los permisos del directorio /home.';
-$L['QUICK_SYSTEM_TIPS'] = 'Consejos Rápidos Del Sistema';
-$L['QUICKVPN_INFO'] = 'Escribe este comando en ssh para configurar tu propio servidor VPN en no más de un minuto, así como administrar y crear nuevos certificados de usuario para usar el servidor VPN.';
-$L['SCREEN_IRSSI_INFO'] = 'Permite al usuario reiniciar irssi desde SSH.';
-$L['SCREEN_RTORRENT_INFO'] = 'Permite al usuario reiniciar rtorrent desde SSH.';
-$L['UPGRADEBTSYNC_INFO'] = 'Escribe este comando en ssh para actualizar BTSync a la versión más reciente cuando esté disponible.';
-$L['UPGRADEDELUGE_INFO'] = 'Escribe este comando en ssh para actualizar Deluge a la versión más reciente cuando esté disponible.';
-$L['UPGRADEOMBI_INFO'] = 'Escribe este comando en ssh para actualizar Ombi a la versión más reciente cuando esté disponible.';
-$L['UPGRADEPLEX_INFO'] = 'Escribe este comando en ssh para actualizar Plex a la versión más reciente cuando esté disponible.';
-$L['UPGRADERUTORRENT_INFO'] = 'Escribe este comando en ssh para actualizar ruTorrent y el tema club-QuickBox a la versión más reciente cuando esté disponible.';
-
-//#4.4.6 - CHANGELOG / UPDATE
+/* **********************************
+ * 4.4.7 - CHANGELOG / UPDATE
+ ************************************/
 $L['CURRENT_VERSION'] = 'Versión actual';
 $L['DASH_UPDATE_TITLE'] = 'Panel de la versión QuickBox';
 $L['QB_UPDATE'] = 'Panel de la versión QuickBox';
@@ -1324,7 +1527,9 @@ $L['UPDATE_ACTIVATE'] = 'Active su suscripción Pro para recibir actualizaciones
 $L['UPDATE_CURRENT'] = '¡Estás actualizado!';
 $L['CHANGELOGS'] = 'Registros de cambios';
 
-//#4.4.7 - SYSTEM DASHBOARD
+/* **********************************
+ * 4.4.8 - SYSTEM DASHBOARD
+ ************************************/
 $L['DISK_UTIL_TIME'] = 'Tiempo de utilización del disco';
 $L['DISK_IO_BW'] = 'Ancho de banda de E/S de disco';
 $L['DISK_SPACE_USAGE_FOR'] = 'Uso de espacio en disco para:';
@@ -1360,9 +1565,42 @@ $L['APT_VERSION_INSTALLED'] = 'Versión actual';
 $L['APT_VERSION_AVAILABLE'] = 'Versión disponible';
 $L['UPDATE_APT_DEPENDENCIES'] = 'Actualizar dependencias apt';
 
-//#4.5 - ERROR PAGES
-$L['404HACK'] = '¿Llamas a eso un hacker? Por favor.';
+/* **********************************
+ * 4.5 - ERROR PAGES
+ ************************************/
+$L['404HACK'] = '¡Ay! ¿Realmente quieres lastimarme?';
 $L['404PAGE'] = 'Esta no es la página que está buscando.';
 $L['404PRO'] = 'Por favor, compre un <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">Licencia QuickBox</a> para acceder a esta página.';
 $L['500PAGE'] = 'Esto es vergonzoso, algo parece haber salido mal.';
 $L['WHOOPS'] = 'Whoops!';
+
+/* ************************************************************************************
+! BEGIN DEPRECATED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+***************************************************************************************/
+$L['ABOUT'] = 'Acerca de';
+$L['GETTING_SUPPORT'] = 'Getting Support';
+$L['HELP_TEXT'] = '<p class="fs14">Hecho con amor por <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
+Podrás encontrar ayuda en varios lugares, incluidos los foros. Si necesitas asistencia o tienes una duda relacionada con QuickBox Pro y sus aplicaciones, puedes encontrarla <a href="https://nullrefer.ir/?https://plaza.quickbox.io" rel="noopener nofollow" target="_blank">aquí</a>.<br><br>
+O visitanos en QuickBox.IO, donde hay algunos bits más de información, incluido un chat <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank"> aquí</a>.<br><br>
+Si necesitas ponerte en contacto con el personal de QuickBox sobre un problema o falla con el script, puedes reportarlo en nuestra <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="noopener nofollow" target="_blank">Discord</a> o enviar una publicación <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/bugs "rel="noopener nofollow" target="_blank"> here </a>.</p><br><br>';
+$L['HELP_TITLE'] = 'Panel de Control QuickBox, Página Principal & Gestión de Usuarios';
+$L['HELP'] = 'Ayuda';
+//commands
+$L['ADDITIONAL_ADMIN_COMMANDS'] = 'Comandos adicionales de Configuración de las Aplicaciones de Administración';
+$L['ADMIN_UPGRADE_COMMANDS'] = 'Comandos de Actualización del Administrador';
+$L['CLEAN_MEM_INFO'] = 'Usa el comando anterior como root cuando quiera borrar la memoria caché física de tu sistema.';
+$L['DISKTEST_INFO'] = 'Escribe este comando para realizar una prueba rápida de L/E de tu disco.';
+$L['ESSENTIAL_USER_COMMANDS'] = 'Comandos Esenciales del Usuario';
+$L['FIXHOME_INFO'] = 'Escribe este comando para ajustar rápidamente los permisos del directorio /home.';
+$L['QUICK_SYSTEM_TIPS'] = 'Consejos Rápidos Del Sistema';
+$L['QUICKVPN_INFO'] = 'Escribe este comando en ssh para configurar tu propio servidor VPN en no más de un minuto, así como administrar y crear nuevos certificados de usuario para usar el servidor VPN.';
+$L['SCREEN_IRSSI_INFO'] = 'Permite al usuario reiniciar irssi desde SSH.';
+$L['SCREEN_RTORRENT_INFO'] = 'Permite al usuario reiniciar rtorrent desde SSH.';
+$L['UPGRADEBTSYNC_INFO'] = 'Escribe este comando en ssh para actualizar BTSync a la versión más reciente cuando esté disponible.';
+$L['UPGRADEDELUGE_INFO'] = 'Escribe este comando en ssh para actualizar Deluge a la versión más reciente cuando esté disponible.';
+$L['UPGRADEOMBI_INFO'] = 'Escribe este comando en ssh para actualizar Ombi a la versión más reciente cuando esté disponible.';
+$L['UPGRADEPLEX_INFO'] = 'Escribe este comando en ssh para actualizar Plex a la versión más reciente cuando esté disponible.';
+$L['UPGRADERUTORRENT_INFO'] = 'Escribe este comando en ssh para actualizar ruTorrent y el tema club-QuickBox a la versión más reciente cuando esté disponible.';
+/* ************************************************************************************
+! END DEPRECATED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+***************************************************************************************/

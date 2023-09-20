@@ -1,14 +1,15 @@
 <?php
 $version = $configs->getConfig('Version');
+$username = $session->username;
 /*
  *                        Danish                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : August 5, 2023       *
+ * Ready for QuickBox Pro v3.0.0 : September 16, 2023   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
  * NAVIGATION : #1                                      *
- *    lang & theme : #1.1                               *
+ *    language & theme selection : #1.1                 *
  *    user menu : #1.2                                  *
  *    sidebar menu : #1.3                               *
  *    sidebar submenus : #1.4                           *
@@ -57,20 +58,38 @@ $version = $configs->getConfig('Version');
  *    System : #4.4                                     *
  *       web console : #4.4.1                           *
  *       api-control : #4.4.2                           *
- *       troubleshootings : #4.4.3                      *
- *       system logs : #4.4.4                           *
- *       about / quicktips : #4.4.5                     *
- *         commands : #4.4.5.1                          *
- *       changelogs / update : #4.4.6                   *
- *       system dashboard : #4.4.7                      *
+ *       ssl-control : #4.4.3                           *
+ *       troubleshooting : #4.4.4                       *
+ *       system logs : #4.4.5                           *
+ *       help manual : #4.4.6                           *
+ *         description : #4.4.6.1                       *
+ *         options : #4.4.6.2                           *
+ *         software : #4.4.6.3                          *
+ *         software options table : #4.4.6.4            *
+ *         examples header : #4.4.6.5                   *
+ *         user management : #4.4.6.6                   *
+ *         clean functions : #4.4.6.7                   *
+ *         fix functions : #4.4.6.8                     *
+ *         generate functions : #4.4.6.9                *
+ *         manage functions : #4.4.6.10                 *
+ *         news functions : #4.4.6.11                   *
+ *         support functions : #4.4.6.12                *
+ *         update functions : #4.4.6.13                 *
+ *         bugs & reporting : #4.4.6.14                 *
+ *         disclaimer : #4.4.6.15                       *
+ *         license : #4.4.6.16                          *
+ *         misc : #4.4.6.17                             *
+ *       changelogs / update : #4.4.7                   *
+ *       system dashboard : #4.4.8                      *
  *    Error Pages : #4.5                                *
  */
 
-///////////////////////////////////////
-//          #1 NAVIGATION
-///////////////////////////////////////
-
-//#1.1 - language & theme selection
+/* ********************************************************************************
+ * #1 NAVIGATION
+ **********************************************************************************/
+/* **********************************
+ * 1.1 - language & theme selection
+ ************************************/
 $L['CHINESE'] = 'Kinesisk';
 $L['DANISH'] = 'Dansk';
 $L['ENGLISH'] = 'Engelsk';
@@ -83,12 +102,16 @@ $L['SPANISH'] = 'Spansk';
 $L['THEME_DARK'] = 'Mørkt Tema';
 $L['THEME_LIGHT'] = 'Lyst Tema';
 
-//#1.2 - user menu tabs
+/* **********************************
+ * 1.2 - user menu (top right)
+ ************************************/
 $L['LOG_OUT'] = 'Log Ud';
 $L['PROFILE'] = 'Min Profil';
 $L['REBOOT'] = 'Genstart';
 
-//#1.3 - sidebar menus
+/* **********************************
+ * 1.3 - sidebar menus
+ ************************************/
 $L['ABOUT_AND_TIPS'] = 'Om / QuickTips';
 $L['APP_DASHBOARD'] = 'Software Dashboard';
 $L['DASHBOARD'] = 'Dashboardet';
@@ -111,7 +134,9 @@ $L['USER_MANAGEMENT'] = 'Brugeradministration';
 $L['USER_SETTINGS'] = 'Brugerindstillinger';
 $L['WEB_CONSOLE'] = 'Webkonsol';
 
-//#1.4 - sidebar submenus
+/* **********************************
+ * 1.4 - sidebar submenus
+ ************************************/
 $L['APP_MENU'] = 'Software';
 $L['APPLICATIONS'] = 'Min software';
 $L['DASHBOARD_INFO'] = 'Vælg mellem det administrative systemdashboard eller softwaredashboardet, der kan ses af alle brugere.';
@@ -124,15 +149,17 @@ $L['RPLUGINS_NOTICE'] = 'Installer og afinstallér ruTorrent-udvidelser nemt ved
 $L['RPLUGINS'] = 'ruTorrent Udvidelser';
 $L['TORRENT_CLIENTS'] = 'Torrentklienter';
 
-//#1.5 - footer
+/* **********************************
+ * 1.5 - footer
+ ************************************/
 $L['ALL_RIGHTS'] = 'Alle rettigheder forbeholdes.';
 
-
-///////////////////////////////////////
-//         #2 MISCELLANEOUS
-///////////////////////////////////////
-
-//#2.1 - buttons
+/* ********************************************************************************
+ * #2 MISCELLANEOUS
+ **********************************************************************************/
+/* **********************************
+ * 2.1 - buttons
+ ************************************/
 $L['ACTIVATE_USERS'] = 'Aktivér Brugere';
 $L['ADD_IP_ADDRESS'] = 'Tilføj IP-adresse';
 $L['ADD_USERNAME'] = 'Tilføj Brugernavn';
@@ -180,6 +207,7 @@ $L['INSTALLING'] = 'Installerer';
 $L['KILL_USER_SESSION'] = 'Dræb alle brugersessioner';
 $L['LAUNCH'] = 'Åben';
 $L['LOGIN'] = 'Log på';
+$L['LOGOFF'] = 'Log af';
 $L['MEMORY_TAB'] = 'Hukommelse';
 $L['NETWORK_TAB'] = 'Netværk';
 $L['NGINX_BACKUP'] = 'Backup Nginx Konfiguration';
@@ -205,6 +233,7 @@ $L['RCLONE_LOGS'] = 'se logfiler';
 $L['RCLONE_UPLOAD'] = 'upload';
 $L['REFRESH'] = 'Genindlæs';
 $L['REGISTER'] = 'Tilmeld';
+$L['REGISTERED'] = 'Registreret';
 $L['REINSTALL'] = 'Geninstaller';
 $L['RELOAD_CONF'] = 'Genindlæs Konfigurationer';
 $L['RELOAD'] = 'Genindlæs';
@@ -237,13 +266,17 @@ $L['LATEST'] = 'seneste';
 $L['CURRENT'] = 'aktuel';
 $L['VIEW'] = 'Vis';
 
-//#2.2 - popup texture
+/* **********************************
+ * 2.2 - popup texture
+ ************************************/
 $L['SYSTEM_RESPONSE_TITLE'] = 'Systeminfo';
 $L['UNINSTALL_TITLE'] = 'Afinstallation';
 $L['UNINSTALLING_TXT_1'] = 'Fjerner filer og rydder op ... afinstallerer';
 $L['UNINSTALLING_TXT_2'] = 'er i gang. Vær tålmodig';
 
-//#2.3 - app nginx config edit modal
+/* **********************************
+ * 2.3 - app nginx config edit modal
+ ************************************/
 $L['ALERT_NGINX_EDITOR'] = 'Det rådes til at tage backup af din nuværende konfiguration først og kun ændre konfigurationen nedenfor, hvis du er velbevandret med Nginx eller bliver instrueret af et staffmedlem.';
 $L['BACKUP_NGINX_LOC'] = 'Placering af Nginx Konfigurations Backup';
 $L['CURRENT_NGINX_LOC'] = 'Nuværenden placering af Nginx Konfiguration';
@@ -255,7 +288,9 @@ $L['CURRENT_CONFIG_LOC'] = 'Config Nuværende Placering';
 $L['APP_CONFIG_OPTIONS'] = 'Software-konfigurationseditor';
 $L['APP_CONFIG_EDIT'] = 'Rediger softwarekonfiguration';
 
-//#2.4 - other
+/* **********************************
+ * 2.4 - other
+ ************************************/
 $L['ABOUT_RELEASE'] = 'Om Frigivelsen';
 $L['EMAIL'] = 'Email';
 $L['HERE'] = 'her';
@@ -295,22 +330,27 @@ $L['MOUNT_MONITOR_INFO'] = 'Yderligere monteringsoplysninger';
 $L['MOUNT_START_SCAN'] = 'Start scanning';
 $L['REMOVE_MOUNT_PATH'] = 'Fjern overvåget sti. Dette vil ikke fjerne den faktiske mappe eller monteringspunktet.';
 
-
-////////////////////////////////////////
-//          #3 WIDGETS
-///////////////////////////////////////
-
-//#3.1 - TABLES HEADERS
-//#3.1.1 - App Management Center
+/* ********************************************************************************
+ * #3 WIDGETS
+ **********************************************************************************/
+/* **********************************
+ * 3.1 - Tables Headers
+ ************************************/
+/* **********************************
+ * 3.1.1 - app management center
+ ************************************/
 $L['AVAILABILITY'] = 'Tilgængelighed';
 $L['DETAILS'] = 'Detaljer';
 $L['NAME'] = 'Navn';
 $L['CONFIGS'] = 'Muligheder';
 $L['EXTRAS'] = 'Ekstra';
 
-
-//#3.2 - PACKAGE MANAGEMENT CENTER
-//#3.2.1 - App info
+/* **********************************
+ * 3.2 - Package Management Center
+ ************************************/
+/* **********************************
+ * 3.2.1 - app info
+ ************************************/
 $L['AIRSONIC'] = 'Airsonic-Advanced er en mere moderne implementering af Airsonic-grenen med flere vigtige ydelses- og funktionsforbedringer. Den tilføjer og erstatter flere funktioner i Airsonic. Airsonic er en gratis, webbaseret mediestreamer, der giver universel adgang til din musik.';
 $L['AUTOBRR'] = 'Autobrr er en moderne enkelt binær erstatning for autodl-irssi+rutorrent plugin. Autobrr-monitorer IRC annoncerer kanaler og torznab RSS-feeds for at få udgivelser, så snart de er tilgængelige, med god filtrering og regex-understøttelse.';
 $L['AUTODL'] = 'AutoDL-iRSSi er et plugin til irssi, der overvåger IRC annoncerer kanaler og downloader torrent-filer baseret på brugerdefinerede filtre.';
@@ -384,8 +424,9 @@ $L['X2GO'] = 'X2Go er et open source fjernskrivebords-software til Linux som ben
 $L['XTEVE'] = 'xTeVe er et program, der simulerer en tv-tuner, det giver dig mulighed for at have IPTV-kanaler via Plex eller Emby. xTeVe kan flette flere M3U-og XMLTV-filer og sende det til dit foretrukne Media Center.';
 $L['ZNC'] = 'ZNC er en IRC bouncer eller BNC. Den kan frigøre ircklienten fra serveren eller kanalen og holde din klient ajour når der igen sker en tilkobling.';
 
-
-//#3.2.2 - App uninstall
+/* **********************************
+ * 3.2.2 - app uninstall
+ ************************************/
 $L['AIRSONIC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Airsonic</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.<br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">Airsonic</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
 $L['AUTOBRR_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">Autobrr</span> fra dit system.<br/><br/>Dette vil helt fjerne alle dine konfigurationer og indstillinger... denne handling er irreversibel.<br/><br/>Du kan til enhver tid geninstallere <span style="color:#01cea2">Autobrr</span>, dog vil dine indstillinger blive nulstillet til standard.';
 $L['AUTODL_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">AutoDL-iRSSi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.<br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">AutoDL-iRSSi</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
@@ -459,8 +500,9 @@ $L['X2GO_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">x2
 $L['XTEVE_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">xTeVe</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.<br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">xTeVe</span> til hver en tid, men din konfiguration vil blive nulstillet til standard.';
 $L['ZNC_UNINSTALL'] = 'Du er ved at afinstallere <span style="color:#01cea2">ZNC</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.<br/><br/>Du har mulighed for at geninstallere <span style="color:#01cea2">ZNC</span> til hver en tid, men dine indstillinger vil blive nulstillet til standard.';
 
-
-//#3.2.3 - App reinstall
+/* **********************************
+ * 3.2.3 - app reinstall
+ ************************************/
 $L['AIRSONIC_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Airsonic</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['AUTOBRR_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">Autobrr</span> fra dit system.<br/><br/>Dette vil helt fjerne alle dine konfigurationer og indstillinger... denne handling er irreversibel.';
 $L['AUTODL_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">AutoDL-iRSSi</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
@@ -534,8 +576,9 @@ $L['X2GO_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">x2
 $L['XTEVE_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">xTeVe</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 $L['ZNC_REINSTALL'] = 'Du er ved at geninstaller <span style="color:#01cea2">ZNC</span> fra dit system.<br/><br/>Dette vil fuldstændig fjerne dine konfigurationsindstillinger... denne handling kan ikke fortrydes.';
 
-
-//#3.2.4 - toggles & tooltips
+/* **********************************
+ * 3.2.4 - toggles & tooltips
+ ************************************/
 $L['APP_OPTIONS'] = 'App-indstillinger';
 $L['NGINX_OPTIONS'] = 'NGinx-indstillinger';
 $L['CARD_VIEW'] = 'Kortvisning';
@@ -547,23 +590,18 @@ $L['CURRENTLY_INSTALLED_TITLE'] = 'Nogen har i øjeblikket installeret denne sof
 $L['DEL1_TOOLTIP'] = 'Det ser ud til, at du kører på Ubuntu 20.04. Deluge v1 kører ikke på denne Distro. Overvej at installere Deluge v2 for at fortsætte, da Deluge v2 kører på opdateret libtorrent1.2 + og python3 +.';
 $L['DEL2_TOOLTIP'] = 'Det ser ud som om qBittorrent er installeret i øjeblikket. Deluge v2 fungerer ikke med qBittorrent installeret. Fjern venligst qBittorrent eller installer Deluge v1 for at fortsætte.';
 $L['DEL2XENIAL_TOOLTIP'] = 'Det ser ud til, at du kører på Ubuntu 16.04. Deluge v2 kører ikke på denne Distro. Overvej venligst at installere Deluge v1 for at fortsætte.';
-$L['DOMAIN'] = 'Domæne';
 $L['EMBY_JELLYFIN_COMPAT_MESSAGE'] = 'Jellyfin Installeret';
 $L['ENTER_MOUNT_POINT'] = 'Indtast venligst dit primære monteringspunkt';
-$L['FAIL2BAN_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive: \'qb install fail2ban\'';
+$L['FAIL2BAN_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive:<br><code>qb install fail2ban</code>';
 $L['JELLYFIN_EMBY_COMPAT_MESSAGE'] = 'Emby Installeret';
-$L['LETSENCRYPT_DOMAIN'] = 'Indtast venligst dit domæne til Let\'s Encrypt';
 $L['MEDUSA_INSTALLED'] = 'Medusa Installeret';
-$L['OVPN_TOOLTIP'] = 'Adgang til denne feature fås via webkonsollen ved at skrive: \'qb install vpn\'';
-$L['PLEX_CLAIM_MESSAGE'] = 'For at kræve din Plex Media Server skal du allerede have en konto og være logget ind for at hente kravskoden fra: <a href="https://nullrefer.ir/?https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank"><strong>https://www.plex.tv/claim/</strong></a><br/><br/><div class="alert alert-notice" style="color:#fff"><strong>BEMÆRK: </strong> Det tilrådes at bruge knappen "Kopier til udklipsholder" fra kravskodeskærmen for at sikre korrekt indsættelse, da kravskoden er store og små bogstaver.</div>';
-$L['PLEX_CLAIM_TITLE'] = 'Plex Media Server-installation';
-$L['PLEX_CLAIM_TOKEN'] = 'Plex kravskode';
+$L['OVPN_TOOLTIP'] = 'Adgang til denne feature fås via webkonsollen ved at skrive:<br><code>qb install vpn -u USER</code>';
 $L['PRIMARY_MOUNTM'] = 'Primært monteringspunkt (Mount)';
 $L['QBIT_TOOLTIP'] = 'Det ser ud til, at Deluge 2 er installeret i øjeblikket. qBittorrent fungerer ikke med Deluge 2 installeret. Fjern venligst Deluge 2 eller installer Deluge 1 for at fortsætte.';
 $L['QUOTAS_FSTAB'] = 'Rediger din fstab';
 $L['QUOTAS_HELP'] = 'Mere omkring installering af quotas, <a href="https://nullrefer.ir/?https://quickbox.io/document/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>læs venligst denne F.A.Q først</strong></a>.';
 $L['QUOTAS_TOOLTIP'] = 'Tilføj følgende i stedet for <code class="language-bash">defaults</code> på dit hovedmonteringspunkt (main mount) for at fortsætte';
-$L['RCLONE_ADMIN_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive: \'qb install rclone -u USER [-o encrypted]\'';
+$L['RCLONE_ADMIN_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive:<br><code>qb install rclone -u USER [-o encrypted]</code><br>Se <code>qb help rclone</code> for flere muligheder.';
 $L['RCLONE_USER_TOOLTIP'] = 'Kontakt en systemadministrator for at få dette installeret.';
 $L['REMOVE_MEDUSA_FIRST'] = 'Fjern først Medusa for at installere denne software.';
 $L['REMOVE_SICKCHILL_FIRST'] = 'Fjern først SickChill for at installere denne software.';
@@ -571,16 +609,58 @@ $L['REMOVE_SICKGEAR_FIRST'] = 'Fjern først SickGear for at installere denne sof
 $L['SICKCHILL_INSTALLED'] = 'SickChill Installeret';
 $L['SICKGEAR_INSTALLED'] = 'SickGear Installeret';
 $L['UNIFI_SSL_TOOLTIP'] = 'Hvis du allerede har et domæne, der er angivet i dit webstedsrod samt et Lets Encrypt certifikat, der allerede er genereret for domænet, skal du vælge denne indstilling.';
-$L['ZNC_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive: \'qb install znc -u USER\'';
+$L['ZNC_TOOLTIP'] = 'Adgang til denne feature fås via ssh ved at skrive:<br><code>qb install znc -u USER</code>';
 
-//#3.2.5 - service control
+/* **********************************
+ * UI - app install/reinstall modals
+ ************************************/
+/* **********************************
+ * calibre install/reinstall modal
+ ************************************/
+$L['CALIBRE_INSTALL_TITLE'] = 'Kaliberinstallation';
+$L['CALIBRE_REINSTALL_TITLE'] = 'Geninstaller kaliber';
+$L['CALIBRE_INSTALL_MESSAGE'] = 'Du har mulighed for at angive en brugerdefineret mappesti til dit Caliber-bibliotek. Hvis den valgte sti ikke eksisterer i øjeblikket, vil den automatisk blive genereret for dig.<br>Alternativt, hvis du foretrækker at bruge standardstien, skal du blot lade feltet stå tomt, og biblioteket vil være placeret på:<br><code>/home/' . $username . '/.config/Calibre/library</code>';
+
+/* **********************************
+ * filebot install/reinstall modal
+ ************************************/
+$L['FILEBOT_INSTALL_TITLE'] = 'Filebot Installation';
+$L['FILEBOT_REINSTALL_TITLE'] = 'Geninstaller filrobot';
+$L['PROCESS_DELUGE'] = 'Behandle downloads til Deluge?';
+$L['PROCESS_DELUGE_TOOLTIP'] = 'Sæt dette til Ja for at behandle downloads til Deluge.<br>Se, hvordan du implementerer i scriptnoterne på:<br><code>/home/' . $username. '/.config/Filebot/deluge-postprocess.sh</code>';
+$L['CUSTOM_PATH_TOOLTIP_NO_RCLONE'] = 'Sæt dette til Ja for at indtaste stien til dit mediebibliotek.<br>Standardstien er:<br><code>/home/' . $username. '/Media</code>';
+$L['CUSTOM_PATH_TOOLTIP_RCLONE'] = 'Sæt dette til Ja for at indtaste stien til dit mediebibliotek.<br>Standardstien er:<br><code>/home/' . $username. '/rclone/cache</code>';
+$L['PROCESS_NZBGET'] = 'Behandle downloads for NZBGet?';
+$L['PROCESS_NZBGET_TOOLTIP'] = 'Sæt dette til Ja for at behandle downloads til NZBGet.<br>Se, hvordan du implementerer i scriptnoterne på:<br><code>/home/'. $username. '/.config/NZBGet/scripts/nzbget-postprocess.sh</code>';
+$L['PROCESS_RTORRENT'] = 'Behandle downloads til rTorrent?';
+$L['PROCESS_SABNZBD'] = 'Behandle downloads for SABnzbd?';
+$L['CUSTOM_MEDIA_PATH'] = 'Brug tilpasset sti til mediebibliotek?';
+$L['FILEBOT_DEFAULT_PATH'] = 'eksempel';
+$L['FILEBOT_LICENSE'] = 'Filebot-licens';
+
+/* **********************************
+ * plex install/reinstall modal
+ ************************************/
+$L['PLEX_CLAIM_MESSAGE'] = '<p style="font-size:12px">For at gøre krav på din Plex Media Server skal du allerede have en konto og logget ind for at få kravkoden fra: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--infoColor);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--mainFontColor)"><strong style="color:var(--alertLightInfoColor)">BEMÆRK:</strong> Det anbefales at bruge knappen "Kopiér til udklipsholder" fra skærmbilledet med kravkode for at sikre korrekt indsættelse, da kravkoden skelner mellem store og små bogstaver.</div>';
+$L['PLEX_CLAIM_TITLE'] = 'Plex Media Server Installation';
+$L['PLEX_CLAIM_TOKEN'] = 'Plex-kravkode';
+$L['PLEX_DATA_PATH'] = 'Brug brugerdefineret sti til datamappe?';
+$L['PLEX_DATA_PATH_TOOLTIP'] = 'Du har mulighed for at angive en brugerdefineret datasti til din Plex installation. Hvis den valgte sti ikke eksisterer i øjeblikket, vil den automatisk blive genereret for dig.<br>Alternativt, hvis du foretrækker at bruge standardstien, skal du blot beholde valget som \'Nej\', og databiblioteket bliver placeret på:<br><code>/home/' . $username . '/.config/\'Plex Media Server\'</code>';
+$L['PLEX_DOMAIN'] = 'Sæt domæne til Plex Media Server?';
+$L['PLEX_DOMAIN_TOOLTIP'] = 'Hvis du allerede har et domæne og DNS-posterne sat op for et Plex-underdomæne, skal du vælge \'Ja\' for at indtaste dit plex-underdomæne.<br>Denne mulighed vil konfigurere din Plex Media Server til at arbejde problemfrit med dit brugerdefinerede Plex-domæne. Det inkluderer opsætning af den essentielle Nginx reverse proxy og installation af SSL-certifikatet til dit domæne for at sikre sikker adgang.';
+
+/* **********************************
+ * 3.2.5 - service control
+ ************************************/
 $L['ACTIVE_STATUS'] = 'aktiv (kører)';
 $L['APP_KEY'] = 'API Nøgle';
 $L['APP_PORT'] = 'Port';
 $L['APP_STATUS'] = 'Status';
 $L['INACTIVE_STATUS'] = 'inaktiv (død)';
 
-//#3.2.6 - rclone specific toggles
+/* **********************************
+ * 3.2.6 - rclone specific toggles
+ ************************************/
 $L['ACTIVE_MOUNTED'] = 'aktiv monteringspunkt (aka mount)';
 $L['INACTIVE_NOTMOUNTED'] = 'død (ikke monteret)';
 $L['RCLONE_OPTIONS'] = 'RClone Muligheder';
@@ -595,9 +675,12 @@ $L['CLOUD_MANAGEMENT'] = 'Cloud Software';
 $L['RCLONE_MOUNT_INFO'] = 'RClone Mount Info';
 $L['RCLONE MOUNT CHECK_PROCESS'] = 'Værder for mellemrumsprocenter bliver i øjeblikket beregnet i baggrunden. Kom venligst tilbage senere for opdaterede resultater.';
 
-
-//#3.3 - DASHBOARD WIDGETS
-//#3.3.1 - disk status widget
+/* **********************************
+ * 3.3 - DASHBOARD WIDGETS
+ ************************************/
+/* **********************************
+ * 3.3.1 - disk status widget
+ ************************************/
 $L['DD_DELUGE'] = 'Deluge';
 $L['DD_NZBGET'] = 'NZBGet';
 $L['DD_QBITTORRENT'] = 'qBittorrent';
@@ -621,7 +704,9 @@ $L['YOUR_DISK_STATUS'] = 'Diskstatus';
 $L['NZBGET_NZB'] = 'nzb indlæst i NZBGet';
 $L['SABNZBD_NZB'] = 'nzb indlæst i SABnzbd';
 
-//#3.3.2 - System Index v1 : bandwidth data widget
+/* **********************************
+ * 3.3.2 - System Index v1 : bandwidth data widget
+ ************************************/
 $L['BANDWIDTH_DAILY'] = 'Daglig';
 $L['BANDWIDTH_DATA'] = 'Båndbredde';
 $L['BANDWIDTH_HOURLY'] = 'Hver time';
@@ -637,7 +722,9 @@ $L['datefmt_top'] = '%d %B %Y';
 $L['NETWORK'] = 'Netværk';
 $L['UPLOAD'] = 'Upload';
 
-//#3.3.3 - System Index v1 : server load widget
+/* **********************************
+ * 3.3.3 - System Index v1 : server load widget
+ ************************************/
 $L['DAYS_L'] = 'dage';
 $L['HOURS_L'] = 'timer';
 $L['MINUTES_L'] = 'min';
@@ -646,7 +733,9 @@ $L['SERVER_LOAD'] = 'Serverbelastning';
 $L['SL_TXT'] = 'Din servers aktuelle belastningsgennemsnit';
 $L['UPTIME'] = 'Oppetid';
 
-//#3.3.4 - System Index v1 : memory status widget
+/* **********************************
+ * 3.3.4 - System Index v1 : memory status widget
+ ************************************/
 $L['CACHED_MEMORY'] = 'Cached Hukommelsesforbrug';
 $L['CLEAR_CACHE'] = 'Ryd Hukommelsescache';
 $L['CM_BUFFERS'] = 'Buffers ligger på';
@@ -666,7 +755,9 @@ $L['SYSTEM_RAM_STATUS'] = 'RAM';
 $L['TOTAL_RAM'] = 'Samlet system RAM';
 $L['TOTAL'] = 'Total';
 
-//#3.3.5 - server activity widget
+/* **********************************
+ * 3.3.5 - server activity widget
+ ************************************/
 $L['ACC_REQ_ACT'] = 'kræver kontoaktivering';
 $L['GUESTS_ONLINE'] = 'gæster online';
 $L['LAST_ACTIVE_ON'] = 'var sidst aktiv den';
@@ -679,13 +770,15 @@ $L['USERS_AND'] = 'brugere og';
 $L['USERS_LAST_VISIT'] = 'nye brugere har registreret sig siden dit sidste besøg';
 $L['CLEAR'] = 'nulstil';
 
-
-////////////////////////////////////////
-//          #4 PAGES
-///////////////////////////////////////
-
-//#4.1 - START SCREEN FORMS (login/forgot pass/register/account)
-//#4.1.1 - LOG IN
+/* ********************************************************************************
+ * #4 PAGES
+ **********************************************************************************/
+/* **********************************
+ * 4.1 - START SCREEN FORMS (login/forgot pass/register/account)
+ ************************************/
+/* **********************************
+ * 4.1.1 - LOGIN
+ ************************************/
 $L['CONFIRM_PASS_FIELD_PLACE'] = 'Bekræft venligst din email adresse.';
 $L['CREATE_ACCOUNT'] = 'Opret en konto';
 $L['REMEMBER_ME'] = 'Husk Mig';
@@ -711,7 +804,9 @@ $L['ACCOUNT_INACTIVE_ADMIN'] = 'Din konto er ikke blevet aktiveret af en adminis
 $L['ACCOUNT_INACTIVE_EMAIL'] = 'Din konto er ikke blevet aktiveret.<br/>Tjek venligst din e-mail for aktiveringslinket.';
 $L['IP_BANNED'] = 'Din IP-adresse er blevet forbudt.<br/>Kontakt venligst en systemadministrator.';
 
-//#4.1.2 - FORGOT PASSWORD
+/* **********************************
+ * 4.1.2 - FORGOT PASSWORD
+ ************************************/
 $L['EMAIL_FIELD_INVALID'] = 'Angiv venligst din email.';
 $L['EMAIL_FIELD_PLACE'] = 'Indtast venligst din email.';
 $L['EMAIL_FIELD_VALID'] = 'Email leveret, validering afsluttet.';
@@ -724,7 +819,9 @@ $L['RECOVER'] = 'Gendan adgangskode';
 $L['PASSWORD_RESET'] = 'Nulstilling af adgangskode';
 $L['CONFIRM_PASSWORD'] = 'Bekræft adgangskode';
 
-//#4.1.3 - REGISTER
+/* **********************************
+ * 4.1.3 - REGISTER
+ ************************************/
 $L['ACCOUNT_CREATED'] = 'din konto er blevet oprettet.';
 $L['CAN_LOGIN'] = 'til din registrering. Du kan nu logge ind.';
 $L['CREATED_ADM_ACT'] = 'Dette bord kræver imidlertid kontoaktivering af en administrator. Du får besked via e-mail, når din konto er blevet aktiveret.';
@@ -765,7 +862,9 @@ $L['PASSWORD_LONG'] = 'Adgangskoden for lang';
 $L['PASSWORD_MATCH'] = 'Adgangskoder stemmer ikke overens';
 $L['QUOTA_EMPTY'] = 'Diskkvote ikke indtastet';
 
-//#4.1.4 - ACCOUNT
+/* **********************************
+ * 4.1.4 - ACCOUNT
+ ************************************/
 $L['ADMIN_EDIT_ACC'] = 'Rediger Admin konto';
 $L['EDIT_ACCOUNT'] = 'Rediger konto';
 $L['USER_LINKS'] = 'Bruger-links';
@@ -775,8 +874,12 @@ $L['Q_SYS_DASH'] = 'QuickBox-systemets dashboard';
 $L['FORGOT_PASS'] = 'Glemt din adgangskode?';
 $L['RESET_PASS'] = 'Nulstil kodeord';
 $L['USER_PROFILE'] = 'Brugerprofil';
+$L['PWD_CHANGE'] = 'Adgangskode ændret';
+$L['EMAIL_CHANGE'] = 'E-mail ændret';
 
-//#4.1.4.1 - quotes
+/* **********************************
+ * 4.1.4.1 - quotes
+ ************************************/
 $L['DAYUM'] = 'Lækkert';
 $L['HEY'] = 'Hej';
 $L['HOW_AWESOME'] = 'du er for vild!';
@@ -785,12 +888,16 @@ $L['QUICKBOX_DEDICATION'] = 'vi elsker din dedikation til QuickBox!!!';
 $L['SO_GLAD'] = 'Så glad for at du er her';
 $L['WITHOUT_YOU'] = 'hvor ville vi være uden dig!';
 
-//#4.1.4.2 - edit account modal
+/* **********************************
+ * 4.1.4.2 - edit account modal
+ ************************************/
 $L['CONFIRM_NEW_PASS_INFO'] = 'Bekræft din nye adgangskode.';
 $L['CURRENT_PASS'] = 'Nuværende kodeord';
 $L['NEW_EMAIL'] = 'Ny email adresse';
 
-//#4.1.5 - SUMMARY
+/* **********************************
+ * 4.1.5 - SUMMARY
+ ************************************/
 $L['AWESOME'] = 'Fantastisk';
 $L['WITH_PASSWORD'] = 'med adgangskode';
 $L['USER_ADDED_TO_DB'] = 'er føjet til databasen';
@@ -801,9 +908,12 @@ $L['REGI_FAIL_ERR2'] = 'Kunne ikke gennemføres!';
 $L['REGI_FAIL_ERR3'] = 'Prøv venligst igen!';
 $L['REGI_FAIL_ERR_FOUND'] = 'fejl fundet';
 
-
-//#4.2 - SETTINGS
-//#4.2.1 - GENERAL SETTINGS
+/* **********************************
+ * 4.2 - SETTINGS
+ ************************************/
+/* **********************************
+ * 4.2.1 - GENERAL SETTINGS
+ ************************************/
 $L['ACCOUNT_PAGE'] = 'Kontoside';
 $L['ACTIVATION_IP'] = 'Aktiveringsip';
 $L['ACTIVATION_NEED_D_DO'] = 'Gør det her!';
@@ -847,7 +957,9 @@ $L['SITE_LOGO_SETTINGS'] = 'Indstillinger for webstedslogo';
 $L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'Dette er logoet, der vil blive vist, når sidebjælken er foldet sammen og vil blive brugt som browserfaneikonet.';
 $L['SITE_LOGO_FULL_TOOLTIP'] = 'Dette er logoet, der vil blive vist, når sidebjælken udvides.';
 
-//#4.2.2 - EMAIL SETTINGS
+/* **********************************
+ * 4.2.2 - EMAIL SETTINGS
+ ************************************/
 $L['SMTP_AUTH'] = 'Aktivér SMTP-godkendelse';
 $L['SMTP_SECURE'] = 'Aktivér SSL-kryptering, TLS accepteres også med port 465';
 $L['MAIL_HOST'] = 'Indstil SMTP-serveren til at sende igennem';
@@ -855,7 +967,9 @@ $L['MAIL_PORT'] = 'TCP-port at oprette forbindelse til';
 $L['MAIL_USERNAME'] = 'SMTP-brugernavn';
 $L['MAIL_PASS'] = 'SMTP-adgangskode';
 
-//#4.2.3 - SESSION SETTINGS
+/* **********************************
+ * 4.2.3 - SESSION SETTINGS
+ ************************************/
 $L['CHANGE_SESSION_SETTINGS'] = 'Skift indstillingerne vedrørende sessioner.';
 $L['COOKIE_EXPIRY'] = '\'Husk mig\' Cookie udløb';
 $L['COOKIE_PATH'] = 'Cookie Sti';
@@ -865,7 +979,9 @@ $L['MINUTES'] = 'Minutter';
 $L['RESET_EXPIRY'] = 'Nulstil udløb ved log på';
 $L['USER_TIMEOUT'] = 'Brugerinaktivitet';
 
-//#4.2.4 - USER SETTINGS
+/* **********************************
+ * 4.2.4 - USER SETTINGS
+ ************************************/
 $L['ALLOW_MULTI_LOGINS'] = 'Flere logins';
 $L['ALLOW_MULTI_LOGINS_DESC'] = 'Denne mulighed giver mulighed for samtidige login fra flere enheder. Hvis deaktiveret, vil brugeren blive logget ud af alle andre enheder, når de logger på fra en ny enhed.';
 $L['ALLOW_CONFIG_EDITING'] = 'Konfigurer editorer på Dashboard';
@@ -890,7 +1006,9 @@ $L['SETTING'] = 'Indstilling';
 $L['DESCRIPTION'] = 'Beskrivelse';
 $L['VALUE'] = 'Værdi';
 
-//#4.2.5 - SECURITY SETTINGS
+/* **********************************
+ * 4.2.5 - SECURITY SETTINGS
+ ************************************/
 $L['BAN_IP_ADDRESS'] = 'Blokér / Bandlys IP-adresse';
 $L['BAN_IP_INFO'] = 'f.eks. 192.168.0.1 uden ledende nuller';
 $L['BAN_IP_REGISTER'] = 'Bandlys IP-adresser fra at Registrere (eller logge ind)';
@@ -900,9 +1018,12 @@ $L['DISALLOW_USERNAMES'] = 'Blokerede Brugernavne';
 $L['DISALLOWED_USERNAMES'] = 'Blokerede Brugernavne';
 $L['PREVENT_USERNAMES'] = 'Tillad ikke registrering af udvalgte Brugernavne';
 
-
-//#4.3 - USER MANAGEMENT 
-//#4.3.1 - REGISTRATION SETTINGS
+/* **********************************
+ * 4.3 - USER MANAGEMENT
+ ************************************/
+/* **********************************
+ * 4.3.1 - REGISTRATION SETTINGS
+ ************************************/
 $L['ACCOUNT_ACTIVATION'] = 'Kontoaktivering';
 $L['ADMIN_ACT'] = 'Adminaktivering (Administrator godkendelse)';
 $L['ADMIN_ACT_INFO'] = 'Når denne mulighed er valgt, vil brugeren efter registrering blive informeret om, at de skal vente på, at administratoren aktiverer kontoen. Brugeren vil også modtage en e-mail herom, ligesom administratoren vil have mulighed for at aktivere brugeren med linket i e-mailen eller besøge administrationspanelet og aktivere brugeren der.';
@@ -933,7 +1054,9 @@ $L['USERNAME_LOWERCASE'] = 'Brugernavn til små bogstaver';
 $L['USERNAME_LOWERCASE_YES_INFO'] = 'Indstilling af denne indstilling til Ja ændrer alle nye registrerede brugernavne til små bogstaver. Dette er den anbefalede mulighed.';
 $L['USERNAME_LOWERCASE_NO_INFO'] = 'Indstilling af denne indstilling til Nej vil ikke ændre nye registrerede brugernavne til små bogstaver. Brugernavne vises efterhånden som de er registreret, men vil bevare små bogstaver i servermiljøet for korrekt softwarefunktionalitet.';
 
-//#4.3.2 - USER ADMIN
+/* **********************************
+ * 4.3.2 - USER ADMINISTRATION
+ ************************************/
 $L['ADMIN_ANNOUNCE'] = 'Admin Bekendtgørelse';
 $L['ANNOUNCEMENT_HISTORY'] = 'Dine tidligere bekendtgørelser';
 $L['ANNOUNCEMENT_LIST'] = 'Bekendtgørelsesindhold';
@@ -979,7 +1102,9 @@ $L['USERNAMES'] = 'Brugernavn';
 $L['USERS_AWAITING'] = 'Afventer Aktivering';
 $L['USERS_SESSIONS'] = 'Brugersessioner';
 
-//#4.3.2.1 - admin user edit
+/* **********************************
+ * 4.3.2.1 - admin user edit
+ ************************************/
 $L['ACTIONS'] = 'Handlinger';
 $L['ACTIVE_SESSION'] = 'Aktive Sessioner';
 $L['APPLICATION'] = 'Software';
@@ -1010,7 +1135,9 @@ $L['USER_EDIT1'] = 'Brugerredigering :';
 $L['USER_EDIT2'] = 'Brugerredigering';
 $L['SELECT_GROUP'] = 'Vælg gruppe';
 
-//#4.3.3 - USERS GROUPS
+/* **********************************
+ * 4.3.3 - USERS GROUPS
+ ************************************/
 $L['ADMINISTRATORS'] = 'Administratorer';
 $L['ASSIGN_LEVEL'] = 'Tildel Gruppeniveau :';
 $L['CLICK_HERE'] = 'Klik Her...';
@@ -1031,12 +1158,17 @@ $L['NUMBER_MEMBERS'] = '# Antal Medlemmer';
 $L['USER_GROUPS_INFO'] = 'Opret, se og rediger brugergrupper. Tildel brugere til brugergrupper.';
 $L['SOFT_GROUP_ASGMNT'] = 'Software Gruppe Tildeling';
 
-
-//#4.4 - SYSTEM
-//#4.4.1 - WEB CONSOLE
+/* **********************************
+ * 4.4 - SYSTEM
+ ************************************/
+/* **********************************
+ * 4.4.1 - WEB CONSOLE
+ ************************************/
 $L['WEB_CONSOLE_INFO'] = 'Få adgang til webkonsollen.';
 
-//#4.4.2 - API CONTROL
+/* **********************************
+ * 4.4.2 - API CONTROL
+ ************************************/
 $L['ACTIVATION_INFO_STATS'] = 'Aktiveringsinformationsstatistik';
 $L['QB_CONTROL_API'] = 'QB Control API';
 $L['QB_CONTROL_API_NOTICE'] = 'API kontrolnøgler er opdelt i to komponenter som vist nedenfor.<br/>Eksempler på brug er blevet mærket for at illustrere et specifikt kommandoniveau af tilladelser, der er nødvendige for at udføre dens udpegede opgave. Biblioteket med API-brug vil fortsætte med at modtage opdateringer, efterhånden som yderligere endepunkter og funktioner implementeres.<br/><br/><table><tbody><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-primary">&nbsp;</span></td><td>Nøglen <em>læsetilladelser</em> har kun mulighed for at skrabe data. Denne nøgle kan ikke signalere driftsopgaver til QuickBox-serveren. Medmindre du forsøger at fjernstyre din installation, er denne nøgle alt, der skal til.</td></tr><tr><td style="width:15px;vertical-align:middle;"><span class= "badge badge-pills badge-success">&nbsp;</span></td><td>Nøglen til <em>skrivetilladelser</em> har mulighed for at udføre yderligere opgaver, såsom at opdatere QuickBox-installation, styring af hoved-API-aktiveringen og mere. Denne nøgle vil også fungere for læsetilladelser og skal betragtes som den højest privilegerede nøgle. Nyttigt til fjernudførelse af grundlæggende administrationsopgaver til din server.</td></tr></tbody></table><br/>Husk at behandle dine API-nøgler, som du ville gøre med adgangskoder, del dem aldrig.<br/>Du kan til enhver tid genskabe en ny tilfældig kontrolnøgle ved at trykke på <i data-feather="refresh-cw" style="width:14px;"></i> knappen nedenfor.';
@@ -1077,7 +1209,42 @@ $L['SOFT_CONTROL_ACTION_RESTART_NOTICE'] = 'Hvor action=restart...';
 $L['SOFT_CONTROL_ACTION_START_NOTICE'] = 'Hvor action=start...';
 $L['SOFT_CONTROL_ACTION_STOP_NOTICE'] = 'Hvor action=stop...';
 
-//#4.4.3 - TROUBLESHOOTING
+/* **********************************
+ * 4.4.3 - SSL CONTROL
+ ************************************/
+$L['LETSENCRYPT_DOMAIN'] = 'Let\'s Encrypt domænet';
+$L['SSL_CONTROL'] = 'SSL kontrol';
+$L['ABOUT_SSL_CONTROL'] = 'Denne funktion gør det muligt for dig nemt at generere SSL-certifikater til de understøttede programmer, du har installeret. Ved at vælge "Ja" og indtaste dit domæne, vil du problemfrit opsætte Nginx reverse proxy sammen med SSL-certifikatet.';
+$L['STAGE_DASHBOARD_SSL'] = 'Stage SSL for Dashboardet?';
+$L['DASHBOARD_SSL_TOOLTIP'] = 'For at sikre dit QuickBox Dashboard med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til dit dashboard via dit domæne.';
+$L['STAGE_OWNED_DOMAIN_SSL'] = 'Stage SSL for et ejet domæne?';
+$L['NON_DASHBOARD_SSL_TOOLTIP'] = 'Vælg venligst \'Ja\' for at oprette et SSL-certifikat for et domæne, du foretrækker. Denne mulighed er designet til oprettelse af yderligere SSL-certifikater. Sørg for, at de relevante DNS-poster for domænet er korrekt konfigureret, da denne proces udelukkende genererer de anmodede SSL-certifikater.';
+$L['STAGE_EMBY_SSL'] = 'Stage SSL for Emby?';
+$L['EMBY_SSL_TOOLTIP'] = 'For at sikre din Emby-installation med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til din Emby-installation via dit domæne.';
+$L['STAGE_JELLYFIN_SSL'] = 'Stage SSL for Jellyfin?';
+$L['JELLYFIN_SSL_TOOLTIP'] = 'For at sikre din Jellyfin-installation med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til din Jellyfin-installation via dit domæne.';
+$L['STAGE_JELLYSEERR_SSL'] = 'Stage SSL for Jellyseerr?';
+$L['JELLYSEERR_SSL_TOOLTIP'] = 'For at sikre din Jellyseerr-installation med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til din Jellyseerr-installation via dit domæne.';
+$L['STAGE_KOMGA_SSL'] = 'Stage SSL for Komga?';
+$L['KOMGA_SSL_TOOLTIP'] = 'For at sikre din Komga-installation med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til din Komga-installation via dit domæne.';
+$L['STAGE_OVERSEERR_SSL'] = 'Stage SSL for Overseerr?';
+$L['OVERSEERR_SSL_TOOLTIP'] = 'For at sikre din Overseerr-installation med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til din Overseerr-installation via dit domæne.';
+$L['STAGE_PLEX_SSL'] = 'Stage SSL for Plex?';
+$L['PLEX_SSL_TOOLTIP'] = 'For at sikre din Plex-installation med et SSL-certifikat skal du blot vælge \'Ja\'. Denne handling vil ikke kun konfigurere SSL-certifikatet, men også etablere de nødvendige NGinx-indstillinger og links, hvilket letter sikker adgang til din Plex-installation via dit domæne.';
+$L['DOMAIN'] = 'Domæne';
+$L['SSL_ALREADY_INSTALLED'] = 'Vær opmærksom på, at der allerede er et SSL-certifikat installeret for denne mulighed. Geninstallation af certifikatet ved at indtaste et nyt domæne nedenfor vil nulstille den aktuelle NGinx omvendte konfiguration, fjerne det tidligere certifikat og nulstille den aktuelt indstillede linkadgang.';
+$L['SSL_SUBMIT'] = 'Installer SSL-certifikat';
+$L['SSL_STATUS_MONITOR_TOOLTIP'] = 'Overvåg status for dine eksisterende SSL-certifikater med mulighed for at udføre to nøglehandlinger: sletning eller gennemtving fornyelse. For certifikater forbundet med understøttede applikationer som Emby, Jellyfin, Jellyseerr, Komga, Overseerr og Plex vil sletning af et certifikat også udløse fjernelse og omkonfiguration af Nginx omvendt proxy for det tilsvarende domæne.<br><br>Du kan problemfrit slet et certifikat ved hjælp af mulighederne nedenfor og vælg efterfølgende din ønskede applikation ovenfor for at starte installationen af et nyt underdomæne og certifikat. Denne strømlinede proces sikrer den største fleksibilitet og kontrol over dit SSL-certifikathåndtering.';
+$L['CERTS_STORED_AT'] = 'Overvågede certifikater er gemt på';
+$L['CERT_EXPIRES'] = 'Udløber:';
+$L['CERT_RENEW'] = 'Forny certifikat';
+$L['CERT_DELETE'] = 'Slet SSL-certifikat og eventuelle yderligere konfigurationer. Denne handling er irreversibel.';
+$L['CERT_DELETE_CONFIRM'] = 'Er du sikker på, at du vil slette dette certifikat?';
+$L['NO_CERTS_INSTALLED'] = 'Der er ingen SSL-certifikater installeret og/eller overvåget på nuværende tidspunkt.';
+
+/* **********************************
+ * 4.4.4 - TROUBLESHOOTING
+ ************************************/
 $L['APP_SELECT'] = 'Vælg Software';
 $L['APPLIANCE'] = 'Kommandoer';
 $L['CLEAN_MEM'] = 'Ryd Fysisk Cachehukommelse';
@@ -1095,30 +1262,73 @@ $L['SYSTEM_LOG_FILES'] = 'System-Log';
 $L['TROUBLESHOOTING'] = 'Fejlfinding';
 $L['WEB_SERVER'] = 'Webserver';
 
-//#4.4.4 - SYSTEM LOGS
+/* **********************************
+ * 4.4.5 - SYSTEM LOGS
+ ************************************/
+$L['LOGS'] = 'Logs';
+$L['NO_LOGS'] = 'Ingen logs fundet';
+$L['NO_LOGS_MESSAGE'] = 'I øjeblikket er der ingen log-registreringer tilgængelige for visning. Logposter genereres, når applikationer sender deres logningsoplysninger til systemets syslog. Hvis du leder efter en bestemt log, anbefaler vi at konsultere dokumentationen fra den respektive applikation for yderligere vejledning. QuickBox bestræber sig flittigt på at centralisere forskellige applikationer og deres loggede data; det afhænger dog af de individuelle applikationer at sende deres logningsoplysninger til sysloggen.';
 $$L['ACCESS_LOGS'] = 'Adgangslogfiler';
 $L['APP_LOGS'] = 'Softwarelogfiler';
 $L['USER_LOGS'] = 'Brugerlogfiler';
 $L['DATE_TIME'] = 'Dato/tid';
 $L['EVENT'] = 'Begivenhed';
+$L['LOG_MESSAGE'] = 'Log besked';
 $L['LOGS_SUMMARY'] = 'Logoversigt';
 $L['COMMAND'] = 'Kommando';
+$L['USER_ACTION_LOGS'] = 'Brugerhandlingslogs';
+$L['VIEW_USER_ACTION_LOGS'] = 'Se brugerhandlingslog';
+$L['ABOUT_USER_ACTION_LOGS'] = 'Logfilerne i denne sammenhæng vedrører brugerrelaterede opgaver og hændelser, der er initieret via QuickBox-grænsefladen.';
+$L['SOFTWARE_ACTION_LOGS'] = 'Softwarehandlingslogs';
+$L['VIEW_SOFTWARE_ACTION_LOGS'] = 'Se softwarehandlingslog';
+$L['ABOUT_SOFTWARE_ACTION_LOGS'] = 'Disse logfiler er designet til at give en registrering af handlinger relateret til software, herunder installationer, fjernelser, opdateringer og andre væsentlige begivenheder.';
+$L['SYSTEM_ACTION_LOGS'] = 'Systemhandlingslogs';
+$L['VIEW_SYSTEM_ACTION_LOGS'] = 'Se systemhandlingslog';
+$L['ABOUT_SYSTEM_ACTION_LOGS'] = 'Disse logfiler er skræddersyet til at fange aktiviteter og handlinger på systemniveau, der er initieret gennem kommandolinjeværktøjet <code>qb</code>.';
+$L['UI_ACTION_LOGS'] = 'UI Action Logs';
+$L['VIEW_UI_ACTION_LOGS'] = 'Se UI-handlingslog';
+$L['ABOUT_UI_ACTION_LOGS'] = 'Disse logfiler er afledt af systemets syslog og tjener som en konsolideret registrering af alle kommandoer og handlinger, der er startet gennem QuickBox Dashboards brugergrænseflade.';
+$L['SYSTEM_LOG_SUMMARY'] = 'Systemlogoversigt';
+$L['SYSTEM_LOG_SUMMARY_TOOLTIP'] = 'Denne oversigt og alle yderligere logfiler genereres under tre betingelser:<br><ol><li><strong>Cron:</strong> Logfiler opdateres automatisk med udførelse af en cron-opgave hvert 15. minut. Dette starter <code>qb_log_miner</code>-binæren, der samler logposter fra systemets syslog.</li><li><strong>Manuel generering:</strong> Du kan generere den fra \'System > Fejlfinding > Systemlog\' sektion ved at klikke på knappen \'(Generer)\'.</li><li><strong>Kommandolinje:</strong> Den kan også genereres ved at køre kommandoen <code>qb generate log</code>.</li></ol>Du kan få adgang til og downloade denne oversigtslogfil på to måder:<br><ol><li><strong>Webgrænseflade:</strong> Gå til \'System > Fejlfinding > Systemlog (Download)\' i brugergrænsefladen.</li><li><strong>Serverkatalog:</strong> Find den på serveren på: \'/srv/quickbox/logs/system_log\'.</li></ol>';
+$L['CLEAR_LOG'] = 'Ryd log';
+$L['CLEAR_LOG_CONFIRM'] = 'Er du sikker på, at du vil slette disse logfiler. Dette kan ikke fortrydes?';
+$L['DELETED_ALL_APP_LOGS'] = 'Slettede alle softwarelogfiler';
+$L['DELETED_ALL_APPLICATION_LOGS'] = 'Slet alle applikationslogfiler';
+$L['DELETED_ALL_SUMMARY_LOGS'] = 'Slettede alle oversigtslogfiler';
+$L['DELETED_ALL_SYSTEM_LOGS'] = 'Slettede alle systemlogfiler';
+$L['DELETED_ALL_UI_LOGS'] = 'Slettede alle UI-logfiler';
+$L['DELETED_ALL_USER_LOGS'] = 'Slettede alle brugerlogfiler';
+$L['DELETED_APPLICATION_LOGS'] = 'Slettede applikationslogfiler';
+$L['DELETED_SUMMARY_LOGS'] = 'Slettede oversigtslogfiler';
+$L['DELETED_USER'] = 'Slettet bruger';
+$L['DELETE_USER_LOGS'] = 'Slet brugerlogfiler';
+$L['QUICKBOX_VERSION_CHECK'] = 'Søg efter QuickBox-opdateringer';
+$L['SOFTWARE_VERSION_CHECK'] = 'Søg efter installerede softwareopdateringer';
+$L['SCHEDULED_TASK'] = 'Planlagt opgave';
 
-//#4.4.5 - HELP MANUAL
+/* **********************************
+ * 4.4.6 - HELP MANUAL
+ ************************************/
 $L['QB_HELP'] = 'Hjælpmanual';
 
-//description
+/* **********************************
+ * description
+ ************************************/
 $L['DESCRIPTION_CONTENT'] = '<p>Velkommen til den omfattende grafiske visning af <code>qb</code>-manpagen, designet til at tilbyde dig en oversat, forenklet og effektiv tilgang til at få adgang til diverse informationer om QuickBox. Denne brugervenlige grænseflade har til formål at give dybdegående indsigt i QuickBox funktion, et kraftfuldt og alsidigt værktøj til ubesværet administration af din server.</p>
 <p>Inde i dette grafiske display finder du en detaljeret liste over tilgængelige applikationer klar til problemfri installation, hvilket giver dig mulighed for at tilpasse din serveropsætning efter dine specifikke behov. Desuden præsenterer denne ressource et væld af andre vigtige kommandoer til optimal udnyttelse i <code>qb</code> CLI-miljøet, hvilket gør det muligt for dig at navigere gennem dine serveropgaver effektivt og ubesværet.</p>
 <p>Uanset om du er ny til QuickBox eller en erfaren bruger, tjener denne grafiske visning af <code>qb</code>-manpagen som din ultimative reference til at udnytte QuickBox fulde potentiale og frigøre den sande kraft i din serveradministration. Udforsk de forskellige funktioner, strømlin din serverdrift, og maksimer din produktivitet ved hjælp af denne intuitive og informative guide. Lad os dykke ned og gøre din QuickBox-oplevelse endnu mere givende!</p>';
 $L['API_INFO_DIRECT'] = '<p style="font-weight:600;">For mere information og reference om den indlejrede QuickBox API, <a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--infoColor);">se denne side</a>.</p>';
 
-//options
+/* **********************************
+ * options
+ ************************************/
 $L['OPTIONS_HEADER'] = 'Valgmuligheder';
 $L['OPTIONS_CONTENT_HELP'] = 'Viser denne hjælpemanual i CLI-manpage-format';
 $L['OPTIONS_CONTENT_VERBOSE'] = 'Aktiverer detaljeret tilstand for fejlretning';
 
-//software
+/* **********************************
+ * software
+ ************************************/
 $L['SOFTWARE_HEADER'] = 'Software';
 $L['SOFTWARE_INFO_CONTENT'] = '<p>Det følgende er en liste over alle tilgængelige applikationer til installation, der leveres gennem QuickBox-builden.<br/>Softwarenavne er præsenteret som set af <code>qb [install|reinstall|update|remove|help] [software_name]</code></p>';
 $L['ADMIN_INSTALLED_SOFTWARE_HEADER'] = 'Administrator installeret software';
@@ -1132,7 +1342,10 @@ $L['SOFTWARE_MANAGEMENT_CONTENT'] = 'Parametre for installation, geninstallation
 $L['SOFTWARE_MANAGEMENT_WARNING_CONTENT'] = '<p>Husk at forskellige applikationer har forskellige muligheder/krav. De fleste kræver brug af brugernavnflaget (<code>-u</code>), hvorimod applikationer som rtorrent ikke vil. For at kontrollere alle tilgængelige muligheder for en specifik software, brug <code class="language-bash">qb-hjælp [software_name]</code>. Applikationsnavngivning i QuickBox til softwarenavneskemaet kan ses i <a href="#software" class="link">softwarelistediagrammet</a> ovenfor.</p>';
 $L['SEE_ALSO_HEADER'] = 'Se også';
 $L['SEE_ALSO_CONTENT'] = 'Vis nyttig kommandobrug for udpeget software';
-//tables
+
+/* **********************************
+ * software options table
+ ************************************/
 $L['SOFTWARE_NAME'] = 'Softwarenavn';
 $L['SOFTWARE_TITLE'] = 'Softwaretitel';
 $L['USABILITY'] = 'Anvendelighed';
@@ -1146,10 +1359,14 @@ $L['GLOBAL_INFO'] = 'kræver admininstallation og installationer for alle bruger
 $L['MULTI_USER_INFO'] = 'kræver admin installation og kan installeres for enhver tildelt bruger. flere brugere er understøttet.';
 $L['SINGLE_USER_INFO'] = 'enkelt bruger, kun admin. kræver admin installation og installeres og betjenes af admin bruger.';
 
-//examples
+/* **********************************
+ * examples header
+ ************************************/
 $L['EXAMPLES_HEADER'] = 'Eksempler';
 
-//user management
+/* **********************************
+ * user management
+ ************************************/
 $L['USER_MANAGEMENT_INFO_CONTENT'] = '<p><code>qb user</code>-administrationsfunktionerne i QuickBox tilbyder et alsidigt og kraftfuldt sæt værktøjer til effektivt at administrere brugere på din server. Med fokus på brugervenlighed og robust funktionalitet gør disse funktioner dig i stand til at strømline brugeradministration, forbedre sikkerheden og sikre en jævn serverdrift.</p>';
 $L['CREATE_USER_CONTENT'] = 'Opretter en ny QuickBox brugerkonto';
 $L['DELETE_USER_CONTENT'] = 'Sletter QuickBox brugerkonto';
@@ -1170,7 +1387,9 @@ $L['SET_USER_SHELL_INFO_CONTENT'] = '<p><strong><code>sudo</code></strong><br>fu
 $L['SET_USER_SHELL_DANGER_CONTENT'] = '<p><strong>Forsigtig:</strong> Vær opmærksom på, at ændring af shell-miljøet til noget andet end <code>/bash</code> kan føre til utilsigtet adfærd ved brug af <code>qb</code> (QuickBox), da det er blevet specifikt designet og optimeret til <code>/bash</code>-miljøet. Kort sagt er <code>qb</code> afhængig af specifikke funktioner og funktionaliteter leveret af Bash-skallen.<br><br>For at undgå potentielle problemer, er det tilrådeligt at holde sig til <code>/bash</code > miljø ved brug af <code>qb</code>. Hvis du stadig ønsker at bruge en anden shell, skal du konsultere dokumentationen til denne shell for at gennemgå eventuelle yderligere ændringer af stier, konfigurationer eller andre indstillinger, der muligvis skal opdateres for at sikre kompatibilitet med <code>qb</code>.</p>';
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone ledsagende kommandoer';
 
-//clean functions
+/* **********************************
+ * clean functions
+ ************************************/
 $L['CLEAN_FUNCTIONS'] = 'Rengørende funktioner';
 $L['CLEAN_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb clean</code>-funktionerne i QuickBox tilbyder en praktisk og effektiv måde at vedligeholde din servers renhed og optimere dens ydeevne. Disse funktioner er designet med enkelhed og effektivitet i tankerne og giver dig mulighed for at frigøre værdifuld hukommelse, fjerne unødvendigt rod og sikre en jævn og strømlinet serverdrift.</p>';
 $L['CLEAN_MEMORY'] = 'Rens hukommelse';
@@ -1182,7 +1401,9 @@ $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Renser QuickBox rclone upload logs for
 $L['CLEAN_LOCKS'] = 'Rengør låse';
 $L['CLEAN_LOCKS_CONTENT'] = 'Renser QuickBox-software og apt-dpkg-låse, der kan forhindre QuickBox i at installere ny software';
 
-//fix functions
+/* **********************************
+ * fix functions
+ ************************************/
 $L['FIX_FUNCTIONS'] = 'Ret funktioner';
 $L['FIX_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb fix</code>-funktionerne i QuickBox giver et kraftfuldt og brugervenligt værktøjssæt til at løse almindelige problemer og udføre systemreparationer uden besvær. Med fokus på enkelhed og effektivitet gør disse funktioner dig i stand til at fejlfinde og løse forskellige problemer, der kan opstå på din server, hvilket sikrer en jævn og uafbrudt drift.</p>';
 $L['FIX_HOME'] = 'Ret Home';
@@ -1194,15 +1415,19 @@ $L['FIX_PYTHON_CONTENT'] = 'Ret Python-konfiguration og installer manglende udvi
 $L['FIX_VERSION'] = 'Ret version';
 $L['FIX_VERSION_CONTENT'] = 'Ret QuickBox-installationen ved at geninstallere den seneste tilgængelige version';
 
-//generate functions
+/* **********************************
+ * generate functions
+ ************************************/
 $L['GENERATE_FUNCTIONS'] = 'Generer funktioner';
 $L['GENERATE_FUNCTIONS_INFO_CONTENT'] = '<p>Funktionerne <code>qb generate</code> i QuickBox tilbyder en praktisk og effektiv måde at skabe væsentlige elementer, der forbedrer serverstyring og overvågning. I øjeblikket understøtter kommandoen qb generering funktionen qb generer logfiler, hvilket giver brugerne mulighed for nemt at generere en forhåndsvisning af serverstatistik, api-aktivering og mount-information.<br/>I takt med at qb-genereringsfunktionerne udvikler sig, vil de sandsynligvis tilbyde et ekspanderende array funktioner til at forbedre serverstyringen yderligere.</p>';
 $L['GENERATE_SYSTEM_LOGS'] = 'Generer systemlogfiler';
 $L['GENERATE_SYSTEM_LOGS_CONTENT'] = 'Genererer systemlogfiler for den aktuelle QuickBox installation';
-$L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>Denne kommando er i gang i øjeblikket og vil blive ombygget og udvidet i den nærmeste fremtid.</p>';
-$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>Du kan desuden generere og downloade systemloggen produceret af ovenstående kommando på <a href="/troubleshooting.php" rel="noopener nofollow" class="link"> Fejlfindingsside</a>.<br/>Genereret log er gemt på serveren på <code>/srv/quickbox/logs/system_log</code>.</p>';
+$L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>Fra og med version <em>3.0.0.<strong>36+</strong></em> har <code>qb generate log</code> udviklet sig til et mere dybtgående værktøj til logaggregation og -organisering. Det sigter mod at forenkle loghentning ved at komplementere en applikations indbyggede logfiler ved at opsummere og centralisere kritiske logdata, hvilket gør fejlfinding meget mere effektiv.</p><p>Denne kommando og dens funktionalitet er et fortsat igangværende arbejde.</p>';
+$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>Du kan få adgang til og downloade denne oversigtslogfil på tre måder:<br><ol><li><strong>Generer/download:</strong> Gå til \'System > <a href="/troubleshooting.php" class="link">Fejlfinding</a> > Systemlog\' i brugergrænsefladen. Her kan du generere og/eller downloade systemlogoversigten produceret af generér log-kommandoen.</li><li><strong>Se logfiler:</strong> Gå til \'System > <a href="/logs.php" class="link">Systemlogfiler</a>\'. Her kan du finde yderligere logfiler og oplysninger indsamlet af generér log-kommandoen.</li><li><strong>Serverkatalog:</strong> Find det på serveren på: \'/srv/quickbox/logs/system_log\'.</li></ol></p>';
 
-//manage functions
+/* **********************************
+ * manage functions
+ ************************************/
 $L['MANAGE_FUNCTIONS'] = 'Administrer funktioner';
 $L['MANAGE_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb manage</code>-funktionerne i QuickBox giver et kraftfuldt og omfattende sæt værktøjer til effektivt at administrere forskellige aspekter af din server. Disse funktioner er designet med brugervenlighed i tankerne og giver dig mulighed for ubesværet at kontrollere kritiske elementer i dit QuickBox-drevne miljø.<br/>Uanset om det er at udskifte sprogindstillinger, kontrollere status for din primære API-aktivering, administrere datadistribution eller qb-styringsfunktionerne sikrer dataintegritet gennem sikkerhedskopier og rollbacks, og tilbyder en omfattende løsning for både serveradministratorer og entusiaster.</p>';
 $L['MANAGE_API_KEY'] = 'Administrer API-nøgle';
@@ -1234,13 +1459,17 @@ $L['RESTORE_APP_BACKUP_CONFIG_CONTENT'] = 'Denne kommando vil gendanne den udpeg
 $L['RESTORE_APP_DEFAULT_CONFIG'] = 'Gendan standard <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">kun config</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT'] = 'Denne kommando vil gendanne den angivne standard (fra installation) programkonfiguration for den tildelte bruger';
 
-//news functions
+/* **********************************
+ * news functions
+ ************************************/
 $L['NEWS_FUNCTIONS'] = 'Nyhedsfunktioner';
 $L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>Funktionen <code>qb news</code> i QuickBox leverer rettidige og relevante nyhedsopdateringer direkte til din server, hvilket sikrer, at du holder dig informeret om den seneste udvikling og ændringer i QuickBox-økosystemet . Med fokus på at holde dig opdateret, giver denne funktion væsentlig information om aktuelle og kommende udgivelser, versionsændringer og andre ting af interesse.</p>';
 $L['NEWS'] = 'Nyheder';
 $L['NEWS_CONTENT'] = 'Se seneste QuickBox nyheder';
 
-//support functions
+/* **********************************
+ * support functions
+ ************************************/
 $L['SUPPORT_FUNCTIONS'] = 'Supportfunktioner';
 $L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb support</code>-funktionen i QuickBox tilbyder en sikker og pålidelig metode til at give supportmedarbejdere adgang til din server, når der er behov for hjælp. Med stor vægt på sikkerhed og brugerbeskyttelse bruger denne funktion kontoen <code>quickSupport</code>, hvilket sikrer, at kun autoriseret supportpersonale kan få adgang til din server.</p>';
 $L['ENABLE_SUPPORT'] = 'Aktiver support';
@@ -1248,7 +1477,9 @@ $L['ENABLE_SUPPORT_CONTENT'] = 'Aktiver support. Typisk tildelt den medarbejder,
 $L['DISABLE_SUPPORT'] = 'Deaktiver support';
 $L['DISABLE_SUPPORT_CONTENT'] = 'Deaktiver support. Ellers vil supportkontoen automatisk slette sig selv efter 36 timer';
 
-//update functions
+/* **********************************
+ * update functions
+ ************************************/
 $L['UPDATE_FUNCTIONS'] = 'Opdateringsfunktioner';
 $L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p><code>qb update</code>-funktionen i QuickBox tilbyder dig en bekvem og fleksibel måde at administrere opdateringer til din QuickBox-installation på. Med denne funktion har du fuld kontrol over opdateringsprocessen, så du manuelt kan tjekke for opdateringer og vælge, hvornår du vil anvende dem.</p>';
 $L['UPDATE_CHECK'] = 'Opdateringstjek';
@@ -1256,18 +1487,24 @@ $L['UPDATE_CHECK_CONTENT'] = 'Se efter opdateringer til QuickBox';
 $L['UPDATE_QUICKBOX'] = 'Opdater QuickBox';
 $L['UPDATE_QUICKBOX_CONTENT'] = 'Opdater QuickBox-installationen til seneste udgivelse, hvis nogen er tilgængelig';
 
-//bugs
+/* **********************************
+ * bugs & reporting
+ ************************************/
 $L['BUGS'] = 'Bug og rapportering';
 $L['BUGS_INFO_CONTENT'] = '<p>Den grafiske visning af QuickBox\'s dokumentation vil modtage regelmæssige opdateringer for at sikre, at den angivne information forbliver let tilgængelig og brugervenlig. Vores forpligtelse til at forbedre din oplevelse med QuickBox driver os til løbende at forfine og forbedre dokumentationen og holde den opdateret med de nyeste funktioner og funktioner.<br/><br/>
 Med hver opdatering vil vi stræbe efter at forenkle komplekse koncepter, præcisere instruktioner og indarbejde brugerfeedback for at gøre qb-manpagen endnu mere intuitiv og effektiv. Vores mål er at give dig en problemfri forståelse af QuickBox og dens enorme muligheder, så du kan mestre qb CLI-miljøet og nemt administrere dine serveropgaver.<br/><br/>
 Vi værdsætter dit input og opfordrer dig til at dele forslag eller ideer, du måtte have for at forbedre qb-manpagen yderligere. Din feedback er medvirkende til at forme denne ressource og sikre, at den forbliver en værdifuld reference for alle QuickBox-brugere. Faktisk eksisterer denne side, fordi den blev anmodet om! 🤪<br/><br/>
 Rapporter eventuelle reproducerbare fejl eller forslag til <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO Labs Issue & Feature Tracker</a></strong></p>';
 
-//disclaimer
+/* **********************************
+ * disclaimer
+ ************************************/
 $L['DISCLAIMER'] = 'Ansvarsfraskrivelse';
 $L['DISCLAIMER_TEXT'] = '<p>Dette script er beregnet til generel brug, og der gives ingen garanti for egnethed til en given opgave. QuickBox.IO påtager sig intet ansvar for din opsætning eller enhver skade, der er sket under brug/installation/ændring af dette script eller nogen af dets plugins. Husk QuickBox.IO eller dets personale er ansvarlige for at holde din software og/eller server opdateret; dette er et ansvar udelukkende overladt til brugeren af QuickBox Pro-softwaren.</p>';
 
-//license
+/* **********************************
+ * license
+ ************************************/
 $L['LICENSE'] = 'Licens';
 $L['LICENSE_SET'] = 'Licenseret under BSD 3-klausul';
 $L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. Alle rettigheder forbeholdes.</p>
@@ -1277,37 +1514,15 @@ $L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. Alle rettigheder 
 <li>Hverken navnet på indehaveren af ophavsretten eller navnene på dennes bidragydere må bruges til at støtte eller promovere produkter afledt af denne software uden specifik forudgående skriftlig tilladelse.</li></ul>
 <p>DENNE SOFTWARE LEVERES AF OPHAVSRETSHEDHEDERNE OG BIDRAGENDE "SOM DEN ER" OG ENHVER UDTRYKKELIG ELLER UNDERFORSTÅET GARANTI, INKLUSIVE, MEN IKKE BEGRÆNSET TIL, DE UNDERFORSTÅEDE GARANTIER OM SALGBARHED OG EGNETHED TIL EN DELVIS EGNETHED. Under ingen omstændigheder kan copyright indehaveren eller bidragyderne være ansvarlige for direkte, indirekte, tilfældige, specielle, eksemplariske eller følgeskader (herunder, men ikke begrænset til, indkøb af erstatningsvarer eller tjenester; tab af brug, data eller overskud; ELLER VIRKSOMHEDSAFBRYDELSE), HVORDAN FORÅRSAGET OG PÅ ENHVER MÅDE OM ANSVAR, HVANDEN I KONTRAKTER, STRIKT ANSVAR ELLER STORT (HERunder uagtsomhed ELLER ANDEN MÅDE), SOM OPSTÅR PÅ NOGEN MÅDE VED ANVENDELSE AF DENNE ANVENDELSE, ELLER DETTE ELLER DETTE ELLER DETTE. ALDER. </p>';
 
-//misc
+/* **********************************
+ * misc
+ ************************************/
 $L['EXAMPLE'] = 'eksempel:';
 $L['EXAMPLES'] = 'eksempler:';
 
-//deprecated
-$L['ABOUT'] = 'Om';
-$L['GETTING_SUPPORT'] = 'Få Support';
-$L['HELP_TEXT'] = '<p class="fs14">Bragt til dig af <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
-Support til scriptet findes på en række steder, herunder fora, wiki og chats. Hvis du har brug for support på et spørgsmål relateret til QuickBox Pro, kan du finde det <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/qbpro" rel="noopener nofollow" target="_blank">her</a>.<br><br>
-Eller besøg webstedet QuickBox.IO, hvor du finder wiki samt en livechat på <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="nofollow">Discord</a>.<br><br>
-Hvis du har brug for at kontakte QuickBox-teamet om et problem med scriptet, kan du bruge vores support system på vores forum <a href="https://nullrefer.ir/?https://plaza.quickbox.io/new-topic?title=Angiv problemet her&body=Beskriv så meget detaljeret om emnet&category=QuickBox Pro/Issue Tracker&tags=issue,tracker,' . $version . '" rel="noopener nofollow" target="_blank">her</a>.</p><br><br>';
-$L['HELP_TITLE'] = 'QuickBox Administration, Dashboard Portal & Brugeradministration';
-$L['HELP'] = 'Hjælp';
-//commands
-$L['ADDITIONAL_ADMIN_COMMANDS'] = 'Yderligere Admin-kommandoer';
-$L['ADMIN_UPGRADE_COMMANDS'] = 'Admin-opgraderingskommandoer';
-$L['CLEAN_MEM_INFO'] = 'Skriv denne kommando i ssh (root) for at nulstille systemets fysiske Hukommelsescache.';
-$L['DISKTEST_INFO'] = 'Skriv denne kommando for at udføre en hurtig s/l test af din disk.';
-$L['ESSENTIAL_USER_COMMANDS'] = 'Væsentlige brugerkommandoer';
-$L['FIXHOME_INFO'] = 'Skriv denne kommando for hurtigt at tilrette /home rettigheder.';
-$L['QUICK_SYSTEM_TIPS'] = 'Hurtige systemtips';
-$L['QUICKVPN_INFO'] = 'Skriv denne kommando i ssh for at installere din egen VPN server på omkring et minut samt administrere og oprette en nye brugercertifikater til brug på serveren.';
-$L['SCREEN_IRSSI_INFO'] = 'tillader en bruger at genstarte/genforbinde irssi via SSH.';
-$L['SCREEN_RTORRENT_INFO'] = 'tillader en bruger at genstarte/genforbinde rtorrent via SSH.';
-$L['UPGRADEBTSYNC_INFO'] = 'Skriv denne kommando i ssh for at opgradere BTSync til nyeste version.';
-$L['UPGRADEDELUGE_INFO'] = 'Skriv denne kommando i ssh for at opgradere Deluge til nyeste version.';
-$L['UPGRADEOMBI_INFO'] = 'Skriv denne kommando i ssh for at opgradere Ombi til nyeste version.';
-$L['UPGRADEPLEX_INFO'] = 'Skriv denne kommando i ssh for at opgradere Plex til nyeste version.';
-$L['UPGRADERUTORRENT_INFO'] = 'Skriv denne kommando i ssh for at opgradere ruTorrent og club-QuickBox temaet til nyeste version.';
-
-//#4.4.6 - CHANGELOG / UPDATE
+/* **********************************
+ * 4.4.7 - CHANGELOG / UPDATE
+ ************************************/
 $L['CURRENT_VERSION'] = 'Nuværende Version';
 $L['DASH_UPDATE_TITLE'] = 'QuickBox Opdateringer';
 $L['QB_UPDATE'] = 'QuickBox Opdateringer';
@@ -1323,7 +1538,9 @@ $L['UPDATE_ACTIVATE'] = 'Aktiver venligst dit Pro-abonnement for at modtage opda
 $L['UPDATE_CURRENT'] = 'Du er opdateret!';
 $L['CHANGELOGS'] = 'Ændringslog';
 
-//#4.4.7 - SYSTEM DASHBOARD
+/* **********************************
+ * 4.4.8 - SYSTEM DASHBOARD
+ ************************************/
 $L['DISK_UTIL_TIME'] = 'Diskudnyttelsestid';
 $L['DISK_IO_BW'] = 'Disk I/O båndbredde';
 $L['DISK_SPACE_USAGE_FOR'] = 'Diskpladsbrug for:';
@@ -1359,9 +1576,42 @@ $L['APT_VERSION_INSTALLED'] = 'Nuværende version';
 $L['APT_VERSION_AVAILABLE'] = 'Tilgængelig version';
 $L['UPDATE_APT_DEPENDENCIES'] = 'Opdater apt-afhængigheder';
 
-//#4.5 - ERROR PAGES
-$L['404HACK'] = 'Kalder du det for et hack? Ha!';
+/* **********************************
+ * 4.5 - ERROR PAGES
+ ************************************/
+$L['404HACK'] = 'Av! Vil du virkelig gøre mig ondt?';
 $L['404PAGE'] = 'Dette er ikke den side, du leder efter.';
 $L['404PRO'] = 'Køb venligst en <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">QuickBox API-nøgle</a> for at få adgang til denne side.';
 $L['500PAGE'] = 'Det her er pinligt, det tyder på at der er noget som er gået galt.';
 $L['WHOOPS'] = 'Ups!';
+
+/* ************************************************************************************
+! BEGIN DEPRECATED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+***************************************************************************************/
+$L['ABOUT'] = 'Om';
+$L['GETTING_SUPPORT'] = 'Få Support';
+$L['HELP_TEXT'] = '<p class="fs14">Bragt til dig af <a href="https://nullrefer.ir/?https://quickbox.io" rel="noopener nofollow" target="_blank">QuickBox.IO</a>.<br><br>
+Support til scriptet findes på en række steder, herunder fora, wiki og chats. Hvis du har brug for support på et spørgsmål relateret til QuickBox Pro, kan du finde det <a href="https://nullrefer.ir/?https://plaza.quickbox.io/c/qbpro" rel="noopener nofollow" target="_blank">her</a>.<br><br>
+Eller besøg webstedet QuickBox.IO, hvor du finder wiki samt en livechat på <a href="https://nullrefer.ir/?https://discord.gg/hCCbVhu" rel="nofollow">Discord</a>.<br><br>
+Hvis du har brug for at kontakte QuickBox-teamet om et problem med scriptet, kan du bruge vores support system på vores forum <a href="https://nullrefer.ir/?https://plaza.quickbox.io/new-topic?title=Angiv problemet her&body=Beskriv så meget detaljeret om emnet&category=QuickBox Pro/Issue Tracker&tags=issue,tracker,' . $version . '" rel="noopener nofollow" target="_blank">her</a>.</p><br><br>';
+$L['HELP_TITLE'] = 'QuickBox Administration, Dashboard Portal & Brugeradministration';
+$L['HELP'] = 'Hjælp';
+//commands
+$L['ADDITIONAL_ADMIN_COMMANDS'] = 'Yderligere Admin-kommandoer';
+$L['ADMIN_UPGRADE_COMMANDS'] = 'Admin-opgraderingskommandoer';
+$L['CLEAN_MEM_INFO'] = 'Skriv denne kommando i ssh (root) for at nulstille systemets fysiske Hukommelsescache.';
+$L['DISKTEST_INFO'] = 'Skriv denne kommando for at udføre en hurtig s/l test af din disk.';
+$L['ESSENTIAL_USER_COMMANDS'] = 'Væsentlige brugerkommandoer';
+$L['FIXHOME_INFO'] = 'Skriv denne kommando for hurtigt at tilrette /home rettigheder.';
+$L['QUICK_SYSTEM_TIPS'] = 'Hurtige systemtips';
+$L['QUICKVPN_INFO'] = 'Skriv denne kommando i ssh for at installere din egen VPN server på omkring et minut samt administrere og oprette en nye brugercertifikater til brug på serveren.';
+$L['SCREEN_IRSSI_INFO'] = 'tillader en bruger at genstarte/genforbinde irssi via SSH.';
+$L['SCREEN_RTORRENT_INFO'] = 'tillader en bruger at genstarte/genforbinde rtorrent via SSH.';
+$L['UPGRADEBTSYNC_INFO'] = 'Skriv denne kommando i ssh for at opgradere BTSync til nyeste version.';
+$L['UPGRADEDELUGE_INFO'] = 'Skriv denne kommando i ssh for at opgradere Deluge til nyeste version.';
+$L['UPGRADEOMBI_INFO'] = 'Skriv denne kommando i ssh for at opgradere Ombi til nyeste version.';
+$L['UPGRADEPLEX_INFO'] = 'Skriv denne kommando i ssh for at opgradere Plex til nyeste version.';
+$L['UPGRADERUTORRENT_INFO'] = 'Skriv denne kommando i ssh for at opgradere ruTorrent og club-QuickBox temaet til nyeste version.';
+/* ************************************************************************************
+! END DEPRECATED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+***************************************************************************************/
