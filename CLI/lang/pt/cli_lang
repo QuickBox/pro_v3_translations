@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.87
+# File Version: 1.0.99
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -163,6 +163,16 @@ quickbox::lang::install::rtorrent::header() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::install::certificate::header() {
+	declare text="criando certificado SSL para ${d}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::install::configure::lecert::header() {
+	declare text="configurando NGinx para Let's Encrypt..."
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::install::configure::header() {
 	declare text="configurando ${software_title}..."
 	quickbox::dashboard::log "${text}"
@@ -251,6 +261,107 @@ quickbox::lang::update::files::admin() {
 }
 
 ################################################################################
+# Renew - Let's Encrypt
+################################################################################
+quickbox::lang::install::lecert::complete() {
+	declare -a domain_array
+	if [[ "${qb_option[*]:-}" == *"dash"* ]]; then
+		domain_array+=("https://${domain_options[dash]}")
+		application_array+=("QuickBox")
+	fi
+	if [[ "${qb_option[*]:-}" == *"emby"* ]]; then
+		domain_array+=("https://${domain_options[emby]}")
+		application_array+=("Emby")
+	fi
+	if [[ "${qb_option[*]:-}" == *"jellyfin"* ]]; then
+		domain_array+=("https://${domain_options[jellyfin]}")
+		application_array+=("Jellyfin")
+	fi
+	if [[ "${qb_option[*]:-}" == *"jellyseerr"* ]]; then
+		domain_array+=("https://${domain_options[jellyseerr]}")
+		application_array+=("Jellyseerr")
+	fi
+	if [[ "${qb_option[*]:-}" == *"komga"* ]]; then
+		domain_array+=("https://${domain_options[komga]}")
+		application_array+=("Komga")
+	fi
+	if [[ "${qb_option[*]:-}" == *"overseerr"* ]]; then
+		domain_array+=("https://${domain_options[overseerr]}")
+		application_array+=("Overseerr")
+	fi
+	if [[ "${qb_option[*]:-}" == *"plex"* ]]; then
+		domain_array+=("https://${domain_options[plex]}")
+		application_array+=("Plex")
+	fi
+	if [[ "${qb_option[*]:-}" == *"no-dash"* ]]; then
+		domain_array+=("${domain}")
+		application_array+=("o domínio personalizado foi")
+	fi
+	for ((i = 0; i < ${#domain_array[@]}; i++)); do
+		declare text="certificado SSL para ${application_array[i]} instalado.
+domínio: ${domain_array[i]}"
+	done
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::renew::certificates::header() {
+	declare text="o processo de renovação do certificado SSL começará agora"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::renew::complete::header() {
+	declare text="renovação do certificado SSL concluída"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::lecert::renew() {
+	# divide domain entries with commas and set final entry to "and"
+	for ((i = 0; i < ${#domain[@]}; i++)); do
+		if [[ ${i} -eq 0 ]]; then
+			declare text="${domain[i]}"
+		elif [[ ${i} -eq $((${#domain[@]} - 1)) ]]; then
+			declare text="${text} e ${domain[i]}"
+		else
+			declare text="${text}, ${domain[i]}"
+		fi
+	done
+	declare text="renovando certificado SSL para ${text}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::lecert::renew::info() {
+	created_array="${certificate_created}"
+	expires_array="${certificate_expiry}"
+	days_left_array="${certificate_days_left}"
+	# create certificate info header for completion message
+	declare text_header="
+Informações do certificado:
+"
+	declare text="domínio: ${d}
+criado: ${created_array[*]}
+expira: ${expires_array[*]}
+dias restantes:: ${days_left_array[*]}
+"
+	# show text_header only once for multiple domains
+	if [[ ${d} == "${domain[0]}" ]]; then
+		quickbox::dashboard::log "${text_header}
+${text}"
+	else
+		quickbox::dashboard::log "${text}"
+	fi
+}
+
+quickbox::lang::reinstall::lecert::complete::header() {
+	declare text="reinstalação do certificado SSL concluída"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::remove::cert::complete::header() {
+	declare text="remoção do certificado SSL concluída"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
 # User
 ################################################################################
 quickbox::lang::user::create() {
@@ -309,33 +420,35 @@ quickbox::lang::username::specified() {
 quickbox::lang::software::info::example() {
 	if [[ ${process} == "install" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuário ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "reinstall" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuário ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuário ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
+		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuário ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
+	elif [[ ${process} == "renew" ]]; then
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d domain.com"
 	elif [[ ${process} == "update" ]]; then
 		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuário ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d algumdomínio.com ${option[*]}"
+		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
 		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
 	fi
 	quickbox::dashboard::log "${text}"
@@ -346,42 +459,64 @@ quickbox::lang::software::info::note() {
 	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
 	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
 	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="instala a versão mais recente do ${branch} do ${software_name} para o usuário"
-		[[ -n ${rclone_remote} ]] && declare text="instala a versão ${branch} mais recente de ${software_name} para o usuário usando ${rclone_remote}"
-		[[ -n ${encrypted} ]] && declare text="instala a versão ${branch} mais recente do ${software_name} para o usuário com criptografia"
-		[[ -n ${dmn} ]] && declare text="instala um certificado ssl a ser usado para o painel no domínio especificado"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="instala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala um certificado ssl para o domínio especificado"
-		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio emby especificado"
-		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyfin especificado"
-		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyseerr especificado"
-		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio komga especificado"
-		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio overseerr especificado"
-		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio plex especificado"
-		[[ -n ${version} ]] && declare text="instala a versão ${version[*]} mais recente de ${software_name}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="instala a versão mais recente de ${branch} de ${software_name}"
-		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="instala a versão ${branch} mais recente de ${software_name} com diretório de dados atribuído"
+		if [[ ${software_name} == "filebot" ]]; then
+			[[ -n ${usr} ]] && declare text="instala a versão ${branch} mais recente do ${software_name} para o usuário"
+			[[ -n ${usr} && -n ${deluge} ]] && declare text="estágios de script de pós-processamento para Deluge"
+			[[ -n ${usr} && -n ${nzbget} ]] && declare text="estágios de script de pós-processamento para NZBGet"
+			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="estágios de script de pós-processamento para rTorrent"
+			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="estágios de script de pós-processamento para SABnzbd"
+			[[ -n ${usr} && -n ${media_path} ]] && declare text="define o caminho da mídia (ex: /path/to/media)"
+		else
+			[[ -n ${usr} ]] && declare text="instala a versão mais recente do ${branch} do ${software_name} para o usuário"
+			[[ -n ${rclone_remote} ]] && declare text="instala a versão ${branch} mais recente de ${software_name} para o usuário usando ${rclone_remote}"
+			[[ -n ${encrypted} ]] && declare text="instala a versão ${branch} mais recente do ${software_name} para o usuário com criptografia"
+			[[ -n ${dmn} ]] && declare text="instala um certificado ssl a ser usado para o painel no domínio especificado"
+			[[ -n ${usr} && -n ${dmn} ]] && declare text="instala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
+			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala um certificado ssl para o domínio especificado"
+			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio emby especificado"
+			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyfin especificado"
+			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio jellyseerr especificado"
+			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio komga especificado"
+			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio overseerr especificado"
+			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala um certificado ssl para o domínio plex especificado"
+			[[ -n ${version} ]] && declare text="instala a versão ${version[*]} mais recente de ${software_name}"
+			[[ -n ${branch} && -z ${usr} ]] && declare text="instala a versão mais recente de ${branch} de ${software_name}"
+			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="instala a versão ${branch} mais recente de ${software_name} com diretório de dados atribuído"
+			[[ -n ${library_path} ]] && declare text="instala ${software_name} com o diretório de biblioteca atribuído"
+		fi
 	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="reinstala a versão mais recente do ${branch} de ${software_name} para o usuário"
-		[[ -n ${rclone_remote} ]] && declare text="reinstala a versão ${branch} mais recente de ${software_name} para o usuário usando ${rclone_remote}"
-		[[ -n ${encrypted} ]] && declare text="reinstala a versão ${branch} mais recente do ${software_name} para o usuário com criptografia"
-		[[ -n ${dmn} ]] && declare text="reinstala o certificado ssl usado para o painel no domínio especificado"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala um certificado ssl para o domínio especificado"
-		[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio emby especificado"
-		[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyfin especificado"
-		[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyseerr especificado"
-		[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio komga especificado"
-		[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio overseerr especificado"
-		[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio plex especificado"
-		[[ -n ${version} ]] && declare text="reinstala a versão ${version[*]} mais recente de ${software_name}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="reinstala a versão mais recente de ${branch} de ${software_name}"
-		[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="reinstala a versão ${branch} mais recente de ${software_name} com diretório de dados atribuído"
+		if [[ ${software_name} == "filebot" ]]; then
+			[[ -n ${usr} ]] && declare text="reinstala a versão ${branch} mais recente do ${software_name} para o usuário"
+			[[ -n ${usr} && -n ${deluge} ]] && declare text="estágios de script de pós-processamento para Deluge"
+			[[ -n ${usr} && -n ${nzbget} ]] && declare text="estágios de script de pós-processamento para NZBGet"
+			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="estágios de script de pós-processamento para rTorrent"
+			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="estágios de script de pós-processamento para SABnzbd"
+			[[ -n ${usr} && -n ${media_path} ]] && declare text="define o caminho da mídia (ex: /path/to/media)"
+		else
+			[[ -n ${usr} ]] && declare text="reinstala a versão mais recente do ${branch} de ${software_name} para o usuário"
+			[[ -n ${rclone_remote} ]] && declare text="reinstala a versão ${branch} mais recente de ${software_name} para o usuário usando ${rclone_remote}"
+			[[ -n ${encrypted} ]] && declare text="reinstala a versão ${branch} mais recente do ${software_name} para o usuário com criptografia"
+			[[ -n ${dmn} ]] && declare text="reinstala o certificado ssl usado para o painel no domínio especificado"
+			[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala a versão mais recente do ${branch} do ${software_name} para o usuário e prepara o certificado ssl para o domínio"
+			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala um certificado ssl para o domínio especificado"
+			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio emby especificado"
+			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyfin especificado"
+			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio jellyseerr especificado"
+			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio komga especificado"
+			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio overseerr especificado"
+			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala um certificado ssl para o domínio plex especificado"
+			[[ -n ${version} ]] && declare text="reinstala a versão ${version[*]} mais recente de ${software_name}"
+			[[ -n ${branch} && -z ${usr} ]] && declare text="reinstala a versão mais recente de ${branch} de ${software_name}"
+			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="reinstala a versão ${branch} mais recente de ${software_name} com diretório de dados atribuído"
+			[[ -n ${library_path} ]] && declare text="reinstala ${software_name} com o diretório de biblioteca atribuído"
+		fi
 	elif [[ ${process} == "remove" ]]; then
 		[[ -n ${usr} ]] && declare text="remove ${software_name} para usuário"
 		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="remove o certificado ssl do domínio especificado"
 		[[ -n ${version} && -z ${dmn} ]] && declare text="remove ${software_name}"
 		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="remove ${software_name}"
+	elif [[ ${process} == "renew" ]]; then
+		[[ -n ${dmn} ]] && declare text="renova o certificado SSL do domínio especificado"
 	elif [[ ${process} == "update" ]]; then
 		[[ -n ${usr} ]] && declare text="atualiza ${software_name} para a versão mais recente do ${branch} para o usuário"
 		[[ -n ${dmn} ]] && declare text="atualiza o certificado ssl para o domínio especificado, a ser usado com o painel"
@@ -421,7 +556,7 @@ quickbox::lang::software::calibre::access() {
 ${quickbox_web_root}${username}/${software_name}
 nome de usuário: ${username}
 senha: admin123
-localização do banco de dados: /home/${username}/.config/calibre/library
+localização do banco de dados: ${software_library_directory}
 ${software_title} instalado na porta: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -444,17 +579,6 @@ quickbox::lang::software::admin::access() {
 	declare text="acesso ${software_title} em:
 ${quickbox_web_root}${admin_name}/${software_name}
 ${software_title} instalado na porta: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::dashboard() {
-	declare text="domínio: https://${domain}/"
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::dashboard::custom() {
-	declare text="ssl certificado por ${domain} instalado para:
-/etc/nginx/ssl/${domain}/"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -685,6 +809,11 @@ Sua senha pode ser alterada sob a guia [usuários] em pyload."
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::build::python311() {
+	declare text="instalando o python 3.11, aguarde, pois isso pode demorar um pouco ..."
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::quassel::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 	declare text="${software_title} instalado na porta: ${software_daemon_port}
@@ -765,6 +894,11 @@ quickbox::lang::software::rclone::access() {
 > Para obter mais informações sobre como instalar o rclone, visite:
 https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
 "
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::build::sabnzbd::par2cmdline() {
+	declare text="instalando par2cmdline, aguarde, pois isso pode demorar um pouco..."
 	quickbox::dashboard::log "${text}"
 }
 
