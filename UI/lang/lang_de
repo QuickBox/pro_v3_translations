@@ -4,7 +4,7 @@ $username = $session->username;
 /*
  *                        German                        *
  *                                                      *
- * Ready for QuickBox Pro v3.0.0 : September 16, 2023   *
+ * Ready for QuickBox Pro v3.0.0 : September 28, 2023   *
  *                                                      *
  * SUMMARY :                                            *
  *                                                      *
@@ -1195,6 +1195,15 @@ $L['UNBAN_SPECIFIED_USER'] = 'Angegebenen benutzer entsperren';
 $L['SOFTWARE_SPEC_USAGE'] = 'Softwarespezifische Nutzung';
 $L['DISPLAY_ALL_SOFTWARE'] = 'Alle zur installation verfügbaren softwareanwendungen anzeigen';
 $L['DISPLAY_SINGLE_SOFTWARE'] = 'Informationen für angegebene software anzeigen';
+$L['API_SOFTWARE_NOTICE'] = 'Hinweise zur Strukturierung von Softwarenamen (App-Namen) finden Sie im Abschnitt „Software“ in Ihrem Benutzerhandbuch. Sie können darauf zugreifen, indem Sie <a href="/help.php#software">hier</a> klicken.';
+$L['API_SOFTWARE_WARNING'] = 'Bitte beachten Sie, dass die Namenskonventionen für bestimmte Anwendungen möglicherweise nicht offiziell festgelegt sind und stattdessen Teil eines erweiterten Satzes von Optionen sein können.<br/><br/>
+Hier ist ein Beispiel mit Bazarr4K:<br>
+<pre class="mb-0"><code class="language-json">	"bazarr4k": {
+	"software_title": "Bazarr4K",
+	"qb_package_name": "-o 4k",
+	...</code></pre>
+<br/>
+Beachten Sie, dass der <strong>qb_package_name</strong> in der API-Ausgabe für alle über QuickBox verfügbare Software <code>-o 4k</code> enthält. Das bedeutet, dass Sie zum Installieren von Bazarr4K <code>qb install bazarr -o 4k -u [USERNAME]</code> und nicht <code>qb install bazarr4k ...</code> verwenden würden';
 $L['SOFTWARE_SERVICE_STATUS'] = 'Status für angegebene software und benutzer anzeigen';
 $L['SOFT_STATUS_ACTIVE_NOTICE'] = 'Wenn der dienst aktiv ist.';
 $L['SOFT_STATUS_INACTIVE_NOTICE'] = 'Wenn der dienst inaktiv ist.';
