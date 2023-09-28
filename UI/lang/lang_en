@@ -1195,10 +1195,10 @@ $L['DISPLAY_SINGLE_SOFTWARE'] = 'Display information for specified software';
 $L['API_SOFTWARE_NOTICE'] = 'To find guidance on how software names (app names) are structured, please refer to the \'Software\' section in your user manual. You can access it by clicking <a href="/help.php#software">here</a>.';
 $L['API_SOFTWARE_WARNING'] = 'Please be aware that for certain applications, the naming conventions may not be officially designated and could instead be part of an expanded set of options.<br/><br/>
 Here\'s an example using Bazarr4K:<br>
-<pre class="mb-0"><code class="language-json">	"bazarr4k": {
-	"software_title": "Bazarr4K",
-	"qb_package_name": "-o 4k",
-	...</code></pre>
+<pre class="mb-0"><code class="language-json">"bazarr4k": {
+    "software_title": "Bazarr4K",
+    "qb_package_name": "-o 4k",
+    ...</code></pre>
 <br/>
 Take notice that the <strong>qb_package_name</strong> in the API output for all software available through QuickBox contains <code>-o 4k</code>. This means to install Bazarr4K, you would use <code>qb install bazarr -o 4k -u [USERNAME]</code> and not <code>qb install bazarr4k ...</code>';
 $L['SOFTWARE_SERVICE_STATUS'] = 'Display status for specified software and user';

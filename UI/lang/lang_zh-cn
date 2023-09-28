@@ -1190,10 +1190,10 @@ $L['DISPLAY_SINGLE_SOFTWARE'] = '显示指定软件的信息';
 $L['API_SOFTWARE_NOTICE'] = '要查找有关软件名称（应用程序名称）结构的指南，请参阅用户手册中的“软件”部分。 您可以通过点击<a href="/help.php#software">此处</a>来访问它。';
 $L['API_SOFTWARE_WARNING'] = '请注意，对于某些应用程序，命名约定可能不是正式指定的，而是可能是扩展选项集的一部分。<br/><br/>
 这是使用 Bazarr4K 的示例：<br>
-<pre class="mb-0"><code class="language-json">	"bazarr4k": {
-	"software_title": "Bazarr4K",
-	"qb_package_name": "-o 4k",
-	...</code></pre>
+<pre class="mb-0"><code class="language-json">"bazarr4k": {
+    "software_title": "Bazarr4K",
+    "qb_package_name": "-o 4k",
+    ...</code></pre>
 <br/>
 请注意，通过 QuickBox 提供的所有软件的 API 输出中的 <strong>qb_package_name</strong> 包含 <code>-o 4k</code>。 这意味着要安装 Bazarr4K，您将使用 <code>qb install bazarr -o 4k -u [USERNAME]</code> 而不是 <code>qb install bazarr4k ...</code>';
 $L['SOFTWARE_SERVICE_STATUS'] = '显示指定软件和用户的状态';

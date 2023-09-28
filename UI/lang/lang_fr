@@ -1191,10 +1191,10 @@ $L['DISPLAY_SINGLE_SOFTWARE'] = 'Afficher les informations du logiciel spécifi�
 $L['API_SOFTWARE_NOTICE'] = 'Pour obtenir des conseils sur la façon dont les noms de logiciels (noms d\'applications) sont structurés, veuillez vous référer à la section « Logiciel » de votre manuel d\'utilisation. Vous pouvez y accéder en cliquant <a href="/help.php#software">ici</a>.';
 $L['API_SOFTWARE_WARNING'] = 'Veuillez noter que pour certaines applications, les conventions de dénomination peuvent ne pas être officiellement désignées et pourraient plutôt faire partie d\'un ensemble étendu d\'options.<br/><br/>
 Voici un exemple utilisant Bazarr4K :<br>
-<pre class="mb-0"><code class="language-json">	"bazarr4k": {
-	"software_title": "Bazarr4K",
-	"qb_package_name": "-o 4k",
-	...</code></pre>
+<pre class="mb-0"><code class="language-json">"bazarr4k": {
+    "software_title": "Bazarr4K",
+    "qb_package_name": "-o 4k",
+    ...</code></pre>
 <br/>
 Notez que le <strong>qb_package_name</strong> dans la sortie de l\'API pour tous les logiciels disponibles via QuickBox contient <code>-o 4k</code>. Cela signifie que pour installer Bazarr4K, vous utiliserez <code>qb install bazarr -o 4k -u [USERNAME]</code> et non <code>qb install bazarr4k ...</code>';
 $L['SOFTWARE_SERVICE_STATUS'] = 'Afficher l\'état du logiciel et de l\'utilisateur spécifiés';
