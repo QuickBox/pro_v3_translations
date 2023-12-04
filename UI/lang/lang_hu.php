@@ -1,87 +1,103 @@
 <?php
+
+/**
+ * QuickBox Pro Hungarian Language File
+ *
+ * This file is used to translate the QuickBox Pro Dashboard into Hungarian.
+ * This language file is a work in progress and is not yet complete.
+ *
+ * @package    dashboard
+ * @subpackage lang
+ * @category   Hungarian
+ * @version    3.0.1.2
+ * @since      2.5.8
+ *
+ * @var Configs $configs The configurations object.
+ * @var Session $session The user session object.
+ */
+
+// Include required variables
 $version = $configs->getConfig('Version');
 $username = $session->username;
-/*
- *                     Hungarian  (W.I.P)	  	        *
- *                                                      *
- * Work in progress - not yet translated                *
- *                                                      *
- * SUMMARY :                                            *
- *                                                      *
- * NAVIGATION : #1                                      *
- *    language & theme selection : #1.1                 *
- *    user menu : #1.2                                  *
- *    sidebar menu : #1.3                               *
- *    sidebar submenus : #1.4                           *
- *    footer : #1.5                                     *
- * MISCELLANEOUS : #2                                   *
- *    buttons : #2.1                                    *
- *    popup texture : #2.2                              *
- *    app nginx config edit modal : #2.3                *
- *    other : #2.4                                      *
- * WIDGETS : #3                                         *
- *    Tables Headers : #3.1                             *
- *       app management center : #3.1.1                 *
- *    Package Management Center : #3.2                  *
- *       app info : #3.2.1                              *
- *       app uninstall : #3.2.2                         *
- *       app reinstall : #3.2.3                         *
- *       toggles & tooltips : #3.2.4                    *
- *       service control : #3.2.5                       *
- *       rclone specific toggles : #3.2.6               *
- *    Dashboard Widgets : #3.3                          *
- *       disk status widget : #3.3.1                    *
- *       system index v1 - bandwidth data : #3.3.2      *
- *       system index v1 - server load : #3.3.3         *
- *       system index v1 - memory status : #3.3.4       *
- *       server activity widget : #3.3.5                *
- * PAGES : #4                                           *
- *    Start Screen Forms : #4.1                         *
- *       login : #4.1.1                                 *
- *       forgot password : #4.1.2                       *
- *       register : #4.1.3                              *
- *       account : #4.1.4                               *
- *         quotes : #4.1.4.1                            *
- *         edit account modal : #4.1.4.2                *
- *       summary : #4.1.5                               *
- *    Settings : #4.2                                   *
- *       general settings : #4.2.1                      *
- *       email settings : #4.2.2                        *
- *       session settings : #4.2.3                      *
- *       user settings : #4.2.4                         *
- *       security settings : #4.2.5                     *
- *    User Management : #4.3                            *
- *       registration settings : #4.3.1                 *
- *       useradmin : #4.3.2                             *
- *         admin user edit : #4.3.2.1                   *
- *       user groups : #4.3.3                           *
- *    System : #4.4                                     *
- *       web console : #4.4.1                           *
- *       api-control : #4.4.2                           *
- *       ssl-control : #4.4.3                           *
- *       troubleshooting : #4.4.4                       *
- *       system logs : #4.4.5                           *
- *       help manual : #4.4.6                           *
- *         description : #4.4.6.1                       *
- *         options : #4.4.6.2                           *
- *         software : #4.4.6.3                          *
- *         software options table : #4.4.6.4            *
- *         examples header : #4.4.6.5                   *
- *         user management : #4.4.6.6                   *
- *         clean functions : #4.4.6.7                   *
- *         fix functions : #4.4.6.8                     *
- *         generate functions : #4.4.6.9                *
- *         manage functions : #4.4.6.10                 *
- *         news functions : #4.4.6.11                   *
- *         support functions : #4.4.6.12                *
- *         update functions : #4.4.6.13                 *
- *         bugs & reporting : #4.4.6.14                 *
- *         disclaimer : #4.4.6.15                       *
- *         license : #4.4.6.16                          *
- *         misc : #4.4.6.17                             *
- *       changelogs / update : #4.4.7                   *
- *       system dashboard : #4.4.8                      *
- *    Error Pages : #4.5                                *
+
+/**
+ * SUMMARY :
+ *
+ * NAVIGATION : #1
+ *    language & theme selection : #1.1
+ *    user menu : #1.2
+ *    sidebar menu : #1.3
+ *    sidebar submenus : #1.4
+ *    footer : #1.5
+ * MISCELLANEOUS : #2
+ *    buttons : #2.1
+ *    popup texture : #2.2
+ *    app nginx config edit modal : #2.3
+ *    other : #2.4
+ * WIDGETS : #3
+ *    Tables Headers : #3.1
+ *       app management center : #3.1.1
+ *    Package Management Center : #3.2
+ *       app info : #3.2.1
+ *       app uninstall : #3.2.2
+ *       app reinstall : #3.2.3
+ *       toggles & tooltips : #3.2.4
+ *       service control : #3.2.5
+ *       rclone specific toggles : #3.2.6
+ *    Dashboard Widgets : #3.3
+ *       disk status widget : #3.3.1
+ *       system index v1 - bandwidth data : #3.3.2
+ *       system index v1 - server load : #3.3.3
+ *       system index v1 - memory status : #3.3.4
+ *       server activity widget : #3.3.5
+ * PAGES : #4
+ *    Start Screen Forms : #4.1
+ *       login : #4.1.1
+ *       forgot password : #4.1.2
+ *       register : #4.1.3
+ *       account : #4.1.4
+ *         quotes : #4.1.4.1
+ *         edit account modal : #4.1.4.2
+ *       summary : #4.1.5
+ *    Settings : #4.2
+ *       general settings : #4.2.1
+ *       email settings : #4.2.2
+ *       session settings : #4.2.3
+ *       user settings : #4.2.4
+ *       security settings : #4.2.5
+ *    User Management : #4.3
+ *       registration settings : #4.3.1
+ *       useradmin : #4.3.2
+ *         admin user edit : #4.3.2.1
+ *         admin announce : #4.3.2.2
+ *       user groups : #4.3.3
+ *    System : #4.4
+ *       web console : #4.4.1
+ *       api-control : #4.4.2
+ *       ssl-control : #4.4.3
+ *       troubleshooting : #4.4.4
+ *       system logs : #4.4.5
+ *       help manual : #4.4.6
+ *         description : #4.4.6.1
+ *         options : #4.4.6.2
+ *         software : #4.4.6.3
+ *         software options table : #4.4.6.4
+ *         examples header : #4.4.6.5
+ *         user management : #4.4.6.6
+ *         clean functions : #4.4.6.7
+ *         fix functions : #4.4.6.8
+ *         generate functions : #4.4.6.9
+ *         manage functions : #4.4.6.10
+ *         news functions : #4.4.6.11
+ *         support functions : #4.4.6.12
+ *         update functions : #4.4.6.13
+ *         bugs & reporting : #4.4.6.14
+ *         disclaimer : #4.4.6.15
+ *         license : #4.4.6.16
+ *         misc : #4.4.6.17
+ *       changelogs / update : #4.4.7
+ *       system dashboard : #4.4.8
+ *    Error Pages : #4.5
  */
 
 /* ********************************************************************************
@@ -176,6 +192,7 @@ $L['CLICK_ME'] = 'Click me';
 $L['CLOSE_REFRESH'] = 'Close & Refresh';
 $L['CLOSE'] = 'Close';
 $L['CPU_TAB'] = 'CPU';
+$L['CREATE_ANNOUNCEMENT'] = 'Create Announcement';
 $L['CREATE_GROUP'] = 'Create Group';
 $L['CREATE_NEW_GROUP'] = 'Create a New Group';
 $L['CREATE_NEW_USER'] = 'Create New User';
@@ -192,6 +209,7 @@ $L['DEMOTE'] = 'Demote from Admin';
 $L['DISABLED'] = 'Disabled';
 $L['DISK_TAB'] = 'Disk';
 $L['DOWNLOAD'] = 'Download';
+$L['EDIT_ANNOUNCEMENT'] = 'Edit Selected Announcement';
 $L['EDIT_GROUP'] = 'Edit Group';
 $L['EDIT_USER'] = 'Edit User';
 $L['ENABLED'] = 'Enabled';
@@ -291,6 +309,8 @@ $L['APP_CONFIG_EDIT'] = 'Edit Software Config';
 $L['ABOUT_RELEASE'] = 'About Release';
 $L['ADD_MOUNT_PATH_RCLONE_INFO'] = 'Select if this is an rclone mount. This option, when selected, will recognize the path as an rclone mount. This option should be checked if you are attempting to monitor an rclone mount. This ensures that the space calculations are accurate.';
 $L['ADD_NEW_MOUNT_CHECK'] = 'Add an existing mount or directory to monitor';
+$L['MOUNT_PATH_SUCCESS'] = 'Path successfully added for monitoring. Refreshing page...';
+$L['MOUNT_PATH_ERROR'] = 'The path you attempted to add for monitoring does not exist.<br>Please double-check the path and try again.';
 $L['EMAIL'] = 'E-mail';
 $L['HERE'] = 'here';
 $L['HOME'] = 'Home';
@@ -367,8 +387,10 @@ $L['FLEXGET'] = 'FlexGet is a multipurpose automation tool for all of your media
 $L['FLOOD'] = 'Flood is a monitoring service for various torrent clients. It\'s a Node.js service that communicates with your favorite torrent client and serves a decent web UI for administration. <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> organization hosts related projects.';
 $L['HEADPHONES'] = 'Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent, Deluge and Blackhole.';
 $L['JACKETT'] = 'API Support for your favorite private trackers.';
+$L['JDOWNLOADER'] = 'JDownloader is a free download management tool that allows you to quickly download files from hosting services such as Mediafire, 4Shared, and other similar functionality hosting services. File hosting services often gatekeep your full download speed to incentivize purchasing premium packages; JDownloader helps you circumvent that requirement.';
 $L['JELLYFIN'] = 'Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.';
 $L['JELLYSEERR'] = 'Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!';
+$L['KAVITA'] = 'Kavita is a fast, feature rich, cross platform reading server. Built with a focus for manga and the goal of being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family.';
 $L['KOMGA'] = 'Komga is a media server for your digital comics/manga, with a focus on providing a simple and modern interface.';
 $L['LAZYLIBRARIAN'] = 'LazyLibrarian is a SickBeard, CouchPotato, Headphones-like application for ebooks, audiobooks and magazines. It uses a combination of  <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank">Goodreads</a>  <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank">Librarything</a> and optionally  <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank">GoogleBooks</a> as sources for author info and book info.';
 $L['LETSENCRYPT'] = 'Let\'s Encrypt is a free, automated, and open certificate authority (CA), run for the public\'s benefit. It is a service provided by the <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
@@ -443,8 +465,10 @@ $L['FLEXGET_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2
 $L['FLOOD_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Flood</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Flood</span> at any time, however, your storage path and linked folder settings will be reset to default.';
 $L['HEADPHONES_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Headphones</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Headphones</span> at any time, however, your storage path and linked folder settings will be reset to default.';
 $L['JACKETT_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Jacket</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Jacket</span> at any time, however, your storage path and linked folder settings will be reset to default.';
+$L['JDOWNLOADER_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">JDownloader</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">JDownloader</span> at any time, however, your settings will be reset to default.';
 $L['JELLYFIN_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Jellyfin</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Jellyfin</span> at any time, however, your storage path and linked folder settings will be reset to default.';
 $L['JELLYSEERR_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Jellyseerr</span> from your system.<br/><br/>This will completely remove all of your configuration and library settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Jellyseerr</span> at any time, however, your library settings and requests will be reset.';
+$L['KAVITA_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Kavita</span> from your system.<br/><br/>This will completely remove all of your configuration and library settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Kavita</span> at any time, however, your library settings and requests will be reset.';
 $L['KOMGA_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Komga</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Komga</span> at any time, however, your storage path and linked folder settings will be reset to default.';
 $L['LAZYLIBRARIAN_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">LazyLibrarian</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">LazyLibrarian</span> at any time, however, your storage path and linked folder settings will be reset to default.';
 $L['LETSENCRYPT_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">Let\'s Encrypt</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">Let\'s Encrypt</span> at any time, however, your configuration settings will be reset to default.';
@@ -519,8 +543,10 @@ $L['FLEXGET_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2
 $L['FLOOD_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Flood</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.';
 $L['HEADPHONES_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Headphones</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.';
 $L['JACKETT_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Jacket</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.';
+$L['JDOWNLOADER_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">JDownloader</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.';
 $L['JELLYFIN_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Jellyfin</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.';
 $L['JELLYSEERR_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Jellyseerr</span> from your system.<br/><br/>This will completely remove all of your configuration and library settings... this action is irreversible.';
+$L['KAVITA_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Kavita</span> from your system.<br/><br/>This will completely remove all of your configuration and library settings... this action is irreversible.';
 $L['KOMGA_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Komga</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.';
 $L['LAZYLIBRARIAN_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">LazyLibrarian</span> from your system.<br/><br/>This will completely remove all of your configuration and shared folder settings... this action is irreversible.';
 $L['LETSENCRYPT_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">Let\'s Encrypt</span> from your system.<br/><br/>This will completely remove all of your configuration settings... this action is irreversible.';
@@ -630,6 +656,22 @@ $L['PROCESS_SABNZBD'] = 'Process downloads for SABnzbd?';
 $L['CUSTOM_MEDIA_PATH'] = 'Use custom path to media library?';
 $L['FILEBOT_DEFAULT_PATH'] = 'example';
 $L['FILEBOT_LICENSE'] = 'Filebot License';
+
+/* **********************************
+* jdownloader install/reinstall modal
+ ************************************/
+$L['JDOWNLOADER_INSTALL_TITLE'] = 'JDownloader Install';
+$L['JDOWNLOADER_REINSTALL_TITLE'] = 'JDownloader Reinstall';
+$L['JDOWNLOADER_EMAIL'] = 'JDownloader account email address';
+$L['JDOWNLOADER_PASSWORD'] = 'JDownloader account password';
+$L['JDOWNLOADER_INSTALL_PATH_MESSAGE'] = 'You have the option to specify a custom directory path for your JDownloader downloads. If the chosen path doesn\'t currently exist, it will be automatically generated for you.<br>Alternatively, if you prefer to use the default path, simply leave the field blank, and the library will be located at:<br><code>/home/' . $username . '/Downloads</code>';
+
+/* **********************************
+* kavita install/reinstall modal
+ ************************************/
+$L['KAVITA_INSTALL_TITLE'] = 'Kavita Install';
+$L['KAVITA_REINSTALL_TITLE'] = 'Kavita Reinstall';
+$L['KAVITA_INSTALL_MESSAGE'] = 'You have the option to specify a custom directory path for your Kavita library. If the chosen path doesn\'t currently exist, it will be automatically generated for you.<br>Alternatively, if you prefer to use the default path, simply leave the field blank, and the library will be located at:<br><code>/home/' . $username . '/.config/Kavita/library</code>';
 
 /* **********************************
  * plex install/reinstall modal
@@ -816,7 +858,7 @@ $L['PASS_UPDATED'] = 'Password updated!';
 /* **********************************
  * #4.1.3 - REGISTER
  ************************************/
-$L['ACCOUNT_CREATED'] = 'your account has been created';
+$L['ACCOUNT_CREATED'] = 'your account has been created. ';
 $L['CAN_LOGIN'] = 'for your registration. You may now log in';
 $L['CREATED_ADM_ACT'] = 'However, this board requires account activation by an Admin. You will be informed by e-mail when your account has been activated.';
 $L['CREATED_CHECK_EMAIL'] = 'Please check your e-mail for further information';
@@ -1051,8 +1093,6 @@ $L['USERNAME_LOWERCASE_NO_INFO'] = 'Setting this option to No will not change ne
  * #4.3.2 - USER ADMINISTRATION
  ************************************/
 $L['ADMIN_ANNOUNCE'] = 'Admin Announcements';
-$L['ANNOUNCEMENT_HISTORY'] = 'Your Previous Announcements';
-$L['ANNOUNCEMENT_LIST'] = 'Announcement Content';
 $L['AWAITING_ADMIN'] = 'Awaiting Admin Activation';
 $L['AWAITING_EMAIL'] = 'Awaiting E-mail Activation';
 $L['BANNED'] = 'Banned';
@@ -1071,7 +1111,6 @@ $L['CURRENT_USERS'] = 'Current Users';
 $L['DEFAULT_GROUP_TAG'] = 'default';
 $L['DISK_STATUS'] = 'Disk Status';
 $L['EDIT_USER_SHELL'] = 'Edit the User\'s Shell Environment';
-$L['ENABLE_USER_ANNOUNCE'] = 'Enable Dashboard Announcement';
 $L['EXPIRY'] = 'Expiry';
 $L['HAS_USED'] = 'has used';
 $L['IP_ADDRESS'] = 'IP Address';
@@ -1127,6 +1166,27 @@ $L['UNIQUE_USER_HP_SETTINGS'] = 'Unique User Home Page - Settings';
 $L['USER_EDIT1'] = 'User Edit :';
 $L['USER_EDIT2'] = 'User Edit';
 $L['SELECT_GROUP'] = 'Select Group';
+
+/* **********************************
+ * #4.3.2.2 - admin announce
+ ************************************/
+$L['ENABLE_USER_ANNOUNCE'] = 'Enable Dashboard Announcement';
+$L['ANNOUNCEMENT_HISTORY'] = 'Your Previous Announcements';
+$L['TYPE'] = 'Type';
+$L['USER'] = 'User';
+$L['TIME'] = 'Time';
+$L['ANNOUNCEMENT_LIST'] = 'Announcement Content';
+$L['GLOBAL_USER_ANNOUNCEMENT'] = 'Global (all users)';
+$L['CREATE_DASHBOARD_ANNOUNCEMENT'] = 'Create Dashboard Announcement';
+$L['GLOBAL_ANNOUNCEMENT'] = 'Global Announcement';
+$L['GLOBAL_ANNOUNCEMENT_INFO'] = 'Selecting this option will create a global announcement visible on every user\'s dashboard, regardless of their group membership. If you\'ve already assigned an announcement to a user, it will be displayed alongside this global announcement.';
+$L['SELECT_USER'] = 'Select User:';
+$L['SELECT_ANNOUNCEMENT_TYPE'] = 'Announcement Type:';
+$L['EDIT_DASHBOARD_ANNOUNCEMENT'] = 'Edit Dashboard Announcement';
+$L['EDIT_ANNOUNCEMENT_INFO'] = 'Editing and saving an existing announcement will reset its visibility on the specified user\'s dashboard. If the announcement is global, it will also reset the view history on all users\' dashboards.';
+$L['ANNOUNCEMENT_ID'] = 'Announcement Id';
+$L['ANNOUNCEMENT_TYPE'] = 'Announcement Type';
+$L['PREVIEW'] = 'Preview';
 
 /* **********************************
  * #4.3.3 - USERS GROUPS
@@ -1195,12 +1255,19 @@ $L['DISPLAY_SINGLE_SOFTWARE'] = 'Display information for specified software';
 $L['API_SOFTWARE_NOTICE'] = 'To find guidance on how software names (app names) are structured, please refer to the \'Software\' section in your user manual. You can access it by clicking <a href="/help.php#software">here</a>.';
 $L['API_SOFTWARE_WARNING'] = 'Please be aware that for certain applications, the naming conventions may not be officially designated and could instead be part of an expanded set of options.<br/><br/>
 Here\'s an example using Bazarr4K:<br>
-<pre class="mb-0"><code class="language-json">"bazarr4k": {
+<pre class="mb-2"><code class="language-json">"bazarr4k": {
     "software_title": "Bazarr4K",
-    "qb_package_name": "-o 4k",
+    "qb_package_name": "bazarr",
+    "qb_options": "-o 4k",
     ...</code></pre>
-<br/>
-Take notice that the <strong>qb_package_name</strong> in the API output for all software available through QuickBox contains <code>-o 4k</code>. This means to install Bazarr4K, you would use <code>qb install bazarr -o 4k -u [USERNAME]</code> and not <code>qb install bazarr4k ...</code>';
+Please take note of the following important information regarding QuickBox\'s software API output:
+<ul>
+<li>When accessing software packages through QuickBox, you will consistently find the \'qb_package_name\' attribute. This attribute is marked and used by the <code>qb</code> naming convention.</li>
+<li>Additionally, each API output includes the \'qb_options\' entry, which provides valuable options for customization. One of these options is the \'4K\' installation flag, denoted as <code>-o 4k</code>.</li>
+</ul><br/>
+For instance, if you intend to install \'Bazarr\' with 4K support, you should use the following command:<br/>
+<pre class="mb-0"><code class="language-bash">qb install bazarr -o 4k -u [USERNAME]</code></pre><br/>
+It\'s important to note that you should not use \'bazarr4k\' as the package name, as the \'qb_options\' entry is designed to handle such customizations efficiently.';
 $L['SOFTWARE_SERVICE_STATUS'] = 'Display status for specified software and user';
 $L['SOFT_STATUS_ACTIVE_NOTICE'] = 'If the service is active.';
 $L['SOFT_STATUS_INACTIVE_NOTICE'] = 'If the service is inactive.';
@@ -1281,6 +1348,7 @@ $L['ABOUT_SYSTEM_ACTION_LOGS'] = 'These logs are tailored to capture system-leve
 $L['UI_ACTION_LOGS'] = 'UI Action Logs';
 $L['VIEW_UI_ACTION_LOGS'] = 'View UI Action Log';
 $L['ABOUT_UI_ACTION_LOGS'] = 'These logs are derived from the system\'s syslog and serve as a consolidated record of all commands and actions initiated through the QuickBox Dashboard\'s user interface.';
+$L['USER_APPLICATION_LOGS'] = 'User Application Logs';
 $L['SYSTEM_LOG_SUMMARY'] = 'System Log Summary';
 $L['SYSTEM_LOG_SUMMARY_TOOLTIP'] = 'This summary and all additional logs are generated under three conditions:<br><ol><li><strong>Cron:</strong> Logs are automatically updated with the execution of a cron task every 15 minutes. This initiates the <code>qb_log_miner</code> binary that aggregates log entries from the system syslog.</li><li><strong>Manually Generate:</strong> You can generate it from the \'System > Troubleshooting > System Log\' section by clicking the \'(Generate)\' button.</li><li><strong>Command Line:</strong> It can also be generated by running the command <code>qb generate log</code>.</li></ol>You can access and download this summary log file in two ways:<br><ol><li><strong>Web Interface:</strong> Go to \'System > Troubleshooting > System Log (Download)\' within the user interface.</li><li><strong>Server Directory:</strong> Find it on the server at: \'/srv/quickbox/logs/system_log\'.</li></ol>';
 $L['CLEAR_LOG'] = 'Clear Log';
@@ -1293,6 +1361,7 @@ $L['EVENT'] = 'Event';
 $L['LOG_MESSAGE'] = 'Log Message';
 $L['LOGS_SUMMARY'] = 'Logs Summary';
 $L['COMMAND'] = 'Command';
+$L['SOFTWARE'] = 'Software';
 $L['DELETED_ALL_APP_LOGS'] = 'Deleted all software logs';
 $L['DELETED_ALL_APPLICATION_LOGS'] = 'Delete all application logs';
 $L['DELETED_ALL_SUMMARY_LOGS'] = 'Deleted all summary logs';
@@ -1397,6 +1466,10 @@ $L['CLEAN_MEMORY'] = 'Clean Memory';
 $L['CLEAN_MEMORY_CONTENT'] = 'Cleans QuickBox memory caches';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Clean Dashboard Logs';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Cleans QuickBox dashboard logs for the designated user';
+$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Cleans QB Dashboard log files';
+$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'This command is designed to clear the current UI Actions log posted from syslog and reset the UI Nginx error log to its initial state';
+$L['CLEAR_SYSTEM_LOGS'] = 'Remove old system log files';
+$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'This command is designed to delete logs and compressed archived logs in the <code>/var/log</code> directory that have exceeded a 7-day retention period';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Clean Rclone Upload Logs';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Cleans QuickBox rclone upload logs for the designated user';
 $L['CLEAN_LOCKS'] = 'Clean Locks';
@@ -1520,6 +1593,7 @@ $L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. All rights reserv
  ************************************/
 $L['EXAMPLE'] = 'example:';
 $L['EXAMPLES'] = 'examples:';
+$L['LOG_MAINTENANCE'] = 'Log Maintenance';
 
 /* **********************************
  * #4.4.7 - CHANGELOG / UPDATE
