@@ -4,12 +4,12 @@
  * QuickBox Pro Portuguese Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into Portuguese.
- * Ready for QuickBox Pro v3.0.1 : December 04, 2023
+ * Ready for QuickBox Pro v3.0.1 : December 05, 2023
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Portuguese
- * @version    3.0.1.3
+ * @version    3.0.1.6
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -1461,10 +1461,10 @@ $L['CLEAN_MEMORY'] = 'Limpar memória';
 $L['CLEAN_MEMORY_CONTENT'] = 'Limpa os caches de memória do QuickBox';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Limpar logs do painel';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Limpa os logs do painel do QuickBox para o usuário designado';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Limpa arquivos de log do Painel QB';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'Este comando foi projetado para limpar o log atual de ações da UI postado no syslog e redefinir o log de erros do UI Nginx para seu estado inicial';
-$L['CLEAR_SYSTEM_LOGS'] = 'Remover arquivos de log antigos do sistema';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'Este comando foi projetado para excluir logs e logs arquivados compactados no diretório <code>/var/log</code> que excederam um período de retenção de 7 dias';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = 'Limpa arquivos de log do Painel QB';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = 'Este comando foi projetado para limpar o log atual de ações da UI postado no syslog e redefinir o log de erros do UI Nginx para seu estado inicial';
+$L['CLEAN_SYSTEM_LOGS'] = 'Remover arquivos de log antigos do sistema';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = 'Este comando foi projetado para excluir logs e arquivos compactados no diretório <code>/var/log</code> que excederam o período de retenção atribuído. O período de retenção é definido como 7 dias por padrão (se nenhum valor opcional for inserido).';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Limpar logs de upload do Rclone';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Limpa os logs de upload do QuickBox rclone para o usuário designado';
 $L['CLEAN_LOCKS'] = 'Limpar fechaduras';

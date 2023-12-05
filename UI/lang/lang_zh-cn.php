@@ -4,12 +4,12 @@
  * QuickBox Pro Simplified Chinese Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into Simplified Chinese.
- * Ready for QuickBox Pro v3.0.1 : December 04, 2023
+ * Ready for QuickBox Pro v3.0.1 : December 05, 2023
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.3
+ * @version    3.0.1.6
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -1463,10 +1463,10 @@ $L['CLEAN_MEMORY'] = '清理内存';
 $L['CLEAN_MEMORY_CONTENT'] = '清理 QuickBox 内存缓存';
 $L['CLEAN_DASHBOARD_LOGS'] = '清理仪表板日志';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = '清理指定用户的 QuickBox 仪表板日志';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = '清理 QB Dashboard 日志文件';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = '此命令旨在清除从 syslog 发布的当前 UI 操作日志并将 UI Nginx 错误日志重置为其初始状态';
-$L['CLEAR_SYSTEM_LOGS'] = '删除旧的系统日志文件';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = '该命令旨在删除 <code>/var/log</code> 目录中超过 7 天保留期的日志和压缩归档日志';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = '清理 QB Dashboard 日志文件';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = '此命令旨在清除从 syslog 发布的当前 UI 操作日志并将 UI Nginx 错误日志重置为其初始状态';
+$L['CLEAN_SYSTEM_LOGS'] = '删除旧的系统日志文件';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = '此命令旨在删除 <code>/var/log</code> 目录中已超过指定保留期限的日志和压缩存档。 保留期默认设置为 7 天（如果未输入可选值）。';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = '清理 Rclone 上传日志';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = '清除指定用户的 QuickBox rclone 上传日志';
 $L['CLEAN_LOCKS'] = '清洁锁';

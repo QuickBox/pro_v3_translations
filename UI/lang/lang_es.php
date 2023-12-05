@@ -4,12 +4,12 @@
  * QuickBox Pro Spanish Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into Spanish.
- * Ready for QuickBox Pro v3.0.1 : December 04, 2023
+ * Ready for QuickBox Pro v3.0.1 : December 05, 2023
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Spanish
- * @version    3.0.1.3
+ * @version    3.0.1.6
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -1464,10 +1464,10 @@ $L['CLEAN_MEMORY'] = 'Limpiar memoria';
 $L['CLEAN_MEMORY_CONTENT'] = 'Limpia cachés de memoria de QuickBox';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Limpiar registros del panel';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Limpia los registros del tablero de QuickBox para el usuario designado';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Limpia los archivos de registro del panel QB';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'Este comando está diseñado para borrar el registro de acciones de UI actual publicado desde syslog y restablecer el registro de errores de UI Nginx a su estado inicial';
-$L['CLEAR_SYSTEM_LOGS'] = 'Eliminar archivos de registro antiguos del sistema';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'Este comando está diseñado para eliminar registros y registros archivados comprimidos en el directorio <code>/var/log</code> que han excedido un período de retención de 7 días';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = 'Limpia los archivos de registro del panel QB';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = 'Este comando está diseñado para borrar el registro de acciones de UI actual publicado desde syslog y restablecer el registro de errores de UI Nginx a su estado inicial';
+$L['CLEAN_SYSTEM_LOGS'] = 'Eliminar archivos de registro antiguos del sistema';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = 'Este comando está diseñado para eliminar registros y archivos comprimidos en el directorio <code>/var/log</code> que han excedido el período de retención asignado. El período de retención está establecido en 7 días de forma predeterminada (si no se ingresa ningún valor opcional).';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Limpiar registros de carga de Rclone';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Limpia los registros de carga de QuickBox rclone para el usuario designado';
 $L['CLEAN_LOCKS'] = 'Limpiar candados';

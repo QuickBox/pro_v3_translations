@@ -4,12 +4,12 @@
  * QuickBox Pro French Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into French.
- * Ready for QuickBox Pro v3.0.1 : December 04, 2023
+ * Ready for QuickBox Pro v3.0.1 : December 05, 2023
  *
  * @package    dashboard
  * @subpackage lang
  * @category   French
- * @version    3.0.1.3
+ * @version    3.0.1.6
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -1463,10 +1463,10 @@ $L['CLEAN_MEMORY'] = 'Nettoyer la mémoire';
 $L['CLEAN_MEMORY_CONTENT'] = 'Nettoie les caches mémoire de QuickBox';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Nettoyer les journaux du tableau de bord';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Nettoie les journaux du tableau de bord QuickBox pour l\'utilisateur désigné';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Nettoie les fichiers journaux du tableau de bord QB';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'Cette commande est conçue pour effacer le journal actuel des actions de l\'interface utilisateur publié à partir du syslog et réinitialiser le journal des erreurs de l\'interface utilisateur Nginx à son état initial';
-$L['CLEAR_SYSTEM_LOGS'] = 'Supprimer les anciens fichiers journaux du système';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'Cette commande est conçue pour supprimer les journaux et les journaux archivés compressés dans le répertoire <code>/var/log</code> qui ont dépassé une période de conservation de 7 jours';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = 'Nettoie les fichiers journaux du tableau de bord QB';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = 'Cette commande est conçue pour effacer le journal actuel des actions de l\'interface utilisateur publié à partir du syslog et réinitialiser le journal des erreurs de l\'interface utilisateur Nginx à son état initial';
+$L['CLEAN_SYSTEM_LOGS'] = 'Supprimer les anciens fichiers journaux du système';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = 'Cette commande est conçue pour supprimer les journaux et les archives compressées dans le répertoire <code>/var/log</code> qui ont dépassé la période de conservation attribuée. La durée de conservation est fixée à 7 jours par défaut (si aucune valeur facultative n\'est renseignée).';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Nettoyer les journaux de téléchargement de Rclone';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Nettoie les journaux de téléchargement QuickBox rclone pour l\'utilisateur désigné';
 $L['CLEAN_LOCKS'] = 'Nettoyer les serrures';

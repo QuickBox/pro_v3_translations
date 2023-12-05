@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Hungarian
- * @version    3.0.1.2
+ * @version    3.0.1.5
  * @since      2.5.8
  *
  * @var Configs $configs The configurations object.
@@ -1466,10 +1466,10 @@ $L['CLEAN_MEMORY'] = 'Clean Memory';
 $L['CLEAN_MEMORY_CONTENT'] = 'Cleans QuickBox memory caches';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Clean Dashboard Logs';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Cleans QuickBox dashboard logs for the designated user';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Cleans QB Dashboard log files';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'This command is designed to clear the current UI Actions log posted from syslog and reset the UI Nginx error log to its initial state';
-$L['CLEAR_SYSTEM_LOGS'] = 'Remove old system log files';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'This command is designed to delete logs and compressed archived logs in the <code>/var/log</code> directory that have exceeded a 7-day retention period';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = 'Cleans QB Dashboard log files';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = 'This command is designed to clear the current UI Actions log posted from syslog and reset the UI Nginx error log to its initial state';
+$L['CLEAN_SYSTEM_LOGS'] = 'Remove old system log files';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = 'This command is designed to delete logs and compressed archives in the <code>/var/log</code> directory that have exceeded the assigned retention period. The retention period is set to 7 days by default (if no optional value is entered).';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Clean Rclone Upload Logs';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Cleans QuickBox rclone upload logs for the designated user';
 $L['CLEAN_LOCKS'] = 'Clean Locks';

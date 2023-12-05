@@ -4,12 +4,12 @@
  * QuickBox Pro Danish Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into Danish.
- * Ready for QuickBox Pro v3.0.1 : December 04, 2023
+ * Ready for QuickBox Pro v3.0.1 : December 05, 2023
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Danish
- * @version    3.0.1.3
+ * @version    3.0.1.6
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -1473,10 +1473,10 @@ $L['CLEAN_MEMORY'] = 'Rens hukommelse';
 $L['CLEAN_MEMORY_CONTENT'] = 'Renser QuickBox hukommelsescaches';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Rengør dashboard-logfiler';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Renser QuickBox dashboard logs for den udpegede bruger';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Renser QB Dashboard logfiler';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'Denne kommando er designet til at rydde den aktuelle UI Actions log, der er sendt fra syslog og nulstille UI Nginx fejlloggen til dens oprindelige tilstand';
-$L['CLEAR_SYSTEM_LOGS'] = 'Fjern gamle systemlogfiler';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'Denne kommando er designet til at slette logfiler og komprimerede arkiverede logfiler i <code>/var/log</code> mappen, som har overskredet en 7-dages opbevaringsperiode';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = 'Renser QB Dashboard logfiler';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = 'Denne kommando er designet til at rydde den aktuelle UI Actions log, der er sendt fra syslog og nulstille UI Nginx fejlloggen til dens oprindelige tilstand';
+$L['CLEAN_SYSTEM_LOGS'] = 'Fjern gamle systemlogfiler';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = 'Denne kommando er designet til at slette logfiler og komprimerede arkiver i <code>/var/log</code> biblioteket, som har overskredet den tildelte opbevaringsperiode. Opbevaringsperioden er som standard sat til 7 dage (hvis der ikke er indtastet en valgfri værdi).';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Rens Rclone upload logs';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Renser QuickBox rclone upload logs for den udpegede bruger';
 $L['CLEAN_LOCKS'] = 'Rengør låse';

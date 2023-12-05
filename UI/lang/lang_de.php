@@ -4,12 +4,12 @@
  * QuickBox Pro German Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into German.
- * Ready for QuickBox Pro v3.0.1 : December 04, 2023
+ * Ready for QuickBox Pro v3.0.1 : December 05, 2023
  *
  * @package    dashboard
  * @subpackage lang
  * @category   German
- * @version    3.0.1.5
+ * @version    3.0.1.7
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -1470,10 +1470,10 @@ $L['CLEAN_MEMORY'] = 'Speicher bereinigen';
 $L['CLEAN_MEMORY_CONTENT'] = 'Bereinigt QuickBox-Speichercaches';
 $L['CLEAN_DASHBOARD_LOGS'] = 'Dashboard-Protokolle bereinigen';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT'] = 'Bereinigt die QuickBox-Dashboard-Protokolle für den angegebenen Benutzer';
-$L['CLEAR_QB_DASHBOARD_LOGS'] = 'Bereinigt QB-Dashboard-Protokolldateien';
-$L['CLEAR_QB_DASHBOARD_LOGS_CONTENT'] = 'Dieser Befehl soll das aktuelle UI-Aktionsprotokoll aus Syslog löschen und das UI-Nginx-Fehlerprotokoll auf seinen ursprünglichen Zustand zurücksetzen.';
-$L['CLEAR_SYSTEM_LOGS'] = 'Alte Systemprotokolldateien entfernen';
-$L['CLEAR_SYSTEM_LOGS_CONTENT'] = 'Dieser Befehl dient zum Löschen von Protokollen und komprimierten archivierten Protokollen im Verzeichnis <code>/var/log</code>, die einen Aufbewahrungszeitraum von 7 Tagen überschritten haben.';
+$L['CLEAN_QB_DASHBOARD_LOGS'] = 'Bereinigt QB-Dashboard-Protokolldateien';
+$L['CLEAN_QB_DASHBOARD_LOGS_CONTENT'] = 'Dieser Befehl soll das aktuelle UI-Aktionsprotokoll aus Syslog löschen und das UI-Nginx-Fehlerprotokoll auf seinen ursprünglichen Zustand zurücksetzen.';
+$L['CLEAN_SYSTEM_LOGS'] = 'Alte Systemprotokolldateien entfernen';
+$L['CLEAN_SYSTEM_LOGS_CONTENT'] = 'Dieser Befehl dient zum Löschen von Protokollen und komprimierten Archiven im Verzeichnis <code>/var/log</code>, die den zugewiesenen Aufbewahrungszeitraum überschritten haben. Der Aufbewahrungszeitraum ist standardmäßig auf 7 Tage eingestellt (sofern kein optionaler Wert eingegeben wird).';
 $L['CLEAN_RCLONE_UPLOAD_LOGS'] = 'Rclone-Upload-Protokolle bereinigen';
 $L['CLEAN_RCLONE_UPLOAD_LOGS_CONTENT'] = 'Bereinigt die QuickBox-RClone-Upload-Protokolle für den angegebenen Benutzer';
 $L['CLEAN_LOCKS'] = 'Sperren bereinigen';
