@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.91
+# File Version: 1.0.94
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -561,6 +561,13 @@ ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
+Quickbox::lang::software::jdownloader::access() {
+	declare text="访问 ${software_title}:
+https://my.jdownloader.org/
+下载位置：${software_downloads_directory}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::rtorrent::access() {
 	declare text="> rTorrent 版本: ${rtorrent_version}
 > libtorrent 版本: ${libtorrent_version}
@@ -1043,8 +1050,18 @@ quickbox::lang::update::database() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::services() {
+	declare text="检查并更新已安装的软件服务文件..."
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::update::autocomplete() {
-	declare text="更新快速框自动完成..."
+	declare text="正在更新 Quickbox 自动完成..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::manpage() {
+	declare text="正在更新quickbox手册页..."
 	quickbox::dashboard::log "${text}"
 }
 

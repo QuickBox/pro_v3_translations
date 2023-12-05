@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.95
+# File Version: 1.0.98
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -543,7 +543,7 @@ ${software_title} installeret på port: ${software_web_port}"
 }
 
 quickbox::lang::software::airsonic::access() {
-	declare text="adgang til ${software_title} på:
+	declare text="få adgang til ${software_title} på:
 ${quickbox_web_root}${username}/${software_name}
 brugernavn: admin
 adgangskode: admin
@@ -558,6 +558,13 @@ brugernavn: ${username}
 password: admin123
 database placering: ${software_library_directory}
 ${software_title} installeret på havnen: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::jdownloader::access() {
+	declare text="få adgang til ${software_title} på:
+https://my.jdownloader.org/
+downloadplacering: ${software_downloads_directory}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -1042,8 +1049,18 @@ quickbox::lang::update::database() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::services() {
+	declare text="kontrol og opdatering af installerede softwareservicefiler..."
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::update::autocomplete() {
-	declare text="opdatering af quickbox-autofuldførelse..."
+	declare text="opdaterer quickbox autofuldførelse..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::opdatering::manpage() {
+	declare text="opdaterer quickbox-manpage..."
 	quickbox::dashboard::log "${text}"
 }
 

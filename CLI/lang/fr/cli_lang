@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.96
+# File Version: 1.0.98
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -552,12 +552,19 @@ ${software_title} installé sur le port: ${software_web_port}"
 }
 
 quickbox::lang::software::calibre::access() {
-	declare text="Accéder à ${software_title} à l'adresse:
+	declare text="Accédez à ${software_title} à l'adresse:
 ${quickbox_web_root}${username}/${software_name}
 Nom d'utilisateur: ${username}
 Mot de passe: admin123
 Emplacement de la base de données: ${software_library_directory}
 ${software_title} installé sur le port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::jdownloader::access() {
+	declare text="Accédez à ${software_title} à l'adresse:
+https://my.jdownloader.org/
+emplacement de téléchargement: ${software_downloads_directory}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -1042,8 +1049,18 @@ quickbox::lang::update::database() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::services() {
+	declare text="Vérification et mise à jour des fichiers de services logiciels installés..."
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::update::autocomplete() {
 	declare text="Mise à jour de la saisie semi-automatique..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::manpage() {
+	declare text="Mise à jour de la page de manuel de quickbox..."
 	quickbox::dashboard::log "${text}"
 }
 

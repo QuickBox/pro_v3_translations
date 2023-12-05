@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.97
+# File Version: 1.0.100
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -561,6 +561,13 @@ ${software_title} instalado en el puerto: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::jdownloader::access() {
+	declare text="acceder a ${software_title} en:
+https://my.jdownloader.org/
+ubicación de descarga: ${software_downloads_directory}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::rtorrent::access() {
 	declare text="> versión de rTorrent: ${rtorrent_version}
 > versión de libtorrent: ${libtorrent_version}
@@ -1041,8 +1048,18 @@ quickbox::lang::update::database() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::services() {
+	declare text="comprobación y actualización de archivos de servicio de software instalados..."
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::update::autocomplete() {
-	declare text="actualizando el autocompletado de Quickbox..."
+	declare text="actualizando el autocompletado de quickbox..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::update::manpage() {
+	declare text="actualizando la página de manual de quickbox..."
 	quickbox::dashboard::log "${text}"
 }
 
