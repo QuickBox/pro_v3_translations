@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   French
- * @version    3.0.1.14
+ * @version    3.0.1.18
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -558,7 +558,7 @@ $L['QBIT_TOOLTIP']                 = 'Il semblerait que Deluge 2 est actuellemen
 $L['QUOTAS_FSTAB']                 = 'Editez votre fstab';
 $L['QUOTAS_HELP']                  = 'Pour en savoir plus sur l\'installation de Quotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>Lisez cette F.A.Q en premier</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Ajoutez ce qui suit au lieu de <code class="language-bash">defaults</code> sur votre point de montage principal pour continuer';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Installez RClone en tapant:<br><code>qb install rclone -u USER [-o encrypted]</code> dans votre terminal SSH.<br>Voir <code>qb help rclone</code> pour plus d\'options.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Installez RClone en tapant:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code> dans votre terminal SSH.<br>Voir <code>qb help rclone</code> pour plus d\'options.';
 $L['RCLONE_USER_TOOLTIP']          = 'Veuillez contacter un administrateur système pour l\'installer.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Désinstallez Medusa pour pouvoir installer cette app.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Désinstallez SickChill pour pouvoir cette app.';
@@ -967,13 +967,10 @@ $L['HOW_SET']                   = 'Comment sont-ils réglés?';
 $L['INDIV_USER_HOME']           = 'Pages d\'accueil Utilisateur Individuelles';
 $L['INDIVIDUAL_USER_FOLDERS']   = 'Dossiers Utilisateur Individuels';
 $L['PATH_ADMIN']                = 'Chemin (défini par Admin)';
-$L['PATH_INFOS']                = '<p class="help-block">Le chemin que vous choisissez doit être défini par rapport au dossier admin (qui sera votre racine de site, défini dans la page Paramètres Généraux).
-Par conséquent, vous souhaiterez probablement retourner dans un dossier avant de choisir un sous-dossier que vous créez pour les pages utilisateur uniques. Utilisez <i>..</i> pour revenir à un dossier. Ainsi, par exemple, si le panneau de contrôle de l\'administrateur de votre site est ici - <i>http://www.website.com/admin/</i> et que vos dossiers d\'utilisateurs sont ici - <i>http://www.website.com/users/</i>, vous devez définir le chemin d\'accès à <i>../users/</i> avec votre page unique - donc <i>../users/admin.php</i>.
-<p class="help-block">Caractère Générique Disponible: : <strong>%username%</strong> (c\'est à dire, connecté dans le nom d\'utilisateur de l\'utilisateur).</p>';
-$L['SITE_ROOT_RELATIVE'] = 'Relatif à la racine du site';
-$L['SETTING']            = 'Paramètre';
-$L['DESCRIPTION']        = 'La Description';
-$L['VALUE']              = 'Valeur';
+$L['SITE_ROOT_RELATIVE']        = 'Relatif à la racine du site';
+$L['SETTING']                   = 'Paramètre';
+$L['DESCRIPTION']               = 'La Description';
+$L['VALUE']                     = 'Valeur';
 
 /* **********************************
  * 4.2.5 - SECURITY SETTINGS

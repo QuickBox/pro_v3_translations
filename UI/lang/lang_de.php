@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   German
- * @version    3.0.1.15
+ * @version    3.0.1.19
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -561,7 +561,7 @@ $L['QBIT_TOOLTIP']                 = 'Es sieht so aus, als ob Deluge 2 derzeit i
 $L['QUOTAS_FSTAB']                 = 'Ihre fstab bearbeiten';
 $L['QUOTAS_HELP']                  = 'Weitere Informationen zum Installieren von Kontingenten finden Sie unter <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas /" rel="noopener nofollow" target="_blank"><strong>bitte zuerst diese FAQ lesen</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Fügen Sie Folgendes anstelle von <code class="language-bash">Standards</code> zu Ihrem Haupteinhängepunkt hinzu, um fortzufahren';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Zugriff auf diese Funktion über ssh durch Eingabe von:<br><code>qb install rclone -u USER [-o encrypted]</code><br>Weitere Optionen finden Sie unter <code>qb help rclone</code>.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Zugriff auf diese Funktion über ssh durch Eingabe von:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code><br>Weitere Optionen finden Sie unter <code>qb help rclone</code>.';
 $L['RCLONE_USER_TOOLTIP']          = 'Bitte wenden Sie sich an einen Systemadministrator, um dies installieren zu lassen.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Entfernen Sie zuerst Medusa, um diese Software zu installieren.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Entfernen Sie zuerst SickChill, um diese Software zu installieren.';
@@ -972,12 +972,9 @@ $L['INDIV_USER_HOME']           = 'Individuelle Benutzerhomepages';
 $L['INDIVIDUAL_USER_FOLDERS']   = 'Einzelne Benutzerordner';
 $L['PATH_ADMIN']                = 'Pfad (von Administrator festgelegt)';
 $L['SITE_ROOT_RELATIVE']        = 'Root-Verzeichnis Relativ';
-$L['PATH_INFOS']                = '<p class="help-block">Der von dir gewählte Pfad sollte in Bezug auf den Admin-Ordner festgelegt werden (das ist dein Website-Root, festgelegt auf der Seite Allgemeine Einstellungen in der Systemsteuerung).
-Verwenden von <i>../</i>, um einen Ordner zurückzukehren. Wenn zum Beispiel das Admin-Control Panel deiner Seite hier ist - <i>http://www.website.com/admin/</i> und deine Benutzerordner hier sind - <i>http://www.website.com/users/</i> du möchtest die Pfad-Einstellung auf <i>../users/</i> zusammen mit deiner einzigartigen Seite setzen - also <i>.../users/admin.php</i>.</p>
-<p class="help-block">Wildcard verfügbar : <strong>%username% </strong>(ie, benutzername des angemeldeten benutzers) </p>';
-$L['SETTING']     = 'Einstellung';
-$L['DESCRIPTION'] = 'Beschreibung';
-$L['VALUE']       = 'Wert';
+$L['SETTING']                   = 'Einstellung';
+$L['DESCRIPTION']               = 'Beschreibung';
+$L['VALUE']                     = 'Wert';
 
 /* **********************************
  * 4.2.5 - SECURITY SETTINGS

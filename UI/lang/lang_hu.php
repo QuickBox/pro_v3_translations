@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Hungarian
- * @version    3.0.1.19
+ * @version    3.0.1.23
  * @since      2.5.8
  *
  * @var Configs $configs The configurations object.
@@ -558,7 +558,7 @@ $L['QBIT_TOOLTIP']                 = 'It looks like Deluge 2 is currently instal
 $L['QUOTAS_FSTAB']                 = 'Edit your fstab';
 $L['QUOTAS_HELP']                  = 'For more about how to install quotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>please read this F.A.Q first</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Add the following instead of <code class="language-bash">defaults</code> on your main mount point to continue';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Access this feature from ssh by typing:<br><code>qb install rclone -u USER [-o encrypted]</code><br>See <code>qb help rclone</code> for more options.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Access this feature from ssh by typing:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code><br>See <code>qb help rclone</code> for more options.';
 $L['RCLONE_USER_TOOLTIP']          = 'Please contact an System Administrator to have this installed.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Remove Medusa first to install this software.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Remove SickChill first to install this software.';
@@ -969,15 +969,12 @@ $L['HOW_SET']                   = 'How are they Set?';
 $L['INDIV_USER_HOME']           = 'Individual User Homepages';
 $L['INDIVIDUAL_USER_FOLDERS']   = 'Individual User Folders';
 $L['PATH_ADMIN']                = 'Path (Set by Admin)';
-$L['PATH_INFOS']                = '<p class="help-block">The path you choose should be set relative to the admin folder (which will be your Site Root, set in the General Settings page in the Control Panel).
-Therefore you\'ll most likely want to go back a folder before choosing any subfolder you create for the unique user pages. Use <i>../</i> to go back a folder. So for example, if you site\'s admin control panel is here - <i>http://www.website.com/admin/</i> and your user folders are here - <i>http://www.website.com/users/</i> you\'ll want to set the path setting to <i>../users/</i> along with your unique page - so <i>../users/admin.php</i>.</p>
-<p class="help-block">Wildcard available : <strong>%username% </strong>(ie, logged in user\'s username) </p>';
-$L['SITE_ROOT_RELATIVE']    = 'Relative to Site Root';
-$L['ALLOW_MOUNT_INFO']      = 'Mount Info Viewing and Adding Panel';
-$L['ALLOW_MOUNT_INFO_DESC'] = 'This option allows for the viewing and adding of mount info from the dashboard. If disabled, the option to view/add mount info will be hidden.';
-$L['SETTING']               = 'Setting';
-$L['DESCRIPTION']           = 'Description';
-$L['VALUE']                 = 'Value';
+$L['SITE_ROOT_RELATIVE']        = 'Relative to Site Root';
+$L['ALLOW_MOUNT_INFO']          = 'Mount Info Viewing and Adding Panel';
+$L['ALLOW_MOUNT_INFO_DESC']     = 'This option allows for the viewing and adding of mount info from the dashboard. If disabled, the option to view/add mount info will be hidden.';
+$L['SETTING']                   = 'Setting';
+$L['DESCRIPTION']               = 'Description';
+$L['VALUE']                     = 'Value';
 
 /* **********************************
  * #4.2.5 - SECURITY SETTINGS

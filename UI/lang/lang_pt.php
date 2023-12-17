@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Portuguese
- * @version    3.0.1.14
+ * @version    3.0.1.18
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -548,7 +548,7 @@ $L['QBIT_TOOLTIP']                 = 'Parece que o Deluge 2 está atualmente ins
 $L['QUOTAS_FSTAB']                 = 'Edite seu fstab';
 $L['QUOTAS_HELP']                  = 'Para mais informações sobre como instalar cotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>por favor leia este F.A.Q primeiro</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Adicione o seguinte em vez de <code class="language-bash">defaults</code> no seu ponto de montagem principal para continuar';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Acesse este recurso do ssh digitando:<br><code>qb install rclone -u USER [-o encrypted]</code><br>Veja <code>qb help rclone</code> para mais opções.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Acesse este recurso do ssh digitando:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code><br>Veja <code>qb help rclone</code> para mais opções.';
 $L['RCLONE_USER_TOOLTIP']          = 'Entre em contato com um administrador do sistema para instalá-lo.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Remove Medusa primeiro para instalar este aplicativo.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Remove SickChill primeiro para instalar este aplicativo.';
@@ -966,12 +966,9 @@ $L['INDIV_USER_HOME']           = 'Homepages individuais de usuários';
 $L['INDIVIDUAL_USER_FOLDERS']   = 'Pastas de Usuários Individuais';
 $L['PATH_ADMIN']                = 'Caminho (definido pelo administrador)';
 $L['SITE_ROOT_RELATIVE']        = 'Relativo à Raiz do Site';
-$L['PATH_INFOS']                = '<p class="help-block">O caminho escolhido deve ser definido em relação à pasta administrativa (que será sua raiz do site, definida na página Configurações gerais no painel de controle).
-Portanto, você provavelmente desejará voltar a uma pasta antes de escolher qualquer subpasta criada para as páginas exclusivas do usuário. Use <i>../</i> para voltar uma pasta. Por exemplo, se o painel de controle do seu site estiver aqui - <i>http://www.website.com/admin/</i> e suas pastas de usuário estão aqui - <i>http://www.website.com/users/</i> você desejará definir a configuração do caminho para <i>../users/</i> junto com sua página única - assim <i>../users/admin.php</i>.</p>
-<p class="help-block">Wildcard disponível : <strong>%username% </strong>(ou seja, nome de usuário do usuário logado) </p>';
-$L['SETTING']     = 'Configuração';
-$L['DESCRIPTION'] = 'Descrição';
-$L['VALUE']       = 'Valor';
+$L['SETTING']                   = 'Configuração';
+$L['DESCRIPTION']               = 'Descrição';
+$L['VALUE']                     = 'Valor';
 
 /* **********************************
  * #4.2.5 - SECURITY SETTINGS

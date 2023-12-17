@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Spanish
- * @version    3.0.1.14
+ * @version    3.0.1.18
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -559,7 +559,7 @@ $L['QBIT_TOOLTIP']                 = 'Parece que Deluge 2 está instalado actual
 $L['QUOTAS_FSTAB']                 = 'Edita tu fstab';
 $L['QUOTAS_HELP']                  = 'Para más información sobre cómo instalar cuotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>por favor lea estas F.A.Q primero</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Agregue lo siguiente en lugar de <code class="language-bash">defaults</code> en su punto de montaje principal para continuar';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Acceda a esta función desde ssh escribiendo:<br><code>qb install rclone -u USER [-o encrypted]</code><br>Consulte <code>qb help rclone</code> para obtener más opciones.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Acceda a esta función desde ssh escribiendo:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code><br>Consulte <code>qb help rclone</code> para obtener más opciones.';
 $L['RCLONE_USER_TOOLTIP']          = 'Póngase en contacto con un administrador del sistema para tener esto instalado.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Desinstala primero Medusa para instalar esta aplicación.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Desinstala primero SickChill para instalar esta aplicación.';
@@ -969,12 +969,9 @@ $L['INDIV_USER_HOME']           = 'Páginas de Usuario Individuales';
 $L['INDIVIDUAL_USER_FOLDERS']   = 'Carpetas de Usuario Individuales';
 $L['PATH_ADMIN']                = 'Ruta (Configurada por el Admin)';
 $L['SITE_ROOT_RELATIVE']        = 'Relativo a la Raíz del Sitio';
-$L['PATH_INFOS']                = '<p class="help-block">La ruta que elijas debería configurarse en relación con la carpeta de administración (que será tu sitio principal, establecida en la página de Configuración General, en el Panel de Control).
-Por lo tanto, es muy probable que quieras volver una carpeta atrás, antes de elegir cualquier subcarpeta que crees para las páginas de usuario únicas. Usa <i>../</i> para retroceder una carpeta. Así, por ejemplo, si el panel de control de administración de tu sitio está aquí: <i>http://www.website.com/admin/</i> y las carpetas de usuarios están aquí - <i>http://www.website.com/users/</i> deberías establecer la configuración de la ruta a <i>../users/</i> junto con tu página única - entonces <i>../users/admin.php</i>.</p>
-<p class="help-block">Wildcard disponible : <strong>%username% </strong>(por ejemplo, el usuario ha iniciado sesión) </p>';
-$L['SETTING']     = 'Configuración';
-$L['DESCRIPTION'] = 'Descripción';
-$L['VALUE']       = 'Valor';
+$L['SETTING']                   = 'Configuración';
+$L['DESCRIPTION']               = 'Descripción';
+$L['VALUE']                     = 'Valor';
 
 /* **********************************
  * 4.2.5 - SECURITY SETTINGS

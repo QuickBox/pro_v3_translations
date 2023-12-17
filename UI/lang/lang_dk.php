@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Danish
- * @version    3.0.1.13
+ * @version    3.0.1.17
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -563,7 +563,7 @@ $L['QBIT_TOOLTIP']                 = 'Det ser ud til, at Deluge 2 er installeret
 $L['QUOTAS_FSTAB']                 = 'Rediger din fstab';
 $L['QUOTAS_HELP']                  = 'Mere omkring installering af quotas, <a href="https://nullrefer.ir/?https://quickbox.io/document/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>læs venligst denne F.A.Q først</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Tilføj følgende i stedet for <code class="language-bash">defaults</code> på dit hovedmonteringspunkt (main mount) for at fortsætte';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Adgang til denne feature fås via ssh ved at skrive:<br><code>qb install rclone -u USER [-o encrypted]</code><br>Se <code>qb help rclone</code> for flere muligheder.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Adgang til denne feature fås via ssh ved at skrive:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code><br>Se <code>qb help rclone</code> for flere muligheder.';
 $L['RCLONE_USER_TOOLTIP']          = 'Kontakt en systemadministrator for at få dette installeret.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Fjern først Medusa for at installere denne software.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Fjern først SickChill for at installere denne software.';
@@ -977,12 +977,9 @@ $L['INDIV_USER_HOME']           = 'Individuelle brugerhjemmesider';
 $L['INDIVIDUAL_USER_FOLDERS']   = 'Individuelle brugermapper';
 $L['PATH_ADMIN']                = 'Sti (indstillet af Admin)';
 $L['SITE_ROOT_RELATIVE']        = 'I forhold til Sidens Rod';
-$L['PATH_INFOS']                = '<p class="help-block">Stien, du vælger, skal indstilles i forhold til administrationsmappen (som vil være sidens rod, angivet på under Indstillinger -> Generelle indstillinger i Kontrolpanel).
-Derfor vil du sandsynligvis gerne gå tilbage til en mappe, inden du vælger en undermappe, du opretter for de unikke brugersider. Brug <i>../</i> for at gå tilbage til en mappe. Så hvis du f.eks. Sitet\'s admin kontrolpanel er her <i> http://www.website.com/admin/ </i>, og dine brugermapper er her - <i> http://www.website.com/users/</i> skal du bruge stiindstillingen <i>../users/</i> sammen med din unikke side - således <i>../users/admin.php</i>.</p>
-<p class="help-block"> Wildcard til rådighed: <strong>%brugernavn%</strong> (dvs. brugernavn indlogget bruger).</p> ';
-$L['SETTING']     = 'Indstilling';
-$L['DESCRIPTION'] = 'Beskrivelse';
-$L['VALUE']       = 'Værdi';
+$L['SETTING']                   = 'Indstilling';
+$L['DESCRIPTION']               = 'Beskrivelse';
+$L['VALUE']                     = 'Værdi';
 
 /* **********************************
  * 4.2.5 - SECURITY SETTINGS

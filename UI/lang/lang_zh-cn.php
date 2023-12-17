@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.14
+ * @version    3.0.1.18
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -558,7 +558,7 @@ $L['QBIT_TOOLTIP']                 = 'Deluge 2 已安装。qBittorrent 不能兼
 $L['QUOTAS_FSTAB']                 = '编辑您的 fstab';
 $L['QUOTAS_HELP']                  = '更多有关安装 quotas 的信息，<a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>请阅读此 F.A.Q first</strong></a>。';
 $L['QUOTAS_TOOLTIP']               = '在您的主挂载点添加以下内容以替代 <code class="language-bash">defaults</code> 并继续';
-$L['RCLONE_ADMIN_TOOLTIP']         = '从 SSH:<br><code>qb install rclone -u USER [-o encrypted]</code> 以访问此功能<br>请参阅 <code>qb help rclone</code> 了解更多选项。';
+$L['RCLONE_ADMIN_TOOLTIP']         = '从 SSH:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code> 以访问此功能<br>请参阅 <code>qb help rclone</code> 了解更多选项。';
 $L['RCLONE_USER_TOOLTIP']          = '请与系统管理员联系以安装此程序。';
 $L['REMOVE_MEDUSA_FIRST']          = '安装此应用需要首先移除 Medusa。';
 $L['REMOVE_SICKCHILL_FIRST']       = '安装此应用需要首先移除 SickChill。';
@@ -967,13 +967,10 @@ $L['HOW_SET']                   = '它们将被如何设定?';
 $L['INDIV_USER_HOME']           = '个人用户主页';
 $L['INDIVIDUAL_USER_FOLDERS']   = '个人用户文件夹';
 $L['PATH_ADMIN']                = '路径 (由管理员设置)';
-$L['PATH_INFOS']                = '<p class="help-block">您选择的路径应当相对于 admin 文件夹设置 (该文件夹是您的站点根目录，在控制面板的常规设置中设定).
-因此在选择为特定用户页面创建的任何子文件夹之前，您很可能希望返回某个文件夹。使用 <i>../</i> 返回上一级文件夹。例如，您站点的管理员面板在这里 - <i>http://www.website.com/admin/</i> 您的用户文件夹在这里 - <i>http://www.website.com/users/</i> 您要将根据路径 <i>../users/</i> 设置根特定的页面 - <i>../users/admin.php</i>。</p>
-<p class="help-block">可使用的通配符 : <strong>%username% </strong>(即登录用户的用户名) </p>';
-$L['SITE_ROOT_RELATIVE'] = '相对于站点根目录';
-$L['SETTING']            = '设置';
-$L['DESCRIPTION']        = '描述';
-$L['VALUE']              = '价值';
+$L['SITE_ROOT_RELATIVE']        = '相对于站点根目录';
+$L['SETTING']                   = '设置';
+$L['DESCRIPTION']               = '描述';
+$L['VALUE']                     = '价值';
 
 /* **********************************
  * #4.2.5 - SECURITY SETTINGS
