@@ -4,12 +4,12 @@
  * QuickBox Pro Simplified Chinese Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into Simplified Chinese.
- * Ready for QuickBox Pro v3.0.1 : December 15, 2023
+ * Ready for QuickBox Pro v3.0.1 : January 20, 2024
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.18
+ * @version    3.0.1.34
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -313,12 +313,14 @@ $L['HOME']                = '主页';
 $L['IDLE_L']              = '空闲';
 $L['IDLE']                = '空闲';
 $L['IS_AVAILABLE']        = '可用。';
+$L['LANGUAGES']           = '语言';
 $L['NANGINX']             = '在Nginx上运行';
 $L['NEED_HELP']           = '需要帮助 ?';
 $L['NGINX_CONF_OPTIONS']  = 'Nginx Conf选项';
 $L['NGINX_CONFIG']        = 'Nginx 配置';
 $L['NGINX_SETTINGS']      = 'Nginx 设置';
 $L['NO']                  = '否';
+$L['NOTIFICATIONS']       = '通知';
 $L['OPEN']                = '打开';
 $L['OR']                  = '或';
 $L['PLEASE_HOLD']         = '- 请等候';
@@ -329,6 +331,7 @@ $L['SET_HERE']            = '在此处设置';
 $L['SIMULATE_LIST']       = '用户列表';
 $L['SIMULATE']            = '模拟用户';
 $L['SUMMARY']             = '概要';
+$L['THEMES']              = '主题';
 $L['UPDATING_QUICKBOX']   = '更新 QuickBox';
 $L['UPDATING']            = '更新中 ';
 $L['USED_L']              = '已使用';
@@ -442,79 +445,79 @@ $L['ZNC']           = 'ZNC 是一个 IRC 网络辅助软件。它可以将客户
 
 // Create an array of the app names for the uninstall/reinstall translation
 $APPS = [
- 'AIRSONIC'      => 'Airsonic',
- 'AUTOBRR'       => 'Autobrr',
- 'AUTODL'        => 'AutoDL-iRSSi',
- 'AUTOSCAN'      => 'Autoscan',
- 'BAZARR'        => 'Bazarr',
- 'BAZARR4K'      => 'Bazarr4K',
- 'BBR'           => 'BBR',
- 'BTSYNC'        => 'BitTorrent Sync',
- 'CALIBRE'       => 'Calibre',
- 'COUCHPOTATO'   => 'CouchPotato',
- 'CSF'           => 'Config Server Firewall (CSF)',
- 'DELUGE'        => 'Deluge',
- 'DUPLICATI'     => 'Duplicati',
- 'EMBY'          => 'Emby',
- 'FAIL2BAN'      => 'Fail2Ban',
- 'FILEBOT'       => 'FileBot',
- 'FILEBROWSER'   => 'Filebrowser',
- 'FLARESOLVERR'  => 'FlareSolverr',
- 'FLEXGET'       => 'FlexGet',
- 'FLOOD'         => 'Flood',
- 'HEADPHONES'    => 'Headphones',
- 'JACKETT'       => 'Jackett',
- 'JDOWNLOADER'   => 'JDownloader',
- 'JELLYFIN'      => 'Jellyfin',
- 'JELLYSEERR'    => 'Jellyseerr',
- 'KAVITA'        => 'Kavita',
- 'KOMGA'         => 'Komga',
- 'LAZYLIBRARIAN' => 'LazyLibrarian',
- 'LETSENCRYPT'   => 'Let\'s Encrypt',
- 'LIDARR'        => 'Lidarr',
- 'MEDUSA'        => 'Medusa',
- 'MYLAR3'        => 'Mylar3',
- 'NETDATA'       => 'Netdata',
- 'NEXTCLOUD'     => 'Nextcloud',
- 'NOTIFIARR'     => 'Notifiarr',
- 'NOVNC'         => 'noVNC',
- 'NZBGET'        => 'NZBGet',
- 'NZBHYDRA2'     => 'NZBHydra2',
- 'OMBI'          => 'Ombi',
- 'OVERSEERR'     => 'Overseerr',
- 'OVPN'          => 'OpenVPN',
- 'PHPMYADMIN'    => 'phpMyAdmin',
- 'PLEX'          => 'Plex',
- 'PROWLARR'      => 'Prowlarr',
- 'PYLOAD'        => 'pyLoad',
- 'QBITTORRENT'   => 'qBittorrent',
- 'QUASSEL'       => 'Quassel',
- 'QUOTAS'        => 'Quotas',
- 'RADARR'        => 'Radarr',
- 'RADARR4K'      => 'Radarr4K',
- 'RAPIDLEECH'    => 'Rapidleech',
- 'RCLONE'        => 'RClone',
- 'READARR'       => 'Readarr',
- 'REQUESTRR'     => 'Requestrr',
- 'RTORRENT'      => 'rTorrent',
- 'RUTORRENT'     => 'ruTorrent',
- 'SABNZBD'       => 'SABnzbd',
- 'SEEDCROSS'     => 'SeedCross',
- 'SICKCHILL'     => 'SickChill',
- 'SICKGEAR'      => 'SickGear',
- 'SONARR'        => 'Sonarr',
- 'SONARR4K'      => 'Sonarr4K',
- 'SUBSONIC'      => 'Subsonic',
- 'SYNCTHING'     => 'Syncthing',
- 'TAUTULLI'      => 'Tautulli',
- 'THELOUNGE'     => 'The Lounge',
- 'TRANSMISSION'  => 'Transmission',
- 'UNIFI'         => 'UniFi',
- 'UNPACKERR'     => 'Unpackerr',
- 'WEBCONSOLE'    => 'Web Console',
- 'X2GO'          => 'X2Go',
- 'XTEVE'         => 'XTeVe',
- 'ZNC'           => 'ZNC'
+	'AIRSONIC'      => 'Airsonic',
+	'AUTOBRR'       => 'Autobrr',
+	'AUTODL'        => 'AutoDL-iRSSi',
+	'AUTOSCAN'      => 'Autoscan',
+	'BAZARR'        => 'Bazarr',
+	'BAZARR4K'      => 'Bazarr4K',
+	'BBR'           => 'BBR',
+	'BTSYNC'        => 'BitTorrent Sync',
+	'CALIBRE'       => 'Calibre',
+	'COUCHPOTATO'   => 'CouchPotato',
+	'CSF'           => 'Config Server Firewall (CSF)',
+	'DELUGE'        => 'Deluge',
+	'DUPLICATI'     => 'Duplicati',
+	'EMBY'          => 'Emby',
+	'FAIL2BAN'      => 'Fail2Ban',
+	'FILEBOT'       => 'FileBot',
+	'FILEBROWSER'   => 'Filebrowser',
+	'FLARESOLVERR'  => 'FlareSolverr',
+	'FLEXGET'       => 'FlexGet',
+	'FLOOD'         => 'Flood',
+	'HEADPHONES'    => 'Headphones',
+	'JACKETT'       => 'Jackett',
+	'JDOWNLOADER'   => 'JDownloader',
+	'JELLYFIN'      => 'Jellyfin',
+	'JELLYSEERR'    => 'Jellyseerr',
+	'KAVITA'        => 'Kavita',
+	'KOMGA'         => 'Komga',
+	'LAZYLIBRARIAN' => 'LazyLibrarian',
+	'LETSENCRYPT'   => 'Let\'s Encrypt',
+	'LIDARR'        => 'Lidarr',
+	'MEDUSA'        => 'Medusa',
+	'MYLAR3'        => 'Mylar3',
+	'NETDATA'       => 'Netdata',
+	'NEXTCLOUD'     => 'Nextcloud',
+	'NOTIFIARR'     => 'Notifiarr',
+	'NOVNC'         => 'noVNC',
+	'NZBGET'        => 'NZBGet',
+	'NZBHYDRA2'     => 'NZBHydra2',
+	'OMBI'          => 'Ombi',
+	'OVERSEERR'     => 'Overseerr',
+	'OVPN'          => 'OpenVPN',
+	'PHPMYADMIN'    => 'phpMyAdmin',
+	'PLEX'          => 'Plex',
+	'PROWLARR'      => 'Prowlarr',
+	'PYLOAD'        => 'pyLoad',
+	'QBITTORRENT'   => 'qBittorrent',
+	'QUASSEL'       => 'Quassel',
+	'QUOTA'         => 'Quotas',
+	'RADARR'        => 'Radarr',
+	'RADARR4K'      => 'Radarr4K',
+	'RAPIDLEECH'    => 'Rapidleech',
+	'RCLONE'        => 'RClone',
+	'READARR'       => 'Readarr',
+	'REQUESTRR'     => 'Requestrr',
+	'RTORRENT'      => 'rTorrent',
+	'RUTORRENT'     => 'ruTorrent',
+	'SABNZBD'       => 'SABnzbd',
+	'SEEDCROSS'     => 'SeedCross',
+	'SICKCHILL'     => 'SickChill',
+	'SICKGEAR'      => 'SickGear',
+	'SONARR'        => 'Sonarr',
+	'SONARR4K'      => 'Sonarr4K',
+	'SUBSONIC'      => 'Subsonic',
+	'SYNCTHING'     => 'Syncthing',
+	'TAUTULLI'      => 'Tautulli',
+	'THELOUNGE'     => 'The Lounge',
+	'TRANSMISSION'  => 'Transmission',
+	'UNIFI'         => 'UniFi',
+	'UNPACKERR'     => 'Unpackerr',
+	'WEBCONSOLE'    => 'Web Console',
+	'X2GO'          => 'X2Go',
+	'XTEVE'         => 'XTeVe',
+	'ZNC'           => 'ZNC'
 ];
 
 /* **********************************
@@ -522,7 +525,7 @@ $APPS = [
  ************************************/
 // Loop through the array and create the uninstall translation
 foreach ($APPS as $key => $value) {
- $L[$key . '_UNINSTALL'] = '您即将卸载 <span style="color:#01cea2">' . $value . '</span> 从您的系统中删除。<br/><br/>这将完全删除您的所有配置和设置...此操作不可逆转。<br/><br/>您可以重新安装<span style="color:#01cea2">' . $value . '</span> 但是，您的设置将随时重置为默认值。';
+	$L[$key . '_UNINSTALL'] = '您即将卸载 <span style="color:#01cea2">' . $value . '</span> 从您的系统中删除。<br/><br/>这将完全删除您的所有配置和设置...此操作不可逆转。<br/><br/>您可以重新安装<span style="color:#01cea2">' . $value . '</span> 但是，您的设置将随时重置为默认值。';
 }
 
 /* **********************************
@@ -530,7 +533,7 @@ foreach ($APPS as $key => $value) {
  ************************************/
 // Loop through the array and create the reinstall translation
 foreach ($APPS as $key => $value) {
- $L[$key . '_REINSTALL'] = '您将重新安装 <span style="color:#01cea2">' . $value . '</span>。<br/><br/>这将完全删除/重置您当前的所有配置、文件和设置...此操作不可逆转。';
+	$L[$key . '_REINSTALL'] = '您将重新安装 <span style="color:#01cea2">' . $value . '</span>。<br/><br/>这将完全删除/重置您当前的所有配置、文件和设置...此操作不可逆转。';
 }
 
 /* **********************************
@@ -613,7 +616,7 @@ $L['KAVITA_INSTALL_MESSAGE'] = '您可以选择为 Kavita 库指定自定义目�
 /* **********************************
  * plex install/reinstall modal
  ************************************/
-$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">要声明您的 Plex 媒体服务器，您必须已有帐户并登录才能从以下位置获取声明代码：<a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--infoColor);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--mainFontColor)"><strong style="color:var(--alertLightInfoColor)">注意：</strong>建议使用声明代码屏幕中的“复制到剪贴板”按钮以确保 正确插入，因为声明代码区分大小写。</div>';
+$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">要声明您的 Plex 媒体服务器，您必须已有帐户并登录才能从以下位置获取声明代码：<a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--qb-color-37);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--qb-color-2)"><strong style="color:var(--qb-color-37)">注意：</strong>建议使用声明代码屏幕中的“复制到剪贴板”按钮以确保 正确插入，因为声明代码区分大小写。</div>';
 $L['PLEX_CLAIM_TITLE']       = 'Plex 媒体服务器安装';
 $L['PLEX_CLAIM_TOKEN']       = 'Plex 声明代码';
 $L['PLEX_DATA_PATH']         = '使用数据目录的自定义路径？';
@@ -793,6 +796,7 @@ $L['CONFIRM_PASSWORD']         = '确认密码';
  * #4.1.3 - REGISTER
  ************************************/
 $L['ACCOUNT_CREATED']           = '您的账户已被创建。';
+$L['ACTIVATED_USER']            = '激活用户 ';
 $L['CAN_LOGIN']                 = '为您注册。您现在可以登录了';
 $L['CREATED_ADM_ACT']           = '但是，这个论坛需要管理员激活账户。当您的账户被激活后，我们会通过电子邮件通知您。';
 $L['CREATED_CHECK_EMAIL']       = '请查看您的电子邮件以了解更多信息';
@@ -980,6 +984,7 @@ $L['BAN_IP_INFO']          = '例如 192.168.0.1 第一位非零';
 $L['BAN_IP_REGISTER']      = '阻止 IP 地址注册 (或登录)';
 $L['BANNED_IP_ADDRESSES']  = '已阻止的 IP 地址';
 $L['DISALLOW_USERNAME']    = '禁用的用户名';
+$L['DISALLOWED_USERNAME']  = '不允许的用户名';
 $L['DISALLOW_USERNAMES']   = '禁用用户名';
 $L['DISALLOWED_USERNAMES'] = '已禁用的用户名';
 $L['PREVENT_USERNAMES']    = '防止用户名被注册';
@@ -1010,7 +1015,7 @@ $L['RECOMMENDED']                  = 'QuickBox推荐';
 $L['REG_SETTINGS_INFO']            = '更改有关站点注册的设置。';
 $L['REG_SETTINGS']                 = '注册设置';
 $L['SEND_WELCOME_EMAIL']           = '发送欢迎电子邮件';
-$L['SEND_WELCOME_EMAIL_YES_INFO']  = '将此选项设置为是会向用户以及系统管理员发送欢迎电子邮件。此选项需要 SMTP 设置才能正确发送电子邮件。这些选项可以在 <a href="/email-settings.php" style="color: var(--successColor);text-decoration: underline;">电子邮件设置</a>页面上进行控制。';
+$L['SEND_WELCOME_EMAIL_YES_INFO']  = '将此选项设置为是会向用户以及系统管理员发送欢迎电子邮件。此选项需要 SMTP 设置才能正确发送电子邮件。这些选项可以在 <a href="/email-settings.php" style="color: var(--qb-color-29);text-decoration: underline;">电子邮件设置</a>页面上进行控制。';
 $L['SEND_WELCOME_EMAIL_NO_INFO']   = '将此选项设置为否将不会向新注册的用户发送欢迎电子邮件。所有用户创建/注册都保持静默，就像在 CLI 环境中创建用户一样。';
 $L['USER_ACT']                     = '用户激活 (电子邮件验证)';
 $L['USER_ACT_INFO']                = '设置此选项要求用户通过单击发送到其注册电子邮件地址的链接来激活其帐户。';
@@ -1039,6 +1044,7 @@ $L['CU_SHELL_ENV']          = '首选的外壳环境';
 $L['CURRENT_SHELLS']        = '目前的壳牌';
 $L['CURRENT_USERS']         = '当前用户';
 $L['DEFAULT_GROUP_TAG']     = '默认';
+$L['DELETED_ALL_SESSIONS']  = '删除了所有会话';
 $L['DISK_STATUS']           = '磁盘状态';
 $L['EDIT_USER_SHELL']       = '编辑用户的外壳环境';
 $L['EXPIRY']                = '登录有效期至';
@@ -1121,25 +1127,32 @@ $L['PREVIEW']                      = '预览';
 /* **********************************
  * #4.3.3 - USERS GROUPS
  ************************************/
-$L['ADMINISTRATORS']    = '管理员';
-$L['ASSIGN_LEVEL']      = '分配用户组级别 :';
-$L['CLICK_HERE']        = '点击此处...';
-$L['DELETE_GROUP']      = '删除群组';
-$L['DELETED']           = '已删除';
-$L['GROUP_DELETED']     = '该组已被删除，用户组已重置。';
-$L['GROUP_STAY']        = '组会留下:)';
-$L['GROUP_YES']         = '是的，我确定！';
-$L['GROUP_NO']          = '不，取消！';
-$L['EDIT_ADD_USER']     = '添加用户 :';
-$L['EDIT_GROUP_LEVEL']  = '用户组级别 :';
-$L['EDIT_GROUP_NAME']   = '用户组名称 :';
-$L['GROUP_LEVEL']       = '用户组级别';
-$L['GROUP_NAME']        = '用户组名称';
-$L['LEVEL_INFO']        = '输入 2 - 256 之间的数字';
-$L['NEW_GROUP_NAME']    = '新的用户组名称 :';
-$L['NUMBER_MEMBERS']    = '# 个成员';
-$L['USER_GROUPS_INFO']  = '创建，查看和编辑用户组。将用户分配给用户组。';
-$L['SOFT_GROUP_ASGMNT'] = '软件组分配';
+$L['ADMINISTRATORS']               = '管理员';
+$L['ASSIGN_LEVEL']                 = '分配组级别：';
+$L['CANCELLED']                    = '已取消';
+$L['CLICK_HERE']                   = '点击此处...';
+$L['CONFIRM_DELETE_GROUP_TITLE']   = '您确定吗？';
+$L['CONFIRM_DELETE_GROUP_SUBTEXT'] = '这将删除组并重置组中的所有用户。 确保这些用户被分配到另一个组。';
+$L['DELETE_GROUP']                 = '删除组';
+$L['DELETED']                      = '已删除';
+$L['GROUP_DELETED']                = '该组已被删除，用户组已重置。';
+$L['GROUP_DELETE_CANCEL']          = '群组删除已取消。';
+$L['GROUP_STAY']                   = '该小组将留下:)';
+$L['GROUP_USER_REMOVED']           = '用户已从组中删除。';
+$L['GROUP_USER_STAY']              = '用户保留在组中:)';
+$L['GROUP_YES']                    = '是的，我确定！';
+$L['GROUP_NO']                     = '不，取消！';
+$L['EDIT_ADD_USER']                = '添加用户：';
+$L['EDIT_GROUP_LEVEL']             = '组级别：';
+$L['EDIT_GROUP_NAME']              = '群组名称：';
+$L['GROUP_LEVEL']                  = '组级别';
+$L['GROUP_NAME']                   = '群组名称';
+$L['LEVEL_INFO']                   = '输入 2 - 256 之间的数字';
+$L['NEW_GROUP_NAME']               = '新组名称：';
+$L['NUMBER_MEMBERS']               = '会员数量';
+$L['REMOVED']                      = '已删除';
+$L['USER_GROUPS_INFO']             = '创建、查看和编辑用户组。 将用户分配到用户组。';
+$L['SOFT_GROUP_ASGMNT']            = '软件组分配';
 
 /* **********************************
  * #4.4 - SYSTEM
@@ -1153,7 +1166,7 @@ $L['WEB_CONSOLE_INFO'] = '访问您的命令行环境。';
  ************************************/
 $L['ACTIVATION_INFO_STATS']             = '激活信息统计';
 $L['QB_CONTROL_API']                    = 'QB 控制 API';
-$L['QB_CONTROL_API_NOTICE']             = 'API 控制键分为两个部分，如下所示。<br>已标记使用示例以说明执行其指定任务所需的特定命令权限级别。随着其他端点和功能的实现，API 使用库将继续接收更新。<br><br/><table><tbody><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-primary">&nbsp;</span></td><td><em>读取权限密钥</em>仅具有抓取数据的能力。该键无法向 QuickBox 服务器发出操作任务信号。除非您尝试远程控制您的安装，否则只需此键即可。</td></tr><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-success">&nbsp;</span></td><td><em>写入权限密钥</em>能够执行其他任务，例如更新 QuickBox 安装，管理 主要 api 激活等等。该密钥也适用于读取权限，并且被视为最高特权密钥。对于远程执行服务器的基本管理任务非常有用.</td></tr></tbody></table><br/>请记住像对待密码一样对待您的 API 密钥，切勿共享它们。<br>您可以随时按下面的 <i data-feather="refresh-cw" style="width:14px;"></i> 按钮重新生成新的随机控制键。';
+$L['QB_CONTROL_API_NOTICE']             = 'API 控制键分为两个部分，如下所示。<br>已标记使用示例以说明执行其指定任务所需的特定命令权限级别。随着其他端点和功能的实现，API 使用库将继续接收更新。<br><br/><table><tbody><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-indicators badge-primary">&nbsp;</span></td><td><em>读取权限密钥</em>仅具有抓取数据的能力。该键无法向 QuickBox 服务器发出操作任务信号。除非您尝试远程控制您的安装，否则只需此键即可。</td></tr><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-indicators badge-success">&nbsp;</span></td><td><em>写入权限密钥</em>能够执行其他任务，例如更新 QuickBox 安装，管理 主要 api 激活等等。该密钥也适用于读取权限，并且被视为最高特权密钥。对于远程执行服务器的基本管理任务非常有用.</td></tr></tbody></table><br/>请记住像对待密码一样对待您的 API 密钥，切勿共享它们。<br>您可以随时按下面的 <i data-feather="refresh-cw" style="width:14px;"></i> 按钮重新生成新的随机控制键。';
 $L['CLOSE_ACKNOWLEDGE']                 = '确认并关闭';
 $L['READ_PERM_KEY']                     = '读取权限密钥';
 $L['REGENERATE_READ_KEY']               = '重新生成读取密钥';
@@ -1244,6 +1257,7 @@ $L['NO_CERTS_INSTALLED']         = '目前没有安装和/或监控 SSL 证书�
 /* **********************************
  * #4.4.4 - TROUBLESHOOTING
  ************************************/
+$L['SERVICE']                = '服务';
 $L['APP_SELECT']             = '选择应用';
 $L['APPLIANCE']              = '器具';
 $L['CLEAN_MEM']              = '清除物理内存中的缓存';
@@ -1319,7 +1333,7 @@ $L['QB_HELP'] = '帮助手册';
 $L['DESCRIPTION_CONTENT'] = '<p>欢迎使用 <code>qb</code> 联机帮助页的全面图形显示，该联机帮助页旨在为您提供一种经过翻译、简化且高效的方法来访问有关 QuickBox 的各种信息。这个用户友好的界面旨在提供对 QuickBox 工作原理的深入了解，QuickBox 是一个强大且多功能的工具，可轻松管理您的服务器。</p>
 <p>在此图形显示中，您将找到可供无缝安装的可用应用程序的详细列表，使您能够根据您的特定需求自定义服务器设置。此外，该资源还提供了大量其他基本命令，可在 <code>qb</code> CLI 环境中实现最佳利用，使您能够高效、轻松地浏览服务器任务。</p>
 <p>无论您是 QuickBox 的新手还是经验丰富的用户，<code>qb</code> 联机帮助页的图形显示都可以作为您充分利用 QuickBox 潜力并释放服务器管理真正威力的最终参考。借助这份直观且信息丰富的指南，探索各种功能、简化服务器操作并最大限度地提高您的工作效率。让我们深入研究，让您的 QuickBox 体验更加有意义！</p>';
-$L['API_INFO_DIRECT'] = '<p style="font-weight:600;">有关嵌入式 QuickBox API 的更多信息和参考，<a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--infoColor);">查看此页面</a>。</p>';
+$L['API_INFO_DIRECT'] = '<p style="font-weight:600;">有关嵌入式 QuickBox API 的更多信息和参考，<a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--qb-color-37);">查看此页面</a>。</p>';
 
 /* **********************************
  * #4.4.6.2 - options
@@ -1353,10 +1367,10 @@ $L['SOFTWARE_TITLE']    = '软件标题';
 $L['USABILITY']         = '可用性';
 $L['CAN_ROLLBACK']      = '回滚选项';
 $L['INFO']              = '信息';
-$L['ADMIN_BADGE']       = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightDangerBorder);color:#fff;font-size:0.5rem;">仅限管理员</span>';
-$L['GLOBAL_BADGE']      = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">全球</span>';
-$L['MULTI_USER_BADGE']  = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">多用户</span>';
-$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">单用户</span>';
+$L['ADMIN_BADGE']       = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-6-rgba);color:#fff;font-size:0.5rem;">仅限管理员</span>';
+$L['GLOBAL_BADGE']      = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-5-rgba);color:#fff;font-size:0.5rem;">全球</span>';
+$L['MULTI_USER_BADGE']  = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-4-rgba);color:#fff;font-size:0.5rem;">多用户</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-3-rgba);color:#fff;font-size:0.5rem;">单用户</span>';
 $L['GLOBAL_INFO']       = '需要管理员安装并为系统上的所有用户安装。';
 $L['MULTI_USER_INFO']   = '需要管理员安装并且可以为任何分配的用户安装。支持多个用户。';
 $L['SINGLE_USER_INFO']  = '单用户，仅限管理员。需要管理员安装并由管理员用户安装和操作。';
@@ -1451,18 +1465,18 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT']                    = '此命令将为所有
 $L['EX_PUB_TRACKERS_ALLOW']                             = '允许公共跟踪器的示例：';
 $L['EX_PUB_TRACKERS_DISALLOW']                          = '禁止公共跟踪器的示例：';
 $L['BACKUP_APPLICATIONS']                               = '备份应用程序';
-$L['PARTIAL_CONFIG_ONLY_BACKUP']                        = '部分备份 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP']                        = '部分备份 <span class="badge badge-pills outline-badge-secondary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">仅配置</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT']                = '此命令将为指定用户备份指定的应用程序配置';
-$L['FULL_CONFIG_AND_APP_BACKUP']                        = '完整备份 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">配置&amp; 应用程序</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP']                        = '完整备份 <span class="badge badge-pills outline-badge-primary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">配置 &amp; 应用程序</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT']                = '此命令将为指定用户备份指定应用程序。包括应用程序和配置数据，方便回滚到以前安装和备份的版本';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP']                 = '部分备份(仅限 rtorrent)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>如果使用 rtorrent 作为要备份的软件配置，则不需要用户名标志 (<code>-u</code>)。</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT']         = '此命令将备份所有现有 rtorrent 用户 .rtorrent.rc 文件。<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent/backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS']                             = '回滚应用程序备份';
 $L['ROLLBACK_APPLICATIONS_CONTENT']                     = '此命令会将指定用户的指定应用程序回滚到备份目录中存储/选择的先前版本。<br>备份存储在：<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG']                         = '恢复备份 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
+$L['RESTORE_APP_BACKUP_CONFIG']                         = '恢复备份 <span class="badge badge-pills outline-badge-secondary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">仅配置</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT']                 = '此命令将为指定用户恢复指定的先前备份的应用程序配置';
-$L['RESTORE_APP_DEFAULT_CONFIG']                        = '恢复默认 <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">仅配置</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG']                        = '恢复默认 <span class="badge badge-pills outline-badge-secondary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">仅配置</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT']                = '此命令将为指定用户恢复指定的默认(从安装)应用程序配置';
 
 /* **********************************
@@ -1513,7 +1527,7 @@ $L['DISCLAIMER_TEXT'] = '<p>此脚本仅供一般用途，不保证其适用于�
  ************************************/
 $L['LICENSE']      = '许可证';
 $L['LICENSE_SET']  = '根据 BSD 3-Clause 获得许可';
-$L['LICENSE_TEXT'] = '<p>版权所有 (c) 2018-2023，QuickBox.IO。保留所有权利。</p>
+$L['LICENSE_TEXT'] = '<p>版权所有 (c) 2018-2024，QuickBox.IO。保留所有权利。</p>
 <p>只要满足以下条件，就可以以源代码和二进制形式重新分发和使用，无论是否经过修改：</p>
 <ul style="font-size:0.75rem"><li>源代码的重新分发必须保留上述版权声明、此条件列表以及以下免责声明.</li>
 <li>以二进制形式重新分发时，必须在随分发提供的文档和/或其他材料中复制上述版权声明、本条件列表以及以下免责声明.</li>

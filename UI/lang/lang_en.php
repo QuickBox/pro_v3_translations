@@ -4,12 +4,12 @@
  * QuickBox Pro English Language File
  *
  * This file is used to translate the QuickBox Pro Dashboard into English.
- * Ready for QuickBox Pro v3.0.1 : December 15, 2023
+ * Ready for QuickBox Pro v3.0.1 : January 20, 2024
  *
  * @package    dashboard
  * @subpackage lang
  * @category   English
- * @version    3.0.1.24
+ * @version    3.0.1.45
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -317,6 +317,7 @@ $L['HOME']                = 'Home';
 $L['IDLE_L']              = 'idle';
 $L['IDLE']                = 'Idle';
 $L['IS_AVAILABLE']        = 'is available.';
+$L['LANGUAGES']           = 'Languages';
 $L['MOUNTS']              = 'Mounts:';
 $L['MOUNT_ADD_PATH']      = 'Add Path';
 $L['MOUNT_CHECK_ABOUT']   = 'These values are calculated and updated periodically. The values are not real-time. You can force an update on these stats by clicking the \'Start Scan\' button below.';
@@ -329,6 +330,7 @@ $L['NGINX_CONF_OPTIONS']  = 'Nginx Conf Options';
 $L['NGINX_CONFIG']        = 'Nginx Configuration';
 $L['NGINX_SETTINGS']      = 'Nginx Settings';
 $L['NO']                  = 'No';
+$L['NOTIFICATIONS']       = 'Notifications';
 $L['OPEN']                = 'open';
 $L['OR']                  = 'or';
 $L['PASSWORD']            = 'Password';
@@ -340,6 +342,7 @@ $L['SET_HERE']            = 'Set here';
 $L['SIMULATE_LIST']       = 'User List';
 $L['SIMULATE']            = 'Simulate Users';
 $L['SUMMARY']             = 'Summary';
+$L['THEMES']              = 'Themes';
 $L['UPDATING_QUICKBOX']   = 'Updating QuickBox';
 $L['UPDATING']            = 'Updating ';
 $L['USED_L']              = 'used';
@@ -442,79 +445,79 @@ $L['ZNC']           = 'ZNC is an IRC network bouncer or BNC. It can detach the c
 
 // Create an array of the app names for the uninstall/reinstall translation
 $APPS = [
- 'AIRSONIC'      => 'Airsonic',
- 'AUTOBRR'       => 'Autobrr',
- 'AUTODL'        => 'AutoDL-iRSSi',
- 'AUTOSCAN'      => 'Autoscan',
- 'BAZARR'        => 'Bazarr',
- 'BAZARR4K'      => 'Bazarr4K',
- 'BBR'           => 'BBR',
- 'BTSYNC'        => 'BitTorrent Sync',
- 'CALIBRE'       => 'Calibre',
- 'COUCHPOTATO'   => 'CouchPotato',
- 'CSF'           => 'Config Server Firewall (CSF)',
- 'DELUGE'        => 'Deluge',
- 'DUPLICATI'     => 'Duplicati',
- 'EMBY'          => 'Emby',
- 'FAIL2BAN'      => 'Fail2Ban',
- 'FILEBOT'       => 'FileBot',
- 'FILEBROWSER'   => 'Filebrowser',
- 'FLARESOLVERR'  => 'FlareSolverr',
- 'FLEXGET'       => 'FlexGet',
- 'FLOOD'         => 'Flood',
- 'HEADPHONES'    => 'Headphones',
- 'JACKETT'       => 'Jackett',
- 'JDOWNLOADER'   => 'JDownloader',
- 'JELLYFIN'      => 'Jellyfin',
- 'JELLYSEERR'    => 'Jellyseerr',
- 'KAVITA'        => 'Kavita',
- 'KOMGA'         => 'Komga',
- 'LAZYLIBRARIAN' => 'LazyLibrarian',
- 'LETSENCRYPT'   => 'Let\'s Encrypt',
- 'LIDARR'        => 'Lidarr',
- 'MEDUSA'        => 'Medusa',
- 'MYLAR3'        => 'Mylar3',
- 'NETDATA'       => 'Netdata',
- 'NEXTCLOUD'     => 'Nextcloud',
- 'NOTIFIARR'     => 'Notifiarr',
- 'NOVNC'         => 'noVNC',
- 'NZBGET'        => 'NZBGet',
- 'NZBHYDRA2'     => 'NZBHydra2',
- 'OMBI'          => 'Ombi',
- 'OVERSEERR'     => 'Overseerr',
- 'OVPN'          => 'OpenVPN',
- 'PHPMYADMIN'    => 'phpMyAdmin',
- 'PLEX'          => 'Plex',
- 'PROWLARR'      => 'Prowlarr',
- 'PYLOAD'        => 'pyLoad',
- 'QBITTORRENT'   => 'qBittorrent',
- 'QUASSEL'       => 'Quassel',
- 'QUOTAS'        => 'Quotas',
- 'RADARR'        => 'Radarr',
- 'RADARR4K'      => 'Radarr4K',
- 'RAPIDLEECH'    => 'Rapidleech',
- 'RCLONE'        => 'RClone',
- 'READARR'       => 'Readarr',
- 'REQUESTRR'     => 'Requestrr',
- 'RTORRENT'      => 'rTorrent',
- 'RUTORRENT'     => 'ruTorrent',
- 'SABNZBD'       => 'SABnzbd',
- 'SEEDCROSS'     => 'SeedCross',
- 'SICKCHILL'     => 'SickChill',
- 'SICKGEAR'      => 'SickGear',
- 'SONARR'        => 'Sonarr',
- 'SONARR4K'      => 'Sonarr4K',
- 'SUBSONIC'      => 'Subsonic',
- 'SYNCTHING'     => 'Syncthing',
- 'TAUTULLI'      => 'Tautulli',
- 'THELOUNGE'     => 'The Lounge',
- 'TRANSMISSION'  => 'Transmission',
- 'UNIFI'         => 'UniFi',
- 'UNPACKERR'     => 'Unpackerr',
- 'WEBCONSOLE'    => 'Web Console',
- 'X2GO'          => 'X2Go',
- 'XTEVE'         => 'XTeVe',
- 'ZNC'           => 'ZNC'
+	'AIRSONIC'      => 'Airsonic',
+	'AUTOBRR'       => 'Autobrr',
+	'AUTODL'        => 'AutoDL-iRSSi',
+	'AUTOSCAN'      => 'Autoscan',
+	'BAZARR'        => 'Bazarr',
+	'BAZARR4K'      => 'Bazarr4K',
+	'BBR'           => 'BBR',
+	'BTSYNC'        => 'BitTorrent Sync',
+	'CALIBRE'       => 'Calibre',
+	'COUCHPOTATO'   => 'CouchPotato',
+	'CSF'           => 'Config Server Firewall (CSF)',
+	'DELUGE'        => 'Deluge',
+	'DUPLICATI'     => 'Duplicati',
+	'EMBY'          => 'Emby',
+	'FAIL2BAN'      => 'Fail2Ban',
+	'FILEBOT'       => 'FileBot',
+	'FILEBROWSER'   => 'Filebrowser',
+	'FLARESOLVERR'  => 'FlareSolverr',
+	'FLEXGET'       => 'FlexGet',
+	'FLOOD'         => 'Flood',
+	'HEADPHONES'    => 'Headphones',
+	'JACKETT'       => 'Jackett',
+	'JDOWNLOADER'   => 'JDownloader',
+	'JELLYFIN'      => 'Jellyfin',
+	'JELLYSEERR'    => 'Jellyseerr',
+	'KAVITA'        => 'Kavita',
+	'KOMGA'         => 'Komga',
+	'LAZYLIBRARIAN' => 'LazyLibrarian',
+	'LETSENCRYPT'   => 'Let\'s Encrypt',
+	'LIDARR'        => 'Lidarr',
+	'MEDUSA'        => 'Medusa',
+	'MYLAR3'        => 'Mylar3',
+	'NETDATA'       => 'Netdata',
+	'NEXTCLOUD'     => 'Nextcloud',
+	'NOTIFIARR'     => 'Notifiarr',
+	'NOVNC'         => 'noVNC',
+	'NZBGET'        => 'NZBGet',
+	'NZBHYDRA2'     => 'NZBHydra2',
+	'OMBI'          => 'Ombi',
+	'OVERSEERR'     => 'Overseerr',
+	'OVPN'          => 'OpenVPN',
+	'PHPMYADMIN'    => 'phpMyAdmin',
+	'PLEX'          => 'Plex',
+	'PROWLARR'      => 'Prowlarr',
+	'PYLOAD'        => 'pyLoad',
+	'QBITTORRENT'   => 'qBittorrent',
+	'QUASSEL'       => 'Quassel',
+	'QUOTA'         => 'Quotas',
+	'RADARR'        => 'Radarr',
+	'RADARR4K'      => 'Radarr4K',
+	'RAPIDLEECH'    => 'Rapidleech',
+	'RCLONE'        => 'RClone',
+	'READARR'       => 'Readarr',
+	'REQUESTRR'     => 'Requestrr',
+	'RTORRENT'      => 'rTorrent',
+	'RUTORRENT'     => 'ruTorrent',
+	'SABNZBD'       => 'SABnzbd',
+	'SEEDCROSS'     => 'SeedCross',
+	'SICKCHILL'     => 'SickChill',
+	'SICKGEAR'      => 'SickGear',
+	'SONARR'        => 'Sonarr',
+	'SONARR4K'      => 'Sonarr4K',
+	'SUBSONIC'      => 'Subsonic',
+	'SYNCTHING'     => 'Syncthing',
+	'TAUTULLI'      => 'Tautulli',
+	'THELOUNGE'     => 'The Lounge',
+	'TRANSMISSION'  => 'Transmission',
+	'UNIFI'         => 'UniFi',
+	'UNPACKERR'     => 'Unpackerr',
+	'WEBCONSOLE'    => 'Web Console',
+	'X2GO'          => 'X2Go',
+	'XTEVE'         => 'XTeVe',
+	'ZNC'           => 'ZNC'
 ];
 
 /* **********************************
@@ -522,7 +525,7 @@ $APPS = [
  ************************************/
 // Loop through the array and create the uninstall translation
 foreach ($APPS as $key => $value) {
- $L[$key . '_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">' . $value . '</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">' . $value . '</span> at any time, however, your settings will be reset to default.';
+	$L[$key . '_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">' . $value . '</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">' . $value . '</span> at any time, however, your settings will be reset to default.';
 }
 
 /* **********************************
@@ -530,7 +533,7 @@ foreach ($APPS as $key => $value) {
  ************************************/
 // Loop through the array and create the reinstall translation
 foreach ($APPS as $key => $value) {
- $L[$key . '_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">' . $value . '</span>.<br/><br/>This will completely remove/reset all of your current configurations, files and settings... this action is irreversible.';
+	$L[$key . '_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">' . $value . '</span>.<br/><br/>This will completely remove/reset all of your current configurations, files and settings... this action is irreversible.';
 }
 
 /* **********************************
@@ -613,7 +616,7 @@ $L['KAVITA_INSTALL_MESSAGE'] = 'You have the option to specify a custom director
 /* **********************************
  * plex install/reinstall modal
  ************************************/
-$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">To claim your Plex Media Server you must already have an account and signed in to obtain the claim code from: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--infoColor);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--mainFontColor)"><strong style="color:var(--alertLightInfoColor)">NOTE:</strong> It is advised to use the "Copy to Clipboard" button from the claim code screen to ensure proper insertion as the claim code is case-sensitive.</div>';
+$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">To claim your Plex Media Server you must already have an account and signed in to obtain the claim code from: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--qb-color-37);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--qb-color-2)"><strong style="color:var(--qb-color-37)">NOTE:</strong> It is advised to use the "Copy to Clipboard" button from the claim code screen to ensure proper insertion as the claim code is case-sensitive.</div>';
 $L['PLEX_CLAIM_TITLE']       = 'Plex Media Server Install';
 $L['PLEX_CLAIM_TOKEN']       = 'Plex Claim Code';
 $L['PLEX_DATA_PATH']         = 'Use custom path for data directory?';
@@ -796,6 +799,7 @@ $L['PASS_UPDATED']             = 'Password updated!';
  * #4.1.3 - REGISTER
  ************************************/
 $L['ACCOUNT_CREATED']           = 'your account has been created. ';
+$L['ACTIVATED_USER']            = 'Activated user ';
 $L['CAN_LOGIN']                 = 'for your registration. You may now log in';
 $L['CREATED_ADM_ACT']           = 'However, this board requires account activation by an Admin. You will be informed by e-mail when your account has been activated.';
 $L['CREATED_CHECK_EMAIL']       = 'Please check your e-mail for further information';
@@ -984,6 +988,7 @@ $L['BAN_IP_INFO']          = 'e.g. 192.168.0.1 without leading zeros';
 $L['BAN_IP_REGISTER']      = 'Ban IP Addresses from Registering (or logging in)';
 $L['BANNED_IP_ADDRESSES']  = 'Banned IP Addresses';
 $L['DISALLOW_USERNAME']    = 'Disallow Username';
+$L['DISALLOWED_USERNAME']  = 'Disallowed Username';
 $L['DISALLOW_USERNAMES']   = 'Disallow Usernames';
 $L['DISALLOWED_USERNAMES'] = 'Disallowed Usernames';
 $L['PREVENT_USERNAMES']    = 'Prevent Usernames from being registered';
@@ -1014,7 +1019,7 @@ $L['RECOMMENDED']                  = 'QuickBox Recommended';
 $L['REG_SETTINGS_INFO']            = 'Change the settings regarding registration to the site.';
 $L['REG_SETTINGS']                 = 'Registration settings';
 $L['SEND_WELCOME_EMAIL']           = 'Send Welcome E-mail';
-$L['SEND_WELCOME_EMAIL_YES_INFO']  = 'Setting this option to Yes sends welcome emails to the user, as well as the system admin. This option requires SMTP setup for properly sending emails. These options can be controlled on the <a href="/email-settings.php" style="color: var(--successColor);text-decoration: underline;">Email Settings</a> page.';
+$L['SEND_WELCOME_EMAIL_YES_INFO']  = 'Setting this option to Yes sends welcome emails to the user, as well as the system admin. This option requires SMTP setup for properly sending emails. These options can be controlled on the <a href="/email-settings.php" style="color: var(--qb-color-29);text-decoration: underline;">Email Settings</a> page.';
 $L['SEND_WELCOME_EMAIL_NO_INFO']   = 'Setting this option to No will not send out welcome emails to newly registered users. All user creation/registration remains silent, much like user creation within the CLI environment.';
 $L['USER_ACT']                     = 'User Activation (e-mail verification)';
 $L['USER_ACT_INFO']                = 'Setting this option requires the user to activate their account by clicking a link sent to their registered e-mail address.';
@@ -1043,6 +1048,7 @@ $L['CU_SHELL_ENV']          = 'Preferred shell environment:';
 $L['CURRENT_SHELLS']        = 'Current Shell';
 $L['CURRENT_USERS']         = 'Current Users';
 $L['DEFAULT_GROUP_TAG']     = 'default';
+$L['DELETED_ALL_SESSIONS']  = 'Deleted all sessions';
 $L['DISK_STATUS']           = 'Disk Status';
 $L['EDIT_USER_SHELL']       = 'Edit the User\'s Shell Environment';
 $L['EXPIRY']                = 'Expiry';
@@ -1124,25 +1130,32 @@ $L['PREVIEW']                       = 'Preview';
 /* **********************************
  * #4.3.3 - USERS GROUPS
  ************************************/
-$L['ADMINISTRATORS']    = 'Administrators';
-$L['ASSIGN_LEVEL']      = 'Assign Group Level :';
-$L['CLICK_HERE']        = 'Click Here...';
-$L['DELETE_GROUP']      = 'Delete Group';
-$L['DELETED']           = 'Deleted';
-$L['GROUP_DELETED']     = 'This group has been removed, user groups reset.';
-$L['GROUP_STAY']        = 'The group will stay :)';
-$L['GROUP_YES']         = 'Yes, I am sure!';
-$L['GROUP_NO']          = 'No, cancel!';
-$L['EDIT_ADD_USER']     = 'Add User :';
-$L['EDIT_GROUP_LEVEL']  = 'Group Level :';
-$L['EDIT_GROUP_NAME']   = 'Group Name :';
-$L['GROUP_LEVEL']       = 'Group Level';
-$L['GROUP_NAME']        = 'Group Name';
-$L['LEVEL_INFO']        = 'Enter a number between 2 - 256';
-$L['NEW_GROUP_NAME']    = 'New Group Name :';
-$L['NUMBER_MEMBERS']    = '# of Members';
-$L['USER_GROUPS_INFO']  = 'Create, view and edit user groups. Assign users to user groups.';
-$L['SOFT_GROUP_ASGMNT'] = 'Software Group Assignment';
+$L['ADMINISTRATORS']               = 'Administrators';
+$L['ASSIGN_LEVEL']                 = 'Assign Group Level :';
+$L['CANCELLED']                    = 'Cancelled';
+$L['CLICK_HERE']                   = 'Click Here...';
+$L['CONFIRM_DELETE_GROUP_TITLE']   = 'Are you sure?';
+$L['CONFIRM_DELETE_GROUP_SUBTEXT'] = 'This will delete the group and reset all users in the group. Ensure these users are assigned to another group.';
+$L['DELETE_GROUP']                 = 'Delete Group';
+$L['DELETED']                      = 'Deleted';
+$L['GROUP_DELETED']                = 'This group has been removed, user groups reset.';
+$L['GROUP_DELETE_CANCEL']          = 'Group deletion cancelled.';
+$L['GROUP_STAY']                   = 'The group will stay :)';
+$L['GROUP_USER_REMOVED']           = 'User has been removed from the group.';
+$L['GROUP_USER_STAY']              = 'The user remains in the group :)';
+$L['GROUP_YES']                    = 'Yes, I am sure!';
+$L['GROUP_NO']                     = 'No, cancel!';
+$L['EDIT_ADD_USER']                = 'Add User :';
+$L['EDIT_GROUP_LEVEL']             = 'Group Level :';
+$L['EDIT_GROUP_NAME']              = 'Group Name :';
+$L['GROUP_LEVEL']                  = 'Group Level';
+$L['GROUP_NAME']                   = 'Group Name';
+$L['LEVEL_INFO']                   = 'Enter a number between 2 - 256';
+$L['NEW_GROUP_NAME']               = 'New Group Name :';
+$L['NUMBER_MEMBERS']               = '# of Members';
+$L['REMOVED']                      = 'Removed';
+$L['USER_GROUPS_INFO']             = 'Create, view and edit user groups. Assign users to user groups.';
+$L['SOFT_GROUP_ASGMNT']            = 'Software Group Assignment';
 
 /* **********************************
  * #4.4 - SYSTEM
@@ -1156,7 +1169,7 @@ $L['WEB_CONSOLE_INFO'] = 'Access your command environment.';
  ************************************/
 $L['ACTIVATION_INFO_STATS']             = 'Activation Info Stats';
 $L['QB_CONTROL_API']                    = 'QB Control API';
-$L['QB_CONTROL_API_NOTICE']             = 'API control keys are compartmentalized into two components as seen below.<br/>Usage examples have been labeled to illustrate a specific commands level of permissions needed to perform it\'s designated task. The library of api use will continue to receive updates as additional endpoints and functions are implemented.<br/><br/><table><tbody><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-primary">&nbsp;</span></td><td>The <em>read permissions key</em> only has the ability to scrape data. This key cannot signal operational tasks to the QuickBox server. Unless you are attempting to remote control your installation, this key is all that is needed.</td></tr><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-pills badge-success">&nbsp;</span></td><td>The <em>write permissions key</em> has the ability to perform additional tasks, such as updating the QuickBox install, managing the main api activation, and more. This key will work for read permissions as well and is to be considered the highest privileged key. Useful for remotely performing basic management tasks to your server.</td></tr></tbody></table><br/>Remember to treat your API keys as you would passwords, never share them.<br/>You can regenerate a new random control key at any time by pressing the <i data-feather="refresh-cw" style="width:14px;"></i> button below.';
+$L['QB_CONTROL_API_NOTICE']             = 'API control keys are compartmentalized into two components as seen below.<br/>Usage examples have been labeled to illustrate a specific commands level of permissions needed to perform it\'s designated task. The library of api use will continue to receive updates as additional endpoints and functions are implemented.<br/><br/><table><tbody><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-indicators badge-primary">&nbsp;</span></td><td>The <em>read permissions key</em> only has the ability to scrape data. This key cannot signal operational tasks to the QuickBox server. Unless you are attempting to remote control your installation, this key is all that is needed.</td></tr><tr><td style="width:15px;vertical-align:middle;"><span class="badge badge-indicators badge-success">&nbsp;</span></td><td>The <em>write permissions key</em> has the ability to perform additional tasks, such as updating the QuickBox install, managing the main api activation, and more. This key will work for read permissions as well and is to be considered the highest privileged key. Useful for remotely performing basic management tasks to your server.</td></tr></tbody></table><br/>Remember to treat your API keys as you would passwords, never share them.<br/>You can regenerate a new random control key at any time by pressing the <i data-feather="refresh-cw" style="width:14px;"></i> button below.';
 $L['CLOSE_ACKNOWLEDGE']                 = 'Acknowledge and Close';
 $L['READ_PERM_KEY']                     = 'Read Permissions Key';
 $L['REGENERATE_READ_KEY']               = 'Regenerate Read Key';
@@ -1246,6 +1259,7 @@ $L['NO_CERTS_INSTALLED']         = 'There are no SSL certificates installed and/
 /* **********************************
  * #4.4.4 - TROUBLESHOOTING
  ************************************/
+$L['SERVICE']                = 'Service';
 $L['APP_SELECT']             = 'Select Software';
 $L['APPLIANCE']              = 'Appliance';
 $L['CLEAN_MEM']              = 'Clear Physical Memory Cache';
@@ -1321,7 +1335,7 @@ $L['QB_HELP'] = 'Help Manual';
 $L['DESCRIPTION_CONTENT'] = '<p>Welcome to the comprehensive graphical display of the <code>qb</code> manpage, designed to offer you a translated, simplified and efficient approach to accessing various information about QuickBox. This user-friendly interface aims to provide in-depth insights into the workings of QuickBox, a powerful and versatile tool for managing your server effortlessly.</p>
 <p>Inside this graphical display, you will find a detailed list of available applications ready for seamless installation, empowering you to customize your server setup according to your specific needs. Moreover, this resource presents a wealth of other essential commands for optimal utilization within the <code>qb</code> CLI environment, enabling you to navigate through your server tasks efficiently and effortlessly.</p>
 <p>Whether you are new to QuickBox or a seasoned user, this graphical display of the <code>qb</code> manpage serves as your ultimate reference to harnessing the full potential of QuickBox and unleashing the true power of your server management. Explore the diverse features, streamline your server operations, and maximize your productivity with the help of this intuitive and informative guide. Let\'s dive in and make your QuickBox experience even more rewarding!</p>';
-$L['API_INFO_DIRECT'] = '<p style="font-weight:600;">For more information and reference on the embedded QuickBox API, <a href="/api-control.php" rel="noopenner nofollow" class="link" style="color:var(--infoColor);">see this page</a>.</p>';
+$L['API_INFO_DIRECT'] = '<p style="font-weight:600;">For more information and reference on the embedded QuickBox API, <a href="/api-control.php" rel="noopenner nofollow" class="link" style="color:var(--qb-color-37);">see this page</a>.</p>';
 
 /* **********************************
  * #4.4.6.2 - options
@@ -1355,10 +1369,10 @@ $L['SOFTWARE_TITLE']    = 'Software Title';
 $L['USABILITY']         = 'Usability';
 $L['CAN_ROLLBACK']      = 'Rollback Option';
 $L['INFO']              = 'Info';
-$L['ADMIN_BADGE']       = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightDangerBorder);color:#fff;font-size:0.5rem;">admin only</span>';
-$L['GLOBAL_BADGE']      = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightWarningBorder);color:#fff;font-size:0.5rem;">global</span>';
-$L['MULTI_USER_BADGE']  = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightInfoBorder);color:#fff;font-size:0.5rem;">multi user</span>';
-$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--alertLightPrimaryBorder);color:#fff;font-size:0.5rem;">single user</span>';
+$L['ADMIN_BADGE']       = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-6-rgba);color:#fff;font-size:0.5rem;">admin only</span>';
+$L['GLOBAL_BADGE']      = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-5-rgba);color:#fff;font-size:0.5rem;">global</span>';
+$L['MULTI_USER_BADGE']  = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-4-rgba);color:#fff;font-size:0.5rem;">multi user</span>';
+$L['SINGLE_USER_BADGE'] = '<span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--qb-color-3-rgba);color:#fff;font-size:0.5rem;">single user</span>';
 $L['GLOBAL_INFO']       = 'requires admin installation and installs for all users on the system.';
 $L['MULTI_USER_INFO']   = 'requires admin installation and can be installed for any assigned user. multiple users are supported.';
 $L['SINGLE_USER_INFO']  = 'single user, admin only. requires admin installation and is installed and operated by admin user.';
@@ -1453,18 +1467,18 @@ $L['MANAGE_PUBLIC_TRACKERS_CONTENT']                    = 'This command will ena
 $L['EX_PUB_TRACKERS_ALLOW']                             = 'example to allow public trackers:';
 $L['EX_PUB_TRACKERS_DISALLOW']                          = 'example to disallow public trackers:';
 $L['BACKUP_APPLICATIONS']                               = 'Backup Applications';
-$L['PARTIAL_CONFIG_ONLY_BACKUP']                        = 'Partial Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
+$L['PARTIAL_CONFIG_ONLY_BACKUP']                        = 'Partial Backup <span class="badge badge-pills outline-badge-secondary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">config only</span>';
 $L['PARTIAL_CONFIG_ONLY_BACKUP_CONTENT']                = 'This command will backup the designated application config for the assigned user';
-$L['FULL_CONFIG_AND_APP_BACKUP']                        = 'Full Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--primaryColor);color:#fff;font-size:0.5rem;">config &amp; app</span>';
+$L['FULL_CONFIG_AND_APP_BACKUP']                        = 'Full Backup <span class="badge badge-pills outline-badge-primary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">config &amp; app</span>';
 $L['FULL_CONFIG_AND_APP_BACKUP_CONTENT']                = 'This command will backup the designated application for the assigned user. Includes the application and config data, handy for rolling back to previously installed and backed up versions';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP']                 = 'Partial Backup (rtorrent only)';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_PRIMARY_CONTENT'] = '<p>In the case of rtorrent as the software config to backup, the username flag (<code>-u</code>) is not required.</p>';
 $L['PARTIAL_RTORRENT_ALL_USERS_BACKUP_CONTENT']         = 'This command will backup all existing rtorrent users .rtorrent.rc files.<br>Backups are stored at:<br><code>/home/[USERNAME]/.QuickBox/software/rtorrent/backup/.rtorrent.rc_YEAR-MONTH-DAY_HOUR:MINUTE</code>';
 $L['ROLLBACK_APPLICATIONS']                             = 'Rollback Application Backup';
 $L['ROLLBACK_APPLICATIONS_CONTENT']                     = 'This command will rollback the designated application for the assigned user to a previous version stored/selected in the backup directory.<br>Backups are stored at:<br><code>/home/[USERNAME]/.QuickBox/software/[SOFTWARE_NAME]/backup/</code>';
-$L['RESTORE_APP_BACKUP_CONFIG']                         = 'Restore Backup <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
+$L['RESTORE_APP_BACKUP_CONFIG']                         = 'Restore Backup <span class="badge badge-pills outline-badge-secondary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_BACKUP_CONFIG_CONTENT']                 = 'This command will restore the designated previously backed up application config for the assigned user';
-$L['RESTORE_APP_DEFAULT_CONFIG']                        = 'Restore Default <span class="badge badge-pills badge-table-menu" style="padding:2px 6px;line-height:0.7rem;background-color:var(--indigo);color:#fff;font-size:0.5rem;">config only</span>';
+$L['RESTORE_APP_DEFAULT_CONFIG']                        = 'Restore Default <span class="badge badge-pills outline-badge-secondary badge-table-menu" style="padding:2px 6px;line-height:0.7rem;font-size:0.5rem;">config only</span>';
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT']                = 'This command will restore the designated default (from install) application config for the assigned user';
 
 /* **********************************
@@ -1515,7 +1529,7 @@ $L['DISCLAIMER_TEXT'] = '<p>This script is intended for general use and no warra
  ************************************/
 $L['LICENSE']      = 'License';
 $L['LICENSE_SET']  = 'Licensed under BSD 3-Clause';
-$L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2023, QuickBox.IO. All rights reserved.</p>
+$L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2024, QuickBox.IO. All rights reserved.</p>
 <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
 <ul style="font-size:0.75rem"><li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
 <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
