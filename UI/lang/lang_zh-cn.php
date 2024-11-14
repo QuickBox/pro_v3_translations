@@ -1,15 +1,15 @@
 <?php
 
 /**
- * QuickBox Pro Simplified Chinese Language File
+ * QuickBox Pro 简体中文语言文件
  *
- * This file is used to translate the QuickBox Pro Dashboard into Simplified Chinese.
- * Ready for QuickBox Pro v3.0.1 : January 20, 2024
+ * 此文件用于将 QuickBox Pro 仪表板翻译成简体中文。
+ * 为 QuickBox Pro v3.1.2: 2024 年 11 月 12 日
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.34
+ * @version    3.0.1.72
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -17,87 +17,107 @@
  */
 
 // Include required variables
-$version  = $configs->getConfig('Version');
-$username = $session->username;
+$version           = $configs->getConfig('Version');
+$username          = $session->username;
+$network_interface = $configs->getConfig('server_network_adapter');
+// Execute the shell command to get the server IP
+$command   = "ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\\([^ ]*\\).*/\\1/p;q}'";
+$server_ip = shell_exec($command);
+// Trim any trailing whitespace or newlines from the result
+$server_ip = trim((string) $server_ip);
 
 /*
- * SUMMARY :
+ * @摘要 本文件包含 QuickBox Pro 的导航结构、小部件、杂项元素和页面。
  *
- * NAVIGATION : #1
- *    language & theme selection : #1.1
- *    user menu : #1.2
- *    sidebar menu : #1.3
- *    sidebar submenus : #1.4
- *    footer : #1.5
- * MISCELLANEOUS : #2
- *    buttons : #2.1
- *    popup texture : #2.2
- *    app nginx config edit modal : #2.3
- *    other : #2.4
- * WIDGETS : #3
- *    Tables Headers : #3.1
- *       app management center : #3.1.1
- *    Package Management Center : #3.2
- *       app info : #3.2.1
- *       app uninstall : #3.2.2
- *       app reinstall : #3.2.3
- *       toggles & tooltips : #3.2.4
- *       service control : #3.2.5
- *       rclone specific toggles : #3.2.6
- *    Dashboard Widgets : #3.3
- *       disk status widget : #3.3.1
- *       system index v1 - bandwidth data : #3.3.2
- *       system index v1 - server load : #3.3.3
- *       system index v1 - memory status : #3.3.4
- *       server activity widget : #3.3.5
- * PAGES : #4
- *    Start Screen Forms : #4.1
- *       login : #4.1.1
- *       forgot password : #4.1.2
- *       register : #4.1.3
- *       account : #4.1.4
- *         quotes : #4.1.4.1
- *         edit account modal : #4.1.4.2
- *       summary : #4.1.5
- *    Settings : #4.2
- *       general settings : #4.2.1
- *       email settings : #4.2.2
- *       session settings : #4.2.3
- *       user settings : #4.2.4
- *       security settings : #4.2.5
- *    User Management : #4.3
- *       registration settings : #4.3.1
- *       useradmin : #4.3.2
- *         admin user edit : #4.3.2.1
- *         admin announce : #4.3.2.2
- *       user groups : #4.3.3
- *    System : #4.4
- *       web console : #4.4.1
- *       api-control : #4.4.2
- *       ssl-control : #4.4.3
- *       troubleshooting : #4.4.4
- *       system logs : #4.4.5
- *       help manual : #4.4.6
- *         description : #4.4.6.1
- *         options : #4.4.6.2
- *         software : #4.4.6.3
- *         software options table : #4.4.6.4
- *         examples header : #4.4.6.5
- *         user management : #4.4.6.6
- *         clean functions : #4.4.6.7
- *         fix functions : #4.4.6.8
- *         generate functions : #4.4.6.9
- *         manage functions : #4.4.6.10
- *         news functions : #4.4.6.11
- *         support functions : #4.4.6.12
- *         update functions : #4.4.6.13
- *         bugs & reporting : #4.4.6.14
- *         disclaimer : #4.4.6.15
- *         license : #4.4.6.16
- *         misc : #4.4.6.17
- *       changelogs / update : #4.4.7
- *       system dashboard : #4.4.8
- *    Error Pages : #4.5
+ * 导航 (#1)
+ * ------------
+ *   - #1.1: 语言和主题选择
+ *   - #1.2: 用户菜单
+ *   - #1.3: 侧边栏菜单
+ *   - #1.4: 侧边栏子菜单
+ *   - #1.5: 页脚
+ *
+ * 杂项 (#2)
+ * ------------
+ *   - #2.1: 按钮
+ *   - #2.2: 弹出纹理
+ *   - #2.3: 应用 NGINX 配置编辑模态框
+ *   - #2.4: 其他
+ *
+ * 小部件 (#3)
+ * ------------
+ *   表头 (#3.1):
+ *     - #3.1.1: 应用管理中心
+ *
+ *   软件包管理中心 (#3.2):
+ *     - #3.2.1: 应用信息
+ *     - #3.2.2: 卸载应用
+ *     - #3.2.3: 重新安装应用
+ *     - #3.2.4: 开关和工具提示
+ *     - #3.2.5: 服务控制
+ *     - #3.2.6: Rclone 特定开关
+ *
+ *   仪表板小部件 (#3.3):
+ *     - #3.3.1: 磁盘状态小部件
+ *     - #3.3.2: 系统指标 v1 - 带宽数据
+ *     - #3.3.3: 系统指标 v1 - 服务器负载
+ *     - #3.3.4: 系统指标 v1 - 内存状态
+ *     - #3.3.5: 服务器活动小部件
+ *
+ * 页面 (#4)
+ * ------------
+ *   启动屏幕表单 (#4.1):
+ *     - #4.1.1: 登录
+ *     - #4.1.2: 忘记密码
+ *     - #4.1.3: 注册
+ *     - #4.1.4: 账户
+ *       - #4.1.4.1: 引言
+ *       - #4.1.4.2: 编辑账户模态框
+ *     - #4.1.5: 概要
+ *
+ *   设置 (#4.2):
+ *     - #4.2.1: 通用设置
+ *     - #4.2.2: 邮件设置
+ *     - #4.2.3: 会话设置
+ *     - #4.2.4: 用户设置
+ *     - #4.2.5: 安全设置
+ *
+ *   用户管理 (#4.3):
+ *     - #4.3.1: 注册设置
+ *     - #4.3.2: 用户管理
+ *       - #4.3.2.1: 管理员用户编辑
+ *       - #4.3.2.2: 管理员公告
+ *     - #4.3.3: 用户组
+ *
+ *   系统 (#4.4):
+ *     - #4.4.1: Web 控制台
+ *     - #4.4.2: API 控制
+ *     - #4.4.3: SSL 控制
+ *     - #4.4.4: VPN 控制
+ *     - #4.4.5: 故障排除
+ *     - #4.4.6: 系统日志
+ *     - #4.4.7: 帮助手册
+ *       - #4.4.7.1: 描述
+ *       - #4.4.7.2: 选项
+ *       - #4.4.7.3: 软件
+ *       - #4.4.7.4: 软件选项表
+ *       - #4.4.7.5: 示例标题
+ *       - #4.4.7.6: 用户管理
+ *       - #4.4.7.7: 清理功能
+ *       - #4.4.7.8: 修复功能
+ *       - #4.4.7.9: 生成功能
+ *       - #4.4.7.10: 管理功能
+ *       - #4.4.7.11: 新闻功能
+ *       - #4.4.7.12: 支持功能
+ *       - #4.4.7.13: 更新功能
+ *       - #4.4.7.14: 错误报告
+ *       - #4.4.7.15: 免责声明
+ *       - #4.4.7.16: 许可证
+ *       - #4.4.7.17: 杂项
+ *     - #4.4.8: 更新日志 / 更新
+ *     - #4.4.9: 系统仪表板
+ *
+ *   错误页面 (#4.5)
  */
 
 /* ********************************************************************************
@@ -125,7 +145,7 @@ $L['LOG_OUT'] = '注销';
 $L['REBOOT']  = '重启';
 
 /* **********************************
- * #1.3 - sidebar menus
+ * #1.3 - sidebar menu
  ************************************/
 $L['ABOUT_AND_TIPS']    = '关于 / 快速提示';
 $L['APP_DASHBOARD']     = '应用仪表盘';
@@ -314,7 +334,6 @@ $L['IDLE_L']              = '空闲';
 $L['IDLE']                = '空闲';
 $L['IS_AVAILABLE']        = '可用。';
 $L['LANGUAGES']           = '语言';
-$L['NANGINX']             = '在Nginx上运行';
 $L['NEED_HELP']           = '需要帮助 ?';
 $L['NGINX_CONF_OPTIONS']  = 'Nginx Conf选项';
 $L['NGINX_CONFIG']        = 'Nginx 配置';
@@ -344,7 +363,7 @@ $L['MOUNT_PATH_SUCCESS']  = '已成功添加监控路径。 正在刷新页面..
 $L['MOUNT_PATH_ERROR']    = '您尝试添加用于监控的路径不存在。<br>请仔细检查该路径，然后重试。';
 $L['MOUNTS']              = '坐骑：';
 $L['MOUNT_ADD_PATH']      = '添加路径';
-$L['MOUNT_CHECK_ABOUT']   = '这些值会定期计算和更新。这些值不是实时的。您可以通过单击下面的“开始扫描”按钮强制更新这些统计信息。';
+$L['MOUNT_CHECK_ABOUT']   = '这些值会定期计算和更新。这些值不是实时的。您可以通过单击下面的 \'开始扫描\' 按钮强制更新这些统计信息。';
 $L['MOUNT_CHECK_PROCESS'] = '当前正在后台计算空间百分比值。请稍后再回来查看更新的结果。需要刷新页面。';
 $L['MOUNT_MONITOR_INFO']  = '附加挂载信息';
 $L['MOUNT_START_SCAN']    = '开始扫描';
@@ -439,6 +458,7 @@ $L['TRANSMISSION']  = 'Transmission 被设计为功能强大而易于使用的�
 $L['UNIFI']         = 'The UniFi® 是 Ubiquiti Networks™ 的无线网络管理软件。它允许你在浏览器种管理多个无线网络。';
 $L['UNPACKERR']     = '提取 Radarr，Sonarr，Lidarr，Readarr 的下载 - 导入后删除提取的文件。';
 $L['WEBCONSOLE']    = 'TTYD ( 又名 QuickBox Web 控制台 ) 是一个基于 Xterm.js 的全功能终端，支持 CJK 和 IME。';
+$L['WIREGUARD']     = 'WireGuard® 是一款极其简单但快速且现代的 VPN，采用最先进的加密技术。它旨在比 IPsec 更快、更简单、更精简、更实用，同时避免大量麻烦。它旨在比 OpenVPN 性能更高。WireGuard 被设计为通用 VPN，可在嵌入式接口和超级计算机上运行，​​适用于许多不同情况。';
 $L['X2GO']          = 'X2Go 是一款使用 NX 技术协议的 Linux 开源远程桌面软件。';
 $L['XTEVE']         = 'XTeVe是一个模拟电视调谐器的应用程序，它允许你通过Plex或Emby拥有IPTV频道。xTeVe可以合并多个M3U和XMLTV文件，并将其发送到你喜欢的媒体中心';
 $L['ZNC']           = 'ZNC 是一个 IRC 网络辅助软件。它可以将客户端从实际的 IRC 服务器以及选定的频道中分离出来。';
@@ -515,6 +535,7 @@ $APPS = [
 	'UNIFI'         => 'UniFi',
 	'UNPACKERR'     => 'Unpackerr',
 	'WEBCONSOLE'    => 'Web Console',
+	'WIREGUARD'     => 'WireGuard',
 	'X2GO'          => 'X2Go',
 	'XTEVE'         => 'XTeVe',
 	'ZNC'           => 'ZNC'
@@ -561,7 +582,7 @@ $L['QBIT_TOOLTIP']                 = 'Deluge 2 已安装。qBittorrent 不能兼
 $L['QUOTAS_FSTAB']                 = '编辑您的 fstab';
 $L['QUOTAS_HELP']                  = '更多有关安装 quotas 的信息，<a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>请阅读此 F.A.Q first</strong></a>。';
 $L['QUOTAS_TOOLTIP']               = '在您的主挂载点添加以下内容以替代 <code class="language-bash">defaults</code> 并继续';
-$L['RCLONE_ADMIN_TOOLTIP']         = '从 SSH:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code> 以访问此功能<br>请参阅 <code>qb help rclone</code> 了解更多选项。';
+$L['RCLONE_ADMIN_TOOLTIP']         = '从 SSH:<br><code>qb install rclone -u USER [--dropbox|--gdrive] [--encrypted] [--beta]</code> 以访问此功能<br>请参阅 <code>qb help rclone</code> 了解更多选项。';
 $L['RCLONE_USER_TOOLTIP']          = '请与系统管理员联系以安装此程序。';
 $L['REMOVE_MEDUSA_FIRST']          = '安装此应用需要首先移除 Medusa。';
 $L['REMOVE_SICKCHILL_FIRST']       = '安装此应用需要首先移除 SickChill。';
@@ -586,11 +607,11 @@ $L['CALIBRE_INSTALL_MESSAGE'] = '您可以选择为 Calibre 库指定自定义�
 $L['FILEBOT_INSTALL_TITLE']         = 'Filebot 安装';
 $L['FILEBOT_REINSTALL_TITLE']       = 'Filebot 重新安装';
 $L['PROCESS_DELUGE']                = '处理 Deluge 的下载？';
-$L['PROCESS_DELUGE_TOOLTIP']        = '将此设置为“是”以处理 Deluge 的下载。<br>请参阅位于<br><code>/home/' . $username . '/.config/Filebot/deluge-postprocess.sh</code>';
-$L['CUSTOM_PATH_TOOLTIP_NO_RCLONE'] = '将此设置为“是”以输入媒体库的路径。<br>默认路径为：<br><code>/home/' . $username . '/Media</code>';
-$L['CUSTOM_PATH_TOOLTIP_RCLONE']    = '将此设置为“是”以输入媒体库的路径。<br>默认路径为：<br><code>/home/' . $username . '/rclone/cache</code>';
+$L['PROCESS_DELUGE_TOOLTIP']        = '将此设置为 \'是\' 以处理 Deluge 的下载。<br>请参阅位于<br><code>/home/' . $username . '/.config/Filebot/deluge-postprocess.sh</code>';
+$L['CUSTOM_PATH_TOOLTIP_NO_RCLONE'] = '将此设置为 \'是\' 以输入媒体库的路径。<br>默认路径为：<br><code>/home/' . $username . '/Media</code>';
+$L['CUSTOM_PATH_TOOLTIP_RCLONE']    = '将此设置为 \'是\' 以输入媒体库的路径。<br>默认路径为：<br><code>/home/' . $username . '/rclone/cache</code>';
 $L['PROCESS_NZBGET']                = '处理 NZBGet 的下载？';
-$L['PROCESS_NZBGET_TOOLTIP']        = '将此设置为“是”以处理 NZBGet 的下载。<br>请参阅位于<br><code>/home/' . $username . '/.config/NZBGet/scripts/nzbget-postprocess.sh</code>';
+$L['PROCESS_NZBGET_TOOLTIP']        = '将此设置为 \'是\' 以处理 NZBGet 的下载。<br>请参阅位于<br><code>/home/' . $username . '/.config/NZBGet/scripts/nzbget-postprocess.sh</code>';
 $L['PROCESS_RTORRENT']              = '处理 rTorrent 下载？';
 $L['PROCESS_SABNZBD']               = '处理 SABnzbd 的下载？';
 $L['CUSTOM_MEDIA_PATH']             = '使用自定义媒体库路径？';
@@ -613,16 +634,60 @@ $L['KAVITA_INSTALL_TITLE']   = 'Kavita 安装';
 $L['KAVITA_REINSTALL_TITLE'] = 'Kavita 重新安装';
 $L['KAVITA_INSTALL_MESSAGE'] = '您可以选择为 Kavita 库指定自定义目录路径。 如果所选路径当前不存在，它将自动为您生成。<br>或者，如果您更喜欢使用默认路径，只需将该字段留空，库将位于：<br><code>/home/' . $username . '/.config/Kavita/library</code>';
 
+/* ************************************
+ * mylar3 install/reinstall modal
+ ************************************/
+$L['MYLAR3_INSTALL_TITLE']   = 'Mylar3 安装';
+$L['MYLAR3_REINSTALL_TITLE'] = 'Mylar3 重新安装';
+$L['MYLAR3_INSTALL_MESSAGE'] = '您可以选择为 Mylar3 Comics 目录指定自定义路径。 如果所选路径当前不存在，系统将自动为您生成。<br>或者，如果您希望使用默认路径，只需将该字段留空，目录将位于：<br><code>/home/' . $username . '/Media/Comics</code>';
+
 /* **********************************
  * plex install/reinstall modal
  ************************************/
-$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">要声明您的 Plex 媒体服务器，您必须已有帐户并登录才能从以下位置获取声明代码：<a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--qb-color-37);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--qb-color-2)"><strong style="color:var(--qb-color-37)">注意：</strong>建议使用声明代码屏幕中的“复制到剪贴板”按钮以确保 正确插入，因为声明代码区分大小写。</div>';
+$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">要声明您的 Plex 媒体服务器，您必须已有帐户并登录才能从以下位置获取声明代码：<a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--qb-color-37);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--qb-color-2)"><strong style="color:var(--qb-color-37)">注意：</strong>建议使用声明代码屏幕中的 \'复制到剪贴板\' 按钮以确保 正确插入，因为声明代码区分大小写。</div>';
 $L['PLEX_CLAIM_TITLE']       = 'Plex 媒体服务器安装';
 $L['PLEX_CLAIM_TOKEN']       = 'Plex 声明代码';
 $L['PLEX_DATA_PATH']         = '使用数据目录的自定义路径？';
-$L['PLEX_DATA_PATH_TOOLTIP'] = '您可以选择为 Plex 安装指定自定义数据路径。 如果所选路径当前不存在，系统会自动为您生成该路径。<br>或者，如果您更喜欢使用默认路径，只需将选择保留为“否”，数据目录将会是 位于：<br><code>/home/' . $username . '/.config/\'Plex Media Server\'</code>';
+$L['PLEX_DATA_PATH_TOOLTIP'] = '您可以选择为 Plex 安装指定自定义数据路径。 如果所选路径当前不存在，系统会自动为您生成该路径。<br>或者，如果您更喜欢使用默认路径，只需将选择保留为 \'否\' ，数据目录将会是 位于：<br><code>/home/' . $username . '/.config/\'Plex Media Server\'</code>';
 $L['PLEX_DOMAIN']            = '为 Plex 媒体服务器设置域？';
-$L['PLEX_DOMAIN_TOOLTIP']    = '如果您已经拥有一个域并为 Plex 子域设置了 DNS 记录，请选择“是”输入您的 plex 子域。<br>此选项会将您的 Plex 媒体服务器配置为 与您的自定义 Plex 域无缝协作。 它包括设置必要的 Nginx 反向代理并为您的域安装 SSL 证书以确保安全访问。';
+$L['PLEX_DOMAIN_TOOLTIP']    = '如果您已经拥有一个域并为 Plex 子域设置了 DNS 记录，请选择 \'是\' 输入您的 plex 子域。<br>此选项会将您的 Plex 媒体服务器配置为 与您的自定义 Plex 域无缝协作。 它包括设置必要的 Nginx 反向代理并为您的域安装 SSL 证书以确保安全访问。';
+
+/* **********************************
+ * rutorrent plugin control modal
+ ************************************/
+$L['RUTORRENT_PLUGIN_CONTROL_TITLE'] = 'ruTorrent插件控制';
+$L['AUTHOR']                         = '作者';
+$L['HELP_URL']                       = '文档说明';
+
+/* **********************************
+ * wireguard install/reinstall modal
+ ************************************/
+$L['WIREGUARD_INSTALL_TITLE']                 = 'WireGuard 安装';
+$L['WIREGUARD_REINSTALL_TITLE']               = 'WireGuard 重新安装';
+$L['WIREGUARD_CLIENT_OR_SERVER']              = 'WireGuard 客户端还是服务器？';
+$L['WIREGUARD_CLIENT_OR_SERVER_TOOLTIP']      = '选择 \'服务器\' 将把 WireGuard 安装为服务器。选择 \'客户端\' 将把 WireGuard 安装为客户端。服务器用于托管 VPN 服务器，而客户端用于连接 VPN 服务器。选择 \'客户端\' 将需要 VPN 提供商提供的配置文件，并将通过 VPN 路由所有流量。';
+$L['CLIENT']                                  = '客户';
+$L['SERVER']                                  = '服务器';
+$L['WIREGUARD_CONFIG_TIPS']                   = '请以 <code>.conf</code> 格式上传您的 WireGuard 服务器或客户端配置文件。<br><ul><li>对于 WireGuard 服务器，该文件应包含服务器配置详细信息。</li><li>对于 WireGuard 客户端，该文件应包含客户端配置详细信息。</li></ul>这些文件将存储在 <code>/srv/quickbox/db/wireguard/</code> 中。<br><br>大多数 VPN 提供商都会为 WireGuard 提供配置文件。如果您使用的是 NordVPN（它不直接提供配置文件），则可以使用随附的 NordVPN 配置生成器生成一个配置文件。<br>有关生成 NordVPN 配置文件的更多信息，请在 CLI 中使用命令 <code>nvpn_conf_gen -h</code>。';
+$L['WIREGUARD_INSTALL_CONFIG']                = '上传 WireGuard 配置文件';
+$L['WIREGUARD_INSTALL_PORT_LABEL']            = '监听端口';
+$L['WIREGUARD_INSTALL_PORT_PH']               = '51820';
+$L['WIREGUARD_INSTALL_CLIENT_COUNT_LABEL']    = '客户数量';
+$L['WIREGUARD_INSTALL_CLIENT_COUNT_PH']       = '1';
+$L['WIREGUARD_INSTALL_CIDR_LABEL']            = 'CIDR';
+$L['WIREGUARD_INSTALL_CIDR_PH']               = '10.8.0.1/24';
+$L['WIREGUARD_INSTALL_ALLOWED_ADDRESS_LABEL'] = '客户端允许的 IP';
+$L['WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH']    = '0.0.0.0/0,::/0';
+$L['WIREGUARD_INSTALL_ENDPOINT_LABEL']        = '端点（可选）';
+$L['WIREGUARD_INSTALL_ENDPOINT_PH']           = 'myserver.dyndns.org:51820';
+$L['WIREGUARD_INSTALL_DNS_LABEL']             = 'DNS （可选）';
+$L['WIREGUARD_INSTALL_DNS_PH']                = '1.1.1.1';
+$L['WIREGUARD_INSTALL_POSTUP_RULE_LABEL']     = 'Post-Up 规则';
+$L['WIREGUARD_INSTALL_POSTUP_RULE_PH']        = 'iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ' . $network_interface . ' -j MASQUERADE';
+$L['WIREGUARD_INSTALL_POSTDOWN_RULE_LABEL']   = 'Post-Down 规则';
+$L['WIREGUARD_INSTALL_POSTDOWN_RULE_PH']      = 'iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ' . $network_interface . ' -j MASQUERADE';
+$L['PROCESSING_COMPLETE_INSTALLER']           = '处理完成';
+$L['TAP_TO_UNDO_INSTALLER']                   = '单击可撤消';
 
 /* **********************************
  * #3.2.5 - service control
@@ -955,26 +1020,28 @@ $L['USER_TIMEOUT']            = '用户会话超时';
 /* **********************************
  * #4.2.4 - USER SETTINGS
  ************************************/
-$L['ALLOW_MULTI_LOGINS']        = '多次登录';
-$L['ALLOW_MULTI_LOGINS_DESC']   = '此选项允许从多个设备同时登录。如果禁用，用户从新设备登录时将从所有其他设备注销。';
-$L['ALLOW_CONFIG_EDITING']      = '在仪表板上配置编辑器';
-$L['ALLOW_CONFIG_EDITING_DESC'] = '此选项允许从仪表板编辑配置文件。如果禁用，查看/编辑配置的选项将被隐藏。';
-$L['ALLOW_MOUNT_INFO']          = '安装信息查看和添加面板';
-$L['ALLOW_MOUNT_INFO_DESC']     = '此选项允许从仪表板查看和添加挂载信息。如果禁用，查看/添加安装信息的选项将被隐藏。';
-$L['BY_ADMIN']                  = '管理员设定 (见下方..)';
-$L['BY_USER']                   = '用户设定 (查看用户管理页面)';
-$L['CHANGE_USER_SETTINGS']      = '更改用户帐户的全局设置。';
-$L['EXCLUDE_ADMINS']            = '排除管理员';
-$L['EXCLUDE_REDIRECTED_ADMINS'] = '对管理员禁用重定向。';
-$L['GEN_USER_SETTINGSTINGS']    = '一般用户设置';
-$L['HOW_SET']                   = '它们将被如何设定?';
-$L['INDIV_USER_HOME']           = '个人用户主页';
-$L['INDIVIDUAL_USER_FOLDERS']   = '个人用户文件夹';
-$L['PATH_ADMIN']                = '路径 (由管理员设置)';
-$L['SITE_ROOT_RELATIVE']        = '相对于站点根目录';
-$L['SETTING']                   = '设置';
-$L['DESCRIPTION']               = '描述';
-$L['VALUE']                     = '价值';
+$L['ALLOW_MULTI_LOGINS']                   = '多次登录';
+$L['ALLOW_MULTI_LOGINS_DESC']              = '此选项允许从多个设备同时登录。如果禁用，用户从新设备登录时将从所有其他设备注销。';
+$L['ALLOW_CONFIG_EDITING']                 = '在仪表板上配置编辑器';
+$L['ALLOW_CONFIG_EDITING_DESC']            = '此选项允许从仪表板编辑配置文件。如果禁用，查看/编辑配置的选项将被隐藏。';
+$L['ALLOW_MOUNT_INFO']                     = '安装监控和添加面板';
+$L['ALLOW_MOUNT_INFO_DESC']                = '此选项允许用户从仪表板查看和添加用于监控的目录。 如果禁用，查看和添加目录的功能将被隐藏。';
+$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL']      = '安装时自动备份应用程序';
+$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL_DESC'] = '此选项允许在安装应用程序时自动完整备份应用程序。 如果禁用，应用程序在安装时将不会进行备份。 <span style="color:var(--qb-color-41);">无论此设置如何，都将备份应用程序配置文件。</span><br>备份存储在：<br><code>/home/[用户名]/.QuickBox/software/</code>';
+$L['BY_ADMIN']                             = '管理员设定 (见下方..)';
+$L['BY_USER']                              = '用户设定 (查看用户管理页面)';
+$L['CHANGE_USER_SETTINGS']                 = '更改用户帐户的全局设置。';
+$L['EXCLUDE_ADMINS']                       = '排除管理员';
+$L['EXCLUDE_REDIRECTED_ADMINS']            = '对管理员禁用重定向。';
+$L['GEN_USER_SETTINGSTINGS']               = '一般用户设置';
+$L['HOW_SET']                              = '它们将被如何设定?';
+$L['INDIV_USER_HOME']                      = '个人用户主页';
+$L['INDIVIDUAL_USER_FOLDERS']              = '个人用户文件夹';
+$L['PATH_ADMIN']                           = '路径 (由管理员设置)';
+$L['SITE_ROOT_RELATIVE']                   = '相对于站点根目录';
+$L['SETTING']                              = '设置';
+$L['DESCRIPTION']                          = '描述';
+$L['VALUE']                                = '价值';
 
 /* **********************************
  * #4.2.5 - SECURITY SETTINGS
@@ -1050,9 +1117,9 @@ $L['EDIT_USER_SHELL']       = '编辑用户的外壳环境';
 $L['EXPIRY']                = '登录有效期至';
 $L['HAS_USED']              = '已使用';
 $L['IP_ADDRESS']            = 'IP 地址';
-$L['LAST_IP_ADDRESS']       = '最后一次登录的IP地址';
-$L['LAST_LOGIN']            = '最后登录:';
-$L['LAST']                  = '最后一次登录的时间';
+$L['LAST_IP_ADDRESS']       = '最后一个 IP 地址';
+$L['LAST_LOGIN']            = '上次登录';
+$L['LAST']                  = '最后的';
 $L['OF_QUOTA']              = '的总配额';
 $L['MEMBER_STATUS']         = '会员身份';
 $L['MEMBER_GROUP']          = '会员组';
@@ -1195,27 +1262,27 @@ $L['UNBAN_SPECIFIED_USER']              = '取消禁止指定用户';
 $L['SOFTWARE_SPEC_USAGE']               = '软件特定用法';
 $L['DISPLAY_ALL_SOFTWARE']              = '显示所有可供安装的软件应用程序';
 $L['DISPLAY_SINGLE_SOFTWARE']           = '显示指定软件的信息';
-$L['API_SOFTWARE_NOTICE']               = '要查找有关软件名称（应用程序名称）结构的指南，请参阅用户手册中的“软件”部分。 您可以通过点击<a href="/help.php#software">此处</a>来访问它。';
+$L['API_SOFTWARE_NOTICE']               = '要查找有关软件名称（应用程序名称）结构的指南，请参阅用户手册中的 \'软件\' 部分。 您可以通过点击<a href="/help.php#software">此处</a>来访问它。';
 $L['API_SOFTWARE_WARNING']              = '请注意，对于某些应用程序，命名约定可能不是正式指定的，而是可能是扩展选项集的一部分。<br><br/>
 这是使用 Bazarr4K 的示例：<br>
 <pre class="mb-2"><code class="language-json">"bazarr4k": {
     "software_title": "Bazarr4K"，
     "qb_package_name": "bazarr"，
-    "qb_options": "-o 4k"，
+    "qb_options": "--4k"，
     ...</code></pre>
 <br/>
 请注意以下有关 QuickBox 软件 API 输出的重要信息：
 <ul>
-<li>通过 QuickBox 访问软件包时，您将始终找到“qb_package_name”属性。 此属性由 <code>qb</code> 命名约定标记和使用。</li>
-<li>此外，每个 API 输出都包含“qb_options”条目，它提供了有价值的自定义选项。 这些选项之一是“4K”安装标志，表示为 <code>-o 4k</code>。</li>
+<li>通过 QuickBox 访问软件包时，您将始终找到 \'qb_package_name\' 属性。 此属性由 <code>qb</code> 命名约定标记和使用。</li>
+<li>此外，每个 API 输出都包含 \'qb_options\' 条目，它提供了有价值的自定义选项。 这些选项之一是 \'4K\' 安装标志，表示为 <code>--4k</code>。</li>
 </ul><br/>
-例如，如果您打算安装支持 4K 的“Bazarr”，则应使用以下命令：<br/>
-<pre class="mb-0"><code class="language-bash">qb install bazarr -o 4k -u [USERNAME]</code></pre><br/>
-需要注意的是，您不应使用“bazarr4k”作为包名称，因为“qb_options”条目旨在有效地处理此类自定义。';
+例如，如果您打算安装支持 4K 的 \'Bazarr\' ，则应使用以下命令：<br/>
+<pre class="mb-0"><code class="language-bash">qb install bazarr --4k -u [USERNAME]</code></pre><br/>
+需要注意的是，您不应使用 \'bazarr4k\' 作为包名称，因为 \'qb_options\' 条目旨在有效地处理此类自定义。';
 $L['SOFTWARE_SERVICE_STATUS']            = '显示指定软件和用户的状态';
 $L['SOFT_STATUS_ACTIVE_NOTICE']          = '如果服务处于活动状态。';
 $L['SOFT_STATUS_INACTIVE_NOTICE']        = '如果服务处于非活动状态。';
-$L['SOFT_STATUS_NOT_ISNTALLED_NOTICE']   = '如果没有为指定用户安装应用程序。';
+$L['SOFT_STATUS_NOT_INSTALLED_NOTICE']   = '如果没有为指定用户安装应用程序。';
 $L['SOFTWARE_SERVICE_CONTROL']           = '向指定软件和用户发出指定操作信号';
 $L['SOFT_CONTROL_ACTION_RESTART_NOTICE'] = '其中 action=restart...';
 $L['SOFT_CONTROL_ACTION_START_NOTICE']   = '其中 action=start...';
@@ -1226,36 +1293,81 @@ $L['SOFT_CONTROL_ACTION_STOP_NOTICE']    = '其中 action=stop...';
  ************************************/
 $L['LETSENCRYPT_DOMAIN']         = '让我们加密域名';
 $L['SSL_CONTROL']                = 'SSL控制';
-$L['ABOUT_SSL_CONTROL']          = '此功能使您能够轻松为已安装的受支持应用程序生成 SSL 证书。 通过选择“是”并输入您的域名，您将无缝设置 Nginx 反向代理以及 SSL 证书。';
+$L['ABOUT_SSL_CONTROL']          = '此功能使您能够轻松为已安装的受支持应用程序生成 SSL 证书。 通过选择 \'是\' 并输入您的域名，您将无缝设置 Nginx 反向代理以及 SSL 证书。';
 $L['STAGE_DASHBOARD_SSL']        = '仪表板的阶段 SSL？';
-$L['DASHBOARD_SSL_TOOLTIP']      = '要使用 SSL 证书保护您的 QuickBox Dashboard，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，从而促进通过您的域安全访问您的仪表板。';
+$L['DASHBOARD_SSL_TOOLTIP']      = '要使用 SSL 证书保护您的 QuickBox Dashboard，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，从而促进通过您的域安全访问您的仪表板。';
 $L['STAGE_OWNED_DOMAIN_SSL']     = '为自有域设置 SSL？';
-$L['NON_DASHBOARD_SSL_TOOLTIP']  = '要为您首选的域建立 SSL 证书，请选择“是”。 此选项设计用于创建附加 SSL 证书。 请确保正确配置该域的相应 DNS 记录，因为此过程专门生成所请求的 SSL 证书。';
+$L['NON_DASHBOARD_SSL_TOOLTIP']  = '要为您首选的域建立 SSL 证书，请选择 \'是\' 。 此选项设计用于创建附加 SSL 证书。 请确保正确配置该域的相应 DNS 记录，因为此过程专门生成所请求的 SSL 证书。';
 $L['STAGE_EMBY_SSL']             = 'Emby 的舞台 SSL？';
-$L['EMBY_SSL_TOOLTIP']           = '要使用 SSL 证书保护您的 Emby 安装，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，从而促进通过您的域安全访问您的 Emby 安装。';
+$L['EMBY_SSL_TOOLTIP']           = '要使用 SSL 证书保护您的 Emby 安装，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，从而促进通过您的域安全访问您的 Emby 安装。';
 $L['STAGE_JELLYFIN_SSL']         = 'Jellyfin 的阶段 SSL？';
-$L['JELLYFIN_SSL_TOOLTIP']       = '要使用 SSL 证书保护您的 Jellyfin 安装，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问 Jellyfin 安装。';
+$L['JELLYFIN_SSL_TOOLTIP']       = '要使用 SSL 证书保护您的 Jellyfin 安装，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问 Jellyfin 安装。';
 $L['STAGE_JELLYSEERR_SSL']       = 'Jellyseerr 的阶段 SSL？';
-$L['JELLYSEERR_SSL_TOOLTIP']     = '要使用 SSL 证书保护您的 Jellyseerr 安装，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问您的 Jellyseerr 安装。';
+$L['JELLYSEERR_SSL_TOOLTIP']     = '要使用 SSL 证书保护您的 Jellyseerr 安装，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问您的 Jellyseerr 安装。';
 $L['STAGE_KOMGA_SSL']            = 'Komga 的阶段 SSL？';
-$L['KOMGA_SSL_TOOLTIP']          = '要使用 SSL 证书保护您的 Komga 安装，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问您的 Komga 安装。';
+$L['KOMGA_SSL_TOOLTIP']          = '要使用 SSL 证书保护您的 Komga 安装，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问您的 Komga 安装。';
 $L['STAGE_OVERSEERR_SSL']        = 'Overseerr 的阶段 SSL？';
-$L['OVERSEERR_SSL_TOOLTIP']      = '要使用 SSL 证书保护您的 Overseerr 安装，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，从而促进通过您的域安全访问您的 Overseerr 安装。';
+$L['OVERSEERR_SSL_TOOLTIP']      = '要使用 SSL 证书保护您的 Overseerr 安装，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，从而促进通过您的域安全访问您的 Overseerr 安装。';
 $L['STAGE_PLEX_SSL']             = 'Plex 的阶段 SSL？';
-$L['PLEX_SSL_TOOLTIP']           = '要使用 SSL 证书保护您的 Plex 安装，只需选择“是”。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问您的 Plex 安装。';
+$L['PLEX_SSL_TOOLTIP']           = '要使用 SSL 证书保护您的 Plex 安装，只需选择 \'是\' 。 此操作不仅会配置 SSL 证书，还会建立必要的 NGinx 设置和链接，以便通过您的域安全访问您的 Plex 安装。';
 $L['DOMAIN']                     = '领域';
 $L['SSL_ALREADY_INSTALLED']      = '请注意，已经为此选项安装了 SSL 证书。 通过输入下面的新域来重新安装证书将重置当前的 NGinx 反向配置，删除之前的证书，并重置当前设置的链接访问权限。';
 $L['SSL_SUBMIT']                 = '安装 SSL 证书';
+$L['SSL_CERTIFICATE_STATUS']     = 'SSL 证书状态';
 $L['SSL_STATUS_MONITOR_TOOLTIP'] = '监控现有 SSL 证书的状态，并能够执行两个关键操作：删除或强制续订。 对于与 Emby、Jellyfin、Jellyseerr、Komga、Overseerr 和 Plex 等受支持应用程序关联的证书，删除证书还将触发相应域的 Nginx 反向代理的删除和重新配置。<br><br>您可以无缝地 使用以下选项删除证书，然后在上面选择所需的应用程序以启动新子域和证书的安装。 这种简化的流程可确保您的 SSL 证书管理具有最大的灵活性和控制力。';
 $L['CERTS_STORED_AT']            = '受监控的证书存储在';
+$L['CERT_ACTIVE']                = '到期：';
 $L['CERT_EXPIRES']               = '到期：';
+$L['CERT_EXPIRED']               = '已到期';
 $L['CERT_RENEW']                 = '更新证书';
 $L['CERT_DELETE']                = '删除 SSL 证书和任何其他配置。 此操作不可逆转。';
 $L['CERT_DELETE_CONFIRM']        = '您确定要删除此证书吗？';
 $L['NO_CERTS_INSTALLED']         = '目前没有安装和/或监控 SSL 证书。';
 
 /* **********************************
- * #4.4.4 - TROUBLESHOOTING
+ * #4.4.4 - VPN CONTROL
+ ************************************/
+$L['ABORT']                            = '中止';
+$L['ACTIVE']                           = '活动';
+$L['ADD_PEER']                         = '添加对等配置';
+$L['CANCEL']                           = '取消';
+$L['CITY']                             = '城市';
+$L['COUNTRY']                          = '国';
+$L['CURRENT_IP']                       = '服务器 IP';
+$L['CURRENT_PEER_LIST']                = '当前同行名单';
+$L['DATE_ADDED']                       = '添加时间';
+$L['DELETE_PEER']                      = '删除同行配置文件？';
+$L['DRAG_DROP_FILES']                  = '拖放对等配置文件或<span class="filepond--label-action">点击浏览</span>';
+$L['HOST']                             = '主机名称';
+$L['LOCAL_HOSTED']                     = '私有 IP';
+$L['ORGANIZATION']                     = '组织机构';
+$L['PEER_CONFIG_NAME']                 = '姓名';
+$L['PEER_INFO']                        = '同行信息';
+$L['PEER_PING']                        = '萍';
+$L['PROCESSING']                       = '加工...';
+$L['PROCESSING_ABORTED']               = '处理已取消。请重试。';
+$L['PROCESSING_COMPLETE']              = '處理完成。';
+$L['PROCESSING_ERROR']                 = '处理出错。请重试。';
+$L['PROCESSING_ERROR_EXTENSION']       = '<span style="font-weight:400">仅允许使用带有 <span style="font-weight:900" class="text-warning">.conf</span> 扩展名的对等配置文件。</span>';
+$L['PROCESSING_REVERT_ERROR']          = '恢复时出错。请重试。';
+$L['REMOVE']                           = '去掉';
+$L['RETRY']                            = '重试';
+$L['REVERT']                           = '回复';
+$L['REGION']                           = '地区';
+$L['SERVER_CONFIG']                    = '服务器配置';
+$L['TAP_TO_CANCEL']                    = '点击取消';
+$L['TAP_TO_RETRY']                     = '点击以重试';
+$L['TAP_TO_UNDO']                      = '正在刷新页面...';
+$L['UNDO']                             = '撤消';
+$L['VPN_CONTROL']                      = 'VPN 控制';
+$L['WAITING_FOR_SIZE']                 = '正在等待文件大小...';
+$L['WG_PRIVATE_KEY']                   = '私钥';
+$L['WG_PUBLIC_KEY']                    = '公钥';
+$L['WG_SERVER_INFO']                   = '当前连接信息';
+$L['WIREGUARD_CONFIG_ACTIVATION_TIPS'] = '要激活 WireGuard 配置，请从下表中选择所需的 VPN 配置。要停用当前活动的配置，只需取消选中活动复选框或选择其他配置。这将自动重新启动 WireGuard 服务，并且 \'当前连接信息\' 表将更新相关详细信息。';
+
+/* **********************************
+ * #4.4.5 - TROUBLESHOOTING
  ************************************/
 $L['SERVICE']                = '服务';
 $L['APP_SELECT']             = '选择应用';
@@ -1276,59 +1388,67 @@ $L['TROUBLESHOOTING']        = '疑难解答';
 $L['WEB_SERVER']             = 'Web 服务器';
 
 /* **********************************
- * #4.4.5 - SYSTEM LOGS
+ * #4.4.6 - SYSTEM LOGS
  ************************************/
-$L['LOGS']                         = '日志';
-$L['NO_LOGS']                      = '未找到日志';
-$L['NO_LOGS_MESSAGE']              = '目前没有可供查看的日志记录。 当应用程序将其日志记录信息发送到系统的 syslog 时，会生成日志条目。 如果您正在搜索特定日志，我们建议您查阅相应应用程序提供的文档以获取进一步指导。 QuickBox 努力集中各种应用程序及其记录的数据； 然而，这取决于各个应用程序将其日志记录信息传输到系统日志。';
-$L['ACCESS_LOGS']                  = '访问日志';
-$L['APP_LOGS']                     = '软件日志';
-$L['USER_LOGS']                    = '用户日志';
-$L['DATE_TIME']                    = '日期/时间';
-$L['EVENT']                        = '事件';
-$L['LOG_MESSAGE']                  = '日志消息';
-$L['LOGS_SUMMARY']                 = '日志摘要';
-$L['COMMAND']                      = '命令';
-$L['SOFTWARE']                     = '软件';
-$L['USER_ACTION_LOGS']             = '用户操作日志';
-$L['VIEW_USER_ACTION_LOGS']        = '查看用户操作日志';
-$L['ABOUT_USER_ACTION_LOGS']       = '此上下文中的日志与通过 QuickBox 界面启动的用户相关任务和事件有关。';
-$L['SOFTWARE_ACTION_LOGS']         = '软件操作日志';
-$L['VIEW_SOFTWARE_ACTION_LOGS']    = '查看软件操作日志';
-$L['ABOUT_SOFTWARE_ACTION_LOGS']   = '这些日志旨在提供与软件相关的操作记录，包括安装、删除、更新和其他重要事件。';
-$L['SYSTEM_ACTION_LOGS']           = '系统操作日志';
-$L['VIEW_SYSTEM_ACTION_LOGS']      = '查看系统操作日志';
-$L['ABOUT_SYSTEM_ACTION_LOGS']     = '这些日志专门用于捕获通过 <code>qb</code> 命令行工具启动的系统级活动和操作。';
-$L['UI_ACTION_LOGS']               = 'UI 操作日志';
-$L['VIEW_UI_ACTION_LOGS']          = '查看 UI 操作日志';
-$L['ABOUT_UI_ACTION_LOGS']         = '这些日志源自系统的 syslog，并作为通过 QuickBox Dashboard 用户界面启动的所有命令和操作的综合记录。';
-$L['USER_APPLICATION_LOGS']        = '用户应用程序日志';
-$L['CLEAR_LOG']                    = '清除日志';
-$L['CLEAR_LOG_CONFIRM']            = '您确定要删除这些日志吗？此操作无法撤消？';
-$L['DELETED_ALL_APP_LOGS']         = '删除所有软件日志';
-$L['DELETED_ALL_APPLICATION_LOGS'] = '删除所有应用程序日志';
-$L['DELETED_ALL_SUMMARY_LOGS']     = '删除所有摘要日志';
-$L['DELETED_ALL_SYSTEM_LOGS']      = '删除所有系统日志';
-$L['DELETED_ALL_UI_LOGS']          = '删除所有 UI 日志';
-$L['DELETED_ALL_USER_LOGS']        = '删除所有用户日志';
-$L['DELETED_APPLICATION_LOGS']     = '已删除的应用程序日志';
-$L['DELETED_SUMMARY_LOGS']         = '已删除的摘要日志';
-$L['DELETED_USER']                 = '已删除的用户';
-$L['DELETE_USER_LOGS']             = '删除用户日志';
-$L['QUICKBOX_VERSION_CHECK']       = '检查 QuickBox 更新';
-$L['QUOTA_CHECK']                  = '配额设置检查';
-$L['SOFTWARE_VERSION_CHECK']       = '检查已安装的软件更新';
-$L['SCHEDULED_TASK']               = '计划任务';
-$L['SYSTEM_LOG_SUMMARY']           = '系统日志摘要';
-$L['SYSTEM_LOG_SUMMARY_TOOLTIP']   = '此摘要和所有附加日志是在三种情况下生成的：<br><ol><li><strong>Cron：</strong>每 15 分钟执行一次 cron 任务，日志就会自动更新。 这将启动 <code>qb_log_miner</code> 二进制文件，该二进制文件聚合系统日志中的日志条目。</li><li><strong>手动生成：</strong>您可以通过单击“（生成）”按钮从“系统 > 故障排除 > 系统日志”部分生成它。</li><li><strong>命令行：</strong>也可以通过运行命令<code>qb generate log</code>来生成。</li></ol>您可以通过两种方式访问和下载此摘要日志文件：<br><ol><li><strong>网络界面</strong>：转至用户界面中的“系统 > 故障排除 > 系统日志（下载）”。</li><li><strong>服务器目录：</strong>在服务器上找到它：\'/srv/quickbox/logs/system_log\'。</li></ol>';
+$L['ABOUT_SOFTWARE_ACTION_LOGS']       = '这些日志旨在提供与软件相关的操作记录，包括安装、删除、更新和其他重要事件。';
+$L['ABOUT_SYSTEM_ACTION_LOGS']         = '这些日志专门用于捕获通过 <code>qb</code> 命令行工具启动的系统级活动和操作。';
+$L['ABOUT_UI_ACTION_LOGS']             = '这些日志源自系统的 syslog，并作为通过 QuickBox Dashboard 用户界面启动的所有命令和操作的综合记录。';
+$L['ABOUT_USER_ACTION_LOGS']           = '此上下文中的日志与通过 QuickBox 界面启动的用户相关任务和事件有关。';
+$L['ACCESS_LOGS']                      = '访问日志';
+$L['APP_LOGS']                         = '软件日志';
+$L['AUTO_PROCESS']                     = '自动流程';
+$L['CLEAN_DASHBOARD_USER_ACTION_LOGS'] = '清理用户操作日志';
+$L['CLEAN_SYSTEM_ACTION_LOGS']         = '清理系统操作日志';
+$L['CLEAR_LOG']                        = '清除日志';
+$L['CLEAR_LOG_CONFIRM']                = '您确定要删除这些日志吗？此操作无法撤消？';
+$L['COMMAND']                          = '命令';
+$L['COMMAND_SOFTWARE']                 = '命令/软件';
+$L['DATABASE_BACKUP']                  = '数据库备份';
+$L['DATABASE_MAINTENANCE']             = '数据库维护';
+$L['DATABASE_REPAIR']                  = '数据库修复';
+$L['DATABASE_RESTORE']                 = '数据库恢复';
+$L['DATE_TIME']                        = '日期/时间';
+$L['DELETED_ALL_APP_LOGS']             = '删除所有软件日志';
+$L['DELETED_ALL_APPLICATION_LOGS']     = '删除所有应用程序日志';
+$L['DELETED_ALL_SUMMARY_LOGS']         = '删除所有摘要日志';
+$L['DELETED_ALL_SYSTEM_LOGS']          = '删除所有系统日志';
+$L['DELETED_ALL_UI_LOGS']              = '删除所有 UI 日志';
+$L['DELETED_ALL_USER_LOGS']            = '删除所有用户日志';
+$L['DELETED_APPLICATION_LOGS']         = '已删除的应用程序日志';
+$L['DELETED_SUMMARY_LOGS']             = '已删除的摘要日志';
+$L['DELETED_USER']                     = '已删除的用户';
+$L['DELETE_USER_LOGS']                 = '删除用户日志';
+$L['EVENT']                            = '事件';
+$L['LOG_MESSAGE']                      = '日志消息';
+$L['LOGS']                             = '日志';
+$L['LOGS_SUMMARY']                     = '日志摘要';
+$L['NO_LOGS']                          = '未找到日志';
+$L['NO_LOGS_MESSAGE']                  = '目前没有可供查看的日志记录。 当应用程序将其日志记录信息发送到系统的 syslog 时，会生成日志条目。 如果您正在搜索特定日志，我们建议您查阅相应应用程序提供的文档以获取进一步指导。 QuickBox 努力集中各种应用程序及其记录的数据； 然而，这取决于各个应用程序将其日志记录信息传输到系统日志。';
+$L['QUICKBOX_VERSION_CHECK']           = '检查 QuickBox 更新';
+$L['QUOTA_CHECK']                      = '配额设置检查';
+$L['SCHEDULED_TASK']                   = '计划任务';
+$L['SOFTWARE']                         = '软件';
+$L['SOFTWARE_ACTION_LOGS']             = '软件操作日志';
+$L['SOFTWARE_VERSION_CHECK']           = '检查已安装的软件更新';
+$L['SYSTEM_ACTION_LOGS']               = '系统操作日志';
+$L['SYSTEM_LOG_SUMMARY']               = '系统日志摘要';
+$L['SYSTEM_LOG_SUMMARY_TOOLTIP']       = '此摘要和所有附加日志是在三种情况下生成的：<br><ol><li><strong>Cron：</strong>每 15 分钟执行一次 cron 任务，日志就会自动更新。 这将启动 <code>qb_log_miner</code> 二进制文件，该二进制文件聚合系统日志中的日志条目。</li><li><strong>手动生成：</strong>您可以通过单击 \'（生成）\' 按钮从 \'系统 > 故障排除 > 系统日志\' 部分生成它。</li><li><strong>命令行：</strong>也可以通过运行命令<code>qb generate log</code>来生成。</li></ol>您可以通过两种方式访问和下载此摘要日志文件：<br><ol><li><strong>网络界面</strong>：转至用户界面中的 \'系统 > 故障排除 > 系统日志（下载）\' 。</li><li><strong>服务器目录：</strong>在服务器上找到它：\'/srv/quickbox/logs/system_log\'。</li></ol>';
+$L['UI_ACTION_LOGS']                   = 'UI 操作日志';
+$L['USER_ACTION_LOGS']                 = '用户操作日志';
+$L['USER_APPLICATION_LOGS']            = '用户应用程序日志';
+$L['USER_LOGS']                        = '用户日志';
+$L['VIEW_SOFTWARE_ACTION_LOGS']        = '查看软件操作日志';
+$L['VIEW_SYSTEM_ACTION_LOGS']          = '查看系统操作日志';
+$L['VIEW_UI_ACTION_LOGS']              = '查看 UI 操作日志';
+$L['VIEW_USER_ACTION_LOGS']            = '查看用户操作日志';
 
 /* **********************************
- * #4.4.6 - HELP MANUAL
+ * #4.4.7 - HELP MANUAL
  ************************************/
 $L['QB_HELP'] = '帮助手册';
 
 /* **********************************
- * #4.4.6.1 - description
+ * #4.4.7.1 - description
  ************************************/
 $L['DESCRIPTION_CONTENT'] = '<p>欢迎使用 <code>qb</code> 联机帮助页的全面图形显示，该联机帮助页旨在为您提供一种经过翻译、简化且高效的方法来访问有关 QuickBox 的各种信息。这个用户友好的界面旨在提供对 QuickBox 工作原理的深入了解，QuickBox 是一个强大且多功能的工具，可轻松管理您的服务器。</p>
 <p>在此图形显示中，您将找到可供无缝安装的可用应用程序的详细列表，使您能够根据您的特定需求自定义服务器设置。此外，该资源还提供了大量其他基本命令，可在 <code>qb</code> CLI 环境中实现最佳利用，使您能够高效、轻松地浏览服务器任务。</p>
@@ -1336,14 +1456,14 @@ $L['DESCRIPTION_CONTENT'] = '<p>欢迎使用 <code>qb</code> 联机帮助页的�
 $L['API_INFO_DIRECT'] = '<p style="font-weight:600;">有关嵌入式 QuickBox API 的更多信息和参考，<a href="/api-control.php" rel="noopenner nofollow " class="link" style="color:var(--qb-color-37);">查看此页面</a>。</p>';
 
 /* **********************************
- * #4.4.6.2 - options
+ * #4.4.7.2 - options
  ************************************/
 $L['OPTIONS_HEADER']          = '选项';
 $L['OPTIONS_CONTENT_HELP']    = '以 CLI 联机帮助页格式显示此帮助手册';
 $L['OPTIONS_CONTENT_VERBOSE'] = '启用详细模式进行调试';
 
 /* **********************************
- * #4.4.6.3 - software
+ * #4.4.7.3 - software
  ************************************/
 $L['SOFTWARE_HEADER']                       = '软件';
 $L['SOFTWARE_INFO_CONTENT']                 = '<p>以下是通过 QuickBox 构建提供的所有可用安装应用程序的列表。<br>软件名称显示为 <code>qb [install|reinstall|update|remove|help] [软件名称]</code></p>';
@@ -1360,7 +1480,7 @@ $L['SEE_ALSO_HEADER']                       = '另请参阅';
 $L['SEE_ALSO_CONTENT']                      = '显示指定软件的有用命令用法';
 
 /* **********************************
- * #4.4.6.4 - software options table
+ * #4.4.7.4 - software options table
  ************************************/
 $L['SOFTWARE_NAME']     = '软件名称';
 $L['SOFTWARE_TITLE']    = '软件标题';
@@ -1376,12 +1496,12 @@ $L['MULTI_USER_INFO']   = '需要管理员安装并且可以为任何分配的�
 $L['SINGLE_USER_INFO']  = '单用户，仅限管理员。需要管理员安装并由管理员用户安装和操作。';
 
 /* **********************************
- * #4.4.6.5 - examples header
+ * #4.4.7.5 - examples header
  ************************************/
 $L['EXAMPLES_HEADER'] = '示例';
 
 /* **********************************
- * #4.4.6.6 - user management
+ * #4.4.7.6 - user management
  ************************************/
 $L['USER_MANAGEMENT_INFO_CONTENT']   = '<p>QuickBox 中的 <code>qb user</code> 管理功能提供了一套多功能且强大的工具来有效管理服务器上的用户。这些功能注重易用性和强大的功能，使您能够简化用户管理、增强安全性并确保服务器平稳运行。</p>';
 $L['CREATE_USER_CONTENT']            = '创建一个新的 QuickBox 用户帐户';
@@ -1404,7 +1524,7 @@ $L['SET_USER_SHELL_DANGER_CONTENT']  = '<p><strong>警告：</strong>请注意�
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone 配套命令';
 
 /* **********************************
- * #4.4.6.7 - clean functions
+ * #4.4.7.7 - clean functions
  ************************************/
 $L['CLEAN_FUNCTIONS']                  = '清理函数';
 $L['CLEAN_FUNCTIONS_INFO_CONTENT']     = '<p>QuickBox 中的 <code>qb clean</code> 功能提供了一种方便有效的方法来维护服务器的清洁度并优化其性能。这些功能在设计时考虑到了简单性和有效性，使您能够释放宝贵的内存，消除不必要的混乱，并确保平稳和简化的服务器操作。</p>';
@@ -1422,7 +1542,7 @@ $L['CLEAN_LOCKS']                      = '清洁锁';
 $L['CLEAN_LOCKS_CONTENT']              = '清除可能阻止 QuickBox 安装新软件的 QuickBox 软件和 apt-dpkg 锁';
 
 /* **********************************
- * #4.4.6.8 - fix functions
+ * #4.4.7.8 - fix functions
  ************************************/
 $L['FIX_FUNCTIONS']              = '修复函数';
 $L['FIX_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb fix</code> 功能提供了一个强大且用户友好的工具包，可以解决常见问题并轻松执行系统修复。这些功能注重简单性和有效性，使您能够排查并解决服务器上可能出现的各种问题，确保运行顺利、不间断。</p>';
@@ -1436,17 +1556,17 @@ $L['FIX_VERSION']                = '修复版本';
 $L['FIX_VERSION_CONTENT']        = '通过重新安装可用的最新版本来修复 QuickBox 安装';
 
 /* **********************************
- * #4.4.6.9 - generate functions
+ * #4.4.7.9 - generate functions
  ************************************/
 $L['GENERATE_FUNCTIONS']                   = '生成函数';
 $L['GENERATE_FUNCTIONS_INFO_CONTENT']      = '<p>QuickBox 中的 <code>qb generate</code> 函数提供了一种方便高效的方法来创建增强服务器管理和监控的基本元素。目前，qb generate 命令支持 qb generate log 功能，允许用户轻松生成服务器统计信息、API激活和挂载信息的预览。<br>随着 qb generate 函数的发展，它们可能会提供扩展的数组 进一步增强服务器管理的功能。</p>';
 $L['GENERATE_SYSTEM_LOGS']                 = '生成系统日志';
 $L['GENERATE_SYSTEM_LOGS_CONTENT']         = '为当前 QuickBox 安装生成系统日志';
 $L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>从版本<em>3.0.0.<strong>36+</strong></em>开始，<code>qb generate log</code>已经发展成为一个更深入的日志聚合和组织实用程序 。 它旨在通过汇总和集中关键日志数据来补充应用程序的本机日志，从而简化日志检索，从而使故障排除更加高效。</p><p>此命令及其功能是一项持续进行中的工作 。</p>';
-$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>您可以通过三种方式访问和下载此摘要日志文件：<br><ol><li><strong>生成/下载：</strong>转至用户界面中的“系统 > <a href="/troubleshooting.php" class="link">故障排除</a> > 系统日志” 。 您可以在此处生成和/或下载由生成日志命令生成的系统日志摘要。</li><li><strong>查看日志：</strong>转至“系统 > <a href="/logs.php" class="link">系统日志</a>”。 您可以在此处找到由生成日志命令收集的其他日志和信息。</li><li><strong>服务器目录：</strong>在服务器上找到它：\'/srv/quickbox/logs/system_log\'。</li></ol></p>';
+$L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>您可以通过三种方式访问和下载此摘要日志文件：<br><ol><li><strong>生成/下载：</strong>转至用户界面中的 \'系统 > <a href="/troubleshooting.php" class="link">故障排除</a> > 系统日志\'  。 您可以在此处生成和/或下载由生成日志命令生成的系统日志摘要。</li><li><strong>查看日志：</strong>转至 \'系统 > <a href="/logs.php" class="link">系统日志</a>\' 。 您可以在此处找到由生成日志命令收集的其他日志和信息。</li><li><strong>服务器目录：</strong>在服务器上找到它：\'/srv/quickbox/logs/system_log\'。</li></ol></p>';
 
 /* **********************************
- * #4.4.6.10 - manage functions
+ * #4.4.7.10 - manage functions
  ************************************/
 $L['MANAGE_FUNCTIONS']                                  = '管理功能';
 $L['MANAGE_FUNCTIONS_INFO_CONTENT']                     = '<p>QuickBox 中的<code>qb manage</code> 功能提供了一套强大而全面的工具来有效管理服务器的各个方面。这些功能在设计时充分考虑了用户的便利性，使您能够轻松控制 QuickBox 支持的环境的关键元素。<br>无论是交换语言设置、检查主要 API 激活的状态、管理数据分发，还是 qb 管理功能通过备份和回滚确保数据完整性，为服务器管理员和爱好者提供了全面的解决方案。</p>';
@@ -1456,6 +1576,19 @@ $L['ADD_API_KEY']                                       = '添加 API 密钥';
 $L['ADD_API_KEY_CONTENT']                               = '添加/激活 API 密钥';
 $L['REMOVE_API_KEY']                                    = '删除 API 密钥';
 $L['REMOVE_API_KEY_CONTENT']                            = '删除/停用 API 密钥';
+$L['MANAGE_DATABASE']                                   = '管理数据库';
+$L['MANAGE_DATABASE_CONTENT']                           = '管理 QuickBox 使用哪个数据库';
+$L['MANAGE_DATABASE_CONNECTION_INFO_CONTENT']           = '请注意，指定用户名和密码时（如果使用了选项），它们不必与您当前主帐户的凭据匹配。 这些凭据供本地系统使用，特别是数据库连接和各种系统功能。 因此，它们可以是唯一的并且独立于您的主帐户的用户名和密码。';
+$L['MANAGE_DATABASE_INFO_CONTENT']                      = 'QuickBox 主要使用 SQLite3 作为其默认数据库。 但是，您可以选择使用此命令在 SQLite3 和 MySQL 之间无缝切换。 如果您选择 MySQL，请确保您的系统上正确安装和配置了 MySQL 服务器。 此外，您还需要一个具有足够权限的 MySQL 用户帐户来创建和管理数据库。 执行此命令可以简化这些必要的配置，包括安装 MySQL 服务器和客户端（如果您的系统上尚未安装）。 在此过程中，如果没有检测到，将会提示您安装MySQL服务器和客户端。 此外，该命令还可以处理配置设置，确保与 QuickBox 无缝集成。 请注意，除了 <code>-o [mysql|sqlite]</code> 之外的所有参数都是可选的，并且将默认为脚本中的预定义值。<br><br>默认值如下：<br><code>user=admin, pass=%random%, port=3306, host=localhost, name=qbpro</code><br><br>MySQL 详细信息可在 <code>/root/.my.cnf</code>。<br><br>要转换回 SQLite3，只需使用 <code>-o sqlite</code> 标志再次运行该命令即可。';
+$L['MANAGE_DATABASE_BACKUP']                            = '管理数据库备份';
+$L['MANAGE_DATABASE_BACKUP_CONTENT']                    = '备份 QuickBox 数据库';
+$L['MANAGE_DATABASE_BACKUP_INFO_CONTENT']               = '作为维护计划的一部分，QuickBox 备份过程每 24 小时在凌晨 3:30（服务器时间）自动运行一次。此任务在 <code>/etc/cron.d/quickbox</code> 计划中列出，如下所示：<br><br><code>30 3 * * * root /usr/local/bin/qb manage db -o Maintenance --cron</code><br><br>但是，您可以使用上述命令手动触发备份（不运行维护例程）。<br><br><strong>关于备份过程</strong><br><br>每次备份都会创建 QuickBox 数据库的快照，提供还原点以在数据丢失或损坏的情况下保护数据完整性。备份文件保存在指定目录中，系统会保留最近的 5 个备份，以确保您始终有多个还原点可供恢复。<br><br><strong>备份文件位置</strong><br><br>备份文件存储在以下目录中：<br><br><strong>MySQL</strong>：<code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.sql</code><br><strong>SQLite</strong>：<code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.db</code>';
+$L['MANAGE_DATABASE_MAINTENANCE']                       = '管理数据库维护';
+$L['MANAGE_DATABASE_MAINTENANCE_CONTENT']               = '启动 QuickBox 数据库维护过程';
+$L['MANAGE_DATABASE_MAINTENANCE_INFO_CONTENT']          = 'QuickBox 维护过程旨在确保数据库平稳高效地运行。此过程包括：<br><br><ol><li>清理不需要的数据。</li><li>优化数据库表。</li><li>运行其他维护任务以提高效率并防止数据问题，例如检查和修复表。</li><li>如果发生不可恢复的错误，则触发每日消息 (MotD) 通知以通过 CLI 提醒系统管理员。</li></ol><p><strong>维护运行时</strong><br><br>维护过程每 24 小时自动运行一次，时间为服务器时间凌晨 3:30。此任务在 <code>/etc/cron.d/quickbox</code> 计划中列出如下：<br><br><code>30 3 * * * root /usr/local/bin/qb manage db -o Maintenance --cron</code><br><br>但是，您可以使用上述命令手动触发维护。<br><br><strong>维护为何重要</strong><br><br>定期维护可确保您的 QuickBox 数据库保持健康、保持系统高性能并保护您的数据。</p>';
+$L['MANAGE_DATABASE_RESTORE']                           = '管理数据库还原';
+$L['MANAGE_DATABASE_RESTORE_CONTENT']                   = '还原 QuickBox 数据库';
+$L['MANAGE_DATABASE_RESTORE_INFO_CONTENT']              = '此命令启动数据库还原过程，允许您选择要还原的特定备份文件。恢复过程旨在在数据丢失或损坏的情况下恢复数据，提供一种可靠而有效的方式将您的 QuickBox 数据库恢复到以前的状态。<br><br><strong>恢复过程的工作原理</strong><br><br>运行恢复命令时，您将看到一个选择菜单，其中列出了所有可用的数据库备份文件。然后，您可以选择要恢复的备份文件，系统将自动恢复所选的备份文件，将您的 QuickBox 数据库恢复到创建备份时的状态。';
 $L['MANAGE_DASHBOARD_ACCESS_URL']                       = '管理仪表板访问 URL';
 $L['MANAGE_DASHBOARD_ACCESS_URL_CONTENT']               = '此命令设置服务器 Web 根目录，以便仪表板访问所表达的域或 IP 地址';
 $L['SET_SERVER_LANG']                                   = '设置服务器语言';
@@ -1480,7 +1613,7 @@ $L['RESTORE_APP_DEFAULT_CONFIG']                        = '恢复默认 <span cl
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT']                = '此命令将为指定用户恢复指定的默认(从安装)应用程序配置';
 
 /* **********************************
- * #4.4.6.11 - news functions
+ * #4.4.7.11 - news functions
  ************************************/
 $L['NEWS_FUNCTIONS']              = '新闻功能';
 $L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的 <code>qb news</code> 功能直接向您的服务器提供及时且相关的新闻更新，确保您随时了解 QuickBox 生态系统的最新发展和变化。此功能旨在让您了解最新情况，提供有关当前和即将发布的版本、版本更改以及其他感兴趣的项目的基本信息。</p>';
@@ -1488,7 +1621,7 @@ $L['NEWS']                        = '新闻';
 $L['NEWS_CONTENT']                = '查看最新的 QuickBox 新闻';
 
 /* **********************************
- * #4.4.6.12 - support functions
+ * #4.4.7.12 - support functions
  ************************************/
 $L['SUPPORT_FUNCTIONS']              = '支持函数';
 $L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的<code>qb support</code> 功能提供了一种安全可靠的方法，可在需要帮助时授予支持人员访问您的服务器的权限。该功能非常重视安全性和用户保护，利用 <code>quickSupport</code> 帐户，确保只有授权的支持人员才能访问您的服务器。</p>';
@@ -1498,7 +1631,7 @@ $L['DISABLE_SUPPORT']                = '禁用支持';
 $L['DISABLE_SUPPORT_CONTENT']        = '禁用支持。否则，支持帐户将在 36 小时后自动删除';
 
 /* **********************************
- * #4.4.6.13 - update functions
+ * #4.4.7.13 - update functions
  ************************************/
 $L['UPDATE_FUNCTIONS']              = '更新函数';
 $L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>QuickBox 中的<code>qb update</code> 功能为您提供了一种方便灵活的方式来管理 QuickBox 安装的更新。通过此功能，您可以完全控制更新过程，允许您手动检查更新并选择何时应用它们。</p>';
@@ -1508,7 +1641,7 @@ $L['UPDATE_QUICKBOX']               = '更新 QuickBox';
 $L['UPDATE_QUICKBOX_CONTENT']       = '将 QuickBox 安装更新到最新版本(如果有)';
 
 /* **********************************
- * #4.4.6.14 - bugs & reporting
+ * #4.4.7.14 - bugs & reporting
  ************************************/
 $L['BUGS']              = '错误和报告';
 $L['BUGS_INFO_CONTENT'] = '<p>QuickBox 文档的图形显示将定期更新，以确保所提供的信息易于访问且用户友好。我们致力于增强您的 QuickBox 体验，这促使我们不断完善和改进文档，使其保持最新的特性和功能。<br><br/>
@@ -1517,13 +1650,13 @@ $L['BUGS_INFO_CONTENT'] = '<p>QuickBox 文档的图形显示将定期更新，�
 向 <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO 实验室问题和功能跟踪器</a></strong></p>';
 
 /* **********************************
- * #4.4.6.15 - disclaimer
+ * #4.4.7.15 - disclaimer
  ************************************/
 $L['DISCLAIMER']      = '免责声明';
 $L['DISCLAIMER_TEXT'] = '<p>此脚本仅供一般用途，不保证其适用于任何给定任务。QuickBox.IO 对您的设置或使用/安装/修改此脚本或其任何插件时造成的任何损害不承担任何责任。请记住，QuickBox.IO 及其员工不负责使您的软件和/或服务器保持最新状态； 这是 QuickBox Pro 软件用户的全部责任。</p>';
 
 /* **********************************
- * #4.4.6.16 - license
+ * #4.4.7.16 - license
  ************************************/
 $L['LICENSE']      = '许可证';
 $L['LICENSE_SET']  = '根据 BSD 3-Clause 获得许可';
@@ -1532,16 +1665,16 @@ $L['LICENSE_TEXT'] = '<p>版权所有 (c) 2018-2024，QuickBox.IO。保留所有
 <ul style="font-size:0.75rem"><li>源代码的重新分发必须保留上述版权声明、此条件列表以及以下免责声明.</li>
 <li>以二进制形式重新分发时，必须在随分发提供的文档和/或其他材料中复制上述版权声明、本条件列表以及以下免责声明.</li>
 <li>未经事先明确书面许可，不得使用版权所有者的姓名及其贡献者的姓名来认可或推广从此软件衍生的产品.</li></ul>
-<p>本软件由版权所有者和贡献者“按原样”提供，不承担任何明示或默示的保证，包括但不限于适销性和特定用途适用性的默示保证。在任何情况下，版权持有者或贡献者均不对任何直接、间接、附带、特殊、惩戒性或后果性损害(包括但不限于采购替代商品或服务；使用损失、数据或利润损失；或损失)承担责任。或业务中断)，无论是何种原因造成的，并且基于任何责任理论，无论是合同责任、严格责任还是侵权行为(包括疏忽或其他)，均因使用本软件而产生，即使已被告知可能发生此类损害。</p>';
+<p>本软件由版权所有者和贡献者 \'按原样\' 提供，不承担任何明示或默示的保证，包括但不限于适销性和特定用途适用性的默示保证。在任何情况下，版权持有者或贡献者均不对任何直接、间接、附带、特殊、惩戒性或后果性损害(包括但不限于采购替代商品或服务；使用损失、数据或利润损失；或损失)承担责任。或业务中断)，无论是何种原因造成的，并且基于任何责任理论，无论是合同责任、严格责任还是侵权行为(包括疏忽或其他)，均因使用本软件而产生，即使已被告知可能发生此类损害。</p>';
 
 /* **********************************
- * #4.4.6.17 - misc
+ * #4.4.7.17 - misc
  ************************************/
 $L['EXAMPLE']  = '示例:';
 $L['EXAMPLES'] = '示例:';
 
 /* **********************************
- * #4.4.7 - CHANGELOG / UPDATE
+ * #4.4.8 - CHANGELOG / UPDATE
  ************************************/
 $L['CURRENT_VERSION']   = '当前版本';
 $L['DASH_UPDATE_TITLE'] = 'QuickBox 版本面板';
@@ -1559,7 +1692,7 @@ $L['UPDATE_CURRENT']    = '你是最新的！';
 $L['CHANGELOGS']        = '更新日志';
 
 /* **********************************
- * #4.4.8 - SYSTEM DASHBOARD
+ * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
 $L['DISK_UTIL_TIME']        = '磁盘使用时间';
 $L['DISK_IO_BW']            = '磁盘 I/O 带宽';

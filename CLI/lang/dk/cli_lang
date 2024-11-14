@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.98
+# File Version: 1.0.150
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2023, QuickBox.IO
+# Copyright (C) 2019-2024, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -260,40 +260,45 @@ quickbox::lang::update::files::admin() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::jellyfin::ffmpeg() {
+	declare text="opdaterer ffmpeg for Jellyfin..."
+	quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # Renew - Let's Encrypt
 ################################################################################
 quickbox::lang::install::lecert::complete() {
 	declare -a domain_array
-	if [[ "${qb_option[*]:-}" == *"dash"* ]]; then
+	if [[ -n "${dash}" ]]; then
 		domain_array+=("https://${domain_options[dash]}")
 		application_array+=("QuickBox")
 	fi
-	if [[ "${qb_option[*]:-}" == *"emby"* ]]; then
+	if [[ -n "${emby}" ]]; then
 		domain_array+=("https://${domain_options[emby]}")
 		application_array+=("Emby")
 	fi
-	if [[ "${qb_option[*]:-}" == *"jellyfin"* ]]; then
+	if [[ -n "${jellyfin}" ]]; then
 		domain_array+=("https://${domain_options[jellyfin]}")
 		application_array+=("Jellyfin")
 	fi
-	if [[ "${qb_option[*]:-}" == *"jellyseerr"* ]]; then
+	if [[ -n "${jellyseerr}" ]]; then
 		domain_array+=("https://${domain_options[jellyseerr]}")
 		application_array+=("Jellyseerr")
 	fi
-	if [[ "${qb_option[*]:-}" == *"komga"* ]]; then
+	if [[ -n "${komga}" ]]; then
 		domain_array+=("https://${domain_options[komga]}")
 		application_array+=("Komga")
 	fi
-	if [[ "${qb_option[*]:-}" == *"overseerr"* ]]; then
+	if [[ -n "${overseerr}" ]]; then
 		domain_array+=("https://${domain_options[overseerr]}")
 		application_array+=("Overseerr")
 	fi
-	if [[ "${qb_option[*]:-}" == *"plex"* ]]; then
+	if [[ -n "${plex}" ]]; then
 		domain_array+=("https://${domain_options[plex]}")
 		application_array+=("Plex")
 	fi
-	if [[ "${qb_option[*]:-}" == *"no-dash"* ]]; then
+	if [[ -n "${no_dash}" ]]; then
 		domain_array+=("${domain}")
 		application_array+=("det brugerdefinerede domæne har været")
 	fi
@@ -412,119 +417,13 @@ quickbox::lang::user::promote() {
 ################################################################################
 # Misc
 ################################################################################
+quickbox::lang::unknown::option() {
+	declare text="${2} Ukendt mulighed: ${1}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::username::specified() {
 	declare text="fejl: brugernavn ikke angivet"
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::info::example() {
-	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "renew" ]]; then
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d domain.com"
-	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u bruger ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	fi
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::info::note() {
-	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
-	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
-	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
-	if [[ ${proces} == "install" ]]; then
-		if [[ ${software_name} == "filebot" ]]; then
-			[[ -n ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name} for bruger"
-			[[ -n ${usr} && -n ${deluge} ]] && declare text="stadier efterbehandling af script til Deluge"
-			[[ -n ${usr} && -n ${nzbget} ]] && declare text="stadier efterbehandling af script til NZBGet"
-			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="stadier efterbehandling af script til rTorrent"
-			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="stadier efterbehandling af script til SABnzbd"
-			[[ -n ${usr} && -n ${media_path} ]] && declare text="sæt mediesti (f.eks.: /sti/til/medie)"
-		else
-			[[ -n ${usr} ]] && declare text="installerer seneste ${branch}-version af ${software_name} for bruger"
-			[[ -n ${rclone_remote} ]] && declare text="installerer seneste ${branch}-version af ${software_name} for brugere, der bruger ${rclone_remote}"
-			[[ -n ${encrypted} ]] && declare text="installerer seneste ${branch}-version af ${software_name} til bruger med kryptering"
-			[[ -n ${dmn} ]] && declare text="installerer et ssl-certifikat, der skal bruges til dashboardet på det angivne domæne"
-			[[ -n ${usr} && -n ${dmn} ]] && declare text="installerer den seneste ${branch}-version af ${software_name} for bruger og stadier ssl-certifikat for domæne"
-			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="installerer et ssl-certifikat for det angivne domæne"
-			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne emby-domæne"
-			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne jellyfin-domæne"
-			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne jellyseerr-domæne"
-			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne komga-domæne"
-			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne overseerr-domæne"
-			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="installerer et ssl-certifikat for det angivne plex-domæne"
-			[[ -n ${version} ]] && declare text="installerer seneste ${version[*]} version af ${software_name}"
-			[[ -n ${branch} && -z ${usr} ]] && declare text="installerer den seneste ${branch}-version af ${software_name}"
-			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="installerer seneste ${branch} version af ${software_name} med tildelt datakatalog"
-			[[ -n ${library_path} ]] && declare text="installerer ${software_name} med tildelt biblioteksmappe"
-		fi
-	elif [[ ${process} == "reinstall" ]]; then
-		if [[ ${software_name} == "filebot" ]]; then
-			[[ -n ${usr} ]] && declare text="geninstallerer den seneste ${branch}-version af ${software_name} for brugeren"
-			[[ -n ${usr} && -n ${deluge} ]] && declare text="stadier efterbehandling af script til Deluge"
-			[[ -n ${usr} && -n ${nzbget} ]] && declare text="stadier efterbehandling af script til NZBGet"
-			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="stadier efterbehandling af script til rTorrent"
-			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="stadier efterbehandling af script til SABnzbd"
-			[[ -n ${usr} && -n ${media_path} ]] && declare text="sæt mediesti (f.eks.: /sti/til/medie)"
-		else
-			[[ -n ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} for bruger"
-			[[ -n ${rclone_remote} ]] && declare text="geninstaller seneste ${branch}-version af ${software_name} for bruger, der bruger ${rclone_remote}"
-			[[ -n ${encrypted} ]] && declare text="geninstaller seneste ${branch}-version af ${software_name} for bruger med kryptering"
-			[[ -n ${dmn} ]] && declare text="geninstallerer ssl-certifikat brugt til dashboardet på det angivne domæne"
-			[[ -n ${usr} && -n ${dmn} ]] && declare text="geninstallerer den seneste ${branch}-version af ${software_name} for bruger og stadier ssl-certifikat for domæne"
-			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="geninstallerer et ssl-certifikat for det angivne domæne"
-			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne emby-domæne"
-			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne jellyfin-domæne"
-			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne jellyseerr-domæne"
-			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne komga-domæne"
-			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne tilsynsmandsdomæne"
-			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="geninstallerer et ssl-certifikat for det angivne plex-domæne"
-			[[ -n ${version} ]] && declare text="geninstallerer seneste ${version[*]} version af ${software_name}"
-			[[ -n ${branch} && -z ${usr} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name}"
-			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="geninstallerer seneste ${branch}-version af ${software_name} med tildelt datakatalog"
-			[[ -n ${library_path} ]] && declare text="geninstallerer ${software_name} med tildelt biblioteksmappe"
-		fi
-	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="fjerner ${software_name} for brugeren"
-		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="fjerner ssl-certifikat fra det angivne domæne"
-		[[ -n ${version} && -z ${dmn} ]] && declare text="fjerner ${software_name}"
-		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="fjerner ${software_name}"
-	elif [[ ${process} == "renew" ]]; then
-		[[ -n ${dmn} ]] && declare text="fornyer ssl-certifikat fra det angivne domæne"
-	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="opdaterer ${software_name} til seneste ${branch}-version for bruger"
-		[[ -n ${dmn} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne, der skal bruges med dashboardet"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="opdaterer ssl-certifikat for det angivne domæne"
-		[[ -n ${version} ]] && declare text="opdaterer ${software_name} til den seneste ${version} version"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="opdaterer den seneste ${branch}-version af ${software_name}"
-		[[ ${software_name} == "deluge" ]] && declare text="opdaterer ${software_name} til den seneste ${branch}-version for alle brugere"
-	fi
 	quickbox::dashboard::log "${text}"
 }
 
@@ -548,6 +447,15 @@ ${quickbox_web_root}${username}/${software_name}
 brugernavn: admin
 adgangskode: admin
 ${software_title} installeret på port: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::autodl::access() {
+	adl_port=$(cat <"/home/${admin_name:-}/.autodl/autodl.cfg" | grep "gui-server-port = " | sed 's/gui-server-port = //')
+	declare text="få adgang til ${software_title} på:
+${quickbox_web_root}rutorrent
+  > menu > autodl-irssi
+${software_title} installeret på port: ${adl_port}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -898,9 +806,9 @@ quickbox::lang::software::rclone_continue() {
 }
 quickbox::lang::software::rclone::access() {
 	declare text="${software_title} installeret
-  
-> For mere information om, hvordan du installerer rclone, besøg:
-https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
+
+> For mere information om, hvordan du installerer rclone, se:
+  qb help rclone
 "
 	quickbox::dashboard::log "${text}"
 }
@@ -921,6 +829,36 @@ quickbox::lang::software::vpnzip::access() {
 	declare text="download ${software_title} profil på:
 ${quickbox_web_root}${username}/ovpn.zip
 > at bruge i enhver OpenVPN-klient"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::client_config() {
+	declare text="opsætning af klientkonfiguration for $1"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::server_config() {
+	declare text="opsætning af serverkonfiguration for $1"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_ask() {
+	declare text="Vil du indtaste en klientkonfiguration? (j/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_paste() {
+	declare text="Indsæt eller indtast klientkonfigurationen nedenfor. Tryk på ctrl+D eller ⌘+D, når du er færdig, for at fortsætte."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_ask_extra() {
+	declare text="Vil du indtaste en anden klientkonfiguration? (j/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_ask_extra_error() {
+	declare text="Ugyldigt input. Indtast venligst 'j' eller 'n'."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -1278,4 +1216,992 @@ quickbox::lang::delete::complete() {
 	version="$(tput setaf 5)${version}$(tput setaf 2)"
 	declare text="${software_title} backup (${version}) er blevet slettet."
 	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o mysql` | case: db)
+
+quickbox::lang::db::install::prompt() {
+	declare text="MySQL er ikke installeret. Vil du installere? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::apt() {
+	declare text="Opdaterer APT..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt() {
+	declare text="Downloader MySQL APT Config..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt::fail() {
+	declare text="Kunne ikke downloade MySQL APT Config."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt::install() {
+	declare text="Installerer MySQL APT Config..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt::install::fail() {
+	declare text="Kunne ikke installere MySQL APT Config."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql() {
+	declare text="Installerer MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::fail() {
+	declare text="Kunne ikke installere MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::start::fail() {
+	declare text="Kunne ikke starte MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::enable::fail() {
+	declare text="Kunne ikke aktivere MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::success() {
+	declare text="MySQL er blevet installeret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::installed() {
+	declare text="MySQL er allerede installeret, fortsætter med konfigurationen."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config() {
+	declare text="Opdaterer MySQL-konfiguration..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config::backup() {
+	declare text="Den aktuelle mysqld.cnf-fil er blevet sikkerhedskopieret til mysqld.cnf.backup."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config::write() {
+	declare text="Indstiller MySQL-konfiguration..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config::write::fail() {
+	declare text="Kunne ikke skrive MySQL-konfiguration."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::privileges() {
+	declare text="Indstiller MySQL-privilegier..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::privileges::fail() {
+	declare text="Kunne ikke skrive MySQL-privilegier."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::client() {
+	declare text="Indstiller MySQL-klientkonfiguration..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::client::fail() {
+	declare text="Kunne ikke skrive MySQL-klientkonfiguration."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::reload() {
+	declare text="Genindlæser systemctl-dæmonen..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::reload::fail() {
+	declare text="Det lykkedes ikke at genindlæse systemctl-dæmonen."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::enable() {
+	declare text="Aktiverer MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::restart() {
+	declare text="Genstarter MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::restart::fail() {
+	declare text="Kunne ikke genstarte MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::user() {
+	declare text="Opretter MySQL-bruger ${mysql_user}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::user::fail() {
+	declare text="Kunne ikke oprette MySQL-bruger."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::grant() {
+	declare text="Giver privilegier til MySQL-brugeren ${mysql_user}..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::grant::fail() {
+	declare text="Kunne ikke tildele privilegier til MySQL-bruger."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::flush() {
+	declare text="Fjerner privilegier..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::flush::fail() {
+	declare text="Kunne ikke fjerne privilegier."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::convert() {
+	declare text="Konverterer database til MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::convert::success() {
+	declare text="Databasen er blevet konverteret til MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::remove() {
+	declare text="Vil du fjerne SQLite-databasen? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::remove::fail() {
+	declare text="Kunne ikke deaktivere SQLite i PHP."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::complete() {
+	declare text="MySQL er blevet konfigureret."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::details() {
+	declare text="MySQL-forbindelsesdetaljer:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::connection::details() {
+	declare text="Brugernavn: ${mysql_user}
+Adgangskode: ${mysql_password}
+Havn: ${mysql_port}
+Vært: ${mysql_host}
+Database: ${mysql_name}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::mycnf() {
+	declare text="Disse detaljer kan findes på /root/.my.cnf"
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o sqlite` | case: db)
+
+quickbox::lang::db::install::sqlite::backup() {
+	declare text="Sikkerhedskopierer SQLite-database..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::backup::success() {
+	declare text="SQLite-databasen er blevet sikkerhedskopieret til ${sqlite_file}.${date}.backup"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::convert() {
+	declare text="Konverterer database til SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::convert::success() {
+	declare text="Databasen er blevet konverteret til SQLite."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::remove() {
+	declare text="Vil du fjerne MySQL helt? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::remove::mysql() {
+	declare text="Vil du fjerne MySQL-databasen? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::php::fail() {
+	declare text="Kunne ikke installere SQLite i PHP."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::php::enable::fail() {
+	declare text="Kunne ikke aktivere SQLite i PHP."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::complete() {
+	declare text="SQLite-databasekonverteringsprocessen er afsluttet."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::invalid() {
+	declare text="Ugyldig mulighed: ${option}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::mysql::notfound() {
+	declare text="MySQL-database ikke fundet."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::sqlite::notfound() {
+	declare text="SQLite-databasen blev ikke fundet."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o backup` | case: backup)
+quickbox::lang::db::backup::sqlite::integrity() {
+	declare text="Kontrollerer integriteten af SQLite-databasen..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::pass() {
+	declare text="Databaseintegritetskontrol bestået."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::complete() {
+	declare text="Backup fuldført: ${full_backup_path}/qbpro.db"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::fail() {
+	declare text="Databaseintegritetskontrol mislykkedes. Der blev ikke oprettet nogen backup."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair() {
+	declare text="Forsøger at reparere SQLite-databasen..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::repair() {
+	declare text="
+    [ADVARSEL] QuickBox-database reparation!
+
+    QuickBox-databasen har ikke bestået integritetskontrollen, og en reparation er blevet forsøgt.
+
+    Kommando: REINDEX; VACUUM;
+
+    Du kan finde de seneste sikkerhedskopier her:
+    /opt/quickbox/backup/system/[DATE]/db/qbpro.db
+
+    For at slette denne besked, kør følgende kommando:
+    rm -f /etc/quickbox_motd
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair::complete() {
+	declare text="Reparation af SQLite-databasen er fuldført."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair::fail() {
+	declare text="Reparation af SQLite-databasen mislykkedes."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::restore() {
+	declare text="
+    [ADVARSEL] QuickBox-database reparation!
+
+    QuickBox-databasen har ikke bestået integritetskontrollen, og en reparation er blevet forsøgt.
+    En tidligere gyldig sikkerhedskopi er blevet gendannet, og tilladelser er blevet justeret.
+
+    Du kan finde de seneste sikkerhedskopier her:
+    /opt/quickbox/backup/system/[DATE]/db/qbpro.db
+
+    For at slette denne besked, kør følgende kommando:
+    rm -f /etc/quickbox_motd
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::restore::complete() {
+	declare text="Gendannelse af SQLite-databasen er fuldført."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql() {
+	declare text="Tager backup af MySQL-databasen..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql::complete() {
+	declare text="MySQL-backup fuldført: ${full_backup_path}/qbpro.sql"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql::fail() {
+	declare text="MySQL-backup mislykkedes."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::unsupported() {
+	declare text="Ikke understøttet databasetype: ${db_type}. Der blev ikke oprettet nogen backup."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o maintenance` | case: maintenance)
+quickbox::lang::db::maintenance::sqlite() {
+	declare text="Udfører vedligeholdelse på SQLite-databasen..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::backup() {
+	declare text="Tager backup af databasen før vedligeholdelse..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize() {
+	declare text="Optimerer SQLite-databasen (VACUUM)..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize::complete() {
+	declare text="SQLite-databaseoptimering fuldført."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize::fail() {
+	declare text="Mislykkedes i at optimere SQLite-databasen."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::integrity::fail() {
+	declare text="Databaseintegritetskontrol mislykkedes. Der blev ikke udført nogen vedligeholdelse."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql() {
+	declare text="Udfører vedligeholdelse på MySQL-databasen..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::backup() {
+	declare text="Tager backup af MySQL-databasen før vedligeholdelse..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::backup::fail() {
+	declare text="MySQL-backup mislykkedes. Vedligeholdelse springes over."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize() {
+	declare text="Optimerer MySQL-databasetabellerne..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize::complete() {
+	declare text="MySQL-databaseoptimering fuldført."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize::fail() {
+	declare text="Mislykkedes i at optimere MySQL-databasen."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity() {
+	declare text="Kontrollerer integriteten af MySQL-databasen..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity::pass() {
+	declare text="MySQL-databaseintegritetskontrol bestået."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity::fail() {
+	declare text="MySQL-databaseintegritetskontrol mislykkedes."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::unsupported() {
+	declare text="Ikke understøttet databasetype: ${db_type}. Der blev ikke udført nogen vedligeholdelse."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o restore` | sag: gendan)
+quickbox::lang::db::gendan::backup::error() {
+	declare text="Backup-mappe ikke fundet: ${backup_root}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::gendan::backup::empty() {
+	declare text="Ingen sikkerhedskopier fundet i backup-mappen."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::gendan::backup::select() {
+	declare text="Vælg en sikkerhedskopi for at gendanne:"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::gendan::backup::nummer() {
+	declare text="Indtast nummeret på den sikkerhedskopi, der skal gendannes: "
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::gendan::backup::invalid() {
+	declare text="Ugyldigt valg. Prøv venligst igen."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::sqlite::success() {
+	declare text="SQLite-database gendannet med succes fra ${select_backup}."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::sqlite::fail() {
+	declare text="Kunnede ikke gendanne SQLite-databasen."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::mysql::success() {
+	declare text="MySQL-database gendannet med succes fra ${select_backup}."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::gendan::mysql::fail() {
+	declare text="Det lykkedes ikke at gendanne MySQL-databasen."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::unsupported() {
+	declare text="Ikke-understøttet databasetype: ${db_type}. Ingen gendannelse blev udført."
+	quickbox::dashboard::log "${text}"
+}
+
+### `wireguard` | case: wireguard)
+
+quickbox::lang::wireguard::mtuendpoint::error() {
+	declare text="Fejl: --mtu og --endpoint er nødvendige for 'calc'-processen"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB HELP MENUS
+################################################################################
+
+### ERRORS
+
+quickbox::error::non-empty() {
+	declare text="Fejl: $1 kræver et ikke-tomt argument"
+	quickbox::dashboard::log "${text}"
+}
+
+### MISC
+
+quickbox::nvpn::conf::generator::usage() {
+	declare text="
+NordVPN WireGuard konfigurationsgenerator
+
+Anvendelse:
+  nvpn_conf_gen -t 'privat_token' [-dns 'foretrukne_dns'] [-c 'land_navn'] [-L 'antal_af_konfigurationer'] [-l] [-h]
+
+Muligheder:
+  -t   | --token    NordVPN privat token
+  -dns | --dns      Foretrukken DNS (standard: 103.86.96.100)
+  -c   | --country  Foretrukken landenavn (brug --list for at vise tilgængelige lande)
+  -L   | --limit    Begræns antallet af konfigurationer, der skal oprettes (standard: 5)
+  -l   | --list     Liste over tilgængelige lande for WireGuard-forbindelser
+  -h   | --help     Vis denne hjælpemeddelelse
+
+Eksempel:
+  nvpn_conf_gen -t 'dit_token' -c 'Denmark' -L 10
+
+Bemærkninger:
+  - Tokenet kan genereres fra:
+    https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/
+  - Konfigurationsfiler vil blive gemt i '${wg_conf_storage_dir}'
+"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::wireguard::manage::help() {
+	declare text="
+QuickBox WireGuard Management
+
+Anvendelse:
+  qb administrere wireguard [proces] [indstillinger]
+
+Processer:
+  add Tilføj en klient- eller serverkonfiguration
+    -c    | --client                  Fjern en WireGuard-klientkonfiguration
+    -s    | --server                  Fjern WireGuard-serverkonfigurationen
+    -cn   | --client-name             Indstil klientnavnet for WireGuard-klientkonfigurationen (påkrævet for '-c' klientkonfiguration)
+    -noc  | --number-of-clients       Indstil antallet af klienter for WireGuard-serverkonfigurationen (standard: 1)
+    -lp   | --listen-port             Indstil lytteporten for WireGuard-serverkonfigurationen (standard: 51820)
+    -mtu  | --mtu                     Indstil MTU'en til WireGuard-serverkonfigurationen
+    -cai  | --client-allowed-ips      Indstil de tilladte IP'er for WireGuard-klientkonfigurationen (standard: 0.0.0.0/0, ::/0)
+    -cidr | --cidr                    Indstil CIDR-notationen for WireGuard-serverkonfigurationen (standard: server - <server_ip>/24 | klient - 10.5.0.2/16)
+    -pur  | --post-up-rules           Indstil post-up reglerne for WireGuard server konfigurationen
+    -pdr  | --post-down-rules         Indstil post-down reglerne for WireGuard server konfigurationen
+
+  remove                              Fjern en klient- eller serverkonfiguration
+    -cn   | --client-name             Indstil klientnavnet for WireGuard-klientkonfigurationen
+
+  check                               Kontroller de aktuelt indlæste og kørende WireGuard-klientkonfigurationer
+    -cn   | --client-name             Indstil klientnavnet for WireGuard-klientkonfigurationen
+    --deactivate                      Deaktiver WireGuard-klientkonfigurationen
+
+  cron                                Tilføj et cron-job for at kontrollere WireGuard-konfigurationsfilerne
+
+  calc                                Beregn CIDR-notationen og MTU for serverkonfigurationen
+    --mtu                             Indstil MTU'en til WireGuard-serverkonfigurationen
+    --endpoint                        Indstil slutpunktet for WireGuard-serverkonfigurationen
+    --protocol                        Indstil protokollen for WireGuard-serverkonfigurationen (ipv4 eller ipv6)
+
+  help                                Vis denne hjælpemeddelelse
+
+Eksempler:
+  qb manage wireguard add -c -cn 'klientnavn' -cai '0.0.0.0/0' -lp 51820
+  qb manage wireguard add -s -noc 5 -lp 51820 -cidr '192.168.0.2/24' -pur 'iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE'
+  qb manage wireguard remove -cn 'klientnavn'
+  qb manage wireguard check -cn 'klientnavn' --deactivate
+  qb manage wireguard cron
+  qb manage wireguard calc --mtu 1420 --endpoint '192.168.0.0' --protocol 'ipv4'
+"
+	quickbox::dashboard::log "${text}"
+}
+
+### SOFTWARE (APPLICATIONS)
+
+# Function to generate help text based on provided options
+generate_help_text() {
+	local software_title="$1"
+	local software_name="$2"
+	local has_update="$3"
+	local options="$4"
+	local examples="$5"
+	local notes="$6"
+
+	local processes="  install    Installere ${software_title}
+  reinstall  Geninstaller ${software_title}
+  remove     Fjerne ${software_title}"
+
+	if [[ ${has_update} == 1 ]]; then
+		processes="${processes}
+  update     Opdater ${software_title}"
+	fi
+
+	processes="${processes}
+  help       Vis denne hjælpemeddelelse"
+
+	declare text="
+QuickBox Software Management for ${software_title}
+
+Anvendelse:
+  qb [proces] ${software_name} [indstillinger]
+
+Processer:
+${processer}
+
+Valgmuligheder:
+${options}
+
+Eksempler:
+${eksempel}
+${notes}
+"
+	quickbox::dashboard::log "${text}"
+}
+
+# Function to get help text for specific software
+quickbox::software::help() {
+	local software_help_name="$1"
+	local software_title="${software_help_name^}" # Capitalize the first letter
+	local has_update
+
+	case "${software_help_name}" in
+	emby | jellyfin)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  -d | --domain    Indstil domænet for ${software_title}
+  --beta           Installer betaversionen af ​​${software_title}" \
+			"  qb install ${software_help_name} -u brugernavn -d '${software_help_name}.domain.com'    # Installer med domæne
+  qb reinstall ${software_help_name} -u brugernavn -d '${software_help_name}.domain.com'  # Geninstaller med domæne
+  qb install ${software_help_name} -u brugernavn --beta                                   # Installer betaversion
+  qb reinstall ${software_help_name} -u brugernavn --beta                                 # Geninstaller betaversion
+  qb remove ${software_help_name} -u brugernavn                                           # Fjern
+  qb update ${software_help_name} -u brugernavn                                           # Opdatering
+
+  ## Brug flere muligheder
+  qb install ${software_help_name} -u brugernavn -d '${software_help_name}.domain.com' --beta
+  qb reinstall ${software_help_name} -u brugernavn -d '${software_help_name}.domain.com' --beta" \
+			"
+Bemærkninger:
+  - Når du installerer eller geninstallerer med domæneindstillingen, konfigureres Nginx reverse proxy automatisk.
+      * Sørg for, at domænet peger på serverens IP-adresse, og at de korrekte DNS-registreringer er indstillet."
+		;;
+
+	mylar3)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username             Indstil brugernavnet for ${software_title} (påkrævet)
+  -clp | --comic-location-path  Indstil placeringsstien for tegneserier (standard: /home/brugernavn/Media/Comics)" \
+			"  qb install ${software_help_name} -u brugernavn -clp '/path/to/comics'
+  qb reinstall ${software_help_name} -u brugernavn -clp '/path/to/comics'
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			""
+		;;
+
+	radarr | sonarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  --4k             Indstil byggeinstallationen til 4k (standard: 1080p)
+  --nightly        Indstil byggeinstallationen på den natlige gren (standard: nyeste)" \
+			"  qb install ${software_help_name} -u brugernavn                   # Installer standard (1080p) installation
+  qb install ${software_help_name} -u brugernavn --4k              # Installer 4k installation
+  qb reinstall ${software_help_name} -u brugernavn --nightly       # Geninstaller natlig installation
+  qb reinstall ${software_help_name} -u brugernavn --4k            # Geninstaller 4k installation
+  qb remove ${software_help_name} -u brugernavn                    # Fjern standardinstallation (1080p).
+  qb remove ${software_help_name} -u brugernavn --4k               # Fjern 4k installation
+  qb update ${software_help_name} -u brugernavn                    # Opdater standardinstallation (1080p).
+  qb update ${software_help_name} -u brugernavn --4k               # Opdater 4k installation
+
+  ## Brug flere muligheder
+  qb install ${software_help_name} -u brugernavn --4k --nightly    # Installer 4k installation på den natlige filial
+  qb reinstall ${software_help_name} -u brugernavn --4k --nightly  # Geninstaller 4k installation på den natlige filial
+  qb update ${software_help_name} -u brugernavn --4k --nightly     # Opdater 4k installation på eller til nightly" \
+			""
+		;;
+
+	calibre | kavita)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username      Indstil brugernavnet for ${software_title} (påkrævet)
+  -lp | --library-path  Indstil placeringsstien til dit bibliotek (standard: /home/brugernavn/.config/${software_title}/library)" \
+			"  qb install ${software_help_name} -u brugernavn -lp '/path/to/library'
+  qb reinstall ${software_help_name} -u brugernavn -lp '/path/to/library'
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			""
+		;;
+
+	plex)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username          Indstil brugernavnet for ${software_title} (påkrævet)
+  -pct | --plex-claim-token  Indstil Plex Claim Token til ${software_title} (påkrævet for hurtig krav)
+  -d   | --domain            Indstil domænet for ${software_title}
+  -D   | --data-dir          Indstil databiblioteket for ${software_title} (standard: /home/brugernavn/.config/'Plex Media Server')" \
+			"  qb install ${software_help_name} -u brugernavn -pct 'claim_token' -d 'plex.domain.com' -D '/path/to/data'
+  qb reinstall ${software_help_name} -u brugernavn -pct 'claim_token' -d 'plex.domain.com' -D '/path/to/data'
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			"
+Bemærkninger:
+  - Plex Claim Token kan fås fra:
+    https://www.plex.tv/claim/
+
+  - Undgå at indstille databiblioteket til et eksisterende bibliotek såsom:
+    /opt, /opt/brugernavn, /mnt, /home, /home/brugernavn og så videre.
+
+  - Det er sikkert at oprette en ny datamappe i eksisterende mapper såsom:
+    /opt/plex, /opt/brugernavn/plex, /mnt/plex, /data/plex, og så videre.
+
+  - Databiblioteket oprettes, hvis det ikke eksisterer.
+
+  - Databiblioteket vil være ejet af brugeren og gruppen af ​​brugernavnet.
+
+  - Når du installerer eller geninstallerer med domæneindstillingen, konfigureres Nginx reverse proxy automatisk.
+     * Sørg for, at domænet peger på serverens IP-adresse, og at de korrekte DNS-registreringer er indstillet.
+
+  - Når du opdaterer, bliver du bedt om at indtaste din plex.tv-e-mail, adgangskode samt 2FA-kode."
+		;;
+
+	bazarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  --4k             Indstil byggeinstallationen til 4k (standard: 1080p)" \
+			"  qb install ${software_help_name} -u brugernavn         # Installer standard (1080p) installation
+  qb install ${software_help_name} -u brugernavn --4k    # Installer 4k installation
+  qb reinstall ${software_help_name} -u brugernavn       # Geninstaller standardinstallation (1080p)
+  qb reinstall ${software_help_name} -u brugernavn --4k  # Geninstaller 4k installation
+  qb remove ${software_help_name} -u brugernavn          # Fjern standardinstallation (1080p).
+  qb remove ${software_help_name} -u brugernavn --4k     # Fjern 4k installation
+  qb update ${software_help_name} -u brugernavn          # Opdater standardinstallation (1080p).
+  qb update ${software_help_name} -u brugernavn --4k     # Opdater 4k installation" \
+			""
+		;;
+
+	autodl | phpmyadmin | x2go)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
+  qb reinstall ${software_help_name}
+  qb remove ${software_help_name}
+  qb update ${software_help_name}" \
+			""
+		;;
+
+	fail2ban)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
+  qb reinstall ${software_help_name}
+  qb remove ${software_help_name}" \
+			""
+		;;
+
+	filebot)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username    Indstil brugernavnet for ${software_title} (påkrævet)
+  -mp | --media-path  Indstil mediestien for ${software_title} (standard: /home/brugernavn/Media)
+  -o 'deluge'         Installer ${software_title} med Deluge-integration
+  -o 'nzbget'         Installer ${software_title} med NZBGet-integration
+  -o 'rtorrent'       Installer ${software_title} med rTorrent-integration
+  -o 'sabnzbd'        Installer ${software_title} med SABnzbd integration" \
+			"  qb install ${software_help_name} -u brugernavn
+  qb reinstall ${software_help_name} -u brugernavn
+  qb remove ${software_help_name} -u brugernavn
+
+  ## Brug flere muligheder
+  qb install ${software_help_name} -u brugernavn -o 'deluge' -o 'nzbget'
+  qb reinstall ${software_help_name} -u brugernavn -o 'rtorrent' -o 'sabnzbd'" \
+			""
+		;;
+
+	jdownloader)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username       Indstil brugernavnet for ${software_title} (påkrævet)
+  -e | --email          Indstil e-mailen til ${software_title} (påkrævet) .i.
+  -p | --password       Indstil adgangskoden til ${software_title} (påkrævet) .ii.
+  -D | --downloads-dir  Indstil downloadstien for ${software_title} (standard: /home/brugernavn/Downloads)" \
+			"  qb install ${software_help_name} -u brugernavn -e 'e-mail' -p 'adgangskode' -D '/sti/til/downloads'
+  qb reinstall ${software_help_name} -u brugernavn -e 'e-mail' -p 'adgangskode' -D '/sti/til/downloads'
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			"
+Bemærkninger:
+  - .i. E-mailen og adgangskoden er påkrævet for installation af JDownloader.
+     *.ii. disse er legitimationsoplysningerne til din MyJDownloader-konto."
+		;;
+
+	jellyseerr | komga | overseerr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  -d | --domain    Indstil domænet for ${software_title}" \
+			"  qb install ${software_help_name} -u brugernavn -d '${software_help_name}.domain.com'
+  qb reinstall ${software_help_name} -u brugernavn -d '${software_help_name}.domain.com'
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			"
+Bemærkninger:
+  - Når du installerer eller geninstallerer med domæneindstillingen [-d], vil Nginx reverse proxy blive konfigureret automatisk.
+     * Sørg for, at domænet peger på serverens IP-adresse, og at de korrekte DNS-registreringer er indstillet."
+		;;
+
+	lecert)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  --dash         Installer et certifikat for domænet angivet med '-d' og vil også oprette en omvendt proxy til QuickBox-dashboardet
+  --no-dash      Installer et certifikat for et brugerdefineret domæne angivet med '-d' (dette vil kun oprette certifikatet)
+  --emby         Installer et certifikat for domænet specificeret med '-d' og vil også oprette en omvendt proxy for Emby
+  --jellyfin     Installer et certifikat for domænet specificeret med '-d' og vil også oprette en omvendt proxy for Jellyfin
+  --jellyseerr   Installer et certifikat for domænet specificeret med '-d' og vil også oprette en omvendt proxy for Jellyseerr
+  --komga        Installer et certifikat for domænet specificeret med '-d' og vil også oprette en omvendt proxy for Komga
+  --overseerr    Installer et certifikat for domænet specificeret med '-d' og vil også oprette en omvendt proxy for Overseerr
+  --plex         Installer et certifikat for domænet specificeret med '-d' og vil også oprette en omvendt proxy for Plex
+  -d | --domain  Indstil domænet for ${software_title}" \
+			"  qb install ${software_help_name} --dash -d 'domain.com'
+  qb reinstall ${software_help_name} --jellyseerr -d 'jellyseerr.domain.com' --jellyfin -d 'jellyfin.domain.com' --komga -d 'komga.domain.com'
+  qb remove ${software_help_name} --plex -d 'plex.domain.com' --emby -d 'emby.domain.com'
+  qb renew ${software_help_name} -d 'noget.domæne.com' -d 'et andet.domæne.com'" \
+			""
+		;;
+
+	lidarr | readarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  --nightly        Indstil byggeinstallationen på den natlige gren (standard: nyeste)" \
+			"  qb install ${software_help_name} -u brugernavn               # Installer standard (seneste) installation
+  qb install ${software_help_name} -u brugernavn --nightly     # Installer natlig installation
+  qb reinstall ${software_help_name} -u brugernavn             # Geninstaller standard (seneste) installation
+  qb reinstall ${software_help_name} -u brugernavn --nightly   # Geninstaller natlig installation
+  qb remove ${software_help_name} -u brugernavn                # Fjern nuværende installation
+  qb update ${software_help_name} -u brugernavn                # Opdater standardinstallation (seneste).
+  qb update ${software_help_name} -u brugernavn --nightly      # Opdater til/fra natlig installation" \
+			""
+		;;
+
+	quota)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -qm | --quota-mount  Indstil systemmonteringspunktet for ${software_title} (påkrævet)" \
+			"  qb install ${software_help_name} -qm '/path/to/mount/point'
+  qb reinstall ${software_help_name} -qm '/path/to/mount/point'
+  qb remove ${software_help_name}" \
+			""
+		;;
+
+	rclone)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  --dropbox        Installer ${software_title} med Dropbox-integration
+  --gdrive         Installer ${software_title} med Google Drev-integration
+  --encrypted      Installer ${software_title} med kryptering
+  --beta           Installer betaversionen af ​​${software_title}" \
+			"  qb install ${software_help_name} -u brugernavn --dropbox
+  qb install ${software_help_name} -u brugernavn --beta --gdrive
+  qb reinstall ${software_help_name} -u brugernavn --dropbox --encrypted
+  qb reinstall ${software_help_name} -u brugernavn --gdrive
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			"
+Bemærkninger:
+  - Det anbefales at bruge enten --dropbox eller --gdrive optionen på et enkelt installationspas.
+     * Dette vil forhindre eventuelle konflikter med rclone-konfigurationen.
+
+  - Når du installerer med --dropbox eller --gdrive mulighed, vil rclone konfigurationen blive oprettet automatisk.
+
+  - Når du installerer med --encrypted mulighed, vil rclone-konfigurationen blive krypteret ved hjælp af de angivne oplysninger.
+
+  - Når du installerer med --beta-indstillingen, vil betaversionen af ​​rclone blive installeret."
+		;;
+
+	requestrr | vpn)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)" \
+			"  qb install ${software_help_name} -u brugernavn
+  qb reinstall ${software_help_name} -u brugernavn
+  qb remove ${software_help_name} -u brugernavn" \
+			""
+		;;
+
+	rtorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    Indstil brugernavnet for ${software_title} (påkrævet)
+  -o '0.10.0'           Installer version 0.10.0
+  -o '0.9.8'            Installer version 0.9.8
+  -o '0.9.7'            Installer version 0.9.7
+  -o '0.9.6'            Installer version 0.9.6
+  -o 'feature-bind'     Installer feature-bind versionen af ​​${software_title}" \
+			"  qb install ${software_help_name} -u brugernavnet -o '0.10.0'
+  qb install ${software_help_name} -u brugernavnet -o '0.9.8'
+  qb install ${software_help_name} -u brugernavnet -o '0.9.7'
+  qb reinstall ${software_help_name} -u brugernavnet -o '0.9.6'
+  qb remove ${software_help_name} -u brugernavnet
+  qb update ${software_help_name} -u brugernavnet -o '0.10.0'
+  qb update ${software_help_name} -u brugernavnet -o 'feature-bind'" \
+			"
+Bemærkninger:
+  - rTorrent er en globalt installeret applikation og vil være tilgængelig for alle brugere på serveren.
+
+  - Feature-bind-versionen af ​​rTorrent er en brugerdefineret build, der inkluderer bind-funktionen.
+     * Bindingsfunktionen giver dig mulighed for at binde rTorrent til en specifik IP-adresse."
+		;;
+
+	rutorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    Indstil brugernavnet for ${software_title} (påkrævet)
+  --beta             Installer betaversionen af ​​${software_title}" \
+			"  qb install ${software_help_name} -u brugernavnet
+  qb reinstall ${software_help_name} -u brugernavnet
+  qb remove ${software_help_name} -u brugernavnet
+  qb update ${software_help_name} -u brugernavnet --beta" \
+			"
+Bemærkninger:
+  - ruTorrent er en globalt installeret applikation og vil være tilgængelig for alle brugere på serveren.
+
+  - ruTorrent er en del af rTorrent installationsprocessen, og når du installerer rTorrent
+    ruTorrent vil blive installeret med den nyeste version som standard. Hvis rTorrent ikke er installeret,
+    så vil ruTorrent installere version 0.9.8.
+
+  - rutorrent vil blive installeret med den nyeste version som standard. Hvis du ønsker at installere betaversionen,
+    du kan bruge --beta-indstillingen. Husk, at de to versioner ikke altid er forskellige."
+		;;
+
+	sabnzbd | thelounge | xteve)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  --beta           Installer betaversionen af ​​${software_title}" \
+			"  qb installer ${software_help_name} -u brugernavn
+  qb install ${software_help_name} -u brugernavn --beta
+  qb reinstall ${software_help_name} -u brugernavn
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			""
+		;;
+
+	transmission)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)
+  --v4             Installer version 4 af ${software_title} (standard: version 3)" \
+			"  qb install ${software_help_name} -u brugernavn --v4
+  qb reinstall ${software_help_name} -u brugernavn --v4
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn --v4" \
+			""
+		;;
+
+	wireguard)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username              Indstil brugernavnet for ${software_title} (påkrævet)
+  -o [client|server]           Installer WireGuard som en klient eller server
+  -cai  | --client-allowed-ip  Indstil den tilladte IP for WireGuard-serveren
+  -cidr | --cidr               Indstil CIDR for WireGuard-serveren (standard: 10.5.0.2/16)
+  -dns  | --dns                Indstil DNS for WireGuard-serveren (standard: 1.1.1.1)
+  -ep   | --endpoint           Indstil slutpunktet for WireGuard-serveren
+  -lp   | --listen-port        Indstil lytteporten for WireGuard-serveren (standard: 51820)
+  -noc  | --number-of-clients  Indstil antallet af klienter til WireGuard-serveren
+  -pdr  | --postdown-rule      Indstil post-down-reglen for WireGuard-serveren
+  -pur  | --postup-rule        Indstil post-up-reglen for WireGuard-serveren" \
+			"  qb install ${software_help_name} -u brugernavnet -o server \\
+  -cai '192.168.0.2,192.168.0.3' \\
+  -cidr '10.5.0.2/16' \\
+  -dns '0.0.0.0' \\
+  -ep 'server.domæne.com' \\
+  -lp 51820 \\
+  -noc 5 \\
+  -pdr 'iptables -D INPUT -i wg0 -j ACCEPT' \\
+  -pur 'iptables -A INPUT -i wg0 -j ACCEPT'
+  qb reinstall ${software_help_name} -u brugernavnet -o client
+  qb remove ${software_help_name} -u brugernavnet" \
+			"
+Bemærkninger:
+  - WireGuard-serveren vil blive installeret med standard-CIDR på 10.5.0.2/16,
+    DNS på 1.1.1.1, 1 klientkonfiguration og lytteport på 51820.
+
+  - WireGuard-serveren vil blive installeret med standardreglerne for post-down og post-up.
+     * Post-down-reglen vil fjerne iptables-reglen for WireGuard-serveren.
+     * Post-up-reglen tilføjer iptables-reglen for WireGuard-serveren.
+
+  - Indstillingen '-noc' angiver antallet af klienter, der skal oprettes konfigurationer for.
+    Disse konfigurationer vil blive gemt i mappen '/srv/quickbox/db/wireguard'.
+
+  - De fleste VPN-udbydere leverer en konfigurationsfil til WireGuard.
+    Hvis du bruger NordVPN, som ikke leverer en konfigurationsfil direkte,
+    kan du generere en ved hjælp af den medfølgende NordVPN-konfigurationsgenerator.
+    For mere information om generering af en NordVPN-konfigurationsfil,
+    brug kommandoen: nvpn_conf_gen -h"
+		;;
+
+	*)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Indstil brugernavnet for ${software_title} (påkrævet)" \
+			"  qb install ${software_help_name} -u brugernavn
+  qb reinstall ${software_help_name} -u brugernavn
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+			""
+		;;
+	esac
 }

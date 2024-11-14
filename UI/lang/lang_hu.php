@@ -1,15 +1,15 @@
 <?php
 
 /**
- * QuickBox Pro Hungarian Language File
+ * QuickBox Pro magyar nyelvű fájl
  *
- * This file is used to translate the QuickBox Pro Dashboard into Hungarian.
- * This language file is a work in progress and is not yet complete.
+ * Ez a fájl a QuickBox Pro Dashboard magyarra fordítására szolgál.
+ * Ez a nyelvi fájl folyamatban van, és még nem készült el.
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Hungarian
- * @version    3.0.1.40
+ * @version    3.0.1.57
  * @since      2.5.8
  *
  * @var Configs $configs The configurations object.
@@ -324,7 +324,6 @@ $L['MOUNT_CHECK_ABOUT']   = 'Ezeket az értékeket a rendszer kiszámítja és r
 $L['MOUNT_CHECK_PROCESS'] = 'A tér százalékos értékeit jelenleg a háttérben számítják ki. Kérjük, nézzen vissza később a frissített eredményekért. Oldalfrissítést igényel.';
 $L['MOUNT_MONITOR_INFO']  = 'További rögzítési információ';
 $L['MOUNT_START_SCAN']    = 'Vizsgálat indítása';
-$L['NANGINX']             = 'Nginx-en fut';
 $L['NEED_HELP']           = 'Segítségre van szüksége?';
 $L['NGINX_CONF_OPTIONS']  = 'Nginx Conf beállítások';
 $L['NGINX_CONFIG']        = 'Nginx konfiguráció';
@@ -439,6 +438,7 @@ $L['TRANSMISSION']  = 'Transmission is designed for easy, powerful use. The defa
 $L['UNIFI']         = 'The UniFi® Controller is a wireless network management software solution from Ubiquiti Networks™. It allows you to manage multiple wireless networks using a web browser.';
 $L['UNPACKERR']     = 'Extracts downloads for Radarr, Sonarr, Lidarr, Readarr - Deletes extracted files after import.';
 $L['WEBCONSOLE']    = 'TTYD (aka The QuickBox Web Console) is a fully-featured terminal based on Xterm.js with CJK and IME support.';
+$L['WIREGUARD']     = 'A WireGuard® egy rendkívül egyszerű, de gyors és modern VPN, amely a legmodernebb kriptográfiát használja. Célja, hogy gyorsabb, egyszerűbb, karcsúbb és hasznosabb legyen, mint az IPsec, miközben elkerüli a hatalmas fejfájást. Sokkal nagyobb teljesítményű lesz, mint az OpenVPN. A WireGuardot általános célú VPN-nek tervezték, beágyazott interfészeken és szuperszámítógépeken egyaránt, sokféle körülményre alkalmas.';
 $L['X2GO']          = 'X2Go is an open source remote desktop software for Linux that uses the NX technology protocol.';
 $L['XTEVE']         = 'XTeVe is an application that simulates a TV tuner, it allows you to have IPTV channels via Plex or Emby. xTeVe can merge multiple M3U and XMLTV files, and send it to your preferred Media Center.';
 $L['ZNC']           = 'ZNC is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels.';
@@ -561,7 +561,7 @@ $L['QBIT_TOOLTIP']                 = 'It looks like Deluge 2 is currently instal
 $L['QUOTAS_FSTAB']                 = 'Edit your fstab';
 $L['QUOTAS_HELP']                  = 'For more about how to install quotas, <a href="https://nullrefer.ir/?https://quickbox.io/knowledge-base/how-to-install-quotas/" rel="noopener nofollow" target="_blank"><strong>please read this F.A.Q first</strong></a>.';
 $L['QUOTAS_TOOLTIP']               = 'Add the following instead of <code class="language-bash">defaults</code> on your main mount point to continue';
-$L['RCLONE_ADMIN_TOOLTIP']         = 'Access this feature from ssh by typing:<br><code>qb install rclone -u USER -o [dropbox|gdrive|encrypted]</code><br>See <code>qb help rclone</code> for more options.';
+$L['RCLONE_ADMIN_TOOLTIP']         = 'Access this feature from ssh by typing:<br><code>qb install rclone -u USER [--dropbox|--gdrive] [--encrypted] [--beta]</code><br>See <code>qb help rclone</code> for more options.';
 $L['RCLONE_USER_TOOLTIP']          = 'Please contact an System Administrator to have this installed.';
 $L['REMOVE_MEDUSA_FIRST']          = 'Remove Medusa first to install this software.';
 $L['REMOVE_SICKCHILL_FIRST']       = 'Remove SickChill first to install this software.';
@@ -623,6 +623,13 @@ $L['PLEX_DATA_PATH']         = 'Use custom path for data directory?';
 $L['PLEX_DATA_PATH_TOOLTIP'] = 'You have the option to specify a custom data path for your Plex install. If the chosen path doesn\'t currently exist, it will be automatically generated for you.<br>Alternatively, if you prefer to use the default path, simply keep the selection as \'No\', and the data directory will be located at:<br><code>/home/' . $username . '/.config/\'Plex Media Server\'</code>';
 $L['PLEX_DOMAIN']            = 'Set domain for Plex Media Server?';
 $L['PLEX_DOMAIN_TOOLTIP']    = 'If you already have a domain and the DNS records set up for a Plex subdomain, select \'Yes\' to enter your plex subdomain.<br>This option will configure your Plex Media Server to work seamlessly with your custom Plex domain. It includes setting up the essential Nginx reverse proxy and installing the SSL certificate for your domain to ensure secure access.';
+
+/* **********************************
+ * rutorrent plugin control modal
+ ************************************/
+$L['RUTORRENT_PLUGIN_CONTROL_TITLE'] = 'ruTorrent Plugin Control';
+$L['AUTHOR']                         = 'Author';
+$L['HELP_URL']                       = 'Documentation';
 
 /* **********************************
  * #3.2.5 - service control
@@ -959,26 +966,28 @@ $L['USER_TIMEOUT']            = 'User Inactivity Timeout';
 /* **********************************
  * #4.2.4 - USER SETTINGS
  ************************************/
-$L['ALLOW_MULTI_LOGINS']        = 'Multiple Logins';
-$L['ALLOW_MULTI_LOGINS_DESC']   = 'This option allows for simaltenous logins from multiple devices. If disabled, the user will be logged out of all other devices when they login from a new device.';
-$L['ALLOW_CONFIG_EDITING']      = 'Config Editors on Dashboard';
-$L['ALLOW_CONFIG_EDITING_DESC'] = 'This option allows for the editing of the config files from the dashboard. If disabled, the option to view/edit configs will be hidden.';
-$L['BY_ADMIN']                  = 'By Admin (Set below..)';
-$L['BY_USER']                   = 'By User (See User Admin pages)';
-$L['CHANGE_USER_SETTINGS']      = 'Change global settings for user accounts.';
-$L['EXCLUDE_ADMINS']            = 'Exclude Admins';
-$L['EXCLUDE_REDIRECTED_ADMINS'] = 'Exclude Admins from being redirected.';
-$L['GEN_USER_SETTINGSTINGS']    = 'General User Settings';
-$L['HOW_SET']                   = 'How are they Set?';
-$L['INDIV_USER_HOME']           = 'Individual User Homepages';
-$L['INDIVIDUAL_USER_FOLDERS']   = 'Individual User Folders';
-$L['PATH_ADMIN']                = 'Path (Set by Admin)';
-$L['SITE_ROOT_RELATIVE']        = 'Relative to Site Root';
-$L['ALLOW_MOUNT_INFO']          = 'Mount Info Viewing and Adding Panel';
-$L['ALLOW_MOUNT_INFO_DESC']     = 'This option allows for the viewing and adding of mount info from the dashboard. If disabled, the option to view/add mount info will be hidden.';
-$L['SETTING']                   = 'Setting';
-$L['DESCRIPTION']               = 'Description';
-$L['VALUE']                     = 'Value';
+$L['ALLOW_MULTI_LOGINS']                   = 'Multiple Logins';
+$L['ALLOW_MULTI_LOGINS_DESC']              = 'This option allows for simaltenous logins from multiple devices. If disabled, the user will be logged out of all other devices when they login from a new device.';
+$L['ALLOW_CONFIG_EDITING']                 = 'Config Editors on Dashboard';
+$L['ALLOW_CONFIG_EDITING_DESC']            = 'This option allows for the editing of the config files from the dashboard. If disabled, the option to view/edit configs will be hidden.';
+$L['ALLOW_MOUNT_INFO']                     = 'Megfigyelő és panel hozzáadása';
+$L['ALLOW_MOUNT_INFO_DESC']                = 'Ez az opció lehetővé teszi a felhasználók számára, hogy megtekintsenek és hozzáadjanak könyvtárakat az irányítópultról. Ha le van tiltva, a könyvtárak megtekintésének és hozzáadásának lehetősége rejtve lesz.';
+$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL']      = 'Alkalmazás automatikus biztonsági mentése telepítéskor';
+$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL_DESC'] = 'Ez az opció lehetővé teszi az alkalmazás automatikus teljes biztonsági mentését a telepítés után. Ha le van tiltva, az alkalmazásokról nem készül biztonsági mentés a telepítéskor. <span style="color:var(--qb-color-41);">Az alkalmazás konfigurációs fájljainak biztonsági mentése ettől a beállítástól függetlenül történik.</span><br>A biztonsági másolatok a következő helyen tárolódnak:<br><code>/home/[FELHASZNÁLÓNÉV]/.QuickBox/software/</code>';
+$L['BY_ADMIN']                             = 'By Admin (Set below..)';
+$L['BY_USER']                              = 'By User (See User Admin pages)';
+$L['CHANGE_USER_SETTINGS']                 = 'Change global settings for user accounts.';
+$L['EXCLUDE_ADMINS']                       = 'Exclude Admins';
+$L['EXCLUDE_REDIRECTED_ADMINS']            = 'Exclude Admins from being redirected.';
+$L['GEN_USER_SETTINGSTINGS']               = 'General User Settings';
+$L['HOW_SET']                              = 'How are they Set?';
+$L['INDIV_USER_HOME']                      = 'Individual User Homepages';
+$L['INDIVIDUAL_USER_FOLDERS']              = 'Individual User Folders';
+$L['PATH_ADMIN']                           = 'Path (Set by Admin)';
+$L['SITE_ROOT_RELATIVE']                   = 'Relative to Site Root';
+$L['SETTING']                              = 'Setting';
+$L['DESCRIPTION']                          = 'Description';
+$L['VALUE']                                = 'Value';
 
 /* **********************************
  * #4.2.5 - SECURITY SETTINGS
@@ -1204,20 +1213,20 @@ Here\'s an example using Bazarr4K:<br>
 <pre class="mb-2"><code class="language-json">"bazarr4k": {
     "software_title": "Bazarr4K",
     "qb_package_name": "bazarr",
-    "qb_options": "-o 4k",
+    "qb_options": "--4k",
     ...</code></pre>
 Please take note of the following important information regarding QuickBox\'s software API output:
 <ul>
 <li>When accessing software packages through QuickBox, you will consistently find the \'qb_package_name\' attribute. This attribute is marked and used by the <code>qb</code> naming convention.</li>
-<li>Additionally, each API output includes the \'qb_options\' entry, which provides valuable options for customization. One of these options is the \'4K\' installation flag, denoted as <code>-o 4k</code>.</li>
+<li>Additionally, each API output includes the \'qb_options\' entry, which provides valuable options for customization. One of these options is the \'4K\' installation flag, denoted as <code>--4k/code>.</li>
 </ul><br/>
 For instance, if you intend to install \'Bazarr\' with 4K support, you should use the following command:<br/>
-<pre class="mb-0"><code class="language-bash">qb install bazarr -o 4k -u [USERNAME]</code></pre><br/>
+<pre class="mb-0"><code class="language-bash">qb install bazarr --4k -u [USERNAME]</code></pre><br/>
 It\'s important to note that you should not use \'bazarr4k\' as the package name, as the \'qb_options\' entry is designed to handle such customizations efficiently.';
 $L['SOFTWARE_SERVICE_STATUS']            = 'Display status for specified software and user';
 $L['SOFT_STATUS_ACTIVE_NOTICE']          = 'If the service is active.';
 $L['SOFT_STATUS_INACTIVE_NOTICE']        = 'If the service is inactive.';
-$L['SOFT_STATUS_NOT_ISNTALLED_NOTICE']   = 'If the application is not installed for the specified user.';
+$L['SOFT_STATUS_NOT_INSTALLED_NOTICE']   = 'If the application is not installed for the specified user.';
 $L['SOFTWARE_SERVICE_CONTROL']           = 'Signal specified action for specified software and user';
 $L['SOFT_CONTROL_ACTION_RESTART_NOTICE'] = 'Where the action=restart...';
 $L['SOFT_CONTROL_ACTION_START_NOTICE']   = 'Where the action=start...';
@@ -1308,6 +1317,7 @@ $L['EVENT']                        = 'Event';
 $L['LOG_MESSAGE']                  = 'Log Message';
 $L['LOGS_SUMMARY']                 = 'Logs Summary';
 $L['COMMAND']                      = 'Command';
+$L['COMMAND_SOFTWARE']             = 'Command/Software';
 $L['SOFTWARE']                     = 'Software';
 $L['DELETED_ALL_APP_LOGS']         = 'Deleted all software logs';
 $L['DELETED_ALL_APPLICATION_LOGS'] = 'Delete all application logs';
@@ -1323,6 +1333,7 @@ $L['QUICKBOX_VERSION_CHECK']       = 'Check for QuickBox updates';
 $L['QUOTA_CHECK']                  = 'Kvótabeállítás ellenőrzése';
 $L['SOFTWARE_VERSION_CHECK']       = 'Check for installed software updates';
 $L['SCHEDULED_TASK']               = 'Scheduled Task';
+$L['AUTO_PROCESS']                 = 'Auto Process';
 
 /* **********************************
  * #4.4.6 - HELP MANUAL
@@ -1458,6 +1469,19 @@ $L['ADD_API_KEY']                                       = 'Add API Key';
 $L['ADD_API_KEY_CONTENT']                               = 'Add/Activate API key';
 $L['REMOVE_API_KEY']                                    = 'Remove API Key';
 $L['REMOVE_API_KEY_CONTENT']                            = 'Remove/Deactivate API key';
+$L['MANAGE_DATABASE']                                   = 'Adatbázis kezelése';
+$L['MANAGE_DATABASE_CONTENT']                           = 'A QuickBoxhoz használt adatbázis kezelése';
+$L['MANAGE_DATABASE_CONNECTION_INFO_CONTENT']           = 'Kérjük, vegye figyelembe, hogy a felhasználónév és a jelszó megadásakor (ha az opciókat használja), azoknak nem kell egyeznie a jelenlegi fő fiókja hitelesítő adataival. Ezek a hitelesítő adatok helyi rendszerhasználatra szolgálnak, különösen adatbázis-kapcsolatokhoz és különféle rendszerfunkciókhoz. Ezért lehetnek egyediek, és függetlenek a fő fiókod felhasználónevétől és jelszavától.';
+$L['MANAGE_DATABASE_INFO_CONTENT']                      = 'A QuickBox elsősorban az SQLite3-at használja alapértelmezett adatbázisként. Ezzel a paranccsal azonban zökkenőmentesen válthat az SQLite3 és a MySQL között. Ha a MySQL-t választja, győződjön meg arról, hogy a MySQL-kiszolgáló megfelelően van telepítve és konfigurálva a rendszeren. Ezenkívül szüksége lesz egy MySQL felhasználói fiókra, megfelelő jogosultságokkal az adatbázisok létrehozásához és kezeléséhez. A parancs végrehajtása megkönnyíti ezeket a szükséges konfigurációkat, beleértve a MySQL-kiszolgáló és a kliens telepítését, ha még nincsenek telepítve a rendszerre. A folyamat során a rendszer felkéri a MySQL-kiszolgáló és a kliens telepítésére, ha nem észleli őket. Ezenkívül a parancs kezeli a konfigurációs beállításokat, biztosítva a zökkenőmentes integrációt a QuickBox-szal. Kérjük, vegye figyelembe, hogy a <code>-o [mysql|sqlite]</code> kivételével minden paraméter nem kötelező, és alapértelmezés szerint a szkripten belül előre meghatározott értékeket használ.<br><br>Az alapértelmezett értékek a következők:<br><code>user=admin, pass=%random%, port=3306, host=localhost, name=qbpro</code><br><br>A MySQL adatai a <code>/root/.my.cnf</code>.<br><br>Az SQLite3-ba való visszaállításhoz egyszerűen futtassa újra a parancsot a <code>-o sqlite</code> jelzővel.';
+$L['MANAGE_DATABASE_BACKUP']                            = 'Adatbázis biztonsági mentésének kezelése';
+$L['MANAGE_DATABASE_BACKUP_CONTENT']                    = 'A QuickBox adatbázis biztonsági mentése';
+$L['MANAGE_DATABASE_BACKUP_INFO_CONTENT']               = 'A QuickBox biztonsági mentési folyamata 24 óránként 3:30-kor (szerveridő) automatikusan lefut a karbantartási ütemterv részeként. Ez a feladat az <code>/etc/cron.d/quickbox</code> ütemezésben a következőképpen szerepel:<br><br><code>30 3 * * * root /usr/local/bin/qb management db - o karbantartás --cron</code><br><br>A fenti paranccsal azonban manuálisan is elindíthat egy biztonsági mentést (a karbantartási rutin futtatása nélkül).<br><br><strong>A biztonsági mentési folyamatról</strong> strong><br><br>Minden biztonsági mentés pillanatképet hoz létre a QuickBox adatbázisról, visszaállítási pontot biztosítva az adatok integritásának védelme érdekében adatvesztés vagy adatsérülés esetén. A biztonsági másolat fájlok egy megadott könyvtárba kerülnek, a rendszer megőrzi az 5 legutóbbi biztonsági másolatot, hogy mindig több visszaállítási pont álljon rendelkezésre a helyreállításhoz.<br><br><strong>Biztonsági mentési fájlok helyei</strong><br>< br>A biztonsági mentési fájlok a következő könyvtárakban vannak tárolva:<br><br><strong>MySQL</strong>: <code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.sql<code><br><strong>SQLite</strong>: <code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.db</code>';
+$L['MANAGE_DATABASE_MAINTENANCE']                       = 'Adatbázis karbantartás kezelése';
+$L['MANAGE_DATABASE_MAINTENANCE_CONTENT']               = 'A QuickBox adatbázis-karbantartási folyamat elindítása';
+$L['MANAGE_DATABASE_MAINTENANCE_INFO_CONTENT']          = 'A QuickBox karbantartási folyamat célja az adatbázis zökkenőmentes és hatékony működése. Ez a folyamat a következőket tartalmazza:<br><br><ol><li>A szükségtelen adatok megtisztítása.</li><li>Az adatbázistáblák optimalizálása.</li><li>Egyéb karbantartási feladatok futtatása a hatékonyság növelése és az adatproblémák megelőzése érdekében , mint például a táblázatok ellenőrzése és javítása.</li><li>A nap üzenete (MotD) értesítés elindítása, amely CLI-n keresztül értesíti a rendszergazdát, ha helyrehozhatatlan hibák lépnek fel.</li></ol><p><strong>Amikor fut a karbantartás</strong><br><br>A karbantartási folyamat automatikusan lefut 24 óránként, szerveridő szerint hajnali 3:30-kor. Ez a feladat az <code>/etc/cron.d/quickbox</code> ütemezésben a következőképpen szerepel:<br><br><code>30 3 * * * root /usr/local/bin/qb management db - o karbantartás --cron</code><br><br>A fenti paranccsal azonban manuálisan is elindíthatja a karbantartást.<br><br><strong>Miért fontos a karbantartás?</strong><br><br> A rendszeres karbantartás biztosítja, hogy a QuickBox adatbázisa egészséges maradjon, a rendszer teljesítménye magas maradjon, és megóvja adatait.</p>';
+$L['MANAGE_DATABASE_RESTORE']                           = 'Adatbázis-visszaállítás kezelése';
+$L['MANAGE_DATABASE_RESTORE_CONTENT']                   = 'A QuickBox adatbázis visszaállítása';
+$L['MANAGE_DATABASE_RESTORE_INFO_CONTENT']              = 'Ez a parancs elindítja az adatbázis-visszaállítási folyamatot, lehetővé téve egy adott visszaállítandó biztonsági mentési fájl kiválasztását. A visszaállítási folyamat célja az adatok helyreállítása adatvesztés vagy adatsérülés esetén, megbízható és hatékony módot biztosítva a QuickBox adatbázis korábbi állapotának visszaállítására.<br><br><strong>A visszaállítási folyamat működése</strong> <br><br>A visszaállítás parancs futtatásakor megjelenik egy kiválasztási menü, amely felsorolja az összes elérhető adatbázis-mentési fájlt. Ezután kiválaszthatja a visszaállítani kívánt biztonsági mentési fájlt, és a rendszer automatikusan visszaállítja a kiválasztott biztonsági mentési fájlt, visszaállítva a QuickBox adatbázisát abba az állapotba, amelyben a biztonsági mentés létrehozásakor volt.';
 $L['MANAGE_DASHBOARD_ACCESS_URL']                       = 'Manage Dashboard access url';
 $L['MANAGE_DASHBOARD_ACCESS_URL_CONTENT']               = 'This command sets the server web root for dashboard access to either the expressed Domain or IP Address';
 $L['SET_SERVER_LANG']                                   = 'Set Server Language';

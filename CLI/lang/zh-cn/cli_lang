@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.94
+# File Version: 1.0.138
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2023, QuickBox.IO
+# Copyright (C) 2019-2024, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -46,37 +46,37 @@ quickbox::dashboard::log() {
 	fi
 	echo "${1:-null}"
 }
+
 ################################################################################
 # Clean
 ################################################################################
+
 quickbox::lang::clean::memory() {
 	declare text="清理内存缓存..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::clean::rclone() {
 	declare text="清理rclone上传日志..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::clean::rclone::error() {
 	declare text="错误: 日志文件不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::clean::dashboard() {
 	declare text="等待系统响应..."
 	quickbox::dashboard::log "${text}"
 }
+
 ################################################################################
 # Locks
 ################################################################################
+
 quickbox::lang::lock::handle() {
 	declare text="${quickbox_lock} 当前正在运行
 ${quickbox_lock} 完成后进程将恢复"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::lock::remove() {
 	declare text="移除软件锁..."
 	quickbox::dashboard::log "${text}"
@@ -85,21 +85,19 @@ quickbox::lang::lock::remove() {
 ################################################################################
 # Apt
 ################################################################################
+
 quickbox::lang::apt::update::header() {
 	declare text="检查并执行 apt 更新..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::apt::db::locked() {
 	declare text="试图解决 dpkg 锁..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::apt::update::completed() {
 	declare text="apt-get 升级成功完成"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::apt::check::failed() {
 	declare text="apt-get check 失败, 你可能有损坏的包"
 	quickbox::dashboard::log "${text}"
@@ -108,12 +106,12 @@ quickbox::lang::apt::check::failed() {
 ################################################################################
 # Install
 ################################################################################
+
 quickbox::lang::install::header() {
 	declare text="现在将安装 ${software_title}
 这个过程可能需要几分钟..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::rutorrent::header() {
 	rtorrent_count=$(quickbox::software::count rtorrent)
 	if [[ ${rtorrent_count} -eq 0 ]]; then
@@ -127,67 +125,54 @@ rTorrent 0.9.8 现在将安装, 请稍等一下
 	fi
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::sources::header() {
 	declare text="为 ${software_title} 添加其他密钥和源..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::dependencies::header() {
 	declare text="正在安装 ${software_title} 依赖项..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::build::header() {
 	declare text="构建 ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::mktorrent::header() {
 	declare text="构建 mktorrent..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::xmlrpc::header() {
 	declare text="构建 xmlrpc-c..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::libtorrent::header() {
 	declare text="构建 libtorrent..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::rtorrent::header() {
 	declare text="构建 rtorrent..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::certificate::header() {
 	declare text="正在为 ${d} 创建 ssl 证书..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::configure::lecert::header() {
 	declare text="正在配置 NGinx 进行 Let's Encrypt..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::configure::header() {
 	declare text="配置 ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::backup::header() {
 	declare text="备份 ${software_title} 配置..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::start::header() {
 	declare text="开始 ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::install::complete::header() {
 	declare text="${software_title} 安装完成"
 	quickbox::dashboard::log "${text}"
@@ -196,12 +181,12 @@ quickbox::lang::install::complete::header() {
 ################################################################################
 # Reinstall
 ################################################################################
+
 quickbox::lang::reinstall::header() {
 	declare text="现在将重新安装 ${software_title}
 这个过程可能需要几分钟..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::reinstall::complete::header() {
 	declare text="${software_title} 重新安装完成"
 	quickbox::dashboard::log "${text}"
@@ -210,27 +195,24 @@ quickbox::lang::reinstall::complete::header() {
 ################################################################################
 # Remove
 ################################################################################
+
 quickbox::lang::remove::header() {
 	declare text="${software_title} 现在将被删除
 这个过程可能需要几分钟..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::remove::stop::header() {
 	declare text="正在停止 ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::remove::dependencies::header() {
 	declare text="删除 ${software_title} 依赖项..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::remove::files::header() {
 	declare text="删除 ${software_title} 文件..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::remove::complete::header() {
 	declare text="${software_title} 移除完成"
 	quickbox::dashboard::log "${text}"
@@ -239,61 +221,64 @@ quickbox::lang::remove::complete::header() {
 ################################################################################
 # Update
 ################################################################################
+
 quickbox::lang::update::header() {
 	declare text="现在将更新 ${software_title}
 这个过程可能需要几分钟..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::files::header() {
 	declare text="正在更新 ${software_title}..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::complete::header() {
 	declare text="${software_title} 更新完成"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::files::admin() {
 	declare text="必须以管理员身份登录才能更新 ${software_title}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::update::jellyfin::ffmpeg() {
+	declare text="为 Jellyfin 更新 ffmpeg..."
 	quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Renew - Let's Encrypt
 ################################################################################
+
 quickbox::lang::install::lecert::complete() {
 	declare -a domain_array
-	if [[ "${qb_option[*]:-}" == *"dash"* ]]; then
+	if [[ -n "${dash}" ]]; then
 		domain_array+=("https://${domain_options[dash]}")
 		application_array+=("QuickBox")
 	fi
-	if [[ "${qb_option[*]:-}" == *"emby"* ]]; then
+	if [[ -n "${emby}" ]]; then
 		domain_array+=("https://${domain_options[emby]}")
 		application_array+=("Emby")
 	fi
-	if [[ "${qb_option[*]:-}" == *"jellyfin"* ]]; then
+	if [[ -n "${jellyfin}" ]]; then
 		domain_array+=("https://${domain_options[jellyfin]}")
 		application_array+=("Jellyfin")
 	fi
-	if [[ "${qb_option[*]:-}" == *"jellyseerr"* ]]; then
+	if [[ -n "${jellyseerr}" ]]; then
 		domain_array+=("https://${domain_options[jellyseerr]}")
 		application_array+=("Jellyseerr")
 	fi
-	if [[ "${qb_option[*]:-}" == *"komga"* ]]; then
+	if [[ -n "${komga}" ]]; then
 		domain_array+=("https://${domain_options[komga]}")
 		application_array+=("Komga")
 	fi
-	if [[ "${qb_option[*]:-}" == *"overseerr"* ]]; then
+	if [[ -n "${overseerr}" ]]; then
 		domain_array+=("https://${domain_options[overseerr]}")
 		application_array+=("Overseerr")
 	fi
-	if [[ "${qb_option[*]:-}" == *"plex"* ]]; then
+	if [[ -n "${plex}" ]]; then
 		domain_array+=("https://${domain_options[plex]}")
 		application_array+=("Plex")
 	fi
-	if [[ "${qb_option[*]:-}" == *"no-dash"* ]]; then
+	if [[ -n "${no_dash}" ]]; then
 		domain_array+=("${domain}")
 		application_array+=("自定义域已")
 	fi
@@ -303,17 +288,14 @@ quickbox::lang::install::lecert::complete() {
 	done
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::renew::certificates::header() {
 	declare text="ssl 证书更新过程现在将开始"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::renew::complete::header() {
 	declare text="ssl证书更新完成"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::lecert::renew() {
 	# divide domain entries with commas and set final entry to "and"
 	for ((i = 0; i < ${#domain[@]}; i++)); do
@@ -328,7 +310,6 @@ quickbox::lang::lecert::renew() {
 	declare text="正在为 ${text} 续订 ssl 证书..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::lecert::renew::info() {
 	created_array="${certificate_created}"
 	expires_array="${certificate_expiry}"
@@ -350,12 +331,10 @@ ${text}"
 		quickbox::dashboard::log "${text}"
 	fi
 }
-
 quickbox::lang::reinstall::lecert::complete::header() {
 	declare text="ssl证书重新安装完成"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::remove::cert::complete::header() {
 	declare text="ssl证书删除完成"
 	quickbox::dashboard::log "${text}"
@@ -364,46 +343,39 @@ quickbox::lang::remove::cert::complete::header() {
 ################################################################################
 # User
 ################################################################################
+
 quickbox::lang::user::create() {
 	declare text="quickbox 用户创建: "
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::delete() {
 	declare text="${username:-"quickbox 用户"} 已删除"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::username() {
 	declare text="用户: ${username}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::password() {
 	declare text="密码: ${password}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::password::updated() {
 	declare text="${username:-"quickbox 用户"} 的密码已更新"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::ban() {
 	declare text="${username:-"quickbox 用户"} 禁止"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::unban() {
 	declare text="${username:-"quickbox 用户"} 解禁"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::demote() {
 	declare text="${username:-"quickbox 用户"} 从管理员降级"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::user::promote() {
 	declare text="${username:-"quickbox 用户"} 晋升为管理员"
 	quickbox::dashboard::log "${text}"
@@ -412,136 +384,27 @@ quickbox::lang::user::promote() {
 ################################################################################
 # Misc
 ################################################################################
+
+quickbox::lang::unknown::option() {
+	declare text="${2} 未知选项：${1}"
+	quickbox::dashboard::log "${text}"
+}
 quickbox::lang::username::specified() {
 	declare text="错误: 未指定用户名"
 	quickbox::dashboard::log "${text}"
 }
-
-quickbox::lang::software::info::example() {
-	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u 用户名 ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u 用户名 ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u 用户名 ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u 用户名 ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u 用户名 ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "renew" ]]; then
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d domain.com"
-	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u 用户名 ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	fi
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::info::note() {
-	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
-	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
-	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
-	if [[ ${process} == "install" ]]; then
-		if [[ ${software_name} == "filebot" ]]; then
-			[[ -n ${usr} ]] && statements="为用户安装最新的 ${branch} 版本的 ${software_name}"
-			[[ -n ${usr} && -n ${deluge} ]] && declare text="Deluge 的阶段后处理脚本"
-			[[ -n ${usr} && -n ${nzbget} ]] && declare text="NZBGet 的阶段后处理脚本"
-			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="阶段 rTorrent 的后处理脚本"
-			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="SABnzbd 的阶段后处理脚本"
-			[[ -n ${usr} && -n ${media_path} ]] && declare text="设置媒体路径 (例如：/path/to/media)"
-		else
-			[[ -n ${usr} ]] && declare text="为用户安装 ${software_name} 的最新 ${branch} 版本"
-			[[ -n ${rclone_remote} ]] && declare text="为使用 ${rclone_remote} 的用户安装最新的 ${branch} 版本的 ${software_name}"
-			[[ -n ${encrypted} ]] && declare text="为用户安装最新的 ${branch} 版本的 ${software_name} 并进行加密"
-			[[ -n ${dmn} ]] && declare text="在指定域上安装用于仪表板的 ssl 证书"
-			[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
-			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="为指定域安装 ssl 证书"
-			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="为指定的 emby 域安装 ssl 证书"
-			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="为指定的 jellyfin 域安装 ssl 证书"
-			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="为指定的 jellyseerr 域安装 ssl 证书"
-			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="为指定的 komga 域安装 ssl 证书"
-			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="为指定的 overseerr 域安装 ssl 证书"
-			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="为指定的 plex 域安装 ssl 证书"
-			[[ -n ${version} ]] && declare text="安装 ${software_name} 的最新 ${version[*]} 版本"
-			[[ -n ${branch} && -z ${usr} ]] && declare text="安装 ${software_name} 的最新 ${branch} 版本"
-			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="安装最新的 ${branch} 版本的 ${software_name} 指定数据目录"
-			[[ -n ${library_path} ]] && declare text="使用指定的库目录安装 ${software_name}"
-		fi
-	elif [[ ${process} == "reinstall" ]]; then
-		if [[ ${software_name} == "filebot" ]]; then
-			[[ -n ${usr} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name}"
-			[[ -n ${usr} && -n ${deluge} ]] && declare text="Deluge 的阶段后处理脚本"
-			[[ -n ${usr} && -n ${nzbget} ]] && declare text="NZBGet 的阶段后处理脚本"
-			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="阶段 rTorrent 的后处理脚本"
-			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="SABnzbd 的阶段后处理脚本"
-			[[ -n ${usr} && -n ${media_path} ]] && declare text="设置媒体路径 (例如：/path/to/media)"
-		else
-			[[ -n ${usr} ]] && declare text="为用户重新安装 ${software_name} 的最新 ${branch} 版本"
-			[[ -n ${rclone_remote} ]] && declare text="为使用 ${rclone_remote} 的用户重新安装最新的 ${branch} 版本的 ${software_name}"
-			[[ -n ${encrypted} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name} 并进行加密"
-			[[ -n ${dmn} ]] && declare text="重新安装指定域上用于仪表板的 ssl 证书"
-			[[ -n ${usr} && -n ${dmn} ]] && declare text="为用户重新安装最新的 ${branch} 版本的 ${software_name} 并为域暂存 ssl 证书"
-			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="重新安装指定域的 ssl 证书"
-			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="为指定的 emby 域重新安装 ssl 证书"
-			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="为指定的 jellyfin 域重新安装 ssl 证书"
-			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="为指定的 jellyseerr 域重新安装 ssl 证书"
-			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="为指定的 komga 域重新安装 ssl 证书"
-			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="为指定的 overseerr 域重新安装 ssl 证书"
-			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="为指定的 plex 域重新安装 ssl 证书"
-			[[ -n ${version} ]] && declare text="重新安装 ${software_name} 的最新 ${version[*]} 版本"
-			[[ -n ${branch} && -z ${usr} ]] && declare text="重新安装 ${software_name} 的最新 ${branch} 版本"
-			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="重新安装 ${software_name} 的最新 ${branch} 版本 指定数据目录"
-			[[ -n ${library_path} ]] && declare text="使用指定的库目录重新安装 ${software_name}"
-		fi
-	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="为用户删除 ${software_name}"
-		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="从指定域中删除 ssl 证书"
-		[[ -n ${version} && -z ${dmn} ]] && declare text="移除 ${software_name}"
-		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="移除 ${software_name}"
-	elif [[ ${process} == "renew" ]]; then
-		[[ -n ${dmn} ]] && declare text="从指定域续订 ssl 证书"
-	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="为用户更新 ${software_name} 到最新的 ${branch} 版本"
-		[[ -n ${dmn} ]] && declare text="更新指定域的 ssl 证书，与仪表板一起使用"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="更新指定域的 ssl 证书"
-		[[ -n ${version} ]] && declare text="更新 ${software_name} 到最新 ${version} 版本"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="更新 ${software_name} 的最新 ${branch} 版本"
-		[[ ${software_name} == "deluge" ]] && declare text="为所有用户将 ${software_name} 更新到最新的 ${branch} 版本"
-	fi
-	quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::software::access() {
 	declare text="访问 ${software_title}: 
 ${quickbox_web_root}${software_name}
 ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::mu::access() {
 	declare text="访问 ${software_title}: 
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::airsonic::access() {
 	declare text="访问 ${software_title}:
 ${quickbox_web_root}${username}/${software_name}
@@ -550,7 +413,14 @@ ${quickbox_web_root}${username}/${software_name}
 ${software_title} 安装在端口：${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
-
+quickbox::lang::software::autodl::access() {
+	adl_port=$(cat <"/home/${admin_name:-}/.autodl/autodl.cfg" | grep "gui-server-port = " | sed 's/gui-server-port = //')
+	declare text="访问 ${software_title}:
+${quickbox_web_root}rutorrent
+  > 菜单 > autodl-irssi
+${software_title} 安装在端口: ${adl_port}"
+	quickbox::dashboard::log "${text}"
+}
 quickbox::lang::software::calibre::access() {
 	declare text="访问 ${software_title}: 
 ${quickbox_web_root}${username}/${software_name}
@@ -560,45 +430,38 @@ ${quickbox_web_root}${username}/${software_name}
 ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
-
 Quickbox::lang::software::jdownloader::access() {
 	declare text="访问 ${software_title}:
 https://my.jdownloader.org/
 下载位置：${software_downloads_directory}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::rtorrent::access() {
 	declare text="> rTorrent 版本: ${rtorrent_version}
 > libtorrent 版本: ${libtorrent_version}
 > 套接字路径: /var/run/${admin_name}/.rtorrent.sock"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::rutorrent::access() {
 	declare text="访问 ${software_title}: 
 ${quickbox_web_root}${software_name}
 > 套接字路径: /var/run/${admin_name}/.rtorrent.sock"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::admin::access() {
 	declare text="访问 ${software_title}: 
 ${quickbox_web_root}${admin_name}/${software_name}
 ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::database() {
 	declare text="正在更新数据库..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::trackers::disable() {
 	declare text="禁用公共跟踪器..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::trackers::enable() {
 	declare text="启用公共跟踪器..."
 	quickbox::dashboard::log "${text}"
@@ -607,7 +470,6 @@ quickbox::lang::directory::noexist() {
 	declare text="所需目录不存在..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::directory::nomove() {
 	declare text="无法移动到 $1..."
 	quickbox::dashboard::log "${text}"
@@ -616,7 +478,6 @@ quickbox::lang::package::fail() {
 	declare text="无法安装所需的软件包 $1..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::flaresolverr::access() {
 	curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
 	if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
@@ -628,7 +489,6 @@ ${software_title} 安装在端口: ${software_web_port}"
 		quickbox::dashboard::log "${text}"
 	fi
 }
-
 quickbox::lang::software::jellyfin::access() {
 	if [[ -n ${domain:-} ]]; then
 		# trunk-ignore(shellcheck/SC2001)
@@ -642,7 +502,6 @@ ${software_title} 安装在端口：${software_web_port}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::notifiarr::access() {
 	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
 		declare text="访问 ${software_title} 在:
@@ -650,7 +509,6 @@ ${quickbox_web_root}${username}/${software_name}
 ${software_title} 安装在端口：${software_web_port}
 用户名: ${username}
 密码: ${notifiarr_user_password}
-
 注意: 您的密码少于 9 个字符.
      Notifiarr 要求密码至少包含 9 个字符.
      我已对此进行了修改以添加其他随机字符.
@@ -668,14 +526,12 @@ ${software_title} 安装在端口：${software_web_port}
 		quickbox::dashboard::log "${text}"
 	fi
 }
-
 quickbox::lang::software::novnc::access() {
 	declare text="访问 ${software_title} 在:
 ${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
 ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::jellyseerr::access() {
 	if [[ -n ${domain:-} ]]; then
 		# trunk-ignore(shellcheck/SC2001)
@@ -691,7 +547,6 @@ ${software_title} 安装在端口：${software_web_port}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::overseerr::access() {
 	if [[ -n ${domain:-} ]]; then
 		# trunk-ignore(shellcheck/SC2001)
@@ -707,104 +562,84 @@ ${software_title} 安装在端口：${software_web_port}"
 	fi
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plex_directory_warning() {
 	declare text="自定义数据目录：'${software_install_directory}' 已经存在.
 使用 '${software_install_directory}/plex' 代替."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexclaim() {
 	declare text="为 ${username} 申请 plex 服务器..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plex::access() {
 	declare text="访问 ${software_title} 在:
 ${quickbox_web_root}web/
 ${software_title} 安装在端口: ${software_web_port}
-
 > 如果你还没有, 或者不确定如何 
 声称你的plex服务器, 请遵循以下指南:
 https://quickbox.io/kb-categories/plex/"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_header() {
 	declare text="请输入你的Plex凭证 (用户名/密码/2FA):"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_subheader() {
 	declare text="这些凭证不会被保存或在本实例之外共享."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_email() {
 	declare text="电子邮件."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_password() {
 	declare text="密码："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_otp() {
 	declare text="2FA: [如果没有设置2FA就留空] "
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_fail() {
 	declare text="下载PlexPass更新需要用户名和密码."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_incorrect() {
 	declare text="用户名和/或密码不正确"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_loginfail() {
 	declare text="登录失败, 调试信息："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_retrievefail() {
 	declare text="无法检索到下载URL."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_credentials_parsefail() {
 	declare text="解析HTML响应失败."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_downloading() {
 	declare text="正在下载Plex更新..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_downloading_fail() {
 	declare text="下载失败, 错误代码 ${code}, ${error}"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_installing() {
 	declare text="正在安装新的Plex版本..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_updated() {
 	declare text="Plex已成功更新."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::plexupdate_current() {
 	declare text="Plex已经是最新的了."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::pyload::access() {
 	declare text="访问 ${software_title} 在:
 ${quickbox_web_root}${username}/${software_name}/
@@ -817,12 +652,10 @@ ${software_title} 安装在端口: ${software_web_port}
 你的密码可以在 pyload 的 [users] 标签下修改."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::build::python311() {
 	declare text="正在安装 python 3.11，请稍候，因为这可能需要一些时间..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::quassel::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 	declare text="${software_title} 安装在端口: ${software_daemon_port}
@@ -831,12 +664,10 @@ quickbox::lang::software::quassel::access() {
 并连接到新创建的 ${software_title} 核心服务器 核心 
 来设置你的账户:
 ${server_ip}:${software_daemon_port}
-
 > 从下面下载 quassel-client:
 https://quassel-irc.org/downloads"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::rclone_configure() {
 	declare text="
 请访问 https://console.developers.google.com 并创建一个项目.
@@ -900,31 +731,51 @@ quickbox::lang::software::rclone_continue() {
 quickbox::lang::software::rclone::access() {
 	declare text="${software_title} 已安装
 
-> 有关如何安装 rclone 的更多信息，请访问：
-https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
+> 有关如何安装 rclone 的更多信息，请参阅：
+  qb help rclone
 "
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::build::sabnzbd::par2cmdline() {
 	declare text="正在安装 par2cmdline，请稍候，因为这可能需要一些时间..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::sonarrv4::update::error() {
 	declare text
 	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)不能$(tput setaf 7) 从 v3 更新.
 请卸载 v3 并安装 v4.$(tput sgr0)"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::vpnzip::access() {
 	declare text="下载 ${software_title} 配置文件：
 ${quickbox_web_root}${username}/ovpn.zip
 > 在任何 OpenVPN 客户端中使用"
 	quickbox::dashboard::log "${text}"
 }
-
+quickbox::lang::wireguard::client_config() {
+	declare text="设置客户端配置 $1"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::wireguard::server_config() {
+	declare text="设置服务器配置 $1"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::wireguard::configure::client_ask() {
+	declare text="您想输入客户端配置吗？(y/n)"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::wireguard::configure::client_paste() {
+	declare text="在下面粘贴或输入客户端配置。 完成后按 ctrl+D 或 ⌘+D 继续。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::wireguard::configure::client_ask_extra() {
+	declare text="您想输入另一个客户端配置吗？(y/n)"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::wireguard::configure::client_ask_extra_error() {
+	declare text="输入无效。请输入'y'或'n'。"
+	quickbox::dashboard::log "${text}"
+}
 quickbox::lang::software::x2go::access() {
 	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
 	declare text="${software_title} 服务器已安装
@@ -941,7 +792,6 @@ SSH 端口:	4747
 https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::software::znc_configure() {
 	declare text="现在将运行 ZNC 配置. 请回答以下提示:"
 	quickbox::dashboard::log "${text}"
@@ -950,131 +800,107 @@ quickbox::lang::software::znc_configure() {
 ################################################################################
 # QB Updater
 ################################################################################
+
 quickbox::lang::update::ntp() {
 	declare text="正在检查 ntp 服务器..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::apt() {
 	declare text="正在运行 apt 更新..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::initial::dependencies() {
 	declare text="检查初始依赖项..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::download::v3() {
 	declare text="正在下载 v3 更新..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::quickbox::dependencies() {
 	declare text="正在检查快速框依赖项..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::base::dependencies() {
 	declare text="安装基本依赖项: "
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::web::dependencies() {
 	declare text="安装网络依赖项: "
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::python::dependencies() {
 	declare text="安装python依赖项: "
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::dependencies::log() {
 	declare text="保存已安装的依赖项..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::pip() {
 	declare text="更新点..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::lshell() {
 	declare text="更新 lshell..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::iris() {
 	declare text="更新虹膜..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::libraries() {
 	declare text="更新快速箱库..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::cron() {
 	declare text="更新 cron 作业..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::sudo() {
 	declare text="更新 sudo 配置..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::curl() {
 	declare text="更新卷曲..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::php::check() {
 	declare text="检查 php..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::qbcommands() {
 	declare text="配置 quickbox pro 命令..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::dashboard() {
 	declare text="更新快速箱仪表板..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::database() {
 	declare text="更新快速箱数据库..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::services() {
 	declare text="检查并更新已安装的软件服务文件..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::autocomplete() {
 	declare text="正在更新 Quickbox 自动完成..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::manpage() {
 	declare text="正在更新quickbox手册页..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::permissions() {
 	declare text="配置权限..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::clean() {
 	declare text="清理更新文件..."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::update::complete() {
 	declare text="更新完成！"
 	quickbox::dashboard::log "${text}"
@@ -1085,37 +911,30 @@ quickbox::lang::update::complete() {
 ################################################################################
 
 ### `-o backup` | case: backup)
-
 quickbox::lang::backup::configf() {
 	declare text="${software_name} 的配置文件正在备份."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::backup::configf::error() {
 	declare text="配置文件 ${softwareConf} 不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::backup::configf::success() {
 	declare text="配置文件已备份."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::backup::installdir::error() {
 	declare text="${software_title} 安装目录不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::backup::installdir() {
 	declare text="现在正在备份 ${software_title} (${backup_version}) 的安装目录."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::backup::configdir() {
 	declare text="现在正在备份 ${software_title} 的配置目录."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::backup::installdir::success() {
 	backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
 	declare text="${software_title} (${backup_version}) 已备份."
@@ -1123,67 +942,55 @@ quickbox::lang::backup::installdir::success() {
 }
 
 ### `-o restore` | case: restore)
-
 quickbox::lang::restore::configf::error() {
 	declare text="备份文件 ${backupConf} 不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::restore::configf::success() {
 	declare text="备份文件已恢复."
 	quickbox::dashboard::log "${text}"
 }
 
 ### `-o default` | case: default)
-
 quickbox::lang::default::configf::error() {
 	declare text="默认配置 ${defaultConf} 文件不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::default::configf::success() {
 	declare text="默认配置文件已恢复."
 	quickbox::dashboard::log "${text}"
 }
 
 ### `-o rollback` | case: rollback)
-
 quickbox::lang::rollback::installdir::error() {
 	declare text="${software_title} 安装目录不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::selection::version() {
 	declare text="版本："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::selection::date() {
 	declare text="日期："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::selection() {
 	declare text="从下面的列表中选择一个数字进行回滚
 到 ${software_title} 的先前版本："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::selection::invalid() {
 	declare text="无效选择. 请重试."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::software::error() {
 	declare text="${software_title} 应用程序备份不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::config::error() {
 	declare text="${software_title} 配置备份不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::selection::display() {
 	version="$(tput setaf 5)${version}$(tput setaf 7)"
 	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
@@ -1193,23 +1000,19 @@ quickbox::lang::rollback::selection::display() {
 配置包：${config_package}"
 	quickbox::dashboard::log "${text}$(tput sgr0)"
 }
-
 quickbox::lang::rollback::selection::confirm() {
 	declare text="您确定要继续回滚吗? (y/n)"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::cancelled() {
 	declare text="回滚已取消."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::rollback::Continue() {
 	version="$(tput setaf 5)${version}$(tput setaf 7)"
 	declare text="${software_title} 现在正在回滚到版本 ${version}."
 	quickbox::dashboard::log "${text}$(tput sgr0)"
 }
-
 quickbox::lang::rollback::complete() {
 	version="$(tput setaf 5)${version}$(tput setaf 2)"
 	declare text="${software_title} (${version}) 已回滚."
@@ -1217,38 +1020,31 @@ quickbox::lang::rollback::complete() {
 }
 
 ### `-o delete` | case: delete)
-
 quickbox::lang::delete::selection::version() {
 	declare text="版本："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::selection::date() {
 	declare text="日期："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::selection() {
 	declare text="从下面的列表中选择一个数字来删除
 ${software_title} 的先前备份："
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::selection::invalid() {
 	declare text="无效选择. 请重试."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::software::error() {
 	declare text="${software_title} 应用程序备份不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::config::error() {
 	declare text="${software_title} 配置备份不存在."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::selection::display() {
 	version="$(tput setaf 5)${version}$(tput setaf 7)"
 	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
@@ -1258,25 +1054,949 @@ quickbox::lang::delete::selection::display() {
 配置包：${config_package}"
 	quickbox::dashboard::log "${text}$(tput sgr0)"
 }
-
 quickbox::lang::delete::selection::confirm() {
 	declare text="您确定要继续删除吗? (y/n)"
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::cancelled() {
 	declare text="备份删除已取消."
 	quickbox::dashboard::log "${text}"
 }
-
 quickbox::lang::delete::Continue() {
 	version="$(tput setaf 5)${version}$(tput setaf 7)"
 	declare text="${software_title} 备份 (${version}) 现已删除."
 	quickbox::dashboard::log "${text}$(tput sgr0)"
 }
-
 quickbox::lang::delete::complete() {
 	version="$(tput setaf 5)${version}$(tput setaf 2)"
 	declare text="${software_title} 备份 (${version}) 已被删除."
 	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o mysql` | case: db)
+quickbox::lang::db::install::prompt() {
+	declare text="MySQL 未安装。 您想安装吗？ [y/N]："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::apt() {
+	declare text="正在更新 APT..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql_apt() {
+	declare text="正在下载 MySQL APT 配置..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql_apt::fail() {
+	declare text="无法下载 MySQL APT 配置。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql_apt::install() {
+	declare text="正在安装 MySQL APT 配置..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql_apt::install::fail() {
+	declare text="无法安装 MySQL APT 配置。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql() {
+	declare text="正在安装 MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::fail() {
+	declare text="安装 MySQL 失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::start::fail() {
+	declare text="无法启动 MySQL。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::enable::fail() {
+	declare text="无法启用 MySQL。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::success() {
+	declare text="MySQL 已安装。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::installed() {
+	declare text="MySQL 已经安装，继续配置。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::config() {
+	declare text="正在更新 MySQL 配置..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::config::backup() {
+	declare text="当前mysqld.cnf文件已备份到mysqld.cnf.backup。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::config::write() {
+	declare text="设置 MySQL 配置..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::config::write::fail() {
+	declare text="写入 MySQL 配置失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::privileges() {
+	declare text="设置 MySQL 权限..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::privileges::fail() {
+	declare text="写入 MySQL 权限失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::client() {
+	declare text="设置 MySQL 客户端配置..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::client::fail() {
+	declare text="无法写入 MySQL 客户端配置。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::reload() {
+	declare text="正在重新加载 systemctl 守护进程..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::reload::fail() {
+	declare text="无法重新加载 systemctl 守护进程。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::enable() {
+	declare text="启用 MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::restart() {
+	declare text="重新启动 MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::restart::fail() {
+	declare text="无法重新启动 MySQL。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::user() {
+	declare text="创建 MySQL 用户 ${mysql_user}..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::user::fail() {
+	declare text="创建 MySQL 用户失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::grant() {
+	declare text="向 MySQL 用户 ${mysql_user} 授予权限..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::grant::fail() {
+	declare text="无法向 MySQL 用户授予权限。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::flush() {
+	declare text="冲水特权..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::flush::fail() {
+	declare text="无法刷新权限。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::convert() {
+	declare text="正在将数据库转换为 MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::convert::success() {
+	declare text="数据库已转换为MySQL。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::remove() {
+	declare text="您想删除 SQLite 数据库吗？ [y/N]："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::remove::fail() {
+	declare text="无法在 PHP 中禁用 SQLite。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::complete() {
+	declare text="MySQL 已配置。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::details() {
+	declare text="MySQL 连接详细信息："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::connection::details() {
+	declare text="用户名: ${mysql_user}
+密码: ${mysql_password}
+港口: ${mysql_port}
+主持人: ${mysql_host}
+数据库: ${mysql_name}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::mycnf() {
+	declare text="这些详细信息可以在 /root/.my.cnf 中找到"
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o sqlite` | case: db)
+quickbox::lang::db::install::sqlite::backup() {
+	declare text="正在备份 SQLite 数据库..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::backup::success() {
+	declare text="SQLite 数据库已备份到 ${sqlite_file}.${date}.backup"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::convert() {
+	declare text="正在将数据库转换为 SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::convert::success() {
+	declare text="数据库已转换为 SQLite。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::remove() {
+	declare text="您想完全删除 MySQL 吗？ [y/N]："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::remove::mysql() {
+	declare text="您想删除 MySQL 数据库吗？ [y/N]："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::php::fail() {
+	declare text="无法在 PHP 中安装 SQLite。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::php::enable::fail() {
+	declare text="无法在 PHP 中启用 SQLite。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::complete() {
+	declare text="SQLite 数据库转换过程已完成。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::invalid() {
+	declare text="无效选项：${option}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::sqlite::mysql::notfound() {
+	declare text="未找到 MySQL 数据库。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::install::mysql::sqlite::notfound() {
+	declare text="未找到 SQLite 数据库。"
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o backup` | case: backup)
+quickbox::lang::db::backup::sqlite::integrity() {
+	declare text="正在检查 SQLite 数据库的完整性..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::pass() {
+	declare text="数据库完整性检查通过。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::complete() {
+	declare text="备份完成：${full_backup_path}/qbpro.db"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::fail() {
+	declare text="数据库完整性检查失败。未创建备份。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair() {
+	declare text="正在尝试修复 SQLite 数据库..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::repair() {
+	declare text="
+    [警告] QuickBox 数据库修复！
+
+    QuickBox 数据库未通过完整性检查，已尝试进行修复。
+
+    命令：REINDEX; VACUUM;
+
+    您可以在以下位置找到最新的备份：
+    /opt/quickbox/backup/system/[DATE]/db/qbpro.db
+
+    要删除此消息，请运行以下命令：
+    rm -f /etc/quickbox_motd
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair::complete() {
+	declare text="SQLite 数据库修复已完成。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair::fail() {
+	declare text="SQLite 数据库修复失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::restore() {
+	declare text="
+    [警告] QuickBox 数据库修复！
+
+    QuickBox 数据库未通过完整性检查，已尝试进行修复。
+    先前的有效备份已恢复，并调整了权限。
+
+    您可以在以下位置找到最新的备份：
+    /opt/quickbox/backup/system/[DATE]/db/qbpro.db
+
+    要删除此消息，请运行以下命令：
+    rm -f /etc/quickbox_motd
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::restore::complete() {
+	declare text="SQLite 数据库恢复已完成。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql() {
+	declare text="正在备份 MySQL 数据库..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql::complete() {
+	declare text="MySQL 备份完成：${full_backup_path}/qbpro.sql"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql::fail() {
+	declare text="MySQL 备份失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::unsupported() {
+	declare text="不支持的数据库类型：${db_type}。未创建备份。"
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o maintenance` | case: maintenance)
+quickbox::lang::db::maintenance::sqlite() {
+	declare text="正在对 SQLite 数据库进行维护..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::backup() {
+	declare text="在维护之前备份数据库..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize() {
+	declare text="正在优化 SQLite 数据库 (VACUUM)..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize::complete() {
+	declare text="SQLite 数据库优化完成。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize::fail() {
+	declare text="SQLite 数据库优化失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::integrity::fail() {
+	declare text="数据库完整性检查失败。未执行维护。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql() {
+	declare text="正在对 MySQL 数据库进行维护..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::backup() {
+	declare text="在维护之前备份 MySQL 数据库..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::backup::fail() {
+	declare text="MySQL 备份失败。跳过维护。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize() {
+	declare text="正在优化 MySQL 数据库表..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize::complete() {
+	declare text="MySQL 数据库优化完成。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize::fail() {
+	declare text="MySQL 数据库优化失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity() {
+	declare text="正在检查 MySQL 数据库的完整性..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity::pass() {
+	declare text="MySQL 数据库完整性检查通过。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity::fail() {
+	declare text="MySQL 数据库完整性检查失败。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::unsupported() {
+	declare text="不支持的数据库类型：${db_type}。未执行维护。"
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o restore` | cas​​e: restore)
+quickbox::lang::db::restore::backup::error() {
+	declare text="未找到备份目录：${backup_root}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::empty() {
+	declare text="备份目录中未找到备份。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::select() {
+	declare text="选择要恢复的备份："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::number() {
+	declare text="输入要恢复的备份的编号："
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::invalid() {
+	declare text="选择无效。请重试。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::sqlite::success() {
+	declare text="已成功从 ${select_backup} 恢复 SQLite 数据库。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::sqlite::fail() {
+	declare text="无法恢复 SQLite 数据库。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::mysql::success() {
+	declare text="已成功从 ${select_backup} 恢复 MySQL 数据库。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::mysql::fail() {
+	declare text="无法恢复 MySQL 数据库。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::unsupported() {
+	declare text="不支持的数据库类型：${db_type}。未执行恢复。"
+	quickbox::dashboard::log "${text}"
+}
+
+### `wireguard` | case: wireguard)
+quickbox::lang::wireguard::mtuendpoint::error() {
+	declare text="错误：'calc'过程需要 --mtu 和 --endpoint"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB HELP MENUS
+################################################################################
+
+### ERRORS
+
+quickbox::error::non-empty() {
+	declare text="Error: $1 requires a non-empty argument"
+	quickbox::dashboard::log "${text}"
+}
+
+### MISC
+
+quickbox::nvpn::conf::generator::usage() {
+	declare text="
+NordVPN WireGuard 配置生成器
+
+用法：
+  nvpn_conf_gen -t '私有_token' [-dns '首选_dns'] [-c '国_命名'] [-L '数字_的_组态_档案'] [-l] [-h]
+
+选项：
+  -t   | --token    NordVPN 私有令牌
+  -dns | --dns      首选 DNS（默认值：103.86.96.100）
+  -c   | --country  首选国家名称（使用 --list 列出可用国家）
+  -L   | --limit    限制要创建的配置数量（默认值：5）
+  -l   | --list     列出可用于 WireGuard 连接的国家
+  -h   | --help     显示此帮助消息
+
+示例：
+  nvpn_conf_gen -t '你的_token' -c 'Hong Kong' -L 10
+
+注意：
+  - 可以从以下位置生成令牌：
+    https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/
+  - 配置文件将保存在'${wg_conf_storage_dir}'中
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::wireguard::manage::help() {
+	declare text="
+QuickBox WireGuard 管理
+
+用法：
+  qb manage wireguard [进程] [选项]
+
+进程：
+  add                                 添加客户端或服务器配置
+    -c    | --client                  删除 WireGuard 客户端配置
+    -s    | --server                  删除 WireGuard 服务器配置
+    -cn   | --client-name             设置 WireGuard 客户端配置的客户端名称（'-c' 客户端配置所需）
+    -noc  | --number-of-clients       设置 WireGuard 服务器配置的客户端数量（默认值：1）
+    -lp   | --listen-port             设置 WireGuard 服务器配置的监听端口（默认值：51820）
+    -mtu  | --mtu                     设置 WireGuard 服务器配置的 MTU
+    -cai  | --client-allowed-ips      设置 WireGuard 客户端配置允许的 IP（默认值：0.0.0.0/0, ::/0）
+    -cidr | --cidr                    设置 WireGuard 服务器配置的 CIDR 表示法（默认值：服务器 - <服务器 IP>/24 | 客户端 - 10.5.0.2/16）
+    -pur  | --post-up-rules           设置 WireGuard 服务器配置的 post-up 规则
+    -pdr  | --post-down-rules         设置 WireGuard 服务器配置的 post-down 规则
+
+  remove                              删除客户端或服务器配置
+    -cn   | --client-name             设置 WireGuard 客户端配置的客户端名称
+
+  check                               检查当前加载和正在运行的 WireGuard 客户端配置
+    -cn   | --client-name             设置 WireGuard 客户端配置的客户端名称
+    --deactivate                      停用 WireGuard 客户端配置
+
+  cron                                添加一个 cron 作业来检查 WireGuard 配置文件
+
+  calc                                计算服务器配置的 CIDR 表示法和 MTU
+    --mtu                             设置 WireGuard 服务器配置的 MTU
+    --endpoint                        设置 WireGuard 服务器配置的端点
+    --protocol                        设置 WireGuard 服务器配置的协议（ipv4 或 ipv6）
+
+  help                                显示此帮助消息
+
+示例：
+  qb manage wireguard add -c -cn '客户端名称' -cai '0.0.0.0/0' -lp 51820
+  qb manage wireguard add -s -noc 5 -lp 51820 -cidr '192.168.0.2/24' -pur 'iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE'
+  qb manage wireguard remove -cn '客户端名称'
+  qb manage wireguard check -cn '客户端名称' --deactivate
+  qb manage wireguard cron
+  qb manage wireguard calc --mtu 1420 --endpoint '192.168.0.0' --protocol 'ipv4'
+"
+	quickbox::dashboard::log "${text}"
+}
+
+### SOFTWARE (APPLICATIONS)
+
+# Function to generate help text based on provided options
+generate_help_text() {
+	local software_title="$1"
+	local software_name="$2"
+	local has_update="$3"
+	local options="$4"
+	local examples="$5"
+	local notes="$6"
+
+	local processes="  install    安装 ${software_title}
+  reinstall  重新安装 ${software_title}
+  remove     移除 ${software_title}"
+
+	if [[ ${has_update} == 1 ]]; then
+		processes="${processes}
+  update     更新 ${software_title}"
+	fi
+
+	processes="${processes}
+  help       显示此帮助消息"
+
+	declare text="
+QuickBox 软件管理，适用于 ${software_title}
+用法：
+  qb [进程] ${software_name} [选项]
+
+进程：
+${processes}
+选项：
+${options}
+示例：
+${examples}
+${notes}
+"
+	quickbox::dashboard::log "${text}"
+}
+
+# Function to get help text for specific software
+quickbox::software::help() {
+	local software_help_name="$1"
+	local software_title="${software_help_name^}" # Capitalize the first letter
+	local has_update
+
+	case "${software_help_name}" in
+	emby | jellyfin)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）
+  -d | --domain    设置 ${software_title} 的域
+  --beta           安装 ${software_title} 的测试版" \
+			"  qb install ${software_help_name} -u 用户名 -d '${software_help_name}.域.com'   # 使用域安装
+  qb reinstall ${software_help_name} -u 用户名 -d '${software_help_name}.域.com'  # 使用域重新安装
+  qb install ${software_help_name} -u 用户名 --beta                               # 安装测试版
+  qb reinstall ${software_help_name} -u 用户名 --beta                             # 重新安装测试版
+  qb remove ${software_help_name} -u 用户名                                       # 删除
+  qb update ${software_help_name} -u 用户名                                       # 更新
+
+  ## 使用多个选项
+  qb install ${software_help_name} -u 用户名 -d '${software_help_name}.域.com' --beta
+  qb reinstall ${software_help_name} -u 用户名 -d '${software_help_name}.域.com' --beta" \
+			"
+注意：
+  - 使用域选项安装或重新安装时，Nginx 反向代理将自动配置。
+      * 确保域指向服务器的 IP 地址，并设置了正确的 DNS 记录。"
+		;;
+
+	mylar3)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username             设置 ${software_title} 的用户名 (必需)
+  -clp | --comic-location-path  设置漫画的位置路径 (默认: /home/用户名/Media/Comics)" \
+			"  qb install ${software_help_name} -u 用户名 -clp '/路径/到/漫画'
+  qb reinstall ${software_help_name} -u 用户名 -clp '/路径/到/漫画'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			""
+		;;
+
+	radarr | sonarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）
+  --4k                设置 4k 的构建安装（默认值：1080p）
+  --nightly           设置 nightly 分支上的构建安装（默认值：latest）" \
+			"  qb install ${software_help_name} -u 用户名                   # 安装标准 (1080p) 安装
+  qb install ${software_help_name} -u 用户名 --4k              # 安装 4k 安装
+  qb reinstall ${software_help_name} -u 用户名 --nightly       # 重新安装 nightly 安装
+  qb reinstall ${software_help_name} -u 用户名 --4k            # 重新安装 4k 安装
+  qb remove ${software_help_name} -u 用户名                    # 删除标准 (1080p) 安装
+  qb remove ${software_help_name} -u 用户名 --4k               # 删除 4k 安装
+  qb update ${software_help_name} -u 用户名                    # 更新标准 (1080p) 安装
+  qb update ${software_help_name} -u 用户名 --4k               # 更新 4k 安装
+
+  ## 使用多个选项
+  qb install ${software_help_name} -u 用户名 --4k --nightly    # 在 nightly 分支上安装 4k 安装
+  qb reinstall ${software_help_name} -u 用户名 --4k --nightly  # 在 nightly 分支上重新安装 4k 安装
+  qb update ${software_help_name} -u 用户名 --4k --nightly     # 将 4k 安装更新为 nightly 或" \
+			""
+		;;
+
+	calibre | kavita)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username      设置 ${software_title} 的用户名（必需）
+  -lp | --library-path  设置库的位置路径（默认值：/home/用户名/.config/${software_title}/library）" \
+			"  qb install ${software_help_name} -u 用户名 -lp '/路径/到/库'
+  qb reinstall ${software_help_name} -u 用户名 -lp '/路径/到/库'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			""
+		;;
+
+	plex)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username          设置 ${software_title} 的用户名（必需）
+  -pct | --plex-claim-token  设置 ${software_title} 的 Plex 声明令牌（快速声明所需）
+  -d   | --domain            设置 ${software_title} 的域
+  -D   | --data-dir          设置 ${software_title} 的数据目录 (default: /home/用户名/.config/'Plex Media Server')" \
+			"  qb install ${software_help_name} -u 用户名 -pct '声明_令牌' -d 'plex.域.com' -D '/路径/到/数据'
+  qb reinstall ${software_help_name} -u 用户名 -pct '声明_令牌' -d 'plex.域.com' -D '/路径/到/数据'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			"
+注意：
+  - Plex 声明令牌可从以下地址获取：
+      https://www.plex.tv/claim/
+
+  - 避免将数据目录设置为现有目录，例如：
+      /opt、/opt/用户名/mnt、/home、/home/用户名 等。
+
+  - 在现有目录中创建新的数据目录是安全的，例如：
+      /opt/plex、/opt/用户名/plex、/mnt/plex、/data/plex 等。
+
+  - 如果数据目录不存在，则会创建该目录。
+
+  - 数据目录将由用户名的用户和组拥有。
+
+  - 使用域选项安装或重新安装时，将自动配置 Nginx 反向代理。
+      * 确保域指向服务器的 IP 地址，并设置正确的 DNS 记录。
+
+  - 更新时，系统将提示您输入 plex.tv 电子邮件、密码以及 2FA 代码。"
+		;;
+
+	bazarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）
+  --4k             设置 4k 的构建安装（默认值：1080p）" \
+			"  qb install ${software_help_name} -u 用户名         # 安装标准（1080p）安装
+  qb install ${software_help_name} -u 用户名 --4k    # 安装 4k 安装
+  qb reinstall ${software_help_name} -u 用户名       # 重新安装标准（1080p）安装
+  qb reinstall ${software_help_name} -u 用户名 --4k  # 重新安装 4k 安装
+  qb remove ${software_help_name} -u 用户名          # 删除标准（1080p）安装
+  qb remove ${software_help_name} -u 用户名 --4k     # 删除 4k 安装
+  qb update ${software_help_name} -u 用户名          # 更新标准（1080p）安装
+  qb update ${software_help_name} -u 用户名 --4k     # 更新 4k 安装" \
+			""
+		;;
+
+	autodl | phpmyadmin | x2go)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
+  qb reinstall ${software_help_name}
+  qb remove ${software_help_name}
+  qb update ${software_help_name}" \
+			""
+		;;
+
+	fail2ban)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
+  qb reinstall ${software_help_name}
+  qb remove ${software_help_name}" \
+			""
+		;;
+
+	filebot)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username    设置 ${software_title} 的用户名（必需）
+  -mp | --media-path  设置 ${software_title} 的媒体路径（默认值：/home/用户名/Media）
+  -o 'deluge'         安装带有 Deluge 集成的 ${software_title}
+  -o 'nzbget'         安装带有 NZBGet 集成的 ${software_title}
+  -o 'rtorrent'       安装带有 rTorrent 集成的 ${software_title}
+  -o 'sabnzbd'        安装带有 SABnzbd 集成的 ${software_title}" \
+			"  qb install ${software_help_name} -u 用户名
+  qb reinstall ${software_help_name} -u 用户名
+  qb remove ${software_help_name} -u 用户名
+
+  ## 使用多种选择
+  qb install ${software_help_name} -u 用户名 -o 'deluge' -o 'nzbget'
+  qb reinstall ${software_help_name} -u 用户名 -o 'rtorrent' -o 'sabnzbd'" \
+			""
+		;;
+
+	jdownloader)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username       设置 ${software_title} 的用户名 (必需)
+  -e | --email          设置 ${software_title} 的电子邮件 (必需) .i.
+  -p | --password       设置 ${software_title} 的密码 (必需) .ii.
+  -D | --downloads-dir  设置 ${software_title} 的下载路径 (默认：/home/用户名/Downloads)" \
+			"  qb install ${software_help_name} -u 用户名 -e '电子邮件' -p '密码' -D '/路径/到/下载'
+  qb reinstall ${software_help_name} -u 用户名 -e '电子邮件' -p '密码' -D '/路径/到/下载'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			"
+注意：
+  - .i. 安装 JDownloader 需要电子邮件和密码。
+      * .ii. 这些是您的 MyJDownloader 帐户的凭据。"
+		;;
+
+	jellyseerr | komga | overseerr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名 (必需)
+  -d | --domain    设置 ${software_title} 的域" \
+			"  qb install ${software_help_name} -u 用户名 -d '${software_help_name}.域.com'
+  qb reinstall ${software_help_name} -u 用户名 -d '${software_help_name}.域.com'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			"
+注意：
+  - 使用域 [-d] 选项安装或重新安装时，Nginx 反向代理将自动配置。
+      * 确保域指向服务器的 IP 地址，并设置了正确的 DNS 记录。"
+		;;
+
+	lecert)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  --dash         为使用'-d'指定的域安装证书，并为 QuickBox 仪表板创建反向代理
+  --no-dash      为使用'-d'指定的自定义域安装证书（这只会创建证书）
+  --emby         为使用'-d'指定的域安装证书，并为 Emby 创建反向代理
+  --jellyfin     为使用'-d'指定的域安装证书，并为 Jellyfin 创建反向代理
+  --jellyseerr   为使用'-d'指定的域安装证书，并为 Jellyseerr 创建反向代理
+  --komga        为使用'-d'指定的域安装证书，并为 Komga 创建反向代理
+  --overseerr    为使用'-d'指定的域安装证书，并为 Overseerr 创建反向代理
+  --plex         为使用'-d'指定的域安装证书，并为 Plex 创建反向代理
+  -d | --domain  为 ${software_title} 设置域" \
+			"  qb install ${software_help_name} --dash -d '域.com'
+  qb reinstall ${software_help_name} --jellyseerr -d 'jellyseerr.域.com' --jellyfin -d 'jellyfin.域.com' --komga -d 'komga.域.com'
+  qb remove ${software_help_name} --plex -d 'plex.域.com' --emby -d 'emby.域.com'
+  qb renew ${software_help_name} -d '有些.域.com' -d '另一个.域.com'" \
+			""
+		;;
+
+	lidarr | readarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）
+  --nightly        在 nightly 分支上设置构建安装（默认值：latest）" \
+			"  qb install ${software_help_name} -u 用户名              # 安装默认（最新）安装
+  qb install ${software_help_name} -u 用户名 --nightly    # 安装 nightly 安装
+  qb reinstall ${software_help_name} -u 用户名            # 重新安装默认（最新）安装
+  qb reinstall ${software_help_name} -u 用户名 --nightly  # 重新安装 nightly 安装
+  qb remove ${software_help_name} -u 用户名               # 删除当前安装
+  qb update ${software_help_name} -u 用户名               # 更新默认（最新）安装
+  qb update ${software_help_name} -u 用户名 --nightly     # 更新到/从 nightly 安装" \
+			""
+		;;
+
+	quota)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -qm | --quota-mount  为 ${software_title} 设置系统挂载点（必需）" \
+			"  qb install ${software_help_name} -qm '/路径/到/挂载点'
+  qb reinstall ${software_help_name} -qm '/路径/到/挂载点'
+  qb remove ${software_help_name}" \
+			""
+		;;
+
+	rclone)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）
+  --dropbox        安装集成 Dropbox 的 ${software_title}
+  --gdrive         安装集成 Google Drive 的 ${software_title}
+  --encrypted      安装加密的 ${software_title}
+  --beta           安装 ${software_title} 的测试版" \
+			"  qb install ${software_help_name} -u 用户名 --dropbox
+  qb install ${software_help_name} -u 用户名 --beta --gdrive
+  qb reinstall ${software_help_name} -u 用户名 --dropbox --encrypted
+  qb reinstall ${software_help_name} -u 用户名 --gdrive
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			"
+注意：
+  - 建议在一次安装过程中使用 --dropbox 或 --gdrive 选项。
+      * 这将防止与 rclone 配置发生任何冲突。
+
+  - 使用 --dropbox 或 --gdrive 选项安装时，将自动创建 rclone 配置。
+
+  - 使用 --encrypted 选项安装时，将使用指定的信息加密 rclone 配置。
+
+  - 使用 --beta 选项安装时，将安装 rclone 的测试版。"
+		;;
+
+	requestrr | vpn)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）" \
+			"  qb install ${software_help_name} -u 用户名
+  qb reinstall ${software_help_name} -u 用户名
+  qb remove ${software_help_name} -u 用户名" \
+			""
+		;;
+
+	rtorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    设置 ${software_title} 的用户名（必需）
+  -o '0.10.0'        安装版本 0.10.0
+  -o '0.9.8'         安装版本 0.9.8
+  -o '0.9.7'         安装版本 0.9.7
+  -o '0.9.6'         安装版本 0.9.6
+  -o 'feature-bind'  安装 ${software_title} 的功能绑定版本" \
+			"  qb install ${software_help_name} -u 用户名 -o '0.10.0'
+  qb install ${software_help_name} -u 用户名 -o '0.9.8'
+  qb install ${software_help_name} -u 用户名 -o '0.9.7'
+  qb reinstall ${software_help_name} -u 用户名 -o '0.9.6'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名 -o '0.10.10'
+  qb update ${software_help_name} -u 用户名 -o 'feature-bind'" \
+			"
+注意：
+  - rTorrent 是一个全局安装的应用程序，服务器上的所有用户都可以使用。
+  - rTorrent 的功能绑定版本是一个包含绑定功能的自定义版本。
+      * 绑定功能允许您将 rTorrent 绑定到特定 IP 地址。"
+		;;
+
+	rutorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    设置 ${software_title} 的用户名（必需）
+  --beta             安装 ${software_title} 的测试版" \
+			"  qb install ${software_help_name} -u 用户名
+  qb reinstall ${software_help_name} -u 用户名
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名 --beta" \
+			"
+注意：
+  - ruTorrent 是全局安装的应用程序，服务器上的所有用户都可以使用。
+
+  - ruTorrent 是 rTorrent 安装过程的一部分，安装 rTorrent 时，ruTorrent 将默认安装最新版本。
+    如果未安装 rTorrent，ruTorrent 将安装 0.9.8 版本。
+
+  - rutorrent 将默认安装最新版本。如果您希望安装测试版，
+    您可以使用 --beta 选项。请记住，这两个版本并不总是不同的。"
+		;;
+
+	sabnzbd | thelounge | xteve)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名 (必需)
+  --beta           安装 ${software_title} 的测试版" \
+			"  qb install ${software_help_name} -u 用户名
+  qb install ${software_help_name} -u 用户名 --beta
+  qb reinstall ${software_help_name} -u 用户名
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			""
+		;;
+
+	transmission)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  设置 ${software_title} 的用户名（必需）
+  --v4             安装 ${software_title} 的第 4 版（默认：第 3 版）" \
+			"  qb install ${software_help_name} -u 用户名 --v4
+  qb reinstall ${software_help_name} -u 用户名 --v4
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名 --v4" \
+			""
+		;;
+
+	wireguard)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username            设置 ${software_title} 的用户名（必需）
+  -o [client|server]           将 WireGuard 安装为客户端或服务器
+  -cai  | --client-allowed-ip  设置 WireGuard 服务器的允许 IP
+  -cidr | --cidr               设置 WireGuard 服务器的 CIDR（默认值：10.5.0.2/16）
+  -dns  | --dns                设置 WireGuard 服务器的 DNS（默认值：1.1.1.1）
+  -ep   | --endpoint           设置 WireGuard 服务器的端点
+  -lp   | --listen-port        设置 WireGuard 服务器的监听端口（默认值：51820）
+  -noc  | --number-of-clients  设置 WireGuard 服务器的客户端数量
+  -pdr  | --postdown-rule      设置 WireGuard 服务器的 post-down 规则
+  -pur  | --postup-rule        设置 WireGuard 服务器的 post-up 规则" \
+			"  qb install ${software_help_name} -u 用户名 -o server \\
+  -cai '192.168.0.2,192.168.0.3' \\
+  -cidr '10.5.0.2/16' \\
+  -dns '0.0.0.0' \\
+  -ep 'server.domain.com' \\
+  -lp 51820 \\
+  -noc 5 \\
+  -pdr 'iptables -D INPUT -i wg0 -j ACCEPT' \\
+  -pur 'iptables -A INPUT -i wg0 -j ACCEPT'
+  qb reinstall ${software_help_name} -u 用户名 -o client
+  qb remove ${software_help_name} -u 用户名" \
+			"
+注意：
+  - WireGuard 服务器将使用默认 CIDR 10.5.0.2/16、
+    DNS 1.1.1.1、1 个客户端配置和监听端口 51820 进行安装。
+
+  - WireGuard 服务器将使用默认的 post-down 和 post-up 规则进行安装。
+      * post-down 规则将删除 WireGuard 服务器的 iptables 规则。
+      * post-up 规则将添加 WireGuard 服务器的 iptables 规则。
+
+  - '-noc' 选项指定要为其创建配置的客户端数量。
+这些配置将保存在 '/srv/quickbox/db/wireguard' 目录中。
+
+  - 大多数 VPN 提供商都为 WireGuard 提供配置文件。如果您使用的是 NordVPN，
+它不直接提供配置文件，您可以使用附带的 NordVPN 配置生成器生成一个。
+有关生成 NordVPN 配置文件的更多信息，请使用以下命令： nvpn_conf_gen-h"
+		;;
+
+	*)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username 设置 ${software_title} 的用户名（必需）" \
+			"  qb install ${software_help_name} -u 用户名
+  qb reinstall ${software_help_name} -u 用户名
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+			""
+		;;
+	esac
 }

@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.100
+# File Version: 1.0.144
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2023, QuickBox.IO
+# Copyright (C) 2019-2024, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -260,40 +260,45 @@ quickbox::lang::update::files::admin() {
 	quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::update::jellyfin::ffmpeg() {
+	declare text="actualizando ffmpeg para Jellyfin..."
+	quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # Renew - Let's Encrypt
 ################################################################################
 quickbox::lang::install::lecert::complete() {
 	declare -a domain_array
-	if [[ "${qb_option[*]:-}" == *"dash"* ]]; then
+	if [[ -n "${dash}" ]]; then
 		domain_array+=("https://${domain_options[dash]}")
 		application_array+=("QuickBox")
 	fi
-	if [[ "${qb_option[*]:-}" == *"emby"* ]]; then
+	if [[ -n "${emby}" ]]; then
 		domain_array+=("https://${domain_options[emby]}")
 		application_array+=("Emby")
 	fi
-	if [[ "${qb_option[*]:-}" == *"jellyfin"* ]]; then
+	if [[ -n "${jellyfin}" ]]; then
 		domain_array+=("https://${domain_options[jellyfin]}")
 		application_array+=("Jellyfin")
 	fi
-	if [[ "${qb_option[*]:-}" == *"jellyseerr"* ]]; then
+	if [[ -n "${jellyseerr}" ]]; then
 		domain_array+=("https://${domain_options[jellyseerr]}")
 		application_array+=("Jellyseerr")
 	fi
-	if [[ "${qb_option[*]:-}" == *"komga"* ]]; then
+	if [[ -n "${komga}" ]]; then
 		domain_array+=("https://${domain_options[komga]}")
 		application_array+=("Komga")
 	fi
-	if [[ "${qb_option[*]:-}" == *"overseerr"* ]]; then
+	if [[ -n "${overseerr}" ]]; then
 		domain_array+=("https://${domain_options[overseerr]}")
 		application_array+=("Overseerr")
 	fi
-	if [[ "${qb_option[*]:-}" == *"plex"* ]]; then
+	if [[ -n "${plex}" ]]; then
 		domain_array+=("https://${domain_options[plex]}")
 		application_array+=("Plex")
 	fi
-	if [[ "${qb_option[*]:-}" == *"no-dash"* ]]; then
+	if [[ -n "${no_dash}" ]]; then
 		domain_array+=("${domain}")
 		application_array+=("el dominio personalizado ha sido")
 	fi
@@ -412,119 +417,13 @@ quickbox::lang::user::promote() {
 ################################################################################
 # Misc
 ################################################################################
+quickbox::lang::unknown::option() {
+	declare text="${2} Opción desconocida: ${1}"
+	quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::username::specified() {
 	declare text="error: nombre de usuario no especificado"
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::info::example() {
-	if [[ ${process} == "install" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "reinstall" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${usr} && -n ${dmn} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${emby_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyfin_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${jellyseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${komga_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${overseerr_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -n ${dmn} && ${plex_dmn} == 1 ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	elif [[ ${process} == "renew" ]]; then
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} -d domain.com"
-	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="qb ${process} ${software_name} -u usuario ${option[*]}"
-		[[ -n ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]} -d domain.com"
-		[[ -z ${usr} && -z ${dmn} ]] && declare text="qb ${process} ${software_name} ${option[*]}"
-	fi
-	quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::info::note() {
-	[[ ${software_name} == "bazarr" && ${is4k} == 1 ]] && declare software_name="bazarr4k"
-	[[ ${software_name} == "radarr" && ${is4k} == 1 ]] && declare software_name="radarr4k"
-	[[ ${software_name} == "sonarr" && ${is4k} == 1 ]] && declare software_name="sonarr4k"
-	if [[ ${process} == "install" ]]; then
-		if [[ ${software_name} == "filebot" ]]; then
-			[[ -n ${usr} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario"
-			[[ -n ${usr} && -n ${deluge} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para Deluge"
-			[[ -n ${usr} && -n ${nzbget} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para NZBGet"
-			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para rTorrent"
-			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para SABnzbd"
-			[[ -n ${usr} && -n ${media_path} ]] && declare text="establece la ruta de medios (por ejemplo: /ruta/a/medios)"
-		else
-			[[ -n ${usr} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario"
-			[[ -n ${rclone_remote} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario que usa ${rclone_remote}"
-			[[ -n ${encrypted} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario con cifrado"
-			[[ -n ${dmn} ]] && declare text="instala un certificado ssl que se usará para el tablero en el dominio especificado"
-			[[ -n ${usr} && -n ${dmn} ]] && declare text="instala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado ssl para el dominio"
-			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="instala un certificado ssl para el dominio especificado"
-			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio emby especificado"
-			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio de jellyfin especificado"
-			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio de jellyseerr especificado"
-			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio komga especificado"
-			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio de overseerr especificado"
-			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="instala un certificado ssl para el dominio plex especificado"
-			[[ -n ${version} ]] && declare text="instala la última versión de ${version[*]} de ${software_name}"
-			[[ -n ${branch} && -z ${usr} ]] && declare text="instala la última ${branch} versión de ${software_name}"
-			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="instala la última versión de ${branch} de ${software_name} con directorio de datos asignado"
-			[[ -n ${library_path} ]] && declare text="instala ${software_name} con el directorio de biblioteca asignado"
-		fi
-	elif [[ ${process} == "reinstall" ]]; then
-		if [[ ${software_name} == "filebot" ]]; then
-			[[ -n ${usr} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario"
-			[[ -n ${usr} && -n ${deluge} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para Deluge"
-			[[ -n ${usr} && -n ${nzbget} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para NZBGet"
-			[[ -n ${usr} && -n ${rtorrent} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para rTorrent"
-			[[ -n ${usr} && -n ${sabnzbd} ]] && declare text="secuencia de comandos de posprocesamiento de etapas para SABnzbd"
-			[[ -n ${usr} && -n ${media_path} ]] && declare text="establece la ruta de medios (por ejemplo: /ruta/a/medios)"
-		else
-			[[ -n ${usr} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario"
-			[[ -n ${rclone_remote} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario que usa ${rclone_remote}"
-			[[ -n ${encrypted} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario con cifrado"
-			[[ -n ${dmn} ]] && declare text="reinstala el certificado ssl utilizado para el tablero en el dominio especificado"
-			[[ -n ${usr} && -n ${dmn} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} para el usuario y prepara el certificado ssl para el dominio"
-			[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="reinstala un certificado ssl para el dominio especificado"
-			[[ -n ${no-dash} && ${emby_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio emby especificado"
-			[[ -n ${no-dash} && ${jellyfin_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio de jellyfin especificado"
-			[[ -n ${no-dash} && ${jellyseerr_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio de jellyseerr especificado"
-			[[ -n ${no-dash} && ${komga_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio komga especificado"
-			[[ -n ${no-dash} && ${overseerr_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio de overseerr especificado"
-			[[ -n ${no-dash} && ${plex_dmn} == 1 ]] && declare text="reinstala un certificado ssl para el dominio plex especificado"
-			[[ -n ${version} ]] && declare text="reinstala la última versión de ${version[*]} de ${software_name}"
-			[[ -n ${branch} && -z ${usr} ]] && declare text="reinstala la última ${branch} versión de ${software_name}"
-			[[ -n ${data} && -n ${option[1]:="-o data=.*[*]"} ]] && declare text="reinstala la última versión de ${branch} de ${software_name} con directorio de datos asignado"
-			[[ -n ${library_path} ]] && declare text="reinstala ${software_name} con el directorio de biblioteca asignado"
-		fi
-	elif [[ ${process} == "remove" ]]; then
-		[[ -n ${usr} ]] && declare text="elimina ${software_name} para el usuario"
-		[[ -n ${dmn} && -z ${usr} && -z ${version} ]] && declare text="elimina el certificado ssl del dominio especificado"
-		[[ -n ${version} && -z ${dmn} ]] && declare text="elimina ${software_name}"
-		[[ -z ${usr} && -z ${version} && -z ${dmn} ]] && declare text="elimina ${software_name}"
-	elif [[ ${process} == "renew" ]]; then
-		[[ -n ${dmn} ]] && declare text="renueva el certificado SSL del dominio especificado"
-	elif [[ ${process} == "update" ]]; then
-		[[ -n ${usr} ]] && declare text="actualiza ${software_name} a la última versión de ${branch} para el usuario"
-		[[ -n ${dmn} ]] && declare text="actualiza el certificado ssl para el dominio especificado, para usar con el tablero"
-		[[ -n ${no-dash} && -z ${usr} && -z ${dmn} && -z ${version} ]] && declare text="actualiza el certificado ssl para el dominio especificado"
-		[[ -n ${version} ]] && declare text="actualiza ${software_name} a la última versión de ${version}"
-		[[ -n ${branch} && -z ${usr} ]] && declare text="actualiza la última versión de ${branch} de ${software_name}"
-		[[ ${software_name} == "deluge" ]] && declare text="actualiza ${software_name} a la última versión de ${branch} para todos los usuarios"
-	fi
 	quickbox::dashboard::log "${text}"
 }
 
@@ -548,6 +447,15 @@ ${quickbox_web_root}${username}/${software_name}
 nombre de usuario: admin
 contraseña: admin
 ${software_title} instalado en el puerto: ${software_web_port}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::autodl::access() {
+	adl_port=$(cat <"/home/${admin_name:-}/.autodl/autodl.cfg" | grep "gui-server-port = " | sed 's/gui-server-port = //')
+	declare text="acceder a ${software_title} en:
+${quickbox_web_root}rutorrent
+   > menu > autodl-irssi
+${software_title} instalado en puerto: ${adl_port}"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -897,9 +805,9 @@ quickbox::lang::software::rclone_continue() {
 }
 quickbox::lang::software::rclone::access() {
 	declare text="${software_title} instalado
-  
-> Para obtener más información sobre cómo instalar rclone, visite:
-https://quickbox.io/knowledge-base/applications/rclone/how-to-install-rclone/
+
+> Para obtener más información sobre cómo instalar rclone, consulte:
+  qb help rclone
 "
 	quickbox::dashboard::log "${text}"
 }
@@ -920,6 +828,36 @@ quickbox::lang::software::vpnzip::access() {
 	declare text="descargar ${software_title} perfil en:
 ${quickbox_web_root}${username}/ovpn.zip
 > para usar en cualquier cliente OpenVPN"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::client_config() {
+	declare text="configurar la configuración del cliente para $1"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::server_config() {
+	declare text="configurar la configuración del servidor para $1"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_ask() {
+	declare text="¿Quieres ingresar a una configuración de cliente? (s/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_paste() {
+	declare text="Pegue o ingrese la configuración del cliente a continuación. Presione Ctrl+D o ⌘+D cuando haya terminado para continuar."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_ask_extra() {
+	declare text="¿Quieres ingresar a otra configuración de cliente? (s/n)"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::wireguard::configure::client_ask_extra_error() {
+	declare text="Entrada inválida. Por favor ingrese 't' o 'n'."
 	quickbox::dashboard::log "${text}"
 }
 
@@ -1277,4 +1215,992 @@ quickbox::lang::delete::complete() {
 	version="$(tput setaf 5)${version}$(tput setaf 2)"
 	declare text="se ha eliminado la copia de seguridad de ${software_title} (${version})."
 	quickbox::dashboard::log "${text}$(tput sgr0)"
+}
+
+### `-o mysql` | case: db)
+
+quickbox::lang::db::install::prompt() {
+	declare text="MySQL no está instalado. ¿Quieres instalar? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::apt() {
+	declare text="Actualizando APT..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt() {
+	declare text="Descargando MySQL APT Config..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt::fail() {
+	declare text="No se pudo descargar la configuración MySQL APT."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt::install() {
+	declare text="Instalando MySQL APT Config..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql_apt::install::fail() {
+	declare text="No se pudo instalar MySQL APT Config."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql() {
+	declare text="Instalando MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::fail() {
+	declare text="No se pudo instalar MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::start::fail() {
+	declare text="No se pudo iniciar MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::enable::fail() {
+	declare text="No se pudo habilitar MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::success() {
+	declare text="MySQL ha sido instalado."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::installed() {
+	declare text="MySQL ya está instalado, continuando con la configuración."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config() {
+	declare text="Actualizando la configuración de MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config::backup() {
+	declare text="Se ha realizado una copia de seguridad del archivo mysqld.cnf actual en mysqld.cnf.backup."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config::write() {
+	declare text="Configurando la configuración de MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::config::write::fail() {
+	declare text="No se pudo escribir la configuración de MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::privileges() {
+	declare text="Configurando privilegios de MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::privileges::fail() {
+	declare text="No se pudieron escribir los privilegios de MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::client() {
+	declare text="Configurando la configuración del cliente MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::client::fail() {
+	declare text="No se pudo escribir la configuración del cliente MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::reload() {
+	declare text="Recargando el demonio systemctl..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::reload::fail() {
+	declare text="No se pudo recargar el demonio systemctl."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::enable() {
+	declare text="Habilitando MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::restart() {
+	declare text="Reiniciando MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::restart::fail() {
+	declare text="No se pudo reiniciar MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::user() {
+	declare text="Creando usuario MySQL ${mysql_user}...."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::user::fail() {
+	declare text="No se pudo crear el usuario de MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::grant() {
+	declare text="Otorgar privilegios al usuario de MySQL ${mysql_user}...."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::grant::fail() {
+	declare text="Error al conceder privilegios al usuario de MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::flush() {
+	declare text="Privilegios de lavado..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::flush::fail() {
+	declare text="No se pudieron eliminar los privilegios."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::convert() {
+	declare text="Convirtiendo base de datos a MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::convert::success() {
+	declare text="La base de datos se ha convertido a MySQL."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::remove() {
+	declare text="¿Le gustaría eliminar la base de datos SQLite? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::remove::fail() {
+	declare text="No se pudo deshabilitar SQLite en PHP."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::complete() {
+	declare text="MySQL ha sido configurado."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::details() {
+	declare text="Detalles de conexión MySQL:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::connection::details() {
+	declare text="Nombre de usuario: ${mysql_user}
+Contraseña: ${mysql_password}
+Puerto: ${mysql_port}
+Anfitrión: ${mysql_host}
+Base de datos: ${mysql_name}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::mycnf() {
+	declare text="Estos detalles se pueden encontrar en /root/.my.cnf"
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o sqlite` | case: db)
+
+quickbox::lang::db::install::sqlite::backup() {
+	declare text="Copia de seguridad de la base de datos SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::backup::success() {
+	declare text="Se realizó una copia de seguridad de la base de datos SQLite en ${sqlite_file}.${date}.backup"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::convert() {
+	declare text="Convirtiendo base de datos a SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::convert::success() {
+	declare text="La base de datos se ha convertido a SQLite."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::remove() {
+	declare text="¿Le gustaría eliminar MySQL por completo? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::remove::mysql() {
+	declare text="¿Le gustaría eliminar la base de datos MySQL? [y/N]:"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::php::fail() {
+	declare text="No se pudo instalar SQLite en PHP."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::php::enable::fail() {
+	declare text="No se pudo habilitar SQLite en PHP."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::complete() {
+	declare text="El proceso de conversión de la base de datos SQLite se ha completado."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::invalid() {
+	declare text="Opción no válida: ${option}"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::sqlite::mysql::notfound() {
+	declare text="Base de datos MySQL no encontrada."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::db::install::mysql::sqlite::notfound() {
+	declare text="Base de datos SQLite no encontrada."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o backup` | case: backup)
+quickbox::lang::db::backup::sqlite::integrity() {
+	declare text="Verificando la integridad de la base de datos SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::pass() {
+	declare text="Verificación de la integridad de la base de datos completada con éxito."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::complete() {
+	declare text="Copia de seguridad completada: ${full_backup_path}/qbpro.db"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::fail() {
+	declare text="La verificación de la integridad de la base de datos falló. No se creó ninguna copia de seguridad."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair() {
+	declare text="Intentando reparar la base de datos SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::repair() {
+	declare text="
+    [ADVERTENCIA] ¡Reparación de la base de datos de QuickBox!
+
+    La base de datos de QuickBox no pasó la verificación de integridad y se ha intentado reparar.
+
+    Comando: REINDEX; VACUUM;
+
+    Puedes encontrar las copias de seguridad más recientes en:
+    /opt/quickbox/backup/system/[DATE]/db/qbpro.db
+
+    Para eliminar este mensaje, ejecuta el siguiente comando:
+    rm -f /etc/quickbox_motd
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair::complete() {
+	declare text="Reparación de la base de datos SQLite completada."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::repair::fail() {
+	declare text="No se pudo reparar la base de datos SQLite."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::sqlite::integrity::restore() {
+	declare text="
+    [ADVERTENCIA] ¡Reparación de la base de datos de QuickBox!
+
+    La base de datos de QuickBox no pasó la verificación de integridad y se ha intentado reparar.
+    Se ha restaurado una copia de seguridad anterior válida y se han ajustado los permisos.
+
+    Puedes encontrar las copias de seguridad más recientes en:
+    /opt/quickbox/backup/system/[DATE]/db/qbpro.db
+
+    Para eliminar este mensaje, ejecuta el siguiente comando:
+    rm -f /etc/quickbox_motd
+"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::restore::complete() {
+	declare text="Restauración de la base de datos SQLite completada."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql() {
+	declare text="Realizando copia de seguridad de la base de datos MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql::complete() {
+	declare text="Copia de seguridad de MySQL completada: ${full_backup_path}/qbpro.sql"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::mysql::fail() {
+	declare text="La copia de seguridad de MySQL falló."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::backup::unsupported() {
+	declare text="Tipo de base de datos no soportado: ${db_type}. No se creó ninguna copia de seguridad."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o maintenance` | case: maintenance)
+quickbox::lang::db::maintenance::sqlite() {
+	declare text="Realizando mantenimiento en la base de datos SQLite..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::backup() {
+	declare text="Realizando copia de seguridad de la base de datos antes del mantenimiento..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize() {
+	declare text="Optimizando la base de datos SQLite (VACUUM)..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize::complete() {
+	declare text="Optimización de la base de datos SQLite completada."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::optimize::fail() {
+	declare text="No se pudo optimizar la base de datos SQLite."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::sqlite::integrity::fail() {
+	declare text="La verificación de la integridad de la base de datos falló. No se realizó ningún mantenimiento."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql() {
+	declare text="Realizando mantenimiento en la base de datos MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::backup() {
+	declare text="Realizando copia de seguridad de la base de datos MySQL antes del mantenimiento..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::backup::fail() {
+	declare text="La copia de seguridad de MySQL falló. Saltando el mantenimiento."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize() {
+	declare text="Optimizando las tablas de la base de datos MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize::complete() {
+	declare text="Optimización de la base de datos MySQL completada."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::optimize::fail() {
+	declare text="No se pudo optimizar la base de datos MySQL."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity() {
+	declare text="Verificando la integridad de la base de datos MySQL..."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity::pass() {
+	declare text="La verificación de la integridad de la base de datos MySQL se completó con éxito."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::mysql::integrity::fail() {
+	declare text="La verificación de la integridad de la base de datos MySQL falló."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::maintenance::unsupported() {
+	declare text="Tipo de base de datos no soportado: ${db_type}. No se realizó ningún mantenimiento."
+	quickbox::dashboard::log "${text}"
+}
+
+### `-o restore` | case: restore)
+quickbox::lang::db::restore::backup::error() {
+	declare text="Directorio de respaldo no encontrado: ${backup_root}"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::empty() {
+	declare text="No se encontraron respaldos en el directorio de respaldo."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::select() {
+	declare text="Seleccione una copia de seguridad para restaurar:"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::number() {
+	declare text="Ingrese el número de la copia de seguridad para restaurar: "
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::backup::invalid() {
+	declare text="Selección no válida. Inténtelo nuevamente."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::sqlite::success() {
+	declare text="Base de datos SQLite restaurada exitosamente desde ${select_backup}."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::sqlite::fail() {
+	declare text="Error al restaurar la base de datos SQLite."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::mysql::success() {
+	declare text="Base de datos MySQL restaurada correctamente desde ${select_backup}."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::mysql::fail() {
+	declare text="Error al restaurar la base de datos MySQL."
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::db::restore::unsupported() {
+	declare text="Tipo de base de datos no compatible: ${db_type}. No se realizó ninguna restauración."
+	quickbox::panel de control::registro "${text}"
+}
+
+### `wireguard` | case: wireguard)
+
+quickbox::lang::wireguard::mtuendpoint::error() {
+	declare text="Error: --mtu y --endpoint son necesarios para el proceso 'calc'"
+	quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# QB HELP MENUS
+################################################################################
+
+### ERRORS
+
+quickbox::error::non-empty() {
+	declare text="Error: $1 requiere un argumento que no esté vacío"
+	quickbox::dashboard::log "${text}"
+}
+
+### MISC
+
+quickbox::nvpn::conf::generator::usage() {
+	declare text="
+Generador de configuración NordVPN WireGuard
+
+Uso:
+  nvpn_conf_gen -t 'token_privado' [-dns 'dns_preferido'] [-c 'nombre_país'] [-L 'número_de_configs'] [-l] [-h]
+
+Opciones:
+  -t   | --token    token privado de NordVPN
+  -dns | --dns      DNS preferido (predeterminado: 103.86.96.100)
+  -c   | --country  Nombre del país preferido (use --list para enumerar los países disponibles)
+  -L   | --limit    Limita el número de configuraciones a crear (predeterminado: 5)
+  -l   | --list     Lista de países disponibles para conexiones WireGuard
+  -h   | --help     Mostrar este mensaje de ayuda
+
+Ejemplo:
+  nvpn_conf_gen -t 'tu_token' -c 'Mexico' -L 10
+
+Notas:
+  - El token se puede generar a partir de:
+    https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/
+  - Los archivos de configuración se guardarán en '${wg_conf_storage_dir}'
+"
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::wireguard::manage::help() {
+	declare text="
+Administración de QuickBox WireGuard
+
+Uso:
+  qb manage wireguard [proceso] [opciones]
+
+Procesos:
+  add                                 Agregar una configuración de cliente o servidor
+    -c    | --client                  Eliminar una configuración de cliente WireGuard
+    -s    | --server                  Eliminar la configuración de servidor WireGuard
+    -cn   | --client-name             Establecer el nombre de cliente para la configuración de cliente WireGuard (requerido para la configuración de cliente '-c')
+    -noc  | --number-of-clients       Establecer la cantidad de clientes para la configuración de servidor WireGuard (predeterminado: 1)
+    -lp   | --listen-port             Establecer el puerto de escucha para la configuración de servidor WireGuard (predeterminado: 51820)
+    -mtu  | --mtu                     Establecer la MTU para la configuración de servidor WireGuard
+    -cai  | --client-allowed-ips      Establecer las IP permitidas para la configuración de cliente WireGuard (predeterminado: 0.0.0.0/0, ::/0)
+    -cidr | --cidr                    Establece la notación CIDR para la configuración del servidor WireGuard (predeterminado: servidor - <ip_servidor>/24 | cliente - 10.5.0.2/16)
+    -pur  | --post-up-rules           Establece las reglas de subida para la configuración del servidor WireGuard
+    -pdr  | --post-down-rules         Establece las reglas de bajada para la configuración del servidor WireGuard
+
+  remove                              Elimina una configuración de cliente o servidor
+    -cn   | --client-name             Establece el nombre del cliente para la configuración del cliente WireGuard
+
+  check                               Comprueba las configuraciones del cliente WireGuard actualmente cargadas y en ejecución
+    -cn   | --client-name             Establece el nombre del cliente para la configuración del cliente WireGuard
+    --deactivate                      Desactiva la configuración del cliente WireGuard
+
+  cron                                Agrega un trabajo cron para verificar los archivos de configuración de WireGuard
+
+  calc                                Calcula la notación CIDR y la MTU para la configuración del servidor
+    --mtu                             Establece la MTU para la configuración del servidor WireGuard
+    --endpoint                        Establece el punto final para la configuración del servidor WireGuard
+    --protocol                        Establece el protocolo para la configuración del servidor WireGuard (ipv4 o ipv6)
+
+  help                                Muestra este mensaje de ayuda
+
+Ejemplos:
+  qb manage wireguard add -c -cn 'nombre_cliente' -cai '0.0.0.0/0' -lp 51820
+  qb manage wireguard add -s -noc 5 -lp 51820 -cidr '192.168.0.2/24' -pur 'iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE'
+  qb manage wireguard remove -cn 'nombre_cliente'
+  qb manage wireguard check -cn 'nombre_cliente' --deactivate
+  qb manage wireguard cron
+  qb manage wireguard calc --mtu 1420 --endpoint '192.168.0.0' --protocol 'ipv4'
+"
+	quickbox::dashboard::log "${text}"
+}
+
+### SOFTWARE (APPLICATIONS)
+
+# Function to generate help text based on provided options
+generate_help_text() {
+	local software_title="$1"
+	local software_name="$2"
+	local has_update="$3"
+	local options="$4"
+	local examples="$5"
+	local notes="$6"
+
+	local processes="  install    Instalar ${software_title}
+  reinstall  Reinstalar ${software_title}
+  remove     Remover ${software_title}"
+
+	if [[ ${has_update} == 1 ]]; then
+		processes="${processes}
+  update     Actualizar ${software_title}"
+	fi
+
+	processes="${processes}
+  help       Mostrar este mensaje de ayuda"
+
+	declare text="
+Gestión de software QuickBox para ${software_title}
+
+Uso:
+  qb [proceso] ${software_name} [opciones]
+
+Procesos:
+${processes}
+
+Opciones:
+${options}
+
+Ejemplos:
+${examples}
+${notes}
+"
+	quickbox::dashboard::log "${text}"
+}
+
+# Function to get help text for specific software
+quickbox::software::help() {
+	local software_help_name="$1"
+	local software_title="${software_help_name^}" # Capitalize the first letter
+	local has_update
+
+	case "${software_help_name}" in
+	emby | jellyfin)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  -d | --domain    Establece el dominio para ${software_title}
+  --beta           Instala la versión beta de ${software_title}" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -d '${software_help_name}.domain.com'    # Instalar con dominio
+  qb reinstall ${software_help_name} -u nombre_de_usuario -d '${software_help_name}.domain.com'  # Reinstalar con dominio
+  qb install ${software_help_name} -u nombre_de_usuario --beta                                   # Instalar la versión beta
+  qb reinstall ${software_help_name} -u nombre_de_usuario --beta                                 # Reinstalar la versión beta
+  qb remove ${software_help_name} -u nombre_de_usuario                                           # Eliminar
+  qb update ${software_help_name} -u nombre_de_usuario                                           # Actualizar
+
+  ## Usar varias opciones
+  qb install ${software_help_name} -u nombre_de_usuario -d '${software_help_name}.domain.com' --beta
+  qb reinstall ${software_help_name} -u nombre_de_usuario -d '${software_help_name}.domain.com' --beta" \
+			"
+Notas:
+  - Al instalar o reinstalar con la opción de dominio, el proxy inverso de Nginx se configurará automáticamente.
+      * Asegúrese de que el dominio esté apuntando a la dirección IP del servidor y que los registros DNS adecuados estén configurados."
+		;;
+
+	mylar3)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username             Establece el nombre de usuario para ${software_title} (obligatorio)
+  -clp | --comic-location-path  Establece la ruta de ubicación para los cómics (predeterminado: /home/nombre_de_usuario/Media/Comics)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -clp '/ruta/a/cómics'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -clp '/ruta/a/cómics'
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			""
+		;;
+
+	radarr | sonarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  --4k             Establece la instalación de la compilación para 4k (predeterminado: 1080p)
+  --nightly        Establece la instalación de la compilación en la rama nocturna (predeterminado: latest)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario                   # Instalar la instalación estándar (1080p)
+  qb install ${software_help_name} -u nombre_de_usuario --4k              # Instalar la instalación 4k
+  qb reinstall ${software_help_name} -u nombre_de_usuario --nightly       # Reinstalar la instalación nocturna
+  qb reinstall ${software_help_name} -u nombre_de_usuario --4k            # Reinstalar la instalación 4k
+  qb remove ${software_help_name} -u nombre_de_usuario                    # Eliminar la instalación estándar (1080p)
+  qb remove ${software_help_name} -u nombre_de_usuario --4k               # Eliminar la instalación 4k
+  qb update ${software_help_name} -u nombre_de_usuario                    # Actualizar la instalación estándar (1080p)
+  qb update ${software_help_name} -u nombre_de_usuario --4k               # Actualizar la instalación 4k
+
+  ## Usar múltiples opciones
+  qb install ${software_help_name} -u nombre_de_usuario --4k --nightly    # Instalar la instalación 4k en la rama nightly
+  qb reinstall ${software_help_name} -u nombre_de_usuario --4k --nightly  # Reinstalar la instalación 4k en la rama nightly
+  qb update ${software_help_name} -u nombre_de_usuario --4k --nightly     # Actualizar la instalación 4k en o para nightly" \
+			""
+		;;
+
+	calibre | kavita)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username      Establezca el nombre de usuario para ${software_title} (obligatorio)
+  -lp | --library-path  Establezca la ruta de ubicación para su biblioteca (predeterminado: /home/nombre_de_usuario/.config/${software_title}/library)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -lp '/ruta/a/biblioteca'
+  qb reinstall ${software_help_name} -u username -lp '/ruta/a/biblioteca'
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			""
+		;;
+
+	plex)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username          Establezca el nombre de usuario para ${software_title} (obligatorio)
+  -pct | --plex-claim-token  Establezca el token de reclamación de Plex para ${software_title} (obligatorio para una reclamación rápida)
+  -d   | --domain            Establezca el dominio para ${software_title}
+  -D   | --data-dir          Establezca el directorio de datos para ${software_title} (predeterminado: /home/nombre_de_usuario/.config/'Plex Media Server')" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -pct 'token_reclamo' -d 'plex.domain.com' -D '/ruta/a/datos'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -pct 'token_reclamo' -d 'plex.domain.com' -D '/ruta/a/datos'
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			"
+Notas:
+  - El token de reclamo de Plex se puede obtener en:
+    https://www.plex.tv/claim/
+
+  - Evite configurar el directorio de datos en un directorio existente como:
+      /opt, /opt/nombre_de_usuario, /mnt, /home, /home/nombre_de_usuario, etc.
+
+  - Es seguro crear un nuevo directorio de datos dentro de directorios existentes como:
+      /opt/plex, /opt/nombre_de_usuario/plex, /mnt/plex, /data/plex, etc.
+
+  - El directorio de datos se creará si no existe.
+
+  - El directorio de datos será propiedad del usuario y el grupo del nombre de usuario.
+
+  - Al instalar o reinstalar con la opción de dominio, el proxy inverso de Nginx se configurará automáticamente.
+      * Asegúrese de que el dominio esté apuntando a la dirección IP del servidor y que los registros DNS adecuados estén configurados.
+
+  - Al actualizar, se le solicitará que ingrese su correo electrónico de plex.tv, contraseña y código 2FA."
+		;;
+
+	bazarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  --4k             Establece la instalación de compilación para 4k (predeterminado: 1080p)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario         # Instalar la instalación estándar (1080p)
+  qb install ${software_help_name} -u nombre_de_usuario --4k    # Instalar la instalación 4k
+  qb reinstall ${software_help_name} -u nombre_de_usuario       # Reinstalar la instalación estándar (1080p)
+  qb reinstall ${software_help_name} -u nombre_de_usuario --4k  # Reinstalar la instalación 4k
+  qb remove ${software_help_name} -u nombre_de_usuario          # Eliminar la instalación estándar (1080p)
+  qb remove ${software_help_name} -u nombre_de_usuario --4k     # Eliminar la instalación 4k
+  qb update ${software_help_name} -u nombre_de_usuario          # Actualizar la instalación estándar (1080p)
+  qb update ${software_help_name} -u nombre_de_usuario --4k     # Actualizar la instalación de 4k" \
+			""
+		;;
+
+	autodl | phpmyadmin | x2go)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
+  qb reinstall ${software_help_name}
+  qb remove ${software_help_name}
+  qb update ${software_help_name}" \
+			""
+		;;
+
+	fail2ban)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
+  qb reinstall ${software_help_name}
+  qb remove ${software_help_name}" \
+			""
+		;;
+
+	filebot)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username    Establece el nombre de usuario para ${software_title} (obligatorio)
+  -mp | --media-path  Establece la ruta del medio para ${software_title} (predeterminado: /home/nombre_de_usuario/Media)
+  -o 'deluge'         Instala ${software_title} con integración con Deluge
+  -o 'nzbget'         Instala ${software_title} con integración con NZBGet
+  -o 'rtorrent'       Instala ${software_title} con integración con rTorrent
+  -o 'sabnzbd'        Instala ${software_title} con integración con SABnzbd" \
+			"  qb install ${software_help_name} -u nombre_de_usuario
+  qb reinstall ${software_help_name} -u nombre_de_usuario
+  qb remove ${software_help_name} -u nombre_de_usuario
+
+  ## Utilizar varias opciones
+  qb install ${software_help_name} -u nombre_de_usuario -o 'deluge' -o 'nzbget'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -o 'rtorrent' -o 'sabnzbd'" \
+			""
+		;;
+
+	jdownloader)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username       Establezca el nombre de usuario para ${software_title} (obligatorio)
+  -e | --email          Establezca el correo electrónico para ${software_title} (obligatorio) .i.
+  -p | --password       Establezca la contraseña para ${software_title} (obligatorio) .ii.
+  -D | --downloads-dir  Establezca la ruta de descargas para ${software_title} (predeterminado: /home/nombre_de_usuario/Downloads)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -e 'email' -p 'contraseña' -D '/ruta/a/descargas'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -e 'email' -p 'contraseña' -D '/ruta/a/descargas'
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			"
+Notas:
+  - .i. El correo electrónico y la contraseña son necesarios para la instalación de JDownloader.
+      * .ii. Estas son las credenciales para su cuenta MyJDownloader."
+		;;
+
+	jellyseerr | komga | overseerr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establezca el nombre de usuario para ${software_title} (obligatorio)
+  -d | --domain    Establezca el dominio para ${software_title}" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -d '${software_help_name}.domain.com'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -d '${software_help_name}.domain.com'
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			"
+Notas:
+  - Al instalar o reinstalar con la opción domain [-d], el proxy inverso de Nginx se configurará automáticamente.
+      * Asegúrese de que el dominio esté apuntando a la dirección IP del servidor y que los registros DNS adecuados estén configurados."
+		;;
+
+	lecert)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  --dash         Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para el panel de QuickBox
+  --no-dash      Instala un certificado para un dominio personalizado especificado con '-d' (esto solo creará el certificado)
+  --emby         Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para Emby
+  --jellyfin     Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para Jellyfin
+  --jellyseerr   Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para Jellyseerr
+  --komga        Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para Komga
+  --overseerr    Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para Overseerr
+  --plex         Instala un certificado para el dominio especificado con '-d' y también creará un proxy inverso para Plex
+  -d | --domain  Establece el dominio para ${software_title}" \
+			"  qb install ${software_help_name} --dash -d 'dominio.com'
+  qb reinstall ${software_help_name} --jellyseerr -d 'jellyseerr.dominio.com' --jellyfin -d 'jellyfin.dominio.com' --komga -d 'komga.dominio.com'
+  qb remove ${software_help_name} --plex -d 'plex.dominio.com' --emby -d 'emby.dominio.com'
+  qb renew ${software_help_name} -d 'algun.dominio.com' -d 'otro.dominio.com'" \
+			""
+		;;
+
+	lidarr | readarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  --nightly        Establece la instalación de compilación en la rama nocturna (predeterminado: latest)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario              # Instalar la instalación predeterminada (más reciente)
+  qb install ${software_help_name} -u nombre_de_usuario --nightly    # Instalar la instalación nocturna
+  qb reinstall ${software_help_name} -u nombre_de_usuario            # Reinstalar la instalación predeterminada (más reciente)
+  qb reinstall ${software_help_name} -u nombre_de_usuario --nightly  # Reinstalar la instalación nocturna
+  qb remove ${software_help_name} -u nombre_de_usuario               # Eliminar la instalación actual
+  qb update ${software_help_name} -u nombre_de_usuario               # Actualizar la instalación predeterminada (más reciente)
+  qb update ${software_help_name} -u nombre_de_usuario --nightly     # Actualizar a/desde la instalación nocturna" \
+			""
+		;;
+
+	quota)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -qm | --quota-mount  Establece el punto de montaje del sistema para ${software_title} (obligatorio)" \
+			"  qb install ${software_help_name} -qm '/ruta/al/punto/de/montaje'
+  qb reinstall ${software_help_name} -qm '/ruta/al/punto/de/montaje'
+  qb remove ${software_help_name}" \
+			""
+		;;
+
+	rclone)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  --dropbox        Instala ${software_title} con integración de Dropbox
+  --gdrive         Instala ${software_title} con integración de Google Drive
+  --encrypted      Instala ${software_title} con cifrado
+  --beta           Instala la versión beta de ${software_title}" \
+			"  qb install ${software_help_name} -u nombre_de_usuario --dropbox
+  qb install ${software_help_name} -u nombre_de_usuario --beta --gdrive
+  qb reinstall ${software_help_name} -u nombre_de_usuario --dropbox --encrypted
+  qb reinstall ${software_help_name} -u nombre_de_usuario --gdrive
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			"
+Notas:
+  - Se recomienda utilizar la opción --dropbox o --gdrive en una sola pasada de instalación.
+      * Esto evitará que se produzcan errores. Conflictos con la configuración de rclone.
+
+  - Al instalar con la opción --dropbox o --gdrive, la configuración de rclone se creará automáticamente.
+
+  - Al instalar con la opción --encrypted, la configuración de rclone se cifrará utilizando la información especificada.
+
+  - Al instalar con la opción --beta, se instalará la versión beta de rclone."
+		;;
+
+	requestrr | vpn)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario
+  qb reinstall ${software_help_name} -u nombre_de_usuario
+  qb remove ${software_help_name} -u nombre_de_usuario" \
+			""
+		;;
+
+	rtorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    Establece el nombre de usuario para ${software_title} (obligatorio)
+  -o '0.10.0'        Instalar la versión 0.10.0
+  -o '0.9.8'         Instalar la versión 0.9.8
+  -o '0.9.7'         Instalar la versión 0.9.7
+  -o '0.9.6'         Instalar la versión 0.9.6
+  -o 'feature-bind'  Instalar la versión feature-bind de ${software_title}" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -o '0.10.0'
+  qb install ${software_help_name} -u nombre_de_usuario -o '0.9.8'
+  qb install ${software_help_name} -u nombre_de_usuario -o '0.9.7'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -o '0.9.6'
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario -o '0.10.0'
+  qb update ${software_help_name} -u nombre_de_usuario -o 'feature-bind'" \
+			"
+Notas:
+  - rTorrent es una aplicación instalada globalmente y estará disponible para todos los usuarios del servidor.
+
+  - La versión de rTorrent con función de enlace es una compilación personalizada que incluye la función de enlace.
+      * La función de enlace le permite vincular rTorrent a una dirección IP específica."
+		;;
+
+	rutorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    Establece el nombre de usuario para ${software_title} (obligatorio)
+  --beta             Instalar la versión beta de ${software_title}" \
+			"  qb install ${software_help_name} -u nombre_de_usuario
+  qb reinstall ${software_help_name} -u nombre_de_usuario
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario --beta" \
+			"
+Notas:
+  - ruTorrent es una aplicación instalada globalmente y estará disponible para todos los usuarios del servidor.
+
+  - ruTorrent es parte del proceso de instalación de rTorrent y, al instalar rTorrent,
+    ruTorrent se instalará con la última versión de manera predeterminada. Si rTorrent no está instalado,
+    ruTorrent instalará la versión 0.9.8.
+
+  - ruTorrent se instalará con la última versión de manera predeterminada. Si desea instalar la versión beta,
+    puede usar la opción --beta. Tenga en cuenta que las dos versiones no siempre son diferentes."
+		;;
+
+	sabnzbd | thelounge | xteve)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  --beta           Instala la versión beta de ${software_title}" \
+			"  qb install ${software_help_name} -u nombre_de_usuario
+  qb install ${software_help_name} -u nombre_de_usuario --beta
+  qb reinstall ${software_help_name} -u nombre_de_usuario
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			""
+		;;
+
+	transmission)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)
+  --v4             Instala la versión 4 de ${software_title} (predeterminado: versión 3)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario --v4
+  qb reinstall ${software_help_name} -u nombre_de_usuario --v4
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario --v4" \
+			""
+		;;
+
+	wireguard)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username              Establecer el nombre de usuario para ${software_title} (obligatorio)
+  -o [client|server]           Instalar WireGuard como cliente o servidor
+  -cai  | --client-allowed-ip  Establecer la IP permitida para el servidor WireGuard
+  -cidr | --cidr               Establecer el CIDR para el servidor WireGuard (predeterminado: 10.5.0.2/16)
+  -dns  | --dns                Establecer el DNS para el servidor WireGuard (predeterminado: 1.1.1.1)
+  -ep   | --endpoint           Establecer el punto final para el servidor WireGuard
+  -lp   | --listen-port        Establecer el puerto de escucha para el servidor WireGuard (predeterminado: 51820)
+  -noc  | --number-of-clients  Establecer la cantidad de clientes para el servidor WireGuard
+  -pdr  | --postdown-rule      Establecer la regla de post-down para el servidor WireGuard
+  -pur  | --postup-rule        Establecer la regla de post-up para el servidor WireGuard" \
+			"  qb install ${software_help_name} -u nombre_de_usuario -o server \\
+  -cai '192.168.0.2,192.168.0.3' \\
+  -cidr '10.5.0.2/16' \\
+  -dns '0.0.0.0' \\
+  -ep 'servidor.dominio.com' \\
+  -lp 51820 \\
+  -noc 5 \\
+  -pdr 'iptables -D INPUT -i wg0 -j ACCEPT' \\
+  -pur 'iptables -A INPUT -i wg0 -j ACCEPT'
+  qb reinstall ${software_help_name} -u nombre_de_usuario -o client
+  qb remove ${software_help_name} -u nombre_de_usuario" \
+			"
+Notas:
+  - El servidor WireGuard se instalará con el CIDR predeterminado 10.5.0.2/16,
+    DNS 1.1.1.1, 1 configuración de cliente y puerto de escucha 51820.
+
+  - El servidor WireGuard se instalará con las reglas de inicio y cierre predeterminadas.
+      * La regla de inicio eliminará la regla de iptables para el servidor WireGuard.
+      * La regla de inicio agregará la regla de iptables para el servidor WireGuard.
+
+  - La opción '-noc' especifica la cantidad de clientes para los que se crearán configuraciones.
+    Estas configuraciones se guardarán en el directorio '/srv/quickbox/db/wireguard'.
+
+  - La mayoría de los proveedores de VPN proporcionan un archivo de configuración para WireGuard.
+    Si está utilizando NordVPN, que no proporciona un archivo de configuración directamente,
+    puede generar uno utilizando el generador de configuración de NordVPN incluido.
+    Para obtener más información sobre cómo generar un archivo de configuración de NordVPN,
+    utilice el comando: nvpn_conf_gen -h"
+		;;
+
+	*)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Establece el nombre de usuario para ${software_title} (obligatorio)" \
+			"  qb install ${software_help_name} -u nombre_de_usuario
+  qb reinstall ${software_help_name} -u nombre_de_usuario
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario" \
+			""
+		;;
+	esac
 }
