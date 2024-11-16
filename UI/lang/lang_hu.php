@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Hungarian
- * @version    3.0.1.57
+ * @version    3.0.1.60
  * @since      2.5.8
  *
  * @var Configs $configs The configurations object.
@@ -898,48 +898,62 @@ $L['WITH_PASSWORD']       = 'with password';
  *
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
-$L['ACCOUNT_PAGE']                = 'Account Page';
-$L['ACTIVATION_IP']               = 'Activation IP';
-$L['ACTIVATION_NEED_D_DO']        = 'Do it here!';
-$L['ACTIVATION_NEED_D']           = 'Need to de-activate?';
-$L['ACTIVATION_NEED_G_GET']       = 'Get one here!';
-$L['ACTIVATION_NEED_G']           = 'Need an API Key?';
-$L['ACTIVATION_TIME']             = 'Activation Time';
-$L['ADD_DASH_SETTINGS']           = 'Additional Dashboard Settings';
-$L['ADMIN_HOME']                  = 'Home Page';
-$L['API_ACTIVE']                  = 'Active';
-$L['API_KEY']                     = 'API Key';
-$L['API_NOT_ACTIVE']              = 'Not Active';
-$L['API_PLACE']                   = 'Enter API Key here...';
-$L['API_SETTINGS']                = 'API Control';
-$L['API_STATUS']                  = 'API Status';
-$L['API']                         = 'API';
-$L['CONF_SETTINGS']               = 'Configuration Settings';
-$L['DASH_URL_SETTINGS']           = 'Dashboard URL Settings';
-$L['DEFAULT_PAGE']                = 'Landing Page';
-$L['DISK_MOUNT']                  = 'Disk Mount';
-$L['EDIT_GEN_SETTINGS']           = 'Edit General Site Settings';
-$L['EMAIL_FROM_ADDR']             = 'Site E-mail Address';
-$L['EMAIL_FROM_NAME']             = 'E-mail From Name';
-$L['EMAIL_SETTINGS']              = 'Email Settings';
-$L['LOGIN_PAGE']                  = 'Login Page';
-$L['NET_ADAPTER']                 = 'Network Interface';
-$L['PHP_DATE_FORMAT']             = 'PHP Date Format';
-$L['PHP_FORMAT_SETTINGS']         = 'PHP Format Settings';
-$L['PHP_TIME_ZONE']               = 'PHP Time Zone';
-$L['SITE_DESC']                   = 'Site Description';
-$L['SITE_LOGO_COLLAPSED']         = 'Collapsed Logo';
-$L['SITE_LOGO_FULL']              = 'Full Logo';
-$L['SITE_LOGO_SETTINGS']          = 'Site Logo Settings';
-$L['SITE_META_SETTINGS']          = 'Site Meta Settings';
-$L['SITE_NAME']                   = 'Site Name';
-$L['SITE_ROOT']                   = 'Site Root';
-$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'This is the logo that will be displayed when the sidebar is collapsed and will be used as the browser tab icon.';
-$L['SITE_LOGO_FULL_TOOLTIP']      = 'This is the logo that will be displayed when the sidebar is expanded.';
-$L['SITE_NAME_TOOLTIP']           = 'Site name should be under 40 characters and alphanumeric only with no special characters (spaces are acceptable)';
-$L['SITE_DESC_TOOLTIP']           = 'Site description should be under 120 characters and alphanumeric only with no special characters (spaces are acceptable)';
-$L['EMAIL_FROM_NAME_TOOLTIP']     = 'From Name should be under 60 characters and alphanumeric only with no special characters (spaces are acceptable)';
-$L['SITE_ROOT_TOOLTIP']           = 'Enter your server IP or valid domain w/o trailing forward slash. example: https://192.168.0.1 (or) https://somedomain.com';
+$L['ACCOUNT_PAGE']                      = 'Account Page';
+$L['ACTIVATION_IP']                     = 'Activation IP';
+$L['ACTIVATION_NEED_D_DO']              = 'Do it here!';
+$L['ACTIVATION_NEED_D']                 = 'Need to de-activate?';
+$L['ACTIVATION_NEED_G_GET']             = 'Get one here!';
+$L['ACTIVATION_NEED_G']                 = 'Need an API Key?';
+$L['ACTIVATION_TIME']                   = 'Activation Time';
+$L['ADD_DASH_SETTINGS']                 = 'Additional Dashboard Settings';
+$L['ADMIN_HOME']                        = 'Home Page';
+$L['API_ACTIVE']                        = 'Active';
+$L['API_KEY']                           = 'API Key';
+$L['API_NOT_ACTIVE']                    = 'Not Active';
+$L['API_PLACE']                         = 'Enter API Key here...';
+$L['API_SETTINGS']                      = 'API Control';
+$L['API_STATUS']                        = 'API Status';
+$L['API']                               = 'API';
+$L['BANDWIDTH_RESET_STATS']             = 'Sávszélesség-statisztika visszaállítása';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Ez visszaállítja az összes gyűjtött sávszélesség-statisztikát. Ez a művelet visszafordíthatatlan, és hatékonyan eltávolítja a jelenlegi vnStat adatbázist, és újat hoz létre. Az új adatok 5 percen belül megkezdik az adatbázis újratelepítését.<br/><br/>A jelenlegi vnStat adatbázis biztonsági másolata a következő címen kerül tárolásra: <code>/var/lib/vnstat/vnstat.[date].db< /kód>';
+$L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Kattintson az adatbázis aktuális méretének frissítéséhez. Ez oldalbetöltéskor történik, de hasznos lehet a méret tükrözéséhez, ha nagyobb adatbázist állít vissza.<br/><br/><em>Megjegyzés: Ez nincs hatással az adatbázisban tárolt adatokra. Csak a közzétett adatbázis méretét frissíti.</em>';
+$L['BANDWIDTH_START_DATE']              = 'A sávszélesség kezdő dátuma';
+$L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Válassza ki a sávszélesség-figyelés kezdő dátumát. A kiválasztott nap havonta ismétlődik, ideális bizonyos dátumoktól, például az internetszolgáltatók alaphelyzetbe állításától vagy a szerverbeállításoktól kezdődő nyomon követéshez.<br/>Ez a rendszer irányítópulton megjelenő összegekre vonatkozik.<br/><br/><em>Megjegyzés: A meglévő adatok érintetlenül marad.</em>';
+$L['CALCULATING']                       = 'Számítás...';
+$L['CONF_SETTINGS']                     = 'Configuration Settings';
+$L['DASH_URL_SETTINGS']                 = 'Dashboard URL Settings';
+$L['DEFAULT_PAGE']                      = 'Landing Page';
+$L['DISK_MOUNT']                        = 'Disk Mount';
+$L['EDIT_GEN_SETTINGS']                 = 'Edit General Site Settings';
+$L['EMAIL_FROM_ADDR']                   = 'Site E-mail Address';
+$L['EMAIL_FROM_NAME']                   = 'E-mail From Name';
+$L['EMAIL_SETTINGS']                    = 'Email Settings';
+$L['ERROR']                             = 'Hiba';
+$L['LOADING']                           = 'Betöltés...';
+$L['LOGIN_PAGE']                        = 'Login Page';
+$L['NET_ADAPTER']                       = 'Network Interface';
+$L['PHP_DATE_FORMAT']                   = 'PHP Date Format';
+$L['PHP_FORMAT_SETTINGS']               = 'PHP Format Settings';
+$L['PHP_TIME_ZONE']                     = 'PHP Time Zone';
+$L['RESET_BANDWIDTH_STATS']             = 'Sávszélesség-statisztika visszaállítása';
+$L['SITE_DESC']                         = 'Site Description';
+$L['SITE_LOGO_COLLAPSED']               = 'Collapsed Logo';
+$L['SITE_LOGO_FULL']                    = 'Full Logo';
+$L['SITE_LOGO_SETTINGS']                = 'Site Logo Settings';
+$L['SITE_META_SETTINGS']                = 'Site Meta Settings';
+$L['SITE_NAME']                         = 'Site Name';
+$L['SITE_ROOT']                         = 'Site Root';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP']       = 'This is the logo that will be displayed when the sidebar is collapsed and will be used as the browser tab icon.';
+$L['SITE_LOGO_FULL_TOOLTIP']            = 'This is the logo that will be displayed when the sidebar is expanded.';
+$L['SITE_NAME_TOOLTIP']                 = 'Site name should be under 40 characters and alphanumeric only with no special characters (spaces are acceptable)';
+$L['SITE_DESC_TOOLTIP']                 = 'Site description should be under 120 characters and alphanumeric only with no special characters (spaces are acceptable)';
+$L['EMAIL_FROM_NAME_TOOLTIP']           = 'From Name should be under 60 characters and alphanumeric only with no special characters (spaces are acceptable)';
+$L['SITE_ROOT_TOOLTIP']                 = 'Enter your server IP or valid domain w/o trailing forward slash. example: https://192.168.0.1 (or) https://somedomain.com';
+$L['UNEXPECTED_ERROR']                  = 'Váratlan hiba történt.';
+$L['UNKNOWN_ERROR']                     = 'Ismeretlen hiba történt.';
+$L['VNSTAT_DATABASE_DELETE_SUCCESSFUL'] = 'vnStat adatbázis sikeresen törölve.';
+$L['VNSTAT_DATABASE_DELETE_FAILED']     = 'A vnStat adatbázis törlése nem sikerült.';
+$L['VNSTAT_DATABASE_DELETE_INVALID']    = 'Érvénytelen kérés.';
 
 /* **********************************
  * #4.2.2 - EMAIL SETTINGS
@@ -1588,40 +1602,41 @@ $L['CHANGELOGS']        = 'Changelogs';
 /* **********************************
  * #4.4.8 - SYSTEM DASHBOARD
  ************************************/
-$L['DISK_UTIL_TIME']          = 'Disk Utilization Time';
-$L['DISK_IO_BW']              = 'Disk I/O Bandwidth';
-$L['DISK_SPACE_USAGE_FOR']    = 'Disk Space Usage for:';
-$L['DISK_UTILIZATION']        = 'Utilization';
-$L['DISK_WRITE']              = 'Write';
-$L['DISK_READ']               = 'Read';
-$L['SYS_DISK_READ']           = 'Disk Read';
-$L['SYS_DISK_WRITE']          = 'Disk Write';
-$L['TOP_CPU_PROC']            = 'Top CPU Application Processes';
-$L['TOP_CPUMEM_PROC']         = 'Top CPU Memory Processes';
-$L['TOP_CPUSYS_PROC']         = 'Top CPU System Processes';
-$L['SERVICE_MEM_USAGE']       = 'Systemd Services Used Memory without Cache';
-$L['SYS_SWAP_USAGE']          = 'System swap Usage';
-$L['SYS_MEM_USAGE']           = 'System Memory Usage';
-$L['CPU_FREQ']                = 'Current CPU Frequency';
-$L['CPU_LOAD']                = 'CPU Load';
-$L['CPU_USAGE']               = 'CPU Usage';
-$L['RAM_USAGE']               = 'RAM Usage';
-$L['BW_UPLOAD']               = 'Bandwidth Upload';
-$L['BW_DOWNLOAD']             = 'Bandwidth Download';
-$L['SYS_UPLOAD']              = 'Upload';
-$L['SYS_DOWNLOAD']            = 'Download';
-$L['SYS_DASH_POWERED_BY']     = 'System Dashboard powered by:';
-$L['SYS_DASH_UPTIME']         = 'System Uptime';
-$L['SYS_DASH_SWAP_USED']      = 'Used swap';
-$L['SYS_DASH_RAM_USED']       = 'Used RAM';
-$L['SYS_DASH_CPU']            = 'CPU';
-$L['SYS_DASH_TMD']            = 'Total Monthly Download';
-$L['SYS_DASH_TMU']            = 'Total Monthly Upload';
-$L['APT_UPDATES']             = 'APT Updates';
-$L['APT_DEPENDENCY']          = 'Dependency Package';
-$L['APT_VERSION_INSTALLED']   = 'Current Version';
-$L['APT_VERSION_AVAILABLE']   = 'Available Version';
-$L['UPDATE_APT_DEPENDENCIES'] = 'Update apt dependencies';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Kezelheti a havi sávszélesség kezdő dátumát és visszaállíthatja a statisztikákat az <a href=\'/configurations.php#additionals\'>Általános beállítások > További irányítópult-beállítások</a> menüpontban. Ez lehetővé teszi a kezdő dátum beállítását vagy a vnStat adatbázis törlését az összegek visszaállításához.';
+$L['DISK_UTIL_TIME']           = 'Disk Utilization Time';
+$L['DISK_IO_BW']               = 'Disk I/O Bandwidth';
+$L['DISK_SPACE_USAGE_FOR']     = 'Disk Space Usage for:';
+$L['DISK_UTILIZATION']         = 'Utilization';
+$L['DISK_WRITE']               = 'Write';
+$L['DISK_READ']                = 'Read';
+$L['SYS_DISK_READ']            = 'Disk Read';
+$L['SYS_DISK_WRITE']           = 'Disk Write';
+$L['TOP_CPU_PROC']             = 'Top CPU Application Processes';
+$L['TOP_CPUMEM_PROC']          = 'Top CPU Memory Processes';
+$L['TOP_CPUSYS_PROC']          = 'Top CPU System Processes';
+$L['SERVICE_MEM_USAGE']        = 'Systemd Services Used Memory without Cache';
+$L['SYS_SWAP_USAGE']           = 'System swap Usage';
+$L['SYS_MEM_USAGE']            = 'System Memory Usage';
+$L['CPU_FREQ']                 = 'Current CPU Frequency';
+$L['CPU_LOAD']                 = 'CPU Load';
+$L['CPU_USAGE']                = 'CPU Usage';
+$L['RAM_USAGE']                = 'RAM Usage';
+$L['BW_UPLOAD']                = 'Bandwidth Upload';
+$L['BW_DOWNLOAD']              = 'Bandwidth Download';
+$L['SYS_UPLOAD']               = 'Upload';
+$L['SYS_DOWNLOAD']             = 'Download';
+$L['SYS_DASH_POWERED_BY']      = 'System Dashboard powered by:';
+$L['SYS_DASH_UPTIME']          = 'System Uptime';
+$L['SYS_DASH_SWAP_USED']       = 'Used swap';
+$L['SYS_DASH_RAM_USED']        = 'Used RAM';
+$L['SYS_DASH_CPU']             = 'CPU';
+$L['SYS_DASH_TMD']             = 'Total Monthly Download';
+$L['SYS_DASH_TMU']             = 'Total Monthly Upload';
+$L['APT_UPDATES']              = 'APT Updates';
+$L['APT_DEPENDENCY']           = 'Dependency Package';
+$L['APT_VERSION_INSTALLED']    = 'Current Version';
+$L['APT_VERSION_AVAILABLE']    = 'Available Version';
+$L['UPDATE_APT_DEPENDENCIES']  = 'Update apt dependencies';
 
 /* **********************************
  * #4.5 - ERROR PAGES

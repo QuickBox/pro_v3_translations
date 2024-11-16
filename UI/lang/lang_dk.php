@@ -4,12 +4,12 @@
  * QuickBox Pro dansk sprogfil
  *
  * Denne fil bruges til at oversætte QuickBox Pro Dashboard til dansk.
- * Klar til QuickBox Pro v3.1.2: 12. november 2024
+ * Klar til QuickBox Pro v3.1.3: 16. november 2024
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Danish
- * @version    3.0.1.82
+ * @version    3.0.1.87
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -951,48 +951,62 @@ $L['REGI_FAIL_ERR_FOUND'] = 'fejl fundet';
  *
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
-$L['ACCOUNT_PAGE']                = 'Kontoside';
-$L['ACTIVATION_IP']               = 'Aktiveringsip';
-$L['ACTIVATION_NEED_D_DO']        = 'Gør det her!';
-$L['ACTIVATION_NEED_D']           = 'Brug for at de-aktivere?';
-$L['ACTIVATION_NEED_G_GET']       = 'Få en her!';
-$L['ACTIVATION_NEED_G']           = 'Brug for en API-nøgle?';
-$L['ACTIVATION_TIME']             = 'Aktiveringstid';
-$L['ADD_DASH_SETTINGS']           = 'Yderligere Dashboard-indstillinger';
-$L['ADMIN_HOME']                  = 'Startside';
-$L['API_ACTIVE']                  = 'Aktiv';
-$L['API_KEY']                     = 'API-nøgle';
-$L['API_NOT_ACTIVE']              = 'Ikke Aktiv';
-$L['API_PLACE']                   = 'Indtast API-nøgle her...';
-$L['API_SETTINGS']                = 'API-indstillinger';
-$L['API_STATUS']                  = 'API-Status';
-$L['API']                         = 'API';
-$L['CONF_SETTINGS']               = 'Konfigurationsindstillinger';
-$L['DASH_URL_SETTINGS']           = 'Dashboard URL-indstillinger';
-$L['DEFAULT_PAGE']                = 'Destinationsside';
-$L['DISK_MOUNT']                  = 'Disk Forbindelse (Mount)';
-$L['EDIT_GEN_SETTINGS']           = 'Rediger generelle webstedsindstillinger';
-$L['EMAIL_FROM_ADDR']             = 'Webstedets Email-adresse';
-$L['EMAIL_FROM_NAME']             = 'Webstedet Email-afsender';
-$L['EMAIL_SETTINGS']              = 'Email-indstillinger';
-$L['LOGIN_PAGE']                  = 'Loginside';
-$L['NET_ADAPTER']                 = 'Netværksgrænseflade';
-$L['PHP_DATE_FORMAT']             = 'PHP Datoformat';
-$L['PHP_FORMAT_SETTINGS']         = 'PHP Format Indstillinger';
-$L['PHP_TIME_ZONE']               = 'PHP Tidszone';
-$L['SITE_DESC']                   = 'Webstedets Beskrivelse';
-$L['SITE_META_SETTINGS']          = 'Site Meta Indstillinger';
-$L['SITE_NAME']                   = 'Webstedets Navn';
-$L['SITE_ROOT']                   = 'Webstedets Rod';
-$L['SITE_NAME_TOOLTIP']           = 'Webstedsnavnet skal være under 40 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
-$L['SITE_DESC_TOOLTIP']           = 'Webstedsbeskrivelse skal være under 120 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
-$L['EMAIL_FROM_NAME_TOOLTIP']     = 'Fra navn skal være under 60 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
-$L['SITE_ROOT_TOOLTIP']           = 'Indtast din server IP eller gyldigt domæne uden efterfølgende skråstreg. eksempel: https://192.168.0.1 (eller) https://somedomain.com';
-$L['SITE_LOGO_COLLAPSED']         = 'Skjulet logo';
-$L['SITE_LOGO_FULL']              = 'Fuldt logo';
-$L['SITE_LOGO_SETTINGS']          = 'Indstillinger for webstedslogo';
-$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'Dette er logoet, der vil blive vist, når sidebjælken er foldet sammen og vil blive brugt som browserfaneikonet.';
-$L['SITE_LOGO_FULL_TOOLTIP']      = 'Dette er logoet, der vil blive vist, når sidebjælken udvides.';
+$L['ACCOUNT_PAGE']                      = 'Kontoside';
+$L['ACTIVATION_IP']                     = 'Aktiveringsip';
+$L['ACTIVATION_NEED_D_DO']              = 'Gør det her!';
+$L['ACTIVATION_NEED_D']                 = 'Brug for at de-aktivere?';
+$L['ACTIVATION_NEED_G_GET']             = 'Få en her!';
+$L['ACTIVATION_NEED_G']                 = 'Brug for en API-nøgle?';
+$L['ACTIVATION_TIME']                   = 'Aktiveringstid';
+$L['ADD_DASH_SETTINGS']                 = 'Yderligere Dashboard-indstillinger';
+$L['ADMIN_HOME']                        = 'Startside';
+$L['API_ACTIVE']                        = 'Aktiv';
+$L['API_KEY']                           = 'API-nøgle';
+$L['API_NOT_ACTIVE']                    = 'Ikke Aktiv';
+$L['API_PLACE']                         = 'Indtast API-nøgle her...';
+$L['API_SETTINGS']                      = 'API-indstillinger';
+$L['API_STATUS']                        = 'API-Status';
+$L['API']                               = 'API';
+$L['BANDWIDTH_RESET_STATS']             = 'Nulstil båndbreddestatistik';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Dette vil nulstille alle indsamlede båndbreddestatistikker. Denne handling er irreversibel og vil effektivt fjerne den nuværende vnStat-database og oprette en ny. Nye data vil begynde at genudfylde databasen inden for 5 minutter.<br/><br/>En sikkerhedskopi af den aktuelle vnStat-database vil blive gemt på: <code>/var/lib/vnstat/vnstat.[dato].db</code>';
+$L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Klik for at opdatere den aktuelle databasestørrelse. Dette gøres ved sideindlæsning, men er nyttigt til at afspejle størrelsen, hvis du nulstiller en større database.<br/><br/><em>Bemærk: Dette påvirker ikke de data, der er gemt i databasen. Den opdaterer kun den udsendte databasestørrelse.</em>';
+$L['BANDWIDTH_START_DATE']              = 'Båndbreddes startdato';
+$L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Vælg startdatoen for båndbreddeovervågning. Den valgte dag gentages hver måned, ideel til sporing fra specifikke datoer som internetudbyderens nulstillinger eller serveropsætninger.<br/>Dette gælder for totaler vist på System Dashboard.<br/><br/><em>Bemærk: Eksisterende data vil forbliv upåvirket.</em>';
+$L['CALCULATING']                       = 'Beregner...';
+$L['CONF_SETTINGS']                     = 'Konfigurationsindstillinger';
+$L['DASH_URL_SETTINGS']                 = 'Dashboard URL-indstillinger';
+$L['DEFAULT_PAGE']                      = 'Destinationsside';
+$L['DISK_MOUNT']                        = 'Disk Forbindelse (Mount)';
+$L['EDIT_GEN_SETTINGS']                 = 'Rediger generelle webstedsindstillinger';
+$L['EMAIL_FROM_ADDR']                   = 'Webstedets Email-adresse';
+$L['EMAIL_FROM_NAME']                   = 'Webstedet Email-afsender';
+$L['EMAIL_SETTINGS']                    = 'Email-indstillinger';
+$L['ERROR']                             = 'Fejl';
+$L['LOADING']                           = 'Indlæser...';
+$L['LOGIN_PAGE']                        = 'Loginside';
+$L['NET_ADAPTER']                       = 'Netværksgrænseflade';
+$L['PHP_DATE_FORMAT']                   = 'PHP Datoformat';
+$L['PHP_FORMAT_SETTINGS']               = 'PHP Format Indstillinger';
+$L['PHP_TIME_ZONE']                     = 'PHP Tidszone';
+$L['RESET_BANDWIDTH_STATS']             = 'Nulstil båndbreddestatistik';
+$L['SITE_DESC']                         = 'Webstedets Beskrivelse';
+$L['SITE_META_SETTINGS']                = 'Site Meta Indstillinger';
+$L['SITE_NAME']                         = 'Webstedets Navn';
+$L['SITE_ROOT']                         = 'Webstedets Rod';
+$L['SITE_NAME_TOOLTIP']                 = 'Webstedsnavnet skal være under 40 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
+$L['SITE_DESC_TOOLTIP']                 = 'Webstedsbeskrivelse skal være under 120 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
+$L['EMAIL_FROM_NAME_TOOLTIP']           = 'Fra navn skal være under 60 tegn og kun alfanumerisk uden specialtegn (mellemrum er acceptable)';
+$L['SITE_ROOT_TOOLTIP']                 = 'Indtast din server IP eller gyldigt domæne uden efterfølgende skråstreg. eksempel: https://192.168.0.1 (eller) https://somedomain.com';
+$L['SITE_LOGO_COLLAPSED']               = 'Skjulet logo';
+$L['SITE_LOGO_FULL']                    = 'Fuldt logo';
+$L['SITE_LOGO_SETTINGS']                = 'Indstillinger for webstedslogo';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP']       = 'Dette er logoet, der vil blive vist, når sidebjælken er foldet sammen og vil blive brugt som browserfaneikonet.';
+$L['SITE_LOGO_FULL_TOOLTIP']            = 'Dette er logoet, der vil blive vist, når sidebjælken udvides.';
+$L['UNEXPECTED_ERROR']                  = 'Der opstod en uventet fejl.';
+$L['UNKNOWN_ERROR']                     = 'Der opstod en ukendt fejl.';
+$L['VNSTAT_DATABASE_DELETE_SUCCESSFUL'] = 'vnStat-databasen blev slettet.';
+$L['VNSTAT_DATABASE_DELETE_FAILED']     = 'Kunne ikke slette vnStat database.';
+$L['VNSTAT_DATABASE_DELETE_INVALID']    = 'Ugyldig anmodning.';
 
 /* **********************************
  * #4.2.2 - EMAIL SETTINGS
@@ -1691,40 +1705,41 @@ $L['CHANGELOGS']        = 'Ændringslog';
 /* **********************************
  * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['DISK_UTIL_TIME']          = 'Diskudnyttelsestid';
-$L['DISK_IO_BW']              = 'Disk I/O båndbredde';
-$L['DISK_SPACE_USAGE_FOR']    = 'Diskpladsbrug for:';
-$L['DISK_UTILIZATION']        = 'Udnyttelse';
-$L['DISK_WRITE']              = 'Skriv';
-$L['DISK_READ']               = 'Læs';
-$L['SYS_DISK_READ']           = 'Disk Læs';
-$L['SYS_DISK_WRITE']          = 'Disk Skriv';
-$L['TOP_CPU_PROC']            = 'Top CPU-applikationsprocesser';
-$L['TOP_CPUMEM_PROC']         = 'Top CPU-hukommelsesprocesser';
-$L['TOP_CPUSYS_PROC']         = 'Top CPU-systemprocesser';
-$L['SERVICE_MEM_USAGE']       = 'Systemd Services hukommelsesforbrug uden cache';
-$L['SYS_SWAP_USAGE']          = 'Systemets Swapforbrug';
-$L['SYS_MEM_USAGE']           = 'Systemets Hukommelsesforbrug';
-$L['CPU_FREQ']                = 'Nuværende CPU-frekvens';
-$L['CPU_LOAD']                = 'CPU-belastning';
-$L['CPU_USAGE']               = 'CPU-forbrug';
-$L['RAM_USAGE']               = 'RAM-forbrug';
-$L['BW_UPLOAD']               = 'Båndbredde Upload';
-$L['BW_DOWNLOAD']             = 'Båndbredde Download';
-$L['SYS_UPLOAD']              = 'Upload';
-$L['SYS_DOWNLOAD']            = 'Download';
-$L['SYS_DASH_POWERED_BY']     = 'System Dashboard drevet af:';
-$L['SYS_DASH_UPTIME']         = 'Systemets Oppetid';
-$L['SYS_DASH_SWAP_USED']      = 'Forbrug swap';
-$L['SYS_DASH_RAM_USED']       = 'Forbrug RAM';
-$L['SYS_DASH_CPU']            = 'CPU';
-$L['SYS_DASH_TMD']            = 'Samlet Månedlig Download';
-$L['SYS_DASH_TMU']            = 'Samlet Månedlig Upload';
-$L['APT_UPDATES']             = 'APT-opdateringer';
-$L['APT_DEPENDENCY']          = 'Afhængighedspakke';
-$L['APT_VERSION_INSTALLED']   = 'Nuværende version';
-$L['APT_VERSION_AVAILABLE']   = 'Tilgængelig version';
-$L['UPDATE_APT_DEPENDENCIES'] = 'Opdater apt-afhængigheder';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Du kan administrere den månedlige startdato for båndbredde og nulstille statistikker via <a href=\'/configurations.php#additionals\'>Generelle indstillinger > Yderligere Dashboard-indstillinger</a>. Dette giver dig mulighed for at justere startdatoen eller rydde vnStat-databasen for at nulstille totaler.';
+$L['DISK_UTIL_TIME']           = 'Diskudnyttelsestid';
+$L['DISK_IO_BW']               = 'Disk I/O båndbredde';
+$L['DISK_SPACE_USAGE_FOR']     = 'Diskpladsbrug for:';
+$L['DISK_UTILIZATION']         = 'Udnyttelse';
+$L['DISK_WRITE']               = 'Skriv';
+$L['DISK_READ']                = 'Læs';
+$L['SYS_DISK_READ']            = 'Disk Læs';
+$L['SYS_DISK_WRITE']           = 'Disk Skriv';
+$L['TOP_CPU_PROC']             = 'Top CPU-applikationsprocesser';
+$L['TOP_CPUMEM_PROC']          = 'Top CPU-hukommelsesprocesser';
+$L['TOP_CPUSYS_PROC']          = 'Top CPU-systemprocesser';
+$L['SERVICE_MEM_USAGE']        = 'Systemd Services hukommelsesforbrug uden cache';
+$L['SYS_SWAP_USAGE']           = 'Systemets Swapforbrug';
+$L['SYS_MEM_USAGE']            = 'Systemets Hukommelsesforbrug';
+$L['CPU_FREQ']                 = 'Nuværende CPU-frekvens';
+$L['CPU_LOAD']                 = 'CPU-belastning';
+$L['CPU_USAGE']                = 'CPU-forbrug';
+$L['RAM_USAGE']                = 'RAM-forbrug';
+$L['BW_UPLOAD']                = 'Båndbredde Upload';
+$L['BW_DOWNLOAD']              = 'Båndbredde Download';
+$L['SYS_UPLOAD']               = 'Upload';
+$L['SYS_DOWNLOAD']             = 'Download';
+$L['SYS_DASH_POWERED_BY']      = 'System Dashboard drevet af:';
+$L['SYS_DASH_UPTIME']          = 'Systemets Oppetid';
+$L['SYS_DASH_SWAP_USED']       = 'Forbrug swap';
+$L['SYS_DASH_RAM_USED']        = 'Forbrug RAM';
+$L['SYS_DASH_CPU']             = 'CPU';
+$L['SYS_DASH_TMD']             = 'Samlet Månedlig Download';
+$L['SYS_DASH_TMU']             = 'Samlet Månedlig Upload';
+$L['APT_UPDATES']              = 'APT-opdateringer';
+$L['APT_DEPENDENCY']           = 'Afhængighedspakke';
+$L['APT_VERSION_INSTALLED']    = 'Nuværende version';
+$L['APT_VERSION_AVAILABLE']    = 'Tilgængelig version';
+$L['UPDATE_APT_DEPENDENCIES']  = 'Opdater apt-afhængigheder';
 
 /* **********************************
  * #4.5 - ERROR PAGES

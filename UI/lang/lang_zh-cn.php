@@ -4,12 +4,12 @@
  * QuickBox Pro 简体中文语言文件
  *
  * 此文件用于将 QuickBox Pro 仪表板翻译成简体中文。
- * 为 QuickBox Pro v3.1.2: 2024 年 11 月 12 日
+ * 为 QuickBox Pro v3.1.3: 2024 年 11 月 16 日
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.72
+ * @version    3.0.1.76
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -952,48 +952,62 @@ $L['REGI_FAIL_ERR_FOUND'] = '发现错误';
  *
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
-$L['ACCOUNT_PAGE']                = '账户页面';
-$L['ACTIVATION_IP']               = '激活 IP';
-$L['ACTIVATION_NEED_D_DO']        = '在这里搞定!';
-$L['ACTIVATION_NEED_D']           = '需要取消激活?';
-$L['ACTIVATION_NEED_G_GET']       = '在这里获取!';
-$L['ACTIVATION_NEED_G']           = '需要一个 API 密钥?';
-$L['ACTIVATION_TIME']             = '激活时间';
-$L['ADD_DASH_SETTINGS']           = '其他仪表板设置';
-$L['ADMIN_HOME']                  = '主页';
-$L['API_ACTIVE']                  = '已激活';
-$L['API_KEY']                     = 'API 密钥';
-$L['API_NOT_ACTIVE']              = '未激活';
-$L['API_PLACE']                   = '再此输入 API 密钥...';
-$L['API_SETTINGS']                = 'API 控制';
-$L['API_STATUS']                  = 'API 状态';
-$L['API']                         = 'API';
-$L['CONF_SETTINGS']               = '站点设置';
-$L['DASH_URL_SETTINGS']           = '仪表盘 URL 设置';
-$L['DEFAULT_PAGE']                = '默认主页';
-$L['DISK_MOUNT']                  = '磁盘挂载点';
-$L['EDIT_GEN_SETTINGS']           = '编辑常规设置';
-$L['EMAIL_FROM_ADDR']             = '站点邮件地址';
-$L['EMAIL_FROM_NAME']             = '站点邮件标识';
-$L['EMAIL_SETTINGS']              = '电子邮件设置';
-$L['LOGIN_PAGE']                  = '登录页面';
-$L['NET_ADAPTER']                 = '网络接口';
-$L['PHP_DATE_FORMAT']             = 'PHP 日期格式';
-$L['PHP_FORMAT_SETTINGS']         = 'PHP 格式设置';
-$L['PHP_TIME_ZONE']               = 'PHP 时区';
-$L['SITE_DESC']                   = '站点描述';
-$L['SITE_META_SETTINGS']          = '站点元设置';
-$L['SITE_NAME']                   = '站点名称';
-$L['SITE_ROOT']                   = '站点根目录';
-$L['SITE_NAME_TOOLTIP']           = '网站名称应少于 40 个字符，只能是字母数字，不能有特殊字符 ( 可以有空格 ) ';
-$L['SITE_DESC_TOOLTIP']           = '网站描述应少于 120 个字符和字母数字，没有特殊字符 (空格是可以接受的)';
-$L['EMAIL_FROM_NAME_TOOLTIP']     = 'From Name 应该少于 60 个字符，只有字母数字，没有特殊字符 (空格是可以接受的)';
-$L['SITE_ROOT_TOOLTIP']           = '输入您的服务器 IP 或有效域，不带尾部正斜杠。示例: https://192.168.0.1 (或) https://somedomain.com';
-$L['SITE_LOGO_COLLAPSED']         = '折叠徽标';
-$L['SITE_LOGO_FULL']              = '完整标志';
-$L['SITE_LOGO_SETTINGS']          = '站点徽标设置';
-$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = '这是侧边栏折叠时将显示的徽标，将用作浏览器标签图标。';
-$L['SITE_LOGO_FULL_TOOLTIP']      = '这是侧边栏展开时将显示的徽标。';
+$L['ACCOUNT_PAGE']                      = '账户页面';
+$L['ACTIVATION_IP']                     = '激活 IP';
+$L['ACTIVATION_NEED_D_DO']              = '在这里搞定!';
+$L['ACTIVATION_NEED_D']                 = '需要取消激活?';
+$L['ACTIVATION_NEED_G_GET']             = '在这里获取!';
+$L['ACTIVATION_NEED_G']                 = '需要一个 API 密钥?';
+$L['ACTIVATION_TIME']                   = '激活时间';
+$L['ADD_DASH_SETTINGS']                 = '其他仪表板设置';
+$L['ADMIN_HOME']                        = '主页';
+$L['API_ACTIVE']                        = '已激活';
+$L['API_KEY']                           = 'API 密钥';
+$L['API_NOT_ACTIVE']                    = '未激活';
+$L['API_PLACE']                         = '再此输入 API 密钥...';
+$L['API_SETTINGS']                      = 'API 控制';
+$L['API_STATUS']                        = 'API 状态';
+$L['API']                               = 'API';
+$L['BANDWIDTH_RESET_STATS']             = '重置带宽统计信息';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = '这将重置收集的所有带宽统计信息。此操作不可逆，将有效删除当前 vnStat 数据库并创建新数据库。新数据将在 5 分钟内开始重新填充数据库。<br/><br/>当前 vnStat 数据库的备份将存储在：<code>/var/lib/vnstat/vnstat.[date].db</code>';
+$L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = '单击刷新当前数据库大小。此操作在页面加载时完成，但如果重置较大的数据库，则可用于反映大小。<br/><br/><em>注意：这不会影响存储在数据库中的数据。它只会更新已发布的数据库大小。</em>';
+$L['BANDWIDTH_START_DATE']              = '带宽开始日期';
+$L['BANDWIDTH_START_DATE_TOOLTIP']      = '选择带宽监控的开始日期。所选日期将每月重复一次，非常适合从特定日期（如 ISP 重置或服务器设置）进行跟踪。<br/>这适用于系统仪表板上显示的总数。<br/><br/><em>注意：现有数据将不受影响。</em>';
+$L['CALCULATING']                       = '正在计算...';
+$L['CONF_SETTINGS']                     = '站点设置';
+$L['DASH_URL_SETTINGS']                 = '仪表盘 URL 设置';
+$L['DEFAULT_PAGE']                      = '默认主页';
+$L['DISK_MOUNT']                        = '磁盘挂载点';
+$L['EDIT_GEN_SETTINGS']                 = '编辑常规设置';
+$L['EMAIL_FROM_ADDR']                   = '站点邮件地址';
+$L['EMAIL_FROM_NAME']                   = '站点邮件标识';
+$L['EMAIL_SETTINGS']                    = '电子邮件设置';
+$L['ERROR']                             = '错误';
+$L['LOADING']                           = '正在加载...';
+$L['LOGIN_PAGE']                        = '登录页面';
+$L['NET_ADAPTER']                       = '网络接口';
+$L['PHP_DATE_FORMAT']                   = 'PHP 日期格式';
+$L['PHP_FORMAT_SETTINGS']               = 'PHP 格式设置';
+$L['PHP_TIME_ZONE']                     = 'PHP 时区';
+$L['RESET_BANDWIDTH_STATS']             = '重置带宽统计';
+$L['SITE_DESC']                         = '站点描述';
+$L['SITE_META_SETTINGS']                = '站点元设置';
+$L['SITE_NAME']                         = '站点名称';
+$L['SITE_ROOT']                         = '站点根目录';
+$L['SITE_NAME_TOOLTIP']                 = '网站名称应少于 40 个字符，只能是字母数字，不能有特殊字符 ( 可以有空格 ) ';
+$L['SITE_DESC_TOOLTIP']                 = '网站描述应少于 120 个字符和字母数字，没有特殊字符 (空格是可以接受的)';
+$L['EMAIL_FROM_NAME_TOOLTIP']           = 'From Name 应该少于 60 个字符，只有字母数字，没有特殊字符 (空格是可以接受的)';
+$L['SITE_ROOT_TOOLTIP']                 = '输入您的服务器 IP 或有效域，不带尾部正斜杠。示例: https://192.168.0.1 (或) https://somedomain.com';
+$L['SITE_LOGO_COLLAPSED']               = '折叠徽标';
+$L['SITE_LOGO_FULL']                    = '完整标志';
+$L['SITE_LOGO_SETTINGS']                = '站点徽标设置';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP']       = '这是侧边栏折叠时将显示的徽标，将用作浏览器标签图标。';
+$L['SITE_LOGO_FULL_TOOLTIP']            = '这是侧边栏展开时将显示的徽标。';
+$L['UNEXPECTED_ERROR']                  = '发生意外错误。';
+$L['UNKNOWN_ERROR']                     = '发生未知错误。';
+$L['VNSTAT_DATABASE_DELETE_SUCCESSFUL'] = 'vnStat 数据库已成功删除。';
+$L['VNSTAT_DATABASE_DELETE_FAILED']     = '无法删除 vnStat 数据库。';
+$L['VNSTAT_DATABASE_DELETE_INVALID']    = '请求无效。';
 
 /* **********************************
  * #4.2.2 - EMAIL SETTINGS
@@ -1694,39 +1708,40 @@ $L['CHANGELOGS']        = '更新日志';
 /* **********************************
  * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['DISK_UTIL_TIME']        = '磁盘使用时间';
-$L['DISK_IO_BW']            = '磁盘 I/O 带宽';
-$L['DISK_SPACE_USAGE_FOR']  = '的磁盘空间使用情况:';
-$L['DISK_UTILIZATION']      = '使用率';
-$L['DISK_WRITE']            = '写';
-$L['DISK_READ']             = '读';
-$L['SYS_DISK_READ']         = '磁盘读取';
-$L['SYS_DISK_WRITE']        = '磁盘写';
-$L['TOP_CPU_PROC']          = '顶级 CPU 应用程序进程';
-$L['TOP_CPUMEM_PROC']       = '顶级 CPU 内存进程';
-$L['TOP_CPUSYS_PROC']       = '顶级 CPU 系统进程';
-$L['SERVICE_MEM_USAGE']     = '系统服务使用的不带缓存的内存';
-$L['SYS_SWAP_USAGE']        = '系统交换使用';
-$L['SYS_MEM_USAGE']         = '系统内存使用率';
-$L['CPU_FREQ']              = '当前 CPU 频率';
-$L['CPU_LOAD']              = 'CPU 负载';
-$L['CPU_USAGE']             = 'CPU 使用率';
-$L['RAM_USAGE']             = 'RAM 使用率';
-$L['BW_UPLOAD']             = '带宽上传';
-$L['BW_DOWNLOAD']           = '带宽下载';
-$L['SYS_UPLOAD']            = '上载';
-$L['SYS_DOWNLOAD']          = '下载';
-$L['SYS_DASH_POWERED_BY']   = '系统仪表板由:';
-$L['SYS_DASH_UPTIME']       = '系统正常运行时间';
-$L['SYS_DASH_SWAP_USED']    = '二手交换';
-$L['SYS_DASH_RAM_USED']     = '使用的 RAM';
-$L['SYS_DASH_CPU']          = 'CPU';
-$L['SYS_DASH_TMD']          = '每月总下载';
-$L['SYS_DASH_TMU']          = '每月总上传';
-$L['APT_UPDATES']           = 'APT更新';
-$L['APT_DEPENDENCY']        = '依赖性包';
-$L['APT_VERSION_INSTALLED'] = '当前版本';
-$L['APT_VERSION_AVAILABLE'] = '现有版本';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = '您可以通过<a href=\'/configurations.php#additionals\'>常规设置 > 其他仪表板设置</a>管理每月带宽开始日期并重置统计信息。这允许您调整开始日期或清除 vnStat 数据库以重置总数。';
+$L['DISK_UTIL_TIME']           = '磁盘使用时间';
+$L['DISK_IO_BW']               = '磁盘 I/O 带宽';
+$L['DISK_SPACE_USAGE_FOR']     = '的磁盘空间使用情况:';
+$L['DISK_UTILIZATION']         = '使用率';
+$L['DISK_WRITE']               = '写';
+$L['DISK_READ']                = '读';
+$L['SYS_DISK_READ']            = '磁盘读取';
+$L['SYS_DISK_WRITE']           = '磁盘写';
+$L['TOP_CPU_PROC']             = '顶级 CPU 应用程序进程';
+$L['TOP_CPUMEM_PROC']          = '顶级 CPU 内存进程';
+$L['TOP_CPUSYS_PROC']          = '顶级 CPU 系统进程';
+$L['SERVICE_MEM_USAGE']        = '系统服务使用的不带缓存的内存';
+$L['SYS_SWAP_USAGE']           = '系统交换使用';
+$L['SYS_MEM_USAGE']            = '系统内存使用率';
+$L['CPU_FREQ']                 = '当前 CPU 频率';
+$L['CPU_LOAD']                 = 'CPU 负载';
+$L['CPU_USAGE']                = 'CPU 使用率';
+$L['RAM_USAGE']                = 'RAM 使用率';
+$L['BW_UPLOAD']                = '带宽上传';
+$L['BW_DOWNLOAD']              = '带宽下载';
+$L['SYS_UPLOAD']               = '上载';
+$L['SYS_DOWNLOAD']             = '下载';
+$L['SYS_DASH_POWERED_BY']      = '系统仪表板由:';
+$L['SYS_DASH_UPTIME']          = '系统正常运行时间';
+$L['SYS_DASH_SWAP_USED']       = '二手交换';
+$L['SYS_DASH_RAM_USED']        = '使用的 RAM';
+$L['SYS_DASH_CPU']             = 'CPU';
+$L['SYS_DASH_TMD']             = '每月总下载';
+$L['SYS_DASH_TMU']             = '每月总上传';
+$L['APT_UPDATES']              = 'APT更新';
+$L['APT_DEPENDENCY']           = '依赖性包';
+$L['APT_VERSION_INSTALLED']    = '当前版本';
+$L['APT_VERSION_AVAILABLE']    = '现有版本';
 
 /* **********************************
  * #4.5 - ERROR PAGES

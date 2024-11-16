@@ -4,12 +4,12 @@
  * Fichier de langue française de QuickBox Pro
  *
  * Ce fichier est utilisé pour traduire le tableau de bord de QuickBox Pro en français.
- * Prêt pour QuickBox Pro v3.1.2 : 12 novembre 2024
+ * Prêt pour QuickBox Pro v3.1.3 : 16 novembre 2024
  *
  * @package    dashboard
  * @subpackage lang
  * @category   French
- * @version    3.0.1.78
+ * @version    3.0.1.82
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -952,48 +952,62 @@ $L['REGI_FAIL_ERR_FOUND'] = 'erreur(s) trouvée(s)';
  *
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
-$L['ACCOUNT_PAGE']                = 'Page du compte';
-$L['ACTIVATION_IP']               = 'IP d\'activation';
-$L['ACTIVATION_NEED_D_DO']        = 'Faites-les ici!';
-$L['ACTIVATION_NEED_D']           = 'Besoin de désactiver votre clé?';
-$L['ACTIVATION_NEED_G_GET']       = 'Obtenez-en une ici!';
-$L['ACTIVATION_NEED_G']           = 'Besoin d\'une clé API?';
-$L['ACTIVATION_TIME']             = 'Activée le';
-$L['ADD_DASH_SETTINGS']           = 'Paramètres supplémentaires Tableau de Bord';
-$L['ADMIN_HOME']                  = 'Page d\'accueil';
-$L['API_ACTIVE']                  = 'Valide';
-$L['API_KEY']                     = 'Clé API';
-$L['API_NOT_ACTIVE']              = 'Invalide';
-$L['API_PLACE']                   = 'Entrez votre clé API ici...';
-$L['API_SETTINGS']                = 'Contrôle clé API';
-$L['API_STATUS']                  = 'Validité';
-$L['API']                         = 'API';
-$L['CONF_SETTINGS']               = 'Paramètres de configuration';
-$L['DASH_URL_SETTINGS']           = 'Paramètres d\'accès à la Dashboard';
-$L['DEFAULT_PAGE']                = 'Page de démarrage';
-$L['DISK_MOUNT']                  = 'Montage disque';
-$L['EDIT_GEN_SETTINGS']           = 'Editer les paramètres généraux du site';
-$L['EMAIL_FROM_ADDR']             = 'Adresse de l\'expéditeur';
-$L['EMAIL_FROM_NAME']             = 'Expéditeur de l\'email';
-$L['EMAIL_SETTINGS']              = 'Paramètres email';
-$L['LOGIN_PAGE']                  = 'Page de connexion';
-$L['NET_ADAPTER']                 = 'Interface réseau';
-$L['PHP_DATE_FORMAT']             = 'Format de la date';
-$L['PHP_FORMAT_SETTINGS']         = 'Paramètres Format PHP';
-$L['PHP_TIME_ZONE']               = 'Fuseau Horaire';
-$L['SITE_DESC']                   = 'Description';
-$L['SITE_META_SETTINGS']          = 'Paramètres Métadonnées';
-$L['SITE_NAME']                   = 'Nom du site';
-$L['SITE_ROOT']                   = 'Chemin du site';
-$L['SITE_NAME_TOOLTIP']           = 'Le nom du site doit comporter moins de 40 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
-$L['SITE_DESC_TOOLTIP']           = 'La description du site doit comporter moins de 120 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
-$L['EMAIL_FROM_NAME_TOOLTIP']     = 'De Le nom doit comporter moins de 60 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
-$L['SITE_ROOT_TOOLTIP']           = 'Entrez l\'IP de votre serveur ou un domaine valide sans barre oblique à la fin. exemple: https://192.168.0.1 (ou) https://somedomain.com';
-$L['SITE_LOGO_COLLAPSED']         = 'Logo réduit';
-$L['SITE_LOGO_FULL']              = 'Logo complet';
-$L['SITE_LOGO_SETTINGS']          = 'Paramètres du logo du site';
-$L['SITE_LOGO_COLLAPSED_TOOLTIP'] = 'Ceci est le logo qui s\'affichera lorsque la barre latérale sera réduite et sera utilisé comme icône de l\'onglet du navigateur.';
-$L['SITE_LOGO_FULL_TOOLTIP']      = 'Ceci est le logo qui sera affiché lorsque la barre latérale sera agrandie.';
+$L['ACCOUNT_PAGE']                      = 'Page du compte';
+$L['ACTIVATION_IP']                     = 'IP d\'activation';
+$L['ACTIVATION_NEED_D_DO']              = 'Faites-les ici!';
+$L['ACTIVATION_NEED_D']                 = 'Besoin de désactiver votre clé?';
+$L['ACTIVATION_NEED_G_GET']             = 'Obtenez-en une ici!';
+$L['ACTIVATION_NEED_G']                 = 'Besoin d\'une clé API?';
+$L['ACTIVATION_TIME']                   = 'Activée le';
+$L['ADD_DASH_SETTINGS']                 = 'Paramètres supplémentaires Tableau de Bord';
+$L['ADMIN_HOME']                        = 'Page d\'accueil';
+$L['API_ACTIVE']                        = 'Valide';
+$L['API_KEY']                           = 'Clé API';
+$L['API_NOT_ACTIVE']                    = 'Invalide';
+$L['API_PLACE']                         = 'Entrez votre clé API ici...';
+$L['API_SETTINGS']                      = 'Contrôle clé API';
+$L['API_STATUS']                        = 'Validité';
+$L['API']                               = 'API';
+$L['BANDWIDTH_RESET_STATS']             = 'Réinitialiser les statistiques de bande passante';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Cela réinitialisera toutes les statistiques de bande passante collectées. Cette action est irréversible et supprimera effectivement la base de données vnStat actuelle et en créera une nouvelle. De nouvelles données commenceront à repeupler la base de données dans les 5 minutes.<br/><br/>Une sauvegarde de la base de données vnStat actuelle sera stockée à : <code>/var/lib/vnstat/vnstat.[date].db</code>';
+$L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Cliquez pour actualiser la taille actuelle de la base de données. Cela se fait au chargement de la page, mais est utile pour refléter la taille si vous réinitialisez une base de données plus grande.<br/><br/><em>Remarque : cela n\'affecte pas les données stockées dans la base de données. Cela met uniquement à jour la taille de la base de données publiée.</em>';
+$L['BANDWIDTH_START_DATE']              = 'Date de début de la bande passante';
+$L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Sélectionnez la date de début de la surveillance de la bande passante. Le jour choisi se répétera tous les mois, idéal pour le suivi à partir de dates spécifiques comme les réinitialisations de FAI ou les configurations de serveur.<br/>Cela s\'applique aux totaux affichés sur le tableau de bord système.<br/><br/><em>Remarque : les données existantes ne seront pas affectées.</em>';
+$L['CALCULATING']                       = 'Calcul en cours...';
+$L['CONF_SETTINGS']                     = 'Paramètres de configuration';
+$L['DASH_URL_SETTINGS']                 = 'Paramètres d\'accès à la Dashboard';
+$L['DEFAULT_PAGE']                      = 'Page de démarrage';
+$L['DISK_MOUNT']                        = 'Montage disque';
+$L['EDIT_GEN_SETTINGS']                 = 'Editer les paramètres généraux du site';
+$L['EMAIL_FROM_ADDR']                   = 'Adresse de l\'expéditeur';
+$L['EMAIL_FROM_NAME']                   = 'Expéditeur de l\'email';
+$L['EMAIL_SETTINGS']                    = 'Paramètres email';
+$L['ERROR']                             = 'Erreur';
+$L['LOADING']                           = 'Chargement...';
+$L['LOGIN_PAGE']                        = 'Page de connexion';
+$L['NET_ADAPTER']                       = 'Interface réseau';
+$L['PHP_DATE_FORMAT']                   = 'Format de la date';
+$L['PHP_FORMAT_SETTINGS']               = 'Paramètres Format PHP';
+$L['PHP_TIME_ZONE']                     = 'Fuseau Horaire';
+$L['RESET_BANDWIDTH_STATS']             = 'Réinitialiser les statistiques de bande passante';
+$L['SITE_DESC']                         = 'Description';
+$L['SITE_META_SETTINGS']                = 'Paramètres Métadonnées';
+$L['SITE_NAME']                         = 'Nom du site';
+$L['SITE_ROOT']                         = 'Chemin du site';
+$L['SITE_NAME_TOOLTIP']                 = 'Le nom du site doit comporter moins de 40 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
+$L['SITE_DESC_TOOLTIP']                 = 'La description du site doit comporter moins de 120 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
+$L['EMAIL_FROM_NAME_TOOLTIP']           = 'De Le nom doit comporter moins de 60 caractères et alphanumérique uniquement sans caractères spéciaux (les espaces sont acceptables)';
+$L['SITE_ROOT_TOOLTIP']                 = 'Entrez l\'IP de votre serveur ou un domaine valide sans barre oblique à la fin. exemple: https://192.168.0.1 (ou) https://somedomain.com';
+$L['SITE_LOGO_COLLAPSED']               = 'Logo réduit';
+$L['SITE_LOGO_FULL']                    = 'Logo complet';
+$L['SITE_LOGO_SETTINGS']                = 'Paramètres du logo du site';
+$L['SITE_LOGO_COLLAPSED_TOOLTIP']       = 'Ceci est le logo qui s\'affichera lorsque la barre latérale sera réduite et sera utilisé comme icône de l\'onglet du navigateur.';
+$L['SITE_LOGO_FULL_TOOLTIP']            = 'Ceci est le logo qui sera affiché lorsque la barre latérale sera agrandie.';
+$L['UNEXPECTED_ERROR']                  = 'Une erreur inattendue s\'est produite.';
+$L['UNKNOWN_ERROR']                     = 'Une erreur inconnue s\'est produite.';
+$L['VNSTAT_DATABASE_DELETE_SUCCESSFUL'] = 'La base de données vnStat a été supprimée avec succès.';
+$L['VNSTAT_DATABASE_DELETE_FAILED']     = 'Échec de la suppression de la base de données vnStat.';
+$L['VNSTAT_DATABASE_DELETE_INVALID']    = 'Requête non valide.';
 
 /* **********************************
  * #4.2.2 - EMAIL SETTINGS
@@ -1692,40 +1706,41 @@ $L['CHANGELOGS']        = 'Journaux des modifications';
 /* **********************************
  * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['DISK_UTIL_TIME']          = 'Temps d\'utilisation du disque';
-$L['DISK_IO_BW']              = 'Bande passante d\'E/S disque';
-$L['DISK_SPACE_USAGE_FOR']    = 'Utilisation de l\'espace disque pour:';
-$L['DISK_UTILIZATION']        = 'Utilisation';
-$L['DISK_WRITE']              = 'Écriture';
-$L['DISK_READ']               = 'Lectures';
-$L['SYS_DISK_READ']           = 'Lecture de disque';
-$L['SYS_DISK_WRITE']          = 'Écriture sur disque';
-$L['TOP_CPU_PROC']            = 'Principaux processus d\'application du processeur';
-$L['TOP_CPUMEM_PROC']         = 'Principaux processus de mémoire du processeur';
-$L['TOP_CPUSYS_PROC']         = 'Principaux processus du système CPU';
-$L['SERVICE_MEM_USAGE']       = 'Mémoire utilisée par les services Systemd sans cache';
-$L['SYS_SWAP_USAGE']          = 'Utilisation du Swap système';
-$L['SYS_MEM_USAGE']           = 'Utilisation de la mémoire système';
-$L['CPU_FREQ']                = 'Fréquence actuelle du processeur';
-$L['CPU_LOAD']                = 'Charge CPU';
-$L['CPU_USAGE']               = 'Utilisation du processeur';
-$L['RAM_USAGE']               = 'Utilisation de la RAM';
-$L['BW_UPLOAD']               = 'Téléversement';
-$L['BW_DOWNLOAD']             = 'Téléchargement';
-$L['SYS_UPLOAD']              = 'Téléverser';
-$L['SYS_DOWNLOAD']            = 'Télécharger';
-$L['SYS_DASH_POWERED_BY']     = 'Tableau de bord système alimenté par:';
-$L['SYS_DASH_UPTIME']         = 'Disponibilité du système';
-$L['SYS_DASH_SWAP_USED']      = 'Swap utilisé';
-$L['SYS_DASH_RAM_USED']       = 'RAM utilisée';
-$L['SYS_DASH_CPU']            = 'CPU';
-$L['SYS_DASH_TMD']            = 'Total des téléversements mensuels';
-$L['SYS_DASH_TMU']            = 'Total des téléchargements mensuels';
-$L['APT_UPDATES']             = 'Mises à jour APT';
-$L['APT_DEPENDENCY']          = 'Paquet de dépendances';
-$L['APT_VERSION_INSTALLED']   = 'Version actuelle';
-$L['APT_VERSION_AVAILABLE']   = 'Version disponible';
-$L['UPDATE_APT_DEPENDENCIES'] = 'Mettre à jour les dépendances apt';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Vous pouvez gérer la date de début de la bande passante mensuelle et réinitialiser les statistiques via <a href=\'/configurations.php#additionals\'>Paramètres généraux > Paramètres supplémentaires du tableau de bord</a>. Cela vous permet d\'ajuster la date de début ou d\'effacer la base de données vnStat pour réinitialiser les totaux.';
+$L['DISK_UTIL_TIME']           = 'Temps d\'utilisation du disque';
+$L['DISK_IO_BW']               = 'Bande passante d\'E/S disque';
+$L['DISK_SPACE_USAGE_FOR']     = 'Utilisation de l\'espace disque pour:';
+$L['DISK_UTILIZATION']         = 'Utilisation';
+$L['DISK_WRITE']               = 'Écriture';
+$L['DISK_READ']                = 'Lectures';
+$L['SYS_DISK_READ']            = 'Lecture de disque';
+$L['SYS_DISK_WRITE']           = 'Écriture sur disque';
+$L['TOP_CPU_PROC']             = 'Principaux processus d\'application du processeur';
+$L['TOP_CPUMEM_PROC']          = 'Principaux processus de mémoire du processeur';
+$L['TOP_CPUSYS_PROC']          = 'Principaux processus du système CPU';
+$L['SERVICE_MEM_USAGE']        = 'Mémoire utilisée par les services Systemd sans cache';
+$L['SYS_SWAP_USAGE']           = 'Utilisation du Swap système';
+$L['SYS_MEM_USAGE']            = 'Utilisation de la mémoire système';
+$L['CPU_FREQ']                 = 'Fréquence actuelle du processeur';
+$L['CPU_LOAD']                 = 'Charge CPU';
+$L['CPU_USAGE']                = 'Utilisation du processeur';
+$L['RAM_USAGE']                = 'Utilisation de la RAM';
+$L['BW_UPLOAD']                = 'Téléversement';
+$L['BW_DOWNLOAD']              = 'Téléchargement';
+$L['SYS_UPLOAD']               = 'Téléverser';
+$L['SYS_DOWNLOAD']             = 'Télécharger';
+$L['SYS_DASH_POWERED_BY']      = 'Tableau de bord système alimenté par:';
+$L['SYS_DASH_UPTIME']          = 'Disponibilité du système';
+$L['SYS_DASH_SWAP_USED']       = 'Swap utilisé';
+$L['SYS_DASH_RAM_USED']        = 'RAM utilisée';
+$L['SYS_DASH_CPU']             = 'CPU';
+$L['SYS_DASH_TMD']             = 'Total des téléversements mensuels';
+$L['SYS_DASH_TMU']             = 'Total des téléchargements mensuels';
+$L['APT_UPDATES']              = 'Mises à jour APT';
+$L['APT_DEPENDENCY']           = 'Paquet de dépendances';
+$L['APT_VERSION_INSTALLED']    = 'Version actuelle';
+$L['APT_VERSION_AVAILABLE']    = 'Version disponible';
+$L['UPDATE_APT_DEPENDENCIES']  = 'Mettre à jour les dépendances apt';
 
 /* **********************************
  * #4.5 - ERROR PAGES
