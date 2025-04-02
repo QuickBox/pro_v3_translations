@@ -11,7 +11,6 @@ This repository contains the language files used to localize **QuickBox Pro** in
 > 💬 Got questions or want to suggest a new language?  
 > Join us on our [Official Discord](https://discord.gg/hCCbVhu)!
 
----
 
 ## 🛠️ Contributing a New Language
 
@@ -27,6 +26,7 @@ git clone https://github.com/QuickBox/pro_v3_translations.git
 
 You can use a Git desktop application (like GitKraken) to make this process even easier—just clone the repository to a folder on your system.
 
+---
 
 ### 2. Duplicate and Rename a Language File
 
@@ -95,6 +95,8 @@ quickbox::lang::apt::update::header() {
 > [!NOTE] 
 > We only translate the text inside the `declare text=` line for CLI strings. The rest of the code should remain unchanged.
 
+---
+
 ### 3. Create a Pull Request
 
 > [!IMPORTANT]
@@ -108,6 +110,7 @@ Once you've completed your translations:
 
 We'll review the file, and if everything looks good, your language will be included in the next release of QuickBox Pro.
 
+---
 
 ### 4. Celebrate 🎉
 
@@ -120,7 +123,6 @@ Take pride in your contribution—*you rock!*
 
 If you find any strings that need correction or improvement, please feel free to submit a pull request with your suggestions.
 
----
 
 ## 🗣️ Supported Languages (Currently Available)
 
@@ -131,8 +133,6 @@ If you find any strings that need correction or improvement, please feel free to
 - German (de)
 - Portuguese (pt)
 - Spanish (es)
-
----
 
 ## 📂 Directory Structure
 
@@ -147,16 +147,14 @@ pro_v3_translations/
 │ └── lang/ 
 │   └── lang_xx.php
 │   └── plugins/
-│     └── bootstrapt-select
+│     ├── bootstrapt-select
 │     │ └── lang_xx.js 
-│     └── datatables
+│     ├── datatables
 │     │ └── lang_xx.json
 │     └── wsd
 │       └── lang_xx.json
 └── README.md
 ```
-
----
 
 ### Directory Breakdown
 
@@ -165,7 +163,9 @@ pro_v3_translations/
 - **UI/lang/plugins/**: Contains language files for various plugins used in the UI.
   - **bootstrapt-select**: Language files for the Bootstrap Select plugin.
   - **datatables**: Language files for the DataTables plugin.
-  - **wsd**: Language files for the WSD plugin.
+  - **wsd**: Language files for the What's Streaming Dashboard.
 - **README.md**: The file you're currently reading, providing information on how to contribute.
 
-Thank you for contributing to the global accessibility of QuickBox Pro!
+---
+
+Thank you for contributing to the global accessibility of QuickBox Pro! 💖
