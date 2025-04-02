@@ -4,12 +4,12 @@
  * QuickBox Pro 简体中文语言文件
  *
  * 此文件用于将 QuickBox Pro 仪表板翻译成简体中文。
- * 为 QuickBox Pro v3.1.3: 2024 年 11 月 16 日
+ * 为 QuickBox Pro v3.2.0: 2025年3月28日
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.76
+ * @version    3.0.1.99
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -116,6 +116,9 @@ $server_ip = trim((string) $server_ip);
  *       - #4.4.7.17: 杂项
  *     - #4.4.8: 更新日志 / 更新
  *     - #4.4.9: 系统仪表板
+ *       - #4.4.9.1: 带宽总计模式
+ *     - #4.4.10: 流媒体仪表盘
+ *       - #4.4.10.1: 流媒体 - 页面级错误与消息
  *
  *   错误页面 (#4.5)
  */
@@ -178,6 +181,7 @@ $L['DASHBOARD_INFO']  = '在管理系统仪表板或所有用户看到的应用�
 $L['DASHBOARD_VIEW']  = '仪表板视图';
 $L['DOWNLOADS']       = '下载';
 $L['FILEMANAGER']     = '文件管理器';
+$L['NZB_CLIENTS']     = 'NZB 客户';
 $L['PLUGINS_CENTER']  = '插件中心';
 $L['PLUGINS_INFO']    = '只需点击插件名称，就能轻松安装和卸载插件。';
 $L['RPLUGINS_NOTICE'] = '只需单击插件名称即可轻松安装和卸载ruTorrent插件';
@@ -217,6 +221,7 @@ $L['CREATE_GROUP']                  = '创建用户组';
 $L['CREATE_NEW_GROUP']              = '创建新的用户组';
 $L['CREATE_NEW_USER']               = '创建新账户';
 $L['CREATE_USER']                   = '创建用户';
+$L['DATABASE_SIZE']                 = '数据库大小：';
 $L['DELETE_ALL_ANNOUNCEMENTS']      = '删除所有公告';
 $L['DELETE_ALL_LOGS']               = '删除全部日志 (> 30 天)';
 $L['DELETE_INACTIVE_USERS']         = '删除未启用的账户';
@@ -279,6 +284,8 @@ $L['REMOVE_MEMBER']                 = '移除集团成员';
 $L['REMOVE']                        = '移除';
 $L['RESET_VERSION']                 = '重置当前版本';
 $L['RESET']                         = '重置';
+$L['RESTART']                       = '重启';
+$L['SAVE']                          = '节省';
 $L['SERVICE_CONTROL']               = '服务控制';
 $L['SIMULATE_BUTTON']               = '模拟';
 $L['SIMULATE_END']                  = '终止模拟';
@@ -327,6 +334,7 @@ $L['APP_CONFIG_EDIT']     = '编辑应用配置';
  * #2.4 - other
  ************************************/
 $L['ABOUT_RELEASE']       = '关于发布';
+$L['COPYRIGHT']           = '版权';
 $L['EMAIL']               = '电子邮件';
 $L['HERE']                = '此处';
 $L['HOME']                = '主页';
@@ -953,6 +961,7 @@ $L['REGI_FAIL_ERR_FOUND'] = '发现错误';
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
 $L['ACCOUNT_PAGE']                      = '账户页面';
+$L['ACTION_NOT_EXECUTED']               = '操作未执行。';
 $L['ACTIVATION_IP']                     = '激活 IP';
 $L['ACTIVATION_NEED_D_DO']              = '在这里搞定!';
 $L['ACTIVATION_NEED_D']                 = '需要取消激活?';
@@ -969,12 +978,14 @@ $L['API_SETTINGS']                      = 'API 控制';
 $L['API_STATUS']                        = 'API 状态';
 $L['API']                               = 'API';
 $L['BANDWIDTH_RESET_STATS']             = '重置带宽统计信息';
-$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = '这将重置收集的所有带宽统计信息。此操作不可逆，将有效删除当前 vnStat 数据库并创建新数据库。新数据将在 5 分钟内开始重新填充数据库。<br/><br/>当前 vnStat 数据库的备份将存储在：<code>/var/lib/vnstat/vnstat.[date].db</code>';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = '这将重置收集的所有带宽统计信息。此操作不可逆，将有效删除当前 vnStat 数据库并创建新数据库。新数据将在 5 分钟内开始重新填充数据库。<br/><br/>当前 vnStat 数据库的备份将存储在：<code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/vnstat.db</code>';
 $L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = '单击刷新当前数据库大小。此操作在页面加载时完成，但如果重置较大的数据库，则可用于反映大小。<br/><br/><em>注意：这不会影响存储在数据库中的数据。它只会更新已发布的数据库大小。</em>';
 $L['BANDWIDTH_START_DATE']              = '带宽开始日期';
 $L['BANDWIDTH_START_DATE_TOOLTIP']      = '选择带宽监控的开始日期。所选日期将每月重复一次，非常适合从特定日期（如 ISP 重置或服务器设置）进行跟踪。<br/>这适用于系统仪表板上显示的总数。<br/><br/><em>注意：现有数据将不受影响。</em>';
 $L['CALCULATING']                       = '正在计算...';
 $L['CONF_SETTINGS']                     = '站点设置';
+$L['CONFIRM_RESET_BANDWIDTH_TITLE']     = '确认带宽重置';
+$L['CONFIRM_RESET_BANDWIDTH_SUBTEXT']   = '重置带宽统计信息将删除当前的 vnStat 数据库并创建一个新的数据库。<br/><div class=\'mt-3 p-3\' style=\'text-align:left;background:var(--qb-color-26);border-radius:6px;\'><p style=\'font-size:13px;color:var(--qb-color-5)\'>将使用以下详细信息创建当前数据库的备份：</p><ul class=\'mb-0\'><li class=\'mb-2\'>目录：<br/><code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/</code></li><li>文件名：<br/><code>vnstat.db</code></li></ul></div><br/>您确定要继续吗？';
 $L['DASH_URL_SETTINGS']                 = '仪表盘 URL 设置';
 $L['DEFAULT_PAGE']                      = '默认主页';
 $L['DISK_MOUNT']                        = '磁盘挂载点';
@@ -989,6 +1000,9 @@ $L['NET_ADAPTER']                       = '网络接口';
 $L['PHP_DATE_FORMAT']                   = 'PHP 日期格式';
 $L['PHP_FORMAT_SETTINGS']               = 'PHP 格式设置';
 $L['PHP_TIME_ZONE']                     = 'PHP 时区';
+$L['RESET_BANDWIDTH_CANCEL']            = '否，取消';
+$L['RESET_BANDWIDTH_CANCELLED']         = '带宽重置已取消';
+$L['RESET_BANDWIDTH_CONFIRM']           = '是，重置';
 $L['RESET_BANDWIDTH_STATS']             = '重置带宽统计';
 $L['SITE_DESC']                         = '站点描述';
 $L['SITE_META_SETTINGS']                = '站点元设置';
@@ -1708,7 +1722,7 @@ $L['CHANGELOGS']        = '更新日志';
 /* **********************************
  * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['BANDWIDTH_TOTALS_TOOLTIP'] = '您可以通过<a href=\'/configurations.php#additionals\'>常规设置 > 其他仪表板设置</a>管理每月带宽开始日期并重置统计信息。这允许您调整开始日期或清除 vnStat 数据库以重置总数。';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = '您可以通过<a href=\'/configurations.php#additionals\'>常规设置 > 其他仪表板设置</a>管理每月带宽开始日期并重置统计信息。这允许您调整开始日期或清除 vnStat 数据库以重置总数。<br/><br/>查看当前累计总数和历史记录：<a href=\'javascript:void(0)\' class=\'open_bandwidthtotals_modal\' data-toggle=\'modal\' data-target=\'#viewBandwidthTotals\'><span class=\'badge badge-pills badge-info\'>带宽总数</span></a>';
 $L['DISK_UTIL_TIME']           = '磁盘使用时间';
 $L['DISK_IO_BW']               = '磁盘 I/O 带宽';
 $L['DISK_SPACE_USAGE_FOR']     = '的磁盘空间使用情况:';
@@ -1742,6 +1756,197 @@ $L['APT_UPDATES']              = 'APT更新';
 $L['APT_DEPENDENCY']           = '依赖性包';
 $L['APT_VERSION_INSTALLED']    = '当前版本';
 $L['APT_VERSION_AVAILABLE']    = '现有版本';
+
+/* ************************************
+ * #4.4.9.1 - 带宽总计模式
+ ************************************/
+$L['BANDWIDTH_TOTALS']            = '带宽总数';
+$L['BANDWIDTH_DATA_TIME_NOTICE']  = '注意：这些图表上显示的时间基于服务器的时区，而不是您的本地时区。要调整服务器的时区，请按照以下步骤操作。<br/><ul><li>通过 SSH 进入您的服务器</li><li>运行命令<br/><code>sudo dpkg-reconfigure tzdata</code></li><li>按照提示选择您的时区</li><li>完成后，运行以下命令<br><code>qb-vnstat --adjust-timestamps</code></li></ul><p class=\'text-warning\'>调整服务器时区将影响累积的图表数据。</p>';
+$L['SELECT_AN_INTERFACE']         = '选择一个接口';
+$L['BANDWIDTH_TOTALS_DATA_INFO']  = '此数据是从 vnStat 数据库收集的，基于 vnStat 配置中设置的每月周期。数据收集并存储在 vnStat 数据库中，并在此处显示以方便您使用。您可以通过<a href=\'/configurations.php#additionals\' style=\'display:inline-flex\'>常规设置 > 其他仪表板设置</a>管理每月带宽开始日期和重置统计信息。这允许您调整开始日期或清除 vnStat 数据库以重置总数。';
+$L['VIEWING_DATA_FOR']            = '查看数据：';
+$L['MONTHLY_BANDWIDTH_DATA']      = '每月带宽数据';
+$L['DAILY_BANDWIDTH_DATA']        = '每日带宽数据';
+$L['HOURLY_BANDWIDTH_DATA']       = '每小时带宽数据';
+$L['BANDWIDTH_YEAR']              = '年';
+$L['BANDWIDTH_MONTH']             = '月';
+$L['BANDWIDTH_DAY']               = '日';
+$L['BANDWIDTH_HOUR']              = '小时';
+$L['BANDWIDTH_TOTAL']             = '总流量';
+$L['BANDWIDTH_RX']                = '下载';
+$L['BANDWIDTH_TX']                = '上传';
+$L['BANDWIDTH_SELECT_INTERFACE']  = '选择接口';
+$L['BANDWIDTH_SELECT_MONTH']      = '选择月份';
+$L['BANDWIDTH_SELECT_DAY']        = '选择日期';
+$L['BANDWIDTH_SELECT_HOUR']       = '选择小时';
+$L['BANDWIDTH_SELECT_YEAR']       = '选择年份';
+$L['BANDWIDTH_USAGE']             = '带宽使用情况';
+$L['BANDWIDTH_VIEWING_INTERFACE'] = '(( 查看 ))';
+
+/* **********************************
+ * #4.4.10 - WHAT'S STREAMING DASHBOARD
+ ************************************/
+$L['STREAMING_DASHBOARD']                        = '流媒体仪表盘';
+$L['STREAMING_DASHBOARD_INFO']                   = '“流媒体仪表盘”提供了服务器当前流媒体活动的概览。本功能目前支持 Emby 和 Jellyfin 流媒体服务。仪表盘显示活跃的流媒体数量、总带宽使用情况，以及当前正在播放的媒体。此外，您还可以查看用户最近观看的电影和剧集。';
+$L['DAEMON_AND_STREAMING_SERVICES']              = '守护进程 + 媒体服务器控制面板';
+$L['STREAMING_APP_VERSION']                      = '{applicationName} 版本';
+$L['ENTER_API_KEY']                              = '输入您的 API 密钥';
+$L['API_KEY_PLACEHOLDER']                        = '请输入您的 {serviceName} API 密钥';
+$L['MASS_NOTIFICATION']                          = '群发通知';
+$L['TEMP_TRANSCODE_PATH']                        = '临时转码路径';
+$L['CLEAR_TEMP_TRANSCODE_PATH']                  = '清空临时转码文件';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES']      = '临时转码清理间隔设置';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES_TIPS'] = '<strong><em>以下单位为分钟。</em></strong><br><small>(例如：90分钟 = 1.5小时)</small><hr>这些设置用于确定清理临时转码文件的时间间隔。系统将根据指定的间隔自动清理，以释放磁盘空间并优化性能。';
+$L['INTERVAL_STANDARD']                          = '标准媒体';
+$L['INTERVAL_LIVE_TV']                           = '直播电视';
+$L['ENABLE_TRANSCODE_AUTO_CLEAR']                = '启用临时转码自动清理';
+$L['TRANSCODE_AUTO_CLEAR_ACTIVATED']             = '临时转码自动清理已启用。<br>标准媒体间隔：{standardInterval} 分钟。<br>直播电视间隔：{liveTvInterval} 分钟。';
+$L['TRANSCODE_AUTO_CLEAR_DEACTIVATED']           = '临时转码自动清理已停用。';
+$L['SETTINGS_SAVE_SUCCESS']                      = '设置保存成功。';
+$L['STREAMING_STATS']                            = '流媒体统计';
+$L['LATEST_MOVIES']                              = '最新电影';
+$L['MOVIE']                                      = '电影';
+$L['MOVIES']                                     = '电影';
+$L['LATEST_EPISODES']                            = '最新剧集';
+$L['SHOWS']                                      = '节目';
+$L['SERIES']                                     = '系列剧';
+$L['EPISODE']                                    = '剧集';
+$L['SEASON_EPISODE']                             = '季/集';
+$L['EPISODE_TITLE']                              = '剧集';
+$L['LIVETV']                                     = '直播电视';
+$L['CHANNEL']                                    = '频道';
+$L['CHANNEL_NUMBER']                             = '频道号';
+$L['NOW_PLAYING']                                = '正在播放';
+$L['MEDIA_TITLE']                                = '媒体标题';
+$L['MEDIA_TYPE']                                 = '媒体类型';
+$L['YEAR']                                       = '年份';
+$L['DURATION']                                   = '时长';
+$L['ACTION']                                     = '操作';
+$L['DISCONNECT_REASON']                          = '断开原因';
+$L['NOTIFICATION']                               = '通知';
+$L['LIBRARY']                                    = '媒体库';
+$L['LIBRARY_PATH']                               = '媒体库路径';
+$L['PREMIERE_DATE']                              = '首映日期';
+$L['ACTIVE_STREAMS_PLACEHOLDER']                 = '(0个活跃流媒体)';
+$L['BANDWIDTH_USED_PLACEHOLDER']                 = '(带宽使用：0 Mbps)';
+$L['MEDIA_ITEM']                                 = '媒体项目';
+$L['ACTION_INFO']                                = '操作信息';
+$L['ADDITIONAL_INFO']                            = '附加信息';
+$L['NO_DETAILS_AVAILABLE']                       = '无可用详细信息。';
+$L['DEVICE_INFO']                                = '设备信息';
+$L['STREAM_INFO']                                = '流媒体信息';
+$L['PLAY_STATE_PRIORITY']                        = '播放状态优先级';
+$L['VIEW_WSD_LOGS']                              = '查看 WSD 日志';
+$L['WSD_ACTION_LOGS']                            = 'WSD 操作日志';
+$L['CLEAR_LOGS']                                 = '清除日志';
+$L['NO_ACTIONS_CURRENTLY_LOGGED']                = '当前未记录任何操作。';
+$L['KILL_STREAM_SETTINGS']                       = '流媒体强制停止设置';
+$L['NOTIFICATION_TITLE']                         = '通知标题';
+$L['NOTIFICATION_MESSAGE']                       = '通知内容';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM']          = '流媒体强制停止阈值设置';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM_TIPS']     = '<strong><em>以下单位为秒。</em></strong><br><small>(例如：600秒 = 10分钟)</small><hr>这些设置用于确定因不活动而强制停止流媒体的条件。系统会监控流媒体的活动状态，当达到指定条件时，会自动停止流媒体以释放资源。';
+$L['STANDARD_MEDIA']                             = '标准媒体';
+$L['LIVE_TV_MEDIA']                              = '直播电视';
+$L['SKIP_NOTIFICATION']                          = '跳过通知';
+$L['SKIP_DISCONNECTION']                         = '跳过断开连接';
+$L['PAUSE_DURATION']                             = '暂停持续时间';
+$L['DISCONNECT_DURATION']                        = '断开持续时间';
+$L['WSD_ACTION_CLEAR_LOGS_CONFIRM']              = '您确定要清除日志吗？';
+$L['WSD_ACTION_CLEAR_LOGS']                      = '是的，清除它们！';
+$L['WSD_ACTION_CLEAR_LOGS_FAILED']               = '清除日志失败。';
+$L['WSD_ACTION_CLEAR_LOGS_SUCCESS']              = '日志已成功清除。';
+$L['WSD_ADMIN_NOTIFY']                           = '<span class="text-info fw900">[admin-notify]</span> <strong>{admin}</strong> {admin_status} 向正在观看 <span class="text-primary fw600">{media}</span> 的 <strong>{user}</strong> 发送了<span class="text-warning fw600">通知</span>。<br><div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><span class="fw600">{notif_header}</span><br><span class="fw300">{notif_text}</span></div>';
+$L['WSD_KILL_NOTIFY']                            = '<span class="text-info fw900">[kill-notify]</span> {user} 从 <span class="text-mute fw600">{device} {ip}</span> 观看的 <span class="text-primary fw600">{media}</span> 已暂停 <span class="text-info fw600">{paused_time}</span>，暂停位置为 <span class="text-mute">{pause_position}</span>，时间为 <span class="text-mute fw600">{pause_date} {pause_time}</span>，由于空闲超时已被发送<span class="text-warning fw600">通知</span>。';
+$L['WSD_NOTIFY']                                 = '<span class="text-info fw900">[notify]</span> {user} 收到了一条通知。';
+$L['WSD_ADMIN_STOP']                             = '<span class="text-info fw900">[admin-stop]</span> {user} 正在通过 <span class="text-mute fw600">{device}</span> 观看的 <span class="text-primary fw600">{media}</span> 已被 <strong>{admin}</strong> {admin_status} <span class="text-danger fw600">强制停止</span>。';
+$L['WSD_KILL_STREAM']                            = '<span class="text-info fw900">[kill-stream]</span> {user} 从 <span class="text-mute fw600">{device} {ip}</span> 观看的 <span class="text-primary fw600">{media}</span> 已暂停 <span class="text-info fw600">{paused_time}</span>，暂停位置为 <span class="text-mute">{pause_position}</span>，时间为 <span class="text-mute fw600">{pause_date} {pause_time}</span>，由于空闲超时已被<span class="text-danger fw600">停止播放</span>。';
+$L['WSD_ADMIN_DISCONNECT']                       = '<span class="text-info fw900">[admin-disconnect]</span> {user} 正在通过 <span class="text-mute fw600">{device}</span> 观看的 <span class="text-primary fw600">{media}</span> 已被 <strong>{admin}</strong> {admin_status} <span class="text-danger fw600">强制断开连接</span>。';
+$L['WSD_DISCONNECT_STREAM']                      = '<span class="text-info fw900">[kill-stream]</span> {user} 从 <span class="text-mute fw600">{device} {ip}</span> 观看的 <span class="text-primary fw600">{media}</span> 已暂停 <span class="text-info fw600">{paused_time}</span>，暂停位置为 <span class="text-mute">{pause_position}</span>，时间为 <span class="text-mute fw600">{pause_date} {pause_time}</span>，由于空闲超时已被<span class="text-danger fw600">断开连接</span>。';
+$L['WSD_MASS_NOTIFICATION']                      = '<span class="text-info fw900">[mass-notification]</span> <strong>{admin}</strong> {admin_status} 发送了群发通知。<br><strong>已通知用户：</strong>{users_notified}<br><strong>活跃用户：</strong>{active_users}，<strong>总会话数：</strong>{session_count}。<div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><strong>{notif_header}</strong><br>{notif_text}</div>';
+$L['WSD_USER_ACTION']                            = '<span class="text-info fw900">[user-action]</span> {user} 执行了操作：<span class="text-primary fw600">{action}</span>，时间为 <span class="text-mute fw600">{date} {time}</span>。';
+$L['NONE']                                       = '无';
+
+/* *****************************************
+ * #4.4.10.1 - page level errors & messages
+ *******************************************/
+$L['MISSING_FIELD']                    = '缺少字段';
+$L['MISSING_API_KEY']                  = '缺少 API 密钥';
+$L['INVALID_API_KEY_FORMAT']           = 'API 密钥格式无效，请输入有效的 API 密钥。';
+$L['UNKNOWN_MEDIA']                    = '未知媒体';
+$L['UNKNOWN_DURATION']                 = '未知时长';
+$L['UNKNOWN_PAUSE_TIME']               = '未知暂停时间';
+$L['ERROR_FETCHING_LOGS']              = '获取日志时出错。';
+$L['NO_SUPPORTED_STREAMING_SERVICE']   = '未安装任何受支持的流媒体服务。';
+$L['PROCESS_REQUEST_ERROR']            = '处理请求时出错，请重试。';
+$L['API_CONNECTION_ERROR']             = '无法连接到 {serviceName} API。请检查您的 API 密钥和服务器配置。';
+$L['INPUT_READ_FAILED']                = '读取输入失败。';
+$L['INVALID_INPUT']                    = '输入无效，请检查您的输入并重试。';
+$L['INVALID_JSON_PAYLOAD']             = '无效的 JSON 数据：{error}';
+$L['INVALID_EMBY_API_KEY']             = '无效的 Emby API 密钥。';
+$L['INVALID_JELLYFIN_API_KEY']         = '无效的 Jellyfin API 密钥。';
+$L['DB_FILE_NOT_FOUND']                = '未找到数据库文件：{dbPath}';
+$L['API_KEY_SAVE_SUCCESS']             = 'API 密钥保存成功。';
+$L['API_KEY_SAVE_FAILED']              = 'API 密钥保存失败。';
+$L['INVALID_TEMP_TRANSCODE_PATH']      = '无效的临时转码路径。';
+$L['INVALID_SERVICE_SPECIFIED']        = '指定的服务无效。';
+$L['TEMP_TRANSCODE_PATH_SAVE_FAIL']    = '保存临时转码路径失败。';
+$L['TEMP_TRANSCODE_PATH_SAVE_SUCCESS'] = '临时转码路径保存成功。';
+$L['TRANSCODE_INTERVAL_SAVE']          = '转码自动清理间隔保存成功。';
+$L['TRANSCODE_INTERVAL_FAILED']        = '转码自动清理间隔保存失败。';
+$L['INVALID_TRANSCODE_PATH']           = '无效或缺少转码路径。';
+$L['TRANSCODE_DIR_EMPTY_FAILED']       = '清空临时转码目录失败。';
+$L['TRANSCODE_DIR_EMPTY_SUCCESS']      = '临时转码目录已成功清空。';
+$L['EMBY_CONFIG_LOAD_FAILED']          = '加载 Emby 配置失败。';
+$L['EMBY_API_KEY_RETRIEVE_FAILED']     = '检索 Emby API 密钥失败。';
+$L['JELLYFIN_API_KEY_RETRIEVE_FAILED'] = '检索 Jellyfin API 密钥失败。';
+$L['JELLYFIN_CONFIG_LOAD_FAILED']      = '加载 Jellyfin 配置失败。';
+$L['LATEST_LOG_FETCH_FAILED']          = '获取最新日志失败。';
+$L['ERROR_PREFIX']                     = '[错误] ';
+$L['UNKNOWN']                          = '未知';
+$L['UNKNOWN_USER']                     = '未知用户';
+$L['UNKNOWN_DEVICE']                   = '未知设备';
+$L['API_URL_KEY_REQUIRED']             = '需要 API URL 和密钥。';
+$L['FAILED_TO_CREATE_UPDATE_TRIGGER']  = '创建更新触发器失败：';
+$L['DB_TABLE_CREATE_FAILED']           = '创建 `media_api` 数据表失败：{error}';
+$L['DB_TABLE_INFO_FAILED']             = '获取 `media_api` 表信息失败：{error}';
+$L['DB_COLUMN_ADD_FAILED']             = '向 `media_api` 表添加 `{column}` 字段失败：{error}';
+$L['LOCATION_PRIVATE_RESERVED']        = '私有/本地 IP';
+$L['UNKNOWN_IP']                       = '未知 IP';
+$L['LOCATION_UNKNOWN_CITY']            = '未知城市';
+$L['LOCATION_UNKNOWN_STATE']           = '未知州/省';
+$L['LOCATION_UNKNOWN_COUNTRY']         = '未知国家';
+$L['LOCATION_LOADING']                 = '正在加载位置...';
+$L['LOCATION_ERROR']                   = '错误';
+$L['API_MOVIE_COUNT_FETCH_FAILED']     = '从 {applicationName} API 获取电影数量失败。HTTP 状态码：{httpCode}，错误：{error}';
+$L['API_MOVIE_COUNT_NOT_FOUND']        = '{applicationName} API 响应中未找到电影数量。';
+$L['API_SERIES_COUNT_FETCH_FAILED']    = '从 {applicationName} API 获取剧集数量失败。HTTP 状态码：{httpCode}，错误：{error}';
+$L['API_SERIES_COUNT_NOT_FOUND']       = '{applicationName} API 响应中未找到剧集数量。';
+$L['API_EPISODE_COUNT_FETCH_FAILED']   = '从 {applicationName} API 获取集数失败。HTTP 状态码：{httpCode}，错误：{error}';
+$L['API_EPISODE_COUNT_NOT_FOUND']      = '{applicationName} API 响应中未找到集数。';
+$L['CURL_INIT_FAILED']                 = '为 {applicationName} 初始化 cURL 会话失败。';
+$L['CURL_ERROR']                       = 'cURL 错误：{error}';
+$L['HTTP_ERROR']                       = 'HTTP 错误：状态码 {httpStatus}';
+$L['UNEXPECTED_RESPONSE_TYPE']         = '意外的响应类型：{responseType}';
+$L['INVALID_LOGS_FORMAT']              = '无效的日志格式：期望数组，但收到 {logType}';
+$L['INVALID_APPLICATION_NAME']         = '无效的应用程序名称，必须为 \'jellyfin\' 或 \'emby\'。';
+$L['DB_QUERY_PREPARE_FAILED']          = '准备数据库查询失败：{error}';
+$L['DB_QUERY_EXECUTION_FAILED']        = '执行数据库查询失败：{error}';
+$L['DB_SELECT_QUERY_PREPARE_FAILED']   = '准备 SELECT 查询失败：{error}';
+$L['DB_SELECT_QUERY_EXECUTE_FAILED']   = '执行 SELECT 查询失败：{error}';
+$L['DB_UPDATE_QUERY_PREPARE_FAILED']   = '准备 UPDATE 查询失败：{error}';
+$L['DB_INSERT_QUERY_PREPARE_FAILED']   = '准备 INSERT 查询失败：{error}';
+$L['DB_API_KEY_RETRIEVAL_FAILED']      = '因数据库错误而无法检索 API 密钥。';
+$L['UNSUPPORTED_DB_TYPE']              = '不支持的数据库类型：{dbType}';
+$L['DOMAIN_NOT_DEFINED']               = '未定义 {applicationName} 域名。';
+$L['QUERY_FAILED']                     = '查询失败：{errorInfo}';
+$L['NO_INSTALLATION_FOUND']            = '未找到任何用户的 {applicationName} 安装。';
+$L['USERNAME_FETCH_FAILED']            = '无法获取 {applicationName} 用户名，用户 ID：{appUID}。';
+$L['INVALID_API_URL']                  = '无效的 {applicationName} API URL：{apiUrl}。';
+$L['INVALID_TOGGLE_VALUE']             = '无效的切换值，期望为 0 或 1。';
+$L['INVALID_PATH_FORMAT']              = '无效的路径格式，期望为字符串。';
+$L['INVALID_INTERVAL']                 = '无效的间隔格式，期望为正整数。';
+$L['SETTINGS_SAVE_FAILED']             = '设置保存失败，请重试。';
+$L['SERVER_ERROR']                     = '服务器错误';
 
 /* **********************************
  * #4.5 - ERROR PAGES

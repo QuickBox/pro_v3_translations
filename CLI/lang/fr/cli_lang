@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.144
+# File Version: 1.0.149
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2024, QuickBox.IO
+# Copyright (C) 2019-2025, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -579,7 +579,7 @@ mot de passe: ${notifiarr_user_password}"
 
 quickbox::lang::software::novnc::access() {
 	declare text="accédez à ${software_title} à l'adresse:
-${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${quickbox_web_root}${username}/vnc/vnc.html?resize=remote&host=${novnc_web_root}&path=${username}/websockify
 ${software_title} installé sur le port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -859,6 +859,12 @@ quickbox::lang::wireguard::configure::client_ask_extra() {
 
 quickbox::lang::wireguard::configure::client_ask_extra_error() {
 	declare text="Entrée invalide. Veuillez saisir « o » ou « n »."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::access() {
+	declare text="access ${software_title} at:
+${quickbox_web_root}whats-streaming.php"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -2084,12 +2090,14 @@ Remarques :
 		has_update=1
 		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
 			"  -u | --username    Définir le nom d'utilisateur pour ${software_title} (obligatoire)
+  -o '0.15.1'        Installer la version 0.15.1
   -o '0.10.0'        Installer la version 0.10.0
   -o '0.9.8'         Installer la version 0.9.8
   -o '0.9.7'         Installer la version 0.9.7
   -o '0.9.6'         Installer la version 0.9.6
   -o 'feature-bind'  Installer la version feature-bind de ${software_title}" \
-			"  qb install ${software_help_name} -u nom_d'utilisateur -o '0.10.0'
+			"  qb install ${software_help_name} -u nom_d'utilisateur -o '0.15.1'
+  qb install ${software_help_name} -u nom_d'utilisateur -o '0.10.0'
   qb install ${software_help_name} -u nom_d'utilisateur -o '0.9.8'
   qb install ${software_help_name} -u nom_d'utilisateur -o '0.9.7'
   qb reinstall ${software_help_name} -u nom_d'utilisateur -o '0.9.6'

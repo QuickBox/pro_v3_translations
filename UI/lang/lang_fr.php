@@ -4,12 +4,12 @@
  * Fichier de langue française de QuickBox Pro
  *
  * Ce fichier est utilisé pour traduire le tableau de bord de QuickBox Pro en français.
- * Prêt pour QuickBox Pro v3.1.3 : 16 novembre 2024
+ * Prêt pour QuickBox Pro v3.2.0 : 28 mars 2025
  *
  * @package    dashboard
  * @subpackage lang
  * @category   French
- * @version    3.0.1.82
+ * @version    3.0.1.103
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -116,6 +116,9 @@ $server_ip = trim((string) $server_ip);
  *       - #4.4.7.17: Divers
  *     - #4.4.8: Journaux des modifications / Mise à jour
  *     - #4.4.9: Tableau de bord du système
+ *       -# 4.4.9.1 - Modalité des totaux de bande passante
+ *     - #4.4.10: Tableau de bord « En cours de lecture »
+ *       - #4.4.10.1: En cours de lecture - erreurs et messages au niveau de la page
  *
  *   Pages d'erreur (#4.5)
  */
@@ -178,6 +181,7 @@ $L['DASHBOARD_INFO']  = 'Choisissez entre le tableau de bord du système adminis
 $L['DASHBOARD_VIEW']  = 'Tableaux de bord';
 $L['DOWNLOADS']       = 'Téléchargements';
 $L['FILEMANAGER']     = 'Gestionnaire de Fichiers';
+$L['NZB_CLIENTS']     = 'Clients NZB';
 $L['PLUGINS_CENTER']  = 'Centre des Extensions';
 $L['PLUGINS_INFO']    = 'Installez et désinstallez facilement les plugins simplement en cliquant sur le nom du plugin.';
 $L['RPLUGINS_NOTICE'] = 'Installez et désinstallez facilement les plugins ruTorrent en cliquant simplement sur le nom du plugin.';
@@ -217,6 +221,7 @@ $L['CREATE_GROUP']                  = 'Créer Groupe';
 $L['CREATE_NEW_GROUP']              = 'Créer un Nouveau Groupe';
 $L['CREATE_NEW_USER']               = 'Créer Nouvel Utilisateur';
 $L['CREATE_USER']                   = 'Créer Utilisateur';
+$L['DATABASE_SIZE']                 = 'Taille de la base de données :';
 $L['DELETE_ALL_ANNOUNCEMENTS']      = 'Supprimer toutes les annonces';
 $L['DELETE_ALL_LOGS']               = 'Tout Effacer (> 30 jours)';
 $L['DELETE_INACTIVE_USERS']         = 'Supprimer Utilisteur Inactif';
@@ -279,6 +284,8 @@ $L['REMOVE_MEMBER']                 = 'Supprimer Membre du Groupe';
 $L['REMOVE']                        = 'Supprimer';
 $L['RESET_VERSION']                 = 'Réinitialiser Version';
 $L['RESET']                         = 'Réinitialiser';
+$L['RESTART']                       = 'Redémarrage';
+$L['SAVE']                          = 'Sauvegarder';
 $L['SERVICE_CONTROL']               = 'Contrôle des Services';
 $L['SIMULATE_BUTTON']               = 'Simuler';
 $L['SIMULATE_END']                  = 'Fin Sim';
@@ -327,6 +334,7 @@ $L['APP_CONFIG_EDIT']     = 'Modifier la configuration de l\'application';
  * #2.4 - other
  ************************************/
 $L['ABOUT_RELEASE']       = 'A propos de la version';
+$L['COPYRIGHT']           = 'Droits d\'auteur';
 $L['EMAIL']               = 'Email';
 $L['HERE']                = 'ici';
 $L['HOME']                = 'Accueil';
@@ -953,6 +961,7 @@ $L['REGI_FAIL_ERR_FOUND'] = 'erreur(s) trouvée(s)';
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
 $L['ACCOUNT_PAGE']                      = 'Page du compte';
+$L['ACTION_NOT_EXECUTED']               = 'Action non exécutée.';
 $L['ACTIVATION_IP']                     = 'IP d\'activation';
 $L['ACTIVATION_NEED_D_DO']              = 'Faites-les ici!';
 $L['ACTIVATION_NEED_D']                 = 'Besoin de désactiver votre clé?';
@@ -969,12 +978,14 @@ $L['API_SETTINGS']                      = 'Contrôle clé API';
 $L['API_STATUS']                        = 'Validité';
 $L['API']                               = 'API';
 $L['BANDWIDTH_RESET_STATS']             = 'Réinitialiser les statistiques de bande passante';
-$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Cela réinitialisera toutes les statistiques de bande passante collectées. Cette action est irréversible et supprimera effectivement la base de données vnStat actuelle et en créera une nouvelle. De nouvelles données commenceront à repeupler la base de données dans les 5 minutes.<br/><br/>Une sauvegarde de la base de données vnStat actuelle sera stockée à : <code>/var/lib/vnstat/vnstat.[date].db</code>';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Cela réinitialisera toutes les statistiques de bande passante collectées. Cette action est irréversible et supprimera effectivement la base de données vnStat actuelle et en créera une nouvelle. De nouvelles données commenceront à repeupler la base de données dans les 5 minutes.<br/><br/>Une sauvegarde de la base de données vnStat actuelle sera stockée à : <code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/vnstat.db</code>';
 $L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Cliquez pour actualiser la taille actuelle de la base de données. Cela se fait au chargement de la page, mais est utile pour refléter la taille si vous réinitialisez une base de données plus grande.<br/><br/><em>Remarque : cela n\'affecte pas les données stockées dans la base de données. Cela met uniquement à jour la taille de la base de données publiée.</em>';
 $L['BANDWIDTH_START_DATE']              = 'Date de début de la bande passante';
 $L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Sélectionnez la date de début de la surveillance de la bande passante. Le jour choisi se répétera tous les mois, idéal pour le suivi à partir de dates spécifiques comme les réinitialisations de FAI ou les configurations de serveur.<br/>Cela s\'applique aux totaux affichés sur le tableau de bord système.<br/><br/><em>Remarque : les données existantes ne seront pas affectées.</em>';
 $L['CALCULATING']                       = 'Calcul en cours...';
 $L['CONF_SETTINGS']                     = 'Paramètres de configuration';
+$L['CONFIRM_RESET_BANDWIDTH_TITLE']     = 'Confirmer la réinitialisation de la bande passante';
+$L['CONFIRM_RESET_BANDWIDTH_SUBTEXT']   = 'La réinitialisation des statistiques de bande passante supprimera la base de données vnStat actuelle et en créera une nouvelle.<br/><div class=\'mt-3 p-3\' style=\'text-align:left;background:var(--qb-color-26);border-radius:6px;\'><p style=\'font-size:13px;color:var(--qb-color-5)\'>Une sauvegarde de la base de données actuelle sera créée avec les détails suivants :</p><ul class=\'mb-0\'><li class=\'mb-2\'>Répertoire :<br/><code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/</code></li><li>Nom de fichier :<br/><code>vnstat.db</code></li></ul></div><br/>Êtes-vous sûr tu veux continuer ?';
 $L['DASH_URL_SETTINGS']                 = 'Paramètres d\'accès à la Dashboard';
 $L['DEFAULT_PAGE']                      = 'Page de démarrage';
 $L['DISK_MOUNT']                        = 'Montage disque';
@@ -989,6 +1000,9 @@ $L['NET_ADAPTER']                       = 'Interface réseau';
 $L['PHP_DATE_FORMAT']                   = 'Format de la date';
 $L['PHP_FORMAT_SETTINGS']               = 'Paramètres Format PHP';
 $L['PHP_TIME_ZONE']                     = 'Fuseau Horaire';
+$L['RESET_BANDWIDTH_CANCEL']            = 'Non, Annuler';
+$L['RESET_BANDWIDTH_CANCELLED']         = 'Réinitialisation de la bande passante annulée';
+$L['RESET_BANDWIDTH_CONFIRM']           = 'Oui, réinitialiser';
 $L['RESET_BANDWIDTH_STATS']             = 'Réinitialiser les statistiques de bande passante';
 $L['SITE_DESC']                         = 'Description';
 $L['SITE_META_SETTINGS']                = 'Paramètres Métadonnées';
@@ -1706,7 +1720,7 @@ $L['CHANGELOGS']        = 'Journaux des modifications';
 /* **********************************
  * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Vous pouvez gérer la date de début de la bande passante mensuelle et réinitialiser les statistiques via <a href=\'/configurations.php#additionals\'>Paramètres généraux > Paramètres supplémentaires du tableau de bord</a>. Cela vous permet d\'ajuster la date de début ou d\'effacer la base de données vnStat pour réinitialiser les totaux.';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Vous pouvez gérer la date de début de la bande passante mensuelle et réinitialiser les statistiques via <a href=\'/configurations.php#additionals\'>Paramètres généraux > Paramètres supplémentaires du tableau de bord</a>. Cela vous permet d\'ajuster la date de début ou d\'effacer la base de données vnStat pour réinitialiser les totaux.<br/><br/>Afficher les totaux accumulés actuels et l\'historique : <a href=\'javascript:void(0)\' class=\'open_bandwidthtotals_modal\' data-toggle=\'modal\' data-target=\'#viewBandwidthTotals\'><span class=\'badge badge-pills badge-info\'>Totaux de bande passante</span></a>';
 $L['DISK_UTIL_TIME']           = 'Temps d\'utilisation du disque';
 $L['DISK_IO_BW']               = 'Bande passante d\'E/S disque';
 $L['DISK_SPACE_USAGE_FOR']     = 'Utilisation de l\'espace disque pour:';
@@ -1741,6 +1755,197 @@ $L['APT_DEPENDENCY']           = 'Paquet de dépendances';
 $L['APT_VERSION_INSTALLED']    = 'Version actuelle';
 $L['APT_VERSION_AVAILABLE']    = 'Version disponible';
 $L['UPDATE_APT_DEPENDENCIES']  = 'Mettre à jour les dépendances apt';
+
+/* *********************************
+ * #4.4.9.1 - Modalité des totaux de bande passante
+ *************************************/
+$L['BANDWIDTH_TOTALS']            = 'Totaux de bande passante';
+$L['BANDWIDTH_DATA_TIME_NOTICE']  = 'Remarque : les heures affichées sur ces graphiques sont basées sur le fuseau horaire du serveur et non sur votre fuseau horaire local. Pour ajuster le fuseau horaire du serveur, veuillez suivre les étapes ci-dessous.<br/><ul><li>Connectez-vous en SSH à votre serveur</li><li>Exécutez la commande<br/><code>sudo dpkg-reconfigure tzdata</code></li><li>Suivez les instructions pour sélectionner votre fuseau horaire</li><li>Une fois terminé, exécutez la commande ci-dessous<br><code>qb-vnstat --adjust-timestamps</code></li></ul><p class=\'text-warning\'>Le réglage du fuseau horaire du serveur aura un impact sur les données de graphique accumulées.</p>';
+$L['SELECT_AN_INTERFACE']         = 'Sélectionnez une interface';
+$L['BANDWIDTH_TOTALS_DATA_INFO']  = 'Ces données sont collectées à partir de la base de données vnStat et sont basées sur le cycle mensuel défini dans la configuration vnStat. Les données sont collectées et stockées dans la base de données vnStat et sont affichées ici pour votre commodité. Vous pouvez gérer la date de début de la bande passante mensuelle et réinitialiser les statistiques via <a href=\'/configurations.php#additionals\' style=\'display:inline-flex\'>Paramètres généraux > Paramètres supplémentaires du tableau de bord</a>. Cela vous permet d\'ajuster la date de début ou d\'effacer la base de données vnStat pour réinitialiser les totaux.';
+$L['VIEWING_DATA_FOR']            = 'Affichage des données pour :';
+$L['MONTHLY_BANDWIDTH_DATA']      = 'Données mensuelles de bande passante';
+$L['DAILY_BANDWIDTH_DATA']        = 'Données quotidiennes de bande passante';
+$L['HOURLY_BANDWIDTH_DATA']       = 'Données horaires de bande passante';
+$L['BANDWIDTH_YEAR']              = 'Année';
+$L['BANDWIDTH_MONTH']             = 'Mois';
+$L['BANDWIDTH_DAY']               = 'Jour';
+$L['BANDWIDTH_HOUR']              = 'Heure';
+$L['BANDWIDTH_TOTAL']             = 'Trafic total';
+$L['BANDWIDTH_RX']                = 'Télécharger';
+$L['BANDWIDTH_TX']                = 'Télécharger';
+$L['BANDWIDTH_SELECT_INTERFACE']  = 'Sélectionner l\'interface';
+$L['BANDWIDTH_SELECT_MONTH']      = 'Sélectionner le mois';
+$L['BANDWIDTH_SELECT_DAY']        = 'Sélectionner le jour';
+$L['BANDWIDTH_SELECT_HOUR']       = 'Sélectionner l\'heure';
+$L['BANDWIDTH_SELECT_YEAR']       = 'Sélectionner l\'année';
+$L['BANDWIDTH_USAGE']             = 'Utilisation de la bande passante';
+$L['BANDWIDTH_VIEWING_INTERFACE'] = '(( visualisation ))';
+
+/* **********************************
+ * #4.4.10 - TABLEAU DE BORD « EN COURS DE LECTURE »
+ ************************************/
+$L['STREAMING_DASHBOARD']                        = 'Tableau de bord Streaming';
+$L['STREAMING_DASHBOARD_INFO']                   = 'Le tableau de bord « En cours de lecture » offre un aperçu de l’activité de streaming en cours sur votre serveur. Cette fonctionnalité prend actuellement en charge les services de streaming Emby et Jellyfin. Le tableau affiche le nombre de flux actifs, la bande passante totale utilisée, et les médias actuellement diffusés. De plus, vous pouvez voir les derniers films et épisodes visionnés par vos utilisateurs.';
+$L['DAEMON_AND_STREAMING_SERVICES']              = 'Deck de contrôle Daemon + Media Server';
+$L['STREAMING_APP_VERSION']                      = 'Version de {applicationName}';
+$L['ENTER_API_KEY']                              = 'Entrez votre clé API';
+$L['API_KEY_PLACEHOLDER']                        = 'Entrez votre clé API {serviceName}';
+$L['MASS_NOTIFICATION']                          = 'Notification de masse';
+$L['TEMP_TRANSCODE_PATH']                        = 'Chemin temporaire de transcodage';
+$L['CLEAR_TEMP_TRANSCODE_PATH']                  = 'Vider les transcodages temporaires';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES']      = 'Paramètres d’intervalle pour les transcodages temporaires';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES_TIPS'] = '<strong><em>Les valeurs suivantes sont exprimées en minutes.</em></strong><br><small>(ex : 90 minutes = 1,5 heures)</small><hr>Ces paramètres définissent les intervalles auxquels les transcodages temporaires sont supprimés. Le système supprimera automatiquement les transcodages selon les intervalles spécifiés pour libérer de l’espace disque et optimiser les performances.';
+$L['INTERVAL_STANDARD']                          = 'Médias standards';
+$L['INTERVAL_LIVE_TV']                           = 'TV en direct';
+$L['ENABLE_TRANSCODE_AUTO_CLEAR']                = 'Activer la suppression automatique des transcodages temporaires';
+$L['TRANSCODE_AUTO_CLEAR_ACTIVATED']             = 'Suppression automatique des transcodages activée.<br>Intervalle standard : {standardInterval} minutes.<br>Intervalle TV en direct : {liveTvInterval} minutes.';
+$L['TRANSCODE_AUTO_CLEAR_DEACTIVATED']           = 'Suppression automatique des transcodages désactivée.';
+$L['SETTINGS_SAVE_SUCCESS']                      = 'Paramètres enregistrés avec succès.';
+$L['STREAMING_STATS']                            = 'Statistiques de streaming';
+$L['LATEST_MOVIES']                              = 'Derniers films';
+$L['MOVIE']                                      = 'Film';
+$L['MOVIES']                                     = 'Films';
+$L['LATEST_EPISODES']                            = 'Derniers épisodes';
+$L['SHOWS']                                      = 'Émissions';
+$L['SERIES']                                     = 'Séries';
+$L['EPISODE']                                    = 'Épisode';
+$L['SEASON_EPISODE']                             = 'Saison/Épisode';
+$L['EPISODE_TITLE']                              = 'Épisode';
+$L['LIVETV']                                     = 'TV en direct';
+$L['CHANNEL']                                    = 'Chaîne';
+$L['CHANNEL_NUMBER']                             = 'Numéro de chaîne';
+$L['NOW_PLAYING']                                = 'Lecture en cours';
+$L['MEDIA_TITLE']                                = 'Titre du média';
+$L['MEDIA_TYPE']                                 = 'Type de média';
+$L['YEAR']                                       = 'Année';
+$L['DURATION']                                   = 'Durée';
+$L['ACTION']                                     = 'Action';
+$L['DISCONNECT_REASON']                          = 'Raison de la déconnexion';
+$L['NOTIFICATION']                               = 'Notification';
+$L['LIBRARY']                                    = 'Bibliothèque';
+$L['LIBRARY_PATH']                               = 'Chemin de la bibliothèque';
+$L['PREMIERE_DATE']                              = 'Date de sortie';
+$L['ACTIVE_STREAMS_PLACEHOLDER']                 = '(0 flux actifs)';
+$L['BANDWIDTH_USED_PLACEHOLDER']                 = '(Bande passante utilisée : 0 Mbps)';
+$L['MEDIA_ITEM']                                 = 'Élément multimédia';
+$L['ACTION_INFO']                                = 'Infos action';
+$L['ADDITIONAL_INFO']                            = 'Informations supplémentaires';
+$L['NO_DETAILS_AVAILABLE']                       = 'Aucun détail disponible.';
+$L['DEVICE_INFO']                                = 'Infos appareil';
+$L['STREAM_INFO']                                = 'Infos flux';
+$L['PLAY_STATE_PRIORITY']                        = 'Priorité d’état de lecture';
+$L['VIEW_WSD_LOGS']                              = 'Voir les journaux WSD';
+$L['WSD_ACTION_LOGS']                            = 'Journaux des actions WSD';
+$L['CLEAR_LOGS']                                 = 'Effacer les journaux';
+$L['NO_ACTIONS_CURRENTLY_LOGGED']                = 'Aucune action enregistrée actuellement.';
+$L['KILL_STREAM_SETTINGS']                       = 'Paramètres Killstream';
+$L['NOTIFICATION_TITLE']                         = 'Notification';
+$L['NOTIFICATION_MESSAGE']                       = 'Message';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM']          = 'Paramètres de seuil pour Killstream';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM_TIPS']     = '<strong><em>Les valeurs suivantes sont exprimées en secondes.</em></strong><br><small>(ex : 600 secondes = 10 minutes)</small><hr>Ces paramètres définissent les conditions dans lesquelles un flux sera arrêté de force pour inactivité. Le système surveillera l’activité du flux et, si les conditions sont remplies, il arrêtera automatiquement le flux pour libérer des ressources.';
+$L['STANDARD_MEDIA']                             = 'Médias standards';
+$L['LIVE_TV_MEDIA']                              = 'TV en direct';
+$L['SKIP_NOTIFICATION']                          = 'Ignorer la notification';
+$L['SKIP_DISCONNECTION']                         = 'Ignorer la déconnexion';
+$L['PAUSE_DURATION']                             = 'Durée de pause';
+$L['DISCONNECT_DURATION']                        = 'Durée avant déconnexion';
+$L['WSD_ACTION_CLEAR_LOGS_CONFIRM']              = 'Voulez-vous vraiment effacer les journaux ?';
+$L['WSD_ACTION_CLEAR_LOGS']                      = 'Oui, les effacer !';
+$L['WSD_ACTION_CLEAR_LOGS_FAILED']               = 'Échec de l’effacement des journaux.';
+$L['WSD_ACTION_CLEAR_LOGS_SUCCESS']              = 'Journaux effacés avec succès.';
+$L['WSD_ADMIN_NOTIFY']                           = '<span class="text-info fw900">[admin-notify]</span> <strong>{admin}</strong> {admin_status} a envoyé une <span class="text-warning fw600">notification</span> à <strong>{user}</strong> en train de regarder <span class="text-primary fw600">{media}</span>.<br><div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><span class="fw600">{notif_header}</span><br><span class="fw300">{notif_text}</span></div>';
+$L['WSD_KILL_NOTIFY']                            = '<span class="text-info fw900">[kill-notify]</span> {user} regardant <span class="text-primary fw600">{media}</span> en pause depuis <span class="text-info fw600">{paused_time}</span> à <span class="text-mute">{pause_position}</span> le <span class="text-mute fw600">{pause_date} {pause_time}</span> depuis <span class="text-mute fw600">{device} {ip}</span> a été <span class="text-warning fw600">notifié</span> pour inactivité.';
+$L['WSD_NOTIFY']                                 = '<span class="text-info fw900">[notify]</span> {user} a reçu une notification.';
+$L['WSD_ADMIN_STOP']                             = '<span class="text-info fw900">[admin-stop]</span> {user} regardant <span class="text-primary fw600">{media}</span> depuis <span class="text-mute fw600">{device}</span> a été <span class="text-danger fw600">arrêté de force</span> par <strong>{admin}</strong> {admin_status}.';
+$L['WSD_KILL_STREAM']                            = '<span class="text-info fw900">[kill-stream]</span> {user} regardant <span class="text-primary fw600">{media}</span> en pause depuis <span class="text-info fw600">{paused_time}</span> à <span class="text-mute">{pause_position}</span> le <span class="text-mute fw600">{pause_date} {pause_time}</span> depuis <span class="text-mute fw600">{device} {ip}</span> a été <span class="text-danger fw600">arrêté</span> pour inactivité.';
+$L['WSD_ADMIN_DISCONNECT']                       = '<span class="text-info fw900">[admin-disconnect]</span> {user} regardant <span class="text-primary fw600">{media}</span> depuis <span class="text-mute fw600">{device}</span> a été <span class="text-danger fw600">déconnecté de force</span> par <strong>{admin}</strong> {admin_status}.';
+$L['WSD_DISCONNECT_STREAM']                      = '<span class="text-info fw900">[kill-stream]</span> {user} regardant <span class="text-primary fw600">{media}</span> en pause depuis <span class="text-info fw600">{paused_time}</span> à <span class="text-mute">{pause_position}</span> le <span class="text-mute fw600">{pause_date} {pause_time}</span> depuis <span class="text-mute fw600">{device} {ip}</span> a été <span class="text-danger fw600">déconnecté</span> pour inactivité.';
+$L['WSD_MASS_NOTIFICATION']                      = '<span class="text-info fw900">[mass-notification]</span> <strong>{admin}</strong> {admin_status} a envoyé une notification de masse.<br><strong>Utilisateurs notifiés :</strong> {users_notified}<br><strong>Utilisateurs actifs :</strong> {active_users}, <strong>Total des sessions :</strong> {session_count}.<div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><strong>{notif_header}</strong><br>{notif_text}</div>';
+$L['WSD_USER_ACTION']                            = '<span class="text-info fw900">[user-action]</span> {user} a effectué l\'action : <span class="text-primary fw600">{action}</span> le <span class="text-mute fw600">{date} {time}</span>.';
+$L['NONE']                                       = 'Aucun';
+
+/* *****************************************
+ * #4.4.10.1 - erreurs et messages au niveau de la page
+ *******************************************/
+$L['MISSING_FIELD']                    = 'Champ manquant';
+$L['MISSING_API_KEY']                  = 'Clé API manquante';
+$L['INVALID_API_KEY_FORMAT']           = 'Format de clé API invalide. Veuillez entrer une clé API valide.';
+$L['UNKNOWN_MEDIA']                    = 'Média inconnu';
+$L['UNKNOWN_DURATION']                 = 'Durée inconnue';
+$L['UNKNOWN_PAUSE_TIME']               = 'Temps de pause inconnu';
+$L['ERROR_FETCHING_LOGS']              = 'Erreur lors de la récupération des journaux.';
+$L['NO_SUPPORTED_STREAMING_SERVICE']   = 'Aucun service de streaming pris en charge n’est installé.';
+$L['PROCESS_REQUEST_ERROR']            = 'Erreur lors du traitement de la requête. Veuillez réessayer.';
+$L['API_CONNECTION_ERROR']             = 'Impossible de se connecter à l’API {serviceName}. Veuillez vérifier votre clé API et la configuration du serveur.';
+$L['INPUT_READ_FAILED']                = 'Échec de lecture de l’entrée.';
+$L['INVALID_INPUT']                    = 'Entrée invalide. Veuillez vérifier votre saisie et réessayer.';
+$L['INVALID_JSON_PAYLOAD']             = 'Charge JSON invalide : {error}';
+$L['INVALID_EMBY_API_KEY']             = 'Clé API Emby invalide.';
+$L['INVALID_JELLYFIN_API_KEY']         = 'Clé API Jellyfin invalide.';
+$L['DB_FILE_NOT_FOUND']                = 'Fichier de base de données introuvable : {dbPath}';
+$L['API_KEY_SAVE_SUCCESS']             = 'Clé API enregistrée avec succès.';
+$L['API_KEY_SAVE_FAILED']              = 'Échec de l’enregistrement de la clé API.';
+$L['INVALID_TEMP_TRANSCODE_PATH']      = 'Chemin temporaire de transcodage invalide.';
+$L['INVALID_SERVICE_SPECIFIED']        = 'Service spécifié invalide.';
+$L['TEMP_TRANSCODE_PATH_SAVE_FAIL']    = 'Échec de l’enregistrement du chemin temporaire de transcodage.';
+$L['TEMP_TRANSCODE_PATH_SAVE_SUCCESS'] = 'Chemin temporaire de transcodage enregistré avec succès.';
+$L['TRANSCODE_INTERVAL_SAVE']          = 'Intervalle de nettoyage automatique du transcodage enregistré avec succès.';
+$L['TRANSCODE_INTERVAL_FAILED']        = 'Échec de l’enregistrement de l’intervalle de nettoyage automatique du transcodage.';
+$L['INVALID_TRANSCODE_PATH']           = 'Chemin de transcodage invalide ou manquant.';
+$L['TRANSCODE_DIR_EMPTY_FAILED']       = 'Échec du vidage du répertoire temporaire de transcodage.';
+$L['TRANSCODE_DIR_EMPTY_SUCCESS']      = 'Répertoire temporaire de transcodage vidé avec succès.';
+$L['EMBY_CONFIG_LOAD_FAILED']          = 'Échec du chargement de la configuration Emby.';
+$L['EMBY_API_KEY_RETRIEVE_FAILED']     = 'Échec de récupération de la clé API Emby.';
+$L['JELLYFIN_API_KEY_RETRIEVE_FAILED'] = 'Échec de récupération de la clé API Jellyfin.';
+$L['JELLYFIN_CONFIG_LOAD_FAILED']      = 'Échec du chargement de la configuration Jellyfin.';
+$L['LATEST_LOG_FETCH_FAILED']          = 'Échec de la récupération du dernier journal.';
+$L['ERROR_PREFIX']                     = '[ERREUR] ';
+$L['UNKNOWN']                          = 'Inconnu';
+$L['UNKNOWN_USER']                     = 'Utilisateur inconnu';
+$L['UNKNOWN_DEVICE']                   = 'Appareil inconnu';
+$L['API_URL_KEY_REQUIRED']             = 'L’URL et la clé API sont requises.';
+$L['FAILED_TO_CREATE_UPDATE_TRIGGER']  = 'Échec de création du déclencheur de mise à jour : ';
+$L['DB_TABLE_CREATE_FAILED']           = 'Échec de création de la table `media_api` : {error}';
+$L['DB_TABLE_INFO_FAILED']             = 'Échec de récupération des informations de la table `media_api` : {error}';
+$L['DB_COLUMN_ADD_FAILED']             = 'Échec de l’ajout de la colonne `{column}` à `media_api` : {error}';
+$L['LOCATION_PRIVATE_RESERVED']        = 'IP privée/locale';
+$L['UNKNOWN_IP']                       = 'IP inconnue';
+$L['LOCATION_UNKNOWN_CITY']            = 'Ville inconnue';
+$L['LOCATION_UNKNOWN_STATE']           = 'État inconnu';
+$L['LOCATION_UNKNOWN_COUNTRY']         = 'Pays inconnu';
+$L['LOCATION_LOADING']                 = 'Chargement de l’emplacement...';
+$L['LOCATION_ERROR']                   = 'Erreur';
+$L['API_MOVIE_COUNT_FETCH_FAILED']     = 'Échec de récupération du nombre de films depuis l’API {applicationName}. Code HTTP : {httpCode}. Erreur : {error}';
+$L['API_MOVIE_COUNT_NOT_FOUND']        = 'Nombre de films introuvable dans la réponse de l’API {applicationName}.';
+$L['API_SERIES_COUNT_FETCH_FAILED']    = 'Échec de récupération du nombre de séries depuis l’API {applicationName}. Code HTTP : {httpCode}. Erreur : {error}';
+$L['API_SERIES_COUNT_NOT_FOUND']       = 'Nombre de séries introuvable dans la réponse de l’API {applicationName}.';
+$L['API_EPISODE_COUNT_FETCH_FAILED']   = 'Échec de récupération du nombre d’épisodes depuis l’API {applicationName}. Code HTTP : {httpCode}. Erreur : {error}';
+$L['API_EPISODE_COUNT_NOT_FOUND']      = 'Nombre d’épisodes introuvable dans la réponse de l’API {applicationName}.';
+$L['CURL_INIT_FAILED']                 = 'Échec de l’initialisation de la session cURL pour {applicationName}.';
+$L['CURL_ERROR']                       = 'Erreur cURL : {error}';
+$L['HTTP_ERROR']                       = 'Erreur HTTP : Code d’état {httpStatus}';
+$L['UNEXPECTED_RESPONSE_TYPE']         = 'Type de réponse inattendu : {responseType}';
+$L['INVALID_LOGS_FORMAT']              = 'Format des journaux invalide : tableau attendu mais {logType} reçu';
+$L['INVALID_APPLICATION_NAME']         = 'Nom d’application invalide. Doit être \'jellyfin\' ou \'emby\'.';
+$L['DB_QUERY_PREPARE_FAILED']          = 'Échec de préparation de la requête à la base de données : {error}';
+$L['DB_QUERY_EXECUTION_FAILED']        = 'Échec d’exécution de la requête à la base de données : {error}';
+$L['DB_SELECT_QUERY_PREPARE_FAILED']   = 'Échec de préparation de la requête SELECT : {error}';
+$L['DB_SELECT_QUERY_EXECUTE_FAILED']   = 'Échec d’exécution de la requête SELECT : {error}';
+$L['DB_UPDATE_QUERY_PREPARE_FAILED']   = 'Échec de préparation de la requête UPDATE : {error}';
+$L['DB_INSERT_QUERY_PREPARE_FAILED']   = 'Échec de préparation de la requête INSERT : {error}';
+$L['DB_API_KEY_RETRIEVAL_FAILED']      = 'Échec de récupération de la clé API en raison d’une erreur de base de données.';
+$L['UNSUPPORTED_DB_TYPE']              = 'Type de base de données non supporté : {dbType}';
+$L['DOMAIN_NOT_DEFINED']               = 'Le domaine {applicationName} n’est pas défini.';
+$L['QUERY_FAILED']                     = 'Échec de la requête : {errorInfo}';
+$L['NO_INSTALLATION_FOUND']            = 'Aucune installation de {applicationName} trouvée pour aucun utilisateur.';
+$L['USERNAME_FETCH_FAILED']            = 'Échec de récupération du nom d’utilisateur pour l’ID utilisateur {appUID} de {applicationName}.';
+$L['INVALID_API_URL']                  = 'URL API de {applicationName} invalide : {apiUrl}.';
+$L['INVALID_TOGGLE_VALUE']             = 'Valeur de bascule invalide. 0 ou 1 attendu.';
+$L['INVALID_PATH_FORMAT']              = 'Format de chemin invalide. Chaîne attendue.';
+$L['INVALID_INTERVAL']                 = 'Format d’intervalle invalide. Entier positif attendu.';
+$L['SETTINGS_SAVE_FAILED']             = 'Échec de l’enregistrement des paramètres. Veuillez réessayer.';
+$L['SERVER_ERROR']                     = 'Erreur du serveur';
 
 /* **********************************
  * #4.5 - ERROR PAGES

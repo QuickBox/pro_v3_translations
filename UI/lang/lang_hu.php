@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Hungarian
- * @version    3.0.1.60
+ * @version    3.0.1.76
  * @since      2.5.8
  *
  * @var Configs $configs The configurations object.
@@ -17,87 +17,110 @@
  */
 
 // Include required variables
-$version  = $configs->getConfig('Version');
-$username = $session->username;
+$version           = $configs->getConfig('Version');
+$username          = $session->username;
+$network_interface = $configs->getConfig('server_network_adapter');
+// Execute the shell command to get the server IP
+$command   = "ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\\([^ ]*\\).*/\\1/p;q}'";
+$server_ip = shell_exec($command);
+// Trim any trailing whitespace or newlines from the result
+$server_ip = trim((string) $server_ip);
 
 /*
- * SUMMARY :
+ * @summary This file contains the structure for navigation, widgets, miscellaneous items, and pages for QuickBox Pro.
  *
- * NAVIGATION : #1
- *    language & theme selection : #1.1
- *    user menu : #1.2
- *    sidebar menu : #1.3
- *    sidebar submenus : #1.4
- *    footer : #1.5
- * MISCELLANEOUS : #2
- *    buttons : #2.1
- *    popup texture : #2.2
- *    app nginx config edit modal : #2.3
- *    other : #2.4
- * WIDGETS : #3
- *    Tables Headers : #3.1
- *       app management center : #3.1.1
- *    Package Management Center : #3.2
- *       app info : #3.2.1
- *       app uninstall : #3.2.2
- *       app reinstall : #3.2.3
- *       toggles & tooltips : #3.2.4
- *       service control : #3.2.5
- *       rclone specific toggles : #3.2.6
- *    Dashboard Widgets : #3.3
- *       disk status widget : #3.3.1
- *       system index v1 - bandwidth data : #3.3.2
- *       system index v1 - server load : #3.3.3
- *       system index v1 - memory status : #3.3.4
- *       server activity widget : #3.3.5
- * PAGES : #4
- *    Start Screen Forms : #4.1
- *       login : #4.1.1
- *       forgot password : #4.1.2
- *       register : #4.1.3
- *       account : #4.1.4
- *         quotes : #4.1.4.1
- *         edit account modal : #4.1.4.2
- *       summary : #4.1.5
- *    Settings : #4.2
- *       general settings : #4.2.1
- *       email settings : #4.2.2
- *       session settings : #4.2.3
- *       user settings : #4.2.4
- *       security settings : #4.2.5
- *    User Management : #4.3
- *       registration settings : #4.3.1
- *       useradmin : #4.3.2
- *         admin user edit : #4.3.2.1
- *         admin announce : #4.3.2.2
- *       user groups : #4.3.3
- *    System : #4.4
- *       web console : #4.4.1
- *       api-control : #4.4.2
- *       ssl-control : #4.4.3
- *       troubleshooting : #4.4.4
- *       system logs : #4.4.5
- *       help manual : #4.4.6
- *         description : #4.4.6.1
- *         options : #4.4.6.2
- *         software : #4.4.6.3
- *         software options table : #4.4.6.4
- *         examples header : #4.4.6.5
- *         user management : #4.4.6.6
- *         clean functions : #4.4.6.7
- *         fix functions : #4.4.6.8
- *         generate functions : #4.4.6.9
- *         manage functions : #4.4.6.10
- *         news functions : #4.4.6.11
- *         support functions : #4.4.6.12
- *         update functions : #4.4.6.13
- *         bugs & reporting : #4.4.6.14
- *         disclaimer : #4.4.6.15
- *         license : #4.4.6.16
- *         misc : #4.4.6.17
- *       changelogs / update : #4.4.7
- *       system dashboard : #4.4.8
- *    Error Pages : #4.5
+ * NAVIGATION (#1)
+ * --------------
+ *   - #1.1: Language & Theme Selection
+ *   - #1.2: User Menu
+ *   - #1.3: Sidebar Menu
+ *   - #1.4: Sidebar Submenus
+ *   - #1.5: Footer
+ *
+ * MISCELLANEOUS (#2)
+ * ------------------
+ *   - #2.1: Buttons
+ *   - #2.2: Popup Texture
+ *   - #2.3: App NGINX Config Edit Modal
+ *   - #2.4: Other
+ *
+ * WIDGETS (#3)
+ * ------------
+ *   Tables Headers (#3.1):
+ *     - #3.1.1: App Management Center
+ *
+ *   Package Management Center (#3.2):
+ *     - #3.2.1: App Info
+ *     - #3.2.2: App Uninstall
+ *     - #3.2.3: App Reinstall
+ *     - #3.2.4: Toggles & Tooltips
+ *     - #3.2.5: Service Control
+ *     - #3.2.6: Rclone-Specific Toggles
+ *
+ *   Dashboard Widgets (#3.3):
+ *     - #3.3.1: Disk Status Widget
+ *     - #3.3.2: System Index v1 - Bandwidth Data
+ *     - #3.3.3: System Index v1 - Server Load
+ *     - #3.3.4: System Index v1 - Memory Status
+ *     - #3.3.5: Server Activity Widget
+ *
+ * PAGES (#4)
+ * ----------
+ *   Start Screen Forms (#4.1):
+ *     - #4.1.1: Login
+ *     - #4.1.2: Forgot Password
+ *     - #4.1.3: Register
+ *     - #4.1.4: Account
+ *       - #4.1.4.1: Quotes
+ *       - #4.1.4.2: Edit Account Modal
+ *     - #4.1.5: Summary
+ *
+ *   Settings (#4.2):
+ *     - #4.2.1: General Settings
+ *     - #4.2.2: Email Settings
+ *     - #4.2.3: Session Settings
+ *     - #4.2.4: User Settings
+ *     - #4.2.5: Security Settings
+ *
+ *   User Management (#4.3):
+ *     - #4.3.1: Registration Settings
+ *     - #4.3.2: UserAdmin
+ *       - #4.3.2.1: Admin User Edit
+ *       - #4.3.2.2: Admin Announce
+ *     - #4.3.3: User Groups
+ *
+ *   System (#4.4):
+ *     - #4.4.1: Web Console
+ *     - #4.4.2: API Control
+ *     - #4.4.3: SSL Control
+ *     - #4.4.4: VPN Control
+ *     - #4.4.5: Troubleshooting
+ *     - #4.4.6: System Logs
+ *     - #4.4.7: Help Manual
+ *       - #4.4.7.1: Description
+ *       - #4.4.7.2: Options
+ *       - #4.4.7.3: Software
+ *       - #4.4.7.4: Software Options Table
+ *       - #4.4.7.5: Examples Header
+ *       - #4.4.7.6: User Management
+ *       - #4.4.7.7: Clean Functions
+ *       - #4.4.7.8: Fix Functions
+ *       - #4.4.7.9: Generate Functions
+ *       - #4.4.7.10: Manage Functions
+ *       - #4.4.7.11: News Functions
+ *       - #4.4.7.12: Support Functions
+ *       - #4.4.7.13: Update Functions
+ *       - #4.4.7.14: Bugs & Reporting
+ *       - #4.4.7.15: Disclaimer
+ *       - #4.4.7.16: License
+ *       - #4.4.7.17: Miscellaneous
+ *     - #4.4.8: Changelogs / Update
+ *     - #4.4.9: System Dashboard
+ *       - #4.4.9.1: System Index - Bandwidth Data (modal)
+ *     - #4.4.10: What's Streaming Dashboard
+ *       - #4.4.10.1: What's Streaming - page level errors & messages
+ *
+ *   Error Pages (#4.6)
  */
 
 /* ********************************************************************************
@@ -105,15 +128,15 @@ $username = $session->username;
  *
  * #1.1 - language & theme selection
  ************************************/
-$L['SELECT_LANGUAGE'] = 'Kattintson a nyelv kiválasztásához';
-$L['CHINESE']         = 'kínai';
-$L['DANISH']          = 'dán';
-$L['ENGLISH']         = 'angol';
-$L['FRENCH']          = 'francia';
-$L['GERMAN']          = 'német';
-$L['PORTUGUESE']      = 'portugál';
-$L['SPANISH']         = 'spanyol';
-$L['SELECT_THEME']    = 'Kattintson a téma kiválasztásához';
+$L['SELECT_LANGUAGE'] = 'Kattints a nyelv kiválasztásához';
+$L['CHINESE']         = 'Kínai';
+$L['DANISH']          = 'Dán';
+$L['ENGLISH']         = 'Angol';
+$L['FRENCH']          = 'Francia';
+$L['GERMAN']          = 'Német';
+$L['PORTUGUESE']      = 'Portugál';
+$L['SPANISH']         = 'Spanyol';
+$L['SELECT_THEME']    = 'Kattints a téma kiválasztásához';
 $L['THEME_DARK']      = 'Sötét téma';
 $L['THEME_LIGHT']     = 'Világos téma';
 
@@ -121,31 +144,31 @@ $L['THEME_LIGHT']     = 'Világos téma';
  * #1.2 - user menu (top right)
  ************************************/
 $L['LOG_OUT'] = 'Kijelentkezés';
-$L['PROFILE'] = 'Saját profilom';
+$L['PROFILE'] = 'Profilom';
 $L['REBOOT']  = 'Újraindítás';
 
 /* **********************************
- * #1.3 - sidebar menus
+ * #1.3 - sidebar menu
  ************************************/
-$L['ABOUT_AND_TIPS']    = 'Névjegy / Gyorstippek';
-$L['APP_DASHBOARD']     = 'Szoftver-irányítópult';
-$L['DASHBOARD']         = 'Az irányítópult';
+$L['ABOUT_AND_TIPS']    = 'Névjegy / Gyors tippek';
+$L['APP_DASHBOARD']     = 'Szoftver kezelőfelület';
+$L['DASHBOARD']         = 'Vezérlőpult';
 $L['DB_MGMNT']          = 'phpMyAdmin';
-$L['EXTERNAL_LINKS']    = 'Egyéni linkek';
+$L['EXTERNAL_LINKS']    = 'Egyéni hivatkozások';
 $L['GENERAL_SETTINGS']  = 'Általános beállítások';
-$L['HELP_SUPPORT']      = 'Súgó / Frissítés';
+$L['HELP_SUPPORT']      = 'Segítség / Frissítés';
 $L['KB']                = 'Tudásbázis';
 $L['PLUGINS']           = 'Bővítmények';
 $L['REGISTRATION']      = 'Regisztráció';
 $L['SECURITY_SETTINGS'] = 'Biztonsági beállítások';
-$L['SESSION_SETTINGS']  = 'Munkamenet beállításai';
+$L['SESSION_SETTINGS']  = 'Munkamenet beállítások';
 $L['SETTINGS']          = 'Beállítások';
-$L['SYS_DASHBOARD']     = 'Rendszer-irányítópult';
+$L['SYS_DASHBOARD']     = 'Rendszer kezelőfelület';
 $L['SYSTEM_LOGS']       = 'Rendszernaplók';
 $L['SYSTEM']            = 'Rendszer';
-$L['USER_ADMIN']        = 'Felhasználói rendszergazda';
+$L['USER_ADMIN']        = 'Felhasználói adminisztráció';
 $L['USER_GROUPS']       = 'Felhasználói csoportok';
-$L['USER_MANAGEMENT']   = 'Felhasználókezelés';
+$L['USER_MANAGEMENT']   = 'Felhasználók kezelése';
 $L['USER_SETTINGS']     = 'Felhasználói beállítások';
 $L['WEB_CONSOLE']       = 'Webkonzol';
 
@@ -153,15 +176,16 @@ $L['WEB_CONSOLE']       = 'Webkonzol';
  * #1.4 - sidebar submenus
  ************************************/
 $L['APP_MENU']        = 'Szoftver menü';
-$L['APPLICATIONS']    = 'Saját szoftver';
-$L['DASHBOARD_INFO']  = 'Válasszon az adminisztrációs rendszer irányítópultja vagy a szoftveres irányítópult között, amelyet minden felhasználó láthat.';
-$L['DASHBOARD_VIEW']  = 'Irányítópult nézet';
+$L['APPLICATIONS']    = 'Saját szoftvereim';
+$L['DASHBOARD_INFO']  = 'Válaszd ki a rendszergazdai vezérlőpultot vagy a felhasználók által látott szoftver vezérlőfelületet.';
+$L['DASHBOARD_VIEW']  = 'Vezérlőpult nézet';
 $L['DOWNLOADS']       = 'Letöltések';
 $L['FILEMANAGER']     = 'Fájlkezelő';
-$L['PLUGINS_CENTER']  = 'Bővítmények központja';
-$L['PLUGINS_INFO']    = 'A beépülő modulok egyszerű telepítése és eltávolítása egyszerűen a beépülő modul nevére kattintva.';
-$L['RPLUGINS_NOTICE'] = 'A ruTorrent beépülő modulok egyszerű telepítése és eltávolítása egyszerűen a beépülő modul nevére kattintva';
-$L['RPLUGINS']        = 'ruTorrent beépülő modulok';
+$L['NZB_CLIENTS']     = 'NZB kliensek';
+$L['PLUGINS_CENTER']  = 'Bővítményközpont';
+$L['PLUGINS_INFO']    = 'Egyszerűen telepítheted és eltávolíthatod a bővítményeket a bővítmény nevére kattintva.';
+$L['RPLUGINS_NOTICE'] = 'Egyszerűen telepítheted és eltávolíthatod a ruTorrent bővítményeket a bővítmény nevére kattintva.';
+$L['RPLUGINS']        = 'ruTorrent bővítmények';
 $L['TORRENT_CLIENTS'] = 'Torrent kliensek';
 
 /* **********************************
@@ -177,74 +201,75 @@ $L['ALL_RIGHTS'] = 'Minden jog fenntartva.';
 $L['ACTIVATE_USERS']                = 'Felhasználók aktiválása';
 $L['ADD_IP_ADDRESS']                = 'IP-cím hozzáadása';
 $L['ADD_USERNAME']                  = 'Felhasználónév hozzáadása';
-$L['AGREE']                         = 'Értem, csináld!';
+$L['AGREE']                         = 'Megértettem, csináld!';
 $L['API_ACTIVATE']                  = 'Aktiválás';
 $L['APP_MANAGEMENT']                = 'Szoftverkezelés';
-$L['APPS_INSTALLED']                = 'Szoftver telepítve';
-$L['AUTO_DISABLE']                  = 'Az automatikus frissítések letiltása';
-$L['AUTO_ENABLE']                   = 'Automatikus frissítések engedélyezése';
+$L['APPS_INSTALLED']                = 'Telepített szoftverek';
+$L['AUTO_DISABLE']                  = 'Automatikus frissítések kikapcsolása';
+$L['AUTO_ENABLE']                   = 'Automatikus frissítések bekapcsolása';
 $L['BACK']                          = 'Vissza';
 $L['BAN_USER']                      = 'Felhasználó kitiltása';
 $L['CANCEL']                        = 'Mégse';
 $L['CLEAN_LOG']                     = 'Frissítési napló törlése';
 $L['CLEAN_RCLOG']                   = 'RClone feltöltési napló törlése';
-$L['CLICK_ME']                      = 'Kattintson rám';
+$L['CLICK_ME']                      = 'Kattints rám';
 $L['CLOSE_REFRESH']                 = 'Bezárás és frissítés';
 $L['CLOSE']                         = 'Bezárás';
 $L['CPU_TAB']                       = 'CPU';
-$L['CREATE_ANNOUNCEMENT']           = 'Hirdetmény létrehozása';
+$L['CREATE_ANNOUNCEMENT']           = 'Közlemény létrehozása';
 $L['CREATE_GROUP']                  = 'Csoport létrehozása';
 $L['CREATE_NEW_GROUP']              = 'Új csoport létrehozása';
 $L['CREATE_NEW_USER']               = 'Új felhasználó létrehozása';
 $L['CREATE_USER']                   = 'Felhasználó létrehozása';
-$L['DELETE_ALL_ANNOUNCEMENTS']      = 'Összes közlemény törlése';
-$L['DELETE_ALL_LOGS']               = 'Összes napló törlése (> 30 nap)';
+$L['DATABASE_SIZE']                 = 'Adatbázis mérete:';
+$L['DELETE_ALL_ANNOUNCEMENTS']      = 'Minden közlemény törlése';
+$L['DELETE_ALL_LOGS']               = 'Minden napló törlése (> 30 nap)';
 $L['DELETE_INACTIVE_USERS']         = 'Inaktív felhasználók törlése';
 $L['DELETE_LOGS']                   = 'Naplók törlése';
-$L['DELETE_SELECTED_ANNOUNCEMENTS'] = 'Kiválasztott közlemények törlése';
-$L['DELETE_SELECTED_SESSIONS']      = 'Kiválasztott munkamenetek törlése';
-$L['DELETE_SELECTED']               = 'Kijelölt törlése';
+$L['DELETE_SELECTED_ANNOUNCEMENTS'] = 'Kijelölt közlemények törlése';
+$L['DELETE_SELECTED_SESSIONS']      = 'Kijelölt munkamenetek törlése';
+$L['DELETE_SELECTED']               = 'Kijelöltek törlése';
 $L['DELETE_USER']                   = 'Felhasználó törlése';
-$L['DEMOTE']                        = 'Lefokozás a rendszergazdától';
-$L['DISABLED']                      = 'Letiltva';
+$L['DEMOTE']                        = 'Admin jog visszavonása';
+$L['DISABLED']                      = 'Kikapcsolva';
 $L['DISK_TAB']                      = 'Lemez';
 $L['DOWNLOAD']                      = 'Letöltés';
-$L['EDIT_ANNOUNCEMENT']             = 'Kiválasztott közlemény szerkesztése';
+$L['EDIT_ANNOUNCEMENT']             = 'Kijelölt közlemény szerkesztése';
 $L['EDIT_GROUP']                    = 'Csoport szerkesztése';
 $L['EDIT_USER']                     = 'Felhasználó szerkesztése';
-$L['ENABLED']                       = 'Engedélyezve';
+$L['ENABLED']                       = 'Bekapcsolva';
 $L['EXECUTE']                       = 'Végrehajtás';
-$L['GENERATE']                      = 'Létrehozás';
-$L['GO_BACK']                       = 'Visszalépés';
+$L['GENERATE']                      = 'Generálás';
+$L['GO_BACK']                       = 'Vissza';
 $L['IN_USE']                        = 'Használatban';
 $L['INSTALL']                       = 'Telepítés';
 $L['INSTALLED']                     = 'Eltávolítás';
-$L['INSTALLING']                    = 'Telepítés';
-$L['KILL_USER_SESSION']             = 'Összes felhasználói munkamenet törlése';
+$L['INSTALLING']                    = 'Telepítés folyamatban';
+$L['KILL_USER_SESSION']             = 'Összes munkamenet megszakítása';
 $L['LAUNCH']                        = 'Indítás';
 $L['LOGIN']                         = 'Bejelentkezés';
-$L['LOGOFF']                        = 'Kilépés';
+$L['LOGOFF']                        = 'Kijelentkezés';
 $L['MEMORY_TAB']                    = 'Memória';
 $L['NETWORK_TAB']                   = 'Hálózat';
-$L['NGINX_BACKUP']                  = 'Az Nginx konfiguráció biztonsági mentése';
+$L['NGINX_BACKUP']                  = 'Nginx konfiguráció mentése';
 $L['NGINX_DEFAULT']                 = 'Alapértelmezett konfiguráció visszaállítása';
-$L['NGINX_DISABLE']                 = 'Auth Popup letiltása';
-$L['NGINX_ENABLE']                  = 'Auth Popup engedélyezése';
-$L['NGINX_RESTORE']                 = 'Nginx biztonsági másolat visszaállítása';
-$L['APP_BACKUP_FULL']               = 'Teljes biztonsági mentés';
-$L['APP_BACKUP_PARTIAL']            = 'Részleges biztonsági mentés';
-$L['APP_DEFAULT_PARTIAL_RESTORE']   = 'Alapértelmezés visszaállítása';
-$L['APP_BACKUP_PARTIAL_RESTORE']    = 'Biztonsági másolat visszaállítása';
+$L['NGINX_DISABLE']                 = 'Hitelesítési popup kikapcsolása';
+$L['NGINX_ENABLE']                  = 'Hitelesítési popup bekapcsolása';
+$L['NGINX_RESTORE']                 = 'Nginx mentés visszaállítása';
+$L['APP_BACKUP_FULL']               = 'Teljes mentés';
+$L['APP_BACKUP_PARTIAL']            = 'Részleges mentés';
+$L['APP_DEFAULT_PARTIAL_RESTORE']   = 'Alapértelmezett visszaállítás';
+$L['APP_BACKUP_PARTIAL_RESTORE']    = 'Mentés visszaállítása';
 $L['ED_MENU_CONFIG_APP']            = 'konfiguráció és alkalmazás';
 $L['ED_MENU_CONFIG']                = 'csak konfiguráció';
-$L['VERSION_ROLLBACK_OPTIONS']      = 'Visszaállítási lehetőségek';
+$L['VERSION_ROLLBACK_OPTIONS']      = 'Verzió visszaállítási opciók';
 $L['VERSION_ROLLBACK_V']            = 'Verzió: ';
 $L['VERSION']                       = 'Verzió';
 $L['DATE']                          = 'Dátum';
-$L['VERSION_ROLLBACK_CONFIRM']      = 'Visszaállítás erre a verzióra?';
-$L['VERSION_ROLLBACK_DELETE']       = 'Törli ezt a biztonsági másolatot?';
-$L['PROMOTE']                       = 'Előléptetés adminisztrátorrá';
-$L['RCLONE_LOCK_REMOVE']            = 'zár eltávolítása';
+$L['VERSION_ROLLBACK_CONFIRM']      = 'Biztosan visszaállítja ezt a verziót?';
+$L['VERSION_ROLLBACK_DELETE']       = 'Törli ezt a mentést?';
+$L['PROMOTE']                       = 'Adminná előléptetés';
+$L['RCLONE_LOCK_REMOVE']            = 'zárolás eltávolítása';
 $L['RCLONE_LOGS']                   = 'naplók megtekintése';
 $L['RCLONE_UPLOAD']                 = 'feltöltés';
 $L['REFRESH']                       = 'Frissítés';
@@ -253,32 +278,33 @@ $L['REGISTERED']                    = 'Regisztrált';
 $L['REINSTALL']                     = 'Újratelepítés';
 $L['RELOAD_CONF']                   = 'Konfigurációk újratöltése';
 $L['RELOAD']                        = 'Újratöltés';
-$L['REMOVE_BANNED_IP']              = 'Tiltott IP-címek eltávolítása';
-$L['REMOVE_DISALLOWED']             = 'Nem engedélyezett felhasználónevek eltávolítása';
+$L['REMOVE_BANNED_IP']              = 'Kitiltott IP-címek eltávolítása';
+$L['REMOVE_DISALLOWED']             = 'Tiltott felhasználónevek eltávolítása';
 $L['REMOVE_MEMBER']                 = 'Csoporttag eltávolítása';
 $L['REMOVE']                        = 'Eltávolítás';
-$L['RESET_VERSION']                 = 'A jelenlegi verzió visszaállítása';
+$L['RESET_VERSION']                 = 'Jelenlegi verzió visszaállítása';
 $L['RESET']                         = 'Visszaállítás';
+$L['RESTART']                       = 'Indítsa újra';
 $L['SAVE']                          = 'Mentés';
 $L['SERVICE_CONTROL']               = 'Szolgáltatásvezérlés';
 $L['SIMULATE_BUTTON']               = 'Szimuláció';
-$L['SIMULATE_END']                  = 'Sim vége';
+$L['SIMULATE_END']                  = 'Szimuláció vége';
 $L['SIMULATE_USER']                 = 'Felhasználó szimulálása';
-$L['NANGINX']                       = 'N/A szolgáltatás nginx-en fut';
-$L['START']                         = 'Kezdés';
-$L['STOP']                          = 'Stop';
-$L['SUBMIT']                        = 'Változások elküldése';
-$L['TOP_PROC_TAB']                  = 'Legjobb folyamatok';
-$L['UNBAN_USER']                    = 'Felhasználó kitiltásának feloldása';
+$L['NANGINX']                       = 'N/A Szolgáltatás az nginx-en fut';
+$L['START']                         = 'Indítás';
+$L['STOP']                          = 'Leállítás';
+$L['SUBMIT']                        = 'Változtatások mentése';
+$L['TOP_PROC_TAB']                  = 'Top folyamatok';
+$L['UNBAN_USER']                    = 'Felhasználó kitiltásának visszavonása';
 $L['UNINSTALLED']                   = 'Eltávolítva';
-$L['UNINSTALLING']                  = 'Eltávolítás';
-$L['UP']                            = 'Fel';
+$L['UNINSTALLING']                  = 'Eltávolítás folyamatban';
+$L['UP']                            = 'Fut';
 $L['UPDATE']                        = 'Frissítés';
-$L['UPDATE_TOOLTIP']                = 'Kattintson ide a további információk megtekintéséhez';
+$L['UPDATE_TOOLTIP']                = 'Kattintson további információkért';
 $L['USER_ACTIONS']                  = 'Felhasználói műveletek';
-$L['VIEW_CHANGELOG']                = 'Változásnapló megtekintése';
+$L['VIEW_CHANGELOG']                = 'Változások megtekintése';
 $L['LATEST']                        = 'legújabb';
-$L['CURRENT']                       = 'aktuális';
+$L['CURRENT']                       = 'jelenlegi';
 $L['VIEW']                          = 'Megtekintés';
 
 /* **********************************
@@ -286,64 +312,65 @@ $L['VIEW']                          = 'Megtekintés';
  ************************************/
 $L['SYSTEM_RESPONSE_TITLE'] = 'Rendszerválasz';
 $L['UNINSTALL_TITLE']       = 'Eltávolítás';
-$L['UNINSTALLING_TXT_1']    = 'Sajnáljuk, hogy elment... Eltávolítás';
-$L['UNINSTALLING_TXT_2']    = 'folyamatban. Kérjük várjon';
+$L['UNINSTALLING_TXT_1']    = 'Sajnáljuk, hogy távozik ... Az eltávolítás';
+$L['UNINSTALLING_TXT_2']    = 'folyamatban van. Kérjük, legyen türelemmel.';
 
 /* **********************************
  * #2.3 - app nginx config edit modal
  ************************************/
-$L['ALERT_NGINX_EDITOR']  = 'Javasoljuk, hogy először készítsen biztonsági másolatot az aktuális konfigurációról, és csak akkor módosítsa az alábbi konfigurációt, ha jól ismeri az Nginx-et, vagy ha egy alkalmazott utasítja Önt';
-$L['BACKUP_NGINX_LOC']    = 'Nginx Config biztonsági mentés helye';
+$L['ALERT_NGINX_EDITOR']  = 'Javasolt először biztonsági mentést készíteni a jelenlegi konfigurációról, és csak akkor módosítsa az alábbi beállításokat, ha jártas az Nginx kezelésében, vagy ha ezt munkatársunk javasolta.';
+$L['BACKUP_NGINX_LOC']    = 'Nginx konfiguráció biztonsági mentésének helye';
 $L['CURRENT_NGINX_LOC']   = 'Nginx konfiguráció jelenlegi helye';
-$L['NGINX_APP_CONFIGURE'] = 'Nginx konfigurációszerkesztő';
+$L['NGINX_APP_CONFIGURE'] = 'Nginx konfigurációs szerkesztő';
 $L['NGINX_EDIT']          = 'Nginx konfiguráció szerkesztése';
-$L['ALERT_CONFIG_EDITOR'] = 'Javasoljuk, hogy először készítsen biztonsági másolatot az aktuális konfigurációról, és csak akkor módosítsa az alábbi konfigurációt, ha tisztában van a végrehajtott szerkesztésekkel, elolvasta a szoftver saját dokumentációját, vagy utasítást kapott a a személyzet tagja';
-$L['BACKUP_CONFIG_LOC']   = 'A biztonsági mentés helye beállítása';
-$L['CURRENT_CONFIG_LOC']  = 'A jelenlegi hely beállítása';
+$L['ALERT_CONFIG_EDITOR'] = 'Javasolt először biztonsági mentést készíteni a jelenlegi konfigurációról, és csak akkor módosítsa az alábbi beállításokat, ha tisztában van a módosításokkal, áttanulmányozta a szoftver dokumentációját, vagy munkatársunk javasolta a változtatást.';
+$L['BACKUP_CONFIG_LOC']   = 'Konfiguráció biztonsági mentésének helye';
+$L['CURRENT_CONFIG_LOC']  = 'Konfiguráció jelenlegi helye';
 $L['APP_CONFIG_OPTIONS']  = 'Szoftver konfigurációs szerkesztő';
-$L['APP_CONFIG_EDIT']     = 'Szoftverkonfiguráció szerkesztése';
+$L['APP_CONFIG_EDIT']     = 'Szoftver konfiguráció szerkesztése';
 
 /* **********************************
  * #2.4 - other
  ************************************/
-$L['ABOUT_RELEASE']       = 'A kiadásról';
-$L['ADD_MOUNT_PATH_INFO'] = 'Válassza ki, ha figyelmen kívül szeretné hagyni a kvótákat (ha telepítve van) a kiválasztott könyvtárban. Ha ezt a lehetőséget választja, akkor figyelmen kívül hagyja a megadott útvonal kvótáját. Használja ezt a lehetőséget, ha olyan címtárat figyel, ahol nem kell kvótákat figyelembe venni. Ez biztosítja a pontos helyszámítást, különösen a rclone rögzítések esetében.';
-$L['ADD_NEW_MOUNT_CHECK'] = 'Meglévő csatolás vagy könyvtár hozzáadása a figyeléshez';
-$L['MOUNT_PATH_SUCCESS']  = 'Az elérési út sikeresen hozzáadva a megfigyeléshez. Oldal frissítése...';
-$L['MOUNT_PATH_ERROR']    = 'Az elérési út, amelyet a megfigyeléshez hozzáadni próbált, nem létezik.<br>Kérjük, ellenőrizze még egyszer az elérési utat, és próbálja újra.';
+$L['ABOUT_RELEASE']       = 'Kiadásról';
+$L['ADD_MOUNT_PATH_INFO'] = 'Válassza ezt, ha figyelmen kívül kívánja hagyni a kvótákat (ha telepítve vannak) a kiválasztott könyvtárban. Ez az opció figyelmen kívül hagyja a kvótákat a megadott útvonalra. Használja ezt az opciót, ha olyan könyvtárat figyel, ahol a kvótákat nem kell figyelembe venni. Ez pontos helyszámításokat biztosít, különösen az rclone csatolások esetén.';
+$L['ADD_NEW_MOUNT_CHECK'] = 'Meglévő csatolás vagy könyvtár hozzáadása ellenőrzésre';
+$L['COPYRIGHT']           = 'Szerzői jog';
+$L['MOUNT_PATH_SUCCESS']  = 'Az útvonal sikeresen hozzáadva ellenőrzésre. Oldal frissítése folyamatban...';
+$L['MOUNT_PATH_ERROR']    = 'A hozzáadni kívánt útvonal nem létezik.<br>Kérjük, ellenőrizze az útvonalat és próbálja újra.';
 $L['EMAIL']               = 'E-mail';
 $L['HERE']                = 'itt';
-$L['HOME']                = 'Otthon';
+$L['HOME']                = 'Kezdőlap';
 $L['IDLE_L']              = 'tétlen';
 $L['IDLE']                = 'Tétlen';
 $L['IS_AVAILABLE']        = 'elérhető.';
-$L['LANGUAGES']           = 'Languages';
-$L['MOUNTS']              = 'Rögzítések:';
-$L['MOUNT_ADD_PATH']      = 'Elérési út hozzáadása';
-$L['MOUNT_CHECK_ABOUT']   = 'Ezeket az értékeket a rendszer kiszámítja és rendszeresen frissíti. Az értékek nem valós idejűek. Az alábbi \'Vizsgálat indítása\' gombra kattintva frissítheti ezeket a statisztikákat.';
-$L['MOUNT_CHECK_PROCESS'] = 'A tér százalékos értékeit jelenleg a háttérben számítják ki. Kérjük, nézzen vissza később a frissített eredményekért. Oldalfrissítést igényel.';
-$L['MOUNT_MONITOR_INFO']  = 'További rögzítési információ';
-$L['MOUNT_START_SCAN']    = 'Vizsgálat indítása';
+$L['LANGUAGES']           = 'Nyelvek';
+$L['MOUNTS']              = 'Csatolások:';
+$L['MOUNT_ADD_PATH']      = 'Útvonal hozzáadása';
+$L['MOUNT_CHECK_ABOUT']   = 'Ezek az értékek periodikusan kerülnek kiszámításra és frissítésre. Az értékek nem valós idejűek. Ezeket az értékeket az alábbi „Ellenőrzés indítása” gombbal frissítheti.';
+$L['MOUNT_CHECK_PROCESS'] = 'A háttérben jelenleg folyamatban van a helyszázalék értékek számítása. Kérjük, később ellenőrizze az eredményeket. Oldalfrissítés szükséges.';
+$L['MOUNT_MONITOR_INFO']  = 'További csatolási információk';
+$L['MOUNT_START_SCAN']    = 'Ellenőrzés indítása';
 $L['NEED_HELP']           = 'Segítségre van szüksége?';
-$L['NGINX_CONF_OPTIONS']  = 'Nginx Conf beállítások';
+$L['NGINX_CONF_OPTIONS']  = 'Nginx konfigurációs lehetőségek';
 $L['NGINX_CONFIG']        = 'Nginx konfiguráció';
 $L['NGINX_SETTINGS']      = 'Nginx beállítások';
 $L['NO']                  = 'Nem';
-$L['NOTIFICATIONS']       = 'Notifications';
-$L['OPEN']                = 'nyitva';
+$L['NOTIFICATIONS']       = 'Értesítések';
+$L['OPEN']                = 'megnyitás';
 $L['OR']                  = 'vagy';
 $L['PASSWORD']            = 'Jelszó';
-$L['PLEASE_HOLD']         = '- Kérem tartsa vissza';
-$L['REMOVE_MOUNT_PATH']   = 'Felügyelt útvonal eltávolítása. Ez nem távolítja el a tényleges könyvtárat vagy beillesztési pontot.';
+$L['PLEASE_HOLD']         = '- Kérjük, várjon';
+$L['REMOVE_MOUNT_PATH']   = 'Figyelt útvonal eltávolítása. Ez nem törli a tényleges könyvtárat vagy csatolási pontot.';
 $L['REQUIRED_FIELD']      = 'Kötelező mező...';
-$L['REQUIRED_FIELDS']     = 'A <span style="color:#d9534f">*</span> jellel jelölt mezők kitöltése kötelező';
+$L['REQUIRED_FIELDS']     = 'A <span style="color:#d9534f">*</span>-gal jelölt mezők kitöltése kötelező';
 $L['SET_HERE']            = 'Beállítás itt';
-$L['SIMULATE_LIST']       = 'Felhasználói lista';
+$L['SIMULATE_LIST']       = 'Felhasználók listája';
 $L['SIMULATE']            = 'Felhasználók szimulálása';
-$L['SUMMARY']             = 'Összefoglaló';
-$L['THEMES']              = 'Themes';
+$L['SUMMARY']             = 'Összegzés';
+$L['THEMES']              = 'Témák';
 $L['UPDATING_QUICKBOX']   = 'QuickBox frissítése';
-$L['UPDATING']            = 'Frissítés';
+$L['UPDATING']            = 'Frissítés ';
 $L['USED_L']              = 'használt';
 $L['USERNAME']            = 'Felhasználónév';
 $L['USERS']               = 'Felhasználók';
@@ -356,92 +383,92 @@ $L['YES']                 = 'Igen';
  *
  * #3.1.1 - app management center
  ************************************/
-$L['AVAILABILITY'] = 'Availability';
-$L['DETAILS']      = 'Details';
-$L['NAME']         = 'Name';
-$L['CONFIGS']      = 'Configs';
-$L['EXTRAS']       = 'Extras';
+$L['AVAILABILITY'] = 'Elérhetőség';
+$L['DETAILS']      = 'Részletek';
+$L['NAME']         = 'Név';
+$L['CONFIGS']      = 'Konfigurációk';
+$L['EXTRAS']       = 'Extrák';
 
 /* **********************************
  * #3.2 - Package Management Center
  *
  * #3.2.1 - app info
  ************************************/
-$L['AIRSONIC']      = 'Airsonic-Advanced is a more modern implementation of the Airsonic fork with several key performance and feature enhancements. It adds and supersedes several features in Airsonic. Airsonic is a free, web-based media streamer, providing ubiquitous access to your music.';
-$L['AUTOBRR']       = 'Autobrr is a modern single binary replacement for the autodl-irssi+rutorrent plugin. Autobrr monitors IRC announce channels and torznab RSS feeds to get releases as soon as they are available, with good filtering, and regex support.';
-$L['AUTODL']        = 'AutoDL-iRSSi is a plugin for irssi that monitors IRC announce channels and downloads torrent files based on user-defined filters.';
-$L['AUTOSCAN']      = 'Autoscan replaces the default Plex and Emby behaviour for picking up file changes on the file system. Autoscan integrates with Sonarr, Radarr, Lidarr and Google Drive to fetch changes in near real-time without relying on the file system.';
-$L['BAZARR']        = 'Bazarr is a companion application to Sonarr and Radarr. It manages and downloads subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.';
-$L['BAZARR4K']      = 'Bazarr4K is a standalone Bazarr clone for the 4K UHD profiles. It is a means to handle multiple Bazarr instances, while keeping UHD content separate from general content.';
-$L['BBR']           = 'BBR is a new congestion control algorithm which is contributed to the Linux kernel TCP stack by Google. With BBR in place, a Linux server can get significantly increased throughput and reduced latency for connections. BBR';
-$L['BTSYNC']        = 'BitTorrent Sync by BitTorrent, Inc is a proprietary peer-to-peer file synchronization tool.';
-$L['CALIBRE']       = 'Calibre is a cross-platform open-source suite of e-book software. Calibre supports organizing existing e-books into virtual libraries, displaying, editing, creating and converting e-books, as well as syncing e-books with a variety of e-readers. Editing books is supported for EPUB and AZW3 formats.';
-$L['COUCHPOTATO']   = 'Download movies automatically, easily and in the best quality as soon as they are released, via usenet or torrents.';
-$L['CSF']           = 'ConfigServer Firewall, also known as CSF, is a firewall configuration script created to provide better security for your server while giving you an easy to use, advanced interface for managing your firewall settings.';
-$L['DELUGE']        = 'Deluge is a lightweight, Free Software, cross-platform BitTorrent client.';
-$L['DUPLICATI']     = 'Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It can works with Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV, and <a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">many more</a>.';
-$L['EMBY']          = 'Emby Server is a client-server software package that lets consumers host their legal personal copies of multimedia — music, video and picture files. ... The Emby client software is an app you need to install on mobile devices and certain settop boxes for televisions, like Android TV.';
-$L['FAIL2BAN']      = 'Fail2Ban is an intrusion prevention software framework that protects computer servers from brute-force attacks.';
-$L['FILEBOT']       = 'FileBot is the ultimate tool for organizing and renaming your Movies, TV Shows and Anime as well as fetching subtitles and artwork. Its smart and just works.';
-$L['FILEBROWSER']   = 'Filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app or as a middleware.';
-$L['FLARESOLVERR']  = 'FlareSolverr is a proxy server to bypass Cloudflare protection.';
-$L['FLEXGET']       = 'FlexGet is a multipurpose automation tool for all of your media. Support for torrents, nzbs, podcasts, comics, TV, movies, RSS, HTML, CSV, and more.';
-$L['FLOOD']         = 'Flood is a monitoring service for various torrent clients. It\'s a Node.js service that communicates with your favorite torrent client and serves a decent web UI for administration. <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> organization hosts related projects.';
-$L['HEADPHONES']    = 'Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent, Deluge and Blackhole.';
-$L['JACKETT']       = 'API Support for your favorite private trackers.';
-$L['JDOWNLOADER']   = 'JDownloader is a free download management tool that allows you to quickly download files from hosting services such as Mediafire, 4Shared, and other similar functionality hosting services. File hosting services often gatekeep your full download speed to incentivize purchasing premium packages; JDownloader helps you circumvent that requirement.';
-$L['JELLYFIN']      = 'Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media.';
-$L['JELLYSEERR']    = 'Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!';
-$L['KAVITA']        = 'Kavita is a fast, feature rich, cross platform reading server. Built with a focus for manga and the goal of being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family.';
-$L['KOMGA']         = 'Komga is a media server for your digital comics/manga, with a focus on providing a simple and modern interface.';
-$L['LAZYLIBRARIAN'] = 'LazyLibrarian is a SickBeard, CouchPotato, Headphones-like application for ebooks, audiobooks and magazines. It uses a combination of  <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank">Goodreads</a>  <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank">Librarything</a> and optionally  <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank">GoogleBooks</a> as sources for author info and book info.';
-$L['LETSENCRYPT']   = 'Let\'s Encrypt is a free, automated, and open certificate authority (CA), run for the public\'s benefit. It is a service provided by the <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a>.';
-$L['LIDARR']        = 'Lidarr is an independent fork of Sonarr reworked for automatically downloading music via Usenet and BitTorrent. The project was inspired by other Usenet/BitTorrent music downloaders such as Headphones.';
-$L['MEDUSA']        = 'Video File Manager for TV Shows, It watches for new episodes of your favorite shows and when they are posted it does its magic. Allows manual search and other exclusive features, check Medusa on <a href="https://nullrefer.ir/?https://github.com/pymedusa/Medusa" rel="noopener nofollow" target="_blank">Github</a>.';
-$L['MYLAR3']        = 'Mylar is an automated Comic Book (cbr/cbz) downloader program for use with NZB and torrents written in python. It supports SABnzbd, NZBGET, and many torrent clients in addition to DDL.';
-$L['NETDATA']       = 'Netdata is distributed, real-time, performance and health monitoring for systems and applications.';
-$L['NEXTCLOUD']     = 'Nextcloud is an open source, self-hosted file sync and share and communication app platform. Access & sync your files, contacts, calendars & communicate and collaborate across your devices. You decide what happens with your data, where it is and who can access it!';
-$L['NOTIFIARR']     = 'This is the unified client for <a href="https://nullrefer.ir/?https://notifiarr.com/" rel="noopener nofollow" target="_blank">Notifiarr.com</a>. The client enables content requests from Media Bot in your Discord Server and also provides reports for Plex usage and system health among many other features..';
-$L['NOVNC']         = 'noVNC is both a VNC client JavaScript library as well as an application built on top of that library. noVNC runs well in any modern browser including mobile browsers (iOS and Android).';
-$L['NZBGET']        = 'NZBGet is a binary downloader, which downloads files from Usenet based on information given in nzb-files.  NZBGet is written in C++ and is known for its extraordinary performance and efficiency.';
-$L['NZBHYDRA']      = 'NZBHydra is a meta search for NZB indexers. It provides easy access to a number of raw and newznab based indexers. You can search all your indexers from one place and use it as indexer source for tools like Sonarr or CouchPotato.';
-$L['NZBHYDRA2']     = 'NZBHydra2 is a meta search for NZB indexers. It provides easy access to a number of raw and newznab based indexers. You can search all your indexers from one place and use it as indexer source for tools like Sonarr or CouchPotato.';
-$L['OMBI']          = 'Ombi offers a beautiful and easy to use interface for items users wish to be added to the library. Integrates with CouchPotato, SickChill and Sonarr.';
-$L['OVERSEERR']     = 'Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services, such as Sonarr, Radarr, and Plex!';
-$L['OVPN']          = 'SSL/TLS based user-space VPN. Supports Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X, and Windows 2000/XP+.';
-$L['PHPMYADMIN']    = 'phpMyAdmin is a free software tool written in <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a>, intended to handle the administration of <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB. Frequently used operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) can be performed via the user interface, while you still have the ability to directly execute any SQL statement.';
-$L['PLEX']          = 'Plex lets you stream your content to any Plex enabled device.';
-$L['PROWLARR']      = 'Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required.';
-$L['PYLOAD']        = 'pyLoad is a download manager for `Hoster` websites, video sites, and HTTP/FTP links. A list of supported sites can be found <a href="https://nullrefer.ir/?https://github.com/pyload/pyload/wiki/Supported-Hoster" rel="noopener nofollow" target="_blank">here</a>';
-$L['QBITTORRENT']   = 'qBittorrent is a free and reliable P2P BitTorrent client. An advanced and multi-platform BitTorrent client with a nice Qt user interface as well as a Web UI for remote control and an integrated search engine.';
-$L['QUASSEL']       = 'Quassel IRC is a modern, cross-platform, distributed IRC client based on the Qt4 framework.';
-$L['QUOTAS']        = 'This feature of Linux allows the system administrator to allocate a maximum amount of disk space a user or group may use.';
-$L['RADARR']        = 'Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.<br>The project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato.';
-$L['RADARR4K']      = 'Radarr4K is a standalone Radarr clone for the 4K UHD profiles. It is a means to handle multiple Radarr instances, while keeping UHD content separate from general content.';
-$L['RAPIDLEECH']    = 'Rapid Leech is a free server transfer script for use on various popular upload/download sites such as uploaded.net, Rapidshare.com and more than 120 others.';
-$L['RCLONE']        = 'RClone is a command line program to sync files and directories to and from a multitude of hosts';
-$L['READARR']       = 'Readarr is a ebook collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will interface with clients and indexers to grab, sort, and rename them.';
-$L['REQUESTRR']     = 'Requestrr is a Discord chatbot used to simplify using services like Sonarr/Radarr/Ombi via the use of chat! All the users of your Discord Server can request for adding new content and get notified when available.';
-$L['RTORRENT']      = 'rTorrent is a quick and efficient BitTorrent client that uses, and is in development alongside, the libTorrent (not to be confused with libtorrent-rasterbar) library. It is written in C++ and uses the ncurses programming library, which means it uses a text user interface.';
-$L['RUTORRENT']     = 'ruTorrent is a front-end for the popular Bittorrent client rtorrent. Main features: Lightweight server side, so it can be installed on old and low-end servers and even on some SOHO routers, Extensible - there are several plugins and everybody can create their own one, comes with <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox skin</a>.';
-$L['SABNZBD']       = 'SABnzbd is a multi-platform binary newsgroup downloader. The program works in the background and simplifies the downloading verifying and extracting of files from Usenet. SABnzbd uses NZB files (similar to .torrent files, but for Usenet), instead of browsing Usenet directly.';
-$L['SEEDCROSS']     = 'SeedCross is a web app to Cross-Seed torrents in Deluge/qBittorrent/Transmission. It is a fork of <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>.';
-$L['SICKCHILL']     = 'Video File Manager for TV Shows, It watches for new episodes of your favorite shows and when they are posted it does its magic.';
-$L['SICKGEAR']      = 'SickGear is Sick-Beard evolved. Automate your TV enjoyment with innovation, proven stability and reliability.';
-$L['SONARR']        = 'Sonarr is a tv series management tool which will work with both torrents and usenet.';
-$L['SONARR4K']      = 'Sonarr4K is a standalone Sonarr clone for the 4K UHD profiles. It is a means to handle multiple Sonarr instances, while keeping UHD content separate from general content.';
-$L['SUBSONIC']      = 'Subsonic is a web-based media server. It is written in Java, so it can run on any operating system with Java support. Subsonic supports streaming to multiple clients simultaneously, and supports any streamable media (including MP3, AAC, and Ogg).';
-$L['SYNCTHING']     = 'Open Source Continuous File Synchronization with BitTorrent';
-$L['TAUTULLI']      = 'A python based web application for monitoring, analytics and notifications for Plex Media Server';
-$L['THELOUNGE']     = 'A modern self-hosted web IRC client';
-$L['TRANSMISSION']  = 'Transmission is designed for easy, powerful use. The defaults are set to Just Work and it only takes a few clicks to configure advanced features like watch directories, bad peer blocklists, and the web interface. When Ubuntu chose Transmission as its default BitTorrent client, one of the most-cited reasons was its easy learning curve.';
-$L['UNIFI']         = 'The UniFi® Controller is a wireless network management software solution from Ubiquiti Networks™. It allows you to manage multiple wireless networks using a web browser.';
-$L['UNPACKERR']     = 'Extracts downloads for Radarr, Sonarr, Lidarr, Readarr - Deletes extracted files after import.';
-$L['WEBCONSOLE']    = 'TTYD (aka The QuickBox Web Console) is a fully-featured terminal based on Xterm.js with CJK and IME support.';
-$L['WIREGUARD']     = 'A WireGuard® egy rendkívül egyszerű, de gyors és modern VPN, amely a legmodernebb kriptográfiát használja. Célja, hogy gyorsabb, egyszerűbb, karcsúbb és hasznosabb legyen, mint az IPsec, miközben elkerüli a hatalmas fejfájást. Sokkal nagyobb teljesítményű lesz, mint az OpenVPN. A WireGuardot általános célú VPN-nek tervezték, beágyazott interfészeken és szuperszámítógépeken egyaránt, sokféle körülményre alkalmas.';
-$L['X2GO']          = 'X2Go is an open source remote desktop software for Linux that uses the NX technology protocol.';
-$L['XTEVE']         = 'XTeVe is an application that simulates a TV tuner, it allows you to have IPTV channels via Plex or Emby. xTeVe can merge multiple M3U and XMLTV files, and send it to your preferred Media Center.';
-$L['ZNC']           = 'ZNC is an IRC network bouncer or BNC. It can detach the client from the actual IRC server, and also from selected channels.';
+$L['AIRSONIC']      = 'Az Airsonic-Advanced az Airsonic fork modernebb megvalósítása, amely számos teljesítménybeli és funkcionális fejlesztést tartalmaz. Több funkciót is kibővít és helyettesít az eredeti Airsonicban. Az Airsonic egy ingyenes, webalapú médialejátszó, amely mindenhol hozzáférést biztosít a zenéihez.';
+$L['AUTOBRR']       = 'Az Autobrr egy modern, egységes bináris helyettesítője az autodl-irssi+rutorrent bővítménynek. Figyeli az IRC bejelentő csatornákat és torznab RSS hírfolyamokat, hogy azonnal megszerezze az új megjelenéseket fejlett szűrési és regex támogatással.';
+$L['AUTODL']        = 'Az AutoDL-iRSSi egy irssi plugin, amely IRC bejelentő csatornákat figyel és letölti a torrent fájlokat felhasználó által meghatározott szűrők alapján.';
+$L['AUTOSCAN']      = 'Az Autoscan lecseréli a Plex és Emby alapértelmezett fájlrendszer figyelését. A Sonarr, Radarr, Lidarr és Google Drive szolgáltatásokkal integrálódik, hogy közel valós időben észlelje a fájlváltozásokat anélkül, hogy a fájlrendszerre hagyatkozna.';
+$L['BAZARR']        = 'A Bazarr a Sonarr és Radarr társalkalmazása, amely a felhasználói igények alapján feliratokat kezel és tölt le. Ön határozza meg az igényeit sorozatonként vagy filmenként, a Bazarr pedig elvégzi a többit.';
+$L['BAZARR4K']      = 'A Bazarr4K egy önálló Bazarr klón a 4K UHD profilokhoz. Lehetővé teszi több Bazarr példány kezelését, miközben külön tartja az UHD tartalmat az általános médiától.';
+$L['BBR']           = 'A BBR egy új torlódásvezérlési algoritmus, amelyet a Google fejlesztett ki, és a Linux kernel TCP vereméhez járult hozzá. Használatával a Linux szerverek nagyobb sávszélességet és alacsonyabb késleltetést érhetnek el.';
+$L['BTSYNC']        = 'A BitTorrent Sync a BitTorrent, Inc tulajdonában lévő, zárt forráskódú, peer-to-peer fájlszinkronizáló eszköz.';
+$L['CALIBRE']       = 'A Calibre egy nyílt forráskódú, többplatformos e-könyv szoftvercsomag. Támogatja az e-könyvek virtuális könyvtárakba rendezését, megjelenítését, szerkesztését, létrehozását és átalakítását, valamint e-olvasó eszközökkel való szinkronizálását. EPUB és AZW3 formátumok szerkesztése támogatott.';
+$L['COUCHPOTATO']   = 'Filmletöltés automatikusan, egyszerűen és a lehető legjobb minőségben, amint megjelennek — usenet vagy torrent segítségével.';
+$L['CSF']           = 'A ConfigServer Firewall (CSF) egy tűzfal konfigurációs szkript, amely biztonságosabbá teszi a szervert, miközben fejlett, de könnyen használható kezelőfelületet biztosít a tűzfal beállításaihoz.';
+$L['DELUGE']        = 'A Deluge egy könnyű, nyílt forráskódú, többplatformos BitTorrent kliens.';
+$L['DUPLICATI']     = 'A Duplicati egy ingyenes, nyílt forráskódú biztonsági mentési kliens, amely titkosított, tömörített és növekményes biztonsági mentéseket tárol a felhőszolgáltatásokon vagy távoli fájlszervereken. Támogatja az Amazon S3, Dropbox, Google Drive, FTP, SSH/SFTP, WebDAV és <a href="https://nullrefer.ir/?https://duplicati.readthedocs.io/en/latest/01-introduction/#supported-backends" rel="noopener nofollow" target="_blank">sok más</a> szolgáltatást is.';
+$L['EMBY']          = 'Az Emby Server egy kliens-szerver szoftvercsomag, amely lehetővé teszi a felhasználók számára, hogy jogszerűen birtokolt multimédiás fájljaikat — zenéket, videókat és képeket — saját szerveren tárolják. Az Emby kliensalkalmazást telepíteni kell mobil eszközökre és bizonyos okostévé eszközökre, például Android TV-re.';
+$L['FAIL2BAN']      = 'A Fail2Ban egy behatolásmegelőző keretrendszer, amely védi a számítógépes szervereket a brute-force támadásoktól.';
+$L['FILEBOT']       = 'A FileBot a tökéletes eszköz filmek, sorozatok és animéik rendszerezésére és átnevezésére, valamint feliratok és borítók letöltésére. Intelligens és egyszerűen működik.';
+$L['FILEBROWSER']   = 'A Filebrowser egy fájlkezelő felületet biztosít egy megadott könyvtáron belül, amely alkalmas fájlok feltöltésére, törlésére, előnézetére, átnevezésére és szerkesztésére. Támogatja több felhasználó létrehozását, akik mind saját könyvtárral rendelkezhetnek. Használható önálló alkalmazásként vagy middleware-ként.';
+$L['FLARESOLVERR']  = 'A FlareSolverr egy proxy szerver, amely segít megkerülni a Cloudflare védelmét.';
+$L['FLEXGET']       = 'A FlexGet egy sokoldalú automatizálási eszköz minden médiatartalomhoz. Támogatja a torrenteket, nzb fájlokat, podcastokat, képregényeket, TV műsorokat, filmeket, RSS-t, HTML-t, CSV-t és még sok mást.';
+$L['FLOOD']         = 'A Flood egy torrentkliens-figyelő szolgáltatás. Ez egy Node.js alapú alkalmazás, amely kommunikál a kedvenc torrentklienseddel, és egy korszerű webes felületet biztosít a kezeléshez. A <a href="https://nullrefer.ir/?https://github.com/Flood-UI" target="_blank" rel="nofollow noopener">Flood-UI</a> szervezet kapcsolódó projekteket is fejleszt.';
+$L['HEADPHONES']    = 'A Headphones egy automatizált zeneletöltő NZB és torrent számára, Python nyelven írták. Támogatja a SABnzbd, NZBget, Transmission, µTorrent, Deluge és Blackhole klienseket.';
+$L['JACKETT']       = 'API támogatás a kedvenc privát trackereidhez.';
+$L['JDOWNLOADER']   = 'A JDownloader egy ingyenes letöltéskezelő eszköz, amely lehetővé teszi fájlok gyors letöltését fájlmegosztó szolgáltatókról, például a Mediafire, 4Shared és hasonlók. Az ilyen szolgáltatók gyakran korlátozzák a sebességet, hogy prémium csomag vásárlására ösztönözzenek; a JDownloader segít ezt kikerülni.';
+$L['JELLYFIN']      = 'A Jellyfin egy szabad szoftveres médiarendszer, amely lehetővé teszi, hogy te irányítsd a médiafájljaid kezelését és streamelését.';
+$L['JELLYSEERR']    = 'A Jellyseerr egy ingyenes és nyílt forráskódú szoftveralkalmazás, amely lehetővé teszi a média könyvtáradhoz kapcsolódó kérések kezelését. Az Overseerr egy ága, amely a Jellyfin és Emby szerverek támogatására készült.';
+$L['KAVITA']        = 'A Kavita egy gyors, funkciókban gazdag, többplatformos olvasószerver, amelyet kifejezetten mangákhoz fejlesztettek, de teljes körű megoldást nyújt minden olvasási igényre. Hozd létre saját szervered, és oszd meg gyűjteményed a barátaiddal és családoddal.';
+$L['KOMGA']         = 'A Komga egy médiakiszolgáló digitális képregényekhez és mangákhoz, amely egyszerű és modern felhasználói felületet biztosít.';
+$L['LAZYLIBRARIAN'] = 'A LazyLibrarian egy SickBeard, CouchPotato, Headphones-szerű alkalmazás e-könyvekhez, hangoskönyvekhez és magazinokhoz. Az alábbi forrásokat használja szerzői és könyvinformációkhoz: <a href="https://nullrefer.ir/?https://www.goodreads.com/" rel="noopener nofollow" target="_blank">Goodreads</a>, <a href="https://nullrefer.ir/?https://www.librarything.com/" rel="noopener nofollow" target="_blank">LibraryThing</a>, valamint opcionálisan a <a href="https://nullrefer.ir/?https://www.googleapis.com/books/v1/" rel="noopener nofollow" target="_blank">GoogleBooks</a> szolgáltatást.';
+$L['LETSENCRYPT']   = 'A Let\'s Encrypt egy ingyenes, automatizált és nyílt tanúsítványkiadó (CA), amelyet a nyilvánosság érdekében működtetnek. A szolgáltatást az <a href="https://nullrefer.ir/?https://letsencrypt.org/isrg/" rel="noopener nofollow" target="_blank">Internet Security Research Group (ISRG)</a> biztosítja.';
+$L['LIDARR']        = 'A Lidarr a Sonarr egy független ága, amelyet zenék automatikus letöltésére dolgoztak át Useneten és BitTorrenten keresztül. A projektet más zeneletöltő eszközök, például a Headphones inspirálták.';
+$L['MEDUSA']        = 'TV-sorozatokhoz készült videófájl-kezelő, amely figyeli a kedvenc sorozataid új epizódjait, és automatikusan végzi a letöltést. Manuális keresést és más exkluzív funkciókat is kínál, nézd meg a Medusát a <a href="https://nullrefer.ir/?https://github.com/pymedusa/Medusa" rel="noopener nofollow" target="_blank">GitHubon</a>.';
+$L['MYLAR3']        = 'A Mylar egy automatizált képregényletöltő (cbr/cbz) program, amely NZB-vel és torrentekkel működik, Pythonban írva. Támogatja a SABnzbd, NZBGet és számos torrentkliens használatát, valamint a közvetlen letöltéseket (DDL).';
+$L['NETDATA']       = 'A Netdata valós idejű, elosztott teljesítmény- és egészségfigyelő rendszer rendszerekhez és alkalmazásokhoz.';
+$L['NEXTCLOUD']     = 'A Nextcloud egy nyílt forráskódú, önállóan üzemeltethető fájlszinkronizáló és kommunikációs platform. Hozzáférés és szinkronizálás fájljaidhoz, névjegyeidhez, naptáraidhoz, valamint kommunikáció és együttműködés több eszközön keresztül. Te döntesz az adataid sorsáról!';
+$L['NOTIFIARR']     = 'Ez a <a href="https://nullrefer.ir/?https://notifiarr.com/" rel="noopener nofollow" target="_blank">Notifiarr.com</a> egységes kliense. Lehetővé teszi a tartalomkéréseket Discord Media Bot segítségével, és jelentéseket nyújt a Plex használatáról és a rendszer állapotáról, sok más funkcióval együtt.';
+$L['NOVNC']         = 'A noVNC egy VNC kliens JavaScript könyvtár, valamint egy erre épülő alkalmazás. Működik minden modern böngészőben, beleértve a mobilos böngészőket is (iOS és Android).';
+$L['NZBGET']        = 'A NZBGet egy bináris letöltő, amely NZB fájlok alapján tölti le a fájlokat a Usenetről. C++ nyelven íródott, és kiváló teljesítményéről, hatékonyságáról ismert.';
+$L['NZBHYDRA']      = 'Az NZBHydra egy metakereső az NZB indexelők számára. Egyszerű hozzáférést biztosít számos raw és newznab alapú indexelőhöz. Minden indexelő között kereshetsz egy helyről, és használhatod például a Sonarr vagy CouchPotato forrásaként.';
+$L['NZBHYDRA2']     = 'Az NZBHydra2 az NZBHydra továbbfejlesztett változata. Szintén egy metakereső NZB indexelők számára, egyszerű hozzáférést biztosítva több raw és newznab alapú indexelőhöz, és jól integrálható olyan eszközökkel, mint a Sonarr vagy CouchPotato.';
+$L['OMBI']          = 'Az Ombi egy szép és könnyen használható felületet biztosít a felhasználók számára, hogy tartalmakat kérjenek a könyvtárba. Integrálható a CouchPotato, SickChill és Sonarr alkalmazásokkal.';
+$L['OVERSEERR']     = 'Az Overseerr egy ingyenes és nyílt forráskódú alkalmazás a médiakönyvtáradhoz érkező kérések kezelésére. Zökkenőmentesen integrálódik meglévő szolgáltatásaiddal, például a Sonarr, Radarr és Plex rendszerekkel!';
+$L['OVPN']          = 'SSL/TLS alapú felhasználói tér VPN. Támogatja a Linux, Solaris, OpenBSD, FreeBSD, NetBSD, Mac OS X és Windows 2000/XP+ rendszereket.';
+$L['PHPMYADMIN']    = 'A phpMyAdmin egy ingyenes szoftvereszköz, amelyet <a href="https://nullrefer.ir/?https://php.net/" rel="noopener nofollow" target="_blank">PHP</a>-ben írtak, és amely a <a href="https://nullrefer.ir/?https://www.mysql.com/" rel="noopener nofollow" target="_blank">MySQL</a> webes adminisztrációjára szolgál. A phpMyAdmin széles körű műveleteket támogat a MySQL és MariaDB rendszereken. A gyakran használt műveletek (adatbázisok, táblák, oszlopok, kapcsolatok, indexek, felhasználók, jogosultságok kezelése stb.) a felhasználói felületen keresztül is elérhetők, miközben lehetőség van közvetlen SQL-parancsok végrehajtására is.';
+$L['PLEX']          = 'A Plex lehetővé teszi, hogy a tartalmaidat bármely Plex-kompatibilis eszközre streameld.';
+$L['PROWLARR']      = 'A Prowlarr egy indexelőkezelő/proxy, amely az arr .net/reactjs alapstackre épül, és integrálódik különféle PVR alkalmazásaiddal. A Prowlarr támogatja a torrent trackereket és a Usenet indexelőket is. Teljes körű indexelőkezelést nyújt a Sonarr, Radarr, Lidarr és Readarr rendszerekhez, anélkül, hogy külön konfigurációra lenne szükség minden alkalmazásnál.';
+$L['PYLOAD']        = 'A pyLoad egy letöltéskezelő a "Hoster" weboldalakhoz, videóoldalakhoz és HTTP/FTP linkekhez. A támogatott oldalak listája <a href="https://nullrefer.ir/?https://github.com/pyload/pyload/wiki/Supported-Hoster" rel="noopener nofollow" target="_blank">itt</a> található.';
+$L['QBITTORRENT']   = 'A qBittorrent egy ingyenes és megbízható P2P BitTorrent kliens. Egy fejlett, többplatformos BitTorrent kliens szép Qt felülettel, valamint egy webes vezérlőfelülettel és beépített keresőmotorral.';
+$L['QUASSEL']       = 'A Quassel IRC egy modern, többplatformos, elosztott IRC kliens, amely a Qt4 keretrendszerre épül.';
+$L['QUOTAS']        = 'Ez a Linux-funkció lehetővé teszi a rendszergazda számára, hogy meghatározza a maximálisan használható lemezterületet egy felhasználó vagy csoport számára.';
+$L['RADARR']        = 'A Radarr a Sonarr független ága, amelyet filmek automatikus letöltésére dolgoztak át Usenet és BitTorrent használatával.<br>A projektet más Usenet/BitTorrent alapú filmletöltők, például a CouchPotato inspirálták.';
+$L['RADARR4K']      = 'A Radarr4K egy önálló Radarr-klón a 4K UHD profilokhoz. Lehetővé teszi több Radarr példány kezelését, miközben az UHD tartalmakat elkülöníti az általános tartalmaktól.';
+$L['RAPIDLEECH']    = 'A Rapid Leech egy ingyenes szerverátviteli szkript, amelyet különböző népszerű feltöltő/letöltő oldalakhoz, például uploaded.net, Rapidshare.com és több mint 120 más oldalhoz lehet használni.';
+$L['RCLONE']        = 'Az RClone egy parancssoros program, amely fájlokat és könyvtárakat szinkronizál különböző tárhelyszolgáltatók között és közöttük.';
+$L['READARR']       = 'A Readarr egy e-könyv-gyűjtemény-kezelő Usenet és BitTorrent felhasználók számára. Több RSS hírcsatornát figyel kedvenc szerzőidtől származó új könyvekért, és képes ezeket letölteni, rendezni és átnevezni kliensekkel és indexelőkkel való integrációval.';
+$L['REQUESTRR']     = 'A Requestrr egy Discord csevegőrobot, amely leegyszerűsíti a Sonarr/Radarr/Ombi szolgáltatások használatát csevegésen keresztül! A Discord szerver összes felhasználója kérhet új tartalmakat, és értesítést kaphat, amikor azok elérhetővé válnak.';
+$L['RTORRENT']      = 'Az rTorrent egy gyors és hatékony BitTorrent kliens, amely a libTorrent könyvtárral együtt fejlődik (nem összekeverendő a libtorrent-rasterbar könyvtárral). C++ nyelven íródott, és az ncurses programkönyvtárat használja, tehát szöveges felhasználói felületet alkalmaz.';
+$L['RUTORRENT']     = 'A ruTorrent az rtorrent népszerű BitTorrent kliens webes felülete. Főbb jellemzői: Könnyűsúlyú szerveroldali megoldás, így régi vagy alacsony teljesítményű szervereken, sőt, egyes SOHO routereken is telepíthető; bővíthető - számos bővítményt tartalmaz, és bárki készíthet sajátot is; alapértelmezetten a <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox témával</a> érkezik.';
+$L['SABNZBD']       = 'A SABnzbd egy többplatformos bináris Usenet letöltő. A háttérben fut, és leegyszerűsíti a fájlok letöltését, ellenőrzését és kicsomagolását az Usenetről. A SABnzbd NZB fájlokat használ (hasonlóan a .torrent fájlokhoz, de Usenethez), ahelyett, hogy közvetlenül böngészné az Usenetet.';
+$L['SEEDCROSS']     = 'A SeedCross egy webes alkalmazás a torrentek kereszt-seedeléséhez Deluge/qBittorrent/Transmission kliensekkel. Ez a <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a> forkja.';
+$L['SICKCHILL']     = 'Videófájl-kezelő tévésorozatokhoz. Figyeli kedvenc sorozataid új epizódjait, és amikor azok megjelennek, automatikusan letölti őket.';
+$L['SICKGEAR']      = 'A SickGear a Sick-Beard továbbfejlesztett változata. Automatizálja a sorozatnézést innovációval, bizonyított stabilitással és megbízhatósággal.';
+$L['SONARR']        = 'A Sonarr egy tévésorozat-kezelő eszköz, amely működik torrenttel és Usenettel egyaránt.';
+$L['SONARR4K']      = 'A Sonarr4K egy önálló Sonarr-klón a 4K UHD profilokhoz. Lehetővé teszi több Sonarr példány kezelését, miközben az UHD tartalmakat elkülöníti az általános tartalmaktól.';
+$L['SUBSONIC']      = 'A Subsonic egy webes médiaszerver. Java nyelven íródott, így bármely Java-t támogató operációs rendszeren futtatható. A Subsonic több klienst is képes egyidejűleg kiszolgálni, és bármilyen streamelhető médiaformátumot támogat (beleértve az MP3, AAC és Ogg formátumokat is).';
+$L['SYNCTHING']     = 'Nyílt forráskódú folyamatos fájlszinkronizálás BitTorrent alapon.';
+$L['TAUTULLI']      = 'A Tautulli egy Python-alapú webes alkalmazás a Plex Media Server figyelésére, elemzésére és értesítések küldésére.';
+$L['THELOUNGE']     = 'A TheLounge egy modern, önállóan hosztolható webes IRC kliens.';
+$L['TRANSMISSION']  = 'A Transmission könnyű, mégis erőteljes használatra készült. Az alapértelmezett beállítások "egyszerűen működnek", és csak néhány kattintás szükséges a fejlett funkciók, például figyelt könyvtárak, rossz partnerek tiltólistái vagy a webes felület beállításához. Az Ubuntu a Transmission-t választotta alapértelmezett BitTorrent kliensnek, főként az egyszerű tanulhatósága miatt.';
+$L['UNIFI']         = 'A UniFi® Controller egy vezeték nélküli hálózatkezelő szoftvermegoldás az Ubiquiti Networks™ cégtől. Lehetővé teszi több vezeték nélküli hálózat kezelését webes böngészőn keresztül.';
+$L['UNPACKERR']     = 'Letöltések kicsomagolása Radarr, Sonarr, Lidarr, Readarr számára – az importálás után a kicsomagolt fájlok törlésre kerülnek.';
+$L['WEBCONSOLE']    = 'A TTYD (más néven The QuickBox Web Console) egy teljes funkcionalitású terminál Xterm.js alapon, amely támogatja a CJK karaktereket és a beviteli módszereket (IME).';
+$L['WIREGUARD']     = 'A WireGuard® egy rendkívül egyszerű, mégis gyors és modern VPN, amely fejlett titkosítást alkalmaz. Célja, hogy gyorsabb, egyszerűbb, karcsúbb és hasznosabb legyen, mint az IPsec, elkerülve annak bonyodalmait. Jobb teljesítményt nyújt, mint az OpenVPN. Általános célú VPN-ként készült, működik beágyazott eszközökön és szuperszámítógépeken is.';
+$L['X2GO']          = 'Az X2Go egy nyílt forráskódú távoli asztali szoftver Linuxhoz, amely az NX technológiai protokollt használja.';
+$L['XTEVE']         = 'Az XTeVe egy alkalmazás, amely TV-tunert szimulál, és lehetővé teszi IPTV csatornák megjelenítését Plex vagy Emby segítségével. Az XTeVe több M3U és XMLTV fájlt is egyesíteni tud, és továbbítja azokat a kiválasztott médiaközpontba.';
+$L['ZNC']           = 'A ZNC egy IRC hálózati ugró (BNC). Le tudja választani az ügyfelet a tényleges IRC szerverről, valamint kiválasztott csatornákról is.';
 
 // Create an array of the app names for the uninstall/reinstall translation
 $APPS = [
@@ -515,6 +542,7 @@ $APPS = [
 	'UNIFI'         => 'UniFi',
 	'UNPACKERR'     => 'Unpackerr',
 	'WEBCONSOLE'    => 'Web Console',
+	'WIREGUARD'     => 'WireGuard',
 	'X2GO'          => 'X2Go',
 	'XTEVE'         => 'XTeVe',
 	'ZNC'           => 'ZNC'
@@ -525,7 +553,7 @@ $APPS = [
  ************************************/
 // Loop through the array and create the uninstall translation
 foreach ($APPS as $key => $value) {
-	$L[$key . '_UNINSTALL'] = 'Arra készül, hogy eltávolítsa a <span style="color:#01cea2">' . $value . '</span> fájlt a rendszeréről.<br/><br/>Ez teljesen eltávolítja az összes konfigurációt és beállítást... ez a művelet visszafordíthatatlan.<br/><br/>Újratelepítheti <span style="color:#01cea2">' . $value . '</span> bármikor, de a beállítások visszaállnak az alapértelmezettre.';
+	$L[$key . '_UNINSTALL'] = 'You are about to uninstall <span style="color:#01cea2">' . $value . '</span> from your system.<br/><br/>This will completely remove all of your configurations and settings... this action is irreversible.<br/><br/>You may reinstall <span style="color:#01cea2">' . $value . '</span> at any time, however, your settings will be reset to default.';
 }
 
 /* **********************************
@@ -533,7 +561,7 @@ foreach ($APPS as $key => $value) {
  ************************************/
 // Loop through the array and create the reinstall translation
 foreach ($APPS as $key => $value) {
-	$L[$key . '_REINSTALL'] = 'A <span style="color:#01cea2">' . $value . '</span> újratelepítésére készül.<br/><br/>Ez teljesen eltávolítja/visszaállítja az összes jelenlegi konfigurációt, fájlt és beállítást... ez a művelet visszafordíthatatlan.';
+	$L[$key . '_REINSTALL'] = 'You are about to reinstall <span style="color:#01cea2">' . $value . '</span>.<br/><br/>This will completely remove/reset all of your current configurations, files and settings... this action is irreversible.';
 }
 
 /* **********************************
@@ -614,9 +642,16 @@ $L['KAVITA_REINSTALL_TITLE'] = 'Kavita Reinstall';
 $L['KAVITA_INSTALL_MESSAGE'] = 'You have the option to specify a custom directory path for your Kavita library. If the chosen path doesn\'t currently exist, it will be automatically generated for you.<br>Alternatively, if you prefer to use the default path, simply leave the field blank, and the library will be located at:<br><code>/home/' . $username . '/.config/Kavita/library</code>';
 
 /* **********************************
+ * mylar3 install/reinstall modal
+ ************************************/
+$L['MYLAR3_INSTALL_TITLE']   = 'Mylar3 Install';
+$L['MYLAR3_REINSTALL_TITLE'] = 'Mylar3 Reinstall';
+$L['MYLAR3_INSTALL_MESSAGE'] = 'You have the option to specify a custom path for your Mylar3 Comics directory. If the chosen path doesn\'t currently exist, it will be automatically generated for you.<br>Alternatively, if you prefer to use the default path, simply leave the field blank, and the directory will be located at:<br><code>/home/' . $username . '/Media/Comics</code>';
+
+/* **********************************
  * plex install/reinstall modal
  ************************************/
-$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">To claim your Plex Media Server you must already have an account and signed in to obtain the claim code from: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--qb-color-37);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--qb-color-2)"><strong style="color:var(--qb-color-37)">NOTE:</strong> It is advised to use the "Copy to Clipboard" button from the claim code screen to ensure proper insertion as the claim code is case-sensitive.</div>';
+$L['PLEX_CLAIM_MESSAGE']     = '<p style="font-size:12px">To claim your Plex Media Server you must already have an account and signed in to obtain the claim code from: <a href="https://www.plex.tv/claim/" rel="noopener nofollow" target="_blank" style="color:var(--qb-color-37);"><strong>https://www.plex.tv/claim/</strong></a></p><div class="alert alert-light-info fade show border-0 mb-2 mt-0" role="alert" style="font-size:12px;color:var(--qb-color-2)"><strong style="color:var(--qb-color-37)">NOTE:</strong> It is advised to use the \'Copy to Clipboard\' button from the claim code screen to ensure proper insertion as the claim code is case-sensitive.</div>';
 $L['PLEX_CLAIM_TITLE']       = 'Plex Media Server Install';
 $L['PLEX_CLAIM_TOKEN']       = 'Plex Claim Code';
 $L['PLEX_DATA_PATH']         = 'Use custom path for data directory?';
@@ -630,6 +665,36 @@ $L['PLEX_DOMAIN_TOOLTIP']    = 'If you already have a domain and the DNS records
 $L['RUTORRENT_PLUGIN_CONTROL_TITLE'] = 'ruTorrent Plugin Control';
 $L['AUTHOR']                         = 'Author';
 $L['HELP_URL']                       = 'Documentation';
+
+/* **********************************
+ * wireguard install/reinstall modal
+ ************************************/
+$L['WIREGUARD_INSTALL_TITLE']                 = 'WireGuard Install';
+$L['WIREGUARD_REINSTALL_TITLE']               = 'WireGuard Reinstall';
+$L['WIREGUARD_CLIENT_OR_SERVER']              = 'WireGuard Client or Server?';
+$L['WIREGUARD_CLIENT_OR_SERVER_TOOLTIP']      = 'Selecting « Server » will install WireGuard as a server. Selecting « Client » will install WireGuard as a client. Server is used to host a VPN server, while Client is used to connect to a VPN server. Selecting « Client » will require a provided configuration file from your VPN provider and will route all traffic through the VPN.';
+$L['CLIENT']                                  = 'Client';
+$L['SERVER']                                  = 'Server';
+$L['WIREGUARD_CONFIG_TIPS']                   = 'Please upload your WireGuard server or client configuration file in <code>.conf</code> format.<br><ul><li>For a WireGuard server, the file should contain server configuration details.</li><li>For a WireGuard client, the file should contain client configuration details.</li></ul>These files will be stored in <code>/srv/quickbox/db/wireguard/</code>.<br><br>Most VPN providers supply a configuration file for WireGuard. If you are using NordVPN, which does not provide a configuration file directly, you can generate one using the included NordVPN configuration generator.<br>For more information on generating a NordVPN configuration file, use the command <code>nvpn_conf_gen -h</code> in the CLI.';
+$L['WIREGUARD_INSTALL_CONFIG']                = 'Upload WireGuard configuration file';
+$L['WIREGUARD_INSTALL_PORT_LABEL']            = 'Listen Port';
+$L['WIREGUARD_INSTALL_PORT_PH']               = '51820';
+$L['WIREGUARD_INSTALL_CLIENT_COUNT_LABEL']    = 'Number of Clients';
+$L['WIREGUARD_INSTALL_CLIENT_COUNT_PH']       = '1';
+$L['WIREGUARD_INSTALL_CIDR_LABEL']            = 'CIDR';
+$L['WIREGUARD_INSTALL_CIDR_PH']               = '10.8.0.1/24';
+$L['WIREGUARD_INSTALL_ALLOWED_ADDRESS_LABEL'] = 'Client Allowed IPs';
+$L['WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH']    = '0.0.0.0/0,::/0';
+$L['WIREGUARD_INSTALL_ENDPOINT_LABEL']        = 'Endpoint (Optional)';
+$L['WIREGUARD_INSTALL_ENDPOINT_PH']           = 'myserver.dyndns.org:51820';
+$L['WIREGUARD_INSTALL_DNS_LABEL']             = 'DNS (Optional)';
+$L['WIREGUARD_INSTALL_DNS_PH']                = '1.1.1.1';
+$L['WIREGUARD_INSTALL_POSTUP_RULE_LABEL']     = 'Post-Up rule';
+$L['WIREGUARD_INSTALL_POSTUP_RULE_PH']        = 'iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ' . $network_interface . ' -j MASQUERADE';
+$L['WIREGUARD_INSTALL_POSTDOWN_RULE_LABEL']   = 'Post-Down rule';
+$L['WIREGUARD_INSTALL_POSTDOWN_RULE_PH']      = 'iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ' . $network_interface . ' -j MASQUERADE';
+$L['PROCESSING_COMPLETE_INSTALLER']           = 'Processing complete';
+$L['TAP_TO_UNDO_INSTALLER']                   = 'Click to undo';
 
 /* **********************************
  * #3.2.5 - service control
@@ -899,6 +964,7 @@ $L['WITH_PASSWORD']       = 'with password';
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
 $L['ACCOUNT_PAGE']                      = 'Account Page';
+$L['ACTION_NOT_EXECUTED']               = 'Action not executed.';
 $L['ACTIVATION_IP']                     = 'Activation IP';
 $L['ACTIVATION_NEED_D_DO']              = 'Do it here!';
 $L['ACTIVATION_NEED_D']                 = 'Need to de-activate?';
@@ -914,13 +980,15 @@ $L['API_PLACE']                         = 'Enter API Key here...';
 $L['API_SETTINGS']                      = 'API Control';
 $L['API_STATUS']                        = 'API Status';
 $L['API']                               = 'API';
-$L['BANDWIDTH_RESET_STATS']             = 'Sávszélesség-statisztika visszaállítása';
-$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Ez visszaállítja az összes gyűjtött sávszélesség-statisztikát. Ez a művelet visszafordíthatatlan, és hatékonyan eltávolítja a jelenlegi vnStat adatbázist, és újat hoz létre. Az új adatok 5 percen belül megkezdik az adatbázis újratelepítését.<br/><br/>A jelenlegi vnStat adatbázis biztonsági másolata a következő címen kerül tárolásra: <code>/var/lib/vnstat/vnstat.[date].db< /kód>';
-$L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Kattintson az adatbázis aktuális méretének frissítéséhez. Ez oldalbetöltéskor történik, de hasznos lehet a méret tükrözéséhez, ha nagyobb adatbázist állít vissza.<br/><br/><em>Megjegyzés: Ez nincs hatással az adatbázisban tárolt adatokra. Csak a közzétett adatbázis méretét frissíti.</em>';
-$L['BANDWIDTH_START_DATE']              = 'A sávszélesség kezdő dátuma';
-$L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Válassza ki a sávszélesség-figyelés kezdő dátumát. A kiválasztott nap havonta ismétlődik, ideális bizonyos dátumoktól, például az internetszolgáltatók alaphelyzetbe állításától vagy a szerverbeállításoktól kezdődő nyomon követéshez.<br/>Ez a rendszer irányítópulton megjelenő összegekre vonatkozik.<br/><br/><em>Megjegyzés: A meglévő adatok érintetlenül marad.</em>';
-$L['CALCULATING']                       = 'Számítás...';
+$L['BANDWIDTH_RESET_STATS']             = 'Reset Bandwidth Stats';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'This will reset all bandwidth statistics collected. This action is irreversible and will effectively remove the current vnStat database and create a new one. New data will begin to repopulate the database within 5 minutes.<br/><br/>A backup of the current vnStat database will be stored at: <code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/vnstat.db</code>';
+$L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Click to refresh the current database size. This is done on page load, but is useful for reflecting the size if resetting a larger database.<br/><br/><em>Note: This does not affect the data stored in the database. It only updates the posted database size.</em>';
+$L['BANDWIDTH_START_DATE']              = 'Bandwidth Start Date';
+$L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Select the start date for bandwidth monitoring. The chosen day will repeat monthly, ideal for tracking from specific dates like ISP resets or server setups.<br/>This applies to totals shown on the System Dashboard.<br/><br/><em>Note: Existing data will remain unaffected.</em>';
+$L['CALCULATING']                       = 'Calculating...';
 $L['CONF_SETTINGS']                     = 'Configuration Settings';
+$L['CONFIRM_RESET_BANDWIDTH_TITLE']     = 'Confirm Bandwidth Reset';
+$L['CONFIRM_RESET_BANDWIDTH_SUBTEXT']   = 'Resetting the bandwidth statistics will delete the current vnStat database and create a new one.<br/><div class=\'mt-3 p-3\' style=\'text-align:left;background:var(--qb-color-26);border-radius:6px;\'><p style=\'font-size:13px;color:var(--qb-color-5)\'>A backup of the current database will be created with the following details:</p><ul class=\'mb-0\'><li class=\'mb-2\'>Directory:<br/><code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/</code></li><li>Filename:<br/><code>vnstat.db</code></li></ul></div><br/>Are you sure you want to proceed?';
 $L['DASH_URL_SETTINGS']                 = 'Dashboard URL Settings';
 $L['DEFAULT_PAGE']                      = 'Landing Page';
 $L['DISK_MOUNT']                        = 'Disk Mount';
@@ -928,14 +996,17 @@ $L['EDIT_GEN_SETTINGS']                 = 'Edit General Site Settings';
 $L['EMAIL_FROM_ADDR']                   = 'Site E-mail Address';
 $L['EMAIL_FROM_NAME']                   = 'E-mail From Name';
 $L['EMAIL_SETTINGS']                    = 'Email Settings';
-$L['ERROR']                             = 'Hiba';
-$L['LOADING']                           = 'Betöltés...';
+$L['ERROR']                             = 'Error';
+$L['LOADING']                           = 'Loading...';
 $L['LOGIN_PAGE']                        = 'Login Page';
 $L['NET_ADAPTER']                       = 'Network Interface';
 $L['PHP_DATE_FORMAT']                   = 'PHP Date Format';
 $L['PHP_FORMAT_SETTINGS']               = 'PHP Format Settings';
 $L['PHP_TIME_ZONE']                     = 'PHP Time Zone';
-$L['RESET_BANDWIDTH_STATS']             = 'Sávszélesség-statisztika visszaállítása';
+$L['RESET_BANDWIDTH_CANCEL']            = 'No, Cancel';
+$L['RESET_BANDWIDTH_CANCELLED']         = 'Bandwidth reset cancelled';
+$L['RESET_BANDWIDTH_CONFIRM']           = 'Yes, Reset';
+$L['RESET_BANDWIDTH_STATS']             = 'Reset Bandwidth Stats';
 $L['SITE_DESC']                         = 'Site Description';
 $L['SITE_LOGO_COLLAPSED']               = 'Collapsed Logo';
 $L['SITE_LOGO_FULL']                    = 'Full Logo';
@@ -949,11 +1020,11 @@ $L['SITE_NAME_TOOLTIP']                 = 'Site name should be under 40 characte
 $L['SITE_DESC_TOOLTIP']                 = 'Site description should be under 120 characters and alphanumeric only with no special characters (spaces are acceptable)';
 $L['EMAIL_FROM_NAME_TOOLTIP']           = 'From Name should be under 60 characters and alphanumeric only with no special characters (spaces are acceptable)';
 $L['SITE_ROOT_TOOLTIP']                 = 'Enter your server IP or valid domain w/o trailing forward slash. example: https://192.168.0.1 (or) https://somedomain.com';
-$L['UNEXPECTED_ERROR']                  = 'Váratlan hiba történt.';
-$L['UNKNOWN_ERROR']                     = 'Ismeretlen hiba történt.';
-$L['VNSTAT_DATABASE_DELETE_SUCCESSFUL'] = 'vnStat adatbázis sikeresen törölve.';
-$L['VNSTAT_DATABASE_DELETE_FAILED']     = 'A vnStat adatbázis törlése nem sikerült.';
-$L['VNSTAT_DATABASE_DELETE_INVALID']    = 'Érvénytelen kérés.';
+$L['UNEXPECTED_ERROR']                  = 'An unexpected error occurred.';
+$L['UNKNOWN_ERROR']                     = 'An unknown error occurred.';
+$L['VNSTAT_DATABASE_DELETE_SUCCESSFUL'] = 'vnStat database deleted successfully.';
+$L['VNSTAT_DATABASE_DELETE_FAILED']     = 'Failed to delete vnStat database.';
+$L['VNSTAT_DATABASE_DELETE_INVALID']    = 'Invalid request.';
 
 /* **********************************
  * #4.2.2 - EMAIL SETTINGS
@@ -984,10 +1055,10 @@ $L['ALLOW_MULTI_LOGINS']                   = 'Multiple Logins';
 $L['ALLOW_MULTI_LOGINS_DESC']              = 'This option allows for simaltenous logins from multiple devices. If disabled, the user will be logged out of all other devices when they login from a new device.';
 $L['ALLOW_CONFIG_EDITING']                 = 'Config Editors on Dashboard';
 $L['ALLOW_CONFIG_EDITING_DESC']            = 'This option allows for the editing of the config files from the dashboard. If disabled, the option to view/edit configs will be hidden.';
-$L['ALLOW_MOUNT_INFO']                     = 'Megfigyelő és panel hozzáadása';
-$L['ALLOW_MOUNT_INFO_DESC']                = 'Ez az opció lehetővé teszi a felhasználók számára, hogy megtekintsenek és hozzáadjanak könyvtárakat az irányítópultról. Ha le van tiltva, a könyvtárak megtekintésének és hozzáadásának lehetősége rejtve lesz.';
-$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL']      = 'Alkalmazás automatikus biztonsági mentése telepítéskor';
-$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL_DESC'] = 'Ez az opció lehetővé teszi az alkalmazás automatikus teljes biztonsági mentését a telepítés után. Ha le van tiltva, az alkalmazásokról nem készül biztonsági mentés a telepítéskor. <span style="color:var(--qb-color-41);">Az alkalmazás konfigurációs fájljainak biztonsági mentése ettől a beállítástól függetlenül történik.</span><br>A biztonsági másolatok a következő helyen tárolódnak:<br><code>/home/[FELHASZNÁLÓNÉV]/.QuickBox/software/</code>';
+$L['ALLOW_MOUNT_INFO']                     = 'Mount Monitoring and Adding Panel';
+$L['ALLOW_MOUNT_INFO_DESC']                = 'This option allows users to view and add directories for monitoring from the dashboard. If disabled, the ability to view and add directories will be hidden.';
+$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL']      = 'Auto-Backup App on Install';
+$L['ALLOW_AUTOBACKUP_APP_ON_INSTALL_DESC'] = 'This option allows for the automatic full backup of the application when it is installed. If disabled, applications will not be backed up when installed. <span style="color:var(--qb-color-41);">Application configuration files will be backed up regardless of this setting.</span><br>Backups are stored at:<br><code>/home/[USERNAME]/.QuickBox/software/</code>';
 $L['BY_ADMIN']                             = 'By Admin (Set below..)';
 $L['BY_USER']                              = 'By User (See User Admin pages)';
 $L['CHANGE_USER_SETTINGS']                 = 'Change global settings for user accounts.';
@@ -1078,7 +1149,7 @@ $L['EXPIRY']                = 'Expiry';
 $L['HAS_USED']              = 'has used';
 $L['IP_ADDRESS']            = 'IP Address';
 $L['LAST_IP_ADDRESS']       = 'Last IP Address';
-$L['LAST_LOGIN']            = 'Last Login:';
+$L['LAST_LOGIN']            = 'Last Login';
 $L['LAST']                  = 'Last';
 $L['MEMBER_STATUS']         = 'Member Status';
 $L['MEMBER_GROUP']          = 'Member Group';
@@ -1100,34 +1171,34 @@ $L['USERS_SESSIONS']        = 'User Sessions';
 /* **********************************
  * #4.3.2.1 - admin user edit
  ************************************/
-$L['ACTIONS']                 = 'Műveletek';
-$L['ACTIVE_SESSION']          = 'Aktív munkamenet';
-$L['APPLICATION']             = 'Szoftver';
-$L['BANNED_USER']             = 'Tiltott felhasználó';
-$L['CURRENT_FULL_PATH']       = 'Jelenlegi teljes elérési út';
-$L['CURRENT_GROUPS']          = 'Jelenlegi csoportok';
-$L['CURRENT_STATUS']          = 'Jelenlegi állapot';
-$L['EDIT_DEFAULT_GROUP']      = 'Alapértelmezett csoport';
-$L['EDIT_DEFAULT_GROUP_INFO'] = 'Ha ezt a lehetőséget választja, akkor ez lesz az alapértelmezett csoport. Ez akkor hasznos, ha CLI-vel hozunk létre felhasználókat, és egy egyedi csoportot szeretnének alapértelmezettként hozzárendelni.';
-$L['EDIT_GROUP_MEMBERSHIP']   = 'A felhasználó csoporttagságának szerkesztése';
-$L['EU_PATH']                 = 'Elérési út';
-$L['GENERAL_INFO']            = 'Általános információ';
-$L['GROUP_MEMBERSHIP_HELP']   = 'Kattintson az alábbi szövegmezőre a felhasználó további csoportokhoz való hozzáadásához...';
-$L['GROUP_MEMBERSHIP']        = 'Csoporttagság';
-$L['HOMEPAGE']                = 'Kezdőlap';
-$L['INSTRUCTIONS']            = 'Utasítások';
-$L['LAST_ACTIVE_IP']          = 'Utolsó aktív IP';
-$L['LAST_ACTIVE']             = 'Utolsó aktív';
-$L['LAST_UPDATE']             = 'Utolsó frissítés';
-$L['PERSISENT']               = 'Állandó';
-$L['REGISTERED_IP']           = 'Regisztrált IP';
-$L['SESSION_EXPIRY']          = 'Munkamenet lejárta';
-$L['SELECT_GROUP']            = 'Csoport kiválasztása';
-$L['STATUS']                  = 'Állapot';
-$L['UNBANNED_USER']           = 'Tiltott felhasználó';
-$L['UNIQUE_USER_HP_SETTINGS'] = 'Egyedi felhasználói kezdőlap - Beállítások';
-$L['USER_EDIT1']              = 'Felhasználói szerkesztés :';
-$L['USER_EDIT2']              = 'Felhasználói szerkesztés';
+$L['ACTIONS']                 = 'Actions';
+$L['ACTIVE_SESSION']          = 'Active Session';
+$L['APPLICATION']             = 'Software';
+$L['BANNED_USER']             = 'Banned user';
+$L['CURRENT_FULL_PATH']       = 'Current Full Path';
+$L['CURRENT_GROUPS']          = 'Current Groups';
+$L['CURRENT_STATUS']          = 'Current Status';
+$L['EDIT_DEFAULT_GROUP']      = 'Default Group';
+$L['EDIT_DEFAULT_GROUP_INFO'] = 'This option, when selected, will set this as the default group. This is useful when creating users by way of CLI and are wanting to have a custom made group as the default assigned.';
+$L['EDIT_GROUP_MEMBERSHIP']   = 'Edit the User\'s Group Membership';
+$L['EU_PATH']                 = 'Path';
+$L['GENERAL_INFO']            = 'General Info';
+$L['GROUP_MEMBERSHIP_HELP']   = 'Click the text box below to add the user to more groups...';
+$L['GROUP_MEMBERSHIP']        = 'Group Membership';
+$L['HOMEPAGE']                = 'Home Page';
+$L['INSTRUCTIONS']            = 'Instructions';
+$L['LAST_ACTIVE_IP']          = 'Last Active IP';
+$L['LAST_ACTIVE']             = 'Last Active';
+$L['LAST_UPDATE']             = 'Last Update';
+$L['PERSISTENT']              = 'Persistent';
+$L['REGISTERED_IP']           = 'Registered IP';
+$L['SESSION_EXPIRY']          = 'Session Expiry';
+$L['STATUS']                  = 'Status';
+$L['UNBANNED_USER']           = 'Unbanned user';
+$L['UNIQUE_USER_HP_SETTINGS'] = 'Unique User Home Page - Settings';
+$L['USER_EDIT1']              = 'User Edit :';
+$L['USER_EDIT2']              = 'User Edit';
+$L['SELECT_GROUP']            = 'Select Group';
 
 /* **********************************
  * #4.3.2.2 - admin announce
@@ -1232,7 +1303,7 @@ Here\'s an example using Bazarr4K:<br>
 Please take note of the following important information regarding QuickBox\'s software API output:
 <ul>
 <li>When accessing software packages through QuickBox, you will consistently find the \'qb_package_name\' attribute. This attribute is marked and used by the <code>qb</code> naming convention.</li>
-<li>Additionally, each API output includes the \'qb_options\' entry, which provides valuable options for customization. One of these options is the \'4K\' installation flag, denoted as <code>--4k/code>.</li>
+<li>Additionally, each API output includes the \'qb_options\' entry, which provides valuable options for customization. One of these options is the \'4K\' installation flag, denoted as <code>--4k</code>.</li>
 </ul><br/>
 For instance, if you intend to install \'Bazarr\' with 4K support, you should use the following command:<br/>
 <pre class="mb-0"><code class="language-bash">qb install bazarr --4k -u [USERNAME]</code></pre><br/>
@@ -1251,7 +1322,7 @@ $L['SOFT_CONTROL_ACTION_STOP_NOTICE']    = 'Where the action=stop...';
  ************************************/
 $L['LETSENCRYPT_DOMAIN']         = 'Let\'s Encrypt Domain';
 $L['SSL_CONTROL']                = 'SSL Control';
-$L['ABOUT_SSL_CONTROL']          = 'This feature enables you to easily generate SSL certificates for the supported applications you have installed. By selecting "Yes" and entering your domain, you will seamlessly set up the Nginx reverse proxy along with the SSL certificate.';
+$L['ABOUT_SSL_CONTROL']          = 'This feature enables you to easily generate SSL certificates for the supported applications you have installed. By selecting \'Yes\' and entering your domain, you will seamlessly set up the Nginx reverse proxy along with the SSL certificate.';
 $L['STAGE_DASHBOARD_SSL']        = 'Stage SSL for the Dashboard?';
 $L['DASHBOARD_SSL_TOOLTIP']      = 'To secure your QuickBox Dashboard with an SSL certificate, simply select \'Yes\'. This action will not only configure the SSL certificate but also establish the necessary NGinx settings and links, facilitating secure access to your dashboard via your domain.';
 $L['STAGE_OWNED_DOMAIN_SSL']     = 'Stage SSL for an owned domain?';
@@ -1271,16 +1342,60 @@ $L['PLEX_SSL_TOOLTIP']           = 'To secure your Plex installation with an SSL
 $L['DOMAIN']                     = 'Domain';
 $L['SSL_ALREADY_INSTALLED']      = 'Please be aware that there is already an SSL certificate installed for this option. Reinstalling the certificate by entering a new domain below will reset the current NGinx reverse configuration, remove the previous certificate, and reset the currently set link access.';
 $L['SSL_SUBMIT']                 = 'Install SSL Certificate';
+$L['SSL_CERTIFICATE_STATUS']     = 'SSL Certificate Status';
 $L['SSL_STATUS_MONITOR_TOOLTIP'] = 'Monitor the status of your existing SSL certificates with the capability to perform two key actions: deletion or force renewal. For certificates associated with supported applications such as Emby, Jellyfin, Jellyseerr, Komga, Overseerr, and Plex, deleting a certificate will also trigger the removal and reconfiguration of the Nginx reverse proxy for the corresponding domain.<br><br>You can seamlessly delete a certificate using the options below and subsequently select your desired application above to initiate the installation of a new subdomain and certificate. This streamlined process ensures the utmost flexibility and control over your SSL certificate management.';
 $L['CERTS_STORED_AT']            = 'Certificates monitored are stored at';
+$L['CERT_ACTIVE']                = 'Expires on:';
 $L['CERT_EXPIRES']               = 'Expires on:';
+$L['CERT_EXPIRED']               = 'Expired';
 $L['CERT_RENEW']                 = 'Renew Certificate';
 $L['CERT_DELETE']                = 'Delete SSL Certificate and any additional configurations. This action is irreversible.';
 $L['CERT_DELETE_CONFIRM']        = 'Are you sure you want to delete this certificate?';
 $L['NO_CERTS_INSTALLED']         = 'There are no SSL certificates installed and/or monitored at this time.';
 
 /* **********************************
- * #4.4.4 - TROUBLESHOOTING
+ * #4.4.4 - VPN CONTROL
+ ************************************/
+$L['ABORT']                            = 'Abort';
+$L['ACTIVE']                           = 'Active';
+$L['ADD_PEER']                         = 'Add Peer Configuration';
+$L['CITY']                             = 'City';
+$L['COUNTRY']                          = 'Country';
+$L['CURRENT_IP']                       = 'Server IP';
+$L['CURRENT_PEER_LIST']                = 'Current Peer List';
+$L['DATE_ADDED']                       = 'Date Added';
+$L['DELETE_PEER']                      = 'Delete peer configuration file?';
+$L['DRAG_DROP_FILES']                  = 'Drag &amp; Drop your peer config files or <span class="filepond--label-action">Click to Browse</span>';
+$L['HOST']                             = 'Hostname';
+$L['LOCAL_HOSTED']                     = 'Private IP';
+$L['ORGANIZATION']                     = 'Organization';
+$L['PEER_CONFIG_NAME']                 = 'Name';
+$L['PEER_INFO']                        = 'Peer Information';
+$L['PEER_PING']                        = 'Ping';
+$L['PROCESSING']                       = 'Processing...';
+$L['PROCESSING_ABORTED']               = 'Processing cancelled. Please try again.';
+$L['PROCESSING_COMPLETE']              = 'Processing Completed.';
+$L['PROCESSING_ERROR']                 = 'Processing Error. Please try again.';
+$L['PROCESSING_ERROR_EXTENSION']       = '<span style="font-weight:400">Only peer configuration files with the <span style="font-weight:900" class="text-warning">.conf</span> extension are allowed.</span>';
+$L['PROCESSING_REVERT_ERROR']          = 'Error during revert. Please try again.';
+$L['REMOVE']                           = 'Remove';
+$L['RETRY']                            = 'Retry';
+$L['REVERT']                           = 'Revert';
+$L['REGION']                           = 'Region';
+$L['SERVER_CONFIG']                    = 'Server Configuration';
+$L['TAP_TO_CANCEL']                    = 'Tap to Cancel';
+$L['TAP_TO_RETRY']                     = 'Tap to Retry';
+$L['TAP_TO_UNDO']                      = 'Refreshing page...';
+$L['UNDO']                             = 'Undo';
+$L['VPN_CONTROL']                      = 'VPN Control';
+$L['WAITING_FOR_SIZE']                 = 'Waiting for file size...';
+$L['WG_PRIVATE_KEY']                   = 'Private Key';
+$L['WG_PUBLIC_KEY']                    = 'Public Key';
+$L['WG_SERVER_INFO']                   = 'Current Connection Information';
+$L['WIREGUARD_CONFIG_ACTIVATION_TIPS'] = 'To activate a WireGuard configuration, please select your desired VPN configuration from the table below. To deactivate the currently active configuration, simply uncheck the active checkbox or choose a different configuration. This will automatically restart the WireGuard service, and the \'Current VPN Connection Information\' table will update with the relevant details.';
+
+/* **********************************
+ * #4.4.5 - TROUBLESHOOTING
  ************************************/
 $L['SERVICE']                = 'Service';
 $L['APP_SELECT']             = 'Select Software';
@@ -1301,61 +1416,67 @@ $L['TROUBLESHOOTING']        = 'Troubleshooting';
 $L['WEB_SERVER']             = 'Webserver';
 
 /* **********************************
- * #4.4.5 - SYSTEM LOGS
+ * #4.4.6 - SYSTEM LOGS
  ************************************/
-$L['LOGS']                         = 'Logs';
-$L['NO_LOGS']                      = 'No logs found';
-$L['NO_LOGS_MESSAGE']              = 'At present, there are no log records available for viewing. Log entries are generated when applications send their logging information to the system\'s syslog. If you are in search of a particular log, we recommend consulting the documentation provided by the respective application for further guidance. QuickBox diligently endeavors to centralize various applications and their logged data; however, it depends on the individual applications to transmit their logging information to the syslog.';
-$L['USER_ACTION_LOGS']             = 'User Action Logs';
-$L['VIEW_USER_ACTION_LOGS']        = 'View User Action Log';
-$L['ABOUT_USER_ACTION_LOGS']       = 'The logs in this context pertain to user-related tasks and events initiated through the QuickBox interface.';
-$L['SOFTWARE_ACTION_LOGS']         = 'Software Action Logs';
-$L['VIEW_SOFTWARE_ACTION_LOGS']    = 'View Software Action Log';
-$L['ABOUT_SOFTWARE_ACTION_LOGS']   = 'These logs are designed to provide a record of actions related to software, including installations, removals, updates, and other significant events.';
-$L['SYSTEM_ACTION_LOGS']           = 'System Action Logs';
-$L['VIEW_SYSTEM_ACTION_LOGS']      = 'View System Action Log';
-$L['ABOUT_SYSTEM_ACTION_LOGS']     = 'These logs are tailored to capture system-level activities and actions initiated through the <code>qb</code> command line tool.';
-$L['UI_ACTION_LOGS']               = 'UI Action Logs';
-$L['VIEW_UI_ACTION_LOGS']          = 'View UI Action Log';
-$L['ABOUT_UI_ACTION_LOGS']         = 'These logs are derived from the system\'s syslog and serve as a consolidated record of all commands and actions initiated through the QuickBox Dashboard\'s user interface.';
-$L['USER_APPLICATION_LOGS']        = 'User Application Logs';
-$L['SYSTEM_LOG_SUMMARY']           = 'System Log Summary';
-$L['SYSTEM_LOG_SUMMARY_TOOLTIP']   = 'This summary and all additional logs are generated under three conditions:<br><ol><li><strong>Cron:</strong> Logs are automatically updated with the execution of a cron task every 15 minutes. This initiates the <code>qb_log_miner</code> binary that aggregates log entries from the system syslog.</li><li><strong>Manually Generate:</strong> You can generate it from the \'System > Troubleshooting > System Log\' section by clicking the \'(Generate)\' button.</li><li><strong>Command Line:</strong> It can also be generated by running the command <code>qb generate log</code>.</li></ol>You can access and download this summary log file in two ways:<br><ol><li><strong>Web Interface:</strong> Go to \'System > Troubleshooting > System Log (Download)\' within the user interface.</li><li><strong>Server Directory:</strong> Find it on the server at: \'/srv/quickbox/logs/system_log\'.</li></ol>';
-$L['CLEAR_LOG']                    = 'Clear Log';
-$L['CLEAR_LOG_CONFIRM']            = 'Are you sure you want to delete these logs, this cannot be undone?';
-$L['ACCESS_LOGS']                  = 'Access Logs';
-$L['APP_LOGS']                     = 'Software Logs';
-$L['USER_LOGS']                    = 'User Logs';
-$L['DATE_TIME']                    = 'Date/Time';
-$L['EVENT']                        = 'Event';
-$L['LOG_MESSAGE']                  = 'Log Message';
-$L['LOGS_SUMMARY']                 = 'Logs Summary';
-$L['COMMAND']                      = 'Command';
-$L['COMMAND_SOFTWARE']             = 'Command/Software';
-$L['SOFTWARE']                     = 'Software';
-$L['DELETED_ALL_APP_LOGS']         = 'Deleted all software logs';
-$L['DELETED_ALL_APPLICATION_LOGS'] = 'Delete all application logs';
-$L['DELETED_ALL_SUMMARY_LOGS']     = 'Deleted all summary logs';
-$L['DELETED_ALL_SYSTEM_LOGS']      = 'Deleted all system logs';
-$L['DELETED_ALL_UI_LOGS']          = 'Deleted all UI logs';
-$L['DELETED_ALL_USER_LOGS']        = 'Deleted all user logs';
-$L['DELETED_APPLICATION_LOGS']     = 'Deleted application logs';
-$L['DELETED_SUMMARY_LOGS']         = 'Deleted summary logs';
-$L['DELETED_USER']                 = 'Deleted User';
-$L['DELETE_USER_LOGS']             = 'Delete User Logs';
-$L['QUICKBOX_VERSION_CHECK']       = 'Check for QuickBox updates';
-$L['QUOTA_CHECK']                  = 'Kvótabeállítás ellenőrzése';
-$L['SOFTWARE_VERSION_CHECK']       = 'Check for installed software updates';
-$L['SCHEDULED_TASK']               = 'Scheduled Task';
-$L['AUTO_PROCESS']                 = 'Auto Process';
+$L['ABOUT_SOFTWARE_ACTION_LOGS']       = 'These logs are designed to provide a record of actions related to software, including installations, removals, updates, and other significant events.';
+$L['ABOUT_SYSTEM_ACTION_LOGS']         = 'These logs are tailored to capture system-level activities and actions initiated through the <code>qb</code> command line tool.';
+$L['ABOUT_UI_ACTION_LOGS']             = 'These logs are derived from the system\'s syslog and serve as a consolidated record of all commands and actions initiated through the QuickBox Dashboard\'s user interface.';
+$L['ABOUT_USER_ACTION_LOGS']           = 'The logs in this context pertain to user-related tasks and events initiated through the QuickBox interface.';
+$L['ACCESS_LOGS']                      = 'Access Logs';
+$L['APP_LOGS']                         = 'Software Logs';
+$L['AUTO_PROCESS']                     = 'Auto Process';
+$L['CLEAN_DASHBOARD_USER_ACTION_LOGS'] = 'Clean User Action Logs';
+$L['CLEAN_SYSTEM_ACTION_LOGS']         = 'Clean System Action Logs';
+$L['CLEAR_LOG']                        = 'Clear Log';
+$L['CLEAR_LOG_CONFIRM']                = 'Are you sure you want to delete these logs, this cannot be undone?';
+$L['COMMAND']                          = 'Command';
+$L['COMMAND_SOFTWARE']                 = 'Command/Software';
+$L['DATABASE_BACKUP']                  = 'Database Backup';
+$L['DATABASE_MAINTENANCE']             = 'Database Maintenance';
+$L['DATABASE_REPAIR']                  = 'Database Repair';
+$L['DATABASE_RESTORE']                 = 'Database Restore';
+$L['DATE_TIME']                        = 'Date/Time';
+$L['DELETED_ALL_APP_LOGS']             = 'Deleted all software logs';
+$L['DELETED_ALL_APPLICATION_LOGS']     = 'Delete all application logs';
+$L['DELETED_ALL_SUMMARY_LOGS']         = 'Deleted all summary logs';
+$L['DELETED_ALL_SYSTEM_LOGS']          = 'Deleted all system logs';
+$L['DELETED_ALL_UI_LOGS']              = 'Deleted all UI logs';
+$L['DELETED_ALL_USER_LOGS']            = 'Deleted all user logs';
+$L['DELETED_APPLICATION_LOGS']         = 'Deleted application logs';
+$L['DELETED_SUMMARY_LOGS']             = 'Deleted summary logs';
+$L['DELETED_USER']                     = 'Deleted User';
+$L['DELETE_USER_LOGS']                 = 'Delete User Logs';
+$L['EVENT']                            = 'Event';
+$L['LOG_MESSAGE']                      = 'Log Message';
+$L['LOGS']                             = 'Logs';
+$L['LOGS_SUMMARY']                     = 'Logs Summary';
+$L['NO_LOGS']                          = 'No logs found';
+$L['NO_LOGS_MESSAGE']                  = 'At present, there are no log records available for viewing. Log entries are generated when applications send their logging information to the system\'s syslog. If you are in search of a particular log, we recommend consulting the documentation provided by the respective application for further guidance. QuickBox diligently endeavors to centralize various applications and their logged data; however, it depends on the individual applications to transmit their logging information to the syslog.';
+$L['QUICKBOX_VERSION_CHECK']           = 'Check for QuickBox updates';
+$L['QUOTA_CHECK']                      = 'Quota set check';
+$L['SCHEDULED_TASK']                   = 'Scheduled Task';
+$L['SOFTWARE']                         = 'Software';
+$L['SOFTWARE_ACTION_LOGS']             = 'Software Action Logs';
+$L['SOFTWARE_VERSION_CHECK']           = 'Check for installed software updates';
+$L['SYSTEM_ACTION_LOGS']               = 'System Action Logs';
+$L['SYSTEM_LOG_SUMMARY']               = 'System Log Summary';
+$L['SYSTEM_LOG_SUMMARY_TOOLTIP']       = 'This summary and all additional logs are generated under three conditions:<br><ol><li><strong>Cron:</strong> Logs are automatically updated with the execution of a cron task every 15 minutes. This initiates the <code>qb_log_miner</code> binary that aggregates log entries from the system syslog.</li><li><strong>Manually Generate:</strong> You can generate it from the \'System > Troubleshooting > System Log\' section by clicking the \'(Generate)\' button.</li><li><strong>Command Line:</strong> It can also be generated by running the command <code>qb generate log</code>.</li></ol>You can access and download this summary log file in two ways:<br><ol><li><strong>Web Interface:</strong> Go to \'System > Troubleshooting > System Log (Download)\' within the user interface.</li><li><strong>Server Directory:</strong> Find it on the server at: \'/srv/quickbox/logs/system_log\'.</li></ol>';
+$L['UI_ACTION_LOGS']                   = 'UI Action Logs';
+$L['USER_ACTION_LOGS']                 = 'User Action Logs';
+$L['USER_APPLICATION_LOGS']            = 'User Application Logs';
+$L['USER_LOGS']                        = 'User Logs';
+$L['VIEW_SOFTWARE_ACTION_LOGS']        = 'View Software Action Log';
+$L['VIEW_SYSTEM_ACTION_LOGS']          = 'View System Action Log';
+$L['VIEW_UI_ACTION_LOGS']              = 'View UI Action Log';
+$L['VIEW_USER_ACTION_LOGS']            = 'View User Action Log';
 
 /* **********************************
- * #4.4.6 - HELP MANUAL
+ * #4.4.7 - HELP MANUAL
  ************************************/
 $L['QB_HELP'] = 'Help Manual';
 
 /* **********************************
- * #4.4.6.1 - description
+ * #4.4.7.1 - description
  ************************************/
 $L['DESCRIPTION_CONTENT'] = '<p>Welcome to the comprehensive graphical display of the <code>qb</code> manpage, designed to offer you a translated, simplified and efficient approach to accessing various information about QuickBox. This user-friendly interface aims to provide in-depth insights into the workings of QuickBox, a powerful and versatile tool for managing your server effortlessly.</p>
 <p>Inside this graphical display, you will find a detailed list of available applications ready for seamless installation, empowering you to customize your server setup according to your specific needs. Moreover, this resource presents a wealth of other essential commands for optimal utilization within the <code>qb</code> CLI environment, enabling you to navigate through your server tasks efficiently and effortlessly.</p>
@@ -1363,14 +1484,14 @@ $L['DESCRIPTION_CONTENT'] = '<p>Welcome to the comprehensive graphical display o
 $L['API_INFO_DIRECT'] = '<p style="font-weight:600;">For more information and reference on the embedded QuickBox API, <a href="/api-control.php" rel="noopenner nofollow" class="link" style="color:var(--qb-color-37);">see this page</a>.</p>';
 
 /* **********************************
- * #4.4.6.2 - options
+ * #4.4.7.2 - options
  ************************************/
 $L['OPTIONS_HEADER']          = 'Options';
 $L['OPTIONS_CONTENT_HELP']    = 'Displays this help manual in CLI manpage format';
 $L['OPTIONS_CONTENT_VERBOSE'] = 'Enables verbose mode for debugging';
 
 /* **********************************
- * #4.4.6.3 - software
+ * #4.4.7.3 - software
  ************************************/
 $L['SOFTWARE_HEADER']                       = 'Software';
 $L['SOFTWARE_INFO_CONTENT']                 = '<p>The following is a list of all available applications for install provided through the QuickBox build.<br/>Software names are presented as seen by <code>qb [install|reinstall|update|remove|help] [software_name]</code></p>';
@@ -1387,7 +1508,7 @@ $L['SEE_ALSO_HEADER']                       = 'See Also';
 $L['SEE_ALSO_CONTENT']                      = 'Show helpful command usage for designated software';
 
 /* **********************************
- * #4.4.6.4 - software options table
+ * #4.4.7.4 - software options table
  ************************************/
 $L['SOFTWARE_NAME']     = 'Software Name';
 $L['SOFTWARE_TITLE']    = 'Software Title';
@@ -1403,12 +1524,12 @@ $L['MULTI_USER_INFO']   = 'requires admin installation and can be installed for 
 $L['SINGLE_USER_INFO']  = 'single user, admin only. requires admin installation and is installed and operated by admin user.';
 
 /* **********************************
- * #4.4.6.5 - examples header
+ * #4.4.7.5 - examples header
  ************************************/
 $L['EXAMPLES_HEADER'] = 'Examples';
 
 /* **********************************
- * #4.4.6.6 - user management
+ * #4.4.7.6 - user management
  ************************************/
 $L['USER_MANAGEMENT_INFO_CONTENT']   = '<p>The <code>qb user</code> management functions in QuickBox offer a versatile and powerful set of tools to efficiently manage users on your server. With a focus on ease of use and robust functionality, these functions enable you to streamline user management, enhance security, and ensure a smooth server operation.</p>';
 $L['CREATE_USER_CONTENT']            = 'Creates a new QuickBox user account';
@@ -1431,7 +1552,7 @@ $L['SET_USER_SHELL_DANGER_CONTENT']  = '<p><strong>Caution:</strong> Please be a
 $L['USER_RCLONE_COMPANION_COMMANDS'] = 'Rclone Companion Commands';
 
 /* **********************************
- * #4.4.6.7 - clean functions
+ * #4.4.7.7 - clean functions
  ************************************/
 $L['CLEAN_FUNCTIONS']                  = 'Clean Functions';
 $L['CLEAN_FUNCTIONS_INFO_CONTENT']     = '<p>The <code>qb clean</code> functions in QuickBox offer a convenient and efficient way to maintain your server\'s cleanliness and optimize its performance. Designed with simplicity and effectiveness in mind, these functions enable you to free up valuable memory, remove unnecessary clutter, and ensure a smooth and streamlined server operation.</p>';
@@ -1439,7 +1560,7 @@ $L['CLEAN_MEMORY']                     = 'Clean Memory';
 $L['CLEAN_MEMORY_CONTENT']             = 'Cleans QuickBox memory caches';
 $L['CLEAN_DASHBOARD_LOGS']             = 'Clean Dashboard Logs';
 $L['CLEAN_DASHBOARD_LOGS_CONTENT']     = 'Cleans QuickBox dashboard logs for the designated user';
-$L['CLEAN_QB_DASHBOARD_LOGS']          = 'Cleans QB Dashboard log files';
+$L['CLEAN_QB_DASHBOARD_LOGS']          = 'Clean QB Dashboard log files';
 $L['CLEAN_QB_DASHBOARD_LOGS_CONTENT']  = 'This command is designed to clear the current UI Actions log posted from syslog and reset the UI Nginx error log to its initial state';
 $L['CLEAN_SYSTEM_LOGS']                = 'Remove old system log files';
 $L['CLEAN_SYSTEM_LOGS_CONTENT']        = 'This command is designed to delete logs and compressed archives in the <code>/var/log</code> directory that have exceeded the assigned retention period. The retention period is set to 7 days by default (if no optional value is entered).';
@@ -1449,7 +1570,7 @@ $L['CLEAN_LOCKS']                      = 'Clean Locks';
 $L['CLEAN_LOCKS_CONTENT']              = 'Cleans QuickBox software and apt-dpkg locks that may prevent QuickBox from installing new software';
 
 /* **********************************
- * #4.4.6.8 - fix functions
+ * #4.4.7.8 - fix functions
  ************************************/
 $L['FIX_FUNCTIONS']              = 'Fix Functions';
 $L['FIX_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb fix</code> functions in QuickBox provide a powerful and user-friendly toolkit to address common issues and perform system repairs effortlessly. With a focus on simplicity and effectiveness, these functions enable you to troubleshoot and resolve various problems that may arise on your server, ensuring smooth and uninterrupted operations.</p>';
@@ -1463,7 +1584,7 @@ $L['FIX_VERSION']                = 'Fix Version';
 $L['FIX_VERSION_CONTENT']        = 'Fix QuickBox installation by reinstalling latest version available';
 
 /* **********************************
- * #4.4.6.9 - generate functions
+ * #4.4.7.9 - generate functions
  ************************************/
 $L['GENERATE_FUNCTIONS']                   = 'Generate Functions';
 $L['GENERATE_FUNCTIONS_INFO_CONTENT']      = '<p>The <code>qb generate</code> functions in QuickBox offer a convenient and efficient way to create essential elements that enhance server management and monitoring. Presently, the qb generate command supports the qb generate logs function, allowing users to effortlessly generate a preview of the servers stats, api activation, and mount information.<br/>As the qb generate functions evolve, they will likely offer an expanding array of features to enhance server management further.</p>';
@@ -1473,7 +1594,7 @@ $L['GENERATE_SYSTEM_LOGS_WARNING_CONTENT'] = '<p>As of version <em>3.0.0.<strong
 $L['GENERATE_SYSTEM_LOGS_SUCCESS_CONTENT'] = '<p>You can access and download this summary log file in three ways:<br><ol><li><strong>Generate / Download:</strong> Go to \'System > <a href="/troubleshooting.php" class="link">Troubleshooting</a> > System Log\' within the user interface. Here you can generate and/or download the system log summary produced by the generate log command.</li><li><strong>View Logs:</strong> Go to \'System > <a href="/logs.php" class="link">System Logs</a>\'. Here is where you can find additional logs and info gathered by the generate log command.</li><li><strong>Server Directory:</strong> Find it on the server at: \'/srv/quickbox/logs/system_log\'.</li></ol></p>';
 
 /* **********************************
- * #4.4.6.10 - manage functions
+ * #4.4.7.10 - manage functions
  ************************************/
 $L['MANAGE_FUNCTIONS']                                  = 'Manage Functions';
 $L['MANAGE_FUNCTIONS_INFO_CONTENT']                     = '<p>The <code>qb manage</code> functions in QuickBox provide a powerful and comprehensive set of tools to efficiently manage various aspects of your server. Designed with user convenience in mind, these functions empower you to effortlessly control critical elements of your QuickBox-powered environment.<br/>Whether it\'s swapping language settings, checking the status of your main API activation, managing data distribution, or ensuring data integrity through backups and rollbacks, the qb manage functions offer a comprehensive solution for server administrators and enthusiasts alike.</p>';
@@ -1483,19 +1604,19 @@ $L['ADD_API_KEY']                                       = 'Add API Key';
 $L['ADD_API_KEY_CONTENT']                               = 'Add/Activate API key';
 $L['REMOVE_API_KEY']                                    = 'Remove API Key';
 $L['REMOVE_API_KEY_CONTENT']                            = 'Remove/Deactivate API key';
-$L['MANAGE_DATABASE']                                   = 'Adatbázis kezelése';
-$L['MANAGE_DATABASE_CONTENT']                           = 'A QuickBoxhoz használt adatbázis kezelése';
-$L['MANAGE_DATABASE_CONNECTION_INFO_CONTENT']           = 'Kérjük, vegye figyelembe, hogy a felhasználónév és a jelszó megadásakor (ha az opciókat használja), azoknak nem kell egyeznie a jelenlegi fő fiókja hitelesítő adataival. Ezek a hitelesítő adatok helyi rendszerhasználatra szolgálnak, különösen adatbázis-kapcsolatokhoz és különféle rendszerfunkciókhoz. Ezért lehetnek egyediek, és függetlenek a fő fiókod felhasználónevétől és jelszavától.';
-$L['MANAGE_DATABASE_INFO_CONTENT']                      = 'A QuickBox elsősorban az SQLite3-at használja alapértelmezett adatbázisként. Ezzel a paranccsal azonban zökkenőmentesen válthat az SQLite3 és a MySQL között. Ha a MySQL-t választja, győződjön meg arról, hogy a MySQL-kiszolgáló megfelelően van telepítve és konfigurálva a rendszeren. Ezenkívül szüksége lesz egy MySQL felhasználói fiókra, megfelelő jogosultságokkal az adatbázisok létrehozásához és kezeléséhez. A parancs végrehajtása megkönnyíti ezeket a szükséges konfigurációkat, beleértve a MySQL-kiszolgáló és a kliens telepítését, ha még nincsenek telepítve a rendszerre. A folyamat során a rendszer felkéri a MySQL-kiszolgáló és a kliens telepítésére, ha nem észleli őket. Ezenkívül a parancs kezeli a konfigurációs beállításokat, biztosítva a zökkenőmentes integrációt a QuickBox-szal. Kérjük, vegye figyelembe, hogy a <code>-o [mysql|sqlite]</code> kivételével minden paraméter nem kötelező, és alapértelmezés szerint a szkripten belül előre meghatározott értékeket használ.<br><br>Az alapértelmezett értékek a következők:<br><code>user=admin, pass=%random%, port=3306, host=localhost, name=qbpro</code><br><br>A MySQL adatai a <code>/root/.my.cnf</code>.<br><br>Az SQLite3-ba való visszaállításhoz egyszerűen futtassa újra a parancsot a <code>-o sqlite</code> jelzővel.';
-$L['MANAGE_DATABASE_BACKUP']                            = 'Adatbázis biztonsági mentésének kezelése';
-$L['MANAGE_DATABASE_BACKUP_CONTENT']                    = 'A QuickBox adatbázis biztonsági mentése';
-$L['MANAGE_DATABASE_BACKUP_INFO_CONTENT']               = 'A QuickBox biztonsági mentési folyamata 24 óránként 3:30-kor (szerveridő) automatikusan lefut a karbantartási ütemterv részeként. Ez a feladat az <code>/etc/cron.d/quickbox</code> ütemezésben a következőképpen szerepel:<br><br><code>30 3 * * * root /usr/local/bin/qb management db - o karbantartás --cron</code><br><br>A fenti paranccsal azonban manuálisan is elindíthat egy biztonsági mentést (a karbantartási rutin futtatása nélkül).<br><br><strong>A biztonsági mentési folyamatról</strong> strong><br><br>Minden biztonsági mentés pillanatképet hoz létre a QuickBox adatbázisról, visszaállítási pontot biztosítva az adatok integritásának védelme érdekében adatvesztés vagy adatsérülés esetén. A biztonsági másolat fájlok egy megadott könyvtárba kerülnek, a rendszer megőrzi az 5 legutóbbi biztonsági másolatot, hogy mindig több visszaállítási pont álljon rendelkezésre a helyreállításhoz.<br><br><strong>Biztonsági mentési fájlok helyei</strong><br>< br>A biztonsági mentési fájlok a következő könyvtárakban vannak tárolva:<br><br><strong>MySQL</strong>: <code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.sql<code><br><strong>SQLite</strong>: <code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.db</code>';
-$L['MANAGE_DATABASE_MAINTENANCE']                       = 'Adatbázis karbantartás kezelése';
-$L['MANAGE_DATABASE_MAINTENANCE_CONTENT']               = 'A QuickBox adatbázis-karbantartási folyamat elindítása';
-$L['MANAGE_DATABASE_MAINTENANCE_INFO_CONTENT']          = 'A QuickBox karbantartási folyamat célja az adatbázis zökkenőmentes és hatékony működése. Ez a folyamat a következőket tartalmazza:<br><br><ol><li>A szükségtelen adatok megtisztítása.</li><li>Az adatbázistáblák optimalizálása.</li><li>Egyéb karbantartási feladatok futtatása a hatékonyság növelése és az adatproblémák megelőzése érdekében , mint például a táblázatok ellenőrzése és javítása.</li><li>A nap üzenete (MotD) értesítés elindítása, amely CLI-n keresztül értesíti a rendszergazdát, ha helyrehozhatatlan hibák lépnek fel.</li></ol><p><strong>Amikor fut a karbantartás</strong><br><br>A karbantartási folyamat automatikusan lefut 24 óránként, szerveridő szerint hajnali 3:30-kor. Ez a feladat az <code>/etc/cron.d/quickbox</code> ütemezésben a következőképpen szerepel:<br><br><code>30 3 * * * root /usr/local/bin/qb management db - o karbantartás --cron</code><br><br>A fenti paranccsal azonban manuálisan is elindíthatja a karbantartást.<br><br><strong>Miért fontos a karbantartás?</strong><br><br> A rendszeres karbantartás biztosítja, hogy a QuickBox adatbázisa egészséges maradjon, a rendszer teljesítménye magas maradjon, és megóvja adatait.</p>';
-$L['MANAGE_DATABASE_RESTORE']                           = 'Adatbázis-visszaállítás kezelése';
-$L['MANAGE_DATABASE_RESTORE_CONTENT']                   = 'A QuickBox adatbázis visszaállítása';
-$L['MANAGE_DATABASE_RESTORE_INFO_CONTENT']              = 'Ez a parancs elindítja az adatbázis-visszaállítási folyamatot, lehetővé téve egy adott visszaállítandó biztonsági mentési fájl kiválasztását. A visszaállítási folyamat célja az adatok helyreállítása adatvesztés vagy adatsérülés esetén, megbízható és hatékony módot biztosítva a QuickBox adatbázis korábbi állapotának visszaállítására.<br><br><strong>A visszaállítási folyamat működése</strong> <br><br>A visszaállítás parancs futtatásakor megjelenik egy kiválasztási menü, amely felsorolja az összes elérhető adatbázis-mentési fájlt. Ezután kiválaszthatja a visszaállítani kívánt biztonsági mentési fájlt, és a rendszer automatikusan visszaállítja a kiválasztott biztonsági mentési fájlt, visszaállítva a QuickBox adatbázisát abba az állapotba, amelyben a biztonsági mentés létrehozásakor volt.';
+$L['MANAGE_DATABASE']                                   = 'Manage Database';
+$L['MANAGE_DATABASE_CONTENT']                           = 'Manage which database is used for QuickBox';
+$L['MANAGE_DATABASE_CONNECTION_INFO_CONTENT']           = 'Please note that when specifying a username and password (if the options are used), they do not have to match your current main account\'s credentials. These credentials are intended for local system use, particularly for database connections and various system functions. Therefore, they can be unique and independent of your main account\'s username and password.';
+$L['MANAGE_DATABASE_INFO_CONTENT']                      = 'QuickBox primarily utilizes SQLite3 as its default database. However, you have the option to seamlessly switch between SQLite3 and MySQL using this command. If you opt for MySQL, ensure you have a MySQL server properly installed and configured on your system. Additionally, you\'ll need a MySQL user account with adequate permissions for database creation and management. Executing this command facilitates these necessary configurations, including the installation of MySQL server and client if they are not already installed on your system. During the process, you will be prompted to install MySQL server and client if they are not detected. Additionally, the command handles the configuration setup, ensuring seamless integration with QuickBox. Please note that all parameters except <code>-o [mysql|sqlite]</code> are optional and will default to predefined values within the script.<br><br>The default values are as follows:<br><code>user=admin, pass=%random%, port=3306, host=localhost, name=qbpro</code><br><br>MySQL details can be found at <code>/root/.my.cnf</code>.<br><br>To convert back to SQLite3, simply run the command again with the <code>-o sqlite</code> flag.';
+$L['MANAGE_DATABASE_BACKUP']                            = 'Manage Database Backup';
+$L['MANAGE_DATABASE_BACKUP_CONTENT']                    = 'Backup the QuickBox database';
+$L['MANAGE_DATABASE_BACKUP_INFO_CONTENT']               = 'The QuickBox backup process runs automatically every 24 hours at 3:30 AM (server time) as part of the maintenance schedule. This task is listed in the <code>/etc/cron.d/quickbox</code> schedule as:<br><br><code>30 3 * * * root /usr/local/bin/qb manage db -o maintenance --cron</code><br><br>However, you can manually trigger a backup (without running the maintenance routine) using the command above.<br><br><strong>About the Backup Process</strong><br><br>Each backup creates a snapshot of the QuickBox database, providing a restore point to safeguard data integrity in case of data loss or corruption. Backup files are saved in a specified directory, with the system retaining the 5 most recent backups to ensure you always have multiple restore points available for recovery.<br><br><strong>Backup File Locations</strong><br><br>Backup files are stored in the following directories:<br><br><strong>MySQL</strong>: <code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.sql</code><br><strong>SQLite</strong>: <code>/opt/quickbox/backup/system/[DATE_TIME]/db/qbpro.db</code>';
+$L['MANAGE_DATABASE_MAINTENANCE']                       = 'Manage Database Maintenance';
+$L['MANAGE_DATABASE_MAINTENANCE_CONTENT']               = 'Initiate the QuickBox database maintenance process';
+$L['MANAGE_DATABASE_MAINTENANCE_INFO_CONTENT']          = 'The QuickBox maintenance process is designed to keep the database running smoothly and efficiently. This process includes:<br><br><ol><li>Cleaning up unneeded data.</li><li>Optimizing database tables.</li><li>Running other maintenance tasks to boost efficiency and prevent data issues, such as checking and repairing tables.</li><li>Triggering a Message of the Day (MotD) notification to alert the system administrator via CLI if unrecoverable errors occur.</li></ol><p><strong>When Maintenance Runs</strong><br><br>The maintenance process runs automatically every 24 hours at 3:30 AM server time. This task is listed in the <code>/etc/cron.d/quickbox</code> schedule as:<br><br><code>30 3 * * * root /usr/local/bin/qb manage db -o maintenance --cron</code><br><br>However, you can manually trigger maintenance using the command above.<br><br><strong>Why Maintenance is Important</strong><br><br>Regular maintenance ensures that your QuickBox database stays healthy, keeps system performance high, and protects your data.</p>';
+$L['MANAGE_DATABASE_RESTORE']                           = 'Manage Database Restore';
+$L['MANAGE_DATABASE_RESTORE_CONTENT']                   = 'Restore the QuickBox database';
+$L['MANAGE_DATABASE_RESTORE_INFO_CONTENT']              = 'This command initiates the database restore process, allowing you to select a specific backup file to restore. The restore process is designed to recover data in case of data loss or corruption, providing a reliable and efficient way to restore your QuickBox database to a previous state.<br><br><strong>How the Restore Process Works</strong><br><br>When you run the restore command, you will be presented with a selection menu listing all available database backup files. You can then choose the backup file you want to restore, and the system will automatically restore the selected backup file, returning your QuickBox database to the state it was in when the backup was created.';
 $L['MANAGE_DASHBOARD_ACCESS_URL']                       = 'Manage Dashboard access url';
 $L['MANAGE_DASHBOARD_ACCESS_URL_CONTENT']               = 'This command sets the server web root for dashboard access to either the expressed Domain or IP Address';
 $L['SET_SERVER_LANG']                                   = 'Set Server Language';
@@ -1520,7 +1641,7 @@ $L['RESTORE_APP_DEFAULT_CONFIG']                        = 'Restore Default <span
 $L['RESTORE_APP_DEFAULT_CONFIG_CONTENT']                = 'This command will restore the designated default (from install) application config for the assigned user';
 
 /* **********************************
- * #4.4.6.11 - news functions
+ * #4.4.7.11 - news functions
  ************************************/
 $L['NEWS_FUNCTIONS']              = 'News Functions';
 $L['NEWS_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb news</code> function in QuickBox delivers timely and relevant news updates directly to your server, ensuring you stay informed about the latest developments and changes in the QuickBox ecosystem. With a focus on keeping you up-to-date, this feature provides essential information about current and upcoming releases, version changes, and other items of interest.</p>';
@@ -1528,7 +1649,7 @@ $L['NEWS']                        = 'News';
 $L['NEWS_CONTENT']                = 'View latest QuickBox news';
 
 /* **********************************
- * #4.4.6.12 - support functions
+ * #4.4.7.12 - support functions
  ************************************/
 $L['SUPPORT_FUNCTIONS']              = 'Support Functions';
 $L['SUPPORT_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb support</code> function in QuickBox offers a secure and reliable method to grant support staff access to your server when assistance is needed. With a strong emphasis on security and user protection, this feature utilizes the <code>quickSupport</code> account, ensuring that only authorized support personnel can access your server.</p>';
@@ -1538,7 +1659,7 @@ $L['DISABLE_SUPPORT']                = 'Disable Support';
 $L['DISABLE_SUPPORT_CONTENT']        = 'Disable support. Otherwise, the support account will automatically delete itself after 36 hours';
 
 /* **********************************
- * #4.4.6.13 - update functions
+ * #4.4.7.13 - update functions
  ************************************/
 $L['UPDATE_FUNCTIONS']              = 'Update Functions';
 $L['UPDATE_FUNCTIONS_INFO_CONTENT'] = '<p>The <code>qb update</code> function in QuickBox offers you a convenient and flexible way to manage updates for your QuickBox installation. With this feature, you have full control over the update process, allowing you to manually check for updates and choose when to apply them.</p>';
@@ -1548,7 +1669,7 @@ $L['UPDATE_QUICKBOX']               = 'Update QuickBox';
 $L['UPDATE_QUICKBOX_CONTENT']       = 'Update QuickBox installation to latest release, if any available';
 
 /* **********************************
- * #4.4.6.14 - bugs & reporting
+ * #4.4.7.14 - bugs & reporting
  ************************************/
 $L['BUGS']              = 'Bugs & Reporting';
 $L['BUGS_INFO_CONTENT'] = '<p>The graphical display of QuickBox\'s documentation, will receive regular updates to ensure that the information provided remains easily accessible and user-friendly. Our commitment to enhancing your experience with QuickBox drives us to continually refine and improve the documentation, keeping it up-to-date with the latest features and functionalities.<br/><br/>
@@ -1557,13 +1678,13 @@ We value your input and encourage you to share any suggestions or ideas you may 
 Report any reproducable bugs, or suggestions to <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO Labs Issue & Feature Tracker</a></strong></p>';
 
 /* **********************************
- * #4.4.6.15 - disclaimer
+ * #4.4.7.15 - disclaimer
  ************************************/
 $L['DISCLAIMER']      = 'Disclaimer';
 $L['DISCLAIMER_TEXT'] = '<p>This script is intended for general use and no warranty is implied for suitability to any given task. QuickBox.IO will hold no responsibility for your setup or any damage done while using/installing/modifying this script or any of its plugins. Please keep in mind QuickBox.IO nor it\'s staff are responsible for keeping your Software and/or Server up-to-date; this is a responsibility solely left to the user of the QuickBox Pro software.</p>';
 
 /* **********************************
- * #4.4.6.16 - license
+ * #4.4.7.16 - license
  ************************************/
 $L['LICENSE']      = 'License';
 $L['LICENSE_SET']  = 'Licensed under BSD 3-Clause';
@@ -1572,17 +1693,17 @@ $L['LICENSE_TEXT'] = '<p>Copyright (c) 2018-2024, QuickBox.IO. All rights reserv
 <ul style="font-size:0.75rem"><li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
 <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
 <li>Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li></ul>
-<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>';
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \'AS IS\' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>';
 
 /* **********************************
- * #4.4.6.17 - misc
+ * #4.4.7.17 - misc
  ************************************/
 $L['EXAMPLE']         = 'example:';
 $L['EXAMPLES']        = 'examples:';
 $L['LOG_MAINTENANCE'] = 'Log Maintenance';
 
 /* **********************************
- * #4.4.7 - CHANGELOG / UPDATE
+ * #4.4.8 - CHANGELOG / UPDATE
  ************************************/
 $L['CURRENT_VERSION']   = 'Current Version';
 $L['DASH_UPDATE_TITLE'] = 'QuickBox Version Panel';
@@ -1600,9 +1721,9 @@ $L['UPDATE_CURRENT']    = 'You\'re up-to-date!';
 $L['CHANGELOGS']        = 'Changelogs';
 
 /* **********************************
- * #4.4.8 - SYSTEM DASHBOARD
+ * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Kezelheti a havi sávszélesség kezdő dátumát és visszaállíthatja a statisztikákat az <a href=\'/configurations.php#additionals\'>Általános beállítások > További irányítópult-beállítások</a> menüpontban. Ez lehetővé teszi a kezdő dátum beállítását vagy a vnStat adatbázis törlését az összegek visszaállításához.';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'You can manage the monthly bandwidth start date and reset statistics via <a href=\'/configurations.php#additionals\'>General Settings > Additional Dashboard Settings</a>. This allows you to adjust the start date or clear the vnStat database to reset totals.<br/><br/>View the current accumulated totals and history : <a href=\'javascript:void(0)\' class=\'open_bandwidthtotals_modal\' data-toggle=\'modal\' data-target=\'#viewBandwidthTotals\'><span class=\'badge badge-pills badge-info\'>Bandwidth Totals</span></a>';
 $L['DISK_UTIL_TIME']           = 'Disk Utilization Time';
 $L['DISK_IO_BW']               = 'Disk I/O Bandwidth';
 $L['DISK_SPACE_USAGE_FOR']     = 'Disk Space Usage for:';
@@ -1639,10 +1760,201 @@ $L['APT_VERSION_AVAILABLE']    = 'Available Version';
 $L['UPDATE_APT_DEPENDENCIES']  = 'Update apt dependencies';
 
 /* **********************************
- * #4.5 - ERROR PAGES
+ * #4.4.9.1 - Bandwidth Totals Modal
  ************************************/
-$L['404HACK'] = 'Ouch! Do you really want to hurt me?';
-$L['404PAGE'] = 'This is not the page you are looking for.';
-$L['404PRO']  = 'Please purchase a <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">QuickBox API key</a> to access this page.';
-$L['500PAGE'] = 'This is embarrassing, something appears to have gone wrong.';
-$L['WHOOPS']  = 'Whoops!';
+$L['BANDWIDTH_TOTALS']            = 'Bandwidth Totals';
+$L['BANDWIDTH_DATA_TIME_NOTICE']  = 'Note: The times displayed on these charts are based on the server\'s timezone, not your local timezone. To adjust the server\'s timezone, please follow the steps below.<br/><ul><li>SSH into your server</li><li>Run the command<br/><code>sudo dpkg-reconfigure tzdata</code></li><li>Follow the prompts to select your timezone</li><li>Once finished, run the below command<br><code>qb-vnstat --adjust-timestamps</code></li></ul><p class=\'text-warning\'>Adjusting the server timezone will impact the accumulated chart data.</p>';
+$L['SELECT_AN_INTERFACE']         = 'Select an Interface';
+$L['BANDWIDTH_TOTALS_DATA_INFO']  = 'This data is collected from the vnStat database and is based on the monthly cycle set within the vnStat configuration. The data is collected and stored in the vnStat database and is displayed here for your convenience. You can manage the monthly bandwidth start date and reset statistics via <a href=\'/configurations.php#additionals\' style=\'display:inline-flex\'>General Settings > Additional Dashboard Settings</a>. This allows you to adjust the start date or clear the vnStat database to reset totals.';
+$L['VIEWING_DATA_FOR']            = 'Viewing data for:';
+$L['MONTHLY_BANDWIDTH_DATA']      = 'Monthly Bandwidth Data';
+$L['DAILY_BANDWIDTH_DATA']        = 'Daily Bandwidth Data';
+$L['HOURLY_BANDWIDTH_DATA']       = 'Hourly Bandwidth Data';
+$L['BANDWIDTH_YEAR']              = 'Year';
+$L['BANDWIDTH_MONTH']             = 'Month';
+$L['BANDWIDTH_DAY']               = 'Day';
+$L['BANDWIDTH_HOUR']              = 'Hour';
+$L['BANDWIDTH_TOTAL']             = 'Total Traffic';
+$L['BANDWIDTH_RX']                = 'Download';
+$L['BANDWIDTH_TX']                = 'Upload';
+$L['BANDWIDTH_SELECT_INTERFACE']  = 'Select Interface';
+$L['BANDWIDTH_SELECT_MONTH']      = 'Select Month';
+$L['BANDWIDTH_SELECT_DAY']        = 'Select Day';
+$L['BANDWIDTH_SELECT_HOUR']       = 'Select Hour';
+$L['BANDWIDTH_SELECT_YEAR']       = 'Select Year';
+$L['BANDWIDTH_USAGE']             = 'Bandwidth Usage';
+$L['BANDWIDTH_VIEWING_INTERFACE'] = '(( viewing ))';
+
+/* **********************************
+ * #4.4.10 - WHAT'S STREAMING DASHBOARD
+ ************************************/
+$L['STREAMING_DASHBOARD']                        = 'Streaming Irányítópult';
+$L['STREAMING_DASHBOARD_INFO']                   = 'A What\'s Streaming irányítópult áttekintést nyújt a szerveren aktuálisan folyó streamelési tevékenységekről. Ez a funkció jelenleg az Emby és Jellyfin szolgáltatásokat támogatja. Az irányítópulton megjelenik az aktív streamek száma, az összes használt sávszélesség, valamint az aktuálisan streamelt média. Ezen felül megtekintheti a felhasználók által legutóbb nézett filmeket és epizódokat is.';
+$L['DAEMON_AND_STREAMING_SERVICES']              = 'Daemon + Media Server Control Deck';
+$L['STREAMING_APP_VERSION']                      = '{applicationName} Verzió';
+$L['ENTER_API_KEY']                              = 'Írja be az API-kulcsot';
+$L['API_KEY_PLACEHOLDER']                        = 'Írja be a(z) {serviceName} API-kulcsát';
+$L['MASS_NOTIFICATION']                          = 'Tömeges értesítés';
+$L['TEMP_TRANSCODE_PATH']                        = 'Ideiglenes átkódolási útvonal';
+$L['CLEAR_TEMP_TRANSCODE_PATH']                  = 'Ideiglenes átkódolások törlése';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES']      = 'Ideiglenes átkódolások intervallumbeállításai';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES_TIPS'] = '<strong><em>Az értékek percekben vannak megadva.</em></strong><br><small>(pl.: 90 perc = 1,5 óra)</small><hr>Ezek a beállítások határozzák meg, milyen időközönként törlődjenek automatikusan az ideiglenes átkódolások a lemezterület felszabadítása és a teljesítmény optimalizálása érdekében.';
+$L['INTERVAL_STANDARD']                          = 'Normál Média';
+$L['INTERVAL_LIVE_TV']                           = 'Élő TV';
+$L['ENABLE_TRANSCODE_AUTO_CLEAR']                = 'Ideiglenes átkódolások automatikus törlésének engedélyezése';
+$L['TRANSCODE_AUTO_CLEAR_ACTIVATED']             = 'Automatikus átkódolástörlés bekapcsolva.<br>Normál intervallum: {standardInterval} perc.<br>Élő TV intervallum: {liveTvInterval} perc.';
+$L['TRANSCODE_AUTO_CLEAR_DEACTIVATED']           = 'Automatikus átkódolástörlés kikapcsolva.';
+$L['SETTINGS_SAVE_SUCCESS']                      = 'Beállítások sikeresen elmentve.';
+$L['STREAMING_STATS']                            = 'Streamelési statisztikák';
+$L['LATEST_MOVIES']                              = 'Legújabb filmek';
+$L['MOVIE']                                      = 'Film';
+$L['MOVIES']                                     = 'Filmek';
+$L['LATEST_EPISODES']                            = 'Legújabb epizódok';
+$L['SHOWS']                                      = 'Műsorok';
+$L['SERIES']                                     = 'Sorozatok';
+$L['EPISODE']                                    = 'Epizód';
+$L['SEASON_EPISODE']                             = 'Évad/Epizód';
+$L['EPISODE_TITLE']                              = 'Epizód';
+$L['LIVETV']                                     = 'Élő TV';
+$L['CHANNEL']                                    = 'Csatorna';
+$L['CHANNEL_NUMBER']                             = 'Csatornaszám';
+$L['NOW_PLAYING']                                = 'Most játszott';
+$L['MEDIA_TITLE']                                = 'Média címe';
+$L['MEDIA_TYPE']                                 = 'Médiatípus';
+$L['YEAR']                                       = 'Év';
+$L['DURATION']                                   = 'Időtartam';
+$L['ACTION']                                     = 'Művelet';
+$L['DISCONNECT_REASON']                          = 'Leválasztás oka';
+$L['NOTIFICATION']                               = 'Értesítés';
+$L['LIBRARY']                                    = 'Könyvtár';
+$L['LIBRARY_PATH']                               = 'Könyvtár útvonala';
+$L['PREMIERE_DATE']                              = 'Premier dátuma';
+$L['ACTIVE_STREAMS_PLACEHOLDER']                 = '(0 aktív stream)';
+$L['BANDWIDTH_USED_PLACEHOLDER']                 = '(Felhasznált sávszélesség: 0 Mbps)';
+$L['MEDIA_ITEM']                                 = 'Médiaelem';
+$L['ACTION_INFO']                                = 'Művelet információ';
+$L['ADDITIONAL_INFO']                            = 'További információ';
+$L['NO_DETAILS_AVAILABLE']                       = 'Nincs elérhető részlet.';
+$L['DEVICE_INFO']                                = 'Eszköz információ';
+$L['STREAM_INFO']                                = 'Stream információ';
+$L['PLAY_STATE_PRIORITY']                        = 'Lejátszás állapot prioritás';
+$L['VIEW_WSD_LOGS']                              = 'WSD naplók megtekintése';
+$L['WSD_ACTION_LOGS']                            = 'WSD műveleti naplók';
+$L['CLEAR_LOGS']                                 = 'Naplók törlése';
+$L['NO_ACTIONS_CURRENTLY_LOGGED']                = 'Jelenleg nincs naplózott művelet.';
+$L['KILL_STREAM_SETTINGS']                       = 'Stream leállítási beállítások';
+$L['NOTIFICATION_TITLE']                         = 'Értesítés';
+$L['NOTIFICATION_MESSAGE']                       = 'Üzenet';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM']          = 'Stream leállítás küszöbértékei';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM_TIPS']     = '<strong><em>Az értékek másodpercekben vannak megadva.</em></strong><br><small>(pl.: 600 másodperc = 10 perc)</small><hr>Ezek a beállítások határozzák meg, milyen feltételek teljesülésekor állítja le kényszerítetten a rendszer az inaktív streamet, ezzel felszabadítva az erőforrásokat.';
+$L['STANDARD_MEDIA']                             = 'Normál média';
+$L['LIVE_TV_MEDIA']                              = 'Élő TV';
+$L['SKIP_NOTIFICATION']                          = 'Értesítés kihagyása';
+$L['SKIP_DISCONNECTION']                         = 'Leválasztás kihagyása';
+$L['PAUSE_DURATION']                             = 'Szünet időtartama';
+$L['DISCONNECT_DURATION']                        = 'Leválasztás időtartama';
+$L['WSD_ACTION_CLEAR_LOGS_CONFIRM']              = 'Biztosan törli a naplókat?';
+$L['WSD_ACTION_CLEAR_LOGS']                      = 'Igen, törlöm őket!';
+$L['WSD_ACTION_CLEAR_LOGS_FAILED']               = 'Nem sikerült törölni a naplókat.';
+$L['WSD_ACTION_CLEAR_LOGS_SUCCESS']              = 'A naplók sikeresen törölve lettek.';
+$L['WSD_ADMIN_NOTIFY']                           = '<span class="text-info fw900">[admin-notify]</span> <strong>{admin}</strong> {admin_status} <span class="text-warning fw600">értesítést</span> küldött <strong>{user}</strong> felhasználónak, aki éppen ezt nézi: <span class="text-primary fw600">{media}</span>.<br><div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><span class="fw600">{notif_header}</span><br><span class="fw300">{notif_text}</span></div>';
+$L['WSD_KILL_NOTIFY']                            = '<span class="text-info fw900">[kill-notify]</span> {user} felhasználó <span class="text-primary fw600">{media}</span> nézése közben <span class="text-info fw600">{paused_time}</span> ideje szünetelteti a lejátszást ennél: <span class="text-mute">{pause_position}</span>, ekkor: <span class="text-mute fw600">{pause_date} {pause_time}</span>, eszközről: <span class="text-mute fw600">{device} {ip}</span>. A felhasználó <span class="text-warning fw600">értesítve lett</span> tétlenség miatt.';
+$L['WSD_NOTIFY']                                 = '<span class="text-info fw900">[notify]</span> {user} felhasználó értesítést kapott.';
+$L['WSD_ADMIN_STOP']                             = '<span class="text-info fw900">[admin-stop]</span> {user} felhasználó, aki <span class="text-primary fw600">{media}</span> tartalmat nézte ezen: <span class="text-mute fw600">{device}</span>, <span class="text-danger fw600">kényszerítetten leállítva</span> lett <strong>{admin}</strong> által ({admin_status}).';
+$L['WSD_KILL_STREAM']                            = '<span class="text-info fw900">[kill-stream]</span> {user} felhasználó, aki <span class="text-primary fw600">{media}</span> nézése közben <span class="text-info fw600">{paused_time}</span> ideje szüneteltette a lejátszást ennél: <span class="text-mute">{pause_position}</span>, ekkor: <span class="text-mute fw600">{pause_date} {pause_time}</span>, eszközről: <span class="text-mute fw600">{device} {ip}</span>, <span class="text-danger fw600">leállítva lett</span> tétlenség miatt.';
+$L['WSD_ADMIN_DISCONNECT']                       = '<span class="text-info fw900">[admin-disconnect]</span> {user} felhasználó, aki <span class="text-primary fw600">{media}</span> tartalmat nézte ezen: <span class="text-mute fw600">{device}</span>, <span class="text-danger fw600">kényszerítetten le lett választva</span> <strong>{admin}</strong> által ({admin_status}).';
+$L['WSD_DISCONNECT_STREAM']                      = '<span class="text-info fw900">[kill-stream]</span> {user} felhasználó, aki <span class="text-primary fw600">{media}</span> nézése közben <span class="text-info fw600">{paused_time}</span> ideje szüneteltette a lejátszást ennél: <span class="text-mute">{pause_position}</span>, ekkor: <span class="text-mute fw600">{pause_date} {pause_time}</span>, eszközről: <span class="text-mute fw600">{device} {ip}</span>, <span class="text-danger fw600">leválasztva lett</span> tétlenség miatt.';
+$L['WSD_MASS_NOTIFICATION']                      = '<span class="text-info fw900">[mass-notification]</span> <strong>{admin}</strong> {admin_status} tömeges értesítést küldött.<br><strong>Értesített felhasználók:</strong> {users_notified}<br><strong>Aktív felhasználók:</strong> {active_users}, <strong>Összes munkamenet:</strong> {session_count}.<div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><strong>{notif_header}</strong><br>{notif_text}</div>';
+$L['WSD_USER_ACTION']                            = '<span class="text-info fw900">[user-action]</span> {user} felhasználó végrehajtotta ezt a műveletet: <span class="text-primary fw600">{action}</span>, ekkor: <span class="text-mute fw600">{date} {time}</span>.';
+$L['NONE']                                       = 'None';
+
+/* *****************************************
+ * #4.4.10.1 - page level errors & messages
+ *******************************************/
+$L['MISSING_FIELD']                    = 'Hiányzó mező';
+$L['MISSING_API_KEY']                  = 'Hiányzó API-kulcs';
+$L['INVALID_API_KEY_FORMAT']           = 'Érvénytelen API-kulcs formátum. Adjon meg egy érvényes API-kulcsot.';
+$L['UNKNOWN_MEDIA']                    = 'Ismeretlen média';
+$L['UNKNOWN_DURATION']                 = 'Ismeretlen időtartam';
+$L['UNKNOWN_PAUSE_TIME']               = 'Ismeretlen szünetidő';
+$L['ERROR_FETCHING_LOGS']              = 'Hiba a naplók lekérése közben.';
+$L['NO_SUPPORTED_STREAMING_SERVICE']   = 'Nincs támogatott streaming-szolgáltatás telepítve.';
+$L['PROCESS_REQUEST_ERROR']            = 'Hiba a kérés feldolgozása során. Kérjük, próbálja újra.';
+$L['API_CONNECTION_ERROR']             = 'Nem sikerült csatlakozni a(z) {serviceName} API-hoz. Ellenőrizze az API-kulcsot és a szerver beállításait.';
+$L['INPUT_READ_FAILED']                = 'Nem sikerült olvasni a bemenetet.';
+$L['INVALID_INPUT']                    = 'Érvénytelen bemenet. Ellenőrizze a megadott adatokat és próbálja újra.';
+$L['INVALID_JSON_PAYLOAD']             = 'Érvénytelen JSON-adat: {error}';
+$L['INVALID_EMBY_API_KEY']             = 'Érvénytelen Emby API-kulcs.';
+$L['INVALID_JELLYFIN_API_KEY']         = 'Érvénytelen Jellyfin API-kulcs.';
+$L['DB_FILE_NOT_FOUND']                = 'Az adatbázisfájl nem található: {dbPath}';
+$L['API_KEY_SAVE_SUCCESS']             = 'API-kulcs sikeresen mentve.';
+$L['API_KEY_SAVE_FAILED']              = 'Nem sikerült menteni az API-kulcsot.';
+$L['INVALID_TEMP_TRANSCODE_PATH']      = 'Érvénytelen ideiglenes átkódolási útvonal.';
+$L['INVALID_SERVICE_SPECIFIED']        = 'Érvénytelenül megadott szolgáltatás.';
+$L['TEMP_TRANSCODE_PATH_SAVE_FAIL']    = 'Nem sikerült menteni az ideiglenes átkódolási útvonalat.';
+$L['TEMP_TRANSCODE_PATH_SAVE_SUCCESS'] = 'Az ideiglenes átkódolási útvonal sikeresen mentve.';
+$L['TRANSCODE_INTERVAL_SAVE']          = 'Az automatikus átkódolási intervallum sikeresen mentve.';
+$L['TRANSCODE_INTERVAL_FAILED']        = 'Nem sikerült menteni az automatikus átkódolási intervallumot.';
+$L['INVALID_TRANSCODE_PATH']           = 'Érvénytelen vagy hiányzó átkódolási útvonal.';
+$L['TRANSCODE_DIR_EMPTY_FAILED']       = 'Nem sikerült kiüríteni az ideiglenes átkódolási mappát.';
+$L['TRANSCODE_DIR_EMPTY_SUCCESS']      = 'Az ideiglenes átkódolási mappa sikeresen kiürítve.';
+$L['EMBY_CONFIG_LOAD_FAILED']          = 'Nem sikerült betölteni az Emby konfigurációt.';
+$L['EMBY_API_KEY_RETRIEVE_FAILED']     = 'Nem sikerült lekérni az Emby API-kulcsot.';
+$L['JELLYFIN_API_KEY_RETRIEVE_FAILED'] = 'Nem sikerült lekérni a Jellyfin API-kulcsot.';
+$L['JELLYFIN_CONFIG_LOAD_FAILED']      = 'Nem sikerült betölteni a Jellyfin konfigurációt.';
+$L['LATEST_LOG_FETCH_FAILED']          = 'Nem sikerült lekérni a legújabb naplót.';
+$L['ERROR_PREFIX']                     = '[ERROR] ';
+$L['UNKNOWN']                          = 'Ismeretlen';
+$L['UNKNOWN_USER']                     = 'Ismeretlen felhasználó';
+$L['UNKNOWN_DEVICE']                   = 'Ismeretlen eszköz';
+$L['API_URL_KEY_REQUIRED']             = 'API URL és kulcs megadása kötelező.';
+$L['FAILED_TO_CREATE_UPDATE_TRIGGER']  = 'Nem sikerült létrehozni a frissítési triggereket: ';
+$L['DB_TABLE_CREATE_FAILED']           = 'Nem sikerült létrehozni a(z) `media_api` táblát: {error}';
+$L['DB_TABLE_INFO_FAILED']             = 'Nem sikerült lekérni a `media_api` tábla adatait: {error}';
+$L['DB_COLUMN_ADD_FAILED']             = 'Nem sikerült hozzáadni a `{column}` oszlopot a `media_api` táblához: {error}';
+$L['LOCATION_PRIVATE_RESERVED']        = 'Privát/Lokális IP';
+$L['UNKNOWN_IP']                       = 'Ismeretlen IP';
+$L['LOCATION_UNKNOWN_CITY']            = 'Ismeretlen város';
+$L['LOCATION_UNKNOWN_STATE']           = 'Ismeretlen állam';
+$L['LOCATION_UNKNOWN_COUNTRY']         = 'Ismeretlen ország';
+$L['LOCATION_LOADING']                 = 'Hely betöltése...';
+$L['LOCATION_ERROR']                   = 'Hiba';
+$L['API_MOVIE_COUNT_FETCH_FAILED']     = 'Nem sikerült lekérni a filmek számát a(z) {applicationName} API-ból. HTTP-kód: {httpCode}. Hiba: {error}';
+$L['API_MOVIE_COUNT_NOT_FOUND']        = 'A filmek száma nem található a(z) {applicationName} API válaszában.';
+$L['API_SERIES_COUNT_FETCH_FAILED']    = 'Nem sikerült lekérni a sorozatok számát a(z) {applicationName} API-ból. HTTP-kód: {httpCode}. Hiba: {error}';
+$L['API_SERIES_COUNT_NOT_FOUND']       = 'A sorozatok száma nem található a(z) {applicationName} API válaszában.';
+$L['API_EPISODE_COUNT_FETCH_FAILED']   = 'Nem sikerült lekérni az epizódok számát a(z) {applicationName} API-ból. HTTP-kód: {httpCode}. Hiba: {error}';
+$L['API_EPISODE_COUNT_NOT_FOUND']      = 'Az epizódok száma nem található a(z) {applicationName} API válaszában.';
+$L['CURL_INIT_FAILED']                 = 'Nem sikerült inicializálni a cURL kapcsolatot a(z) {applicationName}-hez.';
+$L['CURL_ERROR']                       = 'cURL hiba: {error}';
+$L['HTTP_ERROR']                       = 'HTTP hiba: státuszkód {httpStatus}';
+$L['UNEXPECTED_RESPONSE_TYPE']         = 'Váratlan válasz típus: {responseType}';
+$L['INVALID_LOGS_FORMAT']              = 'Érvénytelen napló formátum: tömb helyett {logType} érkezett.';
+$L['INVALID_APPLICATION_NAME']         = 'Érvénytelen alkalmazásnév. Csak "jellyfin" vagy "emby" engedélyezett.';
+$L['DB_QUERY_PREPARE_FAILED']          = 'Nem sikerült előkészíteni az adatbázis lekérdezést: {error}';
+$L['DB_QUERY_EXECUTION_FAILED']        = 'Nem sikerült végrehajtani az adatbázis lekérdezést: {error}';
+$L['DB_SELECT_QUERY_PREPARE_FAILED']   = 'Nem sikerült előkészíteni a SELECT lekérdezést: {error}';
+$L['DB_SELECT_QUERY_EXECUTE_FAILED']   = 'Nem sikerült végrehajtani a SELECT lekérdezést: {error}';
+$L['DB_UPDATE_QUERY_PREPARE_FAILED']   = 'Nem sikerült előkészíteni az UPDATE lekérdezést: {error}';
+$L['DB_INSERT_QUERY_PREPARE_FAILED']   = 'Nem sikerült előkészíteni az INSERT lekérdezést: {error}';
+$L['DB_API_KEY_RETRIEVAL_FAILED']      = 'Nem sikerült lekérni az API-kulcsot adatbázishiba miatt.';
+$L['UNSUPPORTED_DB_TYPE']              = 'Nem támogatott adatbázistípus: {dbType}';
+$L['DOMAIN_NOT_DEFINED']               = 'A(z) {applicationName} domain nincs definiálva.';
+$L['QUERY_FAILED']                     = 'Lekérdezés hiba: {errorInfo}';
+$L['NO_INSTALLATION_FOUND']            = 'Nem található telepítés egyik felhasználónál sem ehhez: {applicationName}.';
+$L['USERNAME_FETCH_FAILED']            = 'Nem sikerült lekérni a felhasználónevet ehhez a(z) {applicationName} felhasználói azonosítóhoz: {appUID}.';
+$L['INVALID_API_URL']                  = 'Érvénytelen API URL ehhez a(z) {applicationName}-hez: {apiUrl}.';
+$L['INVALID_TOGGLE_VALUE']             = 'Érvénytelen kapcsolóérték. Csak 0 vagy 1 engedélyezett.';
+$L['INVALID_PATH_FORMAT']              = 'Érvénytelen útvonalformátum. Karakterlánc szükséges.';
+$L['INVALID_INTERVAL']                 = 'Érvénytelen intervallumformátum. Pozitív egész szám szükséges.';
+$L['SETTINGS_SAVE_FAILED']             = 'Nem sikerült menteni a beállításokat. Kérjük, próbálja újra.';
+$L['SERVER_ERROR']                     = 'Szerverhiba';
+
+/* **********************************
+ * #4.6 - ERROR PAGES
+ ************************************/
+$L['404HACK'] = 'Ajjaj! Tényleg bántani akarsz?';
+$L['404PAGE'] = 'Ez nem az az oldal, amit keresel.';
+$L['404PRO']  = 'Kérjük, vásárolj egy <a href="https://nullrefer.ir/?https://quickbox.io/product/quickbox-pro-subscription/" rel="noopener nofollow" target="_blank">QuickBox API-kulcsot</a> az oldal eléréséhez.';
+$L['500PAGE'] = 'Ez kellemetlen, úgy tűnik, valami elromlott.';
+$L['WHOOPS']  = 'Hoppá!';

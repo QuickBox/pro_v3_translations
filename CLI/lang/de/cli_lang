@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.176
+# File Version: 1.0.181
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2024, QuickBox.IO
+# Copyright (C) 2019-2025, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -579,7 +579,7 @@ passwort: ${notifiarr_user_password}"
 
 quickbox::lang::software::novnc::access() {
 	declare text="zugriff auf ${software_title} unter:
-${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${quickbox_web_root}${username}/vnc/vnc.html?resize=remote&host=${novnc_web_root}&path=${username}/websockify
 ${software_title} installiert auf port: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -858,6 +858,12 @@ quickbox::lang::wireguard::configure::client_ask_extra() {
 
 quickbox::lang::wireguard::configure::client_ask_extra_error() {
 	declare text="Ungültige Eingabe. Bitte geben Sie 'j' oder 'n' ein."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::access() {
+	declare text="access ${software_title} at:
+${quickbox_web_root}whats-streaming.php"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -2082,12 +2088,14 @@ Hinweise:
 		has_update=1
 		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
 			"  -u | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
+  -o '0.15.1'        Version 0.15.1 installieren
   -o '0.10.0'        Version 0.10.0 installieren
   -o '0.9.8'         Version 0.9.8 installieren
   -o '0.9.7'         Version 0.9.7 installieren
   -o '0.9.6'         Version 0.9.6 installieren
   -o 'feature-bind'  Die Feature-Bind-Version von ${software_title} installieren" \
-			"  qb install ${software_help_name} -u Benutzername -o '0.10.0'
+			"  qb install ${software_help_name} -u Benutzername -o '0.15.1'
+  qb install ${software_help_name} -u Benutzername -o '0.10.0'
   qb install ${software_help_name} -u Benutzername -o '0.9.8'
   qb install ${software_help_name} -u Benutzername -o '0.9.7'
   qb reinstall ${software_help_name} -u Benutzername -o '0.9.6'

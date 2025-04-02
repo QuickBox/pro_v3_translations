@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.138
+# File Version: 1.0.143
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2024, QuickBox.IO
+# Copyright (C) 2019-2025, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -528,7 +528,7 @@ ${software_title} 安装在端口：${software_web_port}
 }
 quickbox::lang::software::novnc::access() {
 	declare text="访问 ${software_title} 在:
-${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${quickbox_web_root}${username}/vnc/vnc.html?resize=remote&host=${novnc_web_root}&path=${username}/websockify
 ${software_title} 安装在端口: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -774,6 +774,11 @@ quickbox::lang::wireguard::configure::client_ask_extra() {
 }
 quickbox::lang::wireguard::configure::client_ask_extra_error() {
 	declare text="输入无效。请输入'y'或'n'。"
+	quickbox::dashboard::log "${text}"
+}
+quickbox::lang::software::wsdashboard::access() {
+	declare text="access ${software_title} at:
+${quickbox_web_root}whats-streaming.php"
 	quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::x2go::access() {
@@ -1883,12 +1888,14 @@ quickbox::software::help() {
 		has_update=1
 		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
 			"  -u | --username    设置 ${software_title} 的用户名（必需）
+  -o '0.15.1'        安装版本 0.15.1
   -o '0.10.0'        安装版本 0.10.0
   -o '0.9.8'         安装版本 0.9.8
   -o '0.9.7'         安装版本 0.9.7
   -o '0.9.6'         安装版本 0.9.6
   -o 'feature-bind'  安装 ${software_title} 的功能绑定版本" \
-			"  qb install ${software_help_name} -u 用户名 -o '0.10.0'
+			"  qb install ${software_help_name} -u 用户名 -o '0.15.1'
+  qb install ${software_help_name} -u 用户名 -o '0.10.0'
   qb install ${software_help_name} -u 用户名 -o '0.9.8'
   qb install ${software_help_name} -u 用户名 -o '0.9.7'
   qb reinstall ${software_help_name} -u 用户名 -o '0.9.6'

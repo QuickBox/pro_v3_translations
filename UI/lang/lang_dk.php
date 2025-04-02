@@ -4,12 +4,12 @@
  * QuickBox Pro dansk sprogfil
  *
  * Denne fil bruges til at oversætte QuickBox Pro Dashboard til dansk.
- * Klar til QuickBox Pro v3.1.3: 16. november 2024
+ * Klar til QuickBox Pro v3.2.0: 28. marts 2025
  *
  * @package    dashboard
  * @subpackage lang
  * @category   Danish
- * @version    3.0.1.87
+ * @version    3.0.1.111
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -116,6 +116,9 @@ $server_ip = trim((string) $server_ip);
  *       - #4.4.7.17: Diverse
  *     - #4.4.8: Ændringslogfiler / Opdatering
  *     - #4.4.9: Systemdashboard
+ *       - #4.4.9.1 - Båndbredde totaler Modal
+ *     - #4.4.10: Hvad er Streaming Dashboard
+ *       - #4.4.10.1: Hvad er streaming - fejl og meddelelser på sideniveau
  *
  *   Fejlsider (#4.5)
  */
@@ -178,6 +181,7 @@ $L['DASHBOARD_INFO']  = 'Vælg mellem det administrative systemdashboard eller s
 $L['DASHBOARD_VIEW']  = 'Dashboard Visning';
 $L['DOWNLOADS']       = 'Downloads';
 $L['FILEMANAGER']     = 'Filhåndtering';
+$L['NZB_CLIENTS']     = 'NZB kunder';
 $L['PLUGINS_CENTER']  = 'Udvidelsescenter';
 $L['PLUGINS_INFO']    = 'Installer og afinstaller udvidelser nemt ved blot at klikke på udvidelses-navnet.';
 $L['RPLUGINS_NOTICE'] = 'Installer og afinstallér ruTorrent-udvidelser nemt ved blot at klikke på udvidelses-navnet.';
@@ -217,6 +221,7 @@ $L['CREATE_GROUP']                  = 'Opret Gruppe';
 $L['CREATE_NEW_GROUP']              = 'Opret en Ny Gruppe';
 $L['CREATE_NEW_USER']               = 'Opret Ny Bruger';
 $L['CREATE_USER']                   = 'Opret Bruger';
+$L['DATABASE_SIZE']                 = 'Databasestørrelse:';
 $L['DELETE_ALL_ANNOUNCEMENTS']      = 'Slet alle meddelelser';
 $L['DELETE_ALL_LOGS']               = 'Slet alle logfiler (> 30 dage)';
 $L['DELETE_INACTIVE_USERS']         = 'Slet Inaktive Brugere';
@@ -279,6 +284,7 @@ $L['REMOVE_MEMBER']                 = 'Fjern gruppemedlem';
 $L['REMOVE']                        = 'Fjern';
 $L['RESET_VERSION']                 = 'Nulstil Nuværende Version';
 $L['RESET']                         = 'Nulstil';
+$L['RESTART']                       = 'Genstart';
 $L['SAVE']                          = 'Gemme';
 $L['SERVICE_CONTROL']               = 'Servicekontrol';
 $L['SIMULATE_BUTTON']               = 'Simulér';
@@ -328,6 +334,7 @@ $L['APP_CONFIG_EDIT']     = 'Rediger softwarekonfiguration';
  * #2.4 - other
  ************************************/
 $L['ABOUT_RELEASE']       = 'Om Frigivelsen';
+$L['COPYRIGHT']           = 'Copyright';
 $L['EMAIL']               = 'Email';
 $L['HERE']                = 'her';
 $L['HOME']                = 'Hjem';
@@ -952,6 +959,7 @@ $L['REGI_FAIL_ERR_FOUND'] = 'fejl fundet';
  * #4.2.1 - GENERAL SETTINGS
  ************************************/
 $L['ACCOUNT_PAGE']                      = 'Kontoside';
+$L['ACTION_NOT_EXECUTED']               = 'Handling ikke udført.';
 $L['ACTIVATION_IP']                     = 'Aktiveringsip';
 $L['ACTIVATION_NEED_D_DO']              = 'Gør det her!';
 $L['ACTIVATION_NEED_D']                 = 'Brug for at de-aktivere?';
@@ -968,12 +976,14 @@ $L['API_SETTINGS']                      = 'API-indstillinger';
 $L['API_STATUS']                        = 'API-Status';
 $L['API']                               = 'API';
 $L['BANDWIDTH_RESET_STATS']             = 'Nulstil båndbreddestatistik';
-$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Dette vil nulstille alle indsamlede båndbreddestatistikker. Denne handling er irreversibel og vil effektivt fjerne den nuværende vnStat-database og oprette en ny. Nye data vil begynde at genudfylde databasen inden for 5 minutter.<br/><br/>En sikkerhedskopi af den aktuelle vnStat-database vil blive gemt på: <code>/var/lib/vnstat/vnstat.[dato].db</code>';
+$L['BANDWIDTH_RESET_STATS_TOOLTIP']     = 'Dette vil nulstille alle indsamlede båndbreddestatistikker. Denne handling er irreversibel og vil effektivt fjerne den nuværende vnStat-database og oprette en ny. Nye data vil begynde at genudfylde databasen inden for 5 minutter.<br/><br/>En sikkerhedskopi af den aktuelle vnStat-database vil blive gemt på: <code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/vnstat.db</code>';
 $L['BANDWIDTH_RESET_STATS_DB_TOOLTIP']  = 'Klik for at opdatere den aktuelle databasestørrelse. Dette gøres ved sideindlæsning, men er nyttigt til at afspejle størrelsen, hvis du nulstiller en større database.<br/><br/><em>Bemærk: Dette påvirker ikke de data, der er gemt i databasen. Den opdaterer kun den udsendte databasestørrelse.</em>';
 $L['BANDWIDTH_START_DATE']              = 'Båndbreddes startdato';
 $L['BANDWIDTH_START_DATE_TOOLTIP']      = 'Vælg startdatoen for båndbreddeovervågning. Den valgte dag gentages hver måned, ideel til sporing fra specifikke datoer som internetudbyderens nulstillinger eller serveropsætninger.<br/>Dette gælder for totaler vist på System Dashboard.<br/><br/><em>Bemærk: Eksisterende data vil forbliv upåvirket.</em>';
 $L['CALCULATING']                       = 'Beregner...';
 $L['CONF_SETTINGS']                     = 'Konfigurationsindstillinger';
+$L['CONFIRM_RESET_BANDWIDTH_TITLE']     = 'Bekræft nulstilling af båndbredde';
+$L['CONFIRM_RESET_BANDWIDTH_SUBTEXT']   = 'Nulstilling af båndbreddestatistikken vil slette den nuværende vnStat-database og oprette en ny.<br/><div class=\'mt-3 p-3\' style=\'text-align:left;background:var(--qb-color-26);border-radius:6px;\'><p style=\'font-size:13px;color:var(--qb-color-5)\'>Der oprettes en sikkerhedskopi af den aktuelle database med følgende detaljer:</p><ul class=\'mb -0\'><li class=\'mb-2\'>Bibliotek:<br/><code>/opt/quickbox/backup/system/[Y-m-d_H-M-S]/vnstat/</code></li><li>Filnavn:<br/><code>vnstat.db</code></li></ul></div><br/>Er du sikker på, at du vil fortsætte?';
 $L['DASH_URL_SETTINGS']                 = 'Dashboard URL-indstillinger';
 $L['DEFAULT_PAGE']                      = 'Destinationsside';
 $L['DISK_MOUNT']                        = 'Disk Forbindelse (Mount)';
@@ -988,6 +998,9 @@ $L['NET_ADAPTER']                       = 'Netværksgrænseflade';
 $L['PHP_DATE_FORMAT']                   = 'PHP Datoformat';
 $L['PHP_FORMAT_SETTINGS']               = 'PHP Format Indstillinger';
 $L['PHP_TIME_ZONE']                     = 'PHP Tidszone';
+$L['RESET_BANDWIDTH_CANCEL']            = 'Nej, annuller';
+$L['RESET_BANDWIDTH_CANCELLED']         = 'Nulstilling af båndbredde annulleret';
+$L['RESET_BANDWIDTH_CONFIRM']           = 'Ja, nulstil';
 $L['RESET_BANDWIDTH_STATS']             = 'Nulstil båndbreddestatistik';
 $L['SITE_DESC']                         = 'Webstedets Beskrivelse';
 $L['SITE_META_SETTINGS']                = 'Site Meta Indstillinger';
@@ -1705,7 +1718,7 @@ $L['CHANGELOGS']        = 'Ændringslog';
 /* **********************************
  * #4.4.9 - SYSTEM DASHBOARD
  ************************************/
-$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Du kan administrere den månedlige startdato for båndbredde og nulstille statistikker via <a href=\'/configurations.php#additionals\'>Generelle indstillinger > Yderligere Dashboard-indstillinger</a>. Dette giver dig mulighed for at justere startdatoen eller rydde vnStat-databasen for at nulstille totaler.';
+$L['BANDWIDTH_TOTALS_TOOLTIP'] = 'Du kan administrere den månedlige båndbreddes startdato og nulstille statistikker via <a href=\'/configurations.php#additionals\'>Generelle indstillinger > Yderligere Dashboard-indstillinger</a>. Dette giver dig mulighed for at justere startdatoen eller rydde vnStat-databasen for at nulstille totaler.<br/><br/>Se de aktuelle akkumulerede totaler og historik: <a href=\'javascript:void(0)\' class=\'open_bandwidthtotals_modal\' data-toggle=\'modal\' data-target=\'#viewBandwidthTotals\'><span class=\'badge badge-pills badge-info\'>Båndbredde i alt</span></a>';
 $L['DISK_UTIL_TIME']           = 'Diskudnyttelsestid';
 $L['DISK_IO_BW']               = 'Disk I/O båndbredde';
 $L['DISK_SPACE_USAGE_FOR']     = 'Diskpladsbrug for:';
@@ -1741,8 +1754,199 @@ $L['APT_VERSION_INSTALLED']    = 'Nuværende version';
 $L['APT_VERSION_AVAILABLE']    = 'Tilgængelig version';
 $L['UPDATE_APT_DEPENDENCIES']  = 'Opdater apt-afhængigheder';
 
+/* ***********************************
+ * #4.4.9.1 - Båndbredde totaler Modal
+ ************************************/
+$L['BANDWIDTH_TOTALS']            = 'Båndbredde i alt';
+$L['BANDWIDTH_DATA_TIME_NOTICE']  = 'Bemærk: Tiderne vist på disse diagrammer er baseret på serverens tidszone, ikke din lokale tidszone. For at justere serverens tidszone, følg venligst nedenstående trin.<br/><ul><li>SSH til din server</li><li>Kør kommandoen<br/><code>sudo dpkg-reconfigure tzdata</code></li><li>Følg vejledningen for at vælge din tidszone</li><li>Når du er færdig, skal du køre nedenstående kommando<br><code>qb-vnstat --adjust-timestamps</code></li></ul><p class=\'text-warning\'>Justering af serverens tidszone vil påvirke de akkumulerede diagramdata.</p>';
+$L['SELECT_AN_INTERFACE']         = 'Vælg en grænseflade';
+$L['BANDWIDTH_TOTALS_DATA_INFO']  = 'Disse data er indsamlet fra vnStat-databasen og er baseret på den månedlige cyklus indstillet i vnStat-konfigurationen. Dataene indsamles og gemmes i vnStat-databasen og vises her for din bekvemmelighed. Du kan administrere den månedlige startdato for båndbredde og nulstille statistikker via <a href=\'/configurations.php#additionals\' style=\'display:inline-flex\'>Generelle indstillinger > Yderligere Dashboard-indstillinger</a>. Dette giver dig mulighed for at justere startdatoen eller rydde vnStat-databasen for at nulstille totaler.';
+$L['VIEWING_DATA_FOR']            = 'Viser data for:';
+$L['MONTHLY_BANDWIDTH_DATA']      = 'Månedlige båndbreddedata';
+$L['DAILY_BANDWIDTH_DATA']        = 'Daglige båndbreddedata';
+$L['HOURLY_BANDWIDTH_DATA']       = 'Båndbredde per time';
+$L['BANDWIDTH_YEAR']              = 'År';
+$L['BANDWIDTH_MONTH']             = 'Måned';
+$L['BANDWIDTH_DAY']               = 'Dag';
+$L['BANDWIDTH_HOUR']              = 'Time';
+$L['BANDWIDTH_TOTAL']             = 'Samlet trafik';
+$L['BANDWIDTH_RX']                = 'Download';
+$L['BANDWIDTH_TX']                = 'Upload';
+$L['BANDWIDTH_SELECT_INTERFACE']  = 'Vælg grænseflade';
+$L['BANDWIDTH_SELECT_MONTH']      = 'Vælg måned';
+$L['BANDWIDTH_SELECT_DAY']        = 'Vælg dag';
+$L['BANDWIDTH_SELECT_HOUR']       = 'Vælg time';
+$L['BANDWIDTH_SELECT_YEAR']       = 'Vælg år';
+$L['BANDWIDTH_USAGE']             = 'Båndbreddeforbrug';
+$L['BANDWIDTH_VIEWING_INTERFACE'] = '((viser))';
+
 /* **********************************
- * #4.5 - ERROR PAGES
+ * #4.4.10 - HVAD ER STREAMING-DASHBOARD
+ ************************************/
+$L['STREAMING_DASHBOARD']                        = 'Streaming Dashboard';
+$L['STREAMING_DASHBOARD_INFO']                   = 'Hvad er Streaming Dashboard giver et overblik over den aktuelle streamingaktivitet på din server. Denne funktion understøtter i øjeblikket Emby og Jellyfin streamingtjenester. Dashboardet viser antallet af aktive streams, den samlede anvendte båndbredde og det aktuelle medie, der streames. Derudover kan du se de seneste film og episoder, som dine brugere ser.';
+$L['DAEMON_AND_STREAMING_SERVICES']              = 'Daemon + Media Server Control Deck';
+$L['STREAMING_APP_VERSION']                      = '{applicationName}-version';
+$L['ENTER_API_KEY']                              = 'Indtast din API-nøgle';
+$L['API_KEY_PLACEHOLDER']                        = 'Indtast din {serviceName} API-nøgle';
+$L['MASS_NOTIFICATION']                          = 'Massemeddelelse';
+$L['TEMP_TRANSCODE_PATH']                        = 'Midlertidig omkodningssti';
+$L['CLEAR_TEMP_TRANSCODE_PATH']                  = 'Tomme midlertidige omkoder';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES']      = 'Intervalindstillinger for Temp Transcodes';
+$L['INTERVAL_SETTINGS_FOR_TEMP_TRANSCODES_TIPS'] = '<strong><em>Følgende er målt i minutter.</em></strong><br><small>(f.eks.: 90 minutter = 1,5 time)</small><hr>Disse indstillinger bestemmer intervallerne, hvormed midlertidige omkoder ryddes. Systemet vil automatisk rydde transkoder baseret på de specificerede intervaller for at frigøre diskplads og optimere ydeevnen.';
+$L['INTERVAL_STANDARD']                          = 'Standardmedier';
+$L['INTERVAL_LIVE_TV']                           = 'Live-tv';
+$L['ENABLE_TRANSCODE_AUTO_CLEAR']                = 'Aktiver automatisk sletning af midlertidige transkoder';
+$L['TRANSCODE_AUTO_CLEAR_ACTIVATED']             = 'Auto-sletning af omkodning aktiveret.<br>Standardinterval: {standardInterval} minutter.<br>LiveTV-interval: {liveTvInterval} minutter.';
+$L['TRANSCODE_AUTO_CLEAR_DEACTIVATED']           = 'Auto-sletning af transkode deaktiveret.';
+$L['SETTINGS_SAVE_SUCCESS']                      = 'Indstillinger blev gemt.';
+$L['STREAMING_STATS']                            = 'Streaming-statistik';
+$L['LATEST_MOVIES']                              = 'Seneste film';
+$L['MOVIE']                                      = 'Film';
+$L['MOVIES']                                     = 'Film';
+$L['LATEST_EPISODES']                            = 'Seneste afsnit';
+$L['SHOWS']                                      = 'Shows';
+$L['SERIES']                                     = 'Serie';
+$L['EPISODE']                                    = 'Episode';
+$L['SEASON_EPISODE']                             = 'Sæson/Afsnit';
+$L['EPISODE_TITLE']                              = 'Afsnit';
+$L['LIVETV']                                     = 'Live TV';
+$L['CHANNEL']                                    = 'Kanal';
+$L['CHANNEL_NUMBER']                             = 'Kanalnummer';
+$L['NOW_PLAYING']                                = 'Spiller nu';
+$L['MEDIA_TITLE']                                = 'Medietitel';
+$L['MEDIA_TYPE']                                 = 'Medietype';
+$L['YEAR']                                       = 'År';
+$L['DURATION']                                   = 'Varighed';
+$L['ACTION']                                     = 'Handling';
+$L['DISCONNECT_REASON']                          = 'Afbrydelsesårsag';
+$L['NOTIFICATION']                               = 'Meddelelse';
+$L['LIBRARY']                                    = 'Bibliotek';
+$L['LIBRARY_PATH']                               = 'Biblioteksti';
+$L['PREMIERE_DATE']                              = 'Premieredato';
+$L['ACTIVE_STREAMS_PLACEHOLDER']                 = '(0 aktive streams)';
+$L['BANDWIDTH_USED_PLACEHOLDER']                 = '(Brugt båndbredde: 0 Mbps)';
+$L['MEDIA_ITEM']                                 = 'Medieemne';
+$L['ACTION_INFO']                                = 'Handlingsoplysninger';
+$L['ADDITIONAL_INFO']                            = 'Yderligere oplysninger';
+$L['NO_DETAILS_AVAILABLE']                       = 'Ingen detaljer tilgængelige.';
+$L['DEVICE_INFO']                                = 'Enhedsoplysninger';
+$L['STREAM_INFO']                                = 'Strøminformation';
+$L['PLAY_STATE_PRIORITY']                        = 'Afspilningstilstandsprioritet';
+$L['VIEW_WSD_LOGS']                              = 'Se WSD-logfiler';
+$L['WSD_ACTION_LOGS']                            = 'WSD handlingslogs';
+$L['CLEAR_LOGS']                                 = 'Ryd logfiler';
+$L['NO_ACTIONS_CURRENTLY_LOGGED']                = 'Ingen handlinger logget i øjeblikket.';
+$L['KILL_STREAM_SETTINGS']                       = 'Killstream-indstillinger';
+$L['NOTIFICATION_TITLE']                         = 'Meddelelse';
+$L['NOTIFICATION_MESSAGE']                       = 'Besked';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM']          = 'Tærskelindstillinger for Killstream';
+$L['THRESHOLD_SETTINGS_FOR_KILLSTREAM_TIPS']     = '<strong><em>Det følgende måles i sekunder.</em></strong><br><small>(f.eks.: 600 sekunder = 10 minutter)</small><hr>Disse indstillinger bestemmer betingelserne for, at en stream vil blive tvunget stoppet på grund af inaktivitet. Systemet vil overvåge streamens aktivitet, og hvis betingelserne er opfyldt, vil det automatisk stoppe streamen for at frigøre ressourcer.';
+$L['STANDARD_MEDIA']                             = 'Standardmedier';
+$L['LIVE_TV_MEDIA']                              = 'Live tv';
+$L['SKIP_NOTIFICATION']                          = 'Spring notifikation over';
+$L['SKIP_DISCONNECTION']                         = 'Spring afbrydelse over';
+$L['PAUSE_DURATION']                             = 'Pause varighed';
+$L['DISCONNECT_DURATION']                        = 'Afbrydelsesvarighed';
+$L['WSD_ACTION_CLEAR_LOGS_CONFIRM']              = 'Er du sikker på, at du vil rydde logfilerne?';
+$L['WSD_ACTION_CLEAR_LOGS']                      = 'Ja, ryd dem!';
+$L['WSD_ACTION_CLEAR_LOGS_FAILED']               = 'Kunne ikke rydde logfiler.';
+$L['WSD_ACTION_CLEAR_LOGS_SUCCESS']              = 'Logfiler blev ryddet.';
+$L['WSD_ADMIN_NOTIFY']                           = '<span class="text-info fw900">[admin-notify]</span> <strong>{admin}</strong> {admin_status} sendte en <span class="text-warning fw600">besked</span> til <strong>{user}</strong>, som ser <span class="text-primary fw600">{media}</span>.<br><div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><span class="fw600">{notif_header}</span><br><span class="fw300">{notif_text}</span></div>';
+$L['WSD_KILL_NOTIFY']                            = '<span class="text-info fw900">[kill-notify]</span> {user}, som ser <span class="text-primary fw600">{media}</span>, har været sat på pause i <span class="text-info fw600">{paused_time}</span> ved <span class="text-mute">{pause_position}</span> den <span class="text-mute fw600">{pause_date} {pause_time}</span> fra <span class="text-mute fw600">{device} {ip}</span> og er blevet <span class="text-warning fw600">underrettet</span> pga. inaktivitet.';
+$L['WSD_NOTIFY']                                 = '<span class="text-info fw900">[notify]</span> {user} har modtaget en besked.';
+$L['WSD_ADMIN_STOP']                             = '<span class="text-info fw900">[admin-stop]</span> {user}, som ser <span class="text-primary fw600">{media}</span> fra <span class="text-mute fw600">{device}</span>, er blevet <span class="text-danger fw600">tvangsstoppet</span> af <strong>{admin}</strong> {admin_status}.';
+$L['WSD_KILL_STREAM']                            = '<span class="text-info fw900">[kill-stream]</span> {user}, som ser <span class="text-primary fw600">{media}</span>, har været sat på pause i <span class="text-info fw600">{paused_time}</span> ved <span class="text-mute">{pause_position}</span> den <span class="text-mute fw600">{pause_date} {pause_time}</span> fra <span class="text-mute fw600">{device} {ip}</span> og er blevet <span class="text-danger fw600">stoppet</span> pga. inaktivitet.';
+$L['WSD_ADMIN_DISCONNECT']                       = '<span class="text-info fw900">[admin-disconnect]</span> {user}, som ser <span class="text-primary fw600">{media}</span> fra <span class="text-mute fw600">{device}</span>, er blevet <span class="text-danger fw600">tvangsfrakoblet</span> af <strong>{admin}</strong> {admin_status}.';
+$L['WSD_DISCONNECT_STREAM']                      = '<span class="text-info fw900">[kill-stream]</span> {user}, som ser <span class="text-primary fw600">{media}</span>, har været sat på pause i <span class="text-info fw600">{paused_time}</span> ved <span class="text-mute">{pause_position}</span> den <span class="text-mute fw600">{pause_date} {pause_time}</span> fra <span class="text-mute fw600">{device} {ip}</span> og er blevet <span class="text-danger fw600">frakoblet</span> pga. inaktivitet.';
+$L['WSD_MASS_NOTIFICATION']                      = '<span class="text-info fw900">[mass-notification]</span> <strong>{admin}</strong> {admin_status} sendte en massebesked.<br><strong>Brugere underrettet:</strong> {users_notified}<br><strong>Aktive brugere:</strong> {active_users}, <strong>Samlede sessioner:</strong> {session_count}.<div style="border:1px solid var(--qb-color-8-rgba);background:var(--qb-color-1-rgba);padding:4px 12px;border-radius:3px;text-wrap:pretty;min-width:250px;"><strong>{notif_header}</strong><br>{notif_text}</div>';
+$L['WSD_USER_ACTION']                            = '<span class="text-info fw900">[user-action]</span> {user} udførte handlingen: <span class="text-primary fw600">{action}</span> den <span class="text-mute fw600">{date} {time}</span>.';
+$L['NONE']                                       = 'Ingen';
+
+/* *****************************************
+ * #4.4.10.1 - fejl og meddelelser på sideniveau
+ *******************************************/
+$L['MISSING_FIELD']                    = 'Manglende felt';
+$L['MISSING_API_KEY']                  = 'Manglende API-nøgle';
+$L['INVALID_API_KEY_FORMAT']           = 'Ugyldigt API-nøgleformat. Indtast venligst en gyldig API-nøgle.';
+$L['UNKNOWN_MEDIA']                    = 'Ukendt medie';
+$L['UNKNOWN_DURATION']                 = 'Ukendt varighed';
+$L['UNKNOWN_PAUSE_TIME']               = 'Ukendt pausetidspunkt';
+$L['ERROR_FETCHING_LOGS']              = 'Fejl ved hentning af logs.';
+$L['NO_SUPPORTED_STREAMING_SERVICE']   = 'Ingen understøttet streamingtjeneste er installeret.';
+$L['PROCESS_REQUEST_ERROR']            = 'Fejl ved behandling af anmodningen. Prøv venligst igen.';
+$L['API_CONNECTION_ERROR']             = 'Kunne ikke oprette forbindelse til {serviceName}-API. Tjek venligst din API-nøgle og serverkonfiguration.';
+$L['INPUT_READ_FAILED']                = 'Kunne ikke læse input.';
+$L['INVALID_INPUT']                    = 'Ugyldigt input. Tjek venligst dit input og prøv igen.';
+$L['INVALID_JSON_PAYLOAD']             = 'Ugyldig JSON-data: {error}';
+$L['INVALID_EMBY_API_KEY']             = 'Ugyldig Emby API-nøgle.';
+$L['INVALID_JELLYFIN_API_KEY']         = 'Ugyldig Jellyfin API-nøgle.';
+$L['DB_FILE_NOT_FOUND']                = 'Databasefil ikke fundet: {dbPath}';
+$L['API_KEY_SAVE_SUCCESS']             = 'API-nøglen blev gemt succesfuldt.';
+$L['API_KEY_SAVE_FAILED']              = 'Kunne ikke gemme API-nøglen.';
+$L['INVALID_TEMP_TRANSCODE_PATH']      = 'Ugyldig midlertidig transkodningssti.';
+$L['INVALID_SERVICE_SPECIFIED']        = 'Ugyldig tjeneste angivet.';
+$L['TEMP_TRANSCODE_PATH_SAVE_FAIL']    = 'Kunne ikke gemme midlertidig transkodningssti.';
+$L['TEMP_TRANSCODE_PATH_SAVE_SUCCESS'] = 'Midlertidig transkodningssti gemt succesfuldt.';
+$L['TRANSCODE_INTERVAL_SAVE']          = 'Interval for automatisk oprydning af transkodning gemt succesfuldt.';
+$L['TRANSCODE_INTERVAL_FAILED']        = 'Kunne ikke gemme interval for automatisk oprydning af transkodning.';
+$L['INVALID_TRANSCODE_PATH']           = 'Ugyldig eller manglende transkodningssti.';
+$L['TRANSCODE_DIR_EMPTY_FAILED']       = 'Kunne ikke tømme den midlertidige transkodningsmappe.';
+$L['TRANSCODE_DIR_EMPTY_SUCCESS']      = 'Den midlertidige transkodningsmappe blev tømt succesfuldt.';
+$L['EMBY_CONFIG_LOAD_FAILED']          = 'Kunne ikke indlæse Emby-konfiguration.';
+$L['EMBY_API_KEY_RETRIEVE_FAILED']     = 'Kunne ikke hente Emby API-nøglen.';
+$L['JELLYFIN_API_KEY_RETRIEVE_FAILED'] = 'Kunne ikke hente Jellyfin API-nøglen.';
+$L['JELLYFIN_CONFIG_LOAD_FAILED']      = 'Kunne ikke indlæse Jellyfin-konfiguration.';
+$L['LATEST_LOG_FETCH_FAILED']          = 'Kunne ikke hente den seneste log.';
+$L['ERROR_PREFIX']                     = '[FEJL] ';
+$L['UNKNOWN']                          = 'Ukendt';
+$L['UNKNOWN_USER']                     = 'Ukendt bruger';
+$L['UNKNOWN_DEVICE']                   = 'Ukendt enhed';
+$L['API_URL_KEY_REQUIRED']             = 'API URL og nøgle er påkrævet.';
+$L['FAILED_TO_CREATE_UPDATE_TRIGGER']  = 'Kunne ikke oprette opdaterings-trigger: ';
+$L['DB_TABLE_CREATE_FAILED']           = 'Kunne ikke oprette `media_api` tabel: {error}';
+$L['DB_TABLE_INFO_FAILED']             = 'Kunne ikke hente tabelinformation for `media_api`: {error}';
+$L['DB_COLUMN_ADD_FAILED']             = 'Kunne ikke tilføje kolonnen `{column}` til `media_api`: {error}';
+$L['LOCATION_PRIVATE_RESERVED']        = 'Privat/Lokal IP';
+$L['UNKNOWN_IP']                       = 'Ukendt IP';
+$L['LOCATION_UNKNOWN_CITY']            = 'Ukendt by';
+$L['LOCATION_UNKNOWN_STATE']           = 'Ukendt stat';
+$L['LOCATION_UNKNOWN_COUNTRY']         = 'Ukendt land';
+$L['LOCATION_LOADING']                 = 'Indlæser placering...';
+$L['LOCATION_ERROR']                   = 'Fejl';
+$L['API_MOVIE_COUNT_FETCH_FAILED']     = 'Kunne ikke hente antal film fra {applicationName}-API. HTTP-kode: {httpCode}. Fejl: {error}';
+$L['API_MOVIE_COUNT_NOT_FOUND']        = 'Antal film blev ikke fundet i {applicationName}-API-svar.';
+$L['API_SERIES_COUNT_FETCH_FAILED']    = 'Kunne ikke hente antal serier fra {applicationName}-API. HTTP-kode: {httpCode}. Fejl: {error}';
+$L['API_SERIES_COUNT_NOT_FOUND']       = 'Antal serier blev ikke fundet i {applicationName}-API-svar.';
+$L['API_EPISODE_COUNT_FETCH_FAILED']   = 'Kunne ikke hente antal episoder fra {applicationName}-API. HTTP-kode: {httpCode}. Fejl: {error}';
+$L['API_EPISODE_COUNT_NOT_FOUND']      = 'Antal episoder blev ikke fundet i {applicationName}-API-svar.';
+$L['CURL_INIT_FAILED']                 = 'Kunne ikke initialisere cURL-session til {applicationName}.';
+$L['CURL_ERROR']                       = 'cURL-fejl: {error}';
+$L['HTTP_ERROR']                       = 'HTTP-fejl: Statuskode {httpStatus}';
+$L['UNEXPECTED_RESPONSE_TYPE']         = 'Uventet svartype: {responseType}';
+$L['INVALID_LOGS_FORMAT']              = 'Ugyldigt logformat: Forventede array, men modtog {logType}';
+$L['INVALID_APPLICATION_NAME']         = 'Ugyldigt applikationsnavn. Skal være \'jellyfin\' eller \'emby\'.';
+$L['DB_QUERY_PREPARE_FAILED']          = 'Kunne ikke forberede databaseforespørgslen: {error}';
+$L['DB_QUERY_EXECUTION_FAILED']        = 'Kunne ikke udføre databaseforespørgslen: {error}';
+$L['DB_SELECT_QUERY_PREPARE_FAILED']   = 'Kunne ikke forberede SELECT-forespørgslen: {error}';
+$L['DB_SELECT_QUERY_EXECUTE_FAILED']   = 'Kunne ikke udføre SELECT-forespørgslen: {error}';
+$L['DB_UPDATE_QUERY_PREPARE_FAILED']   = 'Kunne ikke forberede UPDATE-forespørgslen: {error}';
+$L['DB_INSERT_QUERY_PREPARE_FAILED']   = 'Kunne ikke forberede INSERT-forespørgslen: {error}';
+$L['DB_API_KEY_RETRIEVAL_FAILED']      = 'Kunne ikke hente API-nøglen grundet en databasefejl.';
+$L['UNSUPPORTED_DB_TYPE']              = 'Ikke understøttet databasetype: {dbType}';
+$L['DOMAIN_NOT_DEFINED']               = '{applicationName}-domænet er ikke defineret.';
+$L['QUERY_FAILED']                     = 'Forespørgslen mislykkedes: {errorInfo}';
+$L['NO_INSTALLATION_FOUND']            = 'Ingen {applicationName}-installation fundet for nogen bruger.';
+$L['USERNAME_FETCH_FAILED']            = 'Kunne ikke hente brugernavn for {applicationName}-bruger-ID: {appUID}.';
+$L['INVALID_API_URL']                  = 'Ugyldig {applicationName}-API URL: {apiUrl}.';
+$L['INVALID_TOGGLE_VALUE']             = 'Ugyldig værdi for toggle. Forventede 0 eller 1.';
+$L['INVALID_PATH_FORMAT']              = 'Ugyldigt sti-format. Forventede en tekststreng.';
+$L['INVALID_INTERVAL']                 = 'Ugyldigt interval-format. Forventede et positivt heltal.';
+$L['SETTINGS_SAVE_FAILED']             = 'Kunne ikke gemme indstillingerne. Prøv venligst igen.';
+$L['SERVER_ERROR']                     = 'Serverfejl';
+
+/* **********************************
+ * #4.5 - FEJLSIDER
  ************************************/
 $L['404HACK'] = 'Av! Vil du virkelig gøre mig ondt?';
 $L['404PAGE'] = 'Dette er ikke den side, du leder efter.';

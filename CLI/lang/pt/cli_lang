@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_pt
 # File Description: Portuguese (Brazil) language file
-# File Version: 1.0.146
+# File Version: 1.0.151
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -21,7 +21,7 @@
 # Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
-# Copyright (C) 2019-2024, QuickBox.IO
+# Copyright (C) 2019-2025, QuickBox.IO
 # All rights reserved.
 # <END METADATA>
 # shellcheck disable=2034,2154,2312
@@ -579,7 +579,7 @@ senha: ${notifiarr_user_password}"
 
 quickbox::lang::software::novnc::access() {
 	declare text="acesso ${software_title} em:
-${quickbox_web_root}vnc/vnc.html?resize=remote&path=${username}/websockify
+${quickbox_web_root}${username}/vnc/vnc.html?resize=remote&host=${novnc_web_root}&path=${username}/websockify
 ${software_title} instalado na porta: ${software_web_port}"
 	quickbox::dashboard::log "${text}"
 }
@@ -858,6 +858,12 @@ quickbox::lang::wireguard::configure::client_ask_extra() {
 
 quickbox::lang::wireguard::configure::client_ask_extra_error() {
 	declare text="Entrada inválida. Por favor insira 's' ou 'n'."
+	quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::access() {
+	declare text="access ${software_title} at:
+${quickbox_web_root}whats-streaming.php"
 	quickbox::dashboard::log "${text}"
 }
 
@@ -2083,12 +2089,14 @@ Observações:
 		has_update=1
 		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
 			"  -u | --username    Define o nome de usuário para ${software_title} (obrigatório)
+  -o '0.15.1'        Instalar versão 0.15.1
   -o '0.10.0'        Instalar versão 0.10.0
   -o '0.9.8'         Instalar versão 0.9.8
   -o '0.9.7'         Instalar versão 0.9.7
   -o '0.9.6'         Instalar versão 0.9.6
   -o 'feature-bind'  Instalar a versão feature-bind de ${software_title}" \
-			"  qb install ${software_help_name} -u nome_de_usuário -o '0.10.0'
+			"  qb install ${software_help_name} -u nome_de_usuário -o '0.15.1'
+  qb install ${software_help_name} -u nome_de_usuário -o '0.10.0'
   qb install ${software_help_name} -u nome_de_usuário -o '0.9.8'
   qb install ${software_help_name} -u nome_de_usuário -o '0.9.7'
   qb reinstall ${software_help_name} -u nome_de_usuário -o '0.9.6'
