@@ -116,7 +116,7 @@ Take pride in your contribution—*you rock!*
 
 ---
 
-## ⁉️ Contributing corrections
+## 📝 Contributing corrections
 
 If you find any strings that need correction or improvement, please feel free to submit a pull request with your suggestions.
 
@@ -148,9 +148,9 @@ pro_v3_translations/
 │   └── lang_xx.php
 │   └── plugins/
 │     └── bootstrapt-select
-│       └── lang_xx.js 
+│     │ └── lang_xx.js 
 │     └── datatables
-│       └── lang_xx.json
+│     │ └── lang_xx.json
 │     └── wsd
 │       └── lang_xx.json
 └── README.md
