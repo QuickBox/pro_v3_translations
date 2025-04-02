@@ -22,7 +22,7 @@ Contributing is easy and we're happy to help you through the process. Here's how
 First, grab a copy of the repository:
 
 ```bash
-git clone https://lab.quickbox.io/QuickBox/pro_v3_translations.git
+git clone https://github.com/QuickBox/pro_v3_translations.git
 ```
 
 You can use a Git desktop application (like GitKraken) to make this process even easier—just clone the repository to a folder on your system.
