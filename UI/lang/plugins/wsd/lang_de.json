@@ -1,0 +1,349 @@
+{
+	"language": {
+		"loading": {
+			"failedToLoad": "Sprachdatei für {lang} konnte nicht geladen werden",
+			"loadedSuccessfully": "Sprache '{lang}' erfolgreich geladen",
+			"errorLoading": "Fehler beim Laden der Sprachdatei: {error}"
+		}
+	},
+	"modal": {
+		"messages": {
+			"notFound": "Modal nicht im DOM gefunden: {modalId}",
+			"loading": "Wird geladen...",
+			"preloadedContent": "Modalinhalt vorgeladen für: {modalId}",
+			"loadFailed": "Modalinhalt konnte nicht geladen werden."
+		}
+	},
+	"dataTables": {
+		"messages": {
+			"initialized": "DataTables für {tableId} mit Live-Daten initialisiert.",
+			"notFound": "DataTables im Modalinhalt nicht gefunden."
+		}
+	},
+	"api": {
+		"events": {
+			"clickTriggered": "Klickereignis für {elementId} ausgelöst",
+			"response": "API-Antwort:",
+			"callFailed": "API-Aufruf fehlgeschlagen:"
+		}
+	},
+	"rules": {
+		"management": {
+			"saved": "Regel gespeichert: {message}",
+			"errorSaving": "Fehler beim Speichern der Regel: {message}",
+			"genericError": "Fehler: {error}"
+		}
+	},
+	"network": {
+		"errors": {
+			"responseNotOk": "Netzwerkantwort war nicht in Ordnung: {statusText}"
+		}
+	},
+	"Zeitformate": {
+		"manual": "Laden...",
+		"secondsShort": "s",
+		"minutesShort": "m",
+		"hoursShort": "h",
+		"daysShort": "t",
+		"weeksShort": "w",
+		"monthsShort": "mo",
+		"yearsShort": "j"
+	},
+	"generalErrors": {
+		"failedToInitializeDatabase": "Datenbank konnte nicht initialisiert werden.",
+		"databaseInitializationError": "Datenbankinitialisierungsfehler:",
+		"failedToFetchOrRenderSessions": "Sitzungen konnten nicht abgerufen oder gerendert werden.",
+		"elementNotFound": "Element mit ID \"{id}\" nicht gefunden.",
+		"noAdminUsersFound": "Keine Administratorbenutzer gefunden.",
+		"unexpectedError": "Unerwarteter Fehler: {error}",
+		"adminUserIdUnavailable": "Administrator-Benutzer-ID ist nicht verfügbar. Inhaltsabruf wird übersprungen.",
+		"skippingUser": "Benutzer {userId} wird übersprungen, da nur Administratordaten aggregiert werden.",
+		"serverError": "Serverantwort mit Fehler:",
+		"apiConnectionTestFailed": "API-Verbindung konnte nicht getestet werden:",
+		"invalidApiResponse": "Ungültige Antwort vom API.",
+		"inputFieldNotFound": "Eingabefeld für Dienst nicht gefunden: {serviceName}",
+		"loggingFailed": "Protokollierung fehlgeschlagen: {error}",
+		"loggingApiRequestFailed": "Protokollierung der API-Anforderung fehlgeschlagen: {error}",
+		"httpError": "HTTP-Fehler! Status: {status}"
+	},
+	"fetchErrors": {
+		"failed": "Daten konnten nicht vom Server abgerufen werden. Bitte versuchen Sie es später erneut.",
+		"attemptsFailed": "Alle Abrufversuche sind fehlgeschlagen:",
+		"errorFetchingUserOrSessionData": "[fetchLoggedInUsers] Fehler beim Abrufen der Benutzer- oder Sitzungsdaten.",
+		"adminUserIdFailed": "Administrator-Benutzer-ID konnte nicht abgerufen werden: {statusText}",
+		"fetchAutoClear": "[fetchAutoClearTempTranscodeToggle] Fehler beim Abrufen: {error}",
+		"errorFetchingAdminUserId": "Fehler beim Abrufen der Administrator-Benutzer-ID:",
+		"failedSessions": "Sitzungen konnten nicht abgerufen werden: {error}",
+		"failedTranscodeMappings": "Transcode-Mappings konnten nicht von der API abgerufen werden.",
+		"errorFetchingTranscodeMappings": "Fehler beim Abrufen der Transcode-Mappings: {message}",
+		"failedActiveDevices": "Fehler beim Abrufen der aktiven Geräte: {error}",
+		"errorFetchingMediaDetails": "Fehler beim Abrufen der Mediendetails: {error}",
+		"failedTotalMovies": "Fehler beim Abrufen der Gesamtzahl der Filme: {error}",
+		"failedTotalSeries": "Fehler beim Abrufen der Gesamtzahl der Serien: {error}",
+		"failedTotalEpisodes": "Fehler beim Abrufen der Gesamtzahl der Episoden: {error}",
+		"failedLatestEpisode": "Fehler beim Abrufen der neuesten Episode für Eintrag {entryName}: {status}",
+		"failedLatestEpisodes": "Fehler beim Abrufen der neuesten Episoden: {statusText}",
+		"errorFetchingLatestEpisodes": "Fehler beim Abrufen der neuesten Episoden: {error}",
+		"failedContent": "Fehler beim Abrufen von {contentType}: {reason}",
+		"failedLatestMovies": "Fehler beim Abrufen der neuesten Filme: {statusText}",
+		"errorFetchingLatestMovies": "Fehler beim Abrufen der neuesten Filme: {error}",
+		"failedPlaybackInfo": "Fehler beim Abrufen der Wiedergabeinformationen für Element {itemId}: {statusText}",
+		"errorFetchingLastResumeMedia": "Fehler beim Abrufen der letzten Mediendetails zur Fortsetzung: {error}",
+		"errorFetchingBitrate": "Fehler beim Abrufen der Bitrate für Element {itemId}: {error}",
+		"expectedSessionsArray": "Array für Sitzungen erwartet, empfangen: {sessions}"
+	},
+	"sessionErrors": {
+		"sessionDetails": "[fetchSessionDetails] Sitzungsdetails {sessionId}:",
+		"errorFetchingSessionDetails": "[fetchSessionDetails] Fehler beim Abrufen der Sitzungsdetails: {error}",
+		"uncategorizedSessionType": "Nicht kategorisierter Sitzungstyp: {type}"
+	},
+	"deviceErrors": {
+		"errorUpdatingDeviceName": "Fehler beim Aktualisieren des Gerätenamens für die Geräte-ID {deviceId}: {error}"
+	},
+	"deviceMessages": {
+		"successful": "Gerätename für Gerät {deviceId} erfolgreich aktualisiert."
+	},
+	"statsErrors": {
+		"errorUpdatingDashboardStats": "Fehler beim Aktualisieren der Dashboard-Statistiken: {error}",
+		"unexpectedErrorInUpdateWidgetStats": "Unerwarteter Fehler in [updateWidgetStats]: {error}"
+	},
+	"webSocket": {
+		"errors": {
+			"sendingSessionData": "Fehler beim Senden der Sitzungsdaten an WebSocket: {deviceId}, {error}"
+		},
+		"messages": {
+			"noDevicesFound": "Keine Geräte gefunden.",
+			"noDeviceIds": "Es wurden keine Geräte-IDs gefunden.",
+			"errorFetchingDeviceIds": "Fehler beim Abrufen der Geräte-IDs. {error}",
+			"errorInitializing": "Fehler beim Initialisieren der WebSocket-Verbindungen.",
+			"sessionDataSent": "Sitzungsdaten für Gerät {deviceId} an WebSocket gesendet.",
+			"error": "WebSocket-Fehler für Gerät {deviceId} aufgetreten",
+			"established": "WebSocket-Verbindung für Gerät {deviceId} hergestellt",
+			"processingMessageError": "Fehler beim Verarbeiten der Nachricht für Gerät {deviceId}",
+			"unexpectedData": "Unerwartetes Datenformat: {data}",
+			"centralEstablished": "Zentrale WebSocket-Verbindung hergestellt",
+			"processingCentralError": "Fehler bei der Verarbeitung der zentralen WebSocket-Nachricht",
+			"newMoviesReceived": "Neue Filme über WebSocket für Gerät {deviceId} empfangen: {count}",
+			"newEpisodesReceived": "Neue Episoden über WebSocket für Gerät {deviceId} empfangen: {count}"
+		}
+	},
+	"actionErrors": {
+		"apiKeyActivation": {
+			"missingElements": "Ein oder mehrere erforderliche Elemente für die Aktivierung des API-Schlüssels fehlen.",
+			"empty": "Der API-Schlüssel darf nicht leer sein."
+		},
+		"unsupportedAction": "Nicht unterstützte Aktion: {action}",
+		"executeActionFailed": "Aktion konnte nicht ausgeführt werden. Aktion: {action}",
+		"invalidContentType": "Ungültiger Inhaltstyp empfangen. JSON erwartet.",
+		"invalidSessionsDataFormat": "Ungültiges Sitzungsdatenformat: {session}",
+		"invalidSessionObject": "Ungültiges Sitzungsobjekt: {session}",
+		"tooltip": {
+			"noSelector": "Kein Selektor für die Aktualisierung des Tooltips angegeben."
+		},
+		"errorClearingTempPath": "Fehler beim Löschen des temporären Transkodierungspfads:",
+		"disconnectDeviceFailed": "Die Verbindung zum Benutzergerät konnte nicht getrennt werden. Fehler: {error}",
+		"failedFetchDevices": "Geräte konnten nicht abgerufen werden. HTTP-Status: {status}",
+		"deviceDeleteFailed": "Gerät {deviceId} konnte nicht gelöscht werden",
+		"webSocket": {
+			"invalidMessageFormat": "Ungültiges WebSocket-Nachrichtenformat für Gerät: {deviceId}. JSON erwartet.",
+			"emptyMoviesUpdate": "Keine Filmaktualisierung für Gerät: {deviceId} erhalten.",
+			"emptyEpisodesUpdate": "Keine Episodenaktualisierung für Gerät: {deviceId} erhalten."
+		}
+	},
+	"notifications": {
+		"databaseInitializationSuccess": "Datenbank erfolgreich initialisiert.",
+		"apiKeyActivated": "API-Schlüssel erfolgreich aktiviert!",
+		"notificationSent": "Benachrichtigung erfolgreich gesendet!",
+		"sendNotification": {
+			"title": "Benachrichtigung senden",
+			"messageTitleLabel": "Nachrichtentitel",
+			"enterTitle": "Titel eingeben",
+			"messageLabel": "Nachricht",
+			"enterMessage": "Nachricht eingeben",
+			"titleRequired": "Titel erforderlich",
+			"messageRequired": "Nachricht erforderlich",
+			"sendButton": "Senden",
+			"cancelButton": "Abbrechen"
+		},
+		"status": {
+			"successTitle": "Erfolgreich",
+			"errorTitle": "Fehler",
+			"infoTitle": "Info"
+		},
+		"massNotification": {
+			"emby": "Emby-Massenbenachrichtigung",
+			"jellyfin": "Jellyfin Massenbenachrichtigung"
+		},
+		"bothFieldsRequired": "Beide Felder sind Pflichtfelder",
+		"noActiveSessionsFound": "Keine aktiven Sitzungen gefunden.",
+		"errorSending": "Fehler beim Senden der Benachrichtigung:",
+		"allFieldsRequired": "Alle Felder sind Pflichtfelder.",
+		"missingDeviceId": "Geräte-ID erforderlich.",
+		"partialSuccess": {
+			"sentSuccessfully": "Benachrichtigungen erfolgreich gesendet: {success}, fehlgeschlagen: {failed}",
+			"embyLinkNotFound": "Emby-Benachrichtigungslink nicht gefunden.",
+			"failedWithMessage": "Benachrichtigung fehlgeschlagen: {message}"
+		}
+	},
+	"statusLabels": {
+		"retryingFetch": "Abruf wird wiederholt... Versuch {attempt} von {retries}",
+		"contentFetchStart": "Abruf von Inhalten für adminUserId: {adminUserId} wird gestartet",
+		"fetchingLatestMovies": "Neueste Filme werden abgerufen für: {adminUserId}",
+		"fetchingLatestEpisodes": "Neueste Folgen werden abgerufen für: {adminUserId}",
+		"bandwidthUsed": "Verwendete Bandbreite",
+		"totalTranscodes": "Gesamt-Transcodes:",
+		"activeStreams": "Aktive Streams:",
+		"totalBandwidth": "Gesamtbandbreite:",
+		"movies": "Filme:",
+		"series": "Serien:",
+		"episodes": "Folgen:",
+		"tvShows": "TV-Sendungen",
+		"specialEpisode": "Spezial",
+		"channel": "Kanal",
+		"client": "Client",
+		"device": "Gerät",
+		"ipAddress": "IP",
+		"geoLocation": "Standort",
+		"active": "Aktiv",
+		"method": "Methode",
+		"subtitles": "Untertitel",
+		"stream": "Stream",
+		"audio": "Audio",
+		"video": "Video",
+		"transcode": "Transkodieren",
+		"status": "Status",
+		"nowPlaying": "Wird gerade abgespielt",
+		"playing": "Wird abgespielt",
+		"paused": "Pausiert",
+		"playUser": "{userName} abspielen",
+		"pauseUser": "{userName} pausieren",
+		"stopUser": "{userName} stoppen",
+		"more": "mehr",
+		"sendNotificationToUser": "Benachrichtigung an {userName} senden",
+		"disconnectDevice": "Sitzung für {userName} beenden",
+		"confirmAction": {
+			"title": "Aktion bestätigen",
+			"disconnectMessage": "Möchten Sie die Verbindung zu diesem Gerät wirklich trennen? Der Benutzer wird sofort abgemeldet.",
+			"yesDisconnect": "Ja, Verbindung trennen",
+			"cancel": "Abbrechen"
+		},
+		"settingsSaved": "Einstellungen gespeichert",
+		"sInfo": "Seite _PAGE_ von _PAGES_ wird angezeigt",
+		"sSearchPlaceholder": "Suche...",
+		"sLengthMenu": "Ergebnisse: _MENU_",
+		"sEmptyTable": "Sieht aus, als wäre hier noch nichts."
+	},
+	"transcoding": {
+		"errors": {
+			"fetchTempIntervalsFailed": "[fetchTempTranscodeIntervals] Transkodierungsintervalle konnten nicht abgerufen werden.",
+			"fetchTempIntervals": "[fetchTempTranscodeIntervals] Fehler beim Abrufen: {message}",
+			"initializeAutoClearFailed": "[initializeAutoClearTempTranscodeToggle] Automatischer Löschschalter konnte nicht initialisiert werden: {message}"
+		},
+		"messages": {
+			"reason": "Grund",
+			"containerBitrateExceeds": "Bitrate aufgrund der Qualitätseinstellung reduzieren",
+			"audioCodecNotSupported": "Audio wird in kompatiblen Codec konvertiert",
+			"videoCodecNotSupported": "Video wird in kompatiblen Codec konvertiert",
+			"containerNotSupported": "Containerformat wird nicht unterstützt",
+			"profileNotSupported": "Medienprofil wird vom Gerät nicht unterstützt",
+			"videoBitrateExceeds": "Reduzierung Videobitrate aufgrund der Qualitätseinstellung",
+			"audioBitrateExceeds": "Audiobitrate aufgrund der Qualitätseinstellung reduzieren",
+			"audioChannelsNotSupported": "Audiokanäle werden vom Gerät nicht unterstützt",
+			"directPlayError": "Wiederherstellung nach Wiedergabefehler",
+			"subtitleCodecNotSupported": "Untertitel werden direkt in Videostream konvertiert",
+			"directPlayback": "Direkt",
+			"details": {
+				"video": "Transkodierung ({videoCodec} {videoBitrate} Mbit/s)",
+				"audio": "Transkodierung ({audioCodec} {audioBitrate} kbit/s)",
+				"unknownMbps": "Transkodierung (Unbekannte Mbit/s)",
+				"unknownKbps": "Transkodierung (Unbekannte kbit/s)"
+			},
+			"tempTranscodePathEmpty": "Der temporäre Transkodierungspfad ist leer.",
+			"updateButton": "Aktualisieren",
+			"filteredActiveUsers": "Gefilterte aktive Benutzer:"
+		}
+	},
+	"pausePolling": {
+		"errors": {
+			"noValidRows": "Keine gültigen Pausenzeilen zurückgegeben oder Fehler in der Antwort.",
+			"pollingError": "Fehler beim Abfragen der Pausenzeitstempel: {error}",
+			"invalidSessionId": "[updatePauseTimer] mit ungültiger Sitzungs-ID aufgerufen: {sessionId}"
+		},
+		"messages": {
+			"loadingTimer": "Wird geladen...",
+			"pausedFor": "Pausiert für: {time}"
+		}
+	},
+	"unknownValues": {
+		"default": "Standard",
+		"unknown": "Unbekannt",
+		"unknownError": "Unbekannter Fehler",
+		"unexpectedErrorOccurred": "Ein unerwarteter Fehler ist aufgetreten.",
+		"unknownErrorOccurred": "Unbekannter Fehler ist aufgetreten.",
+		"unknownMedia": "Unbekanntes Medium",
+		"unknownMediaType": "Unbekannter Medientyp",
+		"unknownLibrary": "Unbekannte Bibliothek",
+		"unknownMovie": "Unbekannter Film",
+		"unknownSeries": "Unbekannte Serie",
+		"unknownSeason": "Unbekannte Staffel",
+		"unknownEpisode": "Unbekannte Episode",
+		"unknownTitle": "Unbekannter Titel",
+		"unknownYear": "Unbekanntes Jahr",
+		"unknownProgram": "Unbekannte Sendung",
+		"unknownChannel": "Unbekannter Sender",
+		"unknownChannelNumber": "Unbekannte Sendernummer",
+		"unknownUser": "Unbekannter Benutzer",
+		"unknownDevice": "Unbekanntes Gerät",
+		"unknownClient": "Unbekannter Client",
+		"unknownIpAddress": "Unbekannte IP-Adresse",
+		"notAvailable": "N/A",
+		"placeholder": {
+			"noData": "-"
+		}
+	},
+	"tableErrors": {
+		"parentContainerMissing": "[updateOrAddRow] Übergeordneter Container fehlt: {containerId}",
+		"noDataAvailable": "Keine Daten verfügbar",
+		"noMoviesFound": "Keine Filme gefunden oder ungültiges Antwortformat.",
+		"noEpisodesFound": "Keine Episoden gefunden oder ungültiges Antwortformat.",
+		"tableBodyElementNotFound": {
+			"movies": "Tabellenkörperelement für neueste Filme nicht gefunden.",
+			"episodes": "Tabellenkörperelement für neueste Episoden nicht gefunden."
+		}
+	},
+	"activeCounts": {
+		"activeMovie": "{count} Aktive Filme",
+		"activeMovies": "{count} Aktive Filme",
+		"activeTVShow": "{count} Aktive TV-Sendungen",
+		"activeTVShows": "{count} Aktive TV-Sendungen",
+		"activeChannel": "{count} Aktiver Kanal",
+		"activeChannels": "{count} Aktive Kanäle"
+	},
+	"saveEvents": {
+		"saving": "Speichern...",
+		"failedSaveApiKey": "API-Schlüssel konnte nicht gespeichert werden: HTTP {status}",
+		"deviceDisconnected": "Gerät erfolgreich getrennt.",
+		"validSessionsUpdated": "Gültige Sitzungen aktualisiert:",
+		"saveError": "Speicherfehler:",
+		"saveErrorStatus": "Speicherfehler: {status}"
+	},
+	"timeEvents": {
+		"localStorageUnavailable": "Lokaler Speicher ist nicht verfügbar.",
+		"loadProcessedSessionsFailed": "Verarbeitete Sitzungen konnten nicht geladen werden: {message}",
+		"saveProcessedSessionsFailed": "Verarbeitete Sitzungen konnten nicht gespeichert werden: {message}",
+		"invalidPauseNotificationThreshold": "Ungültiges Format im gespeicherten pauseNotificationThreshold erkannt. Es wurde eine Zahl erwartet.",
+		"invalidPauseDisconnectionThreshold": "Ungültiges Format im gespeicherten pauseDisconnectionThreshold erkannt. Es wurde eine Zahl erwartet.",
+		"typeNotAvailable": "{type} ist nicht verfügbar: {errorMessage}"
+	},
+	"additionalDebugMessages": {
+		"handleSessionAction": {
+			"apiPayload": "[handleSessionAction] API-Nutzlast: {payload}"
+		},
+		"updateWidgetStats": {
+			"bandwidthInUI": "[updateWidgetStats] Aktualisierte Bandbreite in der Benutzeroberfläche: {bandwidth}"
+		},
+		"saveSettings": {
+			"payload": "[saveSettings] Gesendete Nutzlast: {payload}"
+		}
+	}
+}

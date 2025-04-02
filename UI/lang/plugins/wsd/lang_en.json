@@ -1,0 +1,349 @@
+{
+	"language": {
+		"loading": {
+			"failedToLoad": "Failed to load language file for {lang}",
+			"loadedSuccessfully": "Language '{lang}' loaded successfully.",
+			"errorLoading": "Error loading language file: {error}"
+		}
+	},
+	"modal": {
+		"messages": {
+			"notFound": "Modal not found in the DOM: {modalId}",
+			"loading": "Loading...",
+			"preloadedContent": "Preloaded modal content for: {modalId}",
+			"loadFailed": "Failed to load modal content."
+		}
+	},
+	"dataTables": {
+		"messages": {
+			"initialized": "DataTables initialized for {tableId} with live data.",
+			"notFound": "DataTables not found in the modal content."
+		}
+	},
+	"api": {
+		"events": {
+			"clickTriggered": "Click event triggered for {elementId}",
+			"response": "API Response:",
+			"callFailed": "API Call Failed:"
+		}
+	},
+	"rules": {
+		"management": {
+			"saved": "Rule saved: {message}",
+			"errorSaving": "Error saving rule: {message}",
+			"genericError": "Error: {error}"
+		}
+	},
+	"network": {
+		"errors": {
+			"responseNotOk": "Network response was not ok: {statusText}"
+		}
+	},
+	"timeFormats": {
+		"manual": "loading...",
+		"secondsShort": "s",
+		"minutesShort": "m",
+		"hoursShort": "h",
+		"daysShort": "d",
+		"weeksShort": "w",
+		"monthsShort": "mo",
+		"yearsShort": "y"
+	},
+	"generalErrors": {
+		"failedToInitializeDatabase": "Failed to initialize database.",
+		"databaseInitializationError": "Database initialization error:",
+		"failedToFetchOrRenderSessions": "Failed to fetch or render sessions.",
+		"elementNotFound": "Element with ID \"{id}\" not found.",
+		"noAdminUsersFound": "No admin users found.",
+		"unexpectedError": "Unexpected error: {error}",
+		"adminUserIdUnavailable": "Admin user ID is not available. Skipping content fetch.",
+		"skippingUser": "Skipping user {userId} as only admin data is aggregated.",
+		"serverError": "Server responded with error:",
+		"apiConnectionTestFailed": "Failed to test API connection:",
+		"invalidApiResponse": "Invalid response from the API.",
+		"inputFieldNotFound": "Input field not found for service: {serviceName}",
+		"loggingFailed": "Logging failed: {error}",
+		"loggingApiRequestFailed": "Logging API request failed: {error}",
+		"httpError": "HTTP error! Status: {status}"
+	},
+	"fetchErrors": {
+		"failed": "Failed to fetch data from the server. Please try again later.",
+		"attemptsFailed": "All fetch attempts failed:",
+		"errorFetchingUserOrSessionData": "[fetchLoggedInUsers] Error fetching user or session data.",
+		"adminUserIdFailed": "Failed to fetch admin user ID: {statusText}",
+		"fetchAutoClear": "[fetchAutoClearTempTranscodeToggle] Error during fetch: {error}",
+		"errorFetchingAdminUserId": "Error fetching admin user ID:",
+		"failedSessions": "Failed to fetch sessions: {error}",
+		"failedTranscodeMappings": "Failed to fetch transcode mappings from the API.",
+		"errorFetchingTranscodeMappings": "Error fetching transcode mappings: {message}",
+		"failedActiveDevices": "Failed to fetch active devices: {error}",
+		"errorFetchingMediaDetails": "Error fetching media details: {error}",
+		"failedTotalMovies": "Error fetching total movies count: {error}",
+		"failedTotalSeries": "Error fetching total series count: {error}",
+		"failedTotalEpisodes": "Error fetching total episodes count: {error}",
+		"failedLatestEpisode": "Error fetching latest episode for entry {entryName}: {status}",
+		"failedLatestEpisodes": "Error fetching latest episodes: {statusText}",
+		"errorFetchingLatestEpisodes": "Error fetching the latest episodes: {error}",
+		"failedContent": "Failed to fetch {contentType}: {reason}",
+		"failedLatestMovies": "Failed to fetch latest movies: {statusText}",
+		"errorFetchingLatestMovies": "Error fetching latest movies: {error}",
+		"failedPlaybackInfo": "Failed to fetch playback info for item {itemId}: {statusText}",
+		"errorFetchingLastResumeMedia": "Error fetching last resume media details: {error}",
+		"errorFetchingBitrate": "Error fetching bitrate for item {itemId}: {error}",
+		"expectedSessionsArray": "Expected an array for sessions, received: {sessions}"
+	},
+	"sessionErrors": {
+		"sessionDetails": "[fetchSessionDetails] Session {sessionId} details:",
+		"errorFetchingSessionDetails": "[fetchSessionDetails] Error fetching session details: {error}",
+		"uncategorizedSessionType": "Uncategorized session type: {type}"
+	},
+	"deviceErrors": {
+		"errorUpdatingDeviceName": "Error updating device name for device ID {deviceId}: {error}"
+	},
+	"deviceMessages": {
+		"successful": "Successfully updated device name for device {deviceId}."
+	},
+	"statsErrors": {
+		"errorUpdatingDashboardStats": "Error updating dashboard stats: {error}",
+		"unexpectedErrorInUpdateWidgetStats": "Unexpected error in [updateWidgetStats]: {error}"
+	},
+	"webSocket": {
+		"errors": {
+			"sendingSessionData": "Error sending session data to websocket: {deviceId}, {error}"
+		},
+		"messages": {
+			"noDevicesFound": "No devices found.",
+			"noDeviceIds": "No device IDs were found.",
+			"errorFetchingDeviceIds": "Error fetching device IDs. {error}",
+			"errorInitializing": "Error initializing WebSocket connections.",
+			"sessionDataSent": "Session data sent to WebSocket for device {deviceId}.",
+			"error": "WebSocket error occurred for device: {deviceId}",
+			"established": "WebSocket connection established for device: {deviceId}",
+			"processingMessageError": "Error processing message for device: {deviceId}",
+			"unexpectedData": "Unexpected data format: {data}",
+			"centralEstablished": "Central WebSocket connection established",
+			"processingCentralError": "Error processing central WebSocket message",
+			"newMoviesReceived": "New movies received via WebSocket for device {deviceId}: {count}",
+			"newEpisodesReceived": "New episodes received via WebSocket for device {deviceId}: {count}"
+		}
+	},
+	"actionErrors": {
+		"apiKeyActivation": {
+			"missingElements": "One or more required elements for API key activation are missing.",
+			"empty": "API key cannot be empty."
+		},
+		"unsupportedAction": "Unsupported action: {action}",
+		"executeActionFailed": "Failed to execute action. Action: {action}",
+		"invalidContentType": "Invalid content type received. Expected JSON.",
+		"invalidSessionsDataFormat": "Invalid sessions data format: {session}",
+		"invalidSessionObject": "Invalid session object: {session}",
+		"tooltip": {
+			"noSelector": "No selector provided for tooltip refresh."
+		},
+		"errorClearingTempPath": "Error clearing temp transcode path:",
+		"disconnectDeviceFailed": "Failed to disconnect the user device. Error: {error}",
+		"failedFetchDevices": "Failed to fetch devices. HTTP Status: {status}",
+		"deviceDeleteFailed": "Failed to delete device {deviceId}",
+		"webSocket": {
+			"invalidMessageFormat": "Invalid WebSocket message format for device: {deviceId}. Expected JSON.",
+			"emptyMoviesUpdate": "No movies update received for device: {deviceId}.",
+			"emptyEpisodesUpdate": "No episodes update received for device: {deviceId}."
+		}
+	},
+	"notifications": {
+		"databaseInitializationSuccess": "Database initialized successfully.",
+		"apiKeyActivated": "API key activated successfully!",
+		"notificationSent": "Notification sent successfully!",
+		"sendNotification": {
+			"title": "Send Notification",
+			"messageTitleLabel": "Message Title",
+			"enterTitle": "Enter title",
+			"messageLabel": "Message",
+			"enterMessage": "Enter message",
+			"titleRequired": "Title is required",
+			"messageRequired": "Message is required",
+			"sendButton": "Send",
+			"cancelButton": "Cancel"
+		},
+		"status": {
+			"successTitle": "Success",
+			"errorTitle": "Error",
+			"infoTitle": "Info"
+		},
+		"massNotification": {
+			"emby": "Emby Mass Notification",
+			"jellyfin": "Jellyfin Mass Notification"
+		},
+		"bothFieldsRequired": "Both fields are required",
+		"noActiveSessionsFound": "No active sessions found.",
+		"errorSending": "Error sending notification:",
+		"allFieldsRequired": "All fields are required.",
+		"missingDeviceId": "Device ID is required.",
+		"partialSuccess": {
+			"sentSuccessfully": "Notifications sent successfully: {success}, failed: {failed}",
+			"embyLinkNotFound": "Emby Notification link not found.",
+			"failedWithMessage": "Notification failed: {message}"
+		}
+	},
+	"statusLabels": {
+		"retryingFetch": "Retrying fetch... Attempt {attempt} of {retries}",
+		"contentFetchStart": "Starting content fetch for adminUserId: {adminUserId}",
+		"fetchingLatestMovies": "Fetching latest movies for: {adminUserId}",
+		"fetchingLatestEpisodes": "Fetching latest episodes for: {adminUserId}",
+		"bandwidthUsed": "Bandwidth Used",
+		"totalTranscodes": "Total Transcodes: ",
+		"activeStreams": "Active Streams: ",
+		"totalBandwidth": "Total Bandwidth: ",
+		"movies": "Movies: ",
+		"series": "Series: ",
+		"episodes": "Episodes: ",
+		"tvShows": "TV Shows",
+		"specialEpisode": "Special",
+		"channel": "Channel",
+		"client": "Client",
+		"device": "Device",
+		"ipAddress": "IP",
+		"geoLocation": "Location",
+		"active": "Active",
+		"method": "Method",
+		"subtitles": "Subtitles",
+		"stream": "Stream",
+		"audio": "Audio",
+		"video": "Video",
+		"transcode": "Transcode",
+		"status": "Status",
+		"nowPlaying": "Now Playing",
+		"playing": "Playing",
+		"paused": "Paused",
+		"playUser": "Play {userName}",
+		"pauseUser": "Pause {userName}",
+		"stopUser": "Stop {userName}",
+		"more": "more",
+		"sendNotificationToUser": "Send Notification to {userName}",
+		"disconnectDevice": "Terminate Session for {userName}",
+		"confirmAction": {
+			"title": "Confirm Action",
+			"disconnectMessage": "Are you sure you want to disconnect this device? This will log the user out immediately.",
+			"yesDisconnect": "Yes, Disconnect",
+			"cancel": "Cancel"
+		},
+		"settingsSaved": "Settings Saved",
+		"sInfo": "Showing page _PAGE_ of _PAGES_",
+		"sSearchPlaceholder": "Search...",
+		"sLengthMenu": "Results :  _MENU_",
+		"sEmptyTable": "Looks like there's nothing here yet."
+	},
+	"transcoding": {
+		"errors": {
+			"fetchTempIntervalsFailed": "[fetchTempTranscodeIntervals] Failed to fetch transcode intervals.",
+			"fetchTempIntervals": "[fetchTempTranscodeIntervals] Error during fetch: {message}",
+			"initializeAutoClearFailed": "[initializeAutoClearTempTranscodeToggle] Failed to initialize auto-clear toggle: {message}"
+		},
+		"messages": {
+			"reason": "Reason",
+			"containerBitrateExceeds": "Reducing bitrate due to quality setting",
+			"audioCodecNotSupported": "Converting audio to compatible codec",
+			"videoCodecNotSupported": "Converting video to compatible codec",
+			"containerNotSupported": "Container format not supported",
+			"profileNotSupported": "Media profile not supported by the device",
+			"videoBitrateExceeds": "Reducing video bitrate due to quality setting",
+			"audioBitrateExceeds": "Reducing audio bitrate due to quality setting",
+			"audioChannelsNotSupported": "Audio channels not supported by the device",
+			"directPlayError": "Recovering from playback error",
+			"subtitleCodecNotSupported": "Converting subtitles directly into video stream",
+			"directPlayback": "Direct",
+			"details": {
+				"video": "Transcode ({videoCodec} {videoBitrate} Mbps)",
+				"audio": "Transcode ({audioCodec} {audioBitrate} kbps)",
+				"unknownMbps": "Transcode (Unknown Mbps)",
+				"unknownKbps": "Transcode (Unknown kbps)"
+			},
+			"tempTranscodePathEmpty": "The temp transcode path is empty.",
+			"updateButton": "Update",
+			"filteredActiveUsers": "Filtered active users:"
+		}
+	},
+	"pausePolling": {
+		"errors": {
+			"noValidRows": "No valid pause rows returned or error in response.",
+			"pollingError": "Error polling pause timestamps: {error}",
+			"invalidSessionId": "[updatePauseTimer] called with invalid sessionId: {sessionId}"
+		},
+		"messages": {
+			"loadingTimer": "loading...",
+			"pausedFor": "Paused for: {time}"
+		}
+	},
+	"unknownValues": {
+		"default": "Default",
+		"unknown": "Unknown",
+		"unknownError": "Unknown error",
+		"unexpectedErrorOccurred": "An unexpected error occurred.",
+		"unknownErrorOccurred": "Unknown error occurred.",
+		"unknownMedia": "Unknown Media",
+		"unknownMediaType": "Unknown Media Type",
+		"unknownLibrary": "Unknown Library",
+		"unknownMovie": "Unknown Movie",
+		"unknownSeries": "Unknown Series",
+		"unknownSeason": "Unknown Season",
+		"unknownEpisode": "Unknown Episode",
+		"unknownTitle": "Unknown Title",
+		"unknownYear": "Unknown Year",
+		"unknownProgram": "Unknown Program",
+		"unknownChannel": "Unknown Channel",
+		"unknownChannelNumber": "Unknown Channel Number",
+		"unknownUser": "Unknown User",
+		"unknownDevice": "Unknown Device",
+		"unknownClient": "Unknown Client",
+		"unknownIpAddress": "Unknown IP Address",
+		"notAvailable": "N/A",
+		"placeholder": {
+			"noData": "-"
+		}
+	},
+	"tableErrors": {
+		"parentContainerMissing": "[updateOrAddRow] Parent container missing: {containerId}",
+		"noDataAvailable": "No data available",
+		"noMoviesFound": "No movies found or invalid response format.",
+		"noEpisodesFound": "No episodes found or invalid response format.",
+		"tableBodyElementNotFound": {
+			"movies": "Table body element for latest movies not found.",
+			"episodes": "Table body element for latest episodes not found."
+		}
+	},
+	"activeCounts": {
+		"activeMovie": "{count} Active Movie",
+		"activeMovies": "{count} Active Movies",
+		"activeTVShow": "{count} Active TV Show",
+		"activeTVShows": "{count} Active TV Shows",
+		"activeChannel": "{count} Active Channel",
+		"activeChannels": "{count} Active Channels"
+	},
+	"saveEvents": {
+		"saving": "Saving...",
+		"failedSaveApiKey": "Failed to save API key: HTTP {status}",
+		"deviceDisconnected": "Device disconnected successfully.",
+		"validSessionsUpdated": "Valid sessions updated:",
+		"saveError": "Save Error:",
+		"saveErrorStatus": "Save Error: {status}"
+	},
+	"timeEvents": {
+		"localStorageUnavailable": "localStorage is not available.",
+		"loadProcessedSessionsFailed": "Failed to load processed sessions: {message}",
+		"saveProcessedSessionsFailed": "Failed to save processed sessions: {message}",
+		"invalidPauseNotificationThreshold": "Invalid format detected in saved pauseNotificationThreshold. Expected a number.",
+		"invalidPauseDisconnectionThreshold": "Invalid format detected in saved pauseDisconnectionThreshold. Expected a number.",
+		"typeNotAvailable": "{type} is not available: {errorMessage}"
+	},
+	"additionalDebugMessages": {
+		"handleSessionAction": {
+			"apiPayload": "[handleSessionAction] API Payload: {payload}"
+		},
+		"updateWidgetStats": {
+			"bandwidthInUI": "[updateWidgetStats] Updated bandwidth in UI: {bandwidth}"
+		},
+		"saveSettings": {
+			"payload": "[saveSettings] Payload being sent: {payload}"
+		}
+	}
+}

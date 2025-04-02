@@ -1,0 +1,46 @@
+{
+  "sEmptyTable": "表中数据为空",
+  "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+  "sInfoEmpty": "显示第 0 项",
+  "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+  "sInfoPostFix": "",
+  "sInfoThousands": ",",
+  "sLengthMenu": "显示 _MENU_ 项结果",
+  "sLoadingRecords": "载入中...",
+  "sProcessing": "处理中...",
+  "sSearch": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-search\"><circle cx=\"11\" cy=\"11\" r=\"8\"></circle><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"></line></svg>",
+  "sSearchPlaceholder": "搜索...",
+  "sZeroRecords": "没有匹配结果",
+  "oPaginate": {
+    "sFirst": "首页",
+    "sLast": "末页",
+    "sNext": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-right\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg>",
+    "sPrevious": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-left\"><line x1=\"19\" y1=\"12\" x2=\"5\" y2=\"12\"></line><polyline points=\"12 19 5 12 12 5\"></polyline></svg>"
+  },
+  "oAria": {
+    "sSortAscending": ": 以升序排列此列",
+    "sSortDescending": ": 以降序排列此列"
+  },
+  "select": {
+    "rows": {
+      "_": "%d 选择的行",
+      "0": "未选择任何行",
+      "1": "已选择1行"
+    }
+  },
+  "buttons": {
+    "print": "打印",
+    "colvis": "能见度",
+    "copy": "复制",
+    "copyTitle": "复制到剪贴板",
+    "copyKeys": "在表周围单击 <i>ctrl</i> 或 <i>\u2318</i> + <i>C</i>。<br>复制到剪贴板。<br><br>要取消，请单击消息或按Escape键。",
+    "copySuccess": {
+      "_": "%d 行复制",
+      "1": "复制了1行"
+    },
+    "pageLength": {
+      "-1": "显示所有行",
+      "_": "显示 %d 线"
+    }
+  }
+}

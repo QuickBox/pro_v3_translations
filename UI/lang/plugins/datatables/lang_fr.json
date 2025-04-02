@@ -1,0 +1,46 @@
+{
+  "sEmptyTable": "Aucune donnée disponible dans le tableau",
+  "sInfo": "Affichage de _START_ à _END_ sur _TOTAL_ éléments",
+  "sInfoEmpty": "Affichage de 0 éléments",
+  "sInfoFiltered": "(filtré à partir de _MAX_ éléments au total)",
+  "sInfoPostFix": "",
+  "sInfoThousands": ",",
+  "sLengthMenu": "Afficher _MENU_ éléments",
+  "sLoadingRecords": "Chargement...",
+  "sProcessing": "Traitement...",
+  "sSearch": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-search\"><circle cx=\"11\" cy=\"11\" r=\"8\"></circle><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"></line></svg>",
+  "sSearchPlaceholder": "Rechercher...",
+  "sZeroRecords": "Aucun élément correspondant trouvé",
+  "oPaginate": {
+    "sFirst": "Premier",
+    "sLast": "Dernier",
+    "sNext": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-right\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg>",
+    "sPrevious": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-left\"><line x1=\"19\" y1=\"12\" x2=\"5\" y2=\"12\"></line><polyline points=\"12 19 5 12 12 5\"></polyline></svg>"
+  },
+  "oAria": {
+    "sSortAscending": ": activer pour trier la colonne par ordre croissant",
+    "sSortDescending": ": activer pour trier la colonne par ordre décroissant"
+  },
+  "select": {
+    "rows": {
+      "_": "%d lignes sélectionnées",
+      "0": "Aucune ligne sélectionnée",
+      "1": "1 ligne sélectionnée"
+    }
+  },
+  "buttons": {
+    "print": "imprimer",
+    "colvis": "visibilité",
+    "copy": "copier",
+    "copyTitle": "Copier dans le presse-papier",
+    "copyKeys": "bouton <i>ctrl</i> ou <i>\u2318</i> + <i>C</i> autour de la table.<br>Copier dans le presse-papiers.<br><br>Pour annuler, cliquez sur le message ou appuyez sur Échap.",
+    "copySuccess": {
+      "_": "%d lignes copiées",
+      "1": "1 ligne copiée"
+    },
+    "pageLength": {
+      "-1": "Afficher toutes les lignes",
+      "_": "Afficher %d lignes"
+    }
+  }
+}

@@ -1,0 +1,349 @@
+{
+	"language": {
+		"loading": {
+			"failedToLoad": "Kunne ikke indlæse sprogfilen for {lang}",
+			"loadedSuccessfully": "Sprog '{lang}' blev indlæst.",
+			"errorLoading": "Fejl ved indlæsning af sprogfil: {error}"
+		}
+	},
+	"modal": {
+		"messages": {
+			"notFound": "Modal ikke fundet i DOM: {modalId}",
+			"loading": "Indlæser...",
+			"preloadedContent": "Forudindlæst modalt indhold til: {modalId}",
+			"loadFailed": "Kunne ikke indlæse modalt indhold."
+		}
+	},
+	"dataTables": {
+		"messages": {
+			"initialized": "DataTables initialiseret for {tableId} med live data.",
+			"notFound": "Datatabeller blev ikke fundet i det modale indhold."
+		}
+	},
+	"api": {
+		"events": {
+			"clickTriggered": "Klikhændelse udløst for {elementId}",
+			"response": "API-svar:",
+			"callFailed": "API-kald mislykkedes:"
+		}
+	},
+	"rules": {
+		"management": {
+			"saved": "Regel gemt: {message}",
+			"errorSaving": "Fejl ved lagring af regel: {message}",
+			"genericError": "Fejl: {error}"
+		}
+	},
+	"network": {
+		"errors": {
+			"responseNotOk": "Netværkssvaret var ikke ok: {statusText}"
+		}
+	},
+	"timeFormats": {
+		"manual": "indlæser...",
+		"secondsShort": "s",
+		"minutesShort": "m",
+		"hoursShort": "t",
+		"daysShort": "d",
+		"weeksShort": "u",
+		"monthsShort": "ma",
+		"yearsShort": "a"
+	},
+	"generalErrors": {
+		"failedToInitializeDatabase": "Kunne ikke initialisere databasen.",
+		"databaseInitializationError": "Database initialiseringsfejl:",
+		"failedToFetchOrRenderSessions": "Kunne ikke hente eller gengive sessioner.",
+		"elementNotFound": "Element med ID \"{id}\" blev ikke fundet.",
+		"noAdminUsersFound": "Ingen admin-brugere fundet.",
+		"unexpectedError": "Uventet fejl: {error}",
+		"adminUserIdUnavailable": "Admin-bruger-id er ikke tilgængeligt. Springer indholdshentning over.",
+		"skippingUser": "Springer bruger {userId} over, da kun admindata er aggregeret.",
+		"serverError": "Serveren svarede med fejl:",
+		"apiConnectionTestFailed": "Kunne ikke teste API-forbindelse:",
+		"invalidApiResponse": "Ugyldigt svar fra API'en.",
+		"inputFieldNotFound": "Inputfelt blev ikke fundet for tjeneste: {serviceName}",
+		"loggingFailed": "Logføring mislykkedes: {error}",
+		"loggingApiRequestFailed": "Lognings-API-anmodning mislykkedes: {error}",
+		"httpError": "HTTP-fejl! Status: {status}"
+	},
+	"fetchErrors": {
+		"failed": "Det lykkedes ikke at hente data fra serveren. Prøv venligst igen senere.",
+		"attemptsFailed": "Alle hentningsforsøg mislykkedes:",
+		"errorFetchingUserOrSessionData": "[fetchLoggedInUsers] Fejl ved hentning af bruger- eller sessionsdata.",
+		"adminUserIdFailed": "Kunne ikke hente admin bruger-id: {statusText}",
+		"fetchAutoClear": "[fetchAutoClearTempTranscodeToggle] Fejl under hentning: {error}",
+		"errorFetchingAdminUserId": "Fejl ved hentning af admin-bruger-id:",
+		"failedSessions": "Kunne ikke hente sessioner: {error}",
+		"failedTranscodeMappings": "Kunne ikke hente transcode mappings fra API'en.",
+		"errorFetchingTranscodeMappings": "Fejl ved hentning af transcode-mappings: {message}",
+		"failedActiveDevices": "Kunne ikke hente aktive enheder: {error}",
+		"errorFetchingMediaDetails": "Fejl ved hentning af medieoplysninger: {error}",
+		"failedTotalMovies": "Fejl ved hentning af det samlede antal film: {error}",
+		"failedTotalSeries": "Fejl ved hentning af det samlede antal serier: {error}",
+		"failedTotalEpisodes": "Fejl ved hentning af det samlede antal episoder: {error}",
+		"failedLatestEpisode": "Fejl ved hentning af seneste episode for posten {entryName}: {status}",
+		"failedLatestEpisodes": "Fejl ved hentning af seneste afsnit: {statusText}",
+		"errorFetchingLatestEpisodes": "Fejl ved hentning af de seneste afsnit: {error}",
+		"failedContent": "Kunne ikke hente {contentType}: {reason}",
+		"failedLatestMovies": "Kunne ikke hente seneste film: {statusText}",
+		"errorFetchingLatestMovies": "Fejl ved hentning af seneste film: {error}",
+		"failedPlaybackInfo": "Kunne ikke hente afspilningsoplysninger for elementet {itemId}: {statusText}",
+		"errorFetchingLastResumeMedia": "Fejl ved hentning af sidste CV-mediedetaljer: {error}",
+		"errorFetchingBitrate": "Fejl ved hentning af bitrate for element {itemId}: {error}",
+		"expectedSessionsArray": "Forventede et array for sessioner, modtog: {sessions}"
+	},
+	"sessionErrors": {
+		"sessionDetails": "[fetchSessionDetails] Session {sessionId} detaljer:",
+		"errorFetchingSessionDetails": "[fetchSessionDetails] Fejl ved hentning af sessionsdetaljer: {error}",
+		"uncategorizedSessionType": "Ukategoriseret sessionstype: {type}"
+	},
+	"deviceErrors": {
+		"errorUpdatingDeviceName": "Fejl ved opdatering af enhedsnavn for enheds-id {deviceId}: {error}"
+	},
+	"deviceMessages": {
+		"successful": "Enhedsnavnet for enheden {deviceId} er blevet opdateret."
+	},
+	"statsErrors": {
+		"errorUpdatingDashboardStats": "Fejl ved opdatering af kontrolpanelets statistik: {error}",
+		"unexpectedErrorInUpdateWidgetStats": "Uventet fejl i [updateWidgetStats]: {error}"
+	},
+	"webSocket": {
+		"errors": {
+			"sendingSessionData": "Fejl ved afsendelse af sessionsdata til websocket: {deviceId}, {error}"
+		},
+		"messages": {
+			"noDevicesFound": "Ingen enheder fundet.",
+			"noDeviceIds": "Der blev ikke fundet nogen enheds-id'er.",
+			"errorFetchingDeviceIds": "Fejl ved hentning af enheds-id'er. {error}",
+			"errorInitializing": "Fejl ved initialisering af WebSocket-forbindelser.",
+			"sessionDataSent": "Sessionsdata sendt til WebSocket for enhed {deviceId}.",
+			"error": "WebSocket-fejl opstod for enhed: {deviceId}",
+			"established": "WebSocket-forbindelse oprettet for enhed: {deviceId}",
+			"processingMessageError": "Fejl ved behandling af meddelelse for enhed: {deviceId}",
+			"unexpectedData": "Uventet dataformat: {data}",
+			"centralEstablished": "Central WebSocket-forbindelse oprettet",
+			"processingCentralError": "Fejl ved behandling af central WebSocket-meddelelse",
+			"newMoviesReceived": "Nye film modtaget via WebSocket til enheden {deviceId}: {count}",
+			"newEpisodesReceived": "Nye episoder modtaget via WebSocket for enhed {deviceId}: {count}"
+		}
+	},
+	"actionErrors": {
+		"apiKeyActivation": {
+			"missingElements": "Et eller flere nødvendige elementer til API-nøgleaktivering mangler.",
+			"empty": "API-nøgle må ikke være tom."
+		},
+		"unsupportedAction": "Ikke-understøttet handling: {action}",
+		"executeActionFailed": "Handlingen kunne ikke udføres. Handling: {action}",
+		"invalidContentType": "Ugyldig indholdstype modtaget. Forventet JSON.",
+		"invalidSessionsDataFormat": "Ugyldigt sessionsdataformat: {session}",
+		"invalidSessionObject": "Ugyldigt sessionsobjekt: {session}",
+		"tooltip": {
+			"noSelector": "Ingen vælger til rådighed til opdatering af værktøjstip."
+		},
+		"errorClearingTempPath": "Fejl ved rydning af midlertidig transkodningssti:",
+		"disconnectDeviceFailed": "Kunne ikke frakoble brugerenheden. Fejl: {error}",
+		"failedFetchDevices": "Kunne ikke hente enheder. HTTP-status: {status}",
+		"deviceDeleteFailed": "Enheden {deviceId} kunne ikke slettes",
+		"webSocket": {
+			"invalidMessageFormat": "Ugyldigt WebSocket-meddelelsesformat for enhed: {deviceId}. Forventet JSON.",
+			"emptyMoviesUpdate": "Ingen filmopdatering modtaget for enhed: {deviceId}.",
+			"emptyEpisodesUpdate": "Ingen episodeopdatering modtaget for enhed: {deviceId}."
+		}
+	},
+	"notifications": {
+		"databaseInitializationSuccess": "Database initialiseret med succes.",
+		"apiKeyActivated": "API-nøgle aktiveret med succes!",
+		"notificationSent": "Meddelelse sendt med succes!",
+		"sendNotification": {
+			"title": "Send meddelelse",
+			"messageTitleLabel": "Meddelelsestitel",
+			"enterTitle": "Indtast titel",
+			"messageLabel": "Besked",
+			"enterMessage": "Indtast besked",
+			"titleRequired": "Titel er påkrævet",
+			"messageRequired": "Meddelelse er påkrævet",
+			"sendButton": "Send",
+			"cancelButton": "Annuller"
+		},
+		"status": {
+			"successTitle": "Succes",
+			"errorTitle": "Fejl",
+			"infoTitle": "Info"
+		},
+		"massNotification": {
+			"emby": "Emby Massemeddelelse",
+			"jellyfin": "Jellyfin Massemeddelelse"
+		},
+		"bothFieldsRequired": "Begge felter er obligatoriske",
+		"noActiveSessionsFound": "Ingen aktive sessioner fundet.",
+		"errorSending": "Fejl ved afsendelse af meddelelse:",
+		"allFieldsRequired": "Alle felter er obligatoriske.",
+		"missingDeviceId": "Enheds-id er påkrævet.",
+		"partialSuccess": {
+			"sentSuccessfully": "Meddelelser sendt med succes: {success}, mislykkedes: {failed}",
+			"embyLinkNotFound": "Emby-meddelelseslink blev ikke fundet.",
+			"failedWithMessage": "Meddelelse mislykkedes: {message}"
+		}
+	},
+	"statusLabels": {
+		"retryingFetch": "Forsøger at hente igen... Forsøg {attempt} af {retries}",
+		"contentFetchStart": "Starter indholdshentning for adminUserId: {adminUserId}",
+		"fetchingLatestMovies": "Henter seneste film til: {adminUserId}",
+		"fetchingLatestEpisodes": "Henter seneste afsnit for: {adminUserId}",
+		"bandwidthUsed": "Båndbredde brugt",
+		"totalTranscodes": "Samlede omkoder: ",
+		"activeStreams": "Aktive streams: ",
+		"totalBandwidth": "Samlet båndbredde: ",
+		"movies": "Film: ",
+		"series": "Serie: ",
+		"episodes": "Episoder: ",
+		"tvShows": "TV-shows",
+		"specialEpisode": "Special",
+		"channel": "Kanal",
+		"client": "Kunde",
+		"device": "Enhed",
+		"ipAddress": "IP",
+		"geoLocation": "Placering",
+		"active": "Aktiv",
+		"method": "Metode",
+		"subtitles": "Undertekster",
+		"stream": "Stream",
+		"audio": "Lyd",
+		"video": "Video",
+		"transcode": "Omkode",
+		"status": "Status",
+		"nowPlaying": "Spiller nu",
+		"playing": "Spiller",
+		"paused": "Sat på pause",
+		"playUser": "Spil {userName}",
+		"pauseUser": "Sæt {userName} på pause",
+		"stopUser": "Stop {userName}",
+		"more": "mere",
+		"sendNotificationToUser": "Send meddelelse til {userName}",
+		"disconnectDevice": "Afslut session for {userName}",
+		"confirmAction": {
+			"title": "Bekræft handling",
+			"disconnectMessage": "Er du sikker på, at du vil frakoble denne enhed? Dette vil logge brugeren ud med det samme.",
+			"yesDisconnect": "Ja, afbryd",
+			"cancel": "Annuller"
+		},
+		"settingsSaved": "Indstillinger gemt",
+		"sInfo": "Viser side _PAGE_ af _PAGES_",
+		"sSearchPlaceholder": "Søg...",
+		"sLengthMenu": "Resultater: _MENU_",
+		"sEmptyTable": "Det ser ud til, at der ikke er noget her endnu."
+	},
+	"transcoding": {
+		"errors": {
+			"fetchTempIntervalsFailed": "[fetchTempTranscodeIntervals] Kunne ikke hente transkodningsintervaller.",
+			"fetchTempIntervals": "[fetchTempTranscodeIntervals] Fejl under hentning: {message}",
+			"initializeAutoClearFailed": "[initializeAutoClearTempTranscodeToggle] Kunne ikke initialisere automatisk rydning: {message}"
+		},
+		"messages": {
+			"reason": "Årsag",
+			"containerBitrateExceeds": "Reducerer bitrate på grund af kvalitetsindstilling",
+			"audioCodecNotSupported": "Konverterer lyd til kompatibel codec",
+			"videoCodecNotSupported": "Konvertering af video til kompatibel codec",
+			"containerNotSupported": "Containerformat understøttes ikke",
+			"profileNotSupported": "Medieprofil understøttes ikke af enheden",
+			"videoBitrateExceeds": "Reducerer videoens bithastighed på grund af kvalitetsindstilling",
+			"audioBitrateExceeds": "Reducerer lydens bithastighed på grund af kvalitetsindstilling",
+			"audioChannelsNotSupported": "Lydkanaler understøttes ikke af enheden",
+			"directPlayError": "Gendannelse fra afspilningsfejl",
+			"subtitleCodecNotSupported": "Konvertering af undertekster direkte til videostream",
+			"directPlayback": "Direkte",
+			"details": {
+				"video": "Omkodning ({videoCodec} {videoBitrate} Mbps)",
+				"audio": "Omkodning ({audioCodec} {audioBitrate} kbps)",
+				"unknownMbps": "Omkodning (ukendt Mbps)",
+				"unknownKbps": "Omkodning (ukendt kbps)"
+			},
+			"tempTranscodePathEmpty": "Den midlertidige transkodningssti er tom.",
+			"updateButton": "Opdater",
+			"filteredActiveUsers": "Filtrerede aktive brugere:"
+		}
+	},
+	"pausePolling": {
+		"errors": {
+			"noValidRows": "Ingen gyldige pauserækker returneret eller fejl i svar.",
+			"pollingError": "Fejl ved afstemningspause tidsstempler: {error}",
+			"invalidSessionId": "[updatePauseTimer] kaldet med ugyldigt sessionId: {sessionId}"
+		},
+		"messages": {
+			"loadingTimer": "indlæser...",
+			"pausedFor": "Sat på pause i: {time}"
+		}
+	},
+	"unknownValues": {
+		"default": "Standard",
+		"unknown": "Ukendt",
+		"unknownError": "Ukendt fejl",
+		"unexpectedErrorOccurred": "Der opstod en uventet fejl.",
+		"unknownErrorOccurred": "Ukendt fejl opstod.",
+		"unknownMedia": "Ukendt medie",
+		"unknownMediaType": "Ukendt medietype",
+		"unknownLibrary": "Ukendt bibliotek",
+		"unknownMovie": "Ukendt film",
+		"unknownSeries": "Ukendt serie",
+		"unknownSeason": "Ukendt sæson",
+		"unknownEpisode": "Ukendt episode",
+		"unknownTitle": "Ukendt titel",
+		"unknownYear": "Ukendt år",
+		"unknownProgram": "Ukendt program",
+		"unknownChannel": "Ukendt kanal",
+		"unknownChannelNumber": "Ukendt kanalnummer",
+		"unknownUser": "Ukendt bruger",
+		"unknownDevice": "Ukendt enhed",
+		"unknownClient": "Ukendt klient",
+		"unknownIpAddress": "Ukendt IP-adresse",
+		"notAvailable": "Ikke tilgængelig",
+		"placeholder": {
+			"noData": "-"
+		}
+	},
+	"tableErrors": {
+		"parentContainerMissing": "[updateOrAddRow] Overordnet container mangler: {containerId}",
+		"noDataAvailable": "Ingen data tilgængelige",
+		"noMoviesFound": "Ingen film fundet eller ugyldigt svarformat.",
+		"noEpisodesFound": "Ingen episoder fundet eller ugyldigt svarformat.",
+		"tableBodyElementNotFound": {
+			"movies": "Tabeltekstelement for seneste film blev ikke fundet.",
+			"episodes": "Tabeltekstelement for seneste episoder blev ikke fundet."
+		}
+	},
+	"activeCounts": {
+		"activeMovie": "{count} aktiv film",
+		"activeMovies": "{count} aktive film",
+		"activeTVShow": "{count} aktivt tv-show",
+		"activeTVShows": "{count} aktive tv-udsendelser",
+		"activeChannel": "{count} aktiv kanal",
+		"activeChannels": "{count} aktive kanaler"
+	},
+	"saveEvents": {
+		"saving": "Gemmer...",
+		"failedSaveApiKey": "Kunne ikke gemme API-nøgle: HTTP {status}",
+		"deviceDisconnected": "Enheden blev afbrudt.",
+		"validSessionsUpdated": "Gyldige sessioner opdateret:",
+		"saveError": "Gem fejl:",
+		"saveErrorStatus": "Gem fejl: {status}"
+	},
+	"timeEvents": {
+		"localStorageUnavailable": "localStorage er ikke tilgængelig.",
+		"loadProcessedSessionsFailed": "Kunne ikke indlæse behandlede sessioner: {message}",
+		"saveProcessedSessionsFailed": "Kunne ikke gemme behandlede sessioner: {message}",
+		"invalidPauseNotificationThreshold": "Ugyldigt format fundet i gemt pauseNotificationThreshold. Forventede et tal.",
+		"invalidPauseDisconnectionThreshold": "Ugyldigt format fundet i gemt pauseDisconnectionThreshold. Forventede et tal.",
+		"typeNotAvailable": "{type} er ikke tilgængelig: {errorMessage}"
+	},
+	"additionalDebugMessages": {
+		"handleSessionAction": {
+			"apiPayload": "[handleSessionAction] API nyttelast: {payload}"
+		},
+		"updateWidgetStats": {
+			"bandwidthInUI": "[updateWidgetStats] Opdateret båndbredde i UI: {bandwidth}"
+		},
+		"saveSettings": {
+			"payload": "[saveSettings] Nyttelast sendes: {payload}"
+		}
+	}
+}

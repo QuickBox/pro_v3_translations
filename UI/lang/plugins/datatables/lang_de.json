@@ -1,0 +1,46 @@
+{
+  "sEmptyTable": "Keine Daten in der Tabelle vorhanden",
+  "sInfo": "_START_ bis _END_ von _TOTAL_ Einträgen",
+  "sInfoEmpty": "Keine Daten vorhanden",
+  "sInfoFiltered": "(gefiltert von _MAX_ Einträgen)",
+  "sInfoPostFix": "",
+  "sInfoThousands": ".",
+  "sLengthMenu": "_MENU_ Einträge anzeigen",
+  "sLoadingRecords": "Wird geladen ..",
+  "sProcessing": "Bitte warten ..",
+  "sSearch": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-search\"><circle cx=\"11\" cy=\"11\" r=\"8\"></circle><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"></line></svg>",
+  "sSearchPlaceholder": "Suchen...",
+  "sZeroRecords": "Keine Einträge vorhanden",
+  "oPaginate": {
+    "sFirst": "Erste",
+    "sLast": "Letzte",
+    "sNext": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-right\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg>",
+    "sPrevious": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-left\"><line x1=\"19\" y1=\"12\" x2=\"5\" y2=\"12\"></line><polyline points=\"12 19 5 12 12 5\"></polyline></svg>"
+  },
+  "oAria": {
+    "sSortAscending": ": aktivieren, um Spalte aufsteigend zu sortieren",
+    "sSortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
+  },
+  "select": {
+    "rows": {
+      "_": "%d Zeilen ausgewählt",
+      "0": "",
+      "1": "1 Zeile ausgewählt"
+    }
+  },
+  "buttons": {
+    "print": "Drucken",
+    "colvis": "Spalten",
+    "copy": "Kopieren",
+    "copyTitle": "In Zwischenablage kopieren",
+    "copyKeys": "Taste <i>ctrl</i> oder <i>\u2318</i> + <i>C</i> um Tabelle<br>in Zwischenspeicher zu kopieren.<br><br>Um abzubrechen die Nachricht anklicken oder Escape drücken.",
+    "copySuccess": {
+      "_": "%d Zeilen kopiert",
+      "1": "1 Zeile kopiert"
+    },
+    "pageLength": {
+      "-1": "Zeige alle Zeilen",
+      "_": "Zeige %d Zeilen"
+    }
+  }
+}

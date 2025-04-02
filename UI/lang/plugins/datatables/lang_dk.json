@@ -1,0 +1,46 @@
+{
+  "sEmptyTable": "Ingen data tilgængelig i tabellen",
+  "sInfo": "Viser _START_ til _END_ af _TOTAL_ linjer",
+  "sInfoEmpty": "Viser 0 elementer",
+  "sInfoFiltered": "(filtreret fra _MAX_ linjer)",
+  "sInfoPostFix": "",
+  "sInfoThousands": ",",
+  "sLengthMenu": "Vis _MENU_ linjer",
+  "sLoadingRecords": "Indlæser...",
+  "sProcessing": "Henter...",
+  "sSearch": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-search\"><circle cx=\"11\" cy=\"11\" r=\"8\"></circle><line x1=\"21\" y1=\"21\" x2=\"16.65\" y2=\"16.65\"></line></svg>",
+  "sSearchPlaceholder": "Søg:",
+  "sZeroRecords": "Der blev ikke fundet nogen matchende poster",
+  "oPaginate": {
+    "sFirst": "Først",
+    "sLast": "Sidste",
+    "sNext": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-right\"><line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line><polyline points=\"12 5 19 12 12 19\"></polyline></svg>",
+    "sPrevious": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-arrow-left\"><line x1=\"19\" y1=\"12\" x2=\"5\" y2=\"12\"></line><polyline points=\"12 19 5 12 12 5\"></polyline></svg>"
+  },
+  "oAria": {
+    "sSortAscending": ": aktiver for at sortere kolonne stigende",
+    "sSortDescending": ": aktiver for at sortere kolonne faldende"
+  },
+  "select": {
+    "rows": {
+      "_": "%d valgte linjer",
+      "0": "Ingen linjer valgt",
+      "1": "1 linje valgt"
+    }
+  },
+  "buttons": {
+    "print": "Print",
+    "colvis": "synlighed",
+    "copy": "kopier",
+    "copyTitle": "Kopier til udklipsholder",
+    "copyKeys": "knappen <i>ctrl</i> eller <i>\u2318</i> + <i>C</i>omkring tabellen.<br>Kopier til udklipsholder.<br><br>Klik på meddelelsen for at annullere eller tryk på Escape.",
+    "copySuccess": {
+      "_": "%d linier kopieret",
+      "1": "1 linje kopieret"
+    },
+    "pageLength": {
+      "-1": "Vis alle linjer",
+      "_": "Vis %d linjer"
+    }
+  }
+}

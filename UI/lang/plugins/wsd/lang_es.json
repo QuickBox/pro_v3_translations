@@ -1,0 +1,349 @@
+{
+	"language": {
+		"loading": {
+			"failedToLoad": "No se pudo cargar el archivo de idioma para {lang}",
+			"loadedSuccessfully": "El idioma '{lang}' se cargó correctamente.",
+			"errorLoading": "Error al cargar el archivo de idioma: {error}"
+		}
+	},
+	"modal": {
+		"messages": {
+			"notFound": "Modal no encontrado en el DOM: {modalId}",
+			"loading": "Cargando...",
+			"preloadedContent": "Contenido modal precargado para: {modalId}",
+			"loadFailed": "Error al cargar el contenido modal."
+		}
+	},
+	"dataTables": {
+		"messages": {
+			"initialized": "DataTables inicializadas para {tableId} con datos en tiempo real.",
+			"notFound": "DataTables no encontradas en el contenido modal."
+		}
+	},
+	"api": {
+		"events": {
+			"clickTriggered": "Evento de clic activado para {elementId}",
+			"response": "Respuesta de la API:",
+			"callFailed": "Llamada a la API fallida:"
+		}
+	},
+	"rules": {
+		"management": {
+			"saved": "Regla guardada: {message}",
+			"errorSaving": "Error al guardar la regla: {message}",
+			"genericError": "Error: {error}"
+		}
+	},
+	"network": {
+		"errors": {
+			"responseNotOk": "Respuesta de red incorrecta: {statusText}"
+		}
+	},
+	"timeFormats": {
+		"manual": "cargando...",
+		"secondsShort": "s",
+		"minutesShort": "m",
+		"hoursShort": "h",
+		"daysShort": "d",
+		"weeksShort": "s",
+		"monthsShort": "mes",
+		"yearsShort": "a"
+	},
+	"generalErrors": {
+		"failedToInitializeDatabase": "Error al inicializar la base de datos.",
+		"databaseInitializationError": "Error de inicialización de la base de datos:",
+		"failedToFetchOrRenderSessions": "Error al obtener o renderizar sesiones.",
+		"elementNotFound": "Elemento con ID \"{id}\" no encontrado.",
+		"noAdminUsersFound": "No se encontraron usuarios administradores.",
+		"unexpectedError": "Error inesperado: {error}",
+		"adminUserIdUnavailable": "El ID del usuario administrador no está disponible. Se omite la obtención de contenido.",
+		"skippingUser": "Se omite el usuario {userId}, ya que solo se agregan los datos del administrador.",
+		"serverError": "El servidor respondió con un error:",
+		"apiConnectionTestFailed": "Error al probar la conexión a la API:",
+		"invalidApiResponse": "Respuesta inválida de la API.",
+		"inputFieldNotFound": "Campo de entrada no encontrado para el servicio: {serviceName}",
+		"loggingFailed": "Error al registrar: {error}",
+		"loggingApiRequestFailed": "Error al registrar la solicitud de la API: {error}",
+		"httpError": "¡Error HTTP! Estado: {status}"
+	},
+	"fetchErrors": {
+		"failed": "Error al obtener los datos del servidor. Inténtelo de nuevo más tarde.",
+		"attemptsFailed": "Todos los intentos de obtención fallaron:",
+		"errorFetchingUserOrSessionData": "[fetchLoggedInUsers] Error al obtener los datos del usuario o de la sesión.",
+		"adminUserIdFailed": "Error al obtener el ID del usuario administrador: {statusText}",
+		"fetchAutoClear": "[fetchAutoClearTempTranscodeToggle] Error durante la obtención: {error}",
+		"errorFetchingAdminUserId": "Error al obtener el ID del usuario administrador:",
+		"failedSessions": "Error al obtener las sesiones: {error}",
+		"failedTranscodeMappings": "Error al obtener las asignaciones de transcodificación de la API.",
+		"errorFetchingTranscodeMappings": "Error al obtener las asignaciones de transcodificación: {message}",
+		"failedActiveDevices": "Error al obtener los dispositivos activos: {error}",
+		"errorFetchingMediaDetails": "Error al obtener los detalles del contenido multimedia: {error}",
+		"failedTotalMovies": "Error al obtener el total de películas: {error}",
+		"failedTotalSeries": "Error al obtener el total de series: {error}",
+		"failedTotalEpisodes": "Error al obtener el total de episodios: {error}",
+		"failedLatestEpisode": "Error al obtener el último episodio de la entrada {entryName}: {status}",
+		"failedLatestEpisodes": "Error al obtener los últimos episodios: {statusText}",
+		"errorFetchingLatestEpisodes": "Error al obtener los últimos episodios: {error}",
+		"failedContent": "Error al obtener {contentType}: {reason}",
+		"failedLatestMovies": "Error al obtener las últimas películas: {statusText}",
+		"errorFetchingLatestMovies": "Error al obtener las últimas películas: {error}",
+		"failedPlaybackInfo": "Error al obtener la información de reproducción del elemento {itemId}: {statusText}",
+		"errorFetchingLastResumeMedia": "Error al obtener los últimos detalles del medio de reanudación: {error}",
+		"errorFetchingBitrate": "Error al obtener la tasa de bits del elemento {itemId}: {error}",
+		"expectedSessionsArray": "Se esperaba una matriz para las sesiones, recibida: {sessions}"
+	},
+	"sessionErrors": {
+		"sessionDetails": "[fetchSessionDetails] Detalles de la sesión {sessionId}:",
+		"errorFetchingSessionDetails": "[fetchSessionDetails] Error al obtener los detalles de la sesión: {error}",
+		"uncategorizedSessionType": "Tipo de sesión sin categorizar: {type}"
+	},
+	"deviceErrors": {
+		"errorUpdatingDeviceName": "Error al actualizar el nombre del dispositivo para el ID del dispositivo {deviceId}: {error}"
+	},
+	"deviceMessages": {
+		"successful": "El nombre del dispositivo {deviceId} se actualizó correctamente."
+	},
+	"statsErrors": {
+		"errorUpdatingDashboardStats": "Error al actualizar las estadísticas del panel: {error}",
+		"unexpectedErrorInUpdateWidgetStats": "Error inesperado en [updateWidgetStats]: {error}"
+	},
+	"webSocket": {
+		"errors": {
+			"sendingSessionData": "Error al enviar datos de sesión a WebSocket: {deviceId}, {error}"
+		},
+		"messages": {
+			"noDevicesFound": "No se encontraron dispositivos.",
+			"noDeviceIds": "No se encontraron IDs de dispositivo.",
+			"errorFetchingDeviceIds": "Error al obtener los IDs de dispositivo. {error}",
+			"errorInitializing": "Error al inicializar las conexiones WebSocket.",
+			"sessionDataSent": "Datos de sesión enviados a WebSocket para el dispositivo {deviceId}.",
+			"error": "Error de WebSocket para el dispositivo: {deviceId}",
+			"established": "Conexión WebSocket establecida para el dispositivo: {deviceId}",
+			"processingMessageError": "Error al procesar el mensaje para el dispositivo: {deviceId}",
+			"unexpectedData": "Formato de datos inesperado: {data}",
+			"centralEstablished": "Conexión WebSocket central establecida",
+			"processingCentralError": "Error al procesar el mensaje WebSocket central",
+			"newMoviesReceived": "Nuevas películas recibidas vía WebSocket para el dispositivo {deviceId}: {count}",
+			"newEpisodesReceived": "Nuevos episodios recibidos vía WebSocket para el dispositivo {deviceId}: {count}"
+		}
+	},
+	"actionErrors": {
+		"apiKeyActivation": {
+			"missingElements": "Faltan uno o más elementos necesarios para la activación de la clave API.",
+			"empty": "La clave API no puede estar vacía."
+		},
+		"unsupportedAction": "Acción no compatible: {action}",
+		"executeActionFailed": "Error al ejecutar la acción. Acción: {action}",
+		"invalidContentType": "Tipo de contenido no válido. Se esperaba JSON.",
+		"invalidSessionsDataFormat": "Formato de datos de sesiones no válido: {session}",
+		"invalidSessionObject": "Objeto de sesión no válido: {session}",
+		"tooltip": {
+			"noSelector": "No se proporcionó un selector para actualizar la información sobre herramientas."
+		},
+		"errorClearingTempPath": "Error al borrar la ruta de transcodificación temporal:",
+		"disconnectDeviceFailed": "No se pudo desconectar el dispositivo del usuario. Error: {error}",
+		"failedFetchDevices": "No se pudieron obtener los dispositivos. Estado HTTP: {status}",
+		"deviceDeleteFailed": "No se pudo eliminar el dispositivo {deviceId}",
+		"webSocket": {
+			"invalidMessageFormat": "Formato de mensaje WebSocket no válido para el dispositivo: {deviceId}. Se esperaba JSON.",
+			"emptyMoviesUpdate": "No se recibió ninguna actualización de películas para el dispositivo: {deviceId}.",
+			"emptyEpisodesUpdate": "No se recibió ninguna actualización de episodios para el dispositivo: {deviceId}."
+		}
+	},
+	"notifications": {
+		"databaseInitializationSuccess": "Base de datos inicializada correctamente.",
+		"apiKeyActivated": "¡Clave API activada correctamente!",
+		"notificationSent": "¡Notificación enviada correctamente!",
+		"sendNotification": {
+			"title": "Enviar notificación",
+			"messageTitleLabel": "Título del mensaje",
+			"enterTitle": "Introducir título",
+			"messageLabel": "Mensaje",
+			"enterMessage": "Introducir mensaje",
+			"titleRequired": "Título obligatorio",
+			"messageRequired": "Mensaje obligatorio",
+			"sendButton": "Enviar",
+			"cancelButton": "Cancelar"
+		},
+		"status": {
+			"successTitle": "Éxito",
+			"errorTitle": "Error",
+			"infoTitle": "Información"
+		},
+		"massNotification": {
+			"emby": "Notificación masiva de Emby",
+			"jellyfin": "Notificación masiva de Jellyfin"
+		},
+		"bothFieldsRequired": "Ambos campos son obligatorios",
+		"noActiveSessionsFound": "No se encontraron sesiones activas.",
+		"errorSending": "Error al enviar la notificación:",
+		"allFieldsRequired": "Todos los campos son obligatorios.",
+		"missingDeviceId": "El ID del dispositivo es obligatorio.",
+		"partialSuccess": {
+			"sentSuccessfully": "Notificaciones enviadas correctamente: {success}, fallidas: {failed}",
+			"embyLinkNotFound": "Enlace de notificación de Emby no encontrado.",
+			"failedWithMessage": "Notificación fallida: {message}"
+		}
+	},
+	"statusLabels": {
+		"retryingFetch": "Reintentando búsqueda... Intento {intento} de {reintentos}",
+		"contentFetchStart": "Iniciando búsqueda de contenido para adminUserId: {adminUserId}",
+		"fetchingLatestMovies": "Obteniendo las últimas películas para: {adminUserId}",
+		"fetchingLatestEpisodes": "Obteniendo los últimos episodios para: {adminUserId}",
+		"bandwidthUsed": "Ancho de banda usado",
+		"totalTranscodes": "Total de transcodificaciones: ",
+		"activeStreams": "Transmisiones activas: ",
+		"totalBandwidth": "Ancho de banda total: ",
+		"movies": "Películas: ",
+		"series": "Series: ",
+		"episodes": "Episodios: ",
+		"tvShows": "Programas de TV",
+		"specialEpisode": "Especial",
+		"channel": "Canal",
+		"client": "Cliente",
+		"device": "Dispositivo",
+		"ipAddress": "IP",
+		"geoLocation": "Ubicación",
+		"active": "Activo",
+		"method": "Método",
+		"subtitles": "Subtítulos",
+		"stream": "Transmisión",
+		"audio": "Audio",
+		"video": "Vídeo",
+		"transcode": "Transcodificar",
+		"status": "Estado",
+		"nowPlaying": "En reproducción",
+		"playing": "En reproducción",
+		"paused": "En pausa",
+		"playUser": "Reproducir {userName}",
+		"pauseUser": "Pausar {userName}",
+		"stopUser": "Detener {userName}",
+		"more": "más",
+		"sendNotificationToUser": "Enviar notificación a {userName}",
+		"disconnectDevice": "Finalizar sesión para {userName}",
+		"confirmAction": {
+			"title": "Confirmar acción",
+			"disconnectMessage": "¿Está seguro de que desea desconectar este dispositivo? Esto cerrará la sesión del usuario inmediatamente.",
+			"yesDisconnect": "Sí, desconectar",
+			"cancel": "Cancelar"
+		},
+		"settingsSaved": "Configuración guardada",
+		"sInfo": "Mostrando la página _PAGE_ de _PAGES_",
+		"sSearchPlaceholder": "Buscar...",
+		"sLengthMenu": "Resultados: _MENU_",
+		"sEmptyTable": "Parece que no hay nada aquí todavía."
+	},
+	"transcoding": {
+		"errors": {
+			"fetchTempIntervalsFailed": "[fetchTempTranscodeIntervals] Error al obtener los intervalos de transcodificación.",
+			"fetchTempIntervals": "[fetchTempTranscodeIntervals] Error durante la obtención: {message}",
+			"initializeAutoClearFailed": "[initializeAutoClearTempTranscodeToggle] Error al inicializar el interruptor de borrado automático: {message}"
+		},
+		"messages": {
+			"reason": "Razón",
+			"containerBitrateExceeds": "Reduciendo la tasa de bits debido a la configuración de calidad",
+			"audioCodecNotSupported": "Convirtiendo audio a códec compatible",
+			"videoCodecNotSupported": "Convirtiendo vídeo a códec compatible",
+			"containerNotSupported": "Formato de contenedor no compatible",
+			"profileNotSupported": "Perfil de medios no compatible con el dispositivo",
+			"videoBitrateExceeds": "Reduciendo la tasa de bits de video debido a la configuración de calidad",
+			"audioBitrateExceeds": "Reduciendo la tasa de bits de audio debido a la configuración de calidad",
+			"audioChannelsNotSupported": "Canales de audio no compatibles con el dispositivo",
+			"directPlayError": "Recuperándose de un error de reproducción",
+			"subtitleCodecNotSupported": "Convirtiendo subtítulos directamente en la transmisión de video",
+			"directPlayback": "Directo",
+			"details": {
+				"video": "Transcodificar ({videoCodec} {videoBitrate} Mbps)",
+				"audio": "Transcodificar ({audioCodec} {audioBitrate} kbps)",
+				"unknownMbps": "Transcodificar (Mbps desconocidos)",
+				"unknownKbps": "Transcodificar (kbps desconocidos)"
+			},
+			"tempTranscodePathEmpty": "La ruta de transcodificación temporal está vacía.",
+			"updateButton": "Actualizar",
+			"filteredActiveUsers": "Usuarios activos filtrados:"
+		}
+	},
+	"pausePolling": {
+		"errors": {
+			"noValidRows": "No se devolvieron filas de pausa válidas o hubo un error en la respuesta.",
+			"pollingError": "Error al sondear las marcas de tiempo de pausa: {error}",
+			"invalidSessionId": "[updatePauseTimer] se llamó con un ID de sesión no válido: {sessionId}"
+		},
+		"messages": {
+			"loadingTimer": "cargando...",
+			"pausedFor": "Pausado durante: {time}"
+		}
+	},
+	"unknownValues": {
+		"default": "Predeterminado",
+		"unknown": "Desconocido",
+		"unknownError": "Error desconocido",
+		"unexpectedErrorOccurred": "Se produjo un error inesperado",
+		"unknownErrorOccurred": "Se produjo un error desconocido",
+		"unknownMedia": "Medio desconocido",
+		"unknownMediaType": "Tipo de medio desconocido",
+		"unknownLibrary": "Biblioteca desconocida",
+		"unknownMovie": "Película desconocida",
+		"unknownSeries": "Serie desconocida",
+		"unknownSeason": "Temporada desconocida",
+		"unknownEpisode": "Episodio desconocido",
+		"unknownTitle": "Título desconocido",
+		"unknownYear": "Año desconocido",
+		"unknownProgram": "Programa desconocido",
+		"unknownChannel": "Canal desconocido",
+		"unknownChannelNumber": "Número de canal desconocido",
+		"unknownUser": "Usuario desconocido",
+		"unknownDevice": "Dispositivo desconocido",
+		"unknownClient": "Cliente desconocido",
+		"unknownIpAddress": "Dirección IP desconocida",
+		"notAvailable": "N/D",
+		"placeholder": {
+			"noData": "-"
+		}
+	},
+	"tableErrors": {
+		"parentContainerMissing": "[updateOrAddRow] Contenedor principal faltante: {containerId}",
+		"noDataAvailable": "No hay datos disponibles",
+		"noMoviesFound": "No se encontraron películas o el formato de respuesta no es válido",
+		"noEpisodesFound": "No se encontraron episodios o el formato de respuesta no es válido",
+		"tableBodyElementNotFound": {
+			"movies": "No se encontró el elemento del cuerpo de la tabla para las últimas películas",
+			"episodes": "No se encontró el elemento del cuerpo de la tabla para los últimos episodios"
+		}
+	},
+	"activeCounts": {
+		"activeMovie": "{count} Película activa",
+		"activeMovies": "{count} Películas activas",
+		"activeTVShow": "{count} Programa de TV activo",
+		"activeTVShows": "{count} Programas de TV activos",
+		"activeChannel": "{count} Canal activo",
+		"activeChannels": "{count} Canales activos"
+	},
+	"saveEvents": {
+		"saving": "Guardando...",
+		"failedSaveApiKey": "Error al guardar la clave API: HTTP {status}",
+		"deviceDisconnected": "Dispositivo desconectado correctamente.",
+		"validSessionsUpdated": "Sesiones válidas actualizadas:",
+		"saveError": "Error al guardar:",
+		"saveErrorStatus": "Error al guardar: {status}"
+	},
+	"timeEvents": {
+		"localStorageUnavailable": "El almacenamiento local no está disponible.",
+		"loadProcessedSessionsFailed": "No se pudieron cargar las sesiones procesadas: {message}",
+		"saveProcessedSessionsFailed": "No se pudieron guardar las sesiones procesadas: {message}",
+		"invalidPauseNotificationThreshold": "Formato no válido detectado en el pauseNotificationThreshold guardado. Se esperaba un número.",
+		"invalidPauseDisconnectionThreshold": "Formato no válido detectado en el pauseDisconnectionThreshold guardado. Se esperaba un número.",
+		"typeNotAvailable": "{type} no está disponible: {errorMessage}"
+	},
+	"additionalDebugMessages": {
+		"handleSessionAction": {
+			"apiPayload": "[handleSessionAction] Carga útil de la API: {payload}"
+		},
+		"updateWidgetStats": {
+			"bandwidthInUI": "[updateWidgetStats] Ancho de banda actualizado en la interfaz de usuario: {bandwidth}"
+		},
+		"saveSettings": {
+			"payload": "[saveSettings] Carga útil enviada: {payload}"
+		}
+	}
+}

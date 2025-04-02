@@ -1,0 +1,349 @@
+{
+	"language": {
+		"loading": {
+			"failedToLoad": "无法加载 {lang} 的语言文件",
+			"loadedSuccessfully": "语言‘{lang}’已成功加载。",
+			"errorLoading": "加载语言文件时出错：{error}"
+		}
+	},
+	"modal": {
+		"messages": {
+			"notFound": "DOM 中未找到模态框：{modalId}",
+			"loading": "正在加载...",
+			"preloadedContent": "已预加载模态框内容：{modalId}",
+			"loadFailed": "无法加载模态框内容。"
+		}
+	},
+	"dataTables": {
+		"messages": {
+			"initialized": "使用实时数据为 {tableId} 初始化 DataTables。",
+			"notFound": "未在模态框内容中找到 DataTables。"
+		}
+	},
+	"api": {
+		"events": {
+			"clickTriggered": "为 {elementId} 触发的单击事件",
+			"response": "API 响应:",
+			"callFailed": "API 调用失败:"
+		}
+	},
+	"rules": {
+		"management": {
+			"saved": "规则已保存：{message}",
+			"errorSaving": "保存规则时出错：{message}",
+			"genericError": "错误：{error}"
+		}
+	},
+	"network": {
+		"errors": {
+			"responseNotOk": "网络响应不正常：{statusText}"
+		}
+	},
+	"timeFormats": {
+		"manual": "加载中...",
+		"secondsShort": "m",
+		"minutesShort": "f",
+		"hoursShort": "x",
+		"daysShort": "t",
+		"weeksShort": "z",
+		"monthsShort": "g",
+		"yearsShort": "n"
+	},
+	"generalErrors": {
+		"failedToInitializeDatabase": "无法初始化数据库。",
+		"databaseInitializationError": "数据库初始化错误:",
+		"failedToFetchOrRenderSessions": "无法获取或呈现会话。",
+		"elementNotFound": "未找到 ID 为 \"{id}\" 的元素。",
+		"noAdminUsersFound": "未找到管理员用户。",
+		"unexpectedError": "意外错误：{error}",
+		"adminUserIdUnavailable": "管理员用户 ID 不可用。跳过内容获取。",
+		"skippingUser": "跳过用户 {userId}，因为仅汇总管理员数据。",
+		"serverError": "服务器响应错误:",
+		"apiConnectionTestFailed": "无法测试 API 连接:",
+		"invalidApiResponse": "来自 API 的响应无效。",
+		"inputFieldNotFound": "未找到服务的输入字段: {serviceName}",
+		"loggingFailed": "日志记录失败：{error}",
+		"loggingApiRequestFailed": "日志记录 API 请求失败：{error}",
+		"httpError": "HTTP 错误！状态：{status}"
+	},
+	"fetchErrors": {
+		"failed": "无法从服务器获取数据。请稍后重试。",
+		"attemptsFailed": "所有获取尝试均失败:",
+		"errorFetchingUserOrSessionData": "[fetchLoggedInUsers] 获取用户或会话数据时出错。",
+		"adminUserIdFailed": "无法获取管理员用户 ID：{statusText}",
+		"fetchAutoClear": "[fetchAutoClearTempTranscodeToggle] 获取过程中出错：{error}",
+		"errorFetchingAdminUserId": "获取管理员用户 ID 时出错:",
+		"failedSessions": "无法获取会话：{error}",
+		"failedTranscodeMappings": "无法从 API 获取转码映射。",
+		"errorFetchingTranscodeMappings": "获取转码映射时出错：{message}",
+		"failedActiveDevices": "无法获取活动设备：{error}",
+		"errorFetchingMediaDetails": "获取媒体详细信息时出错：{error}",
+		"failedTotalMovies": "获取电影总数时出错：{error}",
+		"failedTotalSeries": "获取系列总数时出错：{error}",
+		"failedTotalEpisodes": "获取剧集总数时出错：{error}",
+		"failedLatestEpisode": "获取条目 {entryName} 的最新剧集时出错：{status}",
+		"failedLatestEpisodes": "获取最新剧集时出错：{statusText}",
+		"errorFetchingLatestEpisodes": "获取最新剧集时出错：{error}",
+		"failedContent": "无法获取 {contentType}：{reason}",
+		"failedLatestMovies": "无法获取最新电影：{statusText}",
+		"errorFetchingLatestMovies": "获取最新电影时出错：{error}",
+		"failedPlaybackInfo": "无法获取项目 {itemId} 的播放信息：{statusText}",
+		"errorFetchingLastResumeMedia": "获取上次恢复媒体详细信息时出错：{error}",
+		"errorFetchingBitrate": "获取项目 {itemId} 的比特率时出错：{error}",
+		"expectedSessionsArray": "应为会话数组，已收到：{sessions}"
+	},
+	"sessionErrors": {
+		"sessionDetails": "[fetchSessionDetails] 会话 {sessionId} 详细信息:",
+		"errorFetchingSessionDetails": "[fetchSessionDetails] 获取会话详细信息时出错：{error}",
+		"uncategorizedSessionType": "未分类的会话类型：{type}"
+	},
+	"deviceErrors": {
+		"errorUpdatingDeviceName": "更新设备 ID {deviceId} 的设备名称时出错：{error}"
+	},
+	"deviceMessages": {
+		"successful": "成功更新设备 {deviceId} 的设备名称。"
+	},
+	"statsErrors": {
+		"errorUpdatingDashboardStats": "更新仪表板统计信息时出错：{error}",
+		"unexpectedErrorInUpdateWidgetStats": "[updateWidgetStats] 中出现意外错误：{error}"
+	},
+	"webSocket": {
+		"errors": {
+			"sendingSessionData": "将会话数据发送到 websocket 时出错：{deviceId}，{error}"
+		},
+		"messages": {
+			"noDevicesFound": "未找到设备。",
+			"noDeviceIds": "未找到设备 ID。",
+			"errorFetchingDeviceIds": "获取设备 ID 时出错。{error}",
+			"errorInitializing": "初始化 WebSocket 连接时出错。",
+			"sessionDataSent": "将会话数据发送到设备 {deviceId} 的 WebSocket。",
+			"error": "设备发生 WebSocket 错误：{deviceId}",
+			"established": "为设备建立 WebSocket 连接：{deviceId}",
+			"processingMessageError": "处理设备消息时出错：{deviceId}",
+			"unexpectedData": "意外数据格式：{data}",
+			"centralEstablished": "已建立中央 WebSocket 连接",
+			"processingCentralError": "错误处理中央 WebSocket 消息",
+			"newMoviesReceived": "通过 WebSocket 为设备 {deviceId} 接收的新电影：{count}",
+			"newEpisodesReceived": "通过 WebSocket 为设备 {deviceId} 接收的新剧集：{count}"
+		}
+	},
+	"actionErrors": {
+		"apiKeyActivation": {
+			"missingElements": "缺少一个或多个 API 密钥激活所需的元素。",
+			"empty": "API 密钥不能为空。"
+		},
+		"unsupportedAction": "不支持的操作：{action}",
+		"executeActionFailed": "无法执行操作。操作：{action}",
+		"invalidContentType": "收到的内容类型无效。应为 JSON。",
+		"invalidSessionsDataFormat": "会话数据格式无效：{session}",
+		"invalidSessionObject": "会话对象无效：{session}",
+		"tooltip": {
+			"noSelector": "未提供用于工具提示刷新的选择器。"
+		},
+		"errorClearingTempPath": "清除临时转码路径时出错:",
+		"disconnectDeviceFailed": "无法断开用户设备。错误：{error}",
+		"failedFetchDevices": "无法获取设备。HTTP 状态：{status}",
+		"deviceDeleteFailed": "无法删除设备 {deviceId}",
+		"webSocket": {
+			"invalidMessageFormat": "设备 {deviceId} 的 WebSocket 消息格式无效。应为 JSON。",
+			"emptyMoviesUpdate": "未收到设备 {deviceId} 的电影更新。",
+			"emptyEpisodesUpdate": "未收到设备 {deviceId} 的剧集更新。"
+		}
+	},
+	"notifications": {
+		"databaseInitializationSuccess": "数据库初始化成功。",
+		"apiKeyActivated": "API 密钥激活成功！",
+		"notificationSent": "通知发送成功！",
+		"sendNotification": {
+			"title": "发送通知",
+			"messageTitleLabel": "消息标题",
+			"enterTitle": "输入标题",
+			"messageLabel": "消息",
+			"enterMessage": "输入消息",
+			"titleRequired": "标题为必填项",
+			"messageRequired": "消息为必填项",
+			"sendButton": "发送",
+			"cancelButton": "取消"
+		},
+		"status": {
+			"successTitle": "成功",
+			"errorTitle": "错误",
+			"infoTitle": "信息"
+		},
+		"massNotification": {
+			"emby": "Emby 群发通知",
+			"jellyfin": "Jellyfin 群发通知"
+		},
+		"bothFieldsRequired": "两个字段均为必填项",
+		"noActiveSessionsFound": "未找到活动会话。",
+		"errorSending": "发送通知时出错:",
+		"allFieldsRequired": "所有字段均为必填项。",
+		"missingDeviceId": "设备 ID 为必填项。",
+		"partialSuccess": {
+			"sentSuccessfully": "通知发送成功：{success}，失败：{failed}",
+			"embyLinkNotFound": "未找到 Emby 通知链接。",
+			"failedWithMessage": "通知失败：{message}"
+		}
+	},
+	"statusLabels": {
+		"retryingFetch": "正在重试获取...尝试 {attempt} 次（共 {retries} 次）",
+		"contentFetchStart": "开始获取 adminUserId：{adminUserId} 的内容",
+		"fetchingLatestMovies": "正在获取 {adminUserId} 的最新电影",
+		"fetchingLatestEpisodes": "正在获取 {adminUserId} 的最新剧集",
+		"bandwidthUsed": "已用带宽",
+		"totalTranscodes": "总转码数:",
+		"activeStreams": "活动流:",
+		"totalBandwidth": "总带宽:",
+		"movies": "电影:",
+		"series": "系列:",
+		"episodes": "剧集:",
+		"tvShows": "电视节目",
+		"specialEpisode": "特别节目",
+		"channel": "频道",
+		"client": "客户端",
+		"device": "设备",
+		"ipAddress": "IP",
+		"geoLocation": "位置",
+		"active": "活动",
+		"method": "方法",
+		"subtitles": "字幕",
+		"stream": "流",
+		"audio": "音频",
+		"video": "视频",
+		"transcode": "转码",
+		"status": "状态",
+		"nowPlaying": "正在播放",
+		"playing": "正在播放",
+		"paused": "已暂停",
+		"playUser": "播放 {userName}",
+		"pauseUser": "暂停 {userName}",
+		"stopUser": "停止 {userName}",
+		"more": "更多的",
+		"sendNotificationToUser": "向 {userName} 发送通知",
+		"disconnectDevice": "终止 {userName} 的会话",
+		"confirmAction": {
+			"title": "确认操作",
+			"disconnectMessage": "您确定要断开此设备吗？这将立即注销用户。",
+			"yesDisconnect": "是，断开连接",
+			"cancel": "取消"
+		},
+		"settingsSaved": "设置已保存",
+		"sInfo": "显示第 _PAGE_ 页，共 _PAGES_ 页",
+		"sSearchPlaceholder": "搜索...",
+		"sLengthMenu": "结果：_MENU_",
+		"sEmptyTable": "看起来这里还什么都没有。"
+	},
+	"transcoding": {
+		"errors": {
+			"fetchTempIntervalsFailed": "[fetchTempTranscodeIntervals] 无法获取转码间隔。",
+			"fetchTempIntervals": "[fetchTempTranscodeIntervals] 获取期间出错：{message}",
+			"initializeAutoClearFailed": "[initializeAutoClearTempTranscodeToggle] 无法初始化自动清除切换：{message}"
+		},
+		"messages": {
+			"reason": "原因",
+			"containerBitrateExceeds": "由于质量设置而降低比特率",
+			"audioCodecNotSupported": "将音频转换为兼容的编解码器",
+			"videoCodecNotSupported": "将视频转换为兼容的编解码器",
+			"containerNotSupported": "不支持容器格式",
+			"profileNotSupported": "不支持媒体配置文件设备",
+			"videoBitrateExceeds": "由于质量设置而降低视频比特率",
+			"audioBitrateExceeds": "由于质量设置而降低音频比特率",
+			"audioChannelsNotSupported": "设备不支持音频通道",
+			"directPlayError": "从播放错误中恢复",
+			"subtitleCodecNotSupported": "将字幕直接转换为视频流",
+			"directPlayback": "直接",
+			"details": {
+				"video": "转码 ({videoCodec} {videoBitrate} Mbps)",
+				"audio": "转码 ({audioCodec} {audioBitrate} kbps)",
+				"unknownMbps": "转码 (未知 Mbps)",
+				"unknownKbps": "转码 (未知 kbps)"
+			},
+			"tempTranscodePathEmpty": "临时转码路径为空。",
+			"updateButton": "更新",
+			"filteredActiveUsers": "已过滤活跃用户:"
+		}
+	},
+	"pausePolling": {
+		"errors": {
+			"noValidRows": "未返回有效的暂停行或响应错误。",
+			"pollingError": "轮询暂停时间戳时出错：{error}",
+			"invalidSessionId": "[updatePauseTimer] 调用时使用了无效的 sessionId：{sessionId}"
+		},
+		"messages": {
+			"loadingTimer": "正在加载...",
+			"pausedFor": "暂停时间：{time}"
+		}
+	},
+	"unknownValues": {
+		"default": "默认",
+		"unknown": "未知",
+		"unknownError": "未知错误",
+		"unexpectedErrorOccurred": "发生意外错误。",
+		"unknownErrorOccurred": "发生未知错误。",
+		"unknownMedia": "未知媒体",
+		"unknownMediaType": "未知媒体类型",
+		"unknownLibrary": "未知库",
+		"unknownMovie": "未知电影",
+		"unknownSeries": "未知系列",
+		"unknownSeason": "未知季节",
+		"unknownEpisode": "未知剧集",
+		"unknownTitle": "未知标题",
+		"unknownYear": "未知年份",
+		"unknownProgram": "未知节目",
+		"unknownChannel": "未知频道",
+		"unknownChannelNumber": "未知频道号",
+		"unknownUser": "未知用户",
+		"unknownDevice": "未知设备",
+		"unknownClient": "未知客户端",
+		"unknownIpAddress": "未知 IP 地址",
+		"notAvailable": "N/A",
+		"placeholder": {
+			"noData": "-"
+		}
+	},
+	"tableErrors": {
+		"parentContainerMissing": "[updateOrAddRow] 父容器缺失：{containerId}",
+		"noDataAvailable": "无可用数据",
+		"noMoviesFound": "未找到电影或响应格式无效。",
+		"noEpisodesFound": "未找到剧集或响应格式无效。",
+		"tableBodyElementNotFound": {
+			"movies": "未找到最新电影的表格主体元素。",
+			"episodes": "未找到最新剧集的表格主体元素。"
+		}
+	},
+	"activeCounts": {
+		"activeMovie": "{count} 部活跃电影",
+		"activeMovies": "{count} 部活跃电影",
+		"activeTVShow": "{count} 部活跃电视节目",
+		"activeTVShows": "{count} 部活跃电视节目",
+		"activeChannel": "{count} 部活跃频道",
+		"activeChannels": "{count} 部活跃频道"
+	},
+	"saveEvents": {
+		"saving": "正在保存...",
+		"failedSaveApiKey": "无法保存 API 密钥:HTTP {status}",
+		"deviceDisconnected": "设备已成功断开连接。",
+		"validSessionsUpdated": "有效会话已更新:",
+		"saveError": "保存错误:",
+		"saveErrorStatus": "保存错误：{status}"
+	},
+	"timeEvents": {
+		"localStorageUnavailable": "localStorage 不可用。",
+		"loadProcessedSessionsFailed": "无法加载已处理的会话：{message}",
+		"saveProcessedSessionsFailed": "无法保存已处理的会话：{message}",
+		"invalidPauseNotificationThreshold": "在保存的 [pauseNotificationThreshold] 中检测到无效格式。预期数字。",
+		"invalidPauseDisconnectionThreshold": "在保存的 [pauseDisconnectionThreshold] 中检测到无效格式。预期数字。",
+		"typeNotAvailable": "{type} 不可用：{errorMessage}"
+	},
+	"additionalDebugMessages": {
+		"handleSessionAction": {
+			"apiPayload": "[handleSessionAction] API 有效负载：{payload}"
+		},
+		"updateWidgetStats": {
+			"bandwidthInUI": "[updateWidgetStats] UI 中更新的带宽：{bandwidth}"
+		},
+		"saveSettings": {
+			"payload": "[saveSettings] 正在发送的有效负载：{payload}"
+		}
+	}
+}
