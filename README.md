@@ -9,7 +9,7 @@ Welcome to the **QuickBox Pro Translations Repository**!
 This repository contains the language files used to localize **QuickBox Pro** into various languages. Whether you're fluent in another language or just want to help make QuickBox Pro more accessible, you're welcome to contribute.
 
 > 💬 Got questions or want to suggest a new language?  
-> Join us on our [Official Discord](https://discord.gg/hCCbVhu)!
+> Join us on our [Official Discord](https://discord.gg/mca7RSv5pa)!
 
 
 ## 🛠️ Contributing a New Language
