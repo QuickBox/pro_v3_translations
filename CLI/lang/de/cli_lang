@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.181
+# File Version: 1.0.182
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -28,532 +28,532 @@
 ################################################################################
 
 quickbox::dashboard::log() {
-	admin_name="$(quickbox::database "SELECT username FROM user_information WHERE user_level = '10';")"
-	if [[ ! -f "/srv/quickbox/logs/dashboard" ]]; then
-		mkdir -p /srv/quickbox/logs
-		touch /srv/quickbox/logs/dashboard
-		chown www-data:www-data /srv/quickbox/logs/dashboard
-	fi
-	if [[ ! -f "/srv/quickbox/logs/${username:-${admin_name}}.dashboard" ]]; then
-		mkdir -p /srv/quickbox/logs
-		touch "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
-		chown www-data:www-data "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
-	fi
-	if [[ -n ${username} ]]; then
-		echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${username:-}.dashboard"
-	else
-		echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${admin_name:-}.dashboard"
-	fi
-	echo "${1:-null}"
+  admin_name="$(quickbox::database "SELECT username FROM user_information WHERE user_level = '10';")"
+  if [[ ! -f "/srv/quickbox/logs/dashboard" ]]; then
+    mkdir -p /srv/quickbox/logs
+    touch /srv/quickbox/logs/dashboard
+    chown www-data:www-data /srv/quickbox/logs/dashboard
+  fi
+  if [[ ! -f "/srv/quickbox/logs/${username:-${admin_name}}.dashboard" ]]; then
+    mkdir -p /srv/quickbox/logs
+    touch "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
+    chown www-data:www-data "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
+  fi
+  if [[ -n ${username} ]]; then
+    echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${username:-}.dashboard"
+  else
+    echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${admin_name:-}.dashboard"
+  fi
+  echo "${1:-null}"
 }
 ################################################################################
 # Clean
 ################################################################################
 quickbox::lang::clean::memory() {
-	declare text="speicher-cache bereinigen..."
-	quickbox::dashboard::log "${text}"
+  declare text="speicher-cache bereinigen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::clean::rclone() {
-	declare text="rclone upload-protokoll reinigen..."
-	quickbox::dashboard::log "${text}"
+  declare text="rclone upload-protokoll reinigen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::clean::rclone::error() {
-	declare text="fehler: protokolldatei nicht vorhanden."
-	quickbox::dashboard::log "${text}"
+  declare text="fehler: protokolldatei nicht vorhanden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::clean::dashboard() {
-	declare text="erwarte systemantwort..."
-	quickbox::dashboard::log "${text}"
+  declare text="erwarte systemantwort..."
+  quickbox::dashboard::log "${text}"
 }
 ################################################################################
 # Locks
 ################################################################################
 quickbox::lang::lock::handle() {
-	declare text="${quickbox_lock} wird gerade ausgeführt
+  declare text="${quickbox_lock} wird gerade ausgeführt
 prozess wird fortgesetzt, sobald ${quickbox_lock} beendet ist"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::lock::remove() {
-	declare text="software-sperren entfernen..."
-	quickbox::dashboard::log "${text}"
+  declare text="software-sperren entfernen..."
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Apt
 ################################################################################
 quickbox::lang::apt::update::header() {
-	declare text="überprüfung und durchführung von apt updates..."
-	quickbox::dashboard::log "${text}"
+  declare text="überprüfung und durchführung von apt updates..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::db::locked() {
-	declare text="versuche, dpkg-sperre aufzulösen..."
-	quickbox::dashboard::log "${text}"
+  declare text="versuche, dpkg-sperre aufzulösen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::update::completed() {
-	declare text="apt-get upgrade erfolgreich abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="apt-get upgrade erfolgreich abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::check::failed() {
-	declare text="apt-get check ist fehlgeschlagen, sie haben möglicherweise defekte pakete"
-	quickbox::dashboard::log "${text}"
+  declare text="apt-get check ist fehlgeschlagen, sie haben möglicherweise defekte pakete"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Install
 ################################################################################
 quickbox::lang::install::header() {
-	declare text="${software_title} wird jetzt installiert
+  declare text="${software_title} wird jetzt installiert
 dieser vorgang kann ein paar minuten dauern..."
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::rutorrent::header() {
-	rtorrent_count=$(quickbox::software::count rtorrent)
-	if [[ ${rtorrent_count} -eq 0 ]]; then
-		declare text="es sieht so aus, als ob rTorrent nicht installiert ist
+  rtorrent_count=$(quickbox::software::count rtorrent)
+  if [[ ${rtorrent_count} -eq 0 ]]; then
+    declare text="es sieht so aus, als ob rTorrent nicht installiert ist
 
 rTorrent 0.9.8 wird jetzt installiert, bitte warten sie, da dies
 ein paar minuten dauern kann (abhängig von den systemspezifikationen)"
-		sonst
-		declare text="${software_title} wird jetzt installiert
+    sonst
+    declare text="${software_title} wird jetzt installiert
 dieser vorgang kann ein paar minuten dauern..."
-	fi
-	quickbox::dashboard::log "${text}"
+  fi
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::sources::header() {
-	declare text="hinzufügen zusätzlicher schlüssel und quellen für ${software_title}..."
-	quickbox::dashboard::log "${text}"
+  declare text="hinzufügen zusätzlicher schlüssel und quellen für ${software_title}..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::dependencies::header() {
-	declare text="installiere ${software_title} abhängigkeiten..."
-	quickbox::dashboard::log "${text}"
+  declare text="installiere ${software_title} abhängigkeiten..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::build::header() {
-	declare text="aufbau von ${software_title}..."
-	quickbox::dashboard::log "${text}"
+  declare text="aufbau von ${software_title}..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::mktorrent::header() {
-	declare text="aufbau von mktorrent..."
-	quickbox::dashboard::log "${text}"
+  declare text="aufbau von mktorrent..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::xmlrpc::header() {
-	declare text="aufbau von xmlrpc-c..."
-	quickbox::dashboard::log "${text}"
+  declare text="aufbau von xmlrpc-c..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::libtorrent::header() {
-	declare text="aufbau von libtorrent..."
-	quickbox::dashboard::log "${text}"
+  declare text="aufbau von libtorrent..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::rtorrent::header() {
-	declare text="aufbau von rtorrent..."
-	quickbox::dashboard::log "${text}"
+  declare text="aufbau von rtorrent..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::certificate::header() {
-	declare text="SSL-Zertifikat für ${d} erstellen..."
-	quickbox::dashboard::log "${text}"
+  declare text="SSL-Zertifikat für ${d} erstellen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::configure::lecert::header() {
-	declare text="NGinx für Let's Encrypt konfigurieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="NGinx für Let's Encrypt konfigurieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::configure::header() {
-	declare text="${software_title} konfigurieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} konfigurieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::backup::header() {
-	declare text="sicherung der ${software_title} konfiguration..."
-	quickbox::dashboard::log "${text}"
+  declare text="sicherung der ${software_title} konfiguration..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::start::header() {
-	declare text="starten von ${software_title}..."
-	quickbox::dashboard::log "${text}"
+  declare text="starten von ${software_title}..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::install::complete::header() {
-	declare text="${software_title} installation abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} installation abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Reinstall
 ################################################################################
 quickbox::lang::reinstall::header() {
-	declare text="${software_title} wird jetzt neu installiert
+  declare text="${software_title} wird jetzt neu installiert
 dieser vorgang kann einige minuten dauern..."
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::reinstall::complete::header() {
-	declare text="${software_title} neuinstallation abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} neuinstallation abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Remove
 ################################################################################
 quickbox::lang::remove::header() {
-	declare text="${software_title} wird jetzt entfernt
+  declare text="${software_title} wird jetzt entfernt
 dieser vorgang kann ein paar minuten dauern..."
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::stop::header() {
-	declare text="anhalten von ${software_title}..."
-	quickbox::dashboard::log "${text}"
+  declare text="anhalten von ${software_title}..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::dependencies::header() {
-	declare text="entfernen von ${software_title} abhängigkeiten..."
-	quickbox::dashboard::log "${text}"
+  declare text="entfernen von ${software_title} abhängigkeiten..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::files::header() {
-	declare text="entfernen von ${software_title} dateien..."
-	quickbox::dashboard::log "${text}"
+  declare text="entfernen von ${software_title} dateien..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::complete::header() {
-	declare text="${software_title} entfernung abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} entfernung abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Update
 ################################################################################
 quickbox::lang::update::header() {
-	declare text="${software_title} wird jetzt aktualisiert
+  declare text="${software_title} wird jetzt aktualisiert
 dieser vorgang kann ein paar minuten dauern..."
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::files::header() {
-	declare text="aktualisierung von ${software_title}..."
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisierung von ${software_title}..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::complete::header() {
-	declare text="${software_title} update abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} update abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::files::admin() {
-	declare text="sie müssen als administrator angemeldet sein, um ${software_title} zu aktualisieren"
-	quickbox::dashboard::log "${text}"
+  declare text="sie müssen als administrator angemeldet sein, um ${software_title} zu aktualisieren"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::jellyfin::ffmpeg() {
-	declare text="ffmpeg für Jellyfin aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="ffmpeg für Jellyfin aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Renew - Let's Encrypt
 ################################################################################
 quickbox::lang::install::lecert::complete() {
-	declare -a domain_array
-	if [[ -n ${dash} ]]; then
-		domain_array+=("https://${domain_options[dash]}")
-		application_array+=("QuickBox")
-	fi
-	if [[ -n ${emby} ]]; then
-		domain_array+=("https://${domain_options[emby]}")
-		application_array+=("Emby")
-	fi
-	if [[ -n ${jellyfin} ]]; then
-		domain_array+=("https://${domain_options[jellyfin]}")
-		application_array+=("Jellyfin")
-	fi
-	if [[ -n ${jellyseerr} ]]; then
-		domain_array+=("https://${domain_options[jellyseerr]}")
-		application_array+=("Jellyseerr")
-	fi
-	if [[ -n ${komga} ]]; then
-		domain_array+=("https://${domain_options[komga]}")
-		application_array+=("Komga")
-	fi
-	if [[ -n ${overseerr} ]]; then
-		domain_array+=("https://${domain_options[overseerr]}")
-		application_array+=("Overseerr")
-	fi
-	if [[ -n ${plex} ]]; then
-		domain_array+=("https://${domain_options[plex]}")
-		application_array+=("Plex")
-	fi
-	if [[ -n ${no_dash} ]]; then
-		domain_array+=("${domain}")
-		application_array+=("Die benutzerdefinierte Domäne wurde")
-	fi
-	for ((i = 0; i < ${#domain_array[@]}; i++)); do
-		declare text="SSL-Zertifikat für ${application_array[i]} installiert.
+  declare -a domain_array
+  if [[ -n ${dash} ]]; then
+    domain_array+=("https://${domain_options[dash]}")
+    application_array+=("QuickBox")
+  fi
+  if [[ -n ${emby} ]]; then
+    domain_array+=("https://${domain_options[emby]}")
+    application_array+=("Emby")
+  fi
+  if [[ -n ${jellyfin} ]]; then
+    domain_array+=("https://${domain_options[jellyfin]}")
+    application_array+=("Jellyfin")
+  fi
+  if [[ -n ${jellyseerr} ]]; then
+    domain_array+=("https://${domain_options[jellyseerr]}")
+    application_array+=("Jellyseerr")
+  fi
+  if [[ -n ${komga} ]]; then
+    domain_array+=("https://${domain_options[komga]}")
+    application_array+=("Komga")
+  fi
+  if [[ -n ${overseerr} ]]; then
+    domain_array+=("https://${domain_options[overseerr]}")
+    application_array+=("Overseerr")
+  fi
+  if [[ -n ${plex} ]]; then
+    domain_array+=("https://${domain_options[plex]}")
+    application_array+=("Plex")
+  fi
+  if [[ -n ${no_dash} ]]; then
+    domain_array+=("${domain}")
+    application_array+=("Die benutzerdefinierte Domäne wurde")
+  fi
+  for ((i = 0; i < ${#domain_array[@]}; i++)); do
+    declare text="SSL-Zertifikat für ${application_array[i]} installiert.
 Domäne: ${domain_array[i]}"
-	done
-	quickbox::dashboard::log "${text}"
+  done
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::renew::certificates::header() {
-	declare text="Der Erneuerungsprozess für das SSL-Zertifikat beginnt nun"
-	quickbox::dashboard::log "${text}"
+  declare text="Der Erneuerungsprozess für das SSL-Zertifikat beginnt nun"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::renew::complete::header() {
-	declare text="Erneuerung des SSL-Zertifikats abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="Erneuerung des SSL-Zertifikats abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::lecert::renew() {
-	# divide domain entries with commas and set final entry to "and"
-	for ((i = 0; i < ${#domain[@]}; i++)); do
-		if [[ ${i} -eq 0 ]]; then
-			declare text="${domain[i]}"
-		elif [[ ${i} -eq $((${#domain[@]} - 1)) ]]; then
-			declare text="${text} und ${domain[i]}"
-		else
-			declare text="${text}, ${domain[i]}"
-		fi
-	done
-	declare text="SSL-Zertifikat für ${text} erneuern..."
-	quickbox::dashboard::log "${text}"
+  # divide domain entries with commas and set final entry to "and"
+  for ((i = 0; i < ${#domain[@]}; i++)); do
+    if [[ ${i} -eq 0 ]]; then
+      declare text="${domain[i]}"
+    elif [[ ${i} -eq $((${#domain[@]} - 1)) ]]; then
+      declare text="${text} und ${domain[i]}"
+    else
+      declare text="${text}, ${domain[i]}"
+    fi
+  done
+  declare text="SSL-Zertifikat für ${text} erneuern..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::lecert::renew::info() {
-	created_array="${certificate_created}"
-	expires_array="${certificate_expiry}"
-	days_left_array="${certificate_days_left}"
-	# create certificate info header for completion message
-	declare text_header="
+  created_array="${certificate_created}"
+  expires_array="${certificate_expiry}"
+  days_left_array="${certificate_days_left}"
+  # create certificate info header for completion message
+  declare text_header="
 Informationen zum Zertifikat:
 "
-	declare text="domain: ${d}
+  declare text="domain: ${d}
 erstellt: ${created_array[*]}
 läuft ab: ${expires_array[*]}
 tage übrig: ${days_left_array[*]}
 "
-	# show text_header only once for multiple domains
-	if [[ ${d} == "${domain[0]}" ]]; then
-		quickbox::dashboard::log "${text_header}
+  # show text_header only once for multiple domains
+  if [[ ${d} == "${domain[0]}" ]]; then
+    quickbox::dashboard::log "${text_header}
 ${text}"
-	else
-		quickbox::dashboard::log "${text}"
-	fi
+  else
+    quickbox::dashboard::log "${text}"
+  fi
 }
 
 quickbox::lang::reinstall::lecert::complete::header() {
-	declare text="Neuinstallation des SSL-Zertifikats abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="Neuinstallation des SSL-Zertifikats abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::remove::cert::complete::header() {
-	declare text="Die Entfernung des SSL-Zertifikats ist abgeschlossen"
-	quickbox::dashboard::log "${text}"
+  declare text="Die Entfernung des SSL-Zertifikats ist abgeschlossen"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # User
 ################################################################################
 quickbox::lang::user::create() {
-	declare text="quickbox benutzer erstellt:"
-	quickbox::dashboard::log "${text}"
+  declare text="quickbox benutzer erstellt:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::delete() {
-	declare text="${username:-"quickbox benutzer"} gelöscht"
-	quickbox::dashboard::log "${text}"
+  declare text="${username:-"quickbox benutzer"} gelöscht"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::username() {
-	declare text="benutzer: ${username}"
-	quickbox::dashboard::log "${text}"
+  declare text="benutzer: ${username}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::benutzer::passwort() {
-	declare text="passwort: ${password}"
-	quickbox::dashboard::log "${text}"
+  declare text="passwort: ${password}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::password::updated() {
-	declare text="${username:-"quickbox benutzer"}'s passwort aktualisiert"
-	quickbox::dashboard::log "${text}"
+  declare text="${username:-"quickbox benutzer"}'s passwort aktualisiert"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::ban() {
-	declare text="${username:-"quickbox benutzer"} gesperrt"
-	quickbox::dashboard::log "${text}"
+  declare text="${username:-"quickbox benutzer"} gesperrt"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::unban() {
-	declare text="${username:-"quickbox benutzer"} unbanned"
-	quickbox::dashboard::log "${text}"
+  declare text="${username:-"quickbox benutzer"} unbanned"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::demote() {
-	declare text="${username:-"quickbox benutzer"} degradiert von admin"
-	quickbox::dashboard::log "${text}"
+  declare text="${username:-"quickbox benutzer"} degradiert von admin"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::promote() {
-	declare text="${username:-"quickbox benutzer"} befördert zu admin"
-	quickbox::dashboard::log "${text}"
+  declare text="${username:-"quickbox benutzer"} befördert zu admin"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # Misc
 ################################################################################
 quickbox::lang::unknown::option() {
-	declare text="${2} Unbekannte Option: ${1}"
-	quickbox::dashboard::log "${text}"
+  declare text="${2} Unbekannte Option: ${1}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::username::specified() {
-	declare text="fehler: benutzername nicht angegeben"
-	quickbox::dashboard::log "${text}"
+  declare text="fehler: benutzername nicht angegeben"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}${software_name}
 ${software_title} installiert auf port: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::mu::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} installiert auf port: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::airsonic::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}
 benutzername: admin
 passwort: admin
 ${software_title} installiert auf port: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::autodl::access() {
-	adl_port=$(cat <"/home/${admin_name:-}/.autodl/autodl.cfg" | grep "gui-server-port = " | sed 's/gui-server-port = //')
-	declare text="zugriff auf ${software_title} unter:
+  adl_port=$(cat <"/home/${admin_name:-}/.autodl/autodl.cfg" | grep "gui-server-port = " | sed 's/gui-server-port = //')
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}rutorrent
   > Menü > autodl-irssi
 ${software_title} installiert auf Port: ${adl_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::calibre::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}
 benutzername: ${username}
 kennwort: admin123
 datenbank speicherort: ${software_library_directory}
 ${software_title} installiert auf port: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::jdownloader::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 https://my.jdownloader.org/
 download-speicherort: ${software_downloads_directory}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::rtorrent::access() {
-	declare text="> version av rTorrent: ${rtorrent_version}
+  declare text="> version av rTorrent: ${rtorrent_version}
 > version av libtorrent: ${libtorrent_version}
 > socket pfad: /var/run/${admin_name}/.rtorrent.sock"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::rutorrent::access() {
-	declare text="zugriff auf ${software_title} bei:
+  declare text="zugriff auf ${software_title} bei:
 ${quickbox_web_root}${software_name}
 > socket pfad: /var/run/${admin_name}/.rtorrent.sock"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::admin::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}${admin_name}/${software_name}
 ${software_title} installiert auf port: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::database() {
-	declare text="datenbank aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="datenbank aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::trackers::disable() {
-	declare text="öffentliche tracker deaktivieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="öffentliche tracker deaktivieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::trackers::enable() {
-	declare text="öffentliche tracker aktivieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="öffentliche tracker aktivieren..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::directory::noexist() {
-	declare text="das erforderliche verzeichnis existiert nicht..."
-	quickbox::dashboard::log "${text}"
+  declare text="das erforderliche verzeichnis existiert nicht..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::directory::nomove() {
-	declare text="kann nicht nach $1 verschieben..."
-	quickbox::dashboard::log "${text}"
+  declare text="kann nicht nach $1 verschieben..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::package::fail() {
-	declare text="konnte ein erforderliches paket $1 nicht installieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="konnte ein erforderliches paket $1 nicht installieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::flaresolverr::access() {
-	curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
-	if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
-		declare text="status: ok. FlareSolverr ist bereit!
+  curl_check=$(curl -s "127.0.0.1:${software_web_port}" | grep -o "FlareSolverr is ready!")
+  if [[ ${curl_check} == "FlareSolverr is ready!" ]]; then
+    declare text="status: ok. FlareSolverr ist bereit!
 ${software_title} installiert auf port: ${software_web_port}"
-		quickbox::dashboard::log "${text}"
-	else
-		declare text="sieht aus, als wäre etwas schief gelaufen"
-		quickbox::dashboard::log "${text}"
-	fi
+    quickbox::dashboard::log "${text}"
+  else
+    declare text="sieht aus, als wäre etwas schief gelaufen"
+    quickbox::dashboard::log "${text}"
+  fi
 }
 
 quickbox::lang::software::jellyfin::access() {
-	if [[ -n ${domain:-} ]]; then
-		# trunk-ignore(shellcheck/SC2001)
-		jellyfin_web_root=$(echo "${domain:-}" | sed 's:/*$::')
-		declare text="access ${software_title} unter:
+  if [[ -n ${domain:-} ]]; then
+    # trunk-ignore(shellcheck/SC2001)
+    jellyfin_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+    declare text="access ${software_title} unter:
 https://${jellyfin_web_root}/"
-	else
-		declare text="access ${software_title} unter:
+  else
+    declare text="access ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}/
 ${software_title} installiert auf Port: ${software_web_port}"
-	fi
-	quickbox::dashboard::log "${text}"
+  fi
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::notifiarr::access() {
-	if [[ ${#notifiarr_user_password} -lt 9 ]]; then
-		declare text="access ${software_title} unter:
+  if [[ ${#notifiarr_user_password} -lt 9 ]]; then
+    declare text="access ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} installiert auf Port: ${software_web_port}
 benutzername: ${username}
@@ -566,153 +566,361 @@ Hinweis: Ihr passwort hat weniger als 9 zeichen.
          ----------------------------------------------------------
          Der einfachheit halber befindet sich das neue passwort in:
          /home/${username}/.config/Notifiarr/config/.notifiarr.pass.txt"
-		quickbox::dashboard::log "${text}"
-	else
-		declare text="access ${software_title} unter:
+    quickbox::dashboard::log "${text}"
+  else
+    declare text="access ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}
 ${software_title} installiert auf Port: ${software_web_port}
 benutzername: ${username}
 passwort: ${notifiarr_user_password}"
-		quickbox::dashboard::log "${text}"
-	fi
+    quickbox::dashboard::log "${text}"
+  fi
 }
 
 quickbox::lang::software::novnc::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}${username}/vnc/vnc.html?resize=remote&host=${novnc_web_root}&path=${username}/websockify
 ${software_title} installiert auf port: ${software_web_port}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_fallback() {
+  declare text="[!] MySQL läuft nicht oder ist nicht verfügbar,
+    DB/Benutzer-Drop wird übersprungen, Fallback wird ausgelöst..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_user_skip() {
+  declare text="[i] MySQL-Benutzerlöschung überspringen:
+    '${db_user}' ist in /root/.my.cnf definiert"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_user_remove() {
+  declare text="[!] MySQL-Benutzer wird entfernt: '${db_user}'"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_user_retain() {
+  declare text="[i] MySQL wird beibehalten, da möglicherweise noch andere Datenbanken oder Benutzer vorhanden sind."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_cleanup_complete() {
+  declare text="[✓] MySQL-Bereinigung für ${software_name} abgeschlossen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_fallback_remove() {
+  declare text="[⚙] Fallback-MySQL-Entfernung durchführen (nicht interaktiv)..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_remove() {
+  declare text="[*] MySQL-Pakete werden entfernt..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_no_packages() {
+  declare text="[i] Keine MySQL-Pakete zum Löschen gefunden."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_autoremove() {
+  declare text="[*] Automatisches Entfernen und Bereinigen von Restdateien..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_check() {
+  declare text="[*] MySQL-Installation wird überprüft..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_install() {
+  declare text="[*] MySQL APT-Repository-Konfiguration wird installiert..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_download_fail() {
+  declare text="[✗] MySQL APT-Konfiguration konnte nicht heruntergeladen werden"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_install_fail() {
+  declare text="[✗] Das Paket mysql-apt-config konnte nicht installiert werden"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_install_packages() {
+  declare text="[*] MySQL-Pakete werden installiert..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_install_retry() {
+  declare text="[✗] MySQL-Installation fehlgeschlagen – erneuter Versuch nach Bereinigung"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_install_failed() {
+  declare text="[✗] MySQL-Installation erneut fehlgeschlagen"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_config() {
+  declare text="[*] MySQL-Konfigurationsdatei wird erstellt..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_start() {
+  declare text="[*] MySQL-Dienst starten und aktivieren..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_enable_fail() {
+  declare text="[✗] MySQL-Dienst konnte nicht aktiviert werden"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_start_fail() {
+  declare text="[✗] MySQL-Dienst konnte nicht gestartet werden"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_config_fail() {
+  declare text="[✗] MySQL-Konfiguration /etc/mysql/my.cnf fehlt. Setup wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_wait() {
+  declare text="[*] Warte, bis der MySQL-Socket bereit ist..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_socket_fail() {
+  declare text="[✗] MySQL startete nicht richtig – Socket fehlt"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_setup() {
+  declare text="[*] MySQL-Benutzer und -Datenbank für ${db_user} einrichten..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_configured() {
+  declare text="[✓] MySQL für Benutzer '${db_user}' mit DB '${db_name}' konfiguriert"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_migration() {
+  declare text="[⚙] Ombi-Migration zu MySQL wird gestartet..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_temp_fail() {
+  declare text="[✗] Das Erstellen des temporären Verzeichnisses ist fehlgeschlagen"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_python_fail() {
+  declare text="[✗] Für die Migration werden Python 3 und pip3 benötigt"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_pip_fail() {
+  declare text="[✗] Die Installation der erforderlichen Python-Pakete ist fehlgeschlagen"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_chdir_fail() {
+  declare text="[✗] Fehler beim Ändern des Verzeichnisses in ${TMP_DIR}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_clone() {
+  declare text="[*] Migrationstool ombi_sqlite_mysql klonen..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_clone_fail() {
+  declare text="[✗] Das Klonen des ombi_sqlite_mysql-Repository ist fehlgeschlagen"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_backup() {
+  declare text="[!] Sicherung von ${db} erstellt unter ${config_dir}/${db}.bak"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_dbjson_fail() {
+  declare text="[✗] Fehler beim Generieren von database.json"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_schema_fail() {
+  declare text="[✗] DB-Schema konnte über Ombi nicht erstellt werden"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_migration_fail() {
+  declare text="[✗] Migration.json konnte nicht erstellt werden"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_data_fail() {
+  declare text="[✗] Datenmigration fehlgeschlagen"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_chdir_home_fail() {
+  declare text="[✗] Fehler beim Ändern des Verzeichnisses zurück zu ${HOME}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_remove_sqlite() {
+  declare text="[!] Alte SQLite-Datenbank entfernt:
+    ${config_dir}/${db}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_cleanup() {
+  declare text="[*] Temporäre Dateien bereinigen..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::ombi_mysql_migration_complete() {
+  declare text="[✓] Ombi-Migration zu MySQL erfolgreich abgeschlossen!"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::jellyseerr::access() {
-	if [[ -n ${domain:-} ]]; then
-		# trunk-ignore(shellcheck/SC2001)
-		jellyseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
-		declare text="zugriff auf ${software_title} unter:
+  if [[ -n ${domain:-} ]]; then
+    # trunk-ignore(shellcheck/SC2001)
+    jellyseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+    declare text="zugriff auf ${software_title} unter:
 https://${jellyseerr_web_root}/"
-	else
-		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-		declare text="zugriff auf ${software_title} unter:
+  else
+    server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+    declare text="zugriff auf ${software_title} unter:
 http://${server_ip}:${software_web_port}/
 ${software_title} installiert auf port: ${software_web_port}"
-	fi
-	quickbox::dashboard::log "${text}"
+  fi
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::overseerr::access() {
-	if [[ -n ${domain:-} ]]; then
-		# trunk-ignore(shellcheck/SC2001)
-		overseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
-		declare text="zugriff auf ${software_title} unter:
+  if [[ -n ${domain:-} ]]; then
+    # trunk-ignore(shellcheck/SC2001)
+    overseerr_web_root=$(echo "${domain:-}" | sed 's:/*$::')
+    declare text="zugriff auf ${software_title} unter:
 https://${overseerr_web_root}/"
-	else
-		server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-		declare text="zugriff auf ${software_title} unter:
+  else
+    server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+    declare text="zugriff auf ${software_title} unter:
 http://${server_ip}:${software_web_port}/
 ${software_title} installiert auf port: ${software_web_port}"
-	fi
-	quickbox::dashboard::log "${text}"
+  fi
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plex_directory_warning() {
-	declare text="das benutzerdefinierte Datenverzeichnis: '${software_install_directory}' existiert bereits.
+  declare text="das benutzerdefinierte Datenverzeichnis: '${software_install_directory}' existiert bereits.
 verwenden sie stattdessen '${software_install_directory}/plex'."
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexclaim() {
-	declare text="beanspruchung des plex server für ${username}..."
-	quickbox::dashboard::log "${text}"
+  declare text="beanspruchung des plex server für ${username}..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plex::access() {
-	declare text="zugriff auf ${software_title} unter:
+  declare text="zugriff auf ${software_title} unter:
 ${quickbox_web_root}web/
 ${software_title} auf port installiert: ${software_web_port}
 
 > wenn sie das noch nicht getan haben oder unsicher sind, wie sie 
 ihren plex server beanspruchen, folgen sie bitte dieser anleitung:
 https://quickbox.io/kb-categories/plex/"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_header() {
-	declare text="Bitte geben Sie Ihre Plex-Anmeldedaten ein (Benutzername/Passwort/2FA):"
-	quickbox::dashboard::log "${text}"
+  declare text="Bitte geben Sie Ihre Plex-Anmeldedaten ein (Benutzername/Passwort/2FA):"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_subheader() {
-	declare text="Diese Anmeldedaten werden nicht gespeichert oder außerhalb dieser Instanz weitergegeben."
-	quickbox::dashboard::log "${text}"
+  declare text="Diese Anmeldedaten werden nicht gespeichert oder außerhalb dieser Instanz weitergegeben."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_email() {
-	declare text="E-Mail: "
-	quickbox::dashboard::log "${text}"
+  declare text="E-Mail: "
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_password() {
-	declare text="Passwort: "
-	quickbox::dashboard::log "${text}"
+  declare text="Passwort: "
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_otp() {
-	declare text="2FA: [Leer lassen, wenn keine 2FA eingestellt ist] "
-	quickbox::dashboard::log "${text}"
+  declare text="2FA: [Leer lassen, wenn keine 2FA eingestellt ist] "
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_fail() {
-	declare text="Benutzername und Passwort werden für das Herunterladen des PlexPass Updates benötigt."
-	quickbox::dashboard::log "${text}"
+  declare text="Benutzername und Passwort werden für das Herunterladen des PlexPass Updates benötigt."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_incorrect() {
-	declare text="Benutzername und/oder Passwort falsch"
-	quickbox::dashboard::log "${text}"
+  declare text="Benutzername und/oder Passwort falsch"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_loginfail() {
-	declare text="Anmeldung fehlgeschlagen, Debug-Informationen:"
-	quickbox::dashboard::log "${text}"
+  declare text="Anmeldung fehlgeschlagen, Debug-Informationen:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_retrievefail() {
-	declare text="Die Download-URL konnte nicht abgerufen werden."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Download-URL konnte nicht abgerufen werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_credentials_parsefail() {
-	declare text="Die HTML-Antwort konnte nicht geparst werden."
-	quickbox::dashboard::log "${text}"
+  declare text="Die HTML-Antwort konnte nicht geparst werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_downloading() {
-	declare text="Plex-Update wird heruntergeladen..."
-	quickbox::dashboard::log "${text}"
+  declare text="Plex-Update wird heruntergeladen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_downloading_fail() {
-	declare text="Download fehlgeschlagen mit Fehlercode ${code}, ${error}"
-	quickbox::dashboard::log "${text}"
+  declare text="Download fehlgeschlagen mit Fehlercode ${code}, ${error}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_installing() {
-	declare text="Installiere neue Plex-Version..."
-	quickbox::dashboard::log "${text}"
+  declare text="Installiere neue Plex-Version..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_updated() {
-	declare text="Plex wurde erfolgreich aktualisiert."
-	quickbox::dashboard::log "${text}"
+  declare text="Plex wurde erfolgreich aktualisiert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::plexupdate_current() {
-	declare text="Plex ist bereits auf dem neuesten Stand."
-	quickbox::dashboard::log "${text}"
+  declare text="Plex ist bereits auf dem neuesten Stand."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::pyload::access() {
-	declare text="Zugriff auf ${software_title} unter:
+  declare text="Zugriff auf ${software_title} unter:
 ${quickbox_web_root}${username}/${software_name}/
 ${software_title} installiert auf Port: ${software_web_port}
 
@@ -721,17 +929,17 @@ ${software_title} installiert auf Port: ${software_web_port}
 
 > Melden Sie sich bei pyload an und ändern Sie das Standardpasswort zur Sicherheit.
 Ihr Passwort können Sie unter der Registerkarte [benutzer] in pyload ändern."
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::build::python311() {
-	declare text="Installieren Sie Python 3.11. Bitte warten Sie, da dies einen Moment dauern kann ..."
-	quickbox::dashboard::log "${text}"
+  declare text="Installieren Sie Python 3.11. Bitte warten Sie, da dies einen Moment dauern kann ..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::quassel::access() {
-	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-	declare text="${software_title} installiert auf Port: ${software_daemon_port}
+  server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+  declare text="${software_title} installiert auf Port: ${software_daemon_port}
   
 > Bitte installieren Sie quassel-client auf Ihrem persönlichen 
 Computer und verbinden Sie sich mit dem neu erstellten ${software_title} Kern 
@@ -740,11 +948,11 @@ ${server_ip}:${software_daemon_port}
 
 > Laden Sie den quassel-client von folgendem Link herunter:
 https://quassel-irc.org/downloads"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::rclone_configure() {
-	declare text="
+  declare text="
 Bitte besuchen Sie https://console.developers.google.com und legen Sie ein Projekt an.
 Sie müssen sich Ihre client_id und client_secret notieren.
 Sie können auch den folgenden Knowledge Base-Artikel besuchen, um einen Überblick zu erhalten:
@@ -753,123 +961,123 @@ https://quickbox.io/knowledge-base/creating-a-google-api-client-id-client-secret
 Sobald Sie sowohl Ihre client_id als auch client_secret haben, drücken Sie eine beliebige Taste, um fortzufahren.
 
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_entries() {
-	declare text="Geben Sie Ihre Verbindungsdaten unten ein."
-	quickbox::dashboard::log "${text}"
+  declare text="Geben Sie Ihre Verbindungsdaten unten ein."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_clientid() {
-	declare text="Client ID: "
-	quickbox::dashboard::log "${text}"
+  declare text="Client ID: "
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_clientsecret() {
-	declare text="Kundengeheimnis: "
-	quickbox::dashboard::log "${text}"
+  declare text="Kundengeheimnis: "
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_encryptpass() {
-	declare text="Verschlüsselungspasswort: "
-	quickbox::dashboard::log "${text}"
+  declare text="Verschlüsselungspasswort: "
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_saltpass() {
-	declare text="Salt Passwort: "
-	quickbox::dashboard::log "${text}"
+  declare text="Salt Passwort: "
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_salterror() {
-	declare text="Das Salt-Passwort kann nicht mit dem Verschlüsselungspasswort identisch sein."
-	quickbox::dashboard::log "${text}"
+  declare text="Das Salt-Passwort kann nicht mit dem Verschlüsselungspasswort identisch sein."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_confirm() {
-	declare text="Bitte bestätigen Sie die folgenden Angaben, bevor Sie fortfahren..."
-	quickbox::dashboard::log "${text}"
+  declare text="Bitte bestätigen Sie die folgenden Angaben, bevor Sie fortfahren..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_clientid_confirm() {
-	declare text="Kunden-ID: ${clientvar}"
-	quickbox::dashboard::log "${text}"
+  declare text="Kunden-ID: ${clientvar}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_clientsecret_confirm() {
-	declare text="Kundengeheimnis: ${secretvar}"
-	quickbox::dashboard::log "${text}"
+  declare text="Kundengeheimnis: ${secretvar}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_encryptpass_confirm() {
-	declare text="Verschlüsselungspasswort: ${encvar}"
-	quickbox::dashboard::log "${text}"
+  declare text="Verschlüsselungspasswort: ${encvar}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_saltpass_confirm() {
-	declare text="Salt Passwort: ${saltvar}"
-	quickbox::dashboard::log "${text}"
+  declare text="Salt Passwort: ${saltvar}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone_continue() {
-	declare text="Wenn Sie mit den obigen Einstellungen zufrieden sind, drücken Sie Y, um fortzufahren..."
-	quickbox::dashboard::log "${text}"
+  declare text="Wenn Sie mit den obigen Einstellungen zufrieden sind, drücken Sie Y, um fortzufahren..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::software::rclone::access() {
-	declare text="${software_title} installiert
+  declare text="${software_title} installiert
 
 > Weitere Informationen zur Installation von rclone finden Sie unter:
   qb help rclone
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::build::sabnzbd::par2cmdline() {
-	declare text="Installieren Sie par2cmdline. Bitte warten Sie, da dies einen Moment dauern kann ..."
-	quickbox::dashboard::log "${text}"
+  declare text="Installieren Sie par2cmdline. Bitte warten Sie, da dies einen Moment dauern kann ..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::sonarrv4::update::error() {
-	declare text
-	text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)kann $(tput setaf 7) nicht von v3 aktualisiert werden.
+  declare text
+  text="$(tput setaf 7)Sonarr v4 $(tput setaf 1)kann $(tput setaf 7) nicht von v3 aktualisiert werden.
 Bitte deinstallieren Sie v3 und installieren Sie v4.$(tput sgr0)"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::vpnzip::access() {
-	declare text="download ${software_title} profil unter:
+  declare text="download ${software_title} profil unter:
 ${quickbox_web_root}${username}/ovpn.zip
 > in jedem OpenVPN-Client zu verwenden"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::client_config() {
-	declare text="Einrichten der Client-Konfiguration für $1"
-	quickbox::dashboard::log "${text}"
+  declare text="Einrichten der Client-Konfiguration für $1"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::server_config() {
-	declare text="Einrichten der Serverkonfiguration für $1"
-	quickbox::dashboard::log "${text}"
+  declare text="Einrichten der Serverkonfiguration für $1"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_ask() {
-	declare text="Möchten Sie eine Client-Konfiguration eingeben? (j/n)"
-	quickbox::dashboard::log "${text}"
+  declare text="Möchten Sie eine Client-Konfiguration eingeben? (j/n)"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_paste() {
-	declare text="Fügen Sie die Clientkonfiguration unten ein oder geben Sie sie ein. Drücken Sie anschließend Strg+D oder ⌘+D, um fortzufahren."
-	quickbox::dashboard::log "${text}"
+  declare text="Fügen Sie die Clientkonfiguration unten ein oder geben Sie sie ein. Drücken Sie anschließend Strg+D oder ⌘+D, um fortzufahren."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_ask_extra() {
-	declare text="Möchten Sie eine andere Client-Konfiguration eingeben? (j/n)"
-	quickbox::dashboard::log "${text}"
+  declare text="Möchten Sie eine andere Client-Konfiguration eingeben? (j/n)"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_ask_extra_error() {
-	declare text="Ungültige Eingabe. Bitte geben Sie 'j' oder 'n' ein."
-	quickbox::dashboard::log "${text}"
+  declare text="Ungültige Eingabe. Bitte geben Sie 'j' oder 'n' ein."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::wsdashboard::access() {
-	declare text="access ${software_title} at:
+  declare text="access ${software_title} at:
 ${quickbox_web_root}whats-streaming.php"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::x2go::access() {
-	server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
-	declare text="${software_title} Server installiert
+  server_ip=$(ip route get 8.8.8.8 | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}')
+  declare text="${software_title} Server installiert
 
 > Bitte installieren Sie den x2go-Client auf Ihrem PC
 und verbinden Sie sich mit dem neu erstellten ${software_title} Server
@@ -881,145 +1089,145 @@ Sitzungstyp:	XFCE oder MATE
 
 > x2go-client von folgenden Seiten herunterladen:
 https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::znc_configure() {
-	declare text="Die ZNC-Konfiguration wird jetzt ausgeführt. Bitte beantworten Sie die folgenden Fragen:"
-	quickbox::dashboard::log "${text}"
+  declare text="Die ZNC-Konfiguration wird jetzt ausgeführt. Bitte beantworten Sie die folgenden Fragen:"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # QB Updater
 ################################################################################
 quickbox::lang::update::ntp() {
-	declare text="überprüfung mit ntp-server..."
-	quickbox::dashboard::log "${text}"
+  declare text="überprüfung mit ntp-server..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::apt() {
-	declare text="ausführen von apt-updates ..."
-	quickbox::dashboard::log "${text}"
+  declare text="ausführen von apt-updates ..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::initial::dependencies() {
-	declare text="überprüfung auf anfängliche abhängigkeiten ..."
-	quickbox::dashboard::log "${text}"
+  declare text="überprüfung auf anfängliche abhängigkeiten ..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::download::v3() {
-	declare text="v3-Update wird heruntergeladen..."
-	quickbox::dashboard::log "${text}"
+  declare text="v3-Update wird heruntergeladen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::quickbox::dependencies() {
-	declare text="überprüfung auf quickbox-abhängigkeiten..."
-	quickbox::dashboard::log "${text}"
+  declare text="überprüfung auf quickbox-abhängigkeiten..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::base::dependencies() {
-	declare text="installieren von basisabhängigkeiten: "
-	quickbox::dashboard::log "${text}"
+  declare text="installieren von basisabhängigkeiten: "
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::web::dependencies() {
-	declare text="installation von web-abhängigkeiten: "
-	quickbox::dashboard::log "${text}"
+  declare text="installation von web-abhängigkeiten: "
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::python::dependencies() {
-	declare text="installieren von python-abhängigkeiten: "
-	quickbox::dashboard::log "${text}"
+  declare text="installieren von python-abhängigkeiten: "
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::dependencies::log() {
-	declare text="speichern installierter abhängigkeiten..."
-	quickbox::dashboard::log "${text}"
+  declare text="speichern installierter abhängigkeiten..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::pip() {
-	declare text="pip aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="pip aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::lshell() {
-	declare text="lshell aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="lshell aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::iris() {
-	declare text="iris aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="iris aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::libraries() {
-	declare text="aktualisierung der quickbox-bibliotheken..."
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisierung der quickbox-bibliotheken..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::cron() {
-	declare text="cronjobs aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="cronjobs aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::sudo() {
-	declare text="aktualisieren von sudo-konfigurationen..."
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisieren von sudo-konfigurationen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::curl() {
-	declare text="curl aktualisieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="curl aktualisieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::php::check() {
-	declare text="php prüfen..."
-	quickbox::dashboard::log "${text}"
+  declare text="php prüfen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::qbcommands() {
-	declare text="konfigurieren von quickbox pro-befehlen..."
-	quickbox::dashboard::log "${text}"
+  declare text="konfigurieren von quickbox pro-befehlen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::dashboard() {
-	declare text="aktualisierung des quickbox-dashboards..."
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisierung des quickbox-dashboards..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::database() {
-	declare text="aktualisierung der quickbox-datenbank..."
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisierung der quickbox-datenbank..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::services() {
-	declare text="überprüft und aktualisiert installierte software-dienstdateien..."
-	quickbox::dashboard::log "${text}"
+  declare text="überprüft und aktualisiert installierte software-dienstdateien..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::autocomplete() {
-	declare text="automatische vervollständigung der quickbox wird aktualisiert ..."
-	quickbox::dashboard::log "${text}"
+  declare text="automatische vervollständigung der quickbox wird aktualisiert ..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::manpage() {
-	declare text="quickbox-manpage wird aktualisiert..."
-	quickbox::dashboard::log "${text}"
+  declare text="quickbox-manpage wird aktualisiert..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::permissions() {
-	declare text="berechtigungen konfigurieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="berechtigungen konfigurieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::clean() {
-	declare text="aktualisierungsdateien bereinigen..."
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisierungsdateien bereinigen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::update::complete() {
-	declare text="aktualisierung abgeschlossen!"
-	quickbox::dashboard::log "${text}"
+  declare text="aktualisierung abgeschlossen!"
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
@@ -1029,486 +1237,486 @@ quickbox::lang::update::complete() {
 ### `-o backup` | case: backup)
 
 quickbox::lang::backup::configf() {
-	declare text="konfigurationsdatei für ${software_name} wird jetzt gesichert."
-	quickbox::dashboard::log "${text}"
+  declare text="konfigurationsdatei für ${software_name} wird jetzt gesichert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::backup::configf::error() {
-	declare text="konfigurationsdatei ${softwareConf} existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="konfigurationsdatei ${softwareConf} existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::backup::configf::success() {
-	declare text="konfigurationsdatei wurde gesichert."
-	quickbox::dashboard::log "${text}"
+  declare text="konfigurationsdatei wurde gesichert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::backup::installdir::error() {
-	declare text="${software_title} installationsverzeichnis existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} installationsverzeichnis existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::backup::installdir() {
-	declare text="installationsverzeichnis für ${software_title} (${backup_version}) wird jetzt gesichert."
-	quickbox::dashboard::log "${text}"
+  declare text="installationsverzeichnis für ${software_title} (${backup_version}) wird jetzt gesichert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::backup::configdir() {
-	declare text="das konfigurationsverzeichnis für ${software_title} wird jetzt gesichert."
-	quickbox::dashboard::log "${text}"
+  declare text="das konfigurationsverzeichnis für ${software_title} wird jetzt gesichert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::backup::installdir::success() {
-	backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
-	declare text="${software_title} (${backup_version}) wurde gesichert."
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  backup_version="$(tput setaf 5)${backup_version}$(tput setaf 2)"
+  declare text="${software_title} (${backup_version}) wurde gesichert."
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 ### `-o restore` | case: restore)
 
 quickbox::lang::restore::configf::error() {
-	declare text="sicherungsdatei ${backupConf} existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="sicherungsdatei ${backupConf} existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::restore::configf::success() {
-	declare text="sicherungsdatei wurde wiederhergestellt."
-	quickbox::dashboard::log "${text}"
+  declare text="sicherungsdatei wurde wiederhergestellt."
+  quickbox::dashboard::log "${text}"
 }
 
 ### `-o default` | case: default)
 
 quickbox::lang::default::configf::error() {
-	declare text="standardkonfigurationsdatei ${defaultConf} existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="standardkonfigurationsdatei ${defaultConf} existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::default::configf::success() {
-	declare text="standardkonfigurationsdatei wurde wiederhergestellt."
-	quickbox::dashboard::log "${text}"
+  declare text="standardkonfigurationsdatei wurde wiederhergestellt."
+  quickbox::dashboard::log "${text}"
 }
 
 ### `-o rollback` | case: rollback)
 
 quickbox::lang::rollback::installdir::error() {
-	declare text="${software_title} installationsverzeichnis existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title} installationsverzeichnis existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::selection::version() {
-	declare text="version:"
-	quickbox::dashboard::log "${text}"
+  declare text="version:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::selection::date() {
-	declare text="datum:"
-	quickbox::dashboard::log "${text}"
+  declare text="datum:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::selection() {
-	declare text="wählen sie eine zahl aus der Liste unten aus, um sie zurückzusetzen
+  declare text="wählen sie eine zahl aus der Liste unten aus, um sie zurückzusetzen
 zu einer früheren version von ${software_title}:"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::selection::invalid() {
-	declare text="ungültige auswahl. bitte versuchen sie es erneut."
-	quickbox::dashboard::log "${text}"
+  declare text="ungültige auswahl. bitte versuchen sie es erneut."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::software::error() {
-	declare text="${software_title}-anwendungssicherung existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title}-anwendungssicherung existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::config::error() {
-	declare text="${software_title}-konfigurationssicherung ist nicht vorhanden."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title}-konfigurationssicherung ist nicht vorhanden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::selection::display() {
-	version="$(tput setaf 5)${version}$(tput setaf 7)"
-	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
-	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
-	declare text="sie haben die version ${version} für ${software_title} ausgewählt.
+  version="$(tput setaf 5)${version}$(tput setaf 7)"
+  app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+  config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+  declare text="sie haben die version ${version} für ${software_title} ausgewählt.
 app-paket: ${app_package}
 konfigurationspaket: ${config_package}"
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 quickbox::lang::rollback::selection::confirm() {
-	declare text="sind sie sicher, dass sie mit dem rollback fortfahren möchten? (j/n)"
-	quickbox::dashboard::log "${text}"
+  declare text="sind sie sicher, dass sie mit dem rollback fortfahren möchten? (j/n)"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::cancelled() {
-	declare text="rollback abgebrochen."
-	quickbox::dashboard::log "${text}"
+  declare text="rollback abgebrochen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::rollback::continue() {
-	version="$(tput setaf 5)${version}$(tput setaf 7)"
-	declare text="${software_title} wird jetzt auf version ${version} zurückgesetzt."
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  version="$(tput setaf 5)${version}$(tput setaf 7)"
+  declare text="${software_title} wird jetzt auf version ${version} zurückgesetzt."
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 quickbox::lang::rollback::complete() {
-	version="$(tput setaf 5)${version}$(tput setaf 2)"
-	declare text="${software_title} (${version}) wurde zurückgesetzt."
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  version="$(tput setaf 5)${version}$(tput setaf 2)"
+  declare text="${software_title} (${version}) wurde zurückgesetzt."
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 ### `-o delete` | case: delete)
 
 quickbox::lang::delete::selection::version() {
-	declare text="version:"
-	quickbox::dashboard::log "${text}"
+  declare text="version:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::selection::date() {
-	declare text="datum:"
-	quickbox::dashboard::log "${text}"
+  declare text="datum:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::selection() {
-	declare text="wählen sie eine zahl aus der liste unten aus, die sie löschen möchten
+  declare text="wählen sie eine zahl aus der liste unten aus, die sie löschen möchten
 ein früheres backup von ${software_title}:"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::selection::invalid() {
-	declare text="ungültige auswahl. bitte versuchen sie es erneut."
-	quickbox::dashboard::log "${text}"
+  declare text="ungültige auswahl. bitte versuchen sie es erneut."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::software::error() {
-	declare text="${software_title}-anwendungssicherung existiert nicht."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title}-anwendungssicherung existiert nicht."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::config::error() {
-	declare text="${software_title}-konfigurationssicherung ist nicht vorhanden."
-	quickbox::dashboard::log "${text}"
+  declare text="${software_title}-konfigurationssicherung ist nicht vorhanden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::selection::display() {
-	version="$(tput setaf 5)${version}$(tput setaf 7)"
-	app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
-	config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
-	declare text="sie haben die version ${version} für ${software_title} ausgewählt.
+  version="$(tput setaf 5)${version}$(tput setaf 7)"
+  app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
+  config_package="$(tput setaf 5)${config_package}$(tput setaf 7)"
+  declare text="sie haben die version ${version} für ${software_title} ausgewählt.
 app-paket: ${app_package}
 konfigurationspaket: ${config_package}"
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 quickbox::lang::delete::selection::confirm() {
-	declare text="sind sie sicher, dass sie mit dem löschen fortfahren möchten? (j/n)"
-	quickbox::dashboard::log "${text}"
+  declare text="sind sie sicher, dass sie mit dem löschen fortfahren möchten? (j/n)"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::cancelled() {
-	declare text="backup-löschung abgebrochen."
-	quickbox::dashboard::log "${text}"
+  declare text="backup-löschung abgebrochen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::delete::continue() {
-	version="$(tput setaf 5)${version}$(tput setaf 7)"
-	declare text="${software_title}-backup (${version}) wird jetzt gelöscht."
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  version="$(tput setaf 5)${version}$(tput setaf 7)"
+  declare text="${software_title}-backup (${version}) wird jetzt gelöscht."
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 quickbox::lang::delete::complete() {
-	version="$(tput setaf 5)${version}$(tput setaf 2)"
-	declare text="${software_title}-sicherung (${version}) wurde gelöscht."
-	quickbox::dashboard::log "${text}$(tput sgr0)"
+  version="$(tput setaf 5)${version}$(tput setaf 2)"
+  declare text="${software_title}-sicherung (${version}) wurde gelöscht."
+  quickbox::dashboard::log "${text}$(tput sgr0)"
 }
 
 ### `-o mysql` | case: db)
 
 quickbox::lang::db::install::prompt() {
-	declare text="MySQL ist nicht installiert. Möchten Sie installieren? [y/N]:"
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL ist nicht installiert. Möchten Sie installieren? [y/N]:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::apt() {
-	declare text="APT wird aktualisiert..."
-	quickbox::dashboard::log "${text}"
+  declare text="APT wird aktualisiert..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql_apt() {
-	declare text="MySQL APT-Konfiguration wird heruntergeladen..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL APT-Konfiguration wird heruntergeladen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql_apt::fail() {
-	declare text="Das Herunterladen der MySQL APT-Konfiguration ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Das Herunterladen der MySQL APT-Konfiguration ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql_apt::install() {
-	declare text="MySQL APT-Konfiguration wird installiert..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL APT-Konfiguration wird installiert..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql_apt::install::fail() {
-	declare text="Die Installation der MySQL APT-Konfiguration ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Installation der MySQL APT-Konfiguration ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql() {
-	declare text="MySQL wird installiert..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL wird installiert..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::fail() {
-	declare text="MySQL konnte nicht installiert werden."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL konnte nicht installiert werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::start::fail() {
-	declare text="MySQL konnte nicht gestartet werden."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL konnte nicht gestartet werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::enable::fail() {
-	declare text="MySQL konnte nicht aktiviert werden."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL konnte nicht aktiviert werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::success() {
-	declare text="MySQL wurde installiert."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL wurde installiert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::installed() {
-	declare text="MySQL ist bereits installiert. Fahren Sie mit der Konfiguration fort."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL ist bereits installiert. Fahren Sie mit der Konfiguration fort."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::config() {
-	declare text="MySQL-Konfiguration wird aktualisiert..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Konfiguration wird aktualisiert..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::config::backup() {
-	declare text="Die aktuelle mysqld.cnf-Datei wurde unter mysqld.cnf.backup gesichert."
-	quickbox::dashboard::log "${text}"
+  declare text="Die aktuelle mysqld.cnf-Datei wurde unter mysqld.cnf.backup gesichert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::config::write() {
-	declare text="MySQL-Konfiguration festlegen..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Konfiguration festlegen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::config::write::fail() {
-	declare text="Das Schreiben der MySQL-Konfiguration ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Das Schreiben der MySQL-Konfiguration ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::privileges() {
-	declare text="MySQL-Berechtigungen festlegen..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Berechtigungen festlegen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::privileges::fail() {
-	declare text="Das Schreiben der MySQL-Berechtigungen ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Das Schreiben der MySQL-Berechtigungen ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::client() {
-	declare text="MySQL-Client-Konfiguration festlegen..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Client-Konfiguration festlegen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::client::fail() {
-	declare text="Das Schreiben der MySQL-Clientkonfiguration ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Das Schreiben der MySQL-Clientkonfiguration ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::reload() {
-	declare text="Systemctl-Daemon wird neu geladen..."
-	quickbox::dashboard::log "${text}"
+  declare text="Systemctl-Daemon wird neu geladen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::reload::fail() {
-	declare text="Systemctl-Daemon konnte nicht neu geladen werden."
-	quickbox::dashboard::log "${text}"
+  declare text="Systemctl-Daemon konnte nicht neu geladen werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::enable() {
-	declare text="MySQL aktivieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL aktivieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::restart() {
-	declare text="MySQL wird neu gestartet..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL wird neu gestartet..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::restart::fail() {
-	declare text="MySQL konnte nicht neu gestartet werden."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL konnte nicht neu gestartet werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::user() {
-	declare text="MySQL-Benutzer ${mysql_user} wird erstellt..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Benutzer ${mysql_user} wird erstellt..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::user::fail() {
-	declare text="Fehler beim Erstellen des MySQL-Benutzers."
-	quickbox::dashboard::log "${text}"
+  declare text="Fehler beim Erstellen des MySQL-Benutzers."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::grant() {
-	declare text="Dem MySQL-Benutzer ${mysql_user} Berechtigungen erteilen..."
-	quickbox::dashboard::log "${text}"
+  declare text="Dem MySQL-Benutzer ${mysql_user} Berechtigungen erteilen..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::grant::fail() {
-	declare text="Dem MySQL-Benutzer konnten keine Berechtigungen gewährt werden."
-	quickbox::dashboard::log "${text}"
+  declare text="Dem MySQL-Benutzer konnten keine Berechtigungen gewährt werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::flush() {
-	declare text="Spülprivilegien..."
-	quickbox::dashboard::log "${text}"
+  declare text="Spülprivilegien..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::flush::fail() {
-	declare text="Berechtigungen konnten nicht geleert werden."
-	quickbox::dashboard::log "${text}"
+  declare text="Berechtigungen konnten nicht geleert werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::convert() {
-	declare text="Datenbank in MySQL konvertieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="Datenbank in MySQL konvertieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::convert::success() {
-	declare text="Die Datenbank wurde auf MySQL umgestellt."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Datenbank wurde auf MySQL umgestellt."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::remove() {
-	declare text="Möchten Sie die SQLite-Datenbank entfernen? [y/N]:"
-	quickbox::dashboard::log "${text}"
+  declare text="Möchten Sie die SQLite-Datenbank entfernen? [y/N]:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::remove::fail() {
-	declare text="SQLite konnte in PHP nicht deaktiviert werden."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite konnte in PHP nicht deaktiviert werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::complete() {
-	declare text="MySQL wurde konfiguriert."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL wurde konfiguriert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::details() {
-	declare text="Details zur MySQL-Verbindung:"
-	quickbox::dashboard::log "${text}"
+  declare text="Details zur MySQL-Verbindung:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::connection::details() {
-	declare text="Nutzername: ${mysql_user}
+  declare text="Nutzername: ${mysql_user}
 Passwort: ${mysql_password}
 Hafen: ${mysql_port}
 Host: ${mysql_host}
 Datenbank: ${mysql_name}"
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::mycnf() {
-	declare text="Diese Details finden Sie unter /root/.my.cnf"
-	quickbox::dashboard::log "${text}"
+  declare text="Diese Details finden Sie unter /root/.my.cnf"
+  quickbox::dashboard::log "${text}"
 }
 
 ### `-o sqlite` | case: db)
 
 quickbox::lang::db::install::sqlite::backup() {
-	declare text="SQLite-Datenbank wird gesichert..."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite-Datenbank wird gesichert..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::backup::success() {
-	declare text="Die SQLite-Datenbank wurde in ${sqlite_file}.${date}.backup gesichert"
-	quickbox::dashboard::log "${text}"
+  declare text="Die SQLite-Datenbank wurde in ${sqlite_file}.${date}.backup gesichert"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::convert() {
-	declare text="Datenbank in SQLite konvertieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="Datenbank in SQLite konvertieren..."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::convert::success() {
-	declare text="Die Datenbank wurde auf SQLite konvertiert."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Datenbank wurde auf SQLite konvertiert."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::remove() {
-	declare text="Möchten Sie MySQL vollständig entfernen? [y/N]:"
-	quickbox::dashboard::log "${text}"
+  declare text="Möchten Sie MySQL vollständig entfernen? [y/N]:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::remove::mysql() {
-	declare text="Möchten Sie die MySQL-Datenbank entfernen? [y/N]:"
-	quickbox::dashboard::log "${text}"
+  declare text="Möchten Sie die MySQL-Datenbank entfernen? [y/N]:"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::php::fail() {
-	declare text="SQLite konnte nicht in PHP installiert werden."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite konnte nicht in PHP installiert werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::php::enable::fail() {
-	declare text="SQLite konnte in PHP nicht aktiviert werden."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite konnte in PHP nicht aktiviert werden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::complete() {
-	declare text="Der Konvertierungsprozess der SQLite-Datenbank ist abgeschlossen."
-	quickbox::dashboard::log "${text}"
+  declare text="Der Konvertierungsprozess der SQLite-Datenbank ist abgeschlossen."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::invalid() {
-	declare text="Ungültige Option: ${option}"
-	quickbox::dashboard::log "${text}"
+  declare text="Ungültige Option: ${option}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::sqlite::mysql::notfound() {
-	declare text="MySQL-Datenbank nicht gefunden."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbank nicht gefunden."
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::db::install::mysql::sqlite::notfound() {
-	declare text="SQLite-Datenbank nicht gefunden."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite-Datenbank nicht gefunden."
+  quickbox::dashboard::log "${text}"
 }
 
 ### `-o backup` | case: backup)
 quickbox::lang::db::backup::sqlite::integrity() {
-	declare text="Überprüfung der Integrität der SQLite-Datenbank..."
-	quickbox::dashboard::log "${text}"
+  declare text="Überprüfung der Integrität der SQLite-Datenbank..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::sqlite::integrity::pass() {
-	declare text="Datenbank-Integritätsprüfung bestanden."
-	quickbox::dashboard::log "${text}"
+  declare text="Datenbank-Integritätsprüfung bestanden."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::sqlite::complete() {
-	declare text="Sicherung abgeschlossen: ${full_backup_path}/qbpro.db"
-	quickbox::dashboard::log "${text}"
+  declare text="Sicherung abgeschlossen: ${full_backup_path}/qbpro.db"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::sqlite::integrity::fail() {
-	declare text="Datenbank-Integritätsprüfung fehlgeschlagen. Es wurde keine Sicherung erstellt."
-	quickbox::dashboard::log "${text}"
+  declare text="Datenbank-Integritätsprüfung fehlgeschlagen. Es wurde keine Sicherung erstellt."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::repair() {
-	declare text="Versuch, die SQLite-Datenbank zu reparieren..."
-	quickbox::dashboard::log "${text}"
+  declare text="Versuch, die SQLite-Datenbank zu reparieren..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::sqlite::integrity::repair() {
-	declare text="
+  declare text="
     [WARNUNG] QuickBox-Datenbankreparatur!
 
     Die QuickBox-Datenbank hat die Integritätsprüfung nicht bestanden, und eine Reparatur wurde versucht.
@@ -1521,18 +1729,18 @@ quickbox::lang::db::backup::sqlite::integrity::repair() {
     Um diese Nachricht zu löschen, führen Sie den folgenden Befehl aus:
     rm -f /etc/quickbox_motd
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::repair::complete() {
-	declare text="SQLite-Datenbankreparatur abgeschlossen."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite-Datenbankreparatur abgeschlossen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::repair::fail() {
-	declare text="Die Reparatur der SQLite-Datenbank ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Reparatur der SQLite-Datenbank ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::sqlite::integrity::restore() {
-	declare text="
+  declare text="
     [WARNUNG] QuickBox-Datenbankreparatur!
 
     Die QuickBox-Datenbank hat die Integritätsprüfung nicht bestanden, und eine Reparatur wurde versucht.
@@ -1544,142 +1752,142 @@ quickbox::lang::db::backup::sqlite::integrity::restore() {
     Um diese Nachricht zu löschen, führen Sie den folgenden Befehl aus:
     rm -f /etc/quickbox_motd
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::restore::complete() {
-	declare text="Wiederherstellung der SQLite-Datenbank abgeschlossen."
-	quickbox::dashboard::log "${text}"
+  declare text="Wiederherstellung der SQLite-Datenbank abgeschlossen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::mysql() {
-	declare text="Sicherung der MySQL-Datenbank..."
-	quickbox::dashboard::log "${text}"
+  declare text="Sicherung der MySQL-Datenbank..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::mysql::complete() {
-	declare text="MySQL-Sicherung abgeschlossen: ${full_backup_path}/qbpro.sql"
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Sicherung abgeschlossen: ${full_backup_path}/qbpro.sql"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::mysql::fail() {
-	declare text="MySQL-Sicherung fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Sicherung fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::backup::unsupported() {
-	declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Es wurde keine Sicherung erstellt."
-	quickbox::dashboard::log "${text}"
+  declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Es wurde keine Sicherung erstellt."
+  quickbox::dashboard::log "${text}"
 }
 
 ### `-o maintenance` | case: maintenance)
 quickbox::lang::db::maintenance::sqlite() {
-	declare text="Wartung der SQLite-Datenbank wird durchgeführt..."
-	quickbox::dashboard::log "${text}"
+  declare text="Wartung der SQLite-Datenbank wird durchgeführt..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::backup() {
-	declare text="Datenbank wird vor der Wartung gesichert..."
-	quickbox::dashboard::log "${text}"
+  declare text="Datenbank wird vor der Wartung gesichert..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::optimize() {
-	declare text="SQLite-Datenbank wird optimiert (VACUUM)..."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite-Datenbank wird optimiert (VACUUM)..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::optimize::complete() {
-	declare text="SQLite-Datenbankoptimierung abgeschlossen."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite-Datenbankoptimierung abgeschlossen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::optimize::fail() {
-	declare text="Fehler bei der Optimierung der SQLite-Datenbank."
-	quickbox::dashboard::log "${text}"
+  declare text="Fehler bei der Optimierung der SQLite-Datenbank."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::sqlite::integrity::fail() {
-	declare text="Datenbank-Integritätsprüfung fehlgeschlagen. Es wurde keine Wartung durchgeführt."
-	quickbox::dashboard::log "${text}"
+  declare text="Datenbank-Integritätsprüfung fehlgeschlagen. Es wurde keine Wartung durchgeführt."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql() {
-	declare text="Wartung der MySQL-Datenbank wird durchgeführt..."
-	quickbox::dashboard::log "${text}"
+  declare text="Wartung der MySQL-Datenbank wird durchgeführt..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::backup() {
-	declare text="MySQL-Datenbank wird vor der Wartung gesichert..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbank wird vor der Wartung gesichert..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::backup::fail() {
-	declare text="MySQL-Sicherung fehlgeschlagen. Wartung wird übersprungen."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Sicherung fehlgeschlagen. Wartung wird übersprungen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::optimize() {
-	declare text="MySQL-Datenbanktabellen werden optimiert..."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbanktabellen werden optimiert..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::optimize::complete() {
-	declare text="MySQL-Datenbankoptimierung abgeschlossen."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbankoptimierung abgeschlossen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::optimize::fail() {
-	declare text="Fehler bei der Optimierung der MySQL-Datenbank."
-	quickbox::dashboard::log "${text}"
+  declare text="Fehler bei der Optimierung der MySQL-Datenbank."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::integrity() {
-	declare text="Überprüfung der Integrität der MySQL-Datenbank..."
-	quickbox::dashboard::log "${text}"
+  declare text="Überprüfung der Integrität der MySQL-Datenbank..."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::integrity::pass() {
-	declare text="MySQL-Datenbank-Integritätsprüfung bestanden."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbank-Integritätsprüfung bestanden."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::mysql::integrity::fail() {
-	declare text="MySQL-Datenbank-Integritätsprüfung fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbank-Integritätsprüfung fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::maintenance::unsupported() {
-	declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Es wurde keine Wartung durchgeführt."
-	quickbox::dashboard::log "${text}"
+  declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Es wurde keine Wartung durchgeführt."
+  quickbox::dashboard::log "${text}"
 }
 
 ### `-o restore` | case: restore)
 quickbox::lang::db::restore::backup::error() {
-	declare text="Backup-Verzeichnis nicht gefunden: ${backup_root}"
-	quickbox::dashboard::log "${text}"
+  declare text="Backup-Verzeichnis nicht gefunden: ${backup_root}"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::backup::empty() {
-	declare text="Keine Backups im Backup-Verzeichnis gefunden."
-	quickbox::dashboard::log "${text}"
+  declare text="Keine Backups im Backup-Verzeichnis gefunden."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::backup::select() {
-	declare text="Wählen Sie ein Backup zum Wiederherstellen aus:"
-	quickbox::dashboard::log "${text}"
+  declare text="Wählen Sie ein Backup zum Wiederherstellen aus:"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::backup::number() {
-	declare text="Geben Sie die Nummer des wiederherzustellenden Backups ein:"
-	quickbox::dashboard::log "${text}"
+  declare text="Geben Sie die Nummer des wiederherzustellenden Backups ein:"
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::backup::invalid() {
-	declare text="Ungültige Auswahl. Bitte versuchen Sie es erneut."
-	quickbox::dashboard::log "${text}"
+  declare text="Ungültige Auswahl. Bitte versuchen Sie es erneut."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::sqlite::success() {
-	declare text="SQLite-Datenbank erfolgreich von ${select_backup} wiederhergestellt."
-	quickbox::dashboard::log "${text}"
+  declare text="SQLite-Datenbank erfolgreich von ${select_backup} wiederhergestellt."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::sqlite::fail() {
-	declare text="Die Wiederherstellung der SQLite-Datenbank ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Wiederherstellung der SQLite-Datenbank ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::mysql::success() {
-	declare text="MySQL-Datenbank erfolgreich von ${select_backup} wiederhergestellt."
-	quickbox::dashboard::log "${text}"
+  declare text="MySQL-Datenbank erfolgreich von ${select_backup} wiederhergestellt."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::mysql::fail() {
-	declare text="Die Wiederherstellung der MySQL-Datenbank ist fehlgeschlagen."
-	quickbox::dashboard::log "${text}"
+  declare text="Die Wiederherstellung der MySQL-Datenbank ist fehlgeschlagen."
+  quickbox::dashboard::log "${text}"
 }
 quickbox::lang::db::restore::unsupported() {
-	declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Es wurde keine Wiederherstellung durchgeführt."
-	quickbox::dashboard::log "${text}"
+  declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Es wurde keine Wiederherstellung durchgeführt."
+  quickbox::dashboard::log "${text}"
 }
 
 ### `wireguard` | case: wireguard)
 
 quickbox::lang::wireguard::mtuendpoint::error() {
-	declare text="Fehler: --mtu und --endpoint werden für den 'calc'-Prozess benötigt."
-	quickbox::dashboard::log "${text}"
+  declare text="Fehler: --mtu und --endpoint werden für den 'calc'-Prozess benötigt."
+  quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
@@ -1689,14 +1897,14 @@ quickbox::lang::wireguard::mtuendpoint::error() {
 ### ERRORS
 
 quickbox::error::non-empty() {
-	declare text="Fehler: $1 erfordert ein nicht leeres argument"
-	quickbox::dashboard::log "${text}"
+  declare text="Fehler: $1 erfordert ein nicht leeres argument"
+  quickbox::dashboard::log "${text}"
 }
 
 ### MISC
 
 quickbox::nvpn::conf::generator::usage() {
-	declare text="
+  declare text="
 NordVPN WireGuard-Konfigurationsgenerator
 
 Verwendung:
@@ -1718,11 +1926,11 @@ Hinweise:
     https://my.nordaccount.com/dashboard/nordvpn/manual-configuration/
   - Konfigurationsdateien werden in '${wg_conf_storage_dir}' gespeichert
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 quickbox::wireguard::manage::help() {
-	declare text="
+  declare text="
 QuickBox WireGuard-Verwaltung
 
 Verwendung:
@@ -1765,33 +1973,33 @@ Beispiele:
   qb manage wireguard cron
   qb manage wireguard calc --mtu 1420 --endpoint '192.168.0.0' --protocol 'ipv4'
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 ### SOFTWARE (APPLICATIONS)
 
 # Function to generate help text based on provided options
 generate_help_text() {
-	local software_title="$1"
-	local software_name="$2"
-	local has_update="$3"
-	local options="$4"
-	local examples="$5"
-	local notes="$6"
+  local software_title="$1"
+  local software_name="$2"
+  local has_update="$3"
+  local options="$4"
+  local examples="$5"
+  local notes="$6"
 
-	local processes="  install    Installieren ${software_title}
+  local processes="  install    Installieren ${software_title}
   reinstall  Neu installieren ${software_title}
   remove     Entfernen ${software_title}"
 
-	if [[ ${has_update} == 1 ]]; then
-		processes="${processes}
+  if [[ ${has_update} == 1 ]]; then
+    processes="${processes}
   update     Aktualisieren ${software_title}"
-	fi
+  fi
 
-	processes="${processes}
+  processes="${processes}
   help       Diese Hilfemeldung anzeigen"
 
-	declare text="
+  declare text="
 QuickBox Software Management für ${software_title}
 
 Verwendung:
@@ -1807,23 +2015,23 @@ Beispiele:
 ${examples}
 ${notes}
 "
-	quickbox::dashboard::log "${text}"
+  quickbox::dashboard::log "${text}"
 }
 
 # Function to get help text for specific software
 quickbox::software::help() {
-	local software_help_name="$1"
-	local software_title="${software_help_name^}" # Capitalize the first letter
-	local has_update
+  local software_help_name="$1"
+  local software_title="${software_help_name^}" # Capitalize the first letter
+  local has_update
 
-	case "${software_help_name}" in
-	emby | jellyfin)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  case "${software_help_name}" in
+  emby | jellyfin)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   -d | --domain    Domäne für ${software_title} festlegen
   --beta           Betaversion von ${software_title} installieren" \
-			"  qb install ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com'    # Mit Domäne installieren
+      "  qb install ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com'    # Mit Domäne installieren
   qb reinstall ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com'  # Mit Domäne neu installieren
   qb install ${software_help_name} -u Benutzername --beta                                   # Betaversion installieren
   qb reinstall ${software_help_name} -u Benutzername --beta                                 # Betaversion neu installieren
@@ -1833,31 +2041,31 @@ quickbox::software::help() {
   ## Mehrere Optionen verwenden
   qb install ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com' --beta
   qb reinstall ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com' --beta" \
-			"
+      "
 Hinweise:
   - Bei der Installation oder Neuinstallation mit der Domänenoption wird der Nginx-Reverse-Proxy automatisch konfiguriert.
       * Stellen Sie sicher, dass die Domäne auf die IP-Adresse des Servers verweist und die richtigen DNS-Einträge festgelegt sind."
-		;;
+    ;;
 
-	mylar3)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u   | --username             Benutzernamen für ${software_title} festlegen (erforderlich)
+  mylar3)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u   | --username             Benutzernamen für ${software_title} festlegen (erforderlich)
   -clp | --comic-location-path  Speicherortpfad für Comics festlegen (Standard: /home/Benutzername/Media/Comics)" \
-			"  qb install ${software_help_name} -u Benutzername -clp '/Pfad/zu/Comics'
+      "  qb install ${software_help_name} -u Benutzername -clp '/Pfad/zu/Comics'
   qb reinstall ${software_help_name} -u Benutzername -clp '/Pfad/zu/Comics'
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			""
-		;;
+      ""
+    ;;
 
-	radarr | sonarr)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  radarr | sonarr)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   --4k             Build-Installation für 4k festlegen (Standard: 1080p)
   --nightly        Build-Installation auf dem Nightly-Zweig festlegen (Standard: neueste)" \
-			"  qb install ${software_help_name} -u Benutzername                   # Standardinstallation (1080p) installieren
+      "  qb install ${software_help_name} -u Benutzername                   # Standardinstallation (1080p) installieren
   qb install ${software_help_name} -u Benutzername --4k              # 4k-Installation installieren
   qb reinstall ${software_help_name} -u Benutzername --nightly       # Nightly-Installation neu installieren
   qb reinstall ${software_help_name} -u Benutzername --4k            # 4k-Installation neu installieren
@@ -1870,33 +2078,33 @@ Hinweise:
   qb install ${software_help_name} -u Benutzername --4k --nightly    # 4k-Installation auf dem Nightly-Zweig installieren
   qb reinstall ${software_help_name} -u Benutzername --4k --nightly  # 4k-Installation auf dem Nightly-Zweig neu installieren
   qb update ${software_help_name} -u Benutzername --4k --nightly     # 4k-Installation auf oder auf Nightly aktualisieren" \
-			""
-		;;
+      ""
+    ;;
 
-	calibre | kavita)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u  | --username      Benutzernamen für ${software_title} festlegen (erforderlich)
+  calibre | kavita)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u  | --username      Benutzernamen für ${software_title} festlegen (erforderlich)
   -lp | --library-path  Speicherpfad für Ihre Bibliothek festlegen (Standard: /home/Benutzernamen/.config/${software_title}/library)" \
-			"  qb install ${software_help_name} -u Benutzername -lp '/Pfad/zur/Bibliothek'
+      "  qb install ${software_help_name} -u Benutzername -lp '/Pfad/zur/Bibliothek'
   qb reinstall ${software_help_name} -u Benutzername -lp '/Pfad/zur/Bibliothek'
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			""
-		;;
+      ""
+    ;;
 
-	plex)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u   | --username          Benutzernamen für ${software_title} festlegen (erforderlich)
+  plex)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u   | --username          Benutzernamen für ${software_title} festlegen (erforderlich)
   -pct | --plex-claim-token  Plex-Claim-Token für ${software_title} festlegen (erforderlich für schnelles Beantragen)
   -d   | --domain            Domäne für ${software_title} festlegen
   -D   | --data-dir          Datenverzeichnis für ${software_title} festlegen (Standard: /home/Benutzernamen/.config/'Plex Media Server')" \
-			"  qb install ${software_help_name} -u Benutzername -pct 'claim_token' -d 'plex.domain.com' -D '/Pfad/zu/Daten'
+      "  qb install ${software_help_name} -u Benutzername -pct 'claim_token' -d 'plex.domain.com' -D '/Pfad/zu/Daten'
   qb reinstall ${software_help_name} -u Benutzername -pct 'claim_token' -d 'plex.domain.com' -D '/Pfad/zu/Daten'
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			"
+      "
 Hinweise:
   - Das Plex Claim Token erhalten Sie unter:
       https://www.plex.tv/claim/
@@ -1915,14 +2123,14 @@ Hinweise:
       * Stellen Sie sicher, dass die Domäne auf die IP-Adresse des Servers verweist und die richtigen DNS-Einträge festgelegt sind.
 
   - Beim Aktualisieren werden Sie aufgefordert, Ihre plex.tv-E-Mail, Ihr Passwort sowie Ihren 2FA-Code einzugeben."
-		;;
+    ;;
 
-	bazarr)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  bazarr)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   --4k             Build-Installation für 4k festlegen (Standard: 1080p)" \
-			"  qb install ${software_help_name} -u Benutzername         # Standardinstallation (1080p) installieren
+      "  qb install ${software_help_name} -u Benutzername         # Standardinstallation (1080p) installieren
   qb install ${software_help_name} -u Benutzername --4k    # 4k-Installation installieren
   qb reinstall ${software_help_name} -u Benutzername       # Standardinstallation (1080p) neu installieren
   qb reinstall ${software_help_name} -u Benutzername --4k  # 4k-Installation neu installieren
@@ -1930,85 +2138,85 @@ Hinweise:
   qb remove ${software_help_name} -u Benutzername --4k     # 4k-Installation entfernen
   qb update ${software_help_name} -u Benutzername          # Standardinstallation (1080p) aktualisieren
   qb update ${software_help_name} -u Benutzername --4k     # 4k-Installation aktualisieren" \
-			""
-		;;
+      ""
+    ;;
 
-	autodl | phpmyadmin | x2go)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"" \
-			"  qb install ${software_help_name}
+  autodl | phpmyadmin | x2go)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "" \
+      "  qb install ${software_help_name}
   qb reinstall ${software_help_name}
   qb remove ${software_help_name}
   qb update ${software_help_name}" \
-			""
-		;;
+      ""
+    ;;
 
-	fail2ban)
-		has_update=0
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"" \
-			"  qb install ${software_help_name}
+  fail2ban)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "" \
+      "  qb install ${software_help_name}
   qb reinstall ${software_help_name}
   qb remove ${software_help_name}" \
-			""
-		;;
+      ""
+    ;;
 
-	filebot)
-		has_update=0
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u  | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
+  filebot)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u  | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
   -mp | --media-path  Medienpfad für ${software_title} festlegen (Standard: /home/Benutzernamen/Media)
   -o 'deluge'         ${software_title} mit Deluge-Integration installieren
   -o 'nzbget'         ${software_title} mit NZBGet-Integration installieren
   -o 'rtorrent'       ${software_title} mit rTorrent-Integration installieren
   -o 'sabnzbd'        ${software_title} mit SABnzbd-Integration installieren" \
-			"  qb install ${software_help_name} -u Benutzername
+      "  qb install ${software_help_name} -u Benutzername
   qb reinstall ${software_help_name} -u Benutzername
   qb remove ${software_help_name} -u Benutzername
 
   ## Mehrere Optionen verwenden
   qb install ${software_help_name} -u Benutzername -o 'deluge' -o 'nzbget'
   qb reinstall ${software_help_name} -u Benutzername -o 'rtorrent' -o 'sabnzbd'" \
-			""
-		;;
+      ""
+    ;;
 
-	jdownloader)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username       Benutzernamen für ${software_title} festlegen (erforderlich)
+  jdownloader)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username       Benutzernamen für ${software_title} festlegen (erforderlich)
   -e | --email          E-Mail für ${software_title} festlegen (erforderlich) .i.
   -p | --password       Passwort für ${software_title} festlegen (erforderlich) .ii.
   -D | --downloads-dir  Downloadpfad für ${software_title} festlegen (Standard: /home/Benutzernamen/Downloads)" \
-			"  qb install ${software_help_name} -u Benutzername -e 'E-Mail' -p 'Passwort' -D '/Pfad/zu/Downloads'
+      "  qb install ${software_help_name} -u Benutzername -e 'E-Mail' -p 'Passwort' -D '/Pfad/zu/Downloads'
   qb reinstall ${software_help_name} -u Benutzername -e 'E-Mail' -p 'Passwort' -D '/Pfad/zu/Downloads'
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			"
+      "
 Hinweise:
   - .i. Die E-Mail-Adresse und das Passwort sind für die JDownloader-Installation erforderlich.
       * .ii. Dies sind die Anmeldeinformationen für Ihr MyJDownloader-Konto."
-		;;
+    ;;
 
-	jellyseerr | komga | overseerr)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  jellyseerr | komga | overseerr)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   -d | --domain    Domäne für ${software_title} festlegen" \
-			"  qb install ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com'
+      "  qb install ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com'
   qb reinstall ${software_help_name} -u Benutzername -d '${software_help_name}.domain.com'
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			"
+      "
 Hinweise:
   - Bei der Installation oder Neuinstallation mit der Option Domäne [-d] wird der Nginx-Reverse-Proxy automatisch konfiguriert.
       * Stellen Sie sicher, dass die Domäne auf die IP-Adresse des Servers verweist und die richtigen DNS-Einträge festgelegt sind."
-		;;
+    ;;
 
-	lecert)
-		has_update=0
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  --dash         Installiert ein Zertifikat für die mit '-d' angegebene Domäne und erstellt auch einen Reverse-Proxy für das QuickBox-Dashboard
+  lecert)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  --dash         Installiert ein Zertifikat für die mit '-d' angegebene Domäne und erstellt auch einen Reverse-Proxy für das QuickBox-Dashboard
   --no-dash      Installiert ein Zertifikat für eine benutzerdefinierte Domäne, die mit '-d' angegeben ist (dadurch wird nur das Zertifikat erstellt)
   --emby         Installiert ein Zertifikat für die mit '-d' angegebene Domäne und erstellt auch einen Reverse-Proxy für Emby
   --jellyfin     Installiert ein Zertifikat für die mit '-d' angegebene Domäne und erstellt auch einen Reverse-Proxy für Jellyfin
@@ -2017,53 +2225,91 @@ Hinweise:
   --overseerr    Installiert ein Zertifikat für die mit '-d' angegebene Domäne und erstellt auch einen Reverse-Proxy für Overseerr
   --plex         Install ein Zertifikat für die mit '-d' angegebene Domäne und erstellt außerdem einen Reverse-Proxy für Plex
   -d | --domain  Legen Sie die Domäne für ${software_title} fest" \
-			"  qb install ${software_help_name} --dash -d 'domain.com'
+      "  qb install ${software_help_name} --dash -d 'domain.com'
   qb reinstall ${software_help_name} --jellyseerr -d 'jellyseerr.domain.com' --jellyfin -d 'jellyfin.domain.com' --komga -d 'komga.domain.com'
   qb remove ${software_help_name} --plex -d 'plex.domain.com' --emby -d 'emby.domain.com'
   qb renew ${software_help_name} -d 'some.domain.com' -d 'another.domain.com'" \
-			""
-		;;
+      ""
+    ;;
 
-	lidarr | readarr)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  lidarr | readarr)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   --nightly        Build-Installation auf dem Nightly-Zweig festlegen (Standard: aktuellste)" \
-			"  qb install ${software_help_name} -u Benutzername              # Standardinstallation (aktuellste) installieren
+      "  qb install ${software_help_name} -u Benutzername              # Standardinstallation (aktuellste) installieren
   qb install ${software_help_name} -u Benutzername --nightly    # Nightly-Installation installieren
   qb reinstall ${software_help_name} -u Benutzername            # Standardinstallation (aktuellste) neu installieren
   qb reinstall ${software_help_name} -u Benutzername --nightly  # Nightly-Installation neu installieren
   qb remove ${software_help_name} -u Benutzername               # Aktuelle Installation entfernen
   qb update ${software_help_name} -u Benutzername               # Standardinstallation (aktuellste) aktualisieren
   qb update ${software_help_name} -u Benutzername --nightly     # Aktualisieren zur/von der nächtlichen Installation" \
-			""
-		;;
+      ""
+    ;;
 
-	quota)
-		has_update=0
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -qm | --quota-mount  Legt den System-Mount-Punkt für ${software_title} fest (erforderlich)" \
-			"  qb install ${software_help_name} -qm '/Pfad/zum/Mount-Punkt'
+  ombi)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username              Benutzername für ${software_title} festlegen (erforderlich)
+  --ombi2mysql                 Ombi-Daten nach MySQL migrieren
+  --mysql                      Ombi mit MySQL-Unterstützung installieren/neu installieren
+  --mysql-user=<Benutzername>  MySQL-Benutzernamen für die Ombi-Migration festlegen (Standard: Benutzername mit -u angegeben)
+  --mysql-pass=<Passwort>      MySQL-Passwort für die Ombi-Migration festlegen (Standard: zufällig generiert)
+  --mysql-host=<Host>          MySQL-Host für die Ombi-Migration festlegen (Standard: localhost)
+  --mysql-port=<Port>          MySQL-Port für die Ombi-Migration festlegen (Standard: 3306)
+  --mysql-db=<Datenbank>       MySQL-Datenbank für die Ombi-Migration festlegen (Standard: Ombi)" \
+      "  qb install ${software_help_name} -u Benutzername \\
+    --mysql-user='Benutzername' \\
+    --mysql-pass='Passwort' \\
+    --mysql-host='Lokaler Host' \\
+    --mysql-port=3306 \\
+    --mysql-db='Ombi'
+  qb reinstall ${software_help_name} -u Benutzername
+  qb remove ${software_help_name} -u Benutzername
+  qb update ${software_help_name} -u Benutzername --ombi2mysql" \
+      "
+Hinweise:
+  – Die Option --ombi2mysql migriert Ombi-Daten nach MySQL.
+    * Hierfür müssen MySQL-Benutzername, -Passwort, Host, Port und Datenbank angegeben werden.
+    * Falls keine Angaben gemacht werden, werden die Standardwerte verwendet:
+      – MySQL-Benutzer: Benutzername (aus der Option -u)
+      – MySQL-Passwort: Zufällig generiertes Passwort
+      – MySQL-Host: localhost
+      – MySQL-Port: 3306
+      – MySQL-Datenbank: Ombi
+
+  – Die Option --mysql installiert/neu installiert Ombi mit MySQL-Unterstützung.
+    * Hierfür müssen MySQL-Benutzername, -Passwort, Host, Port und Datenbank angegeben werden.
+    * Falls keine Angaben gemacht werden, werden die gleichen Standardwerte wie oben verwendet.
+
+  – Falls keine MySQL-Optionen angegeben werden, wird Ombi standardmäßig mit SQLite-Unterstützung installiert."
+    ;;
+
+  quota)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -qm | --quota-mount  Legt den System-Mount-Punkt für ${software_title} fest (erforderlich)" \
+      "  qb install ${software_help_name} -qm '/Pfad/zum/Mount-Punkt'
   qb reinstall ${software_help_name} -qm '/Pfad/zum/Mount-Punkt'
   qb remove ${software_help_name}" \
-			""
-		;;
+      ""
+    ;;
 
-	rclone)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  rclone)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   --dropbox        ${software_title} mit Dropbox-Integration installieren
   --gdrive         ${software_title} mit Google Drive-Integration installieren
   --encrypted      ${software_title} mit Verschlüsselung installieren
   --beta           Betaversion von ${software_title} installieren" \
-			"  qb install ${software_help_name} -u Benutzername --dropbox
+      "  qb install ${software_help_name} -u Benutzername --dropbox
   qb install ${software_help_name} -u Benutzername --beta --gdrive
   qb reinstall ${software_help_name} -u Benutzername --dropbox --encrypted
   qb reinstall ${software_help_name} -u Benutzername --gdrive
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			"
+      "
 Hinweise:
   - Es wird empfohlen, entweder die Option --dropbox oder --gdrive bei einem einzelnen Installationsdurchgang zu verwenden.
       * Dadurch werden Konflikte mit der rclone-Konfiguration vermieden.
@@ -2073,28 +2319,28 @@ Hinweise:
   - Bei der Installation mit der Option --encrypted wird die rclone-Konfiguration mit den angegebenen Informationen verschlüsselt.
 
   - Bei der Installation mit der Option --beta wird die Betaversion von rclone installiert."
-		;;
-	requestrr | vpn)
-		has_update=0
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)" \
-			"  qb install ${software_help_name} -u Benutzername
+    ;;
+  requestrr | vpn)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)" \
+      "  qb install ${software_help_name} -u Benutzername
   qb reinstall ${software_help_name} -u Benutzername
   qb remove ${software_help_name} -u Benutzername" \
-			""
-		;;
+      ""
+    ;;
 
-	rtorrent)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
+  rtorrent)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
   -o '0.15.1'        Version 0.15.1 installieren
   -o '0.10.0'        Version 0.10.0 installieren
   -o '0.9.8'         Version 0.9.8 installieren
   -o '0.9.7'         Version 0.9.7 installieren
   -o '0.9.6'         Version 0.9.6 installieren
   -o 'feature-bind'  Die Feature-Bind-Version von ${software_title} installieren" \
-			"  qb install ${software_help_name} -u Benutzername -o '0.15.1'
+      "  qb install ${software_help_name} -u Benutzername -o '0.15.1'
   qb install ${software_help_name} -u Benutzername -o '0.10.0'
   qb install ${software_help_name} -u Benutzername -o '0.9.8'
   qb install ${software_help_name} -u Benutzername -o '0.9.7'
@@ -2102,24 +2348,24 @@ Hinweise:
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername -o '0.10.0'
   qb update ${software_help_name} -u Benutzername -o 'feature-bind'" \
-			"
+      "
 Hinweise:
   - rTorrent ist eine global installierte Anwendung und wird für alle Benutzer verfügbar sein auf der Server.
 
   - Die Feature-Bind-Version von rTorrent ist eine benutzerdefinierte Version, die die Bind-Funktion enthält.
       * Mit der Bind-Funktion können Sie rTorrent an eine bestimmte IP-Adresse binden."
-		;;
+    ;;
 
-	rutorrent)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
+  rutorrent)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username    Benutzernamen für ${software_title} festlegen (erforderlich)
   --beta             Installieren Sie die Betaversion von ${software_title}" \
-			"  qb install ${software_help_name} -u Benutzername
+      "  qb install ${software_help_name} -u Benutzername
   qb reinstall ${software_help_name} -u Benutzername
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername --beta" \
-			"
+      "
 Hinweise:
   - ruTorrent ist eine global installierte Anwendung und steht allen Benutzern auf dem Server zur Verfügung.
 
@@ -2129,37 +2375,37 @@ Hinweise:
 
   - rutorrent wird standardmäßig mit der neuesten Version installiert. Wenn Sie die Betaversion installieren möchten,
     können Sie die Option --beta verwenden. Bedenken Sie, dass die beiden Versionen nicht immer unterschiedlich sind."
-		;;
+    ;;
 
-	sabnzbd | thelounge | xteve)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  sabnzbd | thelounge | xteve)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   --beta           Betaversion von ${software_title} installieren" \
-			"  qb install ${software_help_name} -u Benutzername
+      "  qb install ${software_help_name} -u Benutzername
   qb install ${software_help_name} -u Benutzername --beta
   qb reinstall ${software_help_name} -u Benutzername
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			""
-		;;
+      ""
+    ;;
 
-	transmission)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
+  transmission)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)
   --v4             Version 4 von ${software_title} installieren (Standard: Version 3)" \
-			"  qb install ${software_help_name} -u Benutzername --v4
+      "  qb install ${software_help_name} -u Benutzername --v4
   qb reinstall ${software_help_name} -u Benutzername --v4
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername --v4" \
-			""
-		;;
+      ""
+    ;;
 
-	wireguard)
-		has_update=0
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username              Benutzernamen für ${software_title} festlegen (erforderlich)
+  wireguard)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username              Benutzernamen für ${software_title} festlegen (erforderlich)
   -o [client|server]           WireGuard als Client oder Server installieren
   -cai  | --client-allowed-ip  Erlaubte IP für WireGuard-Server festlegen
   -cidr | --cidr               CIDR für WireGuard-Server festlegen (Standard: 10.5.0.2/16)
@@ -2169,7 +2415,7 @@ Hinweise:
   -noc  | --number-of-clients  Anzahl der Clients für WireGuard-Server festlegen
   -pdr  | --postdown-rule      Post-Down-Regel für WireGuard-Server festlegen
   -pur  | --postup-rule        Post-Up-Regel festlegen Regel für den WireGuard-Server" \
-			"  qb install ${software_help_name} -u Benutzername -o server \\
+      "  qb install ${software_help_name} -u Benutzername -o server \\
   -cai '192.168.0.2,192.168.0.3' \\
   -cidr '10.5.0.2/16' \\
   -dns '0.0.0.0' \\
@@ -2180,7 +2426,7 @@ Hinweise:
   -pur 'iptables -A INPUT -i wg0 -j ACCEPT'
   qb reinstall ${software_help_name} -o client -u Benutzername
   qb remove ${software_help_name} -u Benutzername" \
-			"
+      "
 Hinweise:
   - Der WireGuard-Server wird mit der Standard-CIDR von 10.5.0.2/16 installiert,
     DNS von 1.1.1.1, 1 Client-Konfiguration und Abhörport 51820.
@@ -2197,17 +2443,17 @@ Hinweise:
     können Sie eine mit dem enthaltenen NordVPN-Konfigurationsgenerator erstellen.
     Weitere Informationen zum Erstellen einer NordVPN-Konfigurationsdatei erhalten
     Sie mit dem Befehl: nvpn_conf_gen -h"
-		;;
+    ;;
 
-	*)
-		has_update=1
-		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-			"  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)" \
-			"  qb install ${software_help_name} -u Benutzername
+  *)
+    has_update=1
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzernamen für ${software_title} festlegen (erforderlich)" \
+      "  qb install ${software_help_name} -u Benutzername
   qb reinstall ${software_help_name} -u Benutzername
   qb remove ${software_help_name} -u Benutzername
   qb update ${software_help_name} -u Benutzername" \
-			""
-		;;
-	esac
+      ""
+    ;;
+  esac
 }
