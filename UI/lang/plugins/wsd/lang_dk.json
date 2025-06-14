@@ -253,10 +253,10 @@
 			"subtitleCodecNotSupported": "Konvertering af undertekster direkte til videostream",
 			"directPlayback": "Direkte",
 			"details": {
-				"video": "Omkodning ({videoCodec} {videoBitrate} Mbps)",
-				"audio": "Omkodning ({audioCodec} {audioBitrate} kbps)",
-				"unknownMbps": "Omkodning (ukendt Mbps)",
-				"unknownKbps": "Omkodning (ukendt kbps)"
+				"video": "Omkodning {videoCodec} <span class='badge badge-light-secondary badge-stream-info'>{videoBitrate} Mbps</span>",
+				"audio": "Omkodning {audioCodec} <span class='badge badge-light-primary badge-stream-info'>{audioBitrate} kbps</span>",
+				"unknownMbps": "Omkodning <span class='badge badge-light-danger badge-stream-info'>ukendt Mbps</span>",
+				"unknownKbps": "Omkodning <span class='badge badge-light-danger badge-stream-info'>ukendt kbps</span>"
 			},
 			"tempTranscodePathEmpty": "Den midlertidige transkodningssti er tom.",
 			"updateButton": "Opdater",

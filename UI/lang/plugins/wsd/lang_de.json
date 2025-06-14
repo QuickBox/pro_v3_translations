@@ -253,10 +253,10 @@
 			"subtitleCodecNotSupported": "Untertitel werden direkt in Videostream konvertiert",
 			"directPlayback": "Direkt",
 			"details": {
-				"video": "Transkodierung ({videoCodec} {videoBitrate} Mbit/s)",
-				"audio": "Transkodierung ({audioCodec} {audioBitrate} kbit/s)",
-				"unknownMbps": "Transkodierung (Unbekannte Mbit/s)",
-				"unknownKbps": "Transkodierung (Unbekannte kbit/s)"
+				"video": "Transkodierung {videoCodec} <span class='badge badge-light-secondary badge-stream-info'>{videoBitrate} Mbit/s</span>",
+				"audio": "Transkodierung {audioCodec} <span class='badge badge-light-primary badge-stream-info'>{audioBitrate} kbit/s</span>",
+				"unknownMbps": "Transkodierung <span class='badge badge-light-danger badge-stream-info'>Unbekannte Mbit/s</span>",
+				"unknownKbps": "Transkodierung <span class='badge badge-light-danger badge-stream-info'>Unbekannte kbit/s</span>"
 			},
 			"tempTranscodePathEmpty": "Der temporäre Transkodierungspfad ist leer.",
 			"updateButton": "Aktualisieren",

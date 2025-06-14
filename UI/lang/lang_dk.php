@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Danish
- * @version    3.0.1.111
+ * @version    3.0.1.113
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -451,7 +451,7 @@ $L['RCLONE']        = 'RClone er et kommandolinjeprogram til synkronisering af f
 $L['READARR']       = 'Readarr er en e-bogsamlingsmanager for Usenet- og BitTorrent-brugere. Den kan overvåge flere RSS-feeds for nye bøger fra dine yndlingsforfattere og vil fungere sammen med klienter og indeksere for at hente, sortere og omdøbe dem.';
 $L['REQUESTRR']     = 'Requestrr er en Discord chatbot, der bruges til at forenkle brugen af tjenester som Sonarr/Radarr/Ombi via brugen af chat! Alle brugere af din Discord Server kan anmode om at tilføje nyt indhold og få besked, når det er tilgængeligt.';
 $L['RTORRENT']      = 'rTorrent er en hurtig og effektiv BitTorrent-klient, der bruger og er ved at blive udviklet sammen med libTorrent-biblioteket (ikke forveksles med libtorrent-rasterbar). Det er skrevet i C ++ og bruger ncurses programmeringsbiblioteket, hvilket betyder at det bruger en tekstbrugergrænseflade.';
-$L['RUTORRENT']     = 'ruTorrent er en front-end til den populære Bittorrent klient rtorrent. Hovedfunktioner: Letvægts serverside, så den kan installeres på gamle og low-end servere og selv på nogle SOHO routere, Udvidelser - der er flere plugins, og alle kan lave deres eget, kommer med <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox tema</a>.';
+$L['RUTORRENT']     = 'ruTorrent er en front-end til den populære Bittorrent klient rtorrent. Hovedfunktioner: Letvægts serverside, så den kan installeres på gamle og low-end servere og selv på nogle SOHO routere, Udvidelser - der er flere plugins, og alle kan lave deres eget, kommer med <a href="https://nullrefer.ir/?https://github.com/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox tema</a>.';
 $L['SABNZBD']       = 'SABnzbd er en multi-platform binær nyhedsgruppe-downloader. Programmet virker i baggrunden og forenkler downloading, verificering og udpakning af filer fra Usenet. SABnzbd bruger NZB-filer (ligner .torrent-filer, men til Usenet), i stedet for at browse Usenet direkte.';
 $L['SEEDCROSS']     = 'SeedCross er en webapp til Cross-Seed af torrents i Deluge/qBittorrent/Transmission. Det er en gren af <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>.';
 $L['SICKCHILL']     = 'SickChill håndterer nemt dine tv-serier, den holder automatisk øje med nye afsnit af din favorit serie.';
@@ -1671,7 +1671,7 @@ $L['BUGS']              = 'Bug og rapportering';
 $L['BUGS_INFO_CONTENT'] = '<p>Den grafiske visning af QuickBox\'s dokumentation vil modtage regelmæssige opdateringer for at sikre, at den angivne information forbliver let tilgængelig og brugervenlig. Vores forpligtelse til at forbedre din oplevelse med QuickBox driver os til løbende at forfine og forbedre dokumentationen og holde den opdateret med de nyeste funktioner og funktioner.<br/><br/>
 Med hver opdatering vil vi stræbe efter at forenkle komplekse koncepter, præcisere instruktioner og indarbejde brugerfeedback for at gøre qb-manpagen endnu mere intuitiv og effektiv. Vores mål er at give dig en problemfri forståelse af QuickBox og dens enorme muligheder, så du kan mestre qb CLI-miljøet og nemt administrere dine serveropgaver.<br/><br/>
 Vi værdsætter dit input og opfordrer dig til at dele forslag eller ideer, du måtte have for at forbedre qb-manpagen yderligere. Din feedback er medvirkende til at forme denne ressource og sikre, at den forbliver en værdifuld reference for alle QuickBox-brugere. Faktisk eksisterer denne side, fordi den blev anmodet om! 🤪<br/><br/>
-Rapporter eventuelle reproducerbare fejl eller forslag til <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO Labs Issue & Feature Tracker</a></strong></p>';
+Rapporter eventuelle reproducerbare fejl eller forslag til <strong><a href="https://nullrefer.ir/?https://github.com/QuickBox/pro-v3/issues" rel="noopener nofollow" target="_blank">QuickBox.IO Labs Issue & Feature Tracker</a></strong></p>';
 
 /* **********************************
  * #4.4.7.15 - disclaimer

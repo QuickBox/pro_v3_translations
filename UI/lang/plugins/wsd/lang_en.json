@@ -253,10 +253,10 @@
 			"subtitleCodecNotSupported": "Converting subtitles directly into video stream",
 			"directPlayback": "Direct",
 			"details": {
-				"video": "Transcode ({videoCodec} {videoBitrate} Mbps)",
-				"audio": "Transcode ({audioCodec} {audioBitrate} kbps)",
-				"unknownMbps": "Transcode (Unknown Mbps)",
-				"unknownKbps": "Transcode (Unknown kbps)"
+				"video": "Transcode {videoCodec} <span class='badge badge-light-secondary badge-stream-info'>{videoBitrate} Mbps</span>",
+				"audio": "Transcode {audioCodec} <span class='badge badge-light-primary badge-stream-info'>{audioBitrate} kbps</span>",
+				"unknownMbps": "Transcode <span class='badge badge-light-danger badge-stream-info'>Unknown Mbps</span>",
+				"unknownKbps": "Transcode <span class='badge badge-light-danger badge-stream-info'>Unknown kbps</span>"
 			},
 			"tempTranscodePathEmpty": "The temp transcode path is empty.",
 			"updateButton": "Update",

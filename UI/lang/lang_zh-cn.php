@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   Simplified Chinese
- * @version    3.0.1.99
+ * @version    3.0.1.101
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -451,7 +451,7 @@ $L['RCLONE']        = 'RClone 是一个命令行程序，它可以将文件或�
 $L['READARR']       = 'Readarr是一个针对Usenet和BitTorrent用户的电子书收集管理器。它可以监控多个RSS提要，以获取你喜欢的作者的新书，并将与客户端和索引器接口，以抓取、分类和重命名它们。';
 $L['REQUESTRR']     = 'Requestrr是一个Discord聊天机器人，用于通过使用聊天来简化使用Sonarr/Radarr/Ombi等服务! 你的Discord服务器的所有用户都可以请求添加新的内容，并在可用时得到通知';
 $L['RTORRENT']      = 'rTorrent 是一个快速高效的 BitTorrent 客户端，同时使用正在开发的 libtorrent 库 (并非 libtorrent-rasterbar)。它是利用 C ++ 和 ncurses 库编写的软件，因此它使用一个字符用户界面。';
-$L['RUTORRENT']     = 'ruTorrent 是一个受欢迎的 BitTorrent 客户端 rTorrent 的前端。主要特性: 轻量级的服务端，因此可以被安装在一些较老以及较地段的服务器上，甚至可以安装在一些 SOHO 路由器上; 可扩展，它拥有很多插件，每个人都可以创建自己的插件; 带有 <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox 皮肤</a>。';
+$L['RUTORRENT']     = 'ruTorrent 是一个受欢迎的 BitTorrent 客户端 rTorrent 的前端。主要特性: 轻量级的服务端，因此可以被安装在一些较老以及较地段的服务器上，甚至可以安装在一些 SOHO 路由器上; 可扩展，它拥有很多插件，每个人都可以创建自己的插件; 带有 <a href="https://nullrefer.ir/?https://github.com/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox 皮肤</a>。';
 $L['SABNZBD']       = 'SABnzbd 是一个多平台的二进制新闻组下载器。该程序在后台工作，并简化了从 Usenet 下载，验证和提取文件的操作。SABnzbd 使用 NZB 文件 (类似于 .torrent文件，但用于 Usenet)，而不是直接浏览 Usenet。';
 $L['SEEDCROSS']     = 'SeedCross 是一个用于在 Deluge/qBittorrent/Transmission 中交叉种子种子的网络应用程序。它是 <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>。';
 $L['SICKCHILL']     = '电视节目的视频文件管理器，它可以帮助你及时追剧。';
@@ -1675,7 +1675,7 @@ $L['BUGS']              = '错误和报告';
 $L['BUGS_INFO_CONTENT'] = '<p>QuickBox 文档的图形显示将定期更新，以确保所提供的信息易于访问且用户友好。我们致力于增强您的 QuickBox 体验，这促使我们不断完善和改进文档，使其保持最新的特性和功能。<br><br/>
 在每次更新中，我们将努力简化复杂的概念、澄清说明并纳入用户反馈，以使 qb 手册页更加直观和高效。我们的目标是让您能够无缝了解 QuickBox 及其丰富的功能，使您能够掌握 qb CLI 环境并轻松管理您的服务器任务。<br><br/>
 我们重视您的意见，并鼓励您分享任何建议或想法，以进一步增强 qb 联机帮助页。您的反馈有助于塑造此资源并确保它对所有 QuickBox 用户仍然是有价值的参考。事实上，该页面存在是因为有人请求！ 🤪<br/><br/>
-向 <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO 实验室问题和功能跟踪器</a></strong></p>';
+向 <strong><a href="https://nullrefer.ir/?https://github.com/QuickBox/pro-v3/issues" rel="noopener nofollow" target="_blank">QuickBox.IO 实验室问题和功能跟踪器</a></strong></p>';
 
 /* **********************************
  * #4.4.7.15 - disclaimer

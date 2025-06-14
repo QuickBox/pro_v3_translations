@@ -253,10 +253,10 @@
 			"subtitleCodecNotSupported": "将字幕直接转换为视频流",
 			"directPlayback": "直接",
 			"details": {
-				"video": "转码 ({videoCodec} {videoBitrate} Mbps)",
-				"audio": "转码 ({audioCodec} {audioBitrate} kbps)",
-				"unknownMbps": "转码 (未知 Mbps)",
-				"unknownKbps": "转码 (未知 kbps)"
+				"video": "转码 {videoCodec} <span class='badge badge-light-secondary badge-stream-info'>{videoBitrate} Mbps</span>",
+				"audio": "转码 {audioCodec} <span class='badge badge-light-primary badge-stream-info'>{audioBitrate} kbps</span>",
+				"unknownMbps": "转码 <span class='badge badge-light-danger badge-stream-info'>未知 Mbps</span>",
+				"unknownKbps": "转码 <span class='badge badge-light-danger badge-stream-info'>未知 kbps</span>"
 			},
 			"tempTranscodePathEmpty": "临时转码路径为空。",
 			"updateButton": "更新",

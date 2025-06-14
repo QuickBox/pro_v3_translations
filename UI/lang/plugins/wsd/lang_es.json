@@ -253,10 +253,10 @@
 			"subtitleCodecNotSupported": "Convirtiendo subtítulos directamente en la transmisión de video",
 			"directPlayback": "Directo",
 			"details": {
-				"video": "Transcodificar ({videoCodec} {videoBitrate} Mbps)",
-				"audio": "Transcodificar ({audioCodec} {audioBitrate} kbps)",
-				"unknownMbps": "Transcodificar (Mbps desconocidos)",
-				"unknownKbps": "Transcodificar (kbps desconocidos)"
+				"video": "Transcodificar {videoCodec} <span class='badge badge-light-secondary badge-stream-info'>{videoBitrate} Mbps</span>",
+				"audio": "Transcodificar {audioCodec} <span class='badge badge-light-primary badge-stream-info'>{audioBitrate} kbps</span>",
+				"unknownMbps": "Transcodificar <span class='badge badge-light-danger badge-stream-info'>Mbps desconocidos</span>",
+				"unknownKbps": "Transcodificar <span class='badge badge-light-danger badge-stream-info'>kbps desconocidos</span>"
 			},
 			"tempTranscodePathEmpty": "La ruta de transcodificación temporal está vacía.",
 			"updateButton": "Actualizar",

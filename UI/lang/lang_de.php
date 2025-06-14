@@ -9,7 +9,7 @@
  * @package    dashboard
  * @subpackage lang
  * @category   German
- * @version    3.0.1.112
+ * @version    3.0.1.114
  * @since      1.0.0
  *
  * @var Configs $configs The configurations object.
@@ -451,7 +451,7 @@ $L['RCLONE']        = 'RClone ist ein Kommandozeilenprogramm zum Synchronisieren
 $L['READARR']       = 'Readarr ist ein E-Book-Sammlungsmanager für Usenet- und BitTorrent-Nutzer. Er kann mehrere RSS-Feeds auf neue Bücher Ihrer Lieblingsautoren überwachen und wird mit Clients und Indexern zusammenarbeiten, um sie zu erfassen, zu sortieren und umzubenennen.';
 $L['REQUESTRR']     = 'Requestrr ist ein Discord-Chatbot, der verwendet wird, um die Nutzung von Diensten wie Sonarr/Radarr/Ombi über die Verwendung von Chats zu vereinfachen! Alle Benutzer Ihres Discord-Servers können das Hinzufügen neuer Inhalte anfordern und werden benachrichtigt, wenn sie verfügbar sind.';
 $L['RTORRENT']      = 'rTorrent ist ein schneller und effizienter BitTorrent-Client, der die Bibliothek libTorrent (nicht zu verwechseln mit libtorrent-rasterbar) verwendet und in Entwicklung ist. Es ist in C ++ geschrieben und verwendet die Programmierbibliothek ncurses, was bedeutet, dass es eine Text-Benutzerschnittstelle verwendet. Das ruTorrent-Frontend wird zusätzlich installiert.';
-$L['RUTORRENT']     = 'ruTorrent ist ein Front-End für den beliebten Bittorrent-Client rtorrent. Hauptmerkmale: Leichte Server-Seite, so kann es auf alten und Low-End-Servern und sogar auf einigen SOHO-Routern installiert werden, Extensible - es gibt mehrere Plugins und jeder kann ihre eigenen erstellen, kommt mit <a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox haut</a>.';
+$L['RUTORRENT']     = 'ruTorrent ist ein Front-End für den beliebten Bittorrent-Client rtorrent. Hauptmerkmale: Leichte Server-Seite, so kann es auf alten und Low-End-Servern und sogar auf einigen SOHO-Routern installiert werden, Extensible - es gibt mehrere Plugins und jeder kann ihre eigenen erstellen, kommt mit <a href="https://nullrefer.ir/?https://github.com/QuickBox/club-QuickBox" rel="noopener nofollow" target="_blank">club-QuickBox haut</a>.';
 $L['SABNZBD']       = 'SABnzbd ist ein plattformunabhängiger Binary-Newsgroup-Downloader. Das Programm arbeitet im Hintergrund und vereinfacht das Downloaden, Prüfen und Extrahieren von Dateien aus dem Usenet. SABnzbd nutzt dafür NZB-Dateien (vergleichbar mit .torrent-Dateien, aber für das Usenet), anstatt das Usenet direkt zu durchsuchen.';
 $L['SEEDCROSS']     = 'SeedCross ist eine Web-App zum Cross-Seed von Torrents in Deluge/qBittorrent/Transmission. Es ist ein Fork von <a href="https://nullrefer.ir/?https://github.com/BC44/Cross-Seed-AutoDL" rel="noopener nofollow" target="_blank">Cross-Seed-AutoDL</a>.';
 $L['SICKCHILL']     = 'Video File Manager für TV-Shows, Es schaut nach neuen Episoden Ihrer Lieblingssendungen.';
@@ -1673,7 +1673,7 @@ $L['BUGS']              = 'Fehler und Berichte';
 $L['BUGS_INFO_CONTENT'] = '<p>Die grafische Darstellung der QuickBox-Dokumentation wird regelmäßig aktualisiert, um sicherzustellen, dass die bereitgestellten Informationen leicht zugänglich und benutzerfreundlich bleiben. Unser Engagement, Ihre Erfahrung mit QuickBox zu verbessern, treibt uns dazu, die Dokumentation kontinuierlich zu verfeinern und zu verbessern und sie mit den neuesten Features und Funktionalitäten auf dem neuesten Stand zu halten.<br/><br/>
 Mit jedem Update werden wir uns bemühen, komplexe Konzepte zu vereinfachen, Anweisungen zu verdeutlichen und Benutzerfeedback einzubeziehen, um die qb-Manpage noch intuitiver und effizienter zu gestalten. Unser Ziel ist es, Ihnen ein nahtloses Verständnis von QuickBox und seinen umfangreichen Funktionen zu vermitteln, sodass Sie die qb-CLI-Umgebung beherrschen und Ihre Serveraufgaben mühelos verwalten können.<br/><br/>
 Wir schätzen Ihren Beitrag und ermutigen Sie, Vorschläge oder Ideen mitzuteilen, die Sie zur weiteren Verbesserung der qb-Manpage haben. Ihr Feedback trägt maßgeblich zur Gestaltung dieser Ressource bei und stellt sicher, dass sie eine wertvolle Referenz für alle QuickBox-Benutzer bleibt. Tatsächlich existiert diese Seite, weil sie angefordert wurde! 🤪<br/><br/>
-Melden Sie reproduzierbare Fehler oder Vorschläge an <strong><a href="https://nullrefer.ir/?https://lab.quickbox.io/QuickBox/pro-v3/-/issues" rel="noopener nofollow" target="_blank">QuickBox.IO Labs Issue & Feature Tracker</a></strong></p>';
+Melden Sie reproduzierbare Fehler oder Vorschläge an <strong><a href="https://nullrefer.ir/?https://github.com/QuickBox/pro-v3/issues" rel="noopener nofollow" target="_blank">QuickBox.IO Labs Issue & Feature Tracker</a></strong></p>';
 
 /* **********************************
  * #4.4.7.15 - disclaimer
