@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.182
+# File Version: 1.0.183
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2252,21 +2252,16 @@ Hinweise:
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "  -u | --username              Benutzername für ${software_title} festlegen (erforderlich)
   --ombi2mysql                 Ombi-Daten nach MySQL migrieren
-  --mysql                      Ombi mit MySQL-Unterstützung installieren/neu installieren
+  --phmyadmin                  phpMyAdmin für die Ombi-Migration installieren
   --mysql-user=<Benutzername>  MySQL-Benutzernamen für die Ombi-Migration festlegen (Standard: Benutzername mit -u angegeben)
   --mysql-pass=<Passwort>      MySQL-Passwort für die Ombi-Migration festlegen (Standard: zufällig generiert)
   --mysql-host=<Host>          MySQL-Host für die Ombi-Migration festlegen (Standard: localhost)
   --mysql-port=<Port>          MySQL-Port für die Ombi-Migration festlegen (Standard: 3306)
   --mysql-db=<Datenbank>       MySQL-Datenbank für die Ombi-Migration festlegen (Standard: Ombi)" \
-      "  qb install ${software_help_name} -u Benutzername \\
-    --mysql-user='Benutzername' \\
-    --mysql-pass='Passwort' \\
-    --mysql-host='Lokaler Host' \\
-    --mysql-port=3306 \\
-    --mysql-db='Ombi'
+      "  qb install ${software_help_name} -u Benutzername
   qb reinstall ${software_help_name} -u Benutzername
   qb remove ${software_help_name} -u Benutzername
-  qb update ${software_help_name} -u Benutzername --ombi2mysql" \
+  qb update ${software_help_name} -u Benutzername --ombi2mysql --phpmyadmin" \
       "
 Hinweise:
   – Die Option --ombi2mysql migriert Ombi-Daten nach MySQL.
@@ -2278,11 +2273,13 @@ Hinweise:
       – MySQL-Port: 3306
       – MySQL-Datenbank: Ombi
 
-  – Die Option --mysql installiert/neu installiert Ombi mit MySQL-Unterstützung.
-    * Hierfür müssen MySQL-Benutzername, -Passwort, Host, Port und Datenbank angegeben werden.
-    * Falls keine Angaben gemacht werden, werden die gleichen Standardwerte wie oben verwendet.
+  – Die Option --phpmyadmin installiert phpMyAdmin für die Ombi-Migration.
+    * Damit können Sie die MySQL-Datenbank für Ombi über die Weboberfläche von /phpMyAdmin verwalten.
+  – Die Optionen --mysql-user, --mysql-pass, --mysql-host, --mysql-port und --mysql-db sind optional.
+    * Falls angegeben, überschreiben sie die Standardwerte.
 
-  – Falls keine MySQL-Optionen angegeben werden, wird Ombi standardmäßig mit SQLite-Unterstützung installiert."
+  - Ombi wird standardmäßig mit SQLite-Unterstützung installiert.
+  - MySQL-Unterstützung ist nur verfügbar, wenn Sie die Option --ombi2mysql im Aktualisierungsvorgang verwenden."
     ;;
 
   quota)

@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.156
+# File Version: 1.0.157
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2253,21 +2253,16 @@ Bemærkninger:
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "  -u | --username             Angiv brugernavnet for ${software_title} (påkrævet)
   --ombi2mysql                Migrer Ombi-data til MySQL
-  --mysql                     Installer/Geninstaller Ombi med MySQL-understøttelse
+  --phmyadmin                 Installer phpMyAdmin til Ombi-migrering
   --mysql-user=<brugernavn>   Angiv MySQL-brugernavnet til Ombi-migrering (standard: brugernavn angivet med -u)
   --mysql-pass=<adgangskode>  Angiv MySQL-adgangskoden til Ombi-migrering (standard: tilfældigt genereret)
   --mysql-host=<host>         Angiv MySQL-værten til Ombi-migrering (standard: localhost)
   --mysql-port=<port>         Angiv MySQL-porten til Ombi-migrering (standard: 3306)
   --mysql-db=<database>       Angiv MySQL-databasen til Ombi-migrering (standard: Ombi)" \
-      "  qb install ${software_help_name} -u brugernavn \\
-    --mysql-bruger='brugernavn' \\
-    --mysql-pass='adgangskode' \\
-    --mysql-host='localhost' \\
-    --mysql-port=3306 \\
-    --mysql-db='Ombi'
+      "  qb install ${software_help_name} -u brugernavn
   qb reinstall ${software_help_name} -u brugernavn
   qb remove ${software_help_name} -u brugernavn
-  qb update ${software_help_name} -u brugernavn --ombi2mysql" \
+  qb update ${software_help_name} -u brugernavn --ombi2mysql --phpmyadmin" \
       "
 Bemærkninger:
   - --ombi2mysql-indstillingen migrerer Ombi-data til MySQL.
@@ -2279,11 +2274,13 @@ Bemærkninger:
       - MySQL-port: 3306
       - MySQL-database: Ombi
 
-  - --mysql-indstillingen installerer/geninstallerer Ombi med MySQL-understøttelse.
-    * Dette kræver, at MySQL-brugernavn, adgangskode, vært, port og database angives.
-    * Hvis ingen er angivet, bruges de samme standardværdier som ovenfor.
+  - --phpmyadmin-indstillingen installerer phpMyAdmin til Ombi-migrering.
+    * Dette giver dig mulighed for at administrere MySQL-databasen til Ombi via /phpMyAdmin webUI.
+  - Indstillingerne --mysql-user, --mysql-pass, --mysql-host, --mysql-port og --mysql-db er valgfrie.
+    * Hvis de er angivet, tilsidesætter de standardværdierne.
 
-  - Hvis der ikke er angivet nogen MySQL-indstillinger, installeres Ombi som standard med SQLite-understøttelse."
+  - Ombi installeres som standard med SQLite-understøttelse.
+  - MySQL-understøttelse er kun tilgængelig, når du bruger --ombi2mysql-indstillingen i opdateringsprocessen."
     ;;
 
   quota)

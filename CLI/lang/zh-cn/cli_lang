@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.150
+# File Version: 1.0.152
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2300,23 +2300,18 @@ quickbox::software::help() {
   ombi)
     has_update=1
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username          设置 ${software_title} 的用户名（必需）
-  --ombi2mysql             将 Ombi 数据迁移到 MySQL
-  --mysql                  安装/重新安装 Ombi 并支持 MySQL
-  --mysql-user=<username>  设置用于 Ombi 迁移的 MySQL 用户名（默认值：使用 -u 指定的用户名）
-  --mysql-pass=<password>  设置用于 Ombi 迁移的 MySQL 密码（默认值：随机生成）
-  --mysql-host=<host>      设置用于 Ombi 迁移的 MySQL 主机（默认值：localhost）
-  --mysql-port=<port>      设置用于 Ombi 迁移的 MySQL 端口（默认值：3306）
-  --mysql-db=<database>    设置用于 Ombi 迁移的 MySQL 数据库（默认值：Ombi）" \
-      "  qb install ${software_help_name} -u 用户名 \\
-    --mysql-user='用户名' \\
-    --mysql-pass='密码' \\
-    --mysql-host='localhost' \\
-    --mysql-port=3306 \\
-    --mysql-db='Ombi'
+      "  -u | --username       设置 ${software_title} 的用户名（必需）
+  --ombi2mysql          将 Ombi 数据迁移到 MySQL
+  --phmyadmin           安装 phpMyAdmin 进行 Ombi 迁移
+  --mysql-user=<用户名>  设置用于 Ombi 迁移的 MySQL 用户名（默认值：使用 -u 指定的用户名）
+  --mysql-pass=<密码>    设置用于 Ombi 迁移的 MySQL 密码（默认值：随机生成）
+  --mysql-host=<主持人>  设置用于 Ombi 迁移的 MySQL 主机（默认值：localhost）
+  --mysql-port=<端口>    设置用于 Ombi 迁移的 MySQL 端口（默认值：3306）
+  --mysql-db=<数据库>    设置用于 Ombi 迁移的 MySQL 数据库（默认值：Ombi）" \
+      "  qb install ${software_help_name} -u 用户名
   qb reinstall ${software_help_name} -u 用户名
   qb remove ${software_help_name} -u 用户名
-  qb update ${software_help_name} -u 用户名 --ombi2mysql" \
+  qb update ${software_help_name} -u 用户名 --ombi2mysql --phpmyadmin" \
       "
 注意：
   - --ombi2mysql 选项会将 Ombi 数据迁移到 MySQL。
@@ -2328,11 +2323,13 @@ quickbox::software::help() {
       - MySQL 端口：3306
       - MySQL 数据库：Ombi
 
-  - --mysql 选项会安装/重新安装支持 MySQL 的 Ombi。
-    * 这需要指定 MySQL 用户名、密码、主机、端口和数据库。
-    * 如果未指定，则将使用与上述相同的默认值。
+  - --phpmyadmin 选项会安装 phpMyAdmin 以进行 Ombi 迁移。
+    * 这将允许您通过 /phpMyAdmin webUI 管理 Ombi 的 MySQL 数据库。
+  - --mysql-user、--mysql-pass、--mysql-host、--mysql-port 和 --mysql-db 选项是可选的。
+    * 如果指定，它们将覆盖默认值。
 
-  - 如果未指定 MySQL 选项，则 Ombi 将默认安装 SQLite 支持。"
+  - Ombi 默认安装 SQLite 支持。
+  - 仅在更新过程中使用 --ombi2mysql 选项时才支持 MySQL。"
     ;;
 
   quota)

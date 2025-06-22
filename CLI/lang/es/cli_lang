@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_es
 # File Description: Spanish language file
-# File Version: 1.0.152
+# File Version: 1.0.153
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2255,37 +2255,34 @@ Notas:
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "  -u | --username                   Establece el nombre de usuario para ${software_title} (obligatorio)
   --ombi2mysql                      Migra los datos de Ombi a MySQL
-  --mysql                           Instalar o reinstalar Ombi con soporte para MySQL
+  --phmyadmin                       Instala phpMyAdmin para la migración de Ombi
   --mysql-user=<nombre de usuario>  Establece el nombre de usuario de MySQL para la migración de Ombi (predeterminado: nombre de usuario especificado con -u)
-  --mysql-pass=<contraseña>         Establece la contraseña de MySQL para la migración de Ombi (predeterminado: generada aleatoriamente)
+  --mysql-pass=<contraseña>         Establece la contraseña de MySQL para la migración de Ombi (predeterminada: generada aleatoriamente)
   --mysql-host=<host>               Establece el host de MySQL para la migración de Ombi (predeterminado: localhost)
   --mysql-port=<puerto>             Establece el puerto de MySQL para la migración de Ombi (predeterminado: 3306)
-  --mysql-db=<base de datos>        Establece la base de datos MySQL para Migración de Ombi (predeterminado: Ombi)" \
-      "  qb install ${software_help_name} -u nombre_usuario \\
-    --mysql-user='nombre_usuario' \\
-    --mysql-pass='contraseña' \\
-    --mysql-host='localhost' \\
-    --mysql-port=3306 \\
-    --mysql-db='Ombi'
-  qb reinstall ${software_help_name} -u nombre_usuario
-  qb remove ${software_help_name} -u nombre_usuario
-  qb update ${software_help_name} -u nombre_usuario --ombi2mysql" \
+  --mysql-db=<base de datos>        Establece la base de datos MySQL para la migración de Ombi (predeterminado: Ombi)" \
+      "  qb install ${software_help_name} -u nombre_de_usuario
+  qb reinstall ${software_help_name} -u nombre_de_usuario
+  qb remove ${software_help_name} -u nombre_de_usuario
+  qb update ${software_help_name} -u nombre_de_usuario --ombi2mysql --phpmyadmin" \
       "
 Notas:
   - La opción --ombi2mysql migrará los datos de Ombi a MySQL.
-    * Requiere que se especifique el nombre de usuario, la contraseña, el host, el puerto y la base de datos de MySQL.
-    * Si no se especifica ninguno, se utilizarán los valores predeterminados:
+    * Esto requiere especificar el nombre de usuario, la contraseña, el host, el puerto y la base de datos de MySQL.
+    * Si no se especifica ninguno, se usarán los valores predeterminados:
       - Usuario MySQL: Nombre de usuario (de la opción -u)
       - Contraseña MySQL: Contraseña generada aleatoriamente
       - Host MySQL: localhost
       - Puerto MySQL: 3306
       - Base de datos MySQL: Ombi
 
-  - La opción --mysql instalará/reinstalará Ombi con compatibilidad con MySQL.
-    * Requiere que se especifique el nombre de usuario, la contraseña, el host, el puerto y la base de datos de MySQL.
-    * Si no se especifica ninguno, se utilizarán los mismos valores predeterminados que los anteriores.
+  - La opción --phpmyadmin instalará phpMyAdmin para la migración de Ombi.
+    * Esto le permitirá administrar la base de datos MySQL para Ombi a través de la interfaz web /phpMyAdmin.
+  - Las opciones --mysql-user, --mysql-pass, --mysql-host, --mysql-port y --mysql-db son opcionales.
+    * Si se especifican, anularán los valores predeterminados.
 
-  - Si no se especifica ninguna opción de MySQL, Ombi se instalará con compatibilidad con SQLite por defecto."
+  - Ombi se instala con compatibilidad con SQLite por defecto.
+  - La compatibilidad con MySQL solo está disponible al usar la opción --ombi2mysql en el proceso de actualización."
     ;;
 
   quota)
