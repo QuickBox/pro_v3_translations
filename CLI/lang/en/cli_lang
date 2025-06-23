@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.516
+# File Version: 1.0.517
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2128,7 +2128,7 @@ Notes:
       ""
     ;;
 
-  autodl | phpmyadmin | x2go)
+  autodl | x2go)
     has_update=1
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "" \
@@ -2267,6 +2267,26 @@ Notes:
 
   - Ombi is installed with SQLite support by default.
   - MySQL support is only available when using the --ombi2mysql option on the update process."
+    ;;
+
+  phpmyadmin)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Set the username for ${software_title} (required)
+  --pma-user       Set the phpMyAdmin username (default: username specified with -u)
+  --pma-pass       Set the phpMyAdmin password (default: randomly generated)
+  --pma-host       Set the phpMyAdmin host (default: localhost)" \
+      "  qb install ${software_help_name} -u username --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb reinstall ${software_help_name} -u username --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb remove ${software_help_name} -u username
+  qb update ${software_help_name} -u username" \
+      "
+Notes:
+  - The phpMyAdmin username and password are optional.
+    * If not specified, the default values will be used:
+      - phpMyAdmin User: Username (from -u option)
+      - phpMyAdmin Password: Randomly generated password
+      - phpMyAdmin Host: localhost"
     ;;
 
   quota)

@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_fr
 # File Description: French lang file
-# File Version: 1.0.159
+# File Version: 1.0.160
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2143,7 +2143,7 @@ Remarques :
       ""
     ;;
 
-  autodl | phpmyadmin | x2go)
+  autodl | x2go)
     has_update=1
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "" \
@@ -2282,6 +2282,26 @@ Remarques :
 
   - Ombi est installé par défaut avec la prise en charge de SQLite.
   - La prise en charge de MySQL n'est disponible qu'avec l'option --ombi2mysql lors du processus de mise à jour."
+    ;;
+
+  phpmyadmin)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Définir le nom d'utilisateur pour ${software_title} (obligatoire)
+  --pma-user       Définir le nom d'utilisateur phpMyAdmin (par défaut : nom d'utilisateur spécifié avec -u)
+  --pma-pass       Définir le mot de passe phpMyAdmin (par défaut : généré aléatoirement)
+  --pma-host       Définir l'hôte phpMyAdmin (par défaut : localhost)" \
+      "  qb install ${software_help_name} -u nom_d'utilisateur --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb reinstall ${software_help_name} -u nom_d'utilisateur --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb remove ${software_help_name} -u nom_d'utilisateur
+  qb update ${software_help_name} -u nom_d'utilisateur" \
+      "
+Remarques :
+  - Le nom d'utilisateur et le mot de passe phpMyAdmin sont facultatifs.
+    * S'ils ne sont pas spécifiés, les valeurs par défaut seront utilisées :
+      - Utilisateur phpMyAdmin : Nom d'utilisateur (option -u)
+      - Mot de passe phpMyAdmin : Mot de passe généré aléatoirement
+      - Hôte phpMyAdmin : localhost"
     ;;
 
   quota)

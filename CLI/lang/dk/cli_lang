@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_dk
 # File Description: Danish language file
-# File Version: 1.0.157
+# File Version: 1.0.158
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2142,7 +2142,7 @@ Bemærkninger:
       ""
     ;;
 
-  autodl | phpmyadmin | x2go)
+  autodl | x2go)
     has_update=1
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "" \
@@ -2281,6 +2281,26 @@ Bemærkninger:
 
   - Ombi installeres som standard med SQLite-understøttelse.
   - MySQL-understøttelse er kun tilgængelig, når du bruger --ombi2mysql-indstillingen i opdateringsprocessen."
+    ;;
+
+  phpmyadmin)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Angiv brugernavnet for ${software_title} (påkrævet)
+  --pma-user       Angiv phpMyAdmin-brugernavnet (standard: brugernavn angivet med -u)
+  --pma-pass       Angiv phpMyAdmin-adgangskoden (standard: tilfældigt genereret)
+  --pma-host       Angiv phpMyAdmin-værten (standard: localhost)" \
+      "  qb install ${software_help_name} -u brugernavn --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb reinstall ${software_help_name} -u brugernavn --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb remove ${software_help_name} -u brugernavn
+  qb update ${software_help_name} -u brugernavn" \
+      "
+Bemærkninger:
+  - Brugernavn og adgangskode til phpMyAdmin er valgfrie.
+    * Hvis ikke angivet, bruges standardværdierne:
+      - phpMyAdmin-bruger: Brugernavn (fra -u-indstillingen)
+      - phpMyAdmin-adgangskode: Tilfældigt genereret adgangskode
+      - phpMyAdmin-vært: localhost"
     ;;
 
   quota)

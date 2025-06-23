@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_de
 # File Description: German language file
-# File Version: 1.0.183
+# File Version: 1.0.184
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2141,7 +2141,7 @@ Hinweise:
       ""
     ;;
 
-  autodl | phpmyadmin | x2go)
+  autodl | x2go)
     has_update=1
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "" \
@@ -2290,6 +2290,26 @@ Hinweise:
   qb reinstall ${software_help_name} -qm '/Pfad/zum/Mount-Punkt'
   qb remove ${software_help_name}" \
       ""
+    ;;
+
+  phpmyadmin)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  Benutzername für ${software_title} festlegen (erforderlich)
+  --pma-user       phpMyAdmin-Benutzernamen festlegen (Standard: Benutzername mit -u angegeben)
+  --pma-pass       phpMyAdmin-Passwort festlegen (Standard: zufällig generiert)
+  --pma-host       phpMyAdmin-Host festlegen (Standard: localhost)" \
+      "  qb install ${software_help_name} -u Benutzername --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb reinstall ${software_help_name} -u Benutzername --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb remove ${software_help_name} -u Benutzername
+  qb update ${software_help_name} -u Benutzername" \
+      "
+Hinweise:
+  - Der phpMyAdmin-Benutzername und das phpMyAdmin-Passwort sind optional.
+    * Falls nicht angegeben, werden die Standardwerte verwendet:
+      - phpMyAdmin-Benutzer: Benutzername (aus der Option -u)
+      - phpMyAdmin-Passwort: Zufällig generiertes Passwort
+      - phpMyAdmin-Host: localhost"
     ;;
 
   rclone)

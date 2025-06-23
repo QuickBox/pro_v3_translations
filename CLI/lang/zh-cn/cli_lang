@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_zh-cn
 # File Description: Simplified Chinese language file
-# File Version: 1.0.152
+# File Version: 1.0.154
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -2191,7 +2191,7 @@ quickbox::software::help() {
       ""
     ;;
 
-  autodl | phpmyadmin | x2go)
+  autodl | x2go)
     has_update=1
     generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
       "" \
@@ -2330,6 +2330,26 @@ quickbox::software::help() {
 
   - Ombi 默认安装 SQLite 支持。
   - 仅在更新过程中使用 --ombi2mysql 选项时才支持 MySQL。"
+    ;;
+
+  phpmyadmin)
+    has_update=0
+    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+      "  -u | --username  设置 ${software_title} 的用户名（必需）
+  --pma-user       设置 phpMyAdmin 用户名（默认：使用 -u 指定的用户名）
+  --pma-pass       设置 phpMyAdmin 密码（默认：随机生成）
+  --pma-host       设置 phpMyAdmin 主机（默认：localhost）" \
+      "  qb install ${software_help_name} -u 用户名 --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb reinstall ${software_help_name} -u 用户名 --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+  qb remove ${software_help_name} -u 用户名
+  qb update ${software_help_name} -u 用户名" \
+      "
+注意：
+  - phpMyAdmin 用户名和密码为可选。
+    * 如果未指定，则使用默认值：
+      - phpMyAdmin 用户：用户名（来自 -u 选项）
+      - phpMyAdmin 密码：随机生成的密码
+      - phpMyAdmin 主机：localhost"
     ;;
 
   quota)
