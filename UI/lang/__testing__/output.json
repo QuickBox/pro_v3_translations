@@ -1,0 +1,2434 @@
+{
+    "schemaVersion": "1.1.0",
+    "baseline": "en",
+    "modules": [
+        "buttons.php",
+        "dashboard.php",
+        "errors.php",
+        "help_manual.php",
+        "misc.php",
+        "navigation.php",
+        "pages.php",
+        "popup.php",
+        "settings.php",
+        "system.php",
+        "user_management.php",
+        "widgets.php"
+    ],
+    "languages": [
+        "de",
+        "dk",
+        "es",
+        "fr",
+        "hu",
+        "pt",
+        "zh-cn"
+    ],
+    "results": {
+        "de": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB",
+                        "VERSION_ROLLBACK_V",
+                        "VERSION"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "SOFTWARE_HEADER",
+                        "INFO",
+                        "GLOBAL_BADGE",
+                        "MULTI_USER_BADGE",
+                        "SINGLE_USER_BADGE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 5,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "MOUNTS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "PLUGINS",
+                        "SYSTEM",
+                        "DOWNLOADS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "HEY"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API",
+                        "DEFAULT_PAGE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "QB_CONTROL_API",
+                        "LETSENCRYPT_DOMAIN",
+                        "DOMAIN",
+                        "HOST",
+                        "PEER_CONFIG_NAME",
+                        "PEER_PING",
+                        "REGION",
+                        "FIXUPDATE",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "QSUPPORT",
+                        "WEB_SERVER",
+                        "SOFTWARE",
+                        "DASH_UPDATE_TITLE",
+                        "QB_UPDATE",
+                        "QBUPDATE",
+                        "CHANGELOGS",
+                        "SYS_UPLOAD",
+                        "SYS_DOWNLOAD",
+                        "SYS_DASH_CPU",
+                        "BANDWIDTH_RX",
+                        "BANDWIDTH_TX"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 23,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "APPLICATION",
+                        "PERSISTENT",
+                        "STATUS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "AVAILABILITY",
+                        "DETAILS",
+                        "NAME",
+                        "CONFIGS",
+                        "EXTRAS",
+                        "AIRSONIC",
+                        "AUTOBRR",
+                        "AUTODL",
+                        "AUTOSCAN",
+                        "BAZARR",
+                        "BAZARR4K",
+                        "BBR",
+                        "BTSYNC",
+                        "CALIBRE",
+                        "COUCHPOTATO",
+                        "CSF",
+                        "DELUGE",
+                        "DUPLICATI",
+                        "EMBY",
+                        "FAIL2BAN",
+                        "FILEBOT",
+                        "FILEBROWSER",
+                        "FLARESOLVERR",
+                        "FLEXGET",
+                        "FLOOD",
+                        "HEADPHONES",
+                        "JACKETT",
+                        "JDOWNLOADER",
+                        "JELLYFIN",
+                        "JELLYSEERR",
+                        "KAVITA",
+                        "KOMGA",
+                        "LAZYLIBRARIAN",
+                        "LETSENCRYPT",
+                        "LIDARR",
+                        "MEDUSA",
+                        "MYLAR3",
+                        "NETDATA",
+                        "NEXTCLOUD",
+                        "NOTIFIARR",
+                        "NOVNC",
+                        "NZBGET",
+                        "NZBHYDRA",
+                        "NZBHYDRA2",
+                        "OMBI",
+                        "OVERSEERR",
+                        "OVPN",
+                        "PHPMYADMIN",
+                        "PLEX",
+                        "PROWLARR",
+                        "PYLOAD",
+                        "QBITTORRENT",
+                        "QUASSEL",
+                        "QUOTAS",
+                        "RADARR",
+                        "RADARR4K",
+                        "RAPIDLEECH",
+                        "RCLONE",
+                        "READARR",
+                        "REQUESTRR",
+                        "RTORRENT",
+                        "RUTORRENT",
+                        "SABNZBD",
+                        "SEEDCROSS",
+                        "SICKCHILL",
+                        "SICKGEAR",
+                        "SONARR",
+                        "SONARR4K",
+                        "SUBSONIC",
+                        "SYNCTHING",
+                        "TAUTULLI",
+                        "THELOUNGE",
+                        "TRANSMISSION",
+                        "UNIFI",
+                        "UNPACKERR",
+                        "WEBCONSOLE",
+                        "WIREGUARD",
+                        "X2GO",
+                        "XTEVE",
+                        "ZNC",
+                        "APP_OPTIONS",
+                        "NGINX_OPTIONS",
+                        "CARD_VIEW",
+                        "LIST_VIEW",
+                        "CLI",
+                        "COMPAT_E",
+                        "CURRENTLY_INSTALLED_NOTICE",
+                        "CURRENTLY_INSTALLED_TITLE",
+                        "DEL1_TOOLTIP",
+                        "DEL2_TOOLTIP",
+                        "DEL2XENIAL_TOOLTIP",
+                        "EMBY_JELLYFIN_COMPAT_MESSAGE",
+                        "ENTER_MOUNT_POINT",
+                        "FAIL2BAN_TOOLTIP",
+                        "JELLYFIN_EMBY_COMPAT_MESSAGE",
+                        "MEDUSA_INSTALLED",
+                        "OVPN_TOOLTIP",
+                        "PRIMARY_MOUNTM",
+                        "QBIT_TOOLTIP",
+                        "QUOTAS_FSTAB",
+                        "QUOTAS_HELP",
+                        "QUOTAS_TOOLTIP",
+                        "RCLONE_ADMIN_TOOLTIP",
+                        "RCLONE_USER_TOOLTIP",
+                        "REMOVE_MEDUSA_FIRST",
+                        "REMOVE_SICKCHILL_FIRST",
+                        "REMOVE_SICKGEAR_FIRST",
+                        "SICKCHILL_INSTALLED",
+                        "SICKGEAR_INSTALLED",
+                        "UNIFI_SSL_TOOLTIP",
+                        "ZNC_TOOLTIP",
+                        "ACTIVE_STATUS",
+                        "APP_KEY",
+                        "APP_PORT",
+                        "APP_STATUS",
+                        "INACTIVE_STATUS",
+                        "ACTIVE_MOUNTED",
+                        "INACTIVE_NOTMOUNTED",
+                        "RCLONE_LOG_VIEWER",
+                        "RCLONE_OPTIONS",
+                        "RCLONE_COMMAND_CENTER",
+                        "RCLONE_STATUS",
+                        "RCLONE_UPLOAD_MESSAGE",
+                        "RCLONE_UPLOAD_VIEWER",
+                        "RCMOUNT_STATUS",
+                        "RCMOUNT_WHERE",
+                        "CLOUD_MANAGEMENT",
+                        "DELUGE_TORRENTS",
+                        "DISK_%_1",
+                        "DISK_%_2",
+                        "DISK_SPACE",
+                        "FREE",
+                        "NZBGET_NZB",
+                        "QBITTORRENT_TORRENTS",
+                        "RT_TORRENTS",
+                        "NO_CLIENTS",
+                        "SIZE",
+                        "CURRENT_USERS_ONLINE",
+                        "THERE_ARE",
+                        "SABNZBD_NZB",
+                        "TRANSMISSION_TORRENTS",
+                        "USED",
+                        "YOUR_DISK_STATUS",
+                        "BANDWIDTH_DAILY",
+                        "BANDWIDTH_DATA",
+                        "BANDWIDTH_HOURLY",
+                        "BANDWIDTH_LIVE",
+                        "BANDWIDTH_MONTHLY",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "NETWORK",
+                        "DOWNLOAD",
+                        "UPLOAD",
+                        "DAYS_L",
+                        "HOURS_L",
+                        "MINUTES_L",
+                        "SECONDS_L",
+                        "SERVER_LOAD",
+                        "SL_TXT",
+                        "UPTIME",
+                        "CACHED_MEMORY",
+                        "CLEAR_CACHE",
+                        "CM_BUFFERS",
+                        "CM_USAGE",
+                        "PHYSICAL_MEMORY",
+                        "PM_IDLE",
+                        "PM_USED",
+                        "REAL_MEMORY",
+                        "RM_FREE",
+                        "RM_USAGE",
+                        "SWAP_IDLE",
+                        "SWAP_TOTAL",
+                        "SWAP_USAGE",
+                        "SWAP_USED",
+                        "SWAP_ZONE",
+                        "SYSTEM_RAM_STATUS",
+                        "TOTAL_RAM",
+                        "TOTAL",
+                        "ACC_REQ_ACT",
+                        "GUESTS_ONLINE",
+                        "LAST_ACTIVE_ON",
+                        "LOGGED_ON",
+                        "MEMBERS",
+                        "RECORD_ONLINE",
+                        "THERE_ARE_AW",
+                        "THERE_ARE_CURRENTLY",
+                        "USERS_AND",
+                        "USERS_LAST_VISIT",
+                        "CLEAR",
+                        "CALIBRE_INSTALL_TITLE",
+                        "CALIBRE_REINSTALL_TITLE",
+                        "FILEBOT_INSTALL_TITLE",
+                        "FILEBOT_REINSTALL_TITLE",
+                        "PROCESS_DELUGE",
+                        "PROCESS_DELUGE_TOOLTIP",
+                        "PROCESS_NZBGET",
+                        "PROCESS_NZBGET_TOOLTIP",
+                        "PROCESS_RTORRENT",
+                        "PROCESS_SABNZBD",
+                        "CUSTOM_MEDIA_PATH",
+                        "FILEBOT_DEFAULT_PATH",
+                        "FILEBOT_LICENSE",
+                        "JDOWNLOADER_INSTALL_TITLE",
+                        "JDOWNLOADER_REINSTALL_TITLE",
+                        "JDOWNLOADER_EMAIL",
+                        "JDOWNLOADER_PASSWORD",
+                        "KAVITA_INSTALL_TITLE",
+                        "KAVITA_REINSTALL_TITLE",
+                        "MYLAR3_INSTALL_TITLE",
+                        "MYLAR3_REINSTALL_TITLE",
+                        "PLEX_CLAIM_MESSAGE",
+                        "PLEX_CLAIM_TITLE",
+                        "PLEX_CLAIM_TOKEN",
+                        "PLEX_DATA_PATH",
+                        "PLEX_DOMAIN",
+                        "PLEX_DOMAIN_TOOLTIP",
+                        "RUTORRENT_PLUGIN_CONTROL_TITLE",
+                        "AUTHOR",
+                        "HELP_URL",
+                        "WIREGUARD_INSTALL_TITLE",
+                        "WIREGUARD_REINSTALL_TITLE",
+                        "WIREGUARD_CLIENT_OR_SERVER",
+                        "WIREGUARD_CLIENT_OR_SERVER_TOOLTIP",
+                        "CLIENT",
+                        "SERVER",
+                        "WIREGUARD_CONFIG_TIPS",
+                        "WIREGUARD_INSTALL_CONFIG",
+                        "WIREGUARD_INSTALL_PORT_LABEL",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_LABEL",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_LABEL",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_LABEL",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_LABEL",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTUP_RULE_LABEL",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_LABEL",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH",
+                        "PROCESSING_COMPLETE_INSTALLER",
+                        "TAP_TO_UNDO_INSTALLER"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 249,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 0,
+            "warnings": 9,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 0,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 9,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        },
+        "dk": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB",
+                        "DISK_TAB",
+                        "VERSION_ROLLBACK_V",
+                        "VERSION",
+                        "RCLONE_UPLOAD",
+                        "START"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 6,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "STREAMING_DASHBOARD",
+                        "DAEMON_AND_STREAMING_SERVICES",
+                        "STREAMING_APP_VERSION",
+                        "SHOWS",
+                        "EPISODE",
+                        "LIVETV"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 6,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "SOFTWARE_HEADER",
+                        "INFO",
+                        "GLOBAL_BADGE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "COPYRIGHT",
+                        "EMAIL"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "APP_DASHBOARD",
+                        "SYS_DASHBOARD",
+                        "SYSTEM",
+                        "DOWNLOADS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 4,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "QB_CONTROL_API",
+                        "EXAMPLE_OUTPUT",
+                        "CURRENT_IP",
+                        "PEER_PING",
+                        "REGION",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "QSUPPORT",
+                        "WEB_SERVER",
+                        "SOFTWARE",
+                        "DASH_UPDATE_TITLE",
+                        "QB_UPDATE",
+                        "QBUPDATE",
+                        "CHANGELOGS",
+                        "SYS_UPLOAD",
+                        "SYS_DOWNLOAD",
+                        "SYS_DASH_CPU",
+                        "BANDWIDTH_TX"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 19,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CU_EMAIL",
+                        "APPLICATION",
+                        "STATUS",
+                        "TYPE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 4,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "APP_PORT",
+                        "APP_STATUS",
+                        "RCLONE_LOG_VIEWER",
+                        "BANDWIDTH_LIVE",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "DOWNLOAD",
+                        "UPLOAD",
+                        "MINUTES_L",
+                        "PM_IDLE",
+                        "SWAP_IDLE",
+                        "SWAP_TOTAL",
+                        "SERVER",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 26,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 0,
+            "warnings": 9,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 0,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 9,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        },
+        "es": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "SERIES",
+                        "ERROR_PREFIX",
+                        "LOCATION_ERROR"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "SOFTWARE_HEADER",
+                        "GLOBAL_BADGE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "NO"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API",
+                        "ERROR"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "PEER_PING",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "SOFTWARE",
+                        "CHANGELOGS",
+                        "SYS_DASH_CPU"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 7,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "APPLICATION"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "EXTRAS",
+                        "RCLONE_LOG_VIEWER",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "MINUTES_L",
+                        "SWAP_TOTAL",
+                        "TOTAL",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 20,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 0,
+            "warnings": 8,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 0,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 8,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        },
+        "fr": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB",
+                        "VERSION",
+                        "DATE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "ACTION",
+                        "NOTIFICATION",
+                        "NOTIFICATION_TITLE",
+                        "NOTIFICATION_MESSAGE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 4,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "OPTIONS_HEADER",
+                        "INFO",
+                        "GLOBAL_BADGE",
+                        "BUGS"
+                    ],
+                    "placeholderMismatches": [
+                        {
+                            "key": "MANAGE_DATABASE_BACKUP_INFO_CONTENT",
+                            "en": "The QuickBox backup process runs automatically every 24 hours at 3:30 AM (server time) as part of the maintenance schedule. This task is listed in the <code>\/etc\/cron.d\/quickbox<\/code> schedule as:<br><br><code>30 3 * * * root \/usr\/local\/bin\/qb manage db -o maintenance --cron<\/code><br><br>However, you can manually trigger a backup (without running the maintenance routine) using the command above.<br><br><strong>About the Backup Process<\/strong><br><br>Each backup creates a snapshot of the QuickBox database, providing a restore point to safeguard data integrity in case of data loss or corruption. Backup files are saved in a specified directory, with the system retaining the 5 most recent backups to ensure you always have multiple restore points available for recovery.<br><br><strong>Backup File Locations<\/strong><br><br>Backup files are stored in the following directories:<br><br><strong>MySQL<\/strong>: <code>\/opt\/quickbox\/backup\/system\/[DATE_TIME]\/db\/qbpro.sql<\/code><br><strong>SQLite<\/strong>: <code>\/opt\/quickbox\/backup\/system\/[DATE_TIME]\/db\/qbpro.db<\/code>",
+                            "tr": "Le processus de sauvegarde QuickBox s'exécute automatiquement toutes les 24 heures à 3h30 (heure du serveur) comme partie du calendrier de maintenance. Cette tâche est listée dans le <code>\/etc\/cron.d\/quickbox<\/code> comme :<br><br><code>30 3 * * * root \/usr\/local\/bin\/qb manage db -o maintenance --cron<\/code><br><br>Cependant, vous pouvez déclencher une sauvegarde manuelle (sans exécuter la routine de maintenance) en utilisant la commande ci-dessus.<br><br><strong>À propos du Processus de Sauvegarde<\/strong><br><br>Chaque sauvegarde crée un instantané de la base de données QuickBox, fournissant ainsi un point de restauration pour assurer l'intégrité des données en cas de perte ou de corruption. Les fichiers de sauvegarde sont sauvegardés dans un répertoire spécifié, avec le système conservant les 5 dernières sauvegardes pour vous assurer toujours plusieurs points de restauration disponibles pour la récupération.<br><br><strong>Emplacements des Fichiers de Sauvegarde<\/strong><br><br>Les fichiers de sauvegarde sont stockés dans les répertoires suivants :<br><br><strong>MySQL<\/strong> : <code>\/opt\/quickbox\/backup\/system\/[DATE_TIME]\/db\/qbpro.sql<\/code><br><strong>SQLite<\/strong> : <code>\/opt\/quickbox\/backup\/system\/[DATE_TIME]\/db\/qbpro.db<\/code>"
+                        },
+                        {
+                            "key": "MANAGE_DATABASE_MAINTENANCE_INFO_CONTENT",
+                            "en": "The QuickBox maintenance process is designed to keep the database running smoothly and efficiently. This process includes:<br><br><ol><li>Cleaning up unneeded data.<\/li><li>Optimizing database tables.<\/li><li>Running other maintenance tasks to boost efficiency and prevent data issues, such as checking and repairing tables.<\/li><li>Triggering a Message of the Day (MotD) notification to alert the system administrator via CLI if unrecoverable errors occur.<\/li><\/ol><p><strong>When Maintenance Runs<\/strong><br><br>The maintenance process runs automatically every 24 hours at 3:30 AM server time. This task is listed in the <code>\/etc\/cron.d\/quickbox<\/code> schedule as:<br><br><code>30 3 * * * root \/usr\/local\/bin\/qb manage db -o maintenance --cron<\/code><br><br>However, you can manually trigger maintenance using the command above.<br><br><strong>Why Maintenance is Important<\/strong><br><br>Regular maintenance ensures that your QuickBox database stays healthy, keeps system performance high, and protects your data.<\/p>",
+                            "tr": "Le processus de maintenance de la base de données QuickBox est conçu pour maintenir la base de données en bon état et en bon fonctionnement. Ce processus comprend :<br><br><ol><li>Nettoyage des données inutiles.<\/li><li>Optimisation des tables de base de données.<\/li><li>Exécution d'autres tâches de maintenance pour booster l'efficacité et prévenir les problèmes de données, comme la vérification et la réparation des tables.<\/li><li>Déclenchement d'une notification du Message du Jour (MotD) pour avertir l'administrateur du système via CLI si des erreurs irrécupérables se produisent.<\/li><\/ol><p><strong>Quand la Maintenance S'exécute<\/strong><br><br>Le processus de maintenance s'exécute automatiquement toutes les 24 heures à 3h30 (heure du serveur). Cette tâche est listée dans le <code>\/etc\/cron.d\/quickbox<\/code> comme :<br><br><code>30 3 * * * root \/usr\/local\/bin\/qb manage db -o maintenance --cron<\/code><br><br>Cependant, vous pouvez déclencher la maintenance manuellement en utilisant la commande ci-dessus.<br><br><strong>Pourquoi la Maintenance est-elle Importante<\/strong><br><br>La maintenance régulière garantit que votre base de données QuickBox reste en bon état, maintient les performances du système élevées et protège vos données.<\/p>"
+                        },
+                        {
+                            "key": "MANAGE_DATABASE_RESTORE_INFO_CONTENT",
+                            "en": "This command initiates the database restore process, allowing you to select a specific backup file to restore. The restore process is designed to recover data in case of data loss or corruption, providing a reliable and efficient way to restore your QuickBox database to a previous state.<br><br><strong>How the Restore Process Works<\/strong><br><br>When you run the restore command, you will be presented with a selection menu listing all available database backup files. You can then choose the backup file you want to restore, and the system will automatically restore the selected backup file, returning your QuickBox database to the state it was in when the backup was created.",
+                            "tr": "Cette commande initie le processus de restauration de la base de données, vous permettant de sélectionner un fichier de sauvegarde spécifique à restaurer. Le processus de restauration est conçu pour récupérer les données en cas de perte ou de corruption, fournissant ainsi une méthode fiable et efficace pour restaurer votre base de données QuickBox à un état précédent."
+                        }
+                    ],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 4,
+                        "placeholderMismatches": 3,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "EMAIL",
+                        "NOTIFICATIONS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "DAYUM",
+                        "HEY",
+                        "HOW_AWESOME",
+                        "LOOK_GOOD",
+                        "QUICKBOX_DEDICATION",
+                        "SO_GLAD",
+                        "WITHOUT_YOU",
+                        "AWESOME"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 8,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API",
+                        "MINUTES",
+                        "DESCRIPTION"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "PEER_PING",
+                        "SERVICE",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "LOGS",
+                        "CHANGELOGS",
+                        "SYS_UPLOAD",
+                        "SYS_DOWNLOAD",
+                        "SYS_DASH_CPU",
+                        "BANDWIDTH_RX",
+                        "BANDWIDTH_TX"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 12,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CU_EMAIL",
+                        "ACTIONS",
+                        "INSTRUCTIONS",
+                        "TYPE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 4,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CONFIGS",
+                        "EXTRAS",
+                        "APP_PORT",
+                        "RCLONE_LOG_VIEWER",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "MINUTES_L",
+                        "SECONDS_L",
+                        "SWAP_TOTAL",
+                        "TOTAL",
+                        "HELP_URL",
+                        "CLIENT",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH"
+                    ],
+                    "placeholderMismatches": [
+                        {
+                            "key": "EMBY",
+                            "en": "Emby Server is a client-server software package that lets consumers host their legal personal copies of multimedia — music, video and picture files. ... The Emby client software is an app you need to install on mobile devices and certain settop boxes for televisions, like Android TV.",
+                            "tr": "Importer toutes vos vidéos, vos musiques et vos photos dans un seul endroit n'a jamais été aussi simple. Votre Serveur Emby personnel convertit automatiquement et diffuse vos médias à la volée pour jouer sur n'importe quel appareil (Android TV, Apple TV, smartphones, Roku, Consoles de jeu et <a href=\"https:\/\/nullrefer.ir\/?https:\/\/emby.media\/download.html\" rel=\"noopener nofollow\" target=\"_blank\">plein d'autres<\/a>)."
+                        },
+                        {
+                            "key": "RADARR",
+                            "en": "Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.<br>The project was inspired by other Usenet\/BitTorrent movie downloaders such as CouchPotato.",
+                            "tr": "Radarr est un fork indépendant de Sonarr retravaillé pour le téléchargement automatique de films via Usenet et BitTorrent. Il est inspiré d'outils tels que CouchPotato."
+                        },
+                        {
+                            "key": "RCLONE_UPLOAD_MESSAGE",
+                            "en": "RClone is currently working in the background to upload your data to gdrive. During this time you will see a lock set in place to verify your process has commenced. This lock will remove itself once the process has completed. Feel free to close this popup at any time.<br\/><br\/><div class=\"alert alert-notice\" style=\"color:#fff\"><strong>NOTE: <\/strong> The upload automatically runs via a cronjob every night at 03:12 AM server time.<\/div>",
+                            "tr": "RClone travaille actuellement en arrière-plan pour télécharger vos données sur gdrive. Pendant ce temps, vous verrez un verrou mis en place pour vérifier que votre processus a commencé. Ce verrou se supprimera une fois le processus terminé. N'hésitez pas à fermer cette fenêtre contextuelle à tout moment.<br\/><br\/><div class=\"alert alert-notice\" style=\"color:#fff\"><strong>REMARQUE : <\/strong> Le téléchargement s'exécute automatiquement via un cronjob tous les soirs à 03h12 heure du serveur.<\/div>"
+                        }
+                    ],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 25,
+                        "placeholderMismatches": 3,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 2,
+            "warnings": 9,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 2,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 9,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        },
+        "hu": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "EMAIL"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "DAYUM",
+                        "HEY",
+                        "HOW_AWESOME",
+                        "LOOK_GOOD",
+                        "QUICKBOX_DEDICATION",
+                        "SO_GLAD",
+                        "WITHOUT_YOU",
+                        "AWESOME"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 8,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "DOMAIN",
+                        "PEER_PING",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "SYS_DASH_CPU"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 6,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CU_EMAIL"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "APP_PORT",
+                        "RCLONE_LOG_VIEWER",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH"
+                    ],
+                    "placeholderMismatches": [
+                        {
+                            "key": "RADARR",
+                            "en": "Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.<br>The project was inspired by other Usenet\/BitTorrent movie downloaders such as CouchPotato.",
+                            "tr": "A Radarr egy független fork a Sonarr-ból, amelyet automatikus film letöltéshez dolgoztak át Usenet és BitTorrent keresztül.<br\/>A projektet más Usenet\/BitTorrent film letöltők inspirálták, mint a CouchPotato."
+                        }
+                    ],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 17,
+                        "placeholderMismatches": 1,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 1,
+            "warnings": 7,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 1,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 7,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        },
+        "pt": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB",
+                        "LOGIN",
+                        "LOGOFF"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "SOFTWARE_HEADER",
+                        "INFO",
+                        "GLOBAL_BADGE"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 3,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "EMAIL",
+                        "HOME"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "PLUGINS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "PEER_PING",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "LOGS",
+                        "SOFTWARE",
+                        "CHANGELOGS",
+                        "SYS_UPLOAD",
+                        "SYS_DOWNLOAD",
+                        "SYS_DASH_CPU",
+                        "BANDWIDTH_RX",
+                        "BANDWIDTH_TX"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 12,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "APPLICATION",
+                        "STATUS"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 2,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CONFIGS",
+                        "EXTRAS",
+                        "APP_STATUS",
+                        "RCLONE_LOG_VIEWER",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "DOWNLOAD",
+                        "UPLOAD",
+                        "MINUTES_L",
+                        "SWAP_TOTAL",
+                        "TOTAL",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 24,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 0,
+            "warnings": 8,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 0,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 8,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        },
+        "zh-cn": {
+            "files": {
+                "buttons.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "CPU_TAB"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "dashboard.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "errors.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "help_manual.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "misc.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "navigation.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "pages.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "AWESOME"
+                    ],
+                    "placeholderMismatches": [
+                        {
+                            "key": "ACCOUNT_BANNED",
+                            "en": "Your account has been banned.<br\/>Please contact a System Administrator.",
+                            "tr": "您的帐户已被禁止。<br>请联系系统管理员。"
+                        },
+                        {
+                            "key": "ACCOUNT_DISABLED",
+                            "en": "Your account is not activated or is disabled.<br\/>If you think this is a problem please contact a System Administrator.",
+                            "tr": "您的帐户未激活或被禁用。<br>如果您认为这是一个问题，请联系系统管理员。"
+                        },
+                        {
+                            "key": "ACCOUNT_INACTIVE_EMAIL",
+                            "en": "Your account has not been activated.<br\/>Please check your email for the activation link.",
+                            "tr": "您的帐户尚未激活。<br>请查看您的电子邮件以获取激活链接。"
+                        },
+                        {
+                            "key": "IP_BANNED",
+                            "en": "Your IP address has been banned.<br\/>Please contact a System Administrator.",
+                            "tr": "您的 IP 地址已被禁止。<br>请联系系统管理员。"
+                        }
+                    ],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 4,
+                        "bom": 0
+                    }
+                },
+                "popup.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "settings.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "API"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 1,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "system.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "PEER_PING",
+                        "NGINX",
+                        "PHP",
+                        "PHP7_2",
+                        "SYS_DASH_CPU"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 5,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "user_management.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 0,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                },
+                "widgets.php": {
+                    "missing": [],
+                    "extra": [],
+                    "duplicates": [],
+                    "untranslated": [
+                        "RCLONE_LOG_VIEWER",
+                        "datefmt_days_img",
+                        "datefmt_days",
+                        "datefmt_hours_img",
+                        "datefmt_hours",
+                        "datefmt_months_img",
+                        "datefmt_months",
+                        "datefmt_top",
+                        "WIREGUARD_INSTALL_PORT_PH",
+                        "WIREGUARD_INSTALL_CLIENT_COUNT_PH",
+                        "WIREGUARD_INSTALL_CIDR_LABEL",
+                        "WIREGUARD_INSTALL_CIDR_PH",
+                        "WIREGUARD_INSTALL_ALLOWED_ADDRESS_PH",
+                        "WIREGUARD_INSTALL_ENDPOINT_PH",
+                        "WIREGUARD_INSTALL_DNS_PH",
+                        "WIREGUARD_INSTALL_POSTDOWN_RULE_PH"
+                    ],
+                    "placeholderMismatches": [],
+                    "bom": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "issueCounts": {
+                        "missing": 0,
+                        "extra": 0,
+                        "duplicates": 0,
+                        "untranslated": 16,
+                        "placeholderMismatches": 0,
+                        "bom": 0
+                    }
+                }
+            },
+            "bridge": {
+                "hasAllRequires": true,
+                "missingRequires": [],
+                "exportsL": 1
+            },
+            "errors": 1,
+            "warnings": 5,
+            "categoryCounts": {
+                "errors": {
+                    "missingFiles": 0,
+                    "parseErrors": 0,
+                    "missingKeys": 0,
+                    "duplicates": 0,
+                    "placeholderMismatches": 1,
+                    "bridgeMissingRequires": 0
+                },
+                "warnings": {
+                    "extraKeys": 0,
+                    "untranslated": 5,
+                    "bom": 0,
+                    "bridgeNoLExport": 0
+                }
+            }
+        }
+    },
+    "totals": {
+        "errors": 4,
+        "warnings": 55,
+        "byCategory": {
+            "errors": {
+                "missingFiles": 0,
+                "parseErrors": 0,
+                "missingKeys": 0,
+                "duplicates": 0,
+                "placeholderMismatches": 4,
+                "bridgeMissingRequires": 0
+            },
+            "warnings": {
+                "extraKeys": 0,
+                "untranslated": 55,
+                "bom": 0,
+                "bridgeNoLExport": 0
+            }
+        }
+    }
+}
