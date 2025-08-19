@@ -1,0 +1,202 @@
+#!/usr/bin/env bash
+################################################################################
+# <START METADATA>
+# Project Name: QuickBox Pro
+# File Name: cli_lang_modular
+# File Description: German language file - Modular Bridge
+# File Version: 1.0.14
+#
+# Save Tasks:
+# Automated_Versioning: true
+#
+# Build Tasks:
+# Automated_Comment_Strip: true
+#
+# Deploy Tasks:
+# Automated_Encryption: false
+#
+# Author: Jason Matthews (JMSolo)
+#
+# License: BSD-3 (Available in LICENSE.md)
+# Copyright (C) 2019-2025, QuickBox.IO
+# All rights reserved.
+# <END METADATA>
+# shellcheck disable=1091,2001,2034,2154,2312,2317
+################################################################################
+
+################################################################################
+# QuickBox Pro - Modular Language System
+# 
+# This file serves as a bridge between the system and the modular translation
+# files. It sources all the individual language modules to provide a unified
+# interface for the CLI system.
+#
+# Module Structure:
+# - core.sh      - Core system operations (locks, clean, basic functions)
+# - apt.sh       - APT package management
+# - software.sh  - Software installation/removal/update operations
+# - ssl.sh       - SSL/LetsEncrypt certificate management
+# - dns.sh       - DNS credentials management
+# - users.sh     - User management operations
+# - vpn.sh       - VPN/WireGuard operations
+# - database.sh  - Database management (MySQL/SQLite)
+# - updater.sh   - System updater operations
+# - manager.sh   - Software manager (backup/restore/rollback)
+# - help.sh      - Help and error handling
+################################################################################
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Source all modular language files
+# Core system operations
+if [[ -f "${SCRIPT_DIR}/cli/core.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/core.sh"
+fi
+
+# APT package management
+if [[ -f "${SCRIPT_DIR}/cli/apt.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/apt.sh"
+fi
+
+# Software management
+if [[ -f "${SCRIPT_DIR}/cli/software.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software.sh"
+fi
+
+# SSL/LetsEncrypt operations
+if [[ -f "${SCRIPT_DIR}/cli/ssl.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/ssl.sh"
+fi
+
+# DNS credentials management
+if [[ -f "${SCRIPT_DIR}/cli/dns.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/dns.sh"
+fi
+
+# User management
+if [[ -f "${SCRIPT_DIR}/cli/users.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/users.sh"
+fi
+
+# VPN/WireGuard operations
+if [[ -f "${SCRIPT_DIR}/cli/vpn.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/vpn.sh"
+fi
+
+# Database management
+if [[ -f "${SCRIPT_DIR}/cli/database.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/database.sh"
+fi
+
+# System updater
+if [[ -f "${SCRIPT_DIR}/cli/updater.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/updater.sh"
+fi
+
+# Software manager
+if [[ -f "${SCRIPT_DIR}/cli/manager.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/manager.sh"
+fi
+
+# Help and error handling
+if [[ -f "${SCRIPT_DIR}/cli/help.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/help.sh"
+fi
+
+# Software access information
+if [[ -f "${SCRIPT_DIR}/cli/software_access.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software_access.sh"
+fi
+
+# Software configuration
+if [[ -f "${SCRIPT_DIR}/cli/software_config.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software_config.sh"
+fi
+
+# WireGuard specific operations
+if [[ -f "${SCRIPT_DIR}/cli/wireguard.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/wireguard.sh"
+fi
+
+# WebSocket Daemon operations
+if [[ -f "${SCRIPT_DIR}/cli/wsd.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/wsd.sh"
+fi
+
+# Miscellaneous utilities
+if [[ -f "${SCRIPT_DIR}/cli/misc.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/misc.sh"
+fi
+
+################################################################################
+# Legacy Compatibility Functions
+# 
+# These functions maintain backward compatibility with the original cli_lang
+# file structure. They redirect to the appropriate modular functions.
+################################################################################
+
+# Legacy function mapping for backward compatibility
+# This ensures that existing code continues to work while we transition
+# to the new modular system
+
+# Example legacy function mapping:
+# quickbox::lang::install::header() -> quickbox::lang::install::header() (in software.sh)
+# quickbox::lang::lecert::dns::provider::valid() -> quickbox::lang::lecert::dns::provider::valid() (in ssl.sh)
+
+################################################################################
+# Module Loading Status
+################################################################################
+quickbox::lang::modules::loaded() {
+  declare text="Modulares Sprachsystem erfolgreich geladen"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::modules::error() {
+  declare text="Warnung: Einige Sprachmodule konnten nicht geladen werden"
+  quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Module Validation
+################################################################################
+quickbox::lang::modules::validate() {
+  local missing_modules=()
+  local required_modules=(
+    "core.sh"
+    "apt.sh"
+    "software.sh"
+    "ssl.sh"
+    "dns.sh"
+    "users.sh"
+    "vpn.sh"
+    "database.sh"
+    "updater.sh"
+    "manager.sh"
+    "help.sh"
+    "software_access.sh"
+    "software_config.sh"
+    "wireguard.sh"
+    "misc.sh"
+    "wsd.sh"
+  )
+  
+  for module in "${required_modules[@]}"; do
+    if [[ ! -f "${SCRIPT_DIR}/cli/${module}" ]]; then
+      missing_modules+=("${module}")
+    fi
+  done
+  
+  if [[ ${#missing_modules[@]} -gt 0 ]]; then
+    declare text="Fehlende Sprachmodule: ${missing_modules[*]}"
+    quickbox::dashboard::log "${text}"
+    return 1
+  fi
+  
+  return 0
+}
+
+# Validate modules on load
+if ! quickbox::lang::modules::validate; then
+  quickbox::lang::modules::error
+fi 

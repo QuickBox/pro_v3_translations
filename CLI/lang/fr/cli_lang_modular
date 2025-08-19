@@ -1,0 +1,202 @@
+#!/usr/bin/env bash
+################################################################################
+# <START METADATA>
+# Nom du Projet: QuickBox Pro
+# Nom du Fichier: cli_lang_modular
+# Description du Fichier: Fichier de langue française - Pont Modulaire
+# Version du Fichier: 1.0.12
+#
+# Tâches de Sauvegarde:
+# Versioning_Automatisé: true
+#
+# Tâches de Construction:
+# Suppression_Commentaires_Automatisée: true
+#
+# Tâches de Déploiement:
+# Chiffrement_Automatisé: false
+#
+# Auteur: Jason Matthews (JMSolo)
+#
+# Licence: BSD-3 (Disponible dans LICENSE.md)
+# Copyright (C) 2019-2025, QuickBox.IO
+# Tous droits réservés.
+# <END METADATA>
+# shellcheck disable=1091,2001,2034,2154,2312,2317
+################################################################################
+
+################################################################################
+# QuickBox Pro - Système de Langue Modulaire
+# 
+# Ce fichier sert de pont entre le système et les fichiers de traduction
+# modulaires. Il charge tous les modules de langue individuels pour fournir
+# une interface unifiée pour le système CLI.
+#
+# Structure des Modules:
+# - core.sh      - Opérations système de base (verrous, nettoyage, fonctions de base)
+# - apt.sh       - Gestion des paquets APT
+# - software.sh  - Opérations d'installation/suppression/mise à jour de logiciels
+# - ssl.sh       - Gestion des certificats SSL/LetsEncrypt
+# - dns.sh       - Gestion des identifiants DNS
+# - users.sh     - Opérations de gestion des utilisateurs
+# - vpn.sh       - Opérations VPN/WireGuard
+# - database.sh  - Gestion de base de données (MySQL/SQLite)
+# - updater.sh   - Opérations de mise à jour système
+# - manager.sh   - Gestionnaire de logiciels (sauvegarde/restauration/retour arrière)
+# - help.sh      - Aide et gestion des erreurs
+################################################################################
+
+# Obtenir le répertoire où se trouve ce script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Charger tous les fichiers de langue modulaires
+# Opérations système de base
+if [[ -f "${SCRIPT_DIR}/cli/core.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/core.sh"
+fi
+
+# Gestion des paquets APT
+if [[ -f "${SCRIPT_DIR}/cli/apt.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/apt.sh"
+fi
+
+# Gestion des logiciels
+if [[ -f "${SCRIPT_DIR}/cli/software.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software.sh"
+fi
+
+# Opérations SSL/LetsEncrypt
+if [[ -f "${SCRIPT_DIR}/cli/ssl.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/ssl.sh"
+fi
+
+# Gestion des identifiants DNS
+if [[ -f "${SCRIPT_DIR}/cli/dns.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/dns.sh"
+fi
+
+# Gestion des utilisateurs
+if [[ -f "${SCRIPT_DIR}/cli/users.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/users.sh"
+fi
+
+# Opérations VPN/WireGuard
+if [[ -f "${SCRIPT_DIR}/cli/vpn.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/vpn.sh"
+fi
+
+# Gestion de base de données
+if [[ -f "${SCRIPT_DIR}/cli/database.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/database.sh"
+fi
+
+# Mise à jour système
+if [[ -f "${SCRIPT_DIR}/cli/updater.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/updater.sh"
+fi
+
+# Gestionnaire de logiciels
+if [[ -f "${SCRIPT_DIR}/cli/manager.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/manager.sh"
+fi
+
+# Aide et gestion des erreurs
+if [[ -f "${SCRIPT_DIR}/cli/help.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/help.sh"
+fi
+
+# Informations d'accès aux logiciels
+if [[ -f "${SCRIPT_DIR}/cli/software_access.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software_access.sh"
+fi
+
+# Configuration des logiciels
+if [[ -f "${SCRIPT_DIR}/cli/software_config.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software_config.sh"
+fi
+
+# Opérations spécifiques à WireGuard
+if [[ -f "${SCRIPT_DIR}/cli/wireguard.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/wireguard.sh"
+fi
+
+# Opérations du démon WebSocket
+if [[ -f "${SCRIPT_DIR}/cli/wsd.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/wsd.sh"
+fi
+
+# Utilitaires divers
+if [[ -f "${SCRIPT_DIR}/cli/misc.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/misc.sh"
+fi
+
+################################################################################
+# Fonctions de Compatibilité Legacy
+# 
+# Ces fonctions maintiennent la compatibilité avec la structure originale
+# du fichier cli_lang. Elles redirigent vers les fonctions modulaires appropriées.
+################################################################################
+
+# Mapping des fonctions legacy pour la compatibilité
+# Cela garantit que le code existant continue de fonctionner pendant que nous transitionnons
+# vers le nouveau système modulaire
+
+# Exemple de mapping de fonction legacy:
+# quickbox::lang::install::header() -> quickbox::lang::install::header() (dans software.sh)
+# quickbox::lang::lecert::dns::provider::valid() -> quickbox::lang::lecert::dns::provider::valid() (dans ssl.sh)
+
+################################################################################
+# Statut de Chargement des Modules
+################################################################################
+quickbox::lang::modules::loaded() {
+  declare text="Système de langue modulaire chargé avec succès"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::modules::error() {
+  declare text="Avertissement: Certains modules de langue n'ont pas pu être chargés"
+  quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# Validation des Modules
+################################################################################
+quickbox::lang::modules::validate() {
+  local missing_modules=()
+  local required_modules=(
+    "core.sh"
+    "apt.sh"
+    "software.sh"
+    "ssl.sh"
+    "dns.sh"
+    "users.sh"
+    "vpn.sh"
+    "database.sh"
+    "updater.sh"
+    "manager.sh"
+    "help.sh"
+    "software_access.sh"
+    "software_config.sh"
+    "wireguard.sh"
+    "wsd.sh"
+    "misc.sh"
+  )
+  
+  for module in "${required_modules[@]}"; do
+    if [[ ! -f "${SCRIPT_DIR}/cli/${module}" ]]; then
+      missing_modules+=("${module}")
+    fi
+  done
+  
+  if [[ ${#missing_modules[@]} -gt 0 ]]; then
+    declare text="Modules de langue manquants: ${missing_modules[*]}"
+    quickbox::dashboard::log "${text}"
+    return 1
+  fi
+  
+  return 0
+}
+
+# Valider les modules au chargement
+if ! quickbox::lang::modules::validate; then
+  quickbox::lang::modules::error
+fi 

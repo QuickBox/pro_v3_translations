@@ -1,0 +1,200 @@
+#!/usr/bin/env bash
+################################################################################
+# <START METADATA>
+# Project Name: QuickBox Pro
+# File Name: cli_lang_modular
+# File Description: 简体中文语言文件 - 模块化桥接
+# File Version: 1.0.14
+#
+# Save Tasks:
+# Automated_Versioning: true
+#
+# Build Tasks:
+# Automated_Comment_Strip: true
+#
+# Deploy Tasks:
+# Automated_Encryption: false
+#
+# Author: Jason Matthews (JMSolo)
+#
+# License: BSD-3 (Available in LICENSE.md)
+# Copyright (C) 2019-2025, QuickBox.IO
+# All rights reserved.
+# <END METADATA>
+# shellcheck disable=1091,2001,2034,2154,2312,2317
+################################################################################
+
+################################################################################
+# QuickBox Pro - 模块化语言系统
+# 
+# 此文件作为系统与模块化翻译文件之间的桥接。
+# 它加载所有单独的语言模块，为CLI系统提供统一的接口。
+#
+# 模块结构：
+# - core.sh      - 核心系统操作（锁、清理、基本函数）
+# - apt.sh       - APT包管理
+# - software.sh  - 软件安装/移除/更新操作
+# - ssl.sh       - SSL/LetsEncrypt证书管理
+# - dns.sh       - DNS凭据管理
+# - users.sh     - 用户管理操作
+# - vpn.sh       - VPN/WireGuard操作
+# - database.sh  - 数据库管理（MySQL/SQLite）
+# - updater.sh   - 系统更新器操作
+# - manager.sh   - 软件管理器（备份/恢复/回滚）
+# - help.sh      - 帮助和错误处理
+################################################################################
+
+# 获取此脚本所在的目录
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# 加载所有模块化语言文件
+# 核心系统操作
+if [[ -f "${SCRIPT_DIR}/cli/core.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/core.sh"
+fi
+
+# APT包管理
+if [[ -f "${SCRIPT_DIR}/cli/apt.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/apt.sh"
+fi
+
+# 软件管理
+if [[ -f "${SCRIPT_DIR}/cli/software.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software.sh"
+fi
+
+# SSL/LetsEncrypt操作
+if [[ -f "${SCRIPT_DIR}/cli/ssl.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/ssl.sh"
+fi
+
+# DNS凭据管理
+if [[ -f "${SCRIPT_DIR}/cli/dns.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/dns.sh"
+fi
+
+# 用户管理
+if [[ -f "${SCRIPT_DIR}/cli/users.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/users.sh"
+fi
+
+# VPN/WireGuard操作
+if [[ -f "${SCRIPT_DIR}/cli/vpn.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/vpn.sh"
+fi
+
+# 数据库管理
+if [[ -f "${SCRIPT_DIR}/cli/database.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/database.sh"
+fi
+
+# 系统更新器
+if [[ -f "${SCRIPT_DIR}/cli/updater.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/updater.sh"
+fi
+
+# 软件管理器
+if [[ -f "${SCRIPT_DIR}/cli/manager.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/manager.sh"
+fi
+
+# 帮助和错误处理
+if [[ -f "${SCRIPT_DIR}/cli/help.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/help.sh"
+fi
+
+# 软件访问信息
+if [[ -f "${SCRIPT_DIR}/cli/software_access.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software_access.sh"
+fi
+
+# 软件配置
+if [[ -f "${SCRIPT_DIR}/cli/software_config.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/software_config.sh"
+fi
+
+# WireGuard特定操作
+if [[ -f "${SCRIPT_DIR}/cli/wireguard.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/wireguard.sh"
+fi
+
+# WebSocket守护进程操作
+if [[ -f "${SCRIPT_DIR}/cli/wsd.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/wsd.sh"
+fi
+
+# 杂项实用工具
+if [[ -f "${SCRIPT_DIR}/cli/misc.sh" ]]; then
+  source "${SCRIPT_DIR}/cli/misc.sh"
+fi
+
+################################################################################
+# 传统兼容性函数
+# 
+# 这些函数保持与原始cli_lang文件结构的向后兼容性。
+# 它们重定向到适当的模块化函数。
+################################################################################
+
+# 传统函数映射以保持向后兼容性
+# 这确保现有代码在过渡到新模块化系统时继续工作
+
+# 传统函数映射示例：
+# quickbox::lang::install::header() -> quickbox::lang::install::header() (在 software.sh 中)
+# quickbox::lang::lecert::dns::provider::valid() -> quickbox::lang::lecert::dns::provider::valid() (在 ssl.sh 中)
+
+################################################################################
+# 模块加载状态
+################################################################################
+quickbox::lang::modules::loaded() {
+  declare text="模块化语言系统加载成功"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::modules::error() {
+  declare text="警告：某些语言模块加载失败"
+  quickbox::dashboard::log "${text}"
+}
+
+################################################################################
+# 模块验证
+################################################################################
+quickbox::lang::modules::validate() {
+  local missing_modules=()
+  local required_modules=(
+    "core.sh"
+    "apt.sh"
+    "software.sh"
+    "ssl.sh"
+    "dns.sh"
+    "users.sh"
+    "vpn.sh"
+    "database.sh"
+    "updater.sh"
+    "manager.sh"
+    "help.sh"
+    "software_access.sh"
+    "software_config.sh"
+    "wireguard.sh"
+    "wsd.sh"
+    "misc.sh"
+  )
+  
+  for module in "${required_modules[@]}"; do
+    if [[ ! -f "${SCRIPT_DIR}/cli/${module}" ]]; then
+      missing_modules+=("${module}")
+    fi
+  done
+  
+  if [[ ${#missing_modules[@]} -gt 0 ]]; then
+    declare text="缺少语言模块：${missing_modules[*]}"
+    quickbox::dashboard::log "${text}"
+    return 1
+  fi
+  
+  return 0
+}
+
+# 加载时验证模块
+if ! quickbox::lang::modules::validate; then
+  quickbox::lang::modules::error
+fi 
