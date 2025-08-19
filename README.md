@@ -12,6 +12,17 @@ This repository contains the language files used to localize **QuickBox Pro** in
 > Join us on our [Official Discord](https://discord.gg/mca7RSv5pa)!
 
 
+## 🚀 CLI Modularization
+
+The CLI language system has been successfully modularized from a single monolithic file into **16 focused, maintainable modules**. This improvement provides:
+
+- **Better Organization**: Functions are grouped by logical purpose (core, software, SSL, database, etc.)
+- **Easier Maintenance**: Developers can work on specific modules without affecting others
+- **Improved Collaboration**: Multiple contributors can work on different modules simultaneously
+- **100% Backward Compatibility**: All existing scripts and commands continue to work unchanged
+
+For detailed information about the CLI modular structure, see [CLI/lang/en/README.md](CLI/lang/en/README.md).
+
 ## 🛠️ Contributing a New Language
 
 Contributing is easy and we're happy to help you through the process. Here's how you can get started:
@@ -36,6 +47,10 @@ For example, if you're translating to Spanish:
 
 - Copy `lang_en.php` and rename it to `lang_es.php`.
 - Now edit `lang_es.php` and translate the values accordingly.
+- For CLI translations, you'll need to translate each module in the `CLI/lang/en/cli/` directory:
+  - Copy the entire `CLI/lang/en/` directory structure
+  - Translate the text values in each `.sh` module file
+  - Keep the function names and structure exactly the same
 - Repeat this process for all other files in the `UI/lang/` and `CLI/lang/` directories.
 
 #### Example editing PHP strings in the UI:
@@ -77,23 +92,39 @@ Becomes:
 
 #### Example editing CLI strings:
 
+The CLI system is modularized, so you'll find functions organized by category. For example:
+
 ```bash
+# In apt.sh module
 quickbox::lang::apt::update::header() {
 	declare text="checking and performing apt updates..."
+	quickbox::dashboard::log "${text}"
+}
+
+# In software.sh module  
+quickbox::lang::install::header() {
+	declare text="installing software..."
 	quickbox::dashboard::log "${text}"
 }
 ```
 
 Becomes:
 ```bash
+# In apt.sh module
 quickbox::lang::apt::update::header() {
 	declare text="comprobando y realizando actualizaciones de apt..."
+	quickbox::dashboard::log "${text}"
+}
+
+# In software.sh module
+quickbox::lang::install::header() {
+	declare text="instalando software..."
 	quickbox::dashboard::log "${text}"
 }
 ```
 
 > [!NOTE] 
-> We only translate the text inside the `declare text=` line for CLI strings. The rest of the code should remain unchanged.
+> We only translate the text inside the `declare text=` line for CLI strings. The rest of the code should remain unchanged. Each module contains related functions, making it easier to locate and translate specific functionality.
 
 ---
 
@@ -142,23 +173,47 @@ pro_v3_translations/
 ├── CLI/ 
 │ └── lang/ 
 │   └── xx/
-│     └── cli_lang
+│     ├── cli_lang              # Legacy bridge file
+│     ├── cli_lang_modular      # Main modular bridge
+│     └── cli/                  # Modular CLI language files
+│       ├── README.md           # Detailed module documentation
+│       ├── core.sh             # Core system operations
+│       ├── apt.sh              # APT package management
+│       ├── software.sh         # Software management
+│       ├── ssl.sh              # SSL/LetsEncrypt operations
+│       ├── dns.sh              # DNS credentials management
+│       ├── users.sh            # User management operations
+│       ├── vpn.sh              # VPN/WireGuard operations
+│       ├── database.sh         # Database management
+│       ├── updater.sh          # System updater operations
+│       ├── manager.sh          # Software manager operations
+│       ├── help.sh             # Help and error handling
+│       ├── software_access.sh  # Software access information
+│       ├── software_config.sh  # Software configuration
+│       ├── wireguard.sh        # WireGuard specific operations
+│       ├── misc.sh             # Miscellaneous utilities
+│       └── wsd.sh              # What's Streaming Dashboard operations
 ├── UI/ 
 │ └── lang/ 
-│   └── lang_xx.php
-│   └── plugins/
-│     ├── bootstrapt-select
-│     │ └── lang_xx.js 
-│     ├── datatables
-│     │ └── lang_xx.json
-│     └── wsd
-│       └── lang_xx.json
+│   └── xx/
+│     ├── lang_xx.php           # Main UI language file
+│     └── plugins/
+│       ├── bootstrapt-select
+│       │ └── lang_xx.js 
+│       ├── datatables
+│       │ └── lang_xx.json
+│       └── wsd
+│         └── lang_xx.json
 └── README.md
 ```
 
 ### Directory Breakdown
 
 - **CLI/lang/**: Contains language files for the Command-Line Interface (CLI) components of QuickBox Pro.
+  - **Modular Structure**: The CLI system has been modularized into 16 focused modules for better maintainability
+  - **Bridge Files**: `cli_lang` (legacy) and `cli_lang_modular` (main) provide backward compatibility
+  - **Core Modules**: Core system operations, package management, software management, SSL, DNS, users, VPN, database, updater, manager, help, and WSD dashboard
+  - **Extended Modules**: Software access, configuration, WireGuard, and miscellaneous utilities
 - **UI/lang/**: Contains language files for the User Interface (UI) components of QuickBox Pro.
 - **UI/lang/plugins/**: Contains language files for various plugins used in the UI.
   - **bootstrapt-select**: Language files for the Bootstrap Select plugin.
