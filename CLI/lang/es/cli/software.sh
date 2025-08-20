@@ -394,6 +394,52 @@ quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   quickbox::dashboard::log "${text}"
 }
 
+# Additional WSDashboard translation keys for env.conf and virtual environment operations
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="current_port está vacío o es 0. No se puede actualizar env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="streaming_application está vacío. No se puede actualizar env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="software_daemon_port está vacío o es 0. No se puede actualizar env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="Algunos valores de plantilla permanecen en env.conf después de la actualización"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf actualizado: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="Respaldo creado: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="Valores de plantilla detectados después de la actualización - revisión manual puede ser necesaria"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
+  declare text="nodeenv falló al instalar en el entorno virtual de Python en ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
+  declare text="La creación del entorno virtual de Node.js falló. node o npm no se encontró en ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # Mensajes de Comandos del Sistema
 ################################################################################

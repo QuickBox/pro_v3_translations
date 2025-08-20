@@ -611,12 +611,7 @@ Notas:
   qb reinstall ${software_help_name} -u username   - Reinstalar WSD con configuración de servicio mejorada
   qb remove ${software_help_name} -u username      - Eliminar WSD y limpiar todos los archivos de servicio
   qb update ${software_help_name} -u username      - Actualizar WSD con configuración de servicio mejorada
-  qb maintenance ${software_help_name} -u username - Realizar mantenimiento del servicio y verificaciones de salud
-
-Gestión de Certificados SSL:
-  qb ssl ${software_help_name} -u username         - Configurar enlaces simbólicos de certificados SSL para el servicio WSD
-  qb ssl-remove ${software_help_name} -u username  - Eliminar enlaces simbólicos de certificados SSL
-  qb ssl-update ${software_help_name} -u username  - Actualizar configuración SSL para nuevos certificados" \
+  qb maintenance ${software_help_name} -u username - Realizar mantenimiento del servicio y verificaciones de salud" \
       "
 Características Mejoradas:
   - Ejecución del servicio sin privilegios root (usuario www-data)
@@ -625,7 +620,6 @@ Características Mejoradas:
   - Verificaciones de salud automáticas y diagnósticos
   - Gestión graciosa de procesos
   - Registro y monitoreo estructurados
-  - Gestión de enlaces simbólicos de certificados SSL
   - Acceso automático a certificados para usuario www-data
 
 Gestión del Servicio:
@@ -633,14 +627,7 @@ Gestión del Servicio:
   systemctl restart qbwsd.service    - Reiniciar servicio
   journalctl -u qbwsd.service -f     - Ver logs en vivo
   qbwsd-health-check.sh --verbose    - Ejecutar verificación de salud detallada
-  qbwsd-health-check.sh --fix        - Corregir automáticamente problemas comunes
-
-Gestión de Certificados SSL:
-  - Creación automática de enlaces simbólicos en /srv/quickbox/ssl/domain/
-  - Configuración de variables de entorno para rutas de certificados
-  - Override de systemd para variables de entorno SSL
-  - Prueba de acceso a certificados para usuario www-data
-  - Prueba de conectividad HTTPS/HTTP"
+  qbwsd-health-check.sh --fix        - Corregir automáticamente problemas comunes"
     ;;
 
   *)

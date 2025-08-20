@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_wsd_es
 # File Description: Archivo de idioma español - WSD (What's Streaming Dashboard) CLI
-# File Version: 1.0.14
+# File Version: 1.0.55
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -28,30 +28,6 @@
 ################################################################################
 # Mensajes de error
 ################################################################################
-quickbox::lang::software::wsdashboard::ssl::no_domain() {
-  declare text="No se encontró dominio. La configuración SSL requiere un dominio válido."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificates_not_found() {
-  declare text="Certificados SSL no encontrados en las rutas esperadas."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::access_denied() {
-  declare text="Acceso denegado a certificados SSL. Verificar permisos."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::service_failed() {
-  declare text="El servicio WSD falló al iniciar después de la configuración SSL."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::no_username() {
-  declare text="Se requiere nombre de usuario para actualización SSL. Usar parámetro -u."
-  quickbox::dashboard::log "${text}"
-}
 quickbox::lang::wsd::error::missing_emby_params() {
   declare text="Faltan parámetros requeridos para Emby: -u"
   quickbox::dashboard::log "${text}"
@@ -303,182 +279,8 @@ quickbox::lang::wsd::warning::no_matching_files_livetv() {
 ################################################################################
 # Mensajes de información
 ################################################################################
-quickbox::lang::software::wsdashboard::ssl::title() {
-  declare text="Configuración SSL de WSD"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::header() {
-  declare text="Configurando enlaces simbólicos de certificados SSL para el servicio WSD..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::setup::start() {
-  declare text="Iniciando configuración de enlaces simbólicos SSL..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificates::found() {
-  declare text="Certificados SSL encontrados exitosamente."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::creating::symlinks() {
-  declare text="Creando enlaces simbólicos a certificados SSL..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::symlinks::created() {
-  declare text="Enlaces simbólicos de certificados SSL creados exitosamente."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::testing::access() {
-  declare text="Probando acceso a certificados para usuario www-data..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificate::accessible() {
-  declare text="Certificado accesible a través de enlace simbólico."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::private_key::accessible() {
-  declare text="Clave privada accesible a través de enlace simbólico."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::added() {
-  declare text="Configuración SSL agregada a env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::exists() {
-  declare text="Configuración SSL ya existe en env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::updated() {
-  declare text="Configuración SSL actualizada en env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::override::created() {
-  declare text="Override de systemd creado para configuración SSL."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::override::updated() {
-  declare text="Override de systemd actualizado para configuración SSL."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::reloaded() {
-  declare text="Daemon de systemd recargado exitosamente."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::restarting::service() {
-  declare text="Reiniciando servicio WSD..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::service::running() {
-  declare text="Servicio WSD ejecutándose exitosamente."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::testing::connectivity() {
-  declare text="Probando conectividad del servicio..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::https::accessible() {
-  declare text="Servicio accesible a través de HTTPS."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::https::warning() {
-  declare text="Servicio no accesible a través de HTTPS (puede necesitar tiempo para iniciar)."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::http::accessible() {
-  declare text="Servicio accesible a través de fallback HTTP."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::http::failed() {
-  declare text="Servicio no accesible a través de HTTP."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::complete() {
-  declare text="¡Configuración de enlaces simbólicos SSL completada exitosamente!"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::title() {
-  declare text="Eliminación SSL de WSD"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::header() {
-  declare text="Eliminando enlaces simbólicos de certificados SSL para el servicio WSD..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::start() {
-  declare text="Iniciando eliminación de enlaces simbólicos SSL..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::symlinks::removed() {
-  declare text="Directorio de enlaces simbólicos SSL eliminado exitosamente."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::symlinks::not_found() {
-  declare text="Directorio de enlaces simbólicos SSL no encontrado."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::override::removed() {
-  declare text="Override de systemd eliminado exitosamente."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::complete() {
-  declare text="¡Eliminación de enlaces simbólicos SSL completada exitosamente!"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::title() {
-  declare text="Actualización SSL de WSD"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::header() {
-  declare text="Actualizando enlaces simbólicos de certificados SSL para el servicio WSD..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::start() {
-  declare text="Iniciando actualización de enlaces simbólicos SSL..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::symlinks() {
-  declare text="Actualizando enlaces simbólicos a certificados SSL..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::complete() {
-  declare text="¡Actualización de enlaces simbólicos SSL completada exitosamente!"
-  quickbox::dashboard::log "${text}"
-}
 quickbox::lang::wsd::info::using_default_path() {
-  declare text="Usando ruta por defecto para TranscodingTempPath: "
+  declare text="Usando ruta predeterminada para TranscodingTempPath: "
   quickbox::dashboard::log "${text}"
 }
 
