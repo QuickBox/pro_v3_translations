@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_software_pt_br
 # File Description: Arquivo de idioma português (Brasil) - Gerenciamento de Software
-# File Version: 1.0.12
+# File Version: 1.0.21
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="aviso: diretório ${1} não encontrado no arquivo do plugin (continuando para instalações mais antigas)."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="Falha ao mover diretório backend! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="Falha ao mover diretório backups! Abortando atualização."
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="Falha ao mover diretório logs! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="Falha ao mover diretório scripts! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="Falha ao mover version.txt! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="Falha ao mover requirements.txt! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="Falha ao mover package.json! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="Falha ao mover env.conf! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="Falha ao mover CHANGELOG.md! Abortando atualização."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="Falha ao mover README.md! Abortando atualização."
   quickbox::dashboard::log "${text}"
 }
 
@@ -324,6 +369,44 @@ quickbox::lang::software::wsdashboard::maintenance::complete() {
   quickbox::dashboard::log "${text}"
 }
 
+################################################################################
+# Mensagens de Configuração de Ambiente WSDashboard
+################################################################################
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="erro: current_port está vazio ou zero, não é possível prosseguir com a atualização do env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="erro: streaming_application está vazio, não é possível prosseguir com a atualização do env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="erro: software_daemon_port está vazio ou zero, não é possível prosseguir com a atualização do env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="aviso: alguns espaços reservados boilerplate permanecem no env.conf, revisão manual recomendada."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf atualizado com sucesso: app=${1}, port=${2}, log_port=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="backup criado em: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="aviso: espaços reservados boilerplate detectados no env.conf, alguns valores podem precisar de configuração manual."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::maintenance::title() {
   declare text="Manutenção do Serviço WSD"
   quickbox::dashboard::log "${text}"
@@ -365,80 +448,26 @@ quickbox::lang::software::wsdashboard::service::start::success_attempt() {
 }
 
 quickbox::lang::software::wsdashboard::service::start::retry() {
-  declare text="Tentativa de início do serviço ${1} falhou, tentando novamente em 3 segundos..."
+  declare text="Falha no início do serviço, tentando novamente (tentativa ${1})..."
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::wsdashboard::service::start::command_failed() {
-  declare text="Comando de início do serviço falhou, tentando novamente em 3 segundos..."
+  declare text="Comando de início do serviço falhou, tentando novamente..."
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::service::chmod::retry() {
-  declare text="Tentativa chmod ${1} falhou, tentando novamente em 2 segundos..."
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="Servidor de logs iniciado com sucesso"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::service::chmod::warning() {
-  declare text="Aviso: Falha ao definir permissões de execução após ${1} tentativas"
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="Falha no início do servidor de logs"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::node::install::failed() {
-  declare text="Erro: A instalação ou verificação do Node.js falhou. Por favor, verifique os logs e tente novamente."
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
-  declare text="O ambiente virtual parece estar corrompido. Recriando..."
-  quickbox::dashboard::log "${text}"
-}
-
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port está vazio ou é 0. Não é possível atualizar env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application está vazio. Não é possível atualizar env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port está vazio ou é 0. Não é possível atualizar env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="Alguns valores de modelo permanecem em env.conf após a atualização"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="env.conf atualizado: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="Backup criado: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="Valores de modelo detectados após a atualização - revisão manual pode ser necessária"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="nodeenv falhou ao instalar no ambiente virtual Python em ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="A criação do ambiente virtual Node.js falhou. node ou npm não encontrado em ${1}"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # Mensagens de Comandos do Sistema

@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_software_zh-cn
 # File Description: 简体中文语言文件 - 软件管理
-# File Version: 1.0.12
+# File Version: 1.0.20
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="警告：插件压缩包中未找到目录 ${1}（为较旧的安装继续）。"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="移动后端目录失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="移动备份目录失败！中止更新。"
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="移动日志目录失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="移动脚本目录失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="移动 version.txt 失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="移动 requirements.txt 失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="移动 package.json 失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="移动 env.conf 失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="移动 CHANGELOG.md 失败！中止更新。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="移动 README.md 失败！中止更新。"
   quickbox::dashboard::log "${text}"
 }
 
@@ -324,6 +369,44 @@ quickbox::lang::software::wsdashboard::maintenance::complete() {
   quickbox::dashboard::log "${text}"
 }
 
+################################################################################
+# WSDashboard 环境配置消息
+################################################################################
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="错误：current_port 为空或零，无法继续更新 env.conf。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="错误：streaming_application 为空，无法继续更新 env.conf。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="错误：software_daemon_port 为空或零，无法继续更新 env.conf。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="警告：env.conf 中仍有一些样板占位符，建议手动检查。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf 更新成功：app=${1}，port=${2}，log_port=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="备份创建于：${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="警告：在 env.conf 中检测到样板占位符，某些值可能需要手动配置。"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::maintenance::title() {
   declare text="WSD 服务维护"
   quickbox::dashboard::log "${text}"
@@ -374,6 +457,16 @@ quickbox::lang::software::wsdashboard::service::start::command_failed() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="日志服务器启动成功"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="日志服务器启动失败"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::service::chmod::retry() {
   declare text="Chmod 尝试 ${1} 失败，2 秒后重试..."
   quickbox::dashboard::log "${text}"
@@ -394,51 +487,7 @@ quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   quickbox::dashboard::log "${text}"
 }
 
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port 为空或为 0。无法更新 env.conf。"
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application 为空。无法更新 env.conf。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port 为空或为 0。无法更新 env.conf。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="更新后 env.conf 中仍有一些样板值"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="env.conf 已更新：APPLICATION_NAME=${1}，APPLICATION_PORT=${2}，LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="已创建备份：${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="更新后检测到样板值 - 可能需要手动审查"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="无法在 Python 虚拟环境 ${1} 中安装 nodeenv"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="Node.js 虚拟环境创建失败。在 ${1} 中未找到 node 或 npm"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # 系统命令消息

@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="avertissement: répertoire ${1} non trouvé dans l'archive du plugin (continuation pour les installations plus anciennes)."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="Échec du déplacement du répertoire backend! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="Échec du déplacement du répertoire backups! Annulation de la mise à jour."
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="Échec du déplacement du répertoire logs! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="Échec du déplacement du répertoire scripts! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="Échec du déplacement de version.txt! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="Échec du déplacement de requirements.txt! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="Échec du déplacement de package.json! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="Échec du déplacement de env.conf! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="Échec du déplacement de CHANGELOG.md! Annulation de la mise à jour."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="Échec du déplacement de README.md! Annulation de la mise à jour."
   quickbox::dashboard::log "${text}"
 }
 
@@ -324,6 +369,44 @@ quickbox::lang::software::wsdashboard::maintenance::complete() {
   quickbox::dashboard::log "${text}"
 }
 
+################################################################################
+# Messages de Configuration d'Environnement WSDashboard
+################################################################################
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="erreur: current_port est vide ou zéro, impossible de procéder à la mise à jour d'env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="erreur: streaming_application est vide, impossible de procéder à la mise à jour d'env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="erreur: software_daemon_port est vide ou zéro, impossible de procéder à la mise à jour d'env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="avertissement: certains espaces réservés boilerplate restent dans env.conf, révision manuelle recommandée."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf mis à jour avec succès: app=${1}, port=${2}, log_port=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="sauvegarde créée à: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="avertissement: espaces réservés boilerplate détectés dans env.conf, certaines valeurs peuvent nécessiter une configuration manuelle."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::maintenance::title() {
   declare text="Maintenance du Service WSD"
   quickbox::dashboard::log "${text}"
@@ -365,80 +448,26 @@ quickbox::lang::software::wsdashboard::service::start::success_attempt() {
 }
 
 quickbox::lang::software::wsdashboard::service::start::retry() {
-  declare text="Tentative de démarrage du service ${1} échouée, nouvelle tentative dans 3 secondes..."
+  declare text="Échec du démarrage du service, nouvelle tentative (tentative ${1})..."
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::wsdashboard::service::start::command_failed() {
-  declare text="Commande de démarrage du service échouée, nouvelle tentative dans 3 secondes..."
+  declare text="Échec de la commande de démarrage du service, nouvelle tentative..."
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::service::chmod::retry() {
-  declare text="Tentative chmod ${1} échouée, nouvelle tentative dans 2 secondes..."
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="Serveur de logs démarré avec succès"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::service::chmod::warning() {
-  declare text="Attention: Échec de la définition des permissions d'exécution après ${1} tentatives"
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="Échec du démarrage du serveur de logs"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::node::install::failed() {
-  declare text="Erreur: L'installation ou la vérification de Node.js a échoué. Veuillez vérifier les journaux et réessayer."
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
-  declare text="L'environnement virtuel semble corrompu. Recréation..."
-  quickbox::dashboard::log "${text}"
-}
-
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port est vide ou 0. Impossible de mettre à jour env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application est vide. Impossible de mettre à jour env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port est vide ou 0. Impossible de mettre à jour env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="Certaines valeurs de modèle restent dans env.conf après la mise à jour"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="env.conf mis à jour: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="Sauvegarde créée: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="Valeurs de modèle détectées après la mise à jour - révision manuelle peut être nécessaire"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="nodeenv a échoué à s'installer dans l'environnement virtuel Python à ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="La création de l'environnement virtuel Node.js a échoué. node ou npm non trouvé dans ${1}"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # Messages de Commandes Système
