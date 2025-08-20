@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_wsd_dk
 # File Description: Dansk sprogfil - WSD (What's Streaming Dashboard) CLI
-# File Version: 1.0.11
+# File Version: 1.0.52
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -28,30 +28,6 @@
 ################################################################################
 # Fejlmeddelelser
 ################################################################################
-quickbox::lang::software::wsdashboard::ssl::no_domain() {
-  declare text="Intet domæne fundet. SSL-opsætning kræver et gyldigt domæne."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificates_not_found() {
-  declare text="SSL-certifikater ikke fundet på forventede stier."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::access_denied() {
-  declare text="Adgang nægtet til SSL-certifikater. Kontroller tilladelser."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::service_failed() {
-  declare text="WSD-tjeneste kunne ikke starte efter SSL-konfiguration."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::no_username() {
-  declare text="Brugernavn påkrævet for SSL-opdatering. Brug -u parameter."
-  quickbox::dashboard::log "${text}"
-}
 quickbox::lang::wsd::error::missing_emby_params() {
   declare text="Påkrævede parametre mangler for Emby: -u"
   quickbox::dashboard::log "${text}"
@@ -303,182 +279,8 @@ quickbox::lang::wsd::warning::no_matching_files_livetv() {
 ################################################################################
 # Informationsmeddelelser
 ################################################################################
-quickbox::lang::software::wsdashboard::ssl::title() {
-  declare text="WSD SSL-konfiguration"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::header() {
-  declare text="Opsætter SSL-certifikat-symlinks for WSD-tjeneste..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::setup::start() {
-  declare text="Starter SSL-symlink-opsætning..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificates::found() {
-  declare text="SSL-certifikater fundet succesfuldt."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::creating::symlinks() {
-  declare text="Opretter symlinks til SSL-certifikater..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::symlinks::created() {
-  declare text="SSL-certifikat-symlinks oprettet succesfuldt."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::testing::access() {
-  declare text="Tester certifikat-adgang for www-data-bruger..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificate::accessible() {
-  declare text="Certifikat tilgængeligt via symlink."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::private_key::accessible() {
-  declare text="Privat nøgle tilgængelig via symlink."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::added() {
-  declare text="SSL-konfiguration tilføjet til env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::exists() {
-  declare text="SSL-konfiguration eksisterer allerede i env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::updated() {
-  declare text="SSL-konfiguration opdateret i env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::override::created() {
-  declare text="Systemd-override oprettet for SSL-konfiguration."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::override::updated() {
-  declare text="Systemd-override opdateret for SSL-konfiguration."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::reloaded() {
-  declare text="Systemd-daemon genindlæst succesfuldt."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::restarting::service() {
-  declare text="Genstarter WSD-tjeneste..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::service::running() {
-  declare text="WSD-tjeneste kører succesfuldt."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::testing::connectivity() {
-  declare text="Tester tjeneste-connectivitet..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::https::accessible() {
-  declare text="Tjeneste tilgængelig via HTTPS."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::https::warning() {
-  declare text="Tjeneste ikke tilgængelig via HTTPS (kan have brug for tid til at starte)."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::http::accessible() {
-  declare text="Tjeneste tilgængelig via HTTP-fallback."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::http::failed() {
-  declare text="Tjeneste ikke tilgængelig via HTTP."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::complete() {
-  declare text="SSL-certifikat-symlink-opsætning fuldført succesfuldt!"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::title() {
-  declare text="WSD SSL-fjernelse"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::header() {
-  declare text="Fjerner SSL-certifikat-symlinks for WSD-tjeneste..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::start() {
-  declare text="Starter SSL-symlink-fjernelse..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::symlinks::removed() {
-  declare text="SSL-symlink-mappe fjernet succesfuldt."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::symlinks::not_found() {
-  declare text="SSL-symlink-mappe ikke fundet."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::override::removed() {
-  declare text="Systemd-override fjernet succesfuldt."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::complete() {
-  declare text="SSL-certifikat-symlink-fjernelse fuldført succesfuldt!"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::title() {
-  declare text="WSD SSL-opdatering"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::header() {
-  declare text="Opdaterer SSL-certifikat-symlinks for WSD-tjeneste..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::start() {
-  declare text="Starter SSL-symlink-opdatering..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::symlinks() {
-  declare text="Opdaterer symlinks til SSL-certifikater..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::complete() {
-  declare text="SSL-certifikat-symlink-opdatering fuldført succesfuldt!"
-  quickbox::dashboard::log "${text}"
-}
 quickbox::lang::wsd::info::using_default_path() {
-  declare text="Bruger standard sti for TranscodingTempPath: "
+  declare text="Benytter standardsti for TranscodingTempPath: "
   quickbox::dashboard::log "${text}"
 }
 

@@ -611,12 +611,7 @@ Noter:
   qb reinstall ${software_help_name} -u username   - Geninstaller WSD med forbedret service konfiguration
   qb remove ${software_help_name} -u username      - Fjern WSD og ryd op i alle service filer
   qb update ${software_help_name} -u username      - Opdater WSD med forbedret service konfiguration
-  qb maintenance ${software_help_name} -u username - Udfør service vedligeholdelse og sundhedskontroller
-
-SSL Certifikat håndtering:
-  qb ssl ${software_help_name} -u username         - Opsæt SSL certifikat symlinks for WSD service
-  qb ssl-remove ${software_help_name} -u username  - Fjern SSL certifikat symlinks
-  qb ssl-update ${software_help_name} -u username  - Opdater SSL konfiguration for nye certifikater" \
+  qb maintenance ${software_help_name} -u username - Udfør service vedligeholdelse og sundhedskontroller" \
       "
 Forbedrede funktioner:
   - Ikke-root service udførelse (www-data bruger)
@@ -625,7 +620,6 @@ Forbedrede funktioner:
   - Automatiske sundhedskontroller og diagnostik
   - Graceful proces håndtering
   - Struktureret logging og overvågning
-  - SSL certifikat symlink håndtering
   - Automatisk certifikat adgang for www-data bruger
 
 Service håndtering:
@@ -633,14 +627,7 @@ Service håndtering:
   systemctl restart qbwsd.service    - Genstart service
   journalctl -u qbwsd.service -f     - Vis live logs
   qbwsd-health-check.sh --verbose    - Kør detaljeret sundhedskontrol
-  qbwsd-health-check.sh --fix        - Auto-fix almindelige problemer
-
-SSL Certifikat håndtering:
-  - Automatisk symlink oprettelse til /srv/quickbox/ssl/domain/
-  - Miljøvariabel konfiguration for certifikat stier
-  - Systemd override for SSL miljøvariabler
-  - Certifikat adgangstest for www-data bruger
-  - HTTPS/HTTP konnektivitetstest"
+  qbwsd-health-check.sh --fix        - Auto-fix almindelige problemer"
     ;;
 
   *)

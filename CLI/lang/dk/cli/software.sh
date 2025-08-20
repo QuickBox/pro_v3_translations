@@ -394,6 +394,52 @@ quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   quickbox::dashboard::log "${text}"
 }
 
+# Additional WSDashboard translation keys for env.conf and virtual environment operations
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="current_port er tom eller 0. Kan ikke opdatere env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="streaming_application er tom. Kan ikke opdatere env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="software_daemon_port er tom eller 0. Kan ikke opdatere env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="Nogle skabelonværdier forbliver i env.conf efter opdatering"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf opdateret: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="Backup oprettet: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="Skabelonværdier opdaget efter opdatering - manuel gennemgang kan være nødvendig"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
+  declare text="nodeenv kunne ikke installeres i Python virtuelle miljø på ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
+  declare text="Node.js virtuelle miljø oprettelse mislykkedes. node eller npm ikke fundet i ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
 ################################################################################
 # System Kommando Beskeder
 ################################################################################
