@@ -611,12 +611,7 @@ DNS 挑战设置：
   qb reinstall ${software_help_name} -u username   - 重新安装具有增强服务配置的 WSD
   qb remove ${software_help_name} -u username      - 删除 WSD 并清理所有服务文件
   qb update ${software_help_name} -u username      - 更新具有增强服务配置的 WSD
-  qb maintenance ${software_help_name} -u username - 执行服务维护和健康检查
-
-SSL 证书管理：
-  qb ssl ${software_help_name} -u username         - 为 WSD 服务设置 SSL 证书符号链接
-  qb ssl-remove ${software_help_name} -u username  - 删除 SSL 证书符号链接
-  qb ssl-update ${software_help_name} -u username  - 为新证书更新 SSL 配置" \
+  qb maintenance ${software_help_name} -u username - 执行服务维护和健康检查" \
       "
 增强功能：
   - 非 root 服务执行（www-data 用户）
@@ -625,7 +620,6 @@ SSL 证书管理：
   - 自动健康检查和诊断
   - 优雅的进程管理
   - 结构化日志记录和监控
-  - SSL 证书符号链接管理
   - www-data 用户的自动证书访问
 
 服务管理：
@@ -633,14 +627,7 @@ SSL 证书管理：
   systemctl restart qbwsd.service    - 重启服务
   journalctl -u qbwsd.service -f     - 查看实时日志
   qbwsd-health-check.sh --verbose    - 运行详细健康检查
-  qbwsd-health-check.sh --fix        - 自动修复常见问题
-
-SSL 证书管理：
-  - 自动创建符号链接到 /srv/quickbox/ssl/domain/
-  - 证书路径的环境变量配置
-  - SSL 环境变量的 systemd 覆盖
-  - www-data 用户的证书访问测试
-  - HTTPS/HTTP 连接性测试"
+  qbwsd-health-check.sh --fix        - 自动修复常见问题"
     ;;
 
   *)

@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_software_zh-cn
 # File Description: 简体中文语言文件 - 软件管理
-# File Version: 1.0.9
+# File Version: 1.0.12
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -391,6 +391,52 @@ quickbox::lang::software::wsdashboard::node::install::failed() {
 
 quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   declare text="虚拟环境似乎已损坏。正在重新创建..."
+  quickbox::dashboard::log "${text}"
+}
+
+# Additional WSDashboard translation keys for env.conf and virtual environment operations
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="current_port 为空或为 0。无法更新 env.conf。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="streaming_application 为空。无法更新 env.conf。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="software_daemon_port 为空或为 0。无法更新 env.conf。"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="更新后 env.conf 中仍有一些样板值"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf 已更新：APPLICATION_NAME=${1}，APPLICATION_PORT=${2}，LOG_SERVER_PORT=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="已创建备份：${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="更新后检测到样板值 - 可能需要手动审查"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
+  declare text="无法在 Python 虚拟环境 ${1} 中安装 nodeenv"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
+  declare text="Node.js 虚拟环境创建失败。在 ${1} 中未找到 node 或 npm"
   quickbox::dashboard::log "${text}"
 }
 

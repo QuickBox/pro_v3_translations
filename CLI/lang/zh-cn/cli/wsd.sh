@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_wsd_zh_cn
 # File Description: 中文语言文件 - WSD (What's Streaming Dashboard) CLI
-# File Version: 1.0.11
+# File Version: 1.0.52
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -28,30 +28,6 @@
 ################################################################################
 # 错误消息
 ################################################################################
-quickbox::lang::software::wsdashboard::ssl::no_domain() {
-  declare text="未找到域名。SSL设置需要有效的域名。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificates_not_found() {
-  declare text="在预期路径中未找到SSL证书。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::access_denied() {
-  declare text="拒绝访问SSL证书。检查权限。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::service_failed() {
-  declare text="WSD服务在SSL配置后启动失败。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::no_username() {
-  declare text="SSL更新需要用户名。使用-u参数。"
-  quickbox::dashboard::log "${text}"
-}
 quickbox::lang::wsd::error::missing_emby_params() {
   declare text="Emby 缺少必需参数: -u"
   quickbox::dashboard::log "${text}"
@@ -303,182 +279,8 @@ quickbox::lang::wsd::warning::no_matching_files_livetv() {
 ################################################################################
 # 信息消息
 ################################################################################
-quickbox::lang::software::wsdashboard::ssl::title() {
-  declare text="WSD SSL配置"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::header() {
-  declare text="为WSD服务设置SSL证书符号链接..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::setup::start() {
-  declare text="开始SSL符号链接设置..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificates::found() {
-  declare text="成功找到SSL证书。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::creating::symlinks() {
-  declare text="创建SSL证书符号链接..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::symlinks::created() {
-  declare text="SSL证书符号链接创建成功。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::testing::access() {
-  declare text="测试www-data用户的证书访问..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::certificate::accessible() {
-  declare text="通过符号链接可访问证书。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::private_key::accessible() {
-  declare text="通过符号链接可访问私钥。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::added() {
-  declare text="SSL配置已添加到env.conf。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::exists() {
-  declare text="SSL配置已存在于env.conf中。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::env_conf::updated() {
-  declare text="env.conf中的SSL配置已更新。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::override::created() {
-  declare text="为SSL配置创建了systemd覆盖。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::override::updated() {
-  declare text="SSL配置的systemd覆盖已更新。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::systemd::reloaded() {
-  declare text="systemd守护进程重新加载成功。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::restarting::service() {
-  declare text="重启WSD服务..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::service::running() {
-  declare text="WSD服务运行成功。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::testing::connectivity() {
-  declare text="测试服务连接性..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::https::accessible() {
-  declare text="服务可通过HTTPS访问。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::https::warning() {
-  declare text="服务无法通过HTTPS访问（可能需要时间启动）。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::http::accessible() {
-  declare text="服务可通过HTTP回退访问。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::http::failed() {
-  declare text="服务无法通过HTTP访问。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::complete() {
-  declare text="SSL证书符号链接设置成功完成！"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::title() {
-  declare text="WSD SSL移除"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::header() {
-  declare text="为WSD服务移除SSL证书符号链接..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::start() {
-  declare text="开始SSL符号链接移除..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::symlinks::removed() {
-  declare text="SSL符号链接目录已成功移除。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::symlinks::not_found() {
-  declare text="未找到SSL符号链接目录。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::override::removed() {
-  declare text="systemd覆盖已成功移除。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::remove::complete() {
-  declare text="SSL证书符号链接移除成功完成！"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::title() {
-  declare text="WSD SSL更新"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::header() {
-  declare text="为WSD服务更新SSL证书符号链接..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::start() {
-  declare text="开始SSL符号链接更新..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::symlinks() {
-  declare text="更新SSL证书符号链接..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::ssl::update::complete() {
-  declare text="SSL证书符号链接更新成功完成！"
-  quickbox::dashboard::log "${text}"
-}
 quickbox::lang::wsd::info::using_default_path() {
-  declare text="使用 TranscodingTempPath 的默认路径: "
+  declare text="使用默认路径用于 TranscodingTempPath: "
   quickbox::dashboard::log "${text}"
 }
 
