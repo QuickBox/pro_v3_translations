@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the QuickBox Pro language system, which has been successfully modularized from a single 3,695-line `cli_lang` file into 16 focused, maintainable modules. This migration improves code organization, maintainability, and developer experience while maintaining full backward compatibility.
+This directory contains the QuickBox Pro language system, which has been successfully modularized from a single 3,695-line `cli_lang` file into 15 focused, maintainable modules. This migration improves code organization, maintainability, and developer experience while maintaining full backward compatibility.
 
 ## Quick Start
 
@@ -19,7 +19,7 @@ This directory contains the QuickBox Pro language system, which has been success
 ## File Structure
 
 ```bash
-CLI/lang/en/
+src/config/lang/en/
 ├── cli_lang                    # Legacy bridge (sources modular system)
 ├── cli_lang_modular            # Main modular bridge
 ├── cli/                        # Individual modules
@@ -38,16 +38,17 @@ CLI/lang/en/
 │   ├── software_access.sh     # Software access information
 │   ├── software_config.sh     # Software configuration
 │   ├── wireguard.sh           # WireGuard specific operations
-│   ├── misc.sh                # Miscellaneous utilities
-│   └── wsd.sh                 # What's Streaming Dashboard operations
+│   └── misc.sh                # Miscellaneous utilities
 ├── README.md                  # This documentation file
+├── MIGRATION_OVERVIEW.md      # High-level migration overview
+├── TECHNICAL_IMPLEMENTATION.md # Technical implementation details
 ├── locale                     # System locale configuration
 └── localize.php              # PHP localization bridge
 ```
 
 ## Module Overview
 
-### Core Modules (12)
+### Core Modules (11)
 | Module | Functions | Purpose | Key Features |
 |--------|-----------|---------|--------------|
 | `core.sh` | 15 | Core system operations | Locks, cleanup, basic utilities |
@@ -61,7 +62,6 @@ CLI/lang/en/
 | `updater.sh` | 25 | System updates | Update progress, dependencies |
 | `manager.sh` | 35+ | Software manager | Backup, restore, rollback |
 | `help.sh` | 60+ | Help & errors | Documentation, error handling |
-| `wsd.sh` | 80+ | WSD Dashboard | Dashboard operations, management |
 
 ### Extended Modules (4)
 | Module | Functions | Purpose | Key Features |
@@ -152,14 +152,14 @@ CLI/lang/en/
 ## Migration Information
 
 ### What Was Accomplished
-- ✅ **Split** the original 3,695-line `cli_lang` file into 16 functional modules
+- ✅ **Split** the original 3,695-line `cli_lang` file into 15 functional modules
 - ✅ **Created** a bridge system (`cli_lang_modular`) for seamless integration
 - ✅ **Maintained** 100% backward compatibility with existing code
 - ✅ **Implemented** comprehensive error handling and validation
 - ✅ **Added** detailed documentation for all modules
 
 ### Testing Results
-- ✅ **Module Loading**: All 16 modules load successfully
+- ✅ **Module Loading**: All 15 modules load successfully
 - ✅ **Function Calls**: All tested functions return expected output
 - ✅ **Backward Compatibility**: Original `cli_lang` successfully sources modular system
 - ✅ **Error Handling**: Graceful fallback for missing modules

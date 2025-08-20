@@ -611,12 +611,7 @@ Notes:
   qb reinstall ${software_help_name} -u username   - Reinstall WSD with enhanced service configuration
   qb remove ${software_help_name} -u username      - Remove WSD and clean up all service files
   qb update ${software_help_name} -u username      - Update WSD with enhanced service configuration
-  qb maintenance ${software_help_name} -u username - Perform service maintenance and health checks
-
-SSL Certificate Management:
-  qb ssl ${software_help_name} -u username         - Setup SSL certificate symlinks for WSD service
-  qb ssl-remove ${software_help_name} -u username  - Remove SSL certificate symlinks
-  qb ssl-update ${software_help_name} -u username  - Update SSL configuration for new certificates" \
+  qb maintenance ${software_help_name} -u username - Perform service maintenance and health checks" \
       "
 Enhanced Features:
   - Non-root service execution (www-data user)
@@ -625,7 +620,6 @@ Enhanced Features:
   - Automatic health checks and diagnostics
   - Graceful process management
   - Structured logging and monitoring
-  - SSL certificate symlink management
   - Automatic certificate access for www-data user
 
 Service Management:
@@ -633,14 +627,7 @@ Service Management:
   systemctl restart qbwsd.service    - Restart service
   journalctl -u qbwsd.service -f     - View live logs
   qbwsd-health-check.sh --verbose    - Run detailed health check
-  qbwsd-health-check.sh --fix        - Auto-fix common issues
-
-SSL Certificate Management:
-  - Automatic symlink creation to /srv/quickbox/ssl/domain/
-  - Environment variable configuration for certificate paths
-  - Systemd override for SSL environment variables
-  - Certificate access testing for www-data user
-  - HTTPS/HTTP connectivity testing"
+  qbwsd-health-check.sh --fix        - Auto-fix common issues"
     ;;
 
   *)
