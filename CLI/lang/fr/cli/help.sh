@@ -611,12 +611,7 @@ Notes:
   qb reinstall ${software_help_name} -u username   - Réinstaller WSD avec configuration de service améliorée
   qb remove ${software_help_name} -u username      - Supprimer WSD et nettoyer tous les fichiers de service
   qb update ${software_help_name} -u username      - Mettre à jour WSD avec configuration de service améliorée
-  qb maintenance ${software_help_name} -u username - Effectuer la maintenance du service et les contrôles de santé
-
-Gestion des Certificats SSL:
-  qb ssl ${software_help_name} -u username         - Configurer les liens symboliques de certificats SSL pour le service WSD
-  qb ssl-remove ${software_help_name} -u username  - Supprimer les liens symboliques de certificats SSL
-  qb ssl-update ${software_help_name} -u username  - Mettre à jour la configuration SSL pour les nouveaux certificats" \
+  qb maintenance ${software_help_name} -u username - Effectuer la maintenance du service et les contrôles de santé" \
       "
 Fonctionnalités Améliorées:
   - Exécution du service sans privilèges root (utilisateur www-data)
@@ -625,7 +620,6 @@ Fonctionnalités Améliorées:
   - Contrôles de santé automatiques et diagnostics
   - Gestion gracieuse des processus
   - Journalisation et surveillance structurées
-  - Gestion des liens symboliques de certificats SSL
   - Accès automatique aux certificats pour l'utilisateur www-data
 
 Gestion du Service:
@@ -633,14 +627,7 @@ Gestion du Service:
   systemctl restart qbwsd.service    - Redémarrer le service
   journalctl -u qbwsd.service -f     - Voir les logs en direct
   qbwsd-health-check.sh --verbose    - Exécuter un contrôle de santé détaillé
-  qbwsd-health-check.sh --fix        - Corriger automatiquement les problèmes courants
-
-Gestion des Certificats SSL:
-  - Création automatique de liens symboliques vers /srv/quickbox/ssl/domain/
-  - Configuration des variables d'environnement pour les chemins de certificats
-  - Override systemd pour les variables d'environnement SSL
-  - Test d'accès aux certificats pour l'utilisateur www-data
-  - Test de connectivité HTTPS/HTTP"
+  qbwsd-health-check.sh --fix        - Corriger automatiquement les problèmes courants"
     ;;
 
   *)
