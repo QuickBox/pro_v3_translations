@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_software_de
 # File Description: German language file - Software Management
-# File Version: 1.0.11
+# File Version: 1.0.18
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="Warnung: Verzeichnis ${1} im Plugin Archiv nicht gefunden (setze für ältere Installationen fort)."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="Backend-Verzeichnis konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="Backups-Verzeichnis konnte nicht verschoben werden! Update wird abgebrochen."
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="Logs-Verzeichnis konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="Scripts-Verzeichnis konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="version.txt konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="requirements.txt konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="package.json konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="env.conf konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="CHANGELOG.md konnte nicht verschoben werden! Update wird abgebrochen."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="README.md konnte nicht verschoben werden! Update wird abgebrochen."
   quickbox::dashboard::log "${text}"
 }
 
@@ -374,6 +419,16 @@ quickbox::lang::software::wsdashboard::service::start::command_failed() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="Log-Server erfolgreich gestartet"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="Log-Server konnte nicht gestartet werden"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::service::chmod::retry() {
   declare text="Chmod Versuch ${1} fehlgeschlagen, wiederhole in 2 Sekunden..."
   quickbox::dashboard::log "${text}"
@@ -394,51 +449,7 @@ quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   quickbox::dashboard::log "${text}"
 }
 
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port ist leer oder 0. env.conf kann nicht aktualisiert werden."
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application ist leer. env.conf kann nicht aktualisiert werden."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port ist leer oder 0. env.conf kann nicht aktualisiert werden."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="Einige Boilerplate-Werte verbleiben in env.conf nach dem Update"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="env.conf aktualisiert: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="Backup erstellt: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="Boilerplate-Werte nach Update erkannt - manuelle Überprüfung kann erforderlich sein"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="nodeenv konnte nicht in der Python-Virtuellen Umgebung installiert werden bei ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="Node.js-Virtuelle Umgebung konnte nicht erstellt werden. node oder npm nicht gefunden in ${1}"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # System Command Messages

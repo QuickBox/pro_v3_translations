@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="advertencia: directorio ${1} no encontrado en el archivo del plugin (continuando para instalaciones más antiguas)."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="¡Error al mover el directorio backend! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="¡Error al mover el directorio backups! Abortando actualización."
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="¡Error al mover el directorio logs! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="¡Error al mover el directorio scripts! Abortando actualización."
+  quickbox::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="¡Error al mover version.txt! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="¡Error al mover requirements.txt! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="¡Error al mover package.json! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="¡Error al mover env.conf! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="¡Error al mover CHANGELOG.md! Abortando actualización."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="¡Error al mover README.md! Abortando actualización."
   quickbox::dashboard::log "${text}"
 }
 
@@ -324,6 +369,44 @@ quickbox::lang::software::wsdashboard::maintenance::complete() {
   quickbox::dashboard::log "${text}"
 }
 
+################################################################################
+# Mensajes de Configuración de Entorno WSDashboard
+################################################################################
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="error: current_port está vacío o es cero, no se puede proceder con la actualización de env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="error: streaming_application está vacío, no se puede proceder con la actualización de env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="error: software_daemon_port está vacío o es cero, no se puede proceder con la actualización de env.conf."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="advertencia: algunos marcadores de posición boilerplate permanecen en env.conf, se recomienda revisión manual."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf actualizado exitosamente: app=${1}, port=${2}, log_port=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="respaldo creado en: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="advertencia: marcadores de posición boilerplate detectados en env.conf, algunos valores pueden necesitar configuración manual."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::maintenance::title() {
   declare text="Mantenimiento del Servicio WSD"
   quickbox::dashboard::log "${text}"
@@ -365,80 +448,26 @@ quickbox::lang::software::wsdashboard::service::start::success_attempt() {
 }
 
 quickbox::lang::software::wsdashboard::service::start::retry() {
-  declare text="Intento de inicio del servicio ${1} falló, reintentando en 3 segundos..."
+  declare text="Falló el inicio del servicio, reintentando (intento ${1})..."
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::wsdashboard::service::start::command_failed() {
-  declare text="Comando de inicio del servicio falló, reintentando en 3 segundos..."
+  declare text="Falló el comando de inicio del servicio, reintentando..."
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::service::chmod::retry() {
-  declare text="Intento chmod ${1} falló, reintentando en 2 segundos..."
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="Servidor de logs iniciado exitosamente"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::service::chmod::warning() {
-  declare text="Advertencia: Falló al establecer permisos de ejecución después de ${1} intentos"
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="Falló el inicio del servidor de logs"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::node::install::failed() {
-  declare text="Error: La instalación o verificación de Node.js falló. Por favor revise los registros e inténtelo de nuevo."
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
-  declare text="El entorno virtual parece estar corrupto. Recreando..."
-  quickbox::dashboard::log "${text}"
-}
-
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port está vacío o es 0. No se puede actualizar env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application está vacío. No se puede actualizar env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port está vacío o es 0. No se puede actualizar env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="Algunos valores de plantilla permanecen en env.conf después de la actualización"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="env.conf actualizado: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="Respaldo creado: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="Valores de plantilla detectados después de la actualización - revisión manual puede ser necesaria"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="nodeenv falló al instalar en el entorno virtual de Python en ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="La creación del entorno virtual de Node.js falló. node o npm no se encontró en ${1}"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # Mensajes de Comandos del Sistema

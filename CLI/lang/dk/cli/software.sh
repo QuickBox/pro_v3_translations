@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="advarsel: mappe ${1} ikke fundet i plugin arkiv (fortsætter for ældre installationer)."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="Fejlede at flytte backend mappe! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="Fejlede at flytte backups mappe! Afbryder opdatering."
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="Fejlede at flytte logs mappe! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="Fejlede at flytte scripts mappe! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="Fejlede at flytte version.txt! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="Fejlede at flytte requirements.txt! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="Fejlede at flytte package.json! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="Fejlede at flytte env.conf! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="Fejlede at flytte CHANGELOG.md! Afbryder opdatering."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="Fejlede at flytte README.md! Afbryder opdatering."
   quickbox::dashboard::log "${text}"
 }
 
@@ -374,6 +419,16 @@ quickbox::lang::software::wsdashboard::service::start::command_failed() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="Log server startet med succes"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="Log server kunne ikke starte"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::service::chmod::retry() {
   declare text="Chmod forsøg ${1} fejlede, prøver igen om 2 sekunder..."
   quickbox::dashboard::log "${text}"
@@ -394,51 +449,7 @@ quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   quickbox::dashboard::log "${text}"
 }
 
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port er tom eller 0. Kan ikke opdatere env.conf."
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application er tom. Kan ikke opdatere env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port er tom eller 0. Kan ikke opdatere env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="Nogle skabelonværdier forbliver i env.conf efter opdatering"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="env.conf opdateret: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="Backup oprettet: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="Skabelonværdier opdaget efter opdatering - manuel gennemgang kan være nødvendig"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="nodeenv kunne ikke installeres i Python virtuelle miljø på ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="Node.js virtuelle miljø oprettelse mislykkedes. node eller npm ikke fundet i ${1}"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # System Kommando Beskeder
