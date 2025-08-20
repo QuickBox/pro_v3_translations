@@ -611,12 +611,7 @@ Notas:
   qb reinstall ${software_help_name} -u username   - Reinstalar WSD com configuração de serviço aprimorada
   qb remove ${software_help_name} -u username      - Remover WSD e limpar todos os arquivos de serviço
   qb update ${software_help_name} -u username      - Atualizar WSD com configuração de serviço aprimorada
-  qb maintenance ${software_help_name} -u username - Executar manutenção de serviço e verificações de saúde
-
-Gerenciamento de Certificados SSL:
-  qb ssl ${software_help_name} -u username         - Configurar links simbólicos de certificados SSL para o serviço WSD
-  qb ssl-remove ${software_help_name} -u username  - Remover links simbólicos de certificados SSL
-  qb ssl-update ${software_help_name} -u username  - Atualizar configuração SSL para novos certificados" \
+  qb maintenance ${software_help_name} -u username - Executar manutenção de serviço e verificações de saúde" \
       "
 Recursos Aprimorados:
   - Execução de serviço não-root (usuário www-data)
@@ -625,7 +620,6 @@ Recursos Aprimorados:
   - Verificações de saúde e diagnósticos automáticos
   - Gerenciamento de processo gracioso
   - Logging e monitoramento estruturados
-  - Gerenciamento de links simbólicos de certificados SSL
   - Acesso automático a certificados para usuário www-data
 
 Gerenciamento de Serviço:
@@ -633,14 +627,7 @@ Gerenciamento de Serviço:
   systemctl restart qbwsd.service    - Reiniciar serviço
   journalctl -u qbwsd.service -f     - Visualizar logs ao vivo
   qbwsd-health-check.sh --verbose    - Executar verificação de saúde detalhada
-  qbwsd-health-check.sh --fix        - Corrigir problemas comuns automaticamente
-
-Gerenciamento de Certificados SSL:
-  - Criação automática de links simbólicos para /srv/quickbox/ssl/domain/
-  - Configuração de variáveis de ambiente para caminhos de certificados
-  - Override do systemd para variáveis de ambiente SSL
-  - Teste de acesso a certificados para usuário www-data
-  - Teste de conectividade HTTPS/HTTP"
+  qbwsd-health-check.sh --fix        - Corrigir problemas comuns automaticamente"
     ;;
 
   *)
