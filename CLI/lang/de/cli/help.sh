@@ -610,12 +610,7 @@ Hinweise:
   qb reinstall ${software_help_name} -u username   - WSD mit erweiterter Service-Konfiguration neu installieren
   qb remove ${software_help_name} -u username      - WSD entfernen und alle Service-Dateien bereinigen
   qb update ${software_help_name} -u username      - WSD mit erweiterter Service-Konfiguration aktualisieren
-  qb maintenance ${software_help_name} -u username - Service-Wartung und Gesundheitsprüfungen durchführen
-
-SSL-Zertifikat-Management:
-  qb ssl ${software_help_name} -u username         - SSL-Zertifikat-Symlinks für WSD-Service einrichten
-  qb ssl-remove ${software_help_name} -u username  - SSL-Zertifikat-Symlinks entfernen
-  qb ssl-update ${software_help_name} -u username  - SSL-Konfiguration für neue Zertifikate aktualisieren" \
+  qb maintenance ${software_help_name} -u username - Service-Wartung und Gesundheitsprüfungen durchführen" \
       "
 Erweiterte Funktionen:
   - Nicht-Root Service-Ausführung (www-data Benutzer)
@@ -624,7 +619,6 @@ Erweiterte Funktionen:
   - Automatische Gesundheitsprüfungen und Diagnose
   - Graceful Prozess-Management
   - Strukturiertes Logging und Überwachung
-  - SSL-Zertifikat-Symlink-Management
   - Automatischer Zertifikat-Zugriff für www-data Benutzer
 
 Service-Management:
@@ -632,14 +626,7 @@ Service-Management:
   systemctl restart qbwsd.service    - Service neu starten
   journalctl -u qbwsd.service -f     - Live-Logs anzeigen
   qbwsd-health-check.sh --verbose    - Detaillierte Gesundheitsprüfung durchführen
-  qbwsd-health-check.sh --fix        - Häufige Probleme automatisch beheben
-
-SSL-Zertifikat-Management:
-  - Automatische Symlink-Erstellung zu /srv/quickbox/ssl/domain/
-  - Umgebungsvariablen-Konfiguration für Zertifikat-Pfade
-  - Systemd-Override für SSL-Umgebungsvariablen
-  - Zertifikat-Zugriffstest für www-data Benutzer
-  - HTTPS/HTTP-Konnektivitätstest"
+  qbwsd-health-check.sh --fix        - Häufige Probleme automatisch beheben"
     ;;
 
   *)

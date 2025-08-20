@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_software_de
 # File Description: German language file - Software Management
-# File Version: 1.0.9
+# File Version: 1.0.11
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -391,6 +391,52 @@ quickbox::lang::software::wsdashboard::node::install::failed() {
 
 quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   declare text="Virtuelle Umgebung scheint beschädigt zu sein. Wird neu erstellt..."
+  quickbox::dashboard::log "${text}"
+}
+
+# Additional WSDashboard translation keys for env.conf and virtual environment operations
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="current_port ist leer oder 0. env.conf kann nicht aktualisiert werden."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="streaming_application ist leer. env.conf kann nicht aktualisiert werden."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="software_daemon_port ist leer oder 0. env.conf kann nicht aktualisiert werden."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="Einige Boilerplate-Werte verbleiben in env.conf nach dem Update"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf aktualisiert: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="Backup erstellt: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="Boilerplate-Werte nach Update erkannt - manuelle Überprüfung kann erforderlich sein"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
+  declare text="nodeenv konnte nicht in der Python-Virtuellen Umgebung installiert werden bei ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
+  declare text="Node.js-Virtuelle Umgebung konnte nicht erstellt werden. node oder npm nicht gefunden in ${1}"
   quickbox::dashboard::log "${text}"
 }
 
