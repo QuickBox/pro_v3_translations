@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_software_en
 # File Description: English language file - Software Management
-# File Version: 1.0.9
+# File Version: 1.0.23
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -209,7 +209,7 @@ quickbox::lang::software::admin::access() {
 ${quickbox_web_root}${admin_name}/${software_name}
 ${software_title} installed on port: ${software_web_port}"
   quickbox::dashboard::log "${text}"
-} 
+}
 
 ################################################################################
 # WSDashboard Specific Messages
@@ -239,8 +239,18 @@ quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::missing_directory_warning() {
+  declare text="warning: directory ${1} not found in plugin archive (continuing for older installs)."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_backend_error() {
   declare text="Failed to move backend directory! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_backups_error() {
+  declare text="Failed to move backups directory! Aborting update."
   quickbox::dashboard::log "${text}"
 }
 
@@ -249,8 +259,43 @@ quickbox::lang::software::wsdashboard::plugin::fetch::move_public_error() {
   quickbox::dashboard::log "${text}"
 }
 
+quickbox::lang::software::wsdashboard::plugin::fetch::move_logs_error() {
+  declare text="Failed to move logs directory! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_scripts_error() {
+  declare text="Failed to move scripts directory! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::plugin::fetch::move_version_error() {
   declare text="Failed to move version.txt! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_requirements_error() {
+  declare text="Failed to move requirements.txt! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_package_error() {
+  declare text="Failed to move package.json! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_env_error() {
+  declare text="Failed to move env.conf! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_changelog_error() {
+  declare text="Failed to move CHANGELOG.md! Aborting update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::plugin::fetch::move_readme_error() {
+  declare text="Failed to move README.md! Aborting update."
   quickbox::dashboard::log "${text}"
 }
 
@@ -324,6 +369,44 @@ quickbox::lang::software::wsdashboard::maintenance::complete() {
   quickbox::dashboard::log "${text}"
 }
 
+################################################################################
+# WSDashboard Environment Configuration Messages
+################################################################################
+quickbox::lang::software::wsdashboard::env::current_port_empty() {
+  declare text="error: current_port is empty or zero, cannot proceed with env.conf update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
+  declare text="error: streaming_application is empty, cannot proceed with env.conf update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
+  declare text="error: software_daemon_port is empty or zero, cannot proceed with env.conf update."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
+  declare text="warning: some boilerplate placeholders remain in env.conf, manual review recommended."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::update_success() {
+  declare text="env.conf updated successfully: app=${1}, port=${2}, log_port=${3}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::backup_created() {
+  declare text="backup created at: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
+  declare text="warning: boilerplate placeholders detected in env.conf, some values may need manual configuration."
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::software::wsdashboard::maintenance::title() {
   declare text="WSD Service Maintenance"
   quickbox::dashboard::log "${text}"
@@ -365,14 +448,26 @@ quickbox::lang::software::wsdashboard::service::start::success_attempt() {
 }
 
 quickbox::lang::software::wsdashboard::service::start::retry() {
-  declare text="Service start attempt ${1} failed, retrying in 3 seconds..."
+  declare text="Service start failed, retrying (attempt ${1})..."
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::wsdashboard::service::start::command_failed() {
-  declare text="Service start command failed, retrying in 3 seconds..."
+  declare text="Service start command failed, retrying..."
   quickbox::dashboard::log "${text}"
 }
+
+quickbox::lang::software::wsdashboard::service::log_server::started() {
+  declare text="Log server started successfully"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::service::log_server::failed() {
+  declare text="Log server failed to start"
+  quickbox::dashboard::log "${text}"
+}
+
+
 
 quickbox::lang::software::wsdashboard::service::chmod::retry() {
   declare text="Chmod attempt ${1} failed, retrying in 2 seconds..."
@@ -394,51 +489,7 @@ quickbox::lang::software::wsdashboard::virtual_env_corrupted() {
   quickbox::dashboard::log "${text}"
 }
 
-# Additional WSDashboard translation keys for env.conf and virtual environment operations
-quickbox::lang::software::wsdashboard::env::current_port_empty() {
-  declare text="current_port is empty or 0. Cannot update env.conf."
-  quickbox::dashboard::log "${text}"
-}
 
-quickbox::lang::software::wsdashboard::env::streaming_app_empty() {
-  declare text="streaming_application is empty. Cannot update env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::daemon_port_empty() {
-  declare text="software_daemon_port is empty or 0. Cannot update env.conf."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_remaining() {
-  declare text="Some boilerplate values remain in env.conf after update"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::update_success() {
-  declare text="Updated env.conf: APPLICATION_NAME=${1}, APPLICATION_PORT=${2}, LOG_SERVER_PORT=${3}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::backup_created() {
-  declare text="Created backup: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::env::boilerplate_detected() {
-  declare text="Boilerplate values detected after update - manual review may be needed"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodeenv_failed() {
-  declare text="nodeenv failed to install in Python virtual environment at ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::wsdashboard::virtual_env::nodejs_failed() {
-  declare text="Node.js virtual environment creation failed. node or npm not found in ${1}"
-  quickbox::dashboard::log "${text}"
-}
 
 ################################################################################
 # System Command Messages
@@ -746,4 +797,4 @@ quickbox::lang::software::wsdashboard::health::check_completed_success() {
 quickbox::lang::software::wsdashboard::health::check_completed_issues() {
   declare text="Health check completed with issues"
   quickbox::dashboard::log "${text}"
-} 
+}
