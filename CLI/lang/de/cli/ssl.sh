@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_ssl_de
 # File Description: German language file - SSL/LetsEncrypt Operations
-# File Version: 1.0.15
+# File Version: 1.0.17
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -240,11 +239,6 @@ quickbox::lang::lecert::dns::gcp::error() {
 
 quickbox::lang::lecert::dns::ionos::error() {
   declare text="DNS-Challenge mit IONOS erfordert IONOS_PREFIX und IONOS_SECRET Umgebungsvariablen"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::credentials::help() {
-  declare text="Setzen Sie sie über das QuickBox-Dashboard oder manuell in /root/.acme.sh/account.conf"
   quickbox::dashboard::log "${text}"
 }
 
@@ -788,4 +782,4 @@ quickbox::lang::lecert::dns::setup::generic::referral() {
 quickbox::lang::lecert::dns::setup::generic::url() {
   declare text="https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_${provider}"
   quickbox::dashboard::log "${text}"
-} 
+}

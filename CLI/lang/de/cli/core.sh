@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_core_de
 # File Description: German language file - Core System Operations
-# File Version: 1.0.5
+# File Version: 1.0.6
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -63,11 +62,6 @@ quickbox::lang::clean::rclone() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::clean::rclone::error() {
-  declare text="Fehler: Log-Datei nicht vorhanden."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::clean::dashboard() {
   declare text="Warte auf Systemantwort..."
   quickbox::dashboard::log "${text}"
@@ -92,16 +86,6 @@ quickbox::lang::lock::remove() {
 ################################################################################
 quickbox::lang::unknown::option() {
   declare text="${2} Unbekannte Option: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::username::specified() {
-  declare text="Fehler: Benutzername nicht angegeben"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::directory::noexist() {
-  declare text="Erforderliches Verzeichnis existiert nicht..."
   quickbox::dashboard::log "${text}"
 }
 
@@ -132,10 +116,5 @@ quickbox::lang::trackers::enable() {
 
 quickbox::lang::software::run_via_qb() {
   declare text="Fehler[1]: ${script_name} sollte über qb ausgeführt werden"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::mflibs_not_readable() {
-  declare text="Fehler[1]: mflibs nicht lesbar"
   quickbox::dashboard::log "${text}"
 }

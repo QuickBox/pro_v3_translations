@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_updater_de
 # File Description: German language file - System Updater
-# File Version: 1.0.2
+# File Version: 1.0.3
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -158,4 +157,4 @@ quickbox::lang::update::clean() {
 quickbox::lang::update::complete() {
   declare text="Update abgeschlossen!"
   quickbox::dashboard::log "${text}"
-} 
+}

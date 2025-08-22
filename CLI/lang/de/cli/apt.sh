@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_apt_de
 # File Description: German language file - APT Package Management
-# File Version: 1.0.2
+# File Version: 1.0.3
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -48,4 +47,4 @@ quickbox::lang::apt::update::completed() {
 quickbox::lang::apt::check::failed() {
   declare text="apt-get check fehlgeschlagen, Sie haben möglicherweise beschädigte Pakete"
   quickbox::dashboard::log "${text}"
-} 
+}

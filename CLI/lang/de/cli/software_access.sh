@@ -188,8 +188,8 @@ quickbox::lang::software::quassel::access() {
   ip_output=$(ip route get 8.8.8.8 2>/dev/null) && server_ip=$(echo "${ip_output}" | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}') || server_ip="127.0.0.1"
   declare text="${software_title} installiert auf Port: ${software_daemon_port}
 
-> Bitte installieren Sie quassel-client auf Ihrem persönlichen 
-Computer und verbinden Sie sich mit dem neu erstellten ${software_title} Core 
+> Bitte installieren Sie quassel-client auf Ihrem persönlichen
+Computer und verbinden Sie sich mit dem neu erstellten ${software_title} Core
 um Ihr Konto einzurichten unter:
 ${server_ip}:${software_daemon_port}
 
@@ -214,18 +214,12 @@ ${quickbox_web_root}${username}/ovpn.zip
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::access() {
-  declare text="Greifen Sie auf ${software_title} zu unter:
-${quickbox_web_root}whats-streaming.php"
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::software::x2go::access() {
   ip_output=$(ip route get 8.8.8.8 2>/dev/null) && server_ip=$(echo "${ip_output}" | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}') || server_ip="127.0.0.1"
   declare text="${software_title} Server installiert
 
-> Bitte installieren Sie x2go-client auf Ihrem persönlichen Computer 
-und verbinden Sie sich mit dem neu erstellten ${software_title} Server 
+> Bitte installieren Sie x2go-client auf Ihrem persönlichen Computer
+und verbinden Sie sich mit dem neu erstellten ${software_title} Server
 mit folgendem:
 Host:       ${server_ip}
 Anmeldung:  ${username}
@@ -235,4 +229,4 @@ Sitzungstyp:	XFCE oder MATE
 > Laden Sie x2go-client von folgendem herunter:
 https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
   quickbox::dashboard::log "${text}"
-} 
+}

@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_dns_de
 # File Description: German language file - DNS Credentials Management
-# File Version: 1.0.2
+# File Version: 1.0.3
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -47,11 +46,6 @@ quickbox::lang::dns::credentials::status::setup_help() {
 
 quickbox::lang::dns::credentials::status::configured_providers() {
   declare text="Konfigurierte DNS-Anbieter:"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::dns::credentials::status::provider_count() {
-  declare text="${provider}: ${count} Anmeldedaten"
   quickbox::dashboard::log "${text}"
 }
 
@@ -313,4 +307,4 @@ quickbox::lang::dns::credentials::setup::fallback_test_command() {
 quickbox::lang::dns::credentials::backup::restored() {
   declare text="Sicherungskonfiguration wiederhergestellt"
   quickbox::dashboard::log "${text}"
-} 
+}

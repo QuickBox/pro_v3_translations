@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_users_de
 # File Description: German language file - User Management
-# File Version: 1.0.2
+# File Version: 1.0.3
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -73,4 +72,4 @@ quickbox::lang::user::demote() {
 quickbox::lang::user::promote() {
   declare text="${username:-"QuickBox-Benutzer"} zum Administrator befördert"
   quickbox::dashboard::log "${text}"
-} 
+}

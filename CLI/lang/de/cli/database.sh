@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_database_de
 # File Description: German language file - Database Management
-# File Version: 1.0.3
+# File Version: 1.0.4
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -127,11 +126,6 @@ quickbox::lang::db::install::mysql::client() {
 
 quickbox::lang::db::install::mysql::client::fail() {
   declare text="MySQL-Client-Konfiguration konnte nicht geschrieben werden."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::db::install::mysql::reload() {
-  declare text="Systemctl-Daemon wird neu geladen..."
   quickbox::dashboard::log "${text}"
 }
 
@@ -522,4 +516,4 @@ quickbox::lang::db::restore::mysql::fail() {
 quickbox::lang::db::restore::unsupported() {
   declare text="Nicht unterstützter Datenbanktyp: ${db_type}. Keine Wiederherstellung durchgeführt."
   quickbox::dashboard::log "${text}"
-} 
+}
