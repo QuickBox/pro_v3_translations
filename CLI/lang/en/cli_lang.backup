@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file
-# File Version: 1.0.555
+# File Version: 1.0.558
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -603,192 +602,6 @@ quickbox::lang::lecert::error::sudoers::create() {
 
 quickbox::lang::lecert::sudoers::created() {
   declare text="Sudoers file created for secure www-data access to DNS credentials"
-  quickbox::dashboard::log "${text}"
-}
-
-################################################################################
-# Lecert Interactive DNS Setup Messages
-################################################################################
-quickbox::lang::lecert::dns::interactive::header() {
-  declare text="=== Interactive DNS Credentials Setup ==="
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::header() {
-  declare text="Setting up Cloudflare DNS credentials..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::options() {
-  declare text="Choose your authentication method:"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::option1() {
-  declare text="1. API Token (Recommended)"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::option2() {
-  declare text="2. Global API Key + Email"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::api::header() {
-  declare text="=== API Token Method ==="
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::api::step1() {
-  declare text="1. Go to Cloudflare Dashboard > My Profile > API Tokens"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::api::step2() {
-  declare text="2. Create a new token with Zone:DNS:Edit permissions"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::api::step3() {
-  declare text="3. Enter your API token below:"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::api::error() {
-  declare text="❌ API token cannot be empty"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::legacy::header() {
-  declare text="=== Global API Key Method ==="
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::legacy::step1() {
-  declare text="1. Go to Cloudflare Dashboard > My Profile > API Keys"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::legacy::step2() {
-  declare text="2. Copy your Global API Key and Email"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::legacy::error() {
-  declare text="❌ Email and Global API Key cannot be empty"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::cloudflare::invalid() {
-  declare text="❌ Invalid option selected"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::route53::header() {
-  declare text="Setting up AWS Route53 DNS credentials..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::route53::intro() {
-  declare text="You need AWS Access Key ID and Secret Access Key with Route53 permissions:"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::route53::error() {
-  declare text="❌ Access Key ID and Secret Access Key cannot be empty"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::digitalocean::header() {
-  declare text="Setting up DigitalOcean DNS credentials..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::digitalocean::step1() {
-  declare text="1. Go to DigitalOcean Dashboard > API > Tokens/Keys"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::digitalocean::step2() {
-  declare text="2. Generate a new API token with Write permissions"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::digitalocean::error() {
-  declare text="❌ API token cannot be empty"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::not::implemented() {
-  declare text="❌ Interactive setup not implemented for this provider"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::manual::setup() {
-  declare text="Please set up credentials manually in /root/.acme.sh/account.conf"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::success() {
-  declare text="✅ DNS credentials saved successfully"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::interactive::continue() {
-  declare text="Continuing with certificate installation..."
-  quickbox::dashboard::log "${text}"
-}
-
-################################################################################
-# Lecert Prompt Messages
-################################################################################
-quickbox::lang::lecert::prompt::setup::cloudflare() {
-  declare text="Would you like to set up Cloudflare credentials now? (y/n): "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::setup::route53() {
-  declare text="Would you like to set up Route53 credentials now? (y/n): "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::setup::digitalocean() {
-  declare text="Would you like to set up DigitalOcean credentials now? (y/n): "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::cloudflare::method() {
-  declare text="Enter your choice (1 or 2): "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::cloudflare::api_token() {
-  declare text="Enter your Cloudflare API Token: "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::cloudflare::email() {
-  declare text="Enter your Cloudflare Email: "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::cloudflare::global_key() {
-  declare text="Enter your Cloudflare Global API Key: "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::route53::access_key() {
-  declare text="Enter your AWS Access Key ID: "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::route53::secret_key() {
-  declare text="Enter your AWS Secret Access Key: "
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::prompt::digitalocean::api_token() {
-  declare text="Enter your DigitalOcean API Token: "
   quickbox::dashboard::log "${text}"
 }
 

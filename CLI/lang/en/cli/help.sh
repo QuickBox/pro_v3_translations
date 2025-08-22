@@ -6,26 +6,26 @@
 
 # Function to generate help text based on provided options
 generate_help_text() {
-  local software_title="$1"
-  local software_name="$2"
-  local has_update="$3"
-  local options="$4"
-  local examples="$5"
-  local notes="$6"
+	local software_title="$1"
+	local software_name="$2"
+	local has_update="$3"
+	local options="$4"
+	local examples="$5"
+	local notes="$6"
 
-  local processes="  install    Install ${software_title}
+	local processes="  install    Install ${software_title}
   reinstall  Reinstall ${software_title}
   remove     Remove ${software_title}"
 
-  if [[ ${has_update} == 1 ]]; then
-    processes="${processes}
+	if [[ ${has_update} == 1 ]]; then
+		processes="${processes}
   update     Update ${software_title}"
-  fi
+	fi
 
-  processes="${processes}
+	processes="${processes}
   help       Display this help message"
 
-  declare text="
+	declare text="
 QuickBox Software Management for ${software_title}
 
 Usage:
@@ -41,23 +41,23 @@ Examples:
 ${examples}
 ${notes}
 "
-  quickbox::dashboard::log "${text}"
+	quickbox::dashboard::log "${text}"
 }
 
 # Function to get help text for specific software
 quickbox::software::help() {
-  local software_help_name="$1"
-  local software_title="${software_help_name^}" # Capitalize the first letter
-  local has_update
+	local software_help_name="$1"
+	local software_title="${software_help_name^}" # Capitalize the first letter
+	local has_update
 
-  case "${software_help_name}" in
-  emby | jellyfin)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	case "${software_help_name}" in
+	emby | jellyfin)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   -d | --domain    Set the domain for ${software_title}
   --beta           Install the beta version of ${software_title}" \
-      "  qb install ${software_help_name} -u username -d '${software_help_name}.domain.com'
+			"  qb install ${software_help_name} -u username -d '${software_help_name}.domain.com'
   qb reinstall ${software_help_name} -u username -d '${software_help_name}.domain.com'
   qb install ${software_help_name} -u username --beta
   qb reinstall ${software_help_name} -u username --beta
@@ -67,31 +67,31 @@ quickbox::software::help() {
   ## Use multiple options
   qb install ${software_help_name} -u username -d '${software_help_name}.domain.com' --beta
   qb reinstall ${software_help_name} -u username -d '${software_help_name}.domain.com' --beta" \
-      "
+			"
 Notes:
   - When installing or reinstalling with the domain option, the Nginx reverse proxy will be configured automatically.
       * Ensure the domain is pointing to the server's IP address and the proper DNS records are set."
-    ;;
+		;;
 
-  mylar3)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u   | --username             Set the username for ${software_title} (required)
+	mylar3)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username             Set the username for ${software_title} (required)
   -clp | --comic-location-path  Set the location path for comics (default: /home/username/Media/Comics)" \
-      "  qb install ${software_help_name} -u username -clp '/path/to/comics'
+			"  qb install ${software_help_name} -u username -clp '/path/to/comics'
   qb reinstall ${software_help_name} -u username -clp '/path/to/comics'
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      ""
-    ;;
+			""
+		;;
 
-  radarr | sonarr)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	radarr | sonarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --4k             Set the build installation for 4k (default: 1080p)
   --nightly        Set the build installation on the nightly branch (default: latest)" \
-      "  qb install ${software_help_name} -u username              # Install standard (1080p) installation
+			"  qb install ${software_help_name} -u username              # Install standard (1080p) installation
   qb install ${software_help_name} -u username --4k         # Install 4k installation
   qb reinstall ${software_help_name} -u username --nightly  # Reinstall nightly installation
   qb reinstall ${software_help_name} -u username --4k       # Reinstall 4k installation
@@ -104,33 +104,33 @@ Notes:
   qb install ${software_help_name} -u username --4k --nightly    # Install 4k installation on the nightly branch
   qb reinstall ${software_help_name} -u username --4k --nightly  # Reinstall 4k installation on the nightly branch
   qb update ${software_help_name} -u username --4k --nightly     # Update 4k installation on or to nightly" \
-      ""
-    ;;
+			""
+		;;
 
-  calibre | kavita)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u  | --username      Set the username for ${software_title} (required)
+	calibre | kavita)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username      Set the username for ${software_title} (required)
   -lp | --library-path  Set the location path for your library (default: /home/username/.config/${software_title}/library)" \
-      "  qb install ${software_help_name} -u username -lp '/path/to/library'
+			"  qb install ${software_help_name} -u username -lp '/path/to/library'
   qb reinstall ${software_help_name} -u username -lp '/path/to/library'
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      ""
-    ;;
+			""
+		;;
 
-  plex)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u   | --username          Set the username for ${software_title} (required)
+	plex)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u   | --username          Set the username for ${software_title} (required)
   -pct | --plex-claim-token  Set the Plex Claim Token for ${software_title} (required for quick claiming)
   -d   | --domain            Set the domain for ${software_title}
   -D   | --data-dir          Set the data directory for ${software_title} (default: /home/username/.config/'Plex Media Server')" \
-      "  qb install ${software_help_name} -u username -pct 'claim_token' -d 'plex.domain.com' -D '/path/to/data'
+			"  qb install ${software_help_name} -u username -pct 'claim_token' -d 'plex.domain.com' -D '/path/to/data'
   qb reinstall ${software_help_name} -u username -pct 'claim_token' -d 'plex.domain.com' -D '/path/to/data'
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      "
+			"
 Notes:
   - The Plex Claim Token can be obtained from:
       https://www.plex.tv/claim/
@@ -149,14 +149,14 @@ Notes:
       * Ensure the domain is pointing to the server's IP address and the proper DNS records are set.
 
   - When updating, you will be prompted to enter your plex.tv email, password, as well as 2FA code."
-    ;;
+		;;
 
-  bazarr)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	bazarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --4k             Set the build installation for 4k (default: 1080p)" \
-      "  qb install ${software_help_name} -u username                 # Install standard (1080p) installation
+			"  qb install ${software_help_name} -u username                 # Install standard (1080p) installation
   qb install ${software_help_name} -u username --4k            # Install 4k installation
   qb reinstall ${software_help_name} -u username               # Reinstall standard (1080p) installation
   qb reinstall ${software_help_name} -u username --4k          # Reinstall 4k installation
@@ -164,85 +164,85 @@ Notes:
   qb remove ${software_help_name} -u username --4k             # Remove 4k installation
   qb update ${software_help_name} -u username                  # Update standard (1080p) installation
   qb update ${software_help_name} -u username --4k             # Update 4k installation" \
-      ""
-    ;;
+			""
+		;;
 
-  autodl | x2go)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "" \
-      "  qb install ${software_help_name}
+	autodl | x2go)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
   qb reinstall ${software_help_name}
   qb remove ${software_help_name}
   qb update ${software_help_name}" \
-      ""
-    ;;
+			""
+		;;
 
-  fail2ban)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "" \
-      "  qb install ${software_help_name}
+	fail2ban)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"" \
+			"  qb install ${software_help_name}
   qb reinstall ${software_help_name}
   qb remove ${software_help_name}" \
-      ""
-    ;;
+			""
+		;;
 
-  filebot)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u  | --username    Set the username for ${software_title} (required)
+	filebot)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username    Set the username for ${software_title} (required)
   -mp | --media-path  Set the media path for ${software_title} (default: /home/username/Media)
   -o 'deluge'         Install ${software_title} with Deluge integration
   -o 'nzbget'         Install ${software_title} with NZBGet integration
   -o 'rtorrent'       Install ${software_title} with rTorrent integration
   -o 'sabnzbd'        Install ${software_title} with SABnzbd integration" \
-      "  qb install ${software_help_name} -u username
+			"  qb install ${software_help_name} -u username
   qb reinstall ${software_help_name} -u username
   qb remove ${software_help_name} -u username
 
   ## Use multiple options
   qb install ${software_help_name} -u username -o 'deluge' -o 'nzbget'
   qb reinstall ${software_help_name} -u username -o 'rtorrent' -o 'sabnzbd'" \
-      ""
-    ;;
+			""
+		;;
 
-  jdownloader)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u  | --username       Set the username for ${software_title} (required)
+	jdownloader)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username       Set the username for ${software_title} (required)
   -e  | --email          Set the email for ${software_title} (required) .i.
   -p  | --password       Set the password for ${software_title} (required) .ii.
   -D  | --downloads-dir  Set the downloads path for ${software_title} (default: /home/username/Downloads)" \
-      "  qb install ${software_help_name} -u username -e 'email' -p 'password' -D '/path/to/downloads'
+			"  qb install ${software_help_name} -u username -e 'email' -p 'password' -D '/path/to/downloads'
   qb reinstall ${software_help_name} -u username -e 'email' -p 'password' -D '/path/to/downloads'
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      "
+			"
 Notes:
   - .i. The email and password are required for JDownloader installation.
       * .ii. these are the credentials for your MyJDownloader account."
-    ;;
+		;;
 
-  jellyseerr | komga | overseerr)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u  | --username  Set the username for ${software_title} (required)
+	jellyseerr | komga | overseerr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u  | --username  Set the username for ${software_title} (required)
   -d  | --domain    Set the domain for ${software_title}" \
-      "  qb install ${software_help_name} -u username -d '${software_help_name}.domain.com'
+			"  qb install ${software_help_name} -u username -d '${software_help_name}.domain.com'
   qb reinstall ${software_help_name} -u username -d '${software_help_name}.domain.com'
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      "
+			"
 Notes:
   - When installing or reinstalling with the domain [-d] option, the Nginx reverse proxy will be configured automatically.
       * Ensure the domain is pointing to the server's IP address and the proper DNS records are set."
-    ;;
+		;;
 
-  lecert)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  --dash          Install a certificate for the domain specified with '-d' and create a reverse proxy for the QuickBox dashboard
+	lecert)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  --dash          Install a certificate for the domain specified with '-d' and create a reverse proxy for the QuickBox dashboard
   --no-dash       Install a certificate for a custom domain specified with '-d' (certificate only, no reverse proxy)
   --emby          Install a certificate for the domain specified with '-d' and create a reverse proxy for Emby
   --jellyfin      Install a certificate for the domain specified with '-d' and create a reverse proxy for Jellyfin
@@ -259,7 +259,7 @@ Notes:
 
   Domain Options:
   -d  | --domain  Set the domain for ${software_title} (supports wildcards with DNS challenge)" \
-      "  # Standard HTTP challenge examples
+			"  # Standard HTTP challenge examples
   qb install ${software_help_name} --dash -d 'example.com'
   qb install ${software_help_name} --jellyfin -d 'jellyfin.example.com' --plex -d 'plex.example.com'
 
@@ -276,7 +276,7 @@ Notes:
   qb reinstall ${software_help_name} --plex -d 'plex.example.com' --dns --dns-provider godaddy
   qb remove ${software_help_name} --emby -d 'emby.example.com'
   qb renew ${software_help_name} -d 'domain1.com' -d 'domain2.com'" \
-      "
+			"
 DNS Challenge Setup:
   Configure your DNS provider credentials using one of these methods:
 
@@ -370,27 +370,27 @@ Troubleshooting:
   • Check certificate status: Use 'qb dns-credentials status' to view installed certificates
   • Rate limits: Let's Encrypt has rate limits - avoid too many requests per hour
   • Domain validation: Ensure domain is properly configured in your DNS provider"
-    ;;
+		;;
 
-  lidarr | readarr)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	lidarr | readarr)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --nightly        Set the build installation on the nightly branch (default: latest)" \
-      "  qb install ${software_help_name} -u username                 # Install default (latest) installation
+			"  qb install ${software_help_name} -u username                 # Install default (latest) installation
   qb install ${software_help_name} -u username --nightly       # Install nightly installation
   qb reinstall ${software_help_name} -u username               # Reinstall default (latest) installation
   qb reinstall ${software_help_name} -u username --nightly     # Reinstall nightly installation
   qb remove ${software_help_name} -u username                  # Remove current installation
   qb update ${software_help_name} -u username                  # Update default (latest) installation
   qb update ${software_help_name} -u username --nightly        # Update to/from nightly installation" \
-      ""
-    ;;
+			""
+		;;
 
-  ombi)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username          Set the username for ${software_title} (required)
+	ombi)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username          Set the username for ${software_title} (required)
   --ombi2mysql             Migrate Ombi data to MySQL
   --phmyadmin              Install phpMyAdmin for Ombi migration
   --mysql-user=<username>  Set the MySQL username for Ombi migration (default: username specified with -u)
@@ -398,11 +398,11 @@ Troubleshooting:
   --mysql-host=<host>      Set the MySQL host for Ombi migration (default: localhost)
   --mysql-port=<port>      Set the MySQL port for Ombi migration (default: 3306)
   --mysql-db=<database>    Set the MySQL database for Ombi migration (default: Ombi)" \
-      "  qb install ${software_help_name} -u username
+			"  qb install ${software_help_name} -u username
   qb reinstall ${software_help_name} -u username
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username --ombi2mysql --phpmyadmin" \
-      "
+			"
 Notes:
   - The --ombi2mysql option will migrate Ombi data to MySQL.
     * This requires the MySQL username, password, host, port, and database to be specified.
@@ -420,53 +420,53 @@ Notes:
 
   - Ombi is installed with SQLite support by default.
   - MySQL support is only available when using the --ombi2mysql option on the update process."
-    ;;
+		;;
 
-  phpmyadmin)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	phpmyadmin)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --pma-user       Set the phpMyAdmin username (default: username specified with -u)
   --pma-pass       Set the phpMyAdmin password (default: randomly generated)
   --pma-host       Set the phpMyAdmin host (default: localhost)" \
-      "  qb install ${software_help_name} -u username --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
+			"  qb install ${software_help_name} -u username --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
   qb reinstall ${software_help_name} -u username --pma-user 'pma_user' --pma-pass 'pma_pass' --pma-host 'localhost'
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      "
+			"
 Notes:
   - The phpMyAdmin username and password are optional.
     * If not specified, the default values will be used:
       - phpMyAdmin User: Username (from -u option)
       - phpMyAdmin Password: Randomly generated password
       - phpMyAdmin Host: localhost"
-    ;;
+		;;
 
-  quota)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -qm | --quota-mount  Set the system mount point for ${software_title} (required)" \
-      "  qb install ${software_help_name} -qm '/path/to/mount/point'
+	quota)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -qm | --quota-mount  Set the system mount point for ${software_title} (required)" \
+			"  qb install ${software_help_name} -qm '/path/to/mount/point'
   qb reinstall ${software_help_name} -qm '/path/to/mount/point'
   qb remove ${software_help_name}" \
-      ""
-    ;;
+			""
+		;;
 
-  rclone)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	rclone)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --dropbox        Install ${software_title} with Dropbox integration
   --gdrive         Install ${software_title} with Google Drive integration
   --encrypted      Install ${software_title} with encryption
   --beta           Install the beta version of ${software_title}" \
-      "  qb install ${software_help_name} -u username --dropbox
+			"  qb install ${software_help_name} -u username --dropbox
   qb install ${software_help_name} -u username --beta --gdrive
   qb reinstall ${software_help_name} -u username --dropbox --encrypted
   qb reinstall ${software_help_name} -u username --gdrive
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      "
+			"
 Notes:
   - It is recommended to use either the --dropbox or --gdrive option on a single install pass.
      * This will prevent any conflicts with the rclone configuration.
@@ -476,29 +476,29 @@ Notes:
   - When installing with the --encrypted option, the rclone configuration will be encrypted using the specified information.
 
   - When installing with the --beta option, the beta version of rclone will be installed."
-    ;;
+		;;
 
-  requestrr | vpn)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)" \
-      "  qb install ${software_help_name} -u username
+	requestrr | vpn)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)" \
+			"  qb install ${software_help_name} -u username
   qb reinstall ${software_help_name} -u username
   qb remove ${software_help_name} -u username" \
-      ""
-    ;;
+			""
+		;;
 
-  rtorrent)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username    Set the username for ${software_title} (required)
+	rtorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    Set the username for ${software_title} (required)
   -o '0.15.1'        Install version 0.15.1
   -o '0.10.0'        Install version 0.10.0
   -o '0.9.8'         Install version 0.9.8
   -o '0.9.7'         Install version 0.9.7
   -o '0.9.6'         Install version 0.9.6
   -o 'feature-bind'  Install the feature-bind version of ${software_title}" \
-      "  qb install ${software_help_name} -u username -o '0.15.1'
+			"  qb install ${software_help_name} -u username -o '0.15.1'
   qb install ${software_help_name} -u username -o '0.10.0'
   qb install ${software_help_name} -u username -o '0.9.8'
   qb install ${software_help_name} -u username -o '0.9.7'
@@ -506,24 +506,24 @@ Notes:
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username -o '0.15.1'
   qb update ${software_help_name} -u username -o 'feature-bind'" \
-      "
+			"
 Notes:
   - rTorrent is a globally installed application and will be available for all users on the server.
 
   - The feature-bind version of rTorrent is a custom build that includes the bind feature.
      * The bind feature allows you to bind rTorrent to a specific IP address."
-    ;;
+		;;
 
-  rutorrent)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username    Set the username for ${software_title} (required)
+	rutorrent)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username    Set the username for ${software_title} (required)
   --beta             Install the beta version of ${software_title}" \
-      "  qb install ${software_help_name} -u username
+			"  qb install ${software_help_name} -u username
   qb reinstall ${software_help_name} -u username
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username --beta" \
-      "
+			"
 Notes:
   - ruTorrent is a globally installed application and will be available for all users on the server.
 
@@ -533,37 +533,37 @@ Notes:
 
   - rutorrent will be installed with the latest version by default. If you wish to install the beta version,
 	you can use the --beta option. Keep in mind that the two versions are not always different."
-    ;;
+		;;
 
-  sabnzbd | thelounge | xteve)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	sabnzbd | thelounge | xteve)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --beta           Install the beta version of ${software_title}" \
-      "  qb install ${software_help_name} -u username
+			"  qb install ${software_help_name} -u username
   qb install ${software_help_name} -u username --beta
   qb reinstall ${software_help_name} -u username
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      ""
-    ;;
+			""
+		;;
 
-  transmission)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)
+	transmission)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)
   --v4             Install version 4 of ${software_title} (default: version 3)" \
-      "  qb install ${software_help_name} -u username --v4
+			"  qb install ${software_help_name} -u username --v4
   qb reinstall ${software_help_name} -u username --v4
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username --v4" \
-      ""
-    ;;
+			""
+		;;
 
-  wireguard)
-    has_update=0
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username              Set the username for ${software_title} (required)
+	wireguard)
+		has_update=0
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username              Set the username for ${software_title} (required)
   -o [client|server]           Install WireGuard as a client or server
   -cai  | --client-allowed-ip  Set the allowed IP for the WireGuard server
   -cidr | --cidr               Set the CIDR for the WireGuard server (default: 10.5.0.2/16)
@@ -573,7 +573,7 @@ Notes:
   -noc  | --number-of-clients  Set the number of clients for the WireGuard server
   -pdr  | --postdown-rule      Set the post-down rule for the WireGuard server
   -pur  | --postup-rule        Set the post-up rule for the WireGuard server" \
-      "  qb install ${software_help_name} -u username -o server \\
+			"  qb install ${software_help_name} -u username -o server \\
   -cai '192.168.0.2,192.168.0.3' \\
   -cidr '10.5.0.2/16' \\
   -dns '0.0.0.0' \\
@@ -584,7 +584,7 @@ Notes:
   -pur 'iptables -A INPUT -i wg0 -j ACCEPT'
   qb reinstall ${software_help_name} -u username -o client
   qb remove ${software_help_name} -u username" \
-      "
+			"
 Notes:
   - The WireGuard server will be installed with the default CIDR of 10.5.0.2/16,
     DNS of 1.1.1.1, 1 client config, and listen port of 51820.
@@ -601,18 +601,18 @@ Notes:
     you can generate one using the included NordVPN configuration generator.
     For more information on generating a NordVPN configuration file,
     use the command: nvpn_conf_gen -h"
-    ;;
+		;;
 
-  wsdashboard)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)" \
-      "  qb install ${software_help_name} -u username     - Install WSD with enhanced service configuration
+	wsdashboard)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)" \
+			"  qb install ${software_help_name} -u username     - Install WSD with enhanced service configuration
   qb reinstall ${software_help_name} -u username   - Reinstall WSD with enhanced service configuration
   qb remove ${software_help_name} -u username      - Remove WSD and clean up all service files
   qb update ${software_help_name} -u username      - Update WSD with enhanced service configuration
   qb maintenance ${software_help_name} -u username - Perform service maintenance and health checks" \
-      "
+			"
 Enhanced Features:
   - Non-root service execution (www-data user)
   - Comprehensive security sandboxing
@@ -628,17 +628,17 @@ Service Management:
   journalctl -u qbwsd.service -f     - View live logs
   qbwsd-health-check.sh --verbose    - Run detailed health check
   qbwsd-health-check.sh --fix        - Auto-fix common issues"
-    ;;
+		;;
 
-  *)
-    has_update=1
-    generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
-      "  -u | --username  Set the username for ${software_title} (required)" \
-      "  qb install ${software_help_name} -u username
+	*)
+		has_update=1
+		generate_help_text "${software_title}" "${software_help_name}" "${has_update}" \
+			"  -u | --username  Set the username for ${software_title} (required)" \
+			"  qb install ${software_help_name} -u username
   qb reinstall ${software_help_name} -u username
   qb remove ${software_help_name} -u username
   qb update ${software_help_name} -u username" \
-      ""
-    ;;
-  esac
-} 
+			""
+		;;
+	esac
+}

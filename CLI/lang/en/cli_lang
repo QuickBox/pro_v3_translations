@@ -4,10 +4,11 @@
 # Project Name: QuickBox Pro
 # File Name: quickbox_lang_en
 # File Description: English language file - Legacy Bridge to Modular System
-# File Version: 1.0.561
+# File Version: 1.0.564
 #
 # Save Tasks:
 # Automated_Versioning: true
+# Automated_Formatting: true
 #
 # Build Tasks:
 # Automated_Comment_Strip: true
@@ -16,7 +17,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -51,68 +51,68 @@ else
   # Fallback: If modular system is not available, provide basic functionality
   echo "Warning: Modular language system not found. Using fallback mode."
   # Basic dashboard logging function as fallback
-quickbox::dashboard::log() {
-  admin_name="$(quickbox::database "SELECT username FROM user_information WHERE user_level = '10';")"
-  if [[ ! -f "/srv/quickbox/logs/dashboard" ]]; then
-    mkdir -p /srv/quickbox/logs
-    touch /srv/quickbox/logs/dashboard
-    chown www-data:www-data /srv/quickbox/logs/dashboard
-  fi
-  if [[ ! -f "/srv/quickbox/logs/${username:-${admin_name}}.dashboard" ]]; then
-    mkdir -p /srv/quickbox/logs
-    touch "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
-    chown www-data:www-data "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
-  fi
-  if [[ -n ${username} ]]; then
-    echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${username:-}.dashboard"
-  else
-    echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${admin_name:-}.dashboard"
-  fi
-  echo "${1:-null}"
-}
+  quickbox::dashboard::log() {
+    admin_name="$(quickbox::database "SELECT username FROM user_information WHERE user_level = '10';")"
+    if [[ ! -f "/srv/quickbox/logs/dashboard" ]]; then
+      mkdir -p /srv/quickbox/logs
+      touch /srv/quickbox/logs/dashboard
+      chown www-data:www-data /srv/quickbox/logs/dashboard
+    fi
+    if [[ ! -f "/srv/quickbox/logs/${username:-${admin_name}}.dashboard" ]]; then
+      mkdir -p /srv/quickbox/logs
+      touch "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
+      chown www-data:www-data "/srv/quickbox/logs/${username:-${admin_name}}.dashboard"
+    fi
+    if [[ -n ${username} ]]; then
+      echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${username:-}.dashboard"
+    else
+      echo "${1:-null}" | sed -z "s/\n/\n<br>/" >"/srv/quickbox/logs/${admin_name:-}.dashboard"
+    fi
+    echo "${1:-null}"
+  }
   # Basic fallback functions for critical operations
-quickbox::lang::install::header() {
-  declare text="${software_title} will now be installed
+  quickbox::lang::install::header() {
+    declare text="${software_title} will now be installed
 this process may take a few minutes..."
-  quickbox::dashboard::log "${text}"
-}
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::install::complete::header() {
-  declare text="${software_title} installation complete"
-  quickbox::dashboard::log "${text}"
-}
+  quickbox::lang::install::complete::header() {
+    declare text="${software_title} installation complete"
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::remove::header() {
-  declare text="${software_title} will now be removed
+  quickbox::lang::remove::header() {
+    declare text="${software_title} will now be removed
 this process may take a few minutes..."
-  quickbox::dashboard::log "${text}"
-}
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::remove::complete::header() {
-  declare text="${software_title} removal complete"
-  quickbox::dashboard::log "${text}"
-}
+  quickbox::lang::remove::complete::header() {
+    declare text="${software_title} removal complete"
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::update::header() {
-  declare text="${software_title} will now be updated
+  quickbox::lang::update::header() {
+    declare text="${software_title} will now be updated
 this process may take a few minutes..."
-  quickbox::dashboard::log "${text}"
-}
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::update::complete::header() {
-  declare text="${software_title} update complete"
-  quickbox::dashboard::log "${text}"
-}
+  quickbox::lang::update::complete::header() {
+    declare text="${software_title} update complete"
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::unknown::option() {
-  declare text="${2} Unknown option: ${1}"
-  quickbox::dashboard::log "${text}"
-}
+  quickbox::lang::unknown::option() {
+    declare text="${2} Unknown option: ${1}"
+    quickbox::dashboard::log "${text}"
+  }
 
-quickbox::lang::username::specified() {
-  declare text="error: username not specified"
-  quickbox::dashboard::log "${text}"
-}
+  quickbox::lang::username::specified() {
+    declare text="error: username not specified"
+    quickbox::dashboard::log "${text}"
+  }
 fi
 
 ################################################################################

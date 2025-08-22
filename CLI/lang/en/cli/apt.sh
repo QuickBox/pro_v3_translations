@@ -4,10 +4,11 @@
 # Project Name: QuickBox Pro
 # File Name: cli_apt_en
 # File Description: English language file - APT Package Management
-# File Version: 1.0.1
+# @version: 1.0.6
 #
-# Save Tasks:
-# Automated_Versioning: true
+# @save_tasks:
+#  automated_versioning: true
+#  automated_formatting: true
 #
 # Build Tasks:
 # Automated_Comment_Strip: true
@@ -16,9 +17,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
-# Author: Jamie Dobbs (Mschf)
-# Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
 # Copyright (C) 2019-2025, QuickBox.IO
@@ -48,4 +46,4 @@ quickbox::lang::apt::update::completed() {
 quickbox::lang::apt::check::failed() {
   declare text="apt-get check failed, you may have broken packages"
   quickbox::dashboard::log "${text}"
-} 
+}

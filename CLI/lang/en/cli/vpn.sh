@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_vpn_en
 # File Description: English language file - VPN/WireGuard Operations
-# File Version: 1.0.1
+# File Version: 1.0.2
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -31,46 +30,46 @@
 # VPN Operations
 ################################################################################
 quickbox::lang::software::vpnzip::access() {
-  declare text="download ${software_title} profile at:
+	declare text="download ${software_title} profile at:
 ${quickbox_web_root}${username}/ovpn.zip
 > to use in any OpenVPN client"
-  quickbox::dashboard::log "${text}"
+	quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
 # WireGuard Operations
 ################################################################################
 quickbox::lang::wireguard::client_config() {
-  declare text="setting up client configuration for $1"
-  quickbox::dashboard::log "${text}"
+	declare text="setting up client configuration for $1"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::server_config() {
-  declare text="setting up server configuration for $1"
-  quickbox::dashboard::log "${text}"
+	declare text="setting up server configuration for $1"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_ask() {
-  declare text="Do you want to enter a client configuration? (y/n)"
-  quickbox::dashboard::log "${text}"
+	declare text="Do you want to enter a client configuration? (y/n)"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_paste() {
-  declare text="Paste or enter the client configuration below. Press ctrl+D or ⌘+D when done to continue."
-  quickbox::dashboard::log "${text}"
+	declare text="Paste or enter the client configuration below. Press ctrl+D or ⌘+D when done to continue."
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_ask_extra() {
-  declare text="Do you want to enter another client configuration? (y/n)"
-  quickbox::dashboard::log "${text}"
+	declare text="Do you want to enter another client configuration? (y/n)"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::configure::client_ask_extra_error() {
-  declare text="Invalid input. Please enter 'y' or 'n'."
-  quickbox::dashboard::log "${text}"
+	declare text="Invalid input. Please enter 'y' or 'n'."
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::wireguard::mtuendpoint::error() {
-  declare text="Error: --mtu and --endpoint are required for the 'calc' process"
-  quickbox::dashboard::log "${text}"
-} 
+	declare text="Error: --mtu and --endpoint are required for the 'calc' process"
+	quickbox::dashboard::log "${text}"
+}

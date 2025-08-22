@@ -4,10 +4,11 @@
 # Project Name: QuickBox Pro
 # File Name: cli_lang_modular
 # File Description: English language file - Modular Bridge
-# File Version: 1.0.14
+# File Version: 1.0.16
 #
 # Save Tasks:
 # Automated_Versioning: true
+# Automated_Formatting: true
 #
 # Build Tasks:
 # Automated_Comment_Strip: true
@@ -26,7 +27,7 @@
 
 ################################################################################
 # QuickBox Pro - Modular Language System
-# 
+#
 # This file serves as a bridge between the system and the modular translation
 # files. It sources all the individual language modules to provide a unified
 # interface for the CLI system.
@@ -131,7 +132,7 @@ fi
 
 ################################################################################
 # Legacy Compatibility Functions
-# 
+#
 # These functions maintain backward compatibility with the original cli_lang
 # file structure. They redirect to the appropriate modular functions.
 ################################################################################
@@ -180,23 +181,23 @@ quickbox::lang::modules::validate() {
     "misc.sh"
     "wsd.sh"
   )
-  
+
   for module in "${required_modules[@]}"; do
     if [[ ! -f "${SCRIPT_DIR}/cli/${module}" ]]; then
       missing_modules+=("${module}")
     fi
   done
-  
+
   if [[ ${#missing_modules[@]} -gt 0 ]]; then
     declare text="Missing language modules: ${missing_modules[*]}"
     quickbox::dashboard::log "${text}"
     return 1
   fi
-  
+
   return 0
 }
 
 # Validate modules on load
 if ! quickbox::lang::modules::validate; then
   quickbox::lang::modules::error
-fi 
+fi
