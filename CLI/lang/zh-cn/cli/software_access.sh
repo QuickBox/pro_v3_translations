@@ -195,9 +195,3 @@ ${server_ip}:${software_daemon_port}
 https://quassel-irc.org/downloads"
   quickbox::dashboard::log "${text}"
 }
-
-quickbox::lang::software::wsdashboard::access() {
-  declare text="访问 ${software_title}：
-${quickbox_web_root}whats-streaming.php"
-  quickbox::dashboard::log "${text}"
-} 

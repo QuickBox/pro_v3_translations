@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_ssl_zh-cn
 # File Description: 简体中文语言文件 - SSL/LetsEncrypt操作
-# File Version: 1.0.13
+# File Version: 1.0.14
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -240,11 +239,6 @@ quickbox::lang::lecert::dns::gcp::error() {
 
 quickbox::lang::lecert::dns::ionos::error() {
   declare text="IONOS 的 DNS 挑战需要 IONOS_PREFIX 和 IONOS_SECRET 环境变量"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::lecert::dns::credentials::help() {
-  declare text="通过 QuickBox 仪表板设置或在 /root/.acme.sh/account.conf 中手动设置"
   quickbox::dashboard::log "${text}"
 }
 
@@ -788,4 +782,4 @@ quickbox::lang::lecert::dns::setup::generic::referral() {
 quickbox::lang::lecert::dns::setup::generic::url() {
   declare text="https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_${provider}"
   quickbox::dashboard::log "${text}"
-} 
+}

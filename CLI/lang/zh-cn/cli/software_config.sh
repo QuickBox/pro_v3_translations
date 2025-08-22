@@ -209,12 +209,6 @@ quickbox::lang::software::ombi_mysql_migration_complete() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::plex_directory_warning() {
-  declare text="自定义数据目录：'${software_install_directory}' 已存在。
-使用 '${software_install_directory}/plex' 代替。"
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::software::plexclaim() {
   declare text="为 ${username} 申请 plex 服务器..."
   quickbox::dashboard::log "${text}"
@@ -388,4 +382,4 @@ quickbox::lang::build::python311() {
 quickbox::lang::build::sabnzbd::par2cmdline() {
   declare text="正在安装 par2cmdline，请稍候，这可能需要一段时间..."
   quickbox::dashboard::log "${text}"
-} 
+}

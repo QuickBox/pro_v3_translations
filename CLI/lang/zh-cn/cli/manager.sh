@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_manager_zh-cn
 # File Description: 简体中文语言文件 - 软件管理器
-# File Version: 1.0.2
+# File Version: 1.0.3
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -181,16 +180,6 @@ quickbox::lang::delete::selection::invalid() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::delete::software::error() {
-  declare text="${software_title} 应用程序备份不存在。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::delete::config::error() {
-  declare text="${software_title} 配置备份不存在。"
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::delete::selection::display() {
   version="$(tput setaf 5)${version}$(tput setaf 7)"
   app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
@@ -221,4 +210,4 @@ quickbox::lang::delete::complete() {
   version="$(tput setaf 5)${version}$(tput setaf 2)"
   declare text="${software_title} 备份 (${version}) 已删除。"
   quickbox::dashboard::log "${text}$(tput sgr0)"
-} 
+}

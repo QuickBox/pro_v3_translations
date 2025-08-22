@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_core_zh-cn
 # File Description: 简体中文语言文件 - 核心系统操作
-# File Version: 1.0.5
+# File Version: 1.0.6
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -60,11 +59,6 @@ quickbox::lang::clean::memory() {
 
 quickbox::lang::clean::rclone() {
   declare text="正在清理 rclone 上传日志..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::clean::rclone::error() {
-  declare text="错误：日志文件不存在。"
   quickbox::dashboard::log "${text}"
 }
 
@@ -132,10 +126,5 @@ quickbox::lang::trackers::enable() {
 
 quickbox::lang::software::run_via_qb() {
   declare text="错误[1]：${script_name} 应通过 qb 运行"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::mflibs_not_readable() {
-  declare text="错误[1]: mflibs 不可读"
   quickbox::dashboard::log "${text}"
 }

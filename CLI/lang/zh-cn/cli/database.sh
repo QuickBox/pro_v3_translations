@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_database_zh-cn
 # File Description: 简体中文语言文件 - 数据库管理
-# File Version: 1.0.3
+# File Version: 1.0.4
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -127,11 +126,6 @@ quickbox::lang::db::install::mysql::client() {
 
 quickbox::lang::db::install::mysql::client::fail() {
   declare text="写入MySQL客户端配置失败。"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::db::install::mysql::reload() {
-  declare text="正在重新加载systemctl守护进程..."
   quickbox::dashboard::log "${text}"
 }
 
@@ -522,4 +516,4 @@ quickbox::lang::db::restore::mysql::fail() {
 quickbox::lang::db::restore::unsupported() {
   declare text="不支持的数据库类型：${db_type}。未执行恢复。"
   quickbox::dashboard::log "${text}"
-} 
+}
