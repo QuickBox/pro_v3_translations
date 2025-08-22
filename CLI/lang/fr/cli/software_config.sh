@@ -209,12 +209,6 @@ quickbox::lang::software::ombi_mysql_migration_complete() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::plex_directory_warning() {
-  declare text="le répertoire de données personnalisé: '${software_install_directory}' existe déjà.
-utilisation de '${software_install_directory}/plex' à la place."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::software::plexclaim() {
   declare text="revendication du serveur plex pour ${username}..."
   quickbox::dashboard::log "${text}"
@@ -388,4 +382,4 @@ quickbox::lang::build::python311() {
 quickbox::lang::build::sabnzbd::par2cmdline() {
   declare text="installation de par2cmdline, veuillez patienter car cela peut prendre un moment..."
   quickbox::dashboard::log "${text}"
-} 
+}

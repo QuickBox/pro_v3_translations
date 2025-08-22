@@ -63,11 +63,6 @@ quickbox::lang::clean::rclone() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::clean::rclone::error() {
-  declare text="erreur: fichier journal non présent."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::clean::dashboard() {
   declare text="en attente de la réponse du système..."
   quickbox::dashboard::log "${text}"
@@ -132,10 +127,5 @@ quickbox::lang::trackers::enable() {
 
 quickbox::lang::software::run_via_qb() {
   declare text="erreur[1]: ${script_name} doit être exécuté via qb"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::mflibs_not_readable() {
-  declare text="erreur[1]: mflibs non lisible"
   quickbox::dashboard::log "${text}"
 }

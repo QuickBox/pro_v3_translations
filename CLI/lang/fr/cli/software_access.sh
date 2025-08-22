@@ -165,7 +165,7 @@ quickbox::lang::software::plex::access() {
 ${quickbox_web_root}web/
 ${software_title} installé sur le port: ${software_web_port}
 
-> Si vous n'avez pas et/ou n'êtes pas sûr de comment 
+> Si vous n'avez pas et/ou n'êtes pas sûr de comment
 revendiquer votre serveur plex, veuillez suivre ce guide:
 https://quickbox.io/kb-categories/plex/"
   quickbox::dashboard::log "${text}"
@@ -188,8 +188,8 @@ quickbox::lang::software::quassel::access() {
   ip_output=$(ip route get 8.8.8.8 2>/dev/null) && server_ip=$(echo "${ip_output}" | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}') || server_ip="127.0.0.1"
   declare text="${software_title} installé sur le port: ${software_daemon_port}
 
-> Veuillez installer quassel-client sur votre 
-ordinateur personnel et vous connecter au nouveau ${software_title} Core 
+> Veuillez installer quassel-client sur votre
+ordinateur personnel et vous connecter au nouveau ${software_title} Core
 créé pour configurer votre compte à:
 ${server_ip}:${software_daemon_port}
 
@@ -214,18 +214,12 @@ ${quickbox_web_root}${username}/ovpn.zip
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::access() {
-  declare text="accédez à ${software_title} à:
-${quickbox_web_root}whats-streaming.php"
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::software::x2go::access() {
   ip_output=$(ip route get 8.8.8.8 2>/dev/null) && server_ip=$(echo "${ip_output}" | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}') || server_ip="127.0.0.1"
   declare text="${software_title} Serveur installé
 
-> Veuillez installer le client x2go sur votre ordinateur personnel 
-et vous connecter au nouveau ${software_title} Serveur 
+> Veuillez installer le client x2go sur votre ordinateur personnel
+et vous connecter au nouveau ${software_title} Serveur
 en utilisant les informations suivantes:
 Hôte:       ${server_ip}
 Identifiant: ${username}
@@ -235,4 +229,4 @@ Type de session:	XFCE ou MATE
 > Téléchargez le client x2go depuis:
 https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
   quickbox::dashboard::log "${text}"
-} 
+}

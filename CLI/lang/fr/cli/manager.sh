@@ -181,16 +181,6 @@ quickbox::lang::delete::selection::invalid() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::delete::software::error() {
-  declare text="la sauvegarde de l'application ${software_title} n'existe pas."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::delete::config::error() {
-  declare text="la sauvegarde de configuration de ${software_title} n'existe pas."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::delete::selection::display() {
   version="$(tput setaf 5)${version}$(tput setaf 7)"
   app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
@@ -221,4 +211,4 @@ quickbox::lang::delete::complete() {
   version="$(tput setaf 5)${version}$(tput setaf 2)"
   declare text="la sauvegarde de ${software_title} (${version}) a été supprimée."
   quickbox::dashboard::log "${text}$(tput sgr0)"
-} 
+}

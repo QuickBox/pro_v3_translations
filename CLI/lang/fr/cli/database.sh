@@ -130,11 +130,6 @@ quickbox::lang::db::install::mysql::client::fail() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::db::install::mysql::reload() {
-  declare text="Rechargement du démon systemctl..."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::db::install::mysql::reload::fail() {
   declare text="Échec du rechargement du démon systemctl."
   quickbox::dashboard::log "${text}"
@@ -522,4 +517,4 @@ quickbox::lang::db::restore::mysql::fail() {
 quickbox::lang::db::restore::unsupported() {
   declare text="Type de base de données non pris en charge: ${db_type}. Aucune restauration n'a été effectuée."
   quickbox::dashboard::log "${text}"
-} 
+}
