@@ -31,46 +31,46 @@
 # Brugerhåndtering
 ################################################################################
 quickbox::lang::user::create() {
-  declare text="quickbox bruger oprettet:"
-  quickbox::dashboard::log "${text}"
+	declare text="quickbox bruger oprettet:"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::delete() {
-  declare text="${username:-"quickbox bruger"} slettet"
-  quickbox::dashboard::log "${text}"
+	declare text="${username:-"quickbox bruger"} slettet"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::username() {
-  declare text="bruger: ${username}"
-  quickbox::dashboard::log "${text}"
+	declare text="bruger: ${username}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::password() {
-  declare text="adgangskode: ${password}"
-  quickbox::dashboard::log "${text}"
+	declare text="adgangskode: ${password}"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::password::updated() {
-  declare text="${username:-"quickbox bruger"}s adgangskode opdateret"
-  quickbox::dashboard::log "${text}"
+	declare text="${username:-"quickbox bruger"}s adgangskode opdateret"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::ban() {
-  declare text="${username:-"quickbox bruger"} bannet"
-  quickbox::dashboard::log "${text}"
+	declare text="${username:-"quickbox bruger"} bannet"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::unban() {
-  declare text="${username:-"quickbox bruger"} fjernet fra ban"
-  quickbox::dashboard::log "${text}"
+	declare text="${username:-"quickbox bruger"} fjernet fra ban"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::demote() {
-  declare text="${username:-"quickbox bruger"} degraderet fra admin"
-  quickbox::dashboard::log "${text}"
+	declare text="${username:-"quickbox bruger"} degraderet fra admin"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::user::promote() {
-  declare text="${username:-"quickbox bruger"} forfremmet til admin"
-  quickbox::dashboard::log "${text}"
-} 
+	declare text="${username:-"quickbox bruger"} forfremmet til admin"
+	quickbox::dashboard::log "${text}"
+}
