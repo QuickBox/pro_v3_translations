@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_database_pt_br
 # File Description: Arquivo de idioma português (Brasil) - Gerenciamento de Banco de Dados
-# File Version: 1.0.4
+# File Version: 1.0.5
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -127,11 +126,6 @@ quickbox::lang::db::install::mysql::client() {
 
 quickbox::lang::db::install::mysql::client::fail() {
   declare text="Falha ao escrever configuração do cliente MySQL."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::db::install::mysql::reload() {
-  declare text="Recarregando daemon systemctl..."
   quickbox::dashboard::log "${text}"
 }
 
@@ -522,4 +516,4 @@ quickbox::lang::db::restore::mysql::fail() {
 quickbox::lang::db::restore::unsupported() {
   declare text="Tipo de banco de dados não suportado: ${db_type}. Nenhuma restauração foi executada."
   quickbox::dashboard::log "${text}"
-} 
+}

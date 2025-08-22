@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_core_pt_br
 # File Description: Arquivo de idioma português (Brasil) - Operações Básicas do Sistema
-# File Version: 1.0.4
+# File Version: 1.0.5
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,7 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author Contact: support@quickbox.io
 # Author: Jamie Dobbs (Mschf)
 # Author Contact: jamie.dobbs@mschf.dev
 #
@@ -60,11 +59,6 @@ quickbox::lang::clean::memory() {
 
 quickbox::lang::clean::rclone() {
   declare text="limpando log de upload do rclone..."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::clean::rclone::error() {
-  declare text="erro: arquivo de log não presente."
   quickbox::dashboard::log "${text}"
 }
 
@@ -132,10 +126,5 @@ quickbox::lang::trackers::enable() {
 
 quickbox::lang::software::run_via_qb() {
   declare text="erro[1]: ${script_name} deve ser executado via qb"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::mflibs_not_readable() {
-  declare text="erro[1]: mflibs não legível"
   quickbox::dashboard::log "${text}"
 }

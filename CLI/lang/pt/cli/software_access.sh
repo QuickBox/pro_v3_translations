@@ -165,7 +165,7 @@ quickbox::lang::software::plex::access() {
 ${quickbox_web_root}web/
 ${software_title} instalado na porta: ${software_web_port}
 
-> Se você não tem e/ou não tem certeza de como 
+> Se você não tem e/ou não tem certeza de como
 reivindicar seu servidor plex, siga este guia:
 https://quickbox.io/kb-categories/plex/"
   quickbox::dashboard::log "${text}"
@@ -188,8 +188,8 @@ quickbox::lang::software::quassel::access() {
   ip_output=$(ip route get 8.8.8.8 2>/dev/null) && server_ip=$(echo "${ip_output}" | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}') || server_ip="127.0.0.1"
   declare text="${software_title} instalado na porta: ${software_daemon_port}
 
-> Por favor, instale quassel-client no seu 
-computador pessoal e conecte-se ao ${software_title} Core recém-criado 
+> Por favor, instale quassel-client no seu
+computador pessoal e conecte-se ao ${software_title} Core recém-criado
 para configurar sua conta em:
 ${server_ip}:${software_daemon_port}
 
@@ -214,18 +214,12 @@ ${quickbox_web_root}${username}/ovpn.zip
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::software::wsdashboard::access() {
-  declare text="acesse ${software_title} em:
-${quickbox_web_root}whats-streaming.php"
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::software::x2go::access() {
   ip_output=$(ip route get 8.8.8.8 2>/dev/null) && server_ip=$(echo "${ip_output}" | sed -n '/src/{s/.*src *\([^ ]*\).*/\1/p;q}') || server_ip="127.0.0.1"
   declare text="Servidor ${software_title} instalado
 
-> Por favor, instale x2go-client no seu computador pessoal 
-e conecte-se ao Servidor ${software_title} recém-criado 
+> Por favor, instale x2go-client no seu computador pessoal
+e conecte-se ao Servidor ${software_title} recém-criado
 usando o seguinte:
 Host:       ${server_ip}
 Login:      ${username}
@@ -235,4 +229,4 @@ Tipo de sessão:	XFCE ou MATE
 > Baixe x2go-client do seguinte:
 https://wiki.x2go.org/doku.php/doc:installation:x2goclient"
   quickbox::dashboard::log "${text}"
-} 
+}
