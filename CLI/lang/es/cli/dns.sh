@@ -50,11 +50,6 @@ quickbox::lang::dns::credentials::status::configured_providers() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::dns::credentials::status::provider_count() {
-  declare text="${provider}: ${count} credencial(es)"
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::dns::credentials::status::total_credentials() {
   declare text="Total de credenciales encontradas: ${total_credentials}"
   quickbox::dashboard::log "${text}"
@@ -313,4 +308,4 @@ quickbox::lang::dns::credentials::setup::fallback_test_command() {
 quickbox::lang::dns::credentials::backup::restored() {
   declare text="Configuración de respaldo restaurada"
   quickbox::dashboard::log "${text}"
-} 
+}

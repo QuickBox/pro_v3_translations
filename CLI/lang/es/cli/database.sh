@@ -130,11 +130,6 @@ quickbox::lang::db::install::mysql::client::fail() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::db::install::mysql::reload() {
-  declare text="Recargando daemon de systemctl..."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::db::install::mysql::reload::fail() {
   declare text="Falló al recargar el daemon de systemctl."
   quickbox::dashboard::log "${text}"
@@ -522,4 +517,4 @@ quickbox::lang::db::restore::mysql::fail() {
 quickbox::lang::db::restore::unsupported() {
   declare text="Tipo de base de datos no soportado: ${db_type}. No se realizó restauración."
   quickbox::dashboard::log "${text}"
-} 
+}

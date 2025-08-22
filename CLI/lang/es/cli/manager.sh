@@ -181,16 +181,6 @@ quickbox::lang::delete::selection::invalid() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::delete::software::error() {
-  declare text="el respaldo de aplicación de ${software_title} no existe."
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::delete::config::error() {
-  declare text="el respaldo de configuración de ${software_title} no existe."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::delete::selection::display() {
   version="$(tput setaf 5)${version}$(tput setaf 7)"
   app_package="$(tput setaf 5)${app_package}$(tput setaf 7)"
@@ -221,4 +211,4 @@ quickbox::lang::delete::complete() {
   version="$(tput setaf 5)${version}$(tput setaf 2)"
   declare text="el respaldo de ${software_title} (${version}) ha sido eliminado."
   quickbox::dashboard::log "${text}$(tput sgr0)"
-} 
+}

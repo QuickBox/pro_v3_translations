@@ -243,11 +243,6 @@ quickbox::lang::lecert::dns::ionos::error() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::lecert::dns::credentials::help() {
-  declare text="Establecélas a través del panel de QuickBox o manualmente en /root/.acme.sh/account.conf"
-  quickbox::dashboard::log "${text}"
-}
-
 # Mensajes de Error de Dominio Kill
 quickbox::lang::lecert::error::domain::empty() {
   declare text="el dominio no puede estar vacío"
@@ -788,4 +783,4 @@ quickbox::lang::lecert::dns::setup::generic::referral() {
 quickbox::lang::lecert::dns::setup::generic::url() {
   declare text="https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_${provider}"
   quickbox::dashboard::log "${text}"
-} 
+}

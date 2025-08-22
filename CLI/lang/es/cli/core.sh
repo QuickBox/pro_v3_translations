@@ -63,11 +63,6 @@ quickbox::lang::clean::rclone() {
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::clean::rclone::error() {
-  declare text="error: archivo de log no presente."
-  quickbox::dashboard::log "${text}"
-}
-
 quickbox::lang::clean::dashboard() {
   declare text="esperando respuesta del sistema..."
   quickbox::dashboard::log "${text}"
@@ -92,16 +87,6 @@ quickbox::lang::lock::remove() {
 ################################################################################
 quickbox::lang::unknown::option() {
   declare text="${2} Opción desconocida: ${1}"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::username::specified() {
-  declare text="error: nombre de usuario no especificado"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::directory::noexist() {
-  declare text="el directorio requerido no existe..."
   quickbox::dashboard::log "${text}"
 }
 
@@ -132,10 +117,5 @@ quickbox::lang::trackers::enable() {
 
 quickbox::lang::software::run_via_qb() {
   declare text="error[1]: ${script_name} debe ejecutarse a través de qb"
-  quickbox::dashboard::log "${text}"
-}
-
-quickbox::lang::software::mflibs_not_readable() {
-  declare text="error[1]: mflibs no legible"
   quickbox::dashboard::log "${text}"
 }
