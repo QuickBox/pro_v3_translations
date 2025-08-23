@@ -4,7 +4,7 @@
 # Project Name: QuickBox Pro
 # File Name: cli_core_de
 # File Description: German language file - Core System Operations
-# File Version: 1.0.6
+# File Version: 1.0.8
 #
 # Save Tasks:
 # Automated_Versioning: true
@@ -16,8 +16,6 @@
 # Automated_Encryption: false
 #
 # Author: Jason Matthews (JMSolo)
-# Author: Jamie Dobbs (Mschf)
-# Author Contact: jamie.dobbs@mschf.dev
 #
 # License: BSD-3 (Available in LICENSE.md)
 # Copyright (C) 2019-2025, QuickBox.IO
