@@ -29,21 +29,21 @@
 # APT Package Management
 ################################################################################
 quickbox::lang::apt::update::header() {
-  declare text="checking and performing apt updates..."
-  quickbox::dashboard::log "${text}"
+	declare text="checking and performing apt updates..."
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::db::locked() {
-  declare text="trying to resolve dpkg lock..."
-  quickbox::dashboard::log "${text}"
+	declare text="trying to resolve dpkg lock..."
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::update::completed() {
-  declare text="apt-get upgrade completed successfully"
-  quickbox::dashboard::log "${text}"
+	declare text="apt-get upgrade completed successfully"
+	quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::apt::check::failed() {
-  declare text="apt-get check failed, you may have broken packages"
-  quickbox::dashboard::log "${text}"
+	declare text="apt-get check failed, you may have broken packages"
+	quickbox::dashboard::log "${text}"
 }
