@@ -1,34 +1,32 @@
 #!/usr/bin/env bash
 ################################################################################
 # <START METADATA>
-# Nom du Projet: QuickBox Pro
-# Nom du Fichier: cli_software_fr
-# Description du Fichier: Fichier de langue française - Gestion des Logiciels
-# Version du Fichier: 1.0.1
+# Project Name: QuickBox Pro
+# File Name: cli_software_fr
+# File Description: French language file - Software Management
+# File Version: 1.0.34
 #
-# Tâches de Sauvegarde:
-# Versioning_Automatisé: true
+# Save Tasks:
+# Automated_Versioning: true
+# Automated_Formatting: true
 #
-# Tâches de Construction:
-# Suppression_Commentaires_Automatisée: true
+# Build Tasks:
+# Automated_Comment_Strip: true
 #
-# Tâches de Déploiement:
-# Chiffrement_Automatisé: false
+# Deploy Tasks:
+# Automated_Encryption: false
 #
-# Auteur: Jason Matthews (JMSolo)
-# Contact Auteur: support@quickbox.io
-# Auteur: Jamie Dobbs (Mschf)
-# Contact Auteur: jamie.dobbs@mschf.dev
+# Author: Jason Matthews (JMSolo)
 #
-# Licence: BSD-3 (Disponible dans LICENSE.md)
+# License: BSD-3 (Available in LICENSE.md)
 # Copyright (C) 2019-2025, QuickBox.IO
-# Tous droits réservés.
+# All rights reserved.
 # <END METADATA>
 # shellcheck disable=2001,2034,2154,2312,2317
 ################################################################################
 
 ################################################################################
-# Opérations d'Installation
+# Install Operations
 ################################################################################
 quickbox::lang::install::header() {
   declare text="${software_title} va maintenant être installé
@@ -116,7 +114,7 @@ quickbox::lang::install::complete::header() {
 }
 
 ################################################################################
-# Opérations de Réinstallation
+# Reinstall Operations
 ################################################################################
 quickbox::lang::reinstall::header() {
   declare text="${software_title} va maintenant être réinstallé
@@ -130,7 +128,7 @@ quickbox::lang::reinstall::complete::header() {
 }
 
 ################################################################################
-# Opérations de Suppression
+# Remove Operations
 ################################################################################
 quickbox::lang::remove::header() {
   declare text="${software_title} va maintenant être supprimé
@@ -159,7 +157,7 @@ quickbox::lang::remove::complete::header() {
 }
 
 ################################################################################
-# Opérations de Mise à Jour
+# Update Operations
 ################################################################################
 quickbox::lang::update::header() {
   declare text="${software_title} va maintenant être mis à jour
@@ -183,48 +181,304 @@ quickbox::lang::update::files::admin() {
 }
 
 ################################################################################
-# Informations d'Accès aux Logiciels
+# Software Access Information
 ################################################################################
 quickbox::lang::software::access() {
-  declare text="accédez à ${software_title} à:
+  declare text="accédez à ${software_title} à :
 ${quickbox_web_root}${software_name}
-${software_title} installé sur le port: ${software_web_port}"
+${software_title} installé sur le port : ${software_web_port}"
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::mu::access() {
-  declare text="accédez à ${software_title} à:
+  declare text="accédez à ${software_title} à :
 ${quickbox_web_root}${username}/${software_name}
-${software_title} installé sur le port: ${software_web_port}"
+${software_title} installé sur le port : ${software_web_port}"
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::software::admin::access() {
-  declare text="accédez à ${software_title} à:
+  declare text="accédez à ${software_title} à :
 ${quickbox_web_root}${admin_name}/${software_name}
-${software_title} installé sur le port: ${software_web_port}"
+${software_title} installé sur le port : ${software_web_port}"
   quickbox::dashboard::log "${text}"
 }
 
 ################################################################################
-# Messages de Commandes Système
+# System Command Messages
 ################################################################################
+
+quickbox::lang::system::enhanced::files::removed() {
+  declare text="Fichiers de service améliorés supprimés avec succès"
+  quickbox::dashboard::log "${text}"
+}
+
 quickbox::lang::system::health::check::running() {
-  declare text="Exécution du contrôle de santé complet..."
+  declare text="Exécution d'une vérification de santé complète..."
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::system::service::status::current() {
-  declare text="Statut actuel du service:"
+  declare text="Statut actuel du service :"
   quickbox::dashboard::log "${text}"
 }
 
 quickbox::lang::system::service::logs::recent() {
-  declare text="Logs récents du service:"
+  declare text="Journaux récents du service :"
   quickbox::dashboard::log "${text}"
 }
 
-quickbox::lang::system::enhanced::files::removed() {
-  declare text="Fichiers de service améliorés supprimés avec succès"
+################################################################################
+# WSDashboard Health Check Messages
+################################################################################
+quickbox::lang::software::wsdashboard::health::usage() {
+  declare text="Utilisation : qbwsd-health-check.sh [--verbose] [--fix]
+  --verbose  Activer la sortie détaillée
+  --fix      Corriger automatiquement les problèmes courants"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::unknown_option() {
+  declare text="Option inconnue : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::root_warning() {
+  declare text="Exécution en tant que root - certaines vérifications peuvent ne pas fonctionner correctement"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::starting_check() {
+  declare text="Démarrage de la vérification de santé pour ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::checking_status() {
+  declare text="Vérification du statut du service..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::service_running() {
+  declare text="Le service fonctionne"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::service_not_running() {
+  declare text="Le service ne fonctionne pas"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::checking_config() {
+  declare text="Vérification de la configuration du service..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::config_file_missing() {
+  declare text="Fichier de configuration du service introuvable : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::root_user_warning() {
+  declare text="Le service est configuré pour s'exécuter en tant que root (risque de sécurité)"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::no_restart_policy() {
+  declare text="Aucune politique de redémarrage configurée"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::config_valid() {
+  declare text="Le fichier de configuration du service existe et est lisible"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::checking_dependencies() {
+  declare text="Vérification des dépendances..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::file_missing() {
+  declare text="Fichier requis manquant : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::file_found() {
+  declare text="Trouvé : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::directory_missing() {
+  declare text="Répertoire requis manquant : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::directory_found() {
+  declare text="Répertoire trouvé : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::dependencies_missing() {
+  declare text="Dépendances manquantes : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::dependencies_available() {
+  declare text="Toutes les dépendances sont disponibles"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::checking_resources() {
+  declare text="Vérification de l'utilisation des ressources..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::service_not_running_skip() {
+  declare text="Service non fonctionnel, saut de la vérification des ressources"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::pid_not_found() {
+  declare text="Impossible de déterminer le PID du service"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::memory_usage() {
+  declare text="Utilisation de la mémoire : ${1}MB"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::high_memory_usage() {
+  declare text="Utilisation élevée de la mémoire détectée : ${1}MB"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::cpu_usage() {
+  declare text="Utilisation du CPU : ${1}%"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::high_cpu_usage() {
+  declare text="Utilisation élevée du CPU détectée : ${1}%"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::checking_logs() {
+  declare text="Vérification des journaux récents..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::recent_errors_found() {
+  declare text="Trouvé ${1} messages d'erreur dans la dernière heure"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::no_recent_errors() {
+  declare text="Aucun message d'erreur récent trouvé"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::log_file_size() {
+  declare text="Fichier de journal ${1} : ${2}MB"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::large_log_file() {
+  declare text="Fichier de journal volumineux détecté : ${1} (${2}MB)"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::log_file_not_found() {
+  declare text="Fichier de journal introuvable : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::checking_database() {
+  declare text="Vérification de la connectivité de la base de données..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::database_file_missing() {
+  declare text="Fichier de base de données introuvable : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::database_accessible() {
+  declare text="La base de données est accessible et contient des tables"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::active_sessions() {
+  declare text="Sessions actives dans la dernière heure : ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::database_corrupted() {
+  declare text="La base de données n'est pas accessible ou est corrompue"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::sqlite3_not_available() {
+  declare text="sqlite3 non disponible, saut des vérifications de base de données"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::attempting_fixes() {
+  declare text="Tentative de correction des problèmes courants..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::fixing_permissions() {
+  declare text="Correction des permissions de l'environnement virtuel Node.js..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::attempting_restart() {
+  declare text="Tentative de redémarrage du service..."
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::restart_successful() {
+  declare text="Service redémarré avec succès"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::restart_failed() {
+  declare text="Échec du redémarrage du service"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::check_completed_success() {
+  declare text="Vérification de santé terminée avec succès"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::check_completed_issues() {
+  declare text="Vérification de santé terminée avec des problèmes"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::binary_not_executable() {
+  declare text="Binaire non exécutable: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::permission_issues_detected() {
+  declare text="Problèmes de permissions détectés: ${1}"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::permissions_fixed() {
+  declare text="Permissions des binaires Node.js corrigées avec succès"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::permissions_fix_failed() {
+  declare text="Échec de la correction des permissions des binaires Node.js"
+  quickbox::dashboard::log "${text}"
+}
+
+quickbox::lang::software::wsdashboard::health::creating_run_directory() {
+  declare text="Création du répertoire d'exécution manquant..."
   quickbox::dashboard::log "${text}"
 }
