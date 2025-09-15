@@ -70,6 +70,7 @@ return [
   'VERSION'                       => 'Version',
   'DATE'                          => 'Datum',
   'VERSION_ROLLBACK_DELETE'       => 'Dieses Backup löschen?',
+  'VERSION_ROLLBACK_CONFIRM'      => 'Rollback bestätigen?',
   'PROMOTE'                       => 'Zum Admin befördern',
   'RCLONE_LOCK_REMOVE'            => 'Sperre entfernen',
   'RCLONE_LOGS'                   => 'Logs anzeigen',

@@ -70,6 +70,7 @@ return [
   'VERSION'                       => 'Version',
   'DATE'                          => 'Date',
   'VERSION_ROLLBACK_DELETE'       => 'Supprimer cette sauvegarde ?',
+  'VERSION_ROLLBACK_CONFIRM'      => 'Confirmer le Rollback ?',
   'PROMOTE'                       => 'Promouvoir Administrateur',
   'RCLONE_LOCK_REMOVE'            => 'supprimer verrou',
   'RCLONE_LOGS'                   => 'voir journaux',

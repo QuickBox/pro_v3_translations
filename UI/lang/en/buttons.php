@@ -69,6 +69,7 @@ return [
   'VERSION_ROLLBACK_V'            => 'Version: ',
   'VERSION'                       => 'Version',
   'DATE'                          => 'Date',
+  'VERSION_ROLLBACK_CONFIRM'      => 'Confirm Rollback?',
   'VERSION_ROLLBACK_DELETE'       => 'Delete this backup?',
   'PROMOTE'                       => 'Promote to Admin',
   'RCLONE_LOCK_REMOVE'            => 'remove lock',

@@ -69,6 +69,7 @@ return [
   'VERSION_ROLLBACK_V'            => '版本：',
   'VERSION'                       => '版本',
   'DATE'                          => '日期',
+  'VERSION_ROLLBACK_CONFIRM'      => '确认回滚？',
   'VERSION_ROLLBACK_DELETE'       => '删除这个备份？',
   'PROMOTE'                       => '晋升为管理员',
   'RCLONE_LOCK_REMOVE'            => '解除锁定',

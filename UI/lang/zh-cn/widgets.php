@@ -82,6 +82,7 @@ return [
   'UNPACKERR'                               => '为 Radarr、Sonarr、Lidarr、Readarr 提取下载 - 导入后删除提取的文件。',
   'WEBCONSOLE'                              => 'TTYD（又名 QuickBox Web Console）是一个基于 Xterm.js 的全功能终端，支持 CJK 和 IME。',
   'WIREGUARD'                               => 'WireGuard® 是一个极其简单但快速和现代的 VPN，利用最先进的加密技术。它的目标是比 IPsec 更快、更简单、更精简、更有用，同时避免巨大的头痛。它打算比 OpenVPN 性能更好。WireGuard 设计为通用 VPN，可在嵌入式接口和超级计算机上运行，适合许多不同的情况。',
+  'WSDASHBOARD'                             => 'What\'s Streaming Dashboard (WSDashboard) 是一个 QuickBox Pro 插件，用于实时监控和控制 Emby 和 Jellyfin – 显示实时会话指标、带宽和媒体信息、地理位置和单个仪表板操作员。',
   'X2GO'                                    => 'X2Go 是一个开源远程桌面软件，适用于使用 NX 技术协议的 Linux。',
   'XTEVE'                                   => 'XTeVe 是一个模拟电视调谐器的应用程序，它允许您通过 Plex 或 Emby 拥有 IPTV 频道。xTeVe 可以合并多个 M3U 和 XMLTV 文件，并将其发送到您首选的媒体中心。',
   'ZNC'                                     => 'ZNC 是一个 IRC 网络弹跳器或 BNC。它可以将客户端从实际的 IRC 服务器分离，也可以从选定的频道分离。',

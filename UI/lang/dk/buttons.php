@@ -70,6 +70,7 @@ return [
   'VERSION'                       => 'Version',
   'DATE'                          => 'Dato',
   'VERSION_ROLLBACK_DELETE'       => 'Slet denne sikkerhedskopi?',
+  'VERSION_ROLLBACK_CONFIRM'      => 'Bekræft Tilbagestilling?',
   'PROMOTE'                       => 'Opgrader til Admin',
   'RCLONE_LOCK_REMOVE'            => 'fjern låsen',
   'RCLONE_LOGS'                   => 'se logfiler',

@@ -70,6 +70,7 @@ return [
   'VERSION'                       => 'Versão',
   'DATE'                          => 'Data',
   'VERSION_ROLLBACK_DELETE'       => 'Excluir este backup?',
+  'VERSION_ROLLBACK_CONFIRM'      => 'Confirmar o Rollback?',
   'PROMOTE'                       => 'Promover a Administração',
   'RCLONE_LOCK_REMOVE'            => 'remover bloqueio',
   'RCLONE_LOGS'                   => 'ver registros',

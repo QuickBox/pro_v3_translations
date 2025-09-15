@@ -70,6 +70,7 @@ return [
   'VERSION'                       => 'Verzió',
   'DATE'                          => 'Dátum',
   'VERSION_ROLLBACK_DELETE'       => 'Törli ezt a mentést?',
+  'VERSION_ROLLBACK_CONFIRM'      => 'Rollback megerősítése?',
   'PROMOTE'                       => 'Admin jogosultság adása',
   'RCLONE_LOCK_REMOVE'            => 'zár eltávolítása',
   'RCLONE_LOGS'                   => 'naplók megtekintése',
